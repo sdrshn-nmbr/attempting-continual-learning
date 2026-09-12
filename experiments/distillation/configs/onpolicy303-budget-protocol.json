@@ -1,0 +1,3875 @@
+{
+  "additional_updates": 21,
+  "claim_boundary": "Post-observation conservative extra-training control for total loss-token exposure. Cached controls get11340 tokens and405 updates versus fixed ownprefix384 at11314 tokens and384 updates. This is not an exact token, update, or FLOP match and cannot isolate all objective or trajectory differences. One seed, same384TRAIN rows, previously observed192TEST/864unused and128generic. Native export remains ownprefix384 regardless of these outcomes.",
+  "contract": "onpolicy303_cached_controls_384_plus_21_post_observation",
+  "dataset": {
+    "cross_split_input_overlap": 0,
+    "prior_campaign_observed_holdout": true,
+    "rows_sha256": {
+      "test": "4cb8c65404c65f47d9a9717346b922eb1d9171de93c4f6636f76bbdc16652ca4",
+      "train": "b53ef5cf9453b99151fb2010eccb94724ceeb898ac18e994b6ef74bd60ee2882",
+      "unused288": "a6e735f04446cf801efa601a60113c40d6fcb5b3a4875b39437395e419f094a9",
+      "validation": "6ffc9d8256c0f3b76617ecff7812ec0b75c326645655773fc90320e50561e491"
+    },
+    "unique_inputs_per_split": {
+      "test": 64,
+      "train": 128,
+      "unused288": 288,
+      "validation": 32
+    }
+  },
+  "evaluation": {
+    "require_new_process": true,
+    "splits": [
+      "test",
+      "unused288"
+    ],
+    "teacher_model_loaded": false,
+    "whole_answer_and_native_eos": true
+  },
+  "evaluation_forbidden_paths": [
+    "/mnt/shared/cl-portfolio/runs/consolidation-coverage303-20260912",
+    "/mnt/shared/cl-portfolio/runs/consolidation-generated303-20260912",
+    "/mnt/shared/cl-portfolio/runs/consolidation-source303-coverage-20260912",
+    "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-train-20260912/checkpoint384",
+    "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-cached-teacher-kl-train",
+    "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-cached-teacher-sft-train",
+    "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-onpolicy-kl-train"
+  ],
+  "evaluation_rule": "One fresh Python interpreter after parent training releases all model tensors. Parent launches uv, binds its launcher PID to the evaluator parent PID plus a unique token and training receipt hash. Reload only pinned FP32 base+own405 learner; require native24TRAIN and128generic exact reload parity before scoring unchanged192TEST+864unused. Teacher/cache/source-run/optimizer reads forbidden. No teacher optimization.",
+  "final_update": 405,
+  "methods": [
+    "cached_teacher_sft",
+    "cached_teacher_kl"
+  ],
+  "native_export": {
+    "checkpoint": 384,
+    "method": "onpolicy_kl",
+    "selection_changed_by_control": false
+  },
+  "original_design": {
+    "file_sha256": "3590d104cb057852a2dda2d71faade59f055ad9e5e3f628abe6efd5751921aed",
+    "path": "configs/onpolicy303_protocol.json",
+    "payload_sha256": "31ec528d68e04062d7be72c3b8d0c8d1c5b915b7670c3be4be5af0a69f13a2be"
+  },
+  "ownprefix_context": {
+    "checkpoint": 384,
+    "loss_tokens": 11314,
+    "task_id": "followthrough-20260912-onpolicy303-onpolicy-kl-train",
+    "training_json_sha256": "2ec82629cf95e6e1bb2d27d01bf1fbd75b515dd99fa185b2f7f1753dd6b257a8",
+    "weights_loaded_in_control": false
+  },
+  "post_observation_decision": "After all original384 outcomes were observed; extra-training control specified before either new405 control executes. The original reused192TEST and864unused remain reused heldouts. No prospective heldout or endpoint-selection claim.",
+  "primary_source": "https://docs.pytorch.org/docs/stable/generated/torch.optim.AdamW",
+  "qualification_rule": "Before any updates, require checkpoint384 native24TRAIN and all128generic raw records to equal the original saved records exactly. KL first loads the original frozen FP32 coverage expert and freshly requires all384TRAIN+96VAL exact qualified native generations before student load. SFT uses the original all-correct cached responses without loading an expert. Any failed prerequisite stops before updates; no recipe fallback.",
+  "read_ban_scope": "Python open audit hook and explicit path approval for every frozen local-only model loader; blocks teacher/source-run/cache/optimizer paths including symlink resolution. Not an OS syscall sandbox or a claim of monitoring arbitrary native extension I/O.",
+  "restore_rule": "Restore the original checkpoint384 learner tensors and saved AdamW first/second moments and clocks. Saved AdamW has no parameter names: reconstruct the exact frozen Qwen3/PEFT factory registration order (numeric layer, q then v, A then B), bind explicit names/shapes/IDs against the loaded model, and check all144 saved state slots, exact options and bitwise moment hash before updating. No optimizer reset or scheduler.",
+  "runtime_versions": {
+    "packages": {
+      "peft": "0.20.0",
+      "safetensors": "0.8.0",
+      "torch": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+      "transformers": "5.16.1"
+    },
+    "torch_module_version": "2.10.0+rocm7.2.4.git3d3aa833"
+  },
+  "runtime_versions_provenance": "Torch module version from parent live qualified worker inspection; each distribution version from immutable original runtime.json packages. These are distinct exact fields with no normalization or cross-comparison.",
+  "save_rule": "Save learner405 and full AdamW405 after exactly21 continuation updates, plus every row/update ID, response mask/tokens, loss, clipping norm and optimizer clock. No ownprefix continuation, intermediate checkpoint selection, endpoint search, or retraining from zero.",
+  "schedule": {
+    "continuation_batch_ids": [
+      [
+        "a672584a559f609565c1adfce1c1ee6a2a4fa0316a2d7811c1b5da92151889e9",
+        "25800cebbfff541e8543a07a760e15c69422c9af1e74055b6b6bc4266dafd6c4",
+        "2e58859740b49a82b65c0f7db28b4b0957dab2357940fefe24ae8ccf1f9f13c5",
+        "abf946ea98be14fec152898f42241e0c3f30f85d033a75d394bfbfd606ecb3c9"
+      ],
+      [
+        "56a1a339fcec096de6cb75706d5ee88dc3ae0ef0de39b8e1e764d6cf6b8bd53a",
+        "a31e58a08f7a9ccdfea2d441a873ebd5f24af9f807b9217fd50ae9d665a5b226",
+        "627a6c6b9b4d9fc197a2089e99eeed1370f97d09884072dc6c6af2077bfa9444",
+        "959f2995e876c1885f43f1667a066b90bcbc13911a4f4abf895b54f0d910a8e1"
+      ],
+      [
+        "89110dd00eb1aa6a51c916f9ab46217fe91dd80007871ac07e9342ca81ede757",
+        "9bdf26f1a08a260d1037d849d924f8ecb858f83d0a4ddbf8370774ce820a8a4c",
+        "17021ed299d04fc22cf1698e89388ba93da7ba910b9c3d24c37ff0f6935b989f",
+        "7616c1f7fe87ef57de74be22fcc301a213fe9352708f0a757ba3b1dca9682ce4"
+      ],
+      [
+        "06d9d450d093acc17c3a0ad4202078f608ff04524629f4a46d2ee8416f9995ae",
+        "62a2e536d3d74ec217050373e3ecccd2d1f7a6b9693584a47679064bbe4e8bd9",
+        "54495ca25a920290984ba59d30bf08a6d8805856aee30e523fe5fc6e94254c36",
+        "000aae75dd3c5d3997a8409c2a083ee5b875d0a4dc39d2a0045b71ab991e8729"
+      ],
+      [
+        "2de2c3c3c4c5070200e6cd6b661b57bf53bf8bd3d80027ac51380d6d9523793f",
+        "ab287edc5fcdc7b3f1d0fd36b71a9cfc6b3cc7b7882d44ccd788b6088af0d814",
+        "7f6ed248bd94bd13eda8c28ca6aa72bc825d7056bf08e0887ed5eafbb0a20e90",
+        "2447be5bdbde9354c64dc6d81b339bbf57e5bce64a9640e0cfd7be862b04c420"
+      ],
+      [
+        "5d48375fae0a53aa311776fac82d650a1f0bb9aaac582868ae8cab086b5437dc",
+        "10773e3d09819eddc0a43dad3ed90832fc70f7b4a62ec9e6a808fe0d1c5e969c",
+        "831c3b0a3a2cc7608a2a790e51e2b4f482537269f18cfdd0b9503e6e9d8796a5",
+        "0dab0edfead2080cfdc70e6abc3b536cd35125ccba63e1510c8b600315e62b10"
+      ],
+      [
+        "3e8d88440498f2172150dd3902d84bc259c28b6a30be97e6d466a79279738782",
+        "6f36f26df57ad71742a2c28cfd94fe9bc84ae2beac4697cd8388cc9d651a3681",
+        "5392007c5fb3286f62a392443bd7ab17f0caa85de1f59cc1991b3ff8e9608151",
+        "d7dbab781da2ba55c1d187983067ea7df794aeae25f61d495b66dfa0d8ee8769"
+      ],
+      [
+        "8c059260814a9c5c7d1038ad4a24d193d7a81a3c6ed26b255fa97831c9011c64",
+        "9520e93283a9d06a3c4dcaec1e8958147a127d328b96b23c1a42c1efecb0cedc",
+        "fe5b5016cf4adb3ccc165050c9ca4e2dcd48cb94c2eabff8bd0886d41e69d982",
+        "8bf43c787553672cb7c63968d07e98ee61c5ee2272c0f90f2711b39b68c82a40"
+      ],
+      [
+        "a3ae846c125be983111dc0d3c84d5be6b2d741e4ebab6ec34de49f8bcefba964",
+        "e24a171f12aef1ef4bf69c24b66e0679c8eed31585a256d10caad7e62c8db572",
+        "f27aa74dbafb0389e2495481b8a185e20750bb2b82167a011d60a3fd828eeddb",
+        "dbcce322605a3d364ed0d575ecd6291d2e149c80abdd6598f469a055ee75f7ad"
+      ],
+      [
+        "2a7ad06ec0f6ef3774a56808afc77e205597ae605f8be30bf69bb5b323cf9ce1",
+        "a78001a4f2c2df10866d82f1b1276b799998c0e4ea86894d3dfa51d0df111eda",
+        "b148dde25772b4271c75aab5bfda7b3166b8770ccca00547301511eef1a01a79",
+        "a1b66c97a629187b86cf71e571f2a5f740292b5f4deab3e267f753639b895616"
+      ],
+      [
+        "7eb6f2c9e90ad69185f84c22833c7f18e321272ed3b4a36da21f6001714ddbec",
+        "bde9545f23b9532a69f1b1727dd1781d9d7a2f2a43afbe9071e2baef0acd2568",
+        "1e86ec1847d9aa0a0059c1fd0883dc243531d76e7a692a5997f278884e879f48",
+        "5c15e42acf51ccd9da344838f267b0376b2d6d9eab7739fed5b52df4f4e577be"
+      ],
+      [
+        "6da7319d3baab888df85f7af5481944c1e7ebbe88202f79686a154d6b72e0bf3",
+        "bd887119a374aa09cc76d247a3e83719c4f56286d45de60481ff46ed35918de1",
+        "080fabdd8f98f93aab0640a58974c2a9a5c6dfc89a6f00d4d928116702567cd1",
+        "46e96c3cdc99e988d72293b483eb6dcb85273742ebb7da2b7cc0e43592a8b7e9"
+      ],
+      [
+        "2886bd3d8d08070b965a2ee8aeff9c5b9acad733c809c73d582b312aa2fc5326",
+        "ec158321bb3176883179aa06530687c81386d7f9182a5ba6f7f7cbfedf578b51",
+        "223e0b42c053e606c64f3bb7c1bf73be6f38f98d7cc1c03e67e87bc2adf89d26",
+        "6360408868ff63aad0a47c55bcb324fc19f1d5a06257ad3d268ab12f4cd0a67b"
+      ],
+      [
+        "c6697949c791539de5ce9ccc085024a14b6b8a37c471f91f0419c6338f201eb9",
+        "b5a3ff585428d4471118f0680721947b49244e31abc863894d39984cd3bd7ea8",
+        "e03e9b712fa4547acc10ac5d30551bcab0384aeec10a78a05b14da1230f6ef78",
+        "84cff6e7f3821966237cbdd6f6038dda4cdc2d4082de1e7f2c3e617d33b78eb0"
+      ],
+      [
+        "816bdb03b948d6a70bde9c8a20cf5bd13f9370aac149f5542f5da3a64a9be5b7",
+        "c6ae01444185f94054790521feb93a42040fb017639ce0dfe6e0439e15af8c15",
+        "b81dfa77227db2388dea7e2e4f854632ac1175a44f86149ec60cdf32b53fdbfa",
+        "290c3823c7c93f1b44e292d7e063c284333d8ff26fd2e20aeb37920f2f4a9dfa"
+      ],
+      [
+        "52c4aca4e9dadec28a1f3bf6d6cc43f208354df32106820e5b14daa867f10bb6",
+        "16ea9f5cceba83ac8a6efbacfa06e95bde3cbcdfac4acb0d658816ea14a95cca",
+        "14ab5a68f3f6d2e68cbeccaacb9bd4a2898d060a9f91c83b24944f7cc17da62d",
+        "95cd481c4b1e1d7203a46c554ef4739f2e18af15b03dcb9891b29a54efd1575b"
+      ],
+      [
+        "4fc1dac824d2057ddbaf1c3e2422b568ea7782c1fc0c67c1bfd0cdeac4479fbe",
+        "e9766fdaa7b2eea86d601831035e1127c93b95c287e8afda60922bc36b9c5fbf",
+        "fb6a2d7843b5d3c013c048e13b7eed035c8f5db7fabcb46f43bced87a3ab690c",
+        "bff1fdaba82609385b31b3728d0e0b7ef80c6f2b99640fd54c4858f14abc4fa3"
+      ],
+      [
+        "576c5513da51b620fb57c0793823a6d53f67af7f6542c995d841437745d9270d",
+        "c4d5f9c399c86c4ad9cdf30a18a82a60d859ac38a5339b34b6ab7476bc4549a3",
+        "d01fb81f7c32f209f23b4a78f85f619ab5d73bb720cb521defa05bac0c7ccb8d",
+        "6f42051a85aa7dd8bf85231ba21bd6276816cb0b20f95d9eef4d12900ab633a1"
+      ],
+      [
+        "51913d628cc75c3c55cbda2f3ac271f0f2ba4057452abfe63f94643714c46e75",
+        "50dfd27fe6e80b29f2c51cc2d24818fc21cbf9965de39265284f74c43168c171",
+        "a4bf86f2e52bc77e7c9966cf27e950ad1b43444d8cd106a3084139fc52e1c851",
+        "2656094457c25d4d399c614bbc7f53cfbed395396e91d55c35d7c61d6b9b0caf"
+      ],
+      [
+        "d8f279b71c3de297cb896bf15bbd92be5052ad706af54f0f67c8c20d29ee6efe",
+        "8b7b8d764aef01571f1d34d0988dc8611c2a5a35f1c5ce7d77ba773fb6eb3f4b",
+        "0753cfb95867bb9f9a8a0fa97959752ccf217339b4e9c5fd98cffda174377acb",
+        "43b58b1c9ef62345f6cc9a6620e59b48315f4a720c72d12f9a2e26c74f2da65a"
+      ],
+      [
+        "20b0cdb11c66e04ddf6f0c7027100bc6878e3900427229d183f0b699b9c01c31",
+        "84c96ff273c1f18d10eeee5f5ff80624e0bdcb145c3eceea3191e2c69f170b22",
+        "c1b144135f86784d49e29f799bd0d9039eaca8f8c165e1803d327b77caacd8b0",
+        "0fc112e0d79c1822d0ebd3bcd41e77be6c73cf39165178fd6ef86a61be38ed4b"
+      ]
+    ],
+    "continuation_batch_ids_sha256": "bacaf03b9608aa2662a2846a5a15f032d9ad4f61c8fe90dc629f05dc143c59eb",
+    "continuation_epoch_seed": 91230435,
+    "continuation_indices": [
+      [
+        224,
+        252,
+        304,
+        186
+      ],
+      [
+        229,
+        148,
+        117,
+        0
+      ],
+      [
+        97,
+        139,
+        142,
+        350
+      ],
+      [
+        137,
+        179,
+        282,
+        272
+      ],
+      [
+        226,
+        119,
+        195,
+        274
+      ],
+      [
+        165,
+        75,
+        370,
+        197
+      ],
+      [
+        202,
+        207,
+        99,
+        26
+      ],
+      [
+        115,
+        162,
+        160,
+        64
+      ],
+      [
+        11,
+        301,
+        317,
+        278
+      ],
+      [
+        124,
+        291,
+        191,
+        315
+      ],
+      [
+        58,
+        13,
+        217,
+        12
+      ],
+      [
+        222,
+        141,
+        355,
+        111
+      ],
+      [
+        322,
+        114,
+        174,
+        234
+      ],
+      [
+        53,
+        48,
+        286,
+        106
+      ],
+      [
+        212,
+        230,
+        125,
+        373
+      ],
+      [
+        263,
+        359,
+        348,
+        235
+      ],
+      [
+        104,
+        76,
+        371,
+        321
+      ],
+      [
+        220,
+        105,
+        31,
+        213
+      ],
+      [
+        184,
+        316,
+        6,
+        200
+      ],
+      [
+        188,
+        107,
+        372,
+        102
+      ],
+      [
+        78,
+        284,
+        33,
+        285
+      ]
+    ],
+    "full405_batch_ids_sha256": "a9d73fcb9f8814443730330176d3e681e1ad3b85cef0e855bcb2c0829346b606",
+    "mode": "next_epoch_prefix",
+    "order_seed": 91230431,
+    "original_batch_ids_sha256": "ac013187d3ce573d04e010c1a60768224d0b69b859ae6299fcc4cc7efef22443",
+    "original_prefix_equal": true,
+    "recipe": "Frozen training_schedule generates five full epochs (480 batches); retain its first405. The first384 equal the original schedule exactly. Execute only the final21 batches from epoch seed order_seed+4.",
+    "repeated_original_prefix": false
+  },
+  "scientific_files_sha256": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "configs/choice_consolidation_protocol.json": "eadd92577ebf0945039ccde7a84f22d1150fd40df31c9c9ee7d14a1bd6f3706e",
+    "configs/coverage_learner_protocol.json": "7f8eb9e06f2472fcdd5e62e5d9017ee4cdf4a63a78daadcd32f46968a8a7ecad",
+    "configs/coverage_teacher_protocol.json": "1724268c16e6b4586f17e1d547076ab52ac9ba4ff613475963a99c4eb3d72340",
+    "configs/generation_consolidation_protocol.json": "5c933efc2fc32d2ae94784056a901d587cd6f5abafe07f87a03f0c78a6d7203e",
+    "configs/generation_teacher_protocol.json": "f618e00551fe75ed9117318869426ee81a6d006bfd8bf0d9046401f99a5f0ab0",
+    "configs/onpolicy303_protocol.json": "3590d104cb057852a2dda2d71faade59f055ad9e5e3f628abe6efd5751921aed",
+    "configs/onpolicy303_retention.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+    "coverage_learner.py": "1493db6ff826f604275fa3a0bce7e31fad3db3f36b22eb891a083468414e7aac",
+    "coverage_teacher.py": "0fdfc95ae89dd8063fbb007633b6c4b0579f747f1c1e77b603e03a6b0aad339a",
+    "data/sequence303.json": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2",
+    "data/sequence303_unused_inputs.json": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e",
+    "generation_consolidation.py": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "onpolicy303.py": "21af665aa3f13f13b5423d9939fda839ff1ab1a85179b299f39da38cb2ed23b4",
+    "onpolicy303_budget.py": "e6805cae932a936ce2ab4a7b698409614e2f7f174d99bbf5fff02615391dae0e",
+    "onpolicy303_budget_contract.py": "69297aeec5a3a26f1caa519fcfcc5058af9b7a34a26c38c87eaa5a13d83dbc1b",
+    "onpolicy303_contract.py": "ae7442e01c90062f1988c353d9cd3f310a3d0af32021ffcbdabcd4ab4c2e97b1",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770"
+  },
+  "sealed_before_continuation_utc": "2026-09-12T08:38:56.850127+00:00",
+  "sources": {
+    "cached_teacher_kl": {
+      "checkpoint": {
+        "adapter": {
+          "files": {
+            "adapter_config.json": "45581ddb9ac51de6c50c876e1febb804dc84c2c4e367df123234c6dfe40723c6",
+            "adapter_model.safetensors": "da90c3bc94a8dc73b5ac2cff28a7d591ffa20839c056ac1f82a089cd3aed2342"
+          },
+          "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-cached-teacher-kl-train/cached_teacher_kl/checkpoint384/learner",
+          "tensor_sha256": "6e22f9c38f29908acfd9c4e417001a0440877efa874e5de0ff938445cfa3bc9b"
+        },
+        "optimizer_sha256": "bab6e55d95bf4c24e8966ef985105231b60975df4f15c19e6b7e9ef839bd5ad3",
+        "train_probe_summary": {
+          "sequence_a": {
+            "cap_without_eos": 0.0,
+            "correct": 1.0,
+            "correct_prefix_with_extra_text": 0.0,
+            "count": 8,
+            "digit_position_accuracy": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "exact_body_without_valid_stop": 0.0,
+            "extra_body_characters": 0.0,
+            "format_valid": 1.0,
+            "terminated": 1.0
+          },
+          "sequence_b": {
+            "cap_without_eos": 0.0,
+            "correct": 1.0,
+            "correct_prefix_with_extra_text": 0.0,
+            "count": 8,
+            "digit_position_accuracy": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "exact_body_without_valid_stop": 0.0,
+            "extra_body_characters": 0.0,
+            "format_valid": 1.0,
+            "terminated": 1.0
+          },
+          "sequence_c": {
+            "cap_without_eos": 0.0,
+            "correct": 1.0,
+            "correct_prefix_with_extra_text": 0.0,
+            "count": 8,
+            "digit_position_accuracy": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "exact_body_without_valid_stop": 0.0,
+            "extra_body_characters": 0.0,
+            "format_valid": 1.0,
+            "terminated": 1.0
+          }
+        },
+        "train_probes_sha256": "89220f2b1c97a04e1a2b5165b1aadd2f71b621d47a58497678be1d59ed08685c"
+      },
+      "files_sha256": {
+        "cached_teacher_kl/checkpoint384/learner/adapter_config.json": "45581ddb9ac51de6c50c876e1febb804dc84c2c4e367df123234c6dfe40723c6",
+        "cached_teacher_kl/checkpoint384/learner/adapter_model.safetensors": "da90c3bc94a8dc73b5ac2cff28a7d591ffa20839c056ac1f82a089cd3aed2342",
+        "cached_teacher_kl/checkpoint384/optimizer.pt": "bab6e55d95bf4c24e8966ef985105231b60975df4f15c19e6b7e9ef839bd5ad3",
+        "cached_teacher_kl/checkpoint384/train_probes.json": "89220f2b1c97a04e1a2b5165b1aadd2f71b621d47a58497678be1d59ed08685c",
+        "cached_teacher_kl/ledger.json": "5f8f8395e7db96ea96f7a6e7ff79e968fd88f04f82e5f71866e3cd68d4cc8dec",
+        "cached_teacher_kl/prefix_diagnostics.json": "ed926db05f81cc2a57c63f1e4887451224a01b4b7430181a950425c339b3af4d",
+        "cached_teacher_kl/trajectories.jsonl": "9040415a077c3f6b0256dd5b53add74faddb55e588d59ec5ffd35154fad9b57f",
+        "config.json": "28bdbd5c3b272b3672f831308a5a6d79b8d2f63a75a5bdd70439c85af19f4119",
+        "control_evaluation_panels.json": "cfd81a219cd8191d53e0edb6955aac204f215148d15c46f7c6abd167632e8602",
+        "control_evaluation_result.json": "1c3e6670a2a58ad59913aaaf519d17c5104f967231d7a70872ce1cf565759c4f",
+        "control_schedule.json": "d7eebc1afa74f611bb84baee43b33b571d3a23976dacd6d1c910510064d8cef4",
+        "control_teacher_train_cache.json": "ceb73e9d49e02f60b8bafc4f504e17a634b44989fa248747b4050bec102e1d8e",
+        "control_training.json": "38ea46cb02a692a4ad4b5ee47112bf1c6bb56b3e1cce466678f5e74e2a41b893",
+        "execution.json": "3c04ed47daf5399c6b3724e36c0146ba62a421ddc049cf8166df7fad1ad2cf69",
+        "final_retention.json": "9d552f47d353a32793238c7f6d60078256af37d560adc326098d33debac5581d",
+        "initial/learner/adapter_config.json": "45581ddb9ac51de6c50c876e1febb804dc84c2c4e367df123234c6dfe40723c6",
+        "initial/learner/adapter_model.safetensors": "73b8732f0f593fe14df9d0dc22c289c383d80fde80d464e664c3ea754a36fc23",
+        "initial_retention.json": "b37671d8cc542d43a9be32ecb07ed2c27e104c5008f745a8eca3c8c913968212",
+        "initial_train_probes.json": "b845b7167dde6b46a84fdfa14136c54052db202403469e387c9d82fda39004f0",
+        "reference_schedule.json": "d7eebc1afa74f611bb84baee43b33b571d3a23976dacd6d1c910510064d8cef4",
+        "reference_training.json": "14cd4a0476ac9f5b5f22f589f7f1cb641d2c8dd903fea42408492d4dc1b04b04",
+        "runtime.json": "bbabe69aab9f10d11e6eefd1a027a4f6627eeac3a439440591fdcc777d34e00a",
+        "runtime_dependency.json": "efbf44ad3af6fc97edcb8fb519b5c08b89135760816b32c734a9fc42370232e9",
+        "schedule.json": "d7eebc1afa74f611bb84baee43b33b571d3a23976dacd6d1c910510064d8cef4",
+        "seal.json": "4708ef4712e5ee6aa9f3c92af9ddb01d8f72285d01154e2f2ebe9ea180a5268e",
+        "task.json": "7101c61a8fab9b6a95cffca586a7806e2c4a6687733eecb8b8c545929293aeaf",
+        "teacher_fresh_qualification.json": "f931259ad661ed441df77a0504983c551905a8372dfa42fdfa3b2b8ef152c56a",
+        "teacher_fresh_train.json": "c68e6afac2af21805a1232ee433a749695cbf1b61c50c08fbc71177c357bbd8b",
+        "teacher_fresh_validation.json": "04025a629d96badbc53f4db87fa865ef6dac0550c6a1df1d689c2cfa3bfa9cdc",
+        "teacher_qualification.json": "cf9b1ab01ee71e0e9265d2f73a7795e86b8a9f9e83a806d8fec47f3e3f2af91c",
+        "teacher_qualification_panels.json": "cd2a4f49e637aeae0774793f73b660e516baebac43638d2309ef106a23fe6dff",
+        "teacher_train_cache.json": "ceb73e9d49e02f60b8bafc4f504e17a634b44989fa248747b4050bec102e1d8e",
+        "training.json": "0aa69650b08cd2349fa4349c6bbebcb3be62defd8a8b082ce91eb13d6f2b3c88",
+        "untouched_train_probes.json": "b845b7167dde6b46a84fdfa14136c54052db202403469e387c9d82fda39004f0"
+      },
+      "method": "cached_teacher_kl",
+      "optimizer_options": {
+        "amsgrad": false,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "capturable": false,
+        "decoupled_weight_decay": true,
+        "differentiable": false,
+        "eps": 1e-08,
+        "foreach": null,
+        "fused": null,
+        "lr": 0.0003,
+        "maximize": false,
+        "weight_decay": 0.0
+      },
+      "optimizer_tensor_sha256": "cf04218dbd94c95d2991d88849a74f5af093ebc6aa04b76dcde6cd9a05691c1f",
+      "parameter_mapping": [
+        {
+          "adapter_key": "base_model.model.model.layers.0.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 0,
+          "parameter_name": "base_model.model.model.layers.0.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.0.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 1,
+          "parameter_name": "base_model.model.model.layers.0.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.0.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 2,
+          "parameter_name": "base_model.model.model.layers.0.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.0.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 3,
+          "parameter_name": "base_model.model.model.layers.0.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.1.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 4,
+          "parameter_name": "base_model.model.model.layers.1.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.1.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 5,
+          "parameter_name": "base_model.model.model.layers.1.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.1.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 6,
+          "parameter_name": "base_model.model.model.layers.1.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.1.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 7,
+          "parameter_name": "base_model.model.model.layers.1.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.2.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 8,
+          "parameter_name": "base_model.model.model.layers.2.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.2.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 9,
+          "parameter_name": "base_model.model.model.layers.2.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.2.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 10,
+          "parameter_name": "base_model.model.model.layers.2.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.2.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 11,
+          "parameter_name": "base_model.model.model.layers.2.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.3.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 12,
+          "parameter_name": "base_model.model.model.layers.3.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.3.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 13,
+          "parameter_name": "base_model.model.model.layers.3.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.3.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 14,
+          "parameter_name": "base_model.model.model.layers.3.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.3.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 15,
+          "parameter_name": "base_model.model.model.layers.3.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.4.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 16,
+          "parameter_name": "base_model.model.model.layers.4.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.4.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 17,
+          "parameter_name": "base_model.model.model.layers.4.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.4.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 18,
+          "parameter_name": "base_model.model.model.layers.4.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.4.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 19,
+          "parameter_name": "base_model.model.model.layers.4.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.5.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 20,
+          "parameter_name": "base_model.model.model.layers.5.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.5.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 21,
+          "parameter_name": "base_model.model.model.layers.5.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.5.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 22,
+          "parameter_name": "base_model.model.model.layers.5.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.5.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 23,
+          "parameter_name": "base_model.model.model.layers.5.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.6.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 24,
+          "parameter_name": "base_model.model.model.layers.6.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.6.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 25,
+          "parameter_name": "base_model.model.model.layers.6.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.6.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 26,
+          "parameter_name": "base_model.model.model.layers.6.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.6.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 27,
+          "parameter_name": "base_model.model.model.layers.6.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.7.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 28,
+          "parameter_name": "base_model.model.model.layers.7.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.7.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 29,
+          "parameter_name": "base_model.model.model.layers.7.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.7.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 30,
+          "parameter_name": "base_model.model.model.layers.7.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.7.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 31,
+          "parameter_name": "base_model.model.model.layers.7.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.8.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 32,
+          "parameter_name": "base_model.model.model.layers.8.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.8.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 33,
+          "parameter_name": "base_model.model.model.layers.8.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.8.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 34,
+          "parameter_name": "base_model.model.model.layers.8.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.8.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 35,
+          "parameter_name": "base_model.model.model.layers.8.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.9.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 36,
+          "parameter_name": "base_model.model.model.layers.9.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.9.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 37,
+          "parameter_name": "base_model.model.model.layers.9.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.9.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 38,
+          "parameter_name": "base_model.model.model.layers.9.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.9.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 39,
+          "parameter_name": "base_model.model.model.layers.9.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.10.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 40,
+          "parameter_name": "base_model.model.model.layers.10.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.10.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 41,
+          "parameter_name": "base_model.model.model.layers.10.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.10.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 42,
+          "parameter_name": "base_model.model.model.layers.10.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.10.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 43,
+          "parameter_name": "base_model.model.model.layers.10.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.11.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 44,
+          "parameter_name": "base_model.model.model.layers.11.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.11.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 45,
+          "parameter_name": "base_model.model.model.layers.11.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.11.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 46,
+          "parameter_name": "base_model.model.model.layers.11.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.11.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 47,
+          "parameter_name": "base_model.model.model.layers.11.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.12.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 48,
+          "parameter_name": "base_model.model.model.layers.12.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.12.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 49,
+          "parameter_name": "base_model.model.model.layers.12.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.12.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 50,
+          "parameter_name": "base_model.model.model.layers.12.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.12.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 51,
+          "parameter_name": "base_model.model.model.layers.12.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.13.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 52,
+          "parameter_name": "base_model.model.model.layers.13.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.13.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 53,
+          "parameter_name": "base_model.model.model.layers.13.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.13.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 54,
+          "parameter_name": "base_model.model.model.layers.13.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.13.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 55,
+          "parameter_name": "base_model.model.model.layers.13.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.14.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 56,
+          "parameter_name": "base_model.model.model.layers.14.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.14.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 57,
+          "parameter_name": "base_model.model.model.layers.14.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.14.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 58,
+          "parameter_name": "base_model.model.model.layers.14.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.14.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 59,
+          "parameter_name": "base_model.model.model.layers.14.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.15.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 60,
+          "parameter_name": "base_model.model.model.layers.15.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.15.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 61,
+          "parameter_name": "base_model.model.model.layers.15.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.15.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 62,
+          "parameter_name": "base_model.model.model.layers.15.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.15.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 63,
+          "parameter_name": "base_model.model.model.layers.15.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.16.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 64,
+          "parameter_name": "base_model.model.model.layers.16.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.16.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 65,
+          "parameter_name": "base_model.model.model.layers.16.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.16.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 66,
+          "parameter_name": "base_model.model.model.layers.16.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.16.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 67,
+          "parameter_name": "base_model.model.model.layers.16.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.17.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 68,
+          "parameter_name": "base_model.model.model.layers.17.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.17.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 69,
+          "parameter_name": "base_model.model.model.layers.17.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.17.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 70,
+          "parameter_name": "base_model.model.model.layers.17.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.17.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 71,
+          "parameter_name": "base_model.model.model.layers.17.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.18.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 72,
+          "parameter_name": "base_model.model.model.layers.18.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.18.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 73,
+          "parameter_name": "base_model.model.model.layers.18.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.18.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 74,
+          "parameter_name": "base_model.model.model.layers.18.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.18.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 75,
+          "parameter_name": "base_model.model.model.layers.18.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.19.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 76,
+          "parameter_name": "base_model.model.model.layers.19.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.19.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 77,
+          "parameter_name": "base_model.model.model.layers.19.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.19.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 78,
+          "parameter_name": "base_model.model.model.layers.19.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.19.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 79,
+          "parameter_name": "base_model.model.model.layers.19.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.20.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 80,
+          "parameter_name": "base_model.model.model.layers.20.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.20.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 81,
+          "parameter_name": "base_model.model.model.layers.20.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.20.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 82,
+          "parameter_name": "base_model.model.model.layers.20.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.20.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 83,
+          "parameter_name": "base_model.model.model.layers.20.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.21.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 84,
+          "parameter_name": "base_model.model.model.layers.21.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.21.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 85,
+          "parameter_name": "base_model.model.model.layers.21.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.21.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 86,
+          "parameter_name": "base_model.model.model.layers.21.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.21.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 87,
+          "parameter_name": "base_model.model.model.layers.21.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.22.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 88,
+          "parameter_name": "base_model.model.model.layers.22.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.22.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 89,
+          "parameter_name": "base_model.model.model.layers.22.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.22.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 90,
+          "parameter_name": "base_model.model.model.layers.22.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.22.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 91,
+          "parameter_name": "base_model.model.model.layers.22.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.23.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 92,
+          "parameter_name": "base_model.model.model.layers.23.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.23.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 93,
+          "parameter_name": "base_model.model.model.layers.23.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.23.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 94,
+          "parameter_name": "base_model.model.model.layers.23.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.23.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 95,
+          "parameter_name": "base_model.model.model.layers.23.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.24.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 96,
+          "parameter_name": "base_model.model.model.layers.24.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.24.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 97,
+          "parameter_name": "base_model.model.model.layers.24.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.24.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 98,
+          "parameter_name": "base_model.model.model.layers.24.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.24.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 99,
+          "parameter_name": "base_model.model.model.layers.24.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.25.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 100,
+          "parameter_name": "base_model.model.model.layers.25.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.25.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 101,
+          "parameter_name": "base_model.model.model.layers.25.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.25.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 102,
+          "parameter_name": "base_model.model.model.layers.25.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.25.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 103,
+          "parameter_name": "base_model.model.model.layers.25.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.26.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 104,
+          "parameter_name": "base_model.model.model.layers.26.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.26.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 105,
+          "parameter_name": "base_model.model.model.layers.26.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.26.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 106,
+          "parameter_name": "base_model.model.model.layers.26.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.26.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 107,
+          "parameter_name": "base_model.model.model.layers.26.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.27.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 108,
+          "parameter_name": "base_model.model.model.layers.27.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.27.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 109,
+          "parameter_name": "base_model.model.model.layers.27.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.27.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 110,
+          "parameter_name": "base_model.model.model.layers.27.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.27.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 111,
+          "parameter_name": "base_model.model.model.layers.27.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.28.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 112,
+          "parameter_name": "base_model.model.model.layers.28.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.28.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 113,
+          "parameter_name": "base_model.model.model.layers.28.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.28.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 114,
+          "parameter_name": "base_model.model.model.layers.28.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.28.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 115,
+          "parameter_name": "base_model.model.model.layers.28.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.29.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 116,
+          "parameter_name": "base_model.model.model.layers.29.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.29.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 117,
+          "parameter_name": "base_model.model.model.layers.29.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.29.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 118,
+          "parameter_name": "base_model.model.model.layers.29.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.29.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 119,
+          "parameter_name": "base_model.model.model.layers.29.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.30.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 120,
+          "parameter_name": "base_model.model.model.layers.30.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.30.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 121,
+          "parameter_name": "base_model.model.model.layers.30.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.30.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 122,
+          "parameter_name": "base_model.model.model.layers.30.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.30.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 123,
+          "parameter_name": "base_model.model.model.layers.30.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.31.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 124,
+          "parameter_name": "base_model.model.model.layers.31.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.31.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 125,
+          "parameter_name": "base_model.model.model.layers.31.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.31.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 126,
+          "parameter_name": "base_model.model.model.layers.31.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.31.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 127,
+          "parameter_name": "base_model.model.model.layers.31.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.32.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 128,
+          "parameter_name": "base_model.model.model.layers.32.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.32.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 129,
+          "parameter_name": "base_model.model.model.layers.32.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.32.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 130,
+          "parameter_name": "base_model.model.model.layers.32.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.32.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 131,
+          "parameter_name": "base_model.model.model.layers.32.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.33.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 132,
+          "parameter_name": "base_model.model.model.layers.33.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.33.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 133,
+          "parameter_name": "base_model.model.model.layers.33.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.33.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 134,
+          "parameter_name": "base_model.model.model.layers.33.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.33.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 135,
+          "parameter_name": "base_model.model.model.layers.33.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.34.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 136,
+          "parameter_name": "base_model.model.model.layers.34.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.34.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 137,
+          "parameter_name": "base_model.model.model.layers.34.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.34.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 138,
+          "parameter_name": "base_model.model.model.layers.34.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.34.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 139,
+          "parameter_name": "base_model.model.model.layers.34.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.35.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 140,
+          "parameter_name": "base_model.model.model.layers.35.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.35.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 141,
+          "parameter_name": "base_model.model.model.layers.35.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.35.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 142,
+          "parameter_name": "base_model.model.model.layers.35.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.35.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 143,
+          "parameter_name": "base_model.model.model.layers.35.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        }
+      ],
+      "run_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-cached-teacher-kl-train",
+      "source_archive_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b",
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-kl-train"
+    },
+    "cached_teacher_sft": {
+      "checkpoint": {
+        "adapter": {
+          "files": {
+            "adapter_config.json": "e742ca1f882a2deb7def5d3dde057f6b5d7fc9c8386067434d647e4b626803f7",
+            "adapter_model.safetensors": "89347967995c315d526e3c70ac79d122986907b153c1d5165ffad46a372f4bc5"
+          },
+          "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-cached-teacher-sft-train/cached_teacher_sft/checkpoint384/learner",
+          "tensor_sha256": "5e1d0af63e1549b882552da314e211e6473c8069531a71c0fbd76d95a86cc35b"
+        },
+        "optimizer_sha256": "246c15a66cbc88f92bdbc473cf7a9a5dda3dbdf2d1eacd28f0773fa3959ae998",
+        "train_probe_summary": {
+          "sequence_a": {
+            "cap_without_eos": 0.0,
+            "correct": 1.0,
+            "correct_prefix_with_extra_text": 0.0,
+            "count": 8,
+            "digit_position_accuracy": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "exact_body_without_valid_stop": 0.0,
+            "extra_body_characters": 0.0,
+            "format_valid": 1.0,
+            "terminated": 1.0
+          },
+          "sequence_b": {
+            "cap_without_eos": 0.0,
+            "correct": 1.0,
+            "correct_prefix_with_extra_text": 0.0,
+            "count": 8,
+            "digit_position_accuracy": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "exact_body_without_valid_stop": 0.0,
+            "extra_body_characters": 0.0,
+            "format_valid": 1.0,
+            "terminated": 1.0
+          },
+          "sequence_c": {
+            "cap_without_eos": 0.0,
+            "correct": 1.0,
+            "correct_prefix_with_extra_text": 0.0,
+            "count": 8,
+            "digit_position_accuracy": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "exact_body_without_valid_stop": 0.0,
+            "extra_body_characters": 0.0,
+            "format_valid": 1.0,
+            "terminated": 1.0
+          }
+        },
+        "train_probes_sha256": "89220f2b1c97a04e1a2b5165b1aadd2f71b621d47a58497678be1d59ed08685c"
+      },
+      "files_sha256": {
+        "cached_teacher_sft/checkpoint384/learner/adapter_config.json": "e742ca1f882a2deb7def5d3dde057f6b5d7fc9c8386067434d647e4b626803f7",
+        "cached_teacher_sft/checkpoint384/learner/adapter_model.safetensors": "89347967995c315d526e3c70ac79d122986907b153c1d5165ffad46a372f4bc5",
+        "cached_teacher_sft/checkpoint384/optimizer.pt": "246c15a66cbc88f92bdbc473cf7a9a5dda3dbdf2d1eacd28f0773fa3959ae998",
+        "cached_teacher_sft/checkpoint384/train_probes.json": "89220f2b1c97a04e1a2b5165b1aadd2f71b621d47a58497678be1d59ed08685c",
+        "cached_teacher_sft/ledger.json": "3ad12da1d730cc7c84310dec9aa2bc31d312240d56e3b7e25908c234c97b467f",
+        "cached_teacher_sft/prefix_diagnostics.json": "f26a2125df78aaf74a2e7ab14738eae770feb028e47111223c533cae54a0def0",
+        "cached_teacher_sft/trajectories.jsonl": "acdbe89c349448f59ad666330b6fb9bd809fd7f39555311cc29b47f93c09ed43",
+        "config.json": "14502754f43a1bb3928d3f2f9d2963ff81f30e48350527dacb150cae8d7dfe9a",
+        "control_evaluation_panels.json": "cfd81a219cd8191d53e0edb6955aac204f215148d15c46f7c6abd167632e8602",
+        "control_evaluation_result.json": "1c3e6670a2a58ad59913aaaf519d17c5104f967231d7a70872ce1cf565759c4f",
+        "control_schedule.json": "d7eebc1afa74f611bb84baee43b33b571d3a23976dacd6d1c910510064d8cef4",
+        "control_teacher_train_cache.json": "ceb73e9d49e02f60b8bafc4f504e17a634b44989fa248747b4050bec102e1d8e",
+        "control_training.json": "38ea46cb02a692a4ad4b5ee47112bf1c6bb56b3e1cce466678f5e74e2a41b893",
+        "execution.json": "dd740d773008ef91e23a1f468f6a051ac0ed53898fe3c8cdc4156cbe8e6cd0e7",
+        "final_retention.json": "74a8c60f7e8761a558dc096fbb64333aed67a9a31e651dc7a3f02bc098bce601",
+        "initial/learner/adapter_config.json": "e742ca1f882a2deb7def5d3dde057f6b5d7fc9c8386067434d647e4b626803f7",
+        "initial/learner/adapter_model.safetensors": "73b8732f0f593fe14df9d0dc22c289c383d80fde80d464e664c3ea754a36fc23",
+        "initial_retention.json": "b37671d8cc542d43a9be32ecb07ed2c27e104c5008f745a8eca3c8c913968212",
+        "initial_train_probes.json": "b845b7167dde6b46a84fdfa14136c54052db202403469e387c9d82fda39004f0",
+        "reference_schedule.json": "d7eebc1afa74f611bb84baee43b33b571d3a23976dacd6d1c910510064d8cef4",
+        "reference_training.json": "14cd4a0476ac9f5b5f22f589f7f1cb641d2c8dd903fea42408492d4dc1b04b04",
+        "runtime.json": "0190f261b276612725217d9c9519ce6c0450329345feaaa85dc63a3649ca8aff",
+        "runtime_dependency.json": "efbf44ad3af6fc97edcb8fb519b5c08b89135760816b32c734a9fc42370232e9",
+        "schedule.json": "d7eebc1afa74f611bb84baee43b33b571d3a23976dacd6d1c910510064d8cef4",
+        "seal.json": "65b0a5972ebd6d1f0b240b4ce2200030d57934f342ac64e7c1847e9c775a7038",
+        "task.json": "574ace10dc1fa68aa7aa03afad6a3478fb2fc5d3c656d00f6029f5f5a2977107",
+        "teacher_fresh_qualification.json": "f931259ad661ed441df77a0504983c551905a8372dfa42fdfa3b2b8ef152c56a",
+        "teacher_fresh_train.json": "c68e6afac2af21805a1232ee433a749695cbf1b61c50c08fbc71177c357bbd8b",
+        "teacher_fresh_validation.json": "04025a629d96badbc53f4db87fa865ef6dac0550c6a1df1d689c2cfa3bfa9cdc",
+        "teacher_qualification.json": "cf9b1ab01ee71e0e9265d2f73a7795e86b8a9f9e83a806d8fec47f3e3f2af91c",
+        "teacher_qualification_panels.json": "cd2a4f49e637aeae0774793f73b660e516baebac43638d2309ef106a23fe6dff",
+        "teacher_train_cache.json": "ceb73e9d49e02f60b8bafc4f504e17a634b44989fa248747b4050bec102e1d8e",
+        "training.json": "4015e562b09fb85cccbd3ca7b2617720f8dee2b024f53ec9c176e77512b7f5ae",
+        "untouched_train_probes.json": "b845b7167dde6b46a84fdfa14136c54052db202403469e387c9d82fda39004f0"
+      },
+      "method": "cached_teacher_sft",
+      "optimizer_options": {
+        "amsgrad": false,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "capturable": false,
+        "decoupled_weight_decay": true,
+        "differentiable": false,
+        "eps": 1e-08,
+        "foreach": null,
+        "fused": null,
+        "lr": 0.0003,
+        "maximize": false,
+        "weight_decay": 0.0
+      },
+      "optimizer_tensor_sha256": "0addf6eb8c0311fadf03e7be99f1e94451fd002607c994d58236aea93ef7658c",
+      "parameter_mapping": [
+        {
+          "adapter_key": "base_model.model.model.layers.0.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 0,
+          "parameter_name": "base_model.model.model.layers.0.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.0.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 1,
+          "parameter_name": "base_model.model.model.layers.0.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.0.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 2,
+          "parameter_name": "base_model.model.model.layers.0.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.0.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 3,
+          "parameter_name": "base_model.model.model.layers.0.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.1.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 4,
+          "parameter_name": "base_model.model.model.layers.1.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.1.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 5,
+          "parameter_name": "base_model.model.model.layers.1.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.1.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 6,
+          "parameter_name": "base_model.model.model.layers.1.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.1.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 7,
+          "parameter_name": "base_model.model.model.layers.1.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.2.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 8,
+          "parameter_name": "base_model.model.model.layers.2.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.2.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 9,
+          "parameter_name": "base_model.model.model.layers.2.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.2.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 10,
+          "parameter_name": "base_model.model.model.layers.2.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.2.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 11,
+          "parameter_name": "base_model.model.model.layers.2.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.3.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 12,
+          "parameter_name": "base_model.model.model.layers.3.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.3.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 13,
+          "parameter_name": "base_model.model.model.layers.3.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.3.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 14,
+          "parameter_name": "base_model.model.model.layers.3.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.3.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 15,
+          "parameter_name": "base_model.model.model.layers.3.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.4.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 16,
+          "parameter_name": "base_model.model.model.layers.4.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.4.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 17,
+          "parameter_name": "base_model.model.model.layers.4.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.4.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 18,
+          "parameter_name": "base_model.model.model.layers.4.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.4.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 19,
+          "parameter_name": "base_model.model.model.layers.4.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.5.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 20,
+          "parameter_name": "base_model.model.model.layers.5.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.5.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 21,
+          "parameter_name": "base_model.model.model.layers.5.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.5.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 22,
+          "parameter_name": "base_model.model.model.layers.5.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.5.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 23,
+          "parameter_name": "base_model.model.model.layers.5.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.6.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 24,
+          "parameter_name": "base_model.model.model.layers.6.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.6.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 25,
+          "parameter_name": "base_model.model.model.layers.6.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.6.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 26,
+          "parameter_name": "base_model.model.model.layers.6.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.6.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 27,
+          "parameter_name": "base_model.model.model.layers.6.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.7.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 28,
+          "parameter_name": "base_model.model.model.layers.7.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.7.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 29,
+          "parameter_name": "base_model.model.model.layers.7.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.7.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 30,
+          "parameter_name": "base_model.model.model.layers.7.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.7.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 31,
+          "parameter_name": "base_model.model.model.layers.7.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.8.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 32,
+          "parameter_name": "base_model.model.model.layers.8.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.8.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 33,
+          "parameter_name": "base_model.model.model.layers.8.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.8.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 34,
+          "parameter_name": "base_model.model.model.layers.8.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.8.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 35,
+          "parameter_name": "base_model.model.model.layers.8.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.9.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 36,
+          "parameter_name": "base_model.model.model.layers.9.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.9.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 37,
+          "parameter_name": "base_model.model.model.layers.9.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.9.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 38,
+          "parameter_name": "base_model.model.model.layers.9.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.9.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 39,
+          "parameter_name": "base_model.model.model.layers.9.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.10.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 40,
+          "parameter_name": "base_model.model.model.layers.10.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.10.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 41,
+          "parameter_name": "base_model.model.model.layers.10.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.10.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 42,
+          "parameter_name": "base_model.model.model.layers.10.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.10.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 43,
+          "parameter_name": "base_model.model.model.layers.10.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.11.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 44,
+          "parameter_name": "base_model.model.model.layers.11.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.11.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 45,
+          "parameter_name": "base_model.model.model.layers.11.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.11.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 46,
+          "parameter_name": "base_model.model.model.layers.11.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.11.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 47,
+          "parameter_name": "base_model.model.model.layers.11.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.12.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 48,
+          "parameter_name": "base_model.model.model.layers.12.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.12.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 49,
+          "parameter_name": "base_model.model.model.layers.12.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.12.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 50,
+          "parameter_name": "base_model.model.model.layers.12.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.12.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 51,
+          "parameter_name": "base_model.model.model.layers.12.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.13.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 52,
+          "parameter_name": "base_model.model.model.layers.13.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.13.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 53,
+          "parameter_name": "base_model.model.model.layers.13.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.13.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 54,
+          "parameter_name": "base_model.model.model.layers.13.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.13.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 55,
+          "parameter_name": "base_model.model.model.layers.13.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.14.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 56,
+          "parameter_name": "base_model.model.model.layers.14.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.14.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 57,
+          "parameter_name": "base_model.model.model.layers.14.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.14.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 58,
+          "parameter_name": "base_model.model.model.layers.14.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.14.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 59,
+          "parameter_name": "base_model.model.model.layers.14.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.15.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 60,
+          "parameter_name": "base_model.model.model.layers.15.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.15.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 61,
+          "parameter_name": "base_model.model.model.layers.15.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.15.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 62,
+          "parameter_name": "base_model.model.model.layers.15.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.15.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 63,
+          "parameter_name": "base_model.model.model.layers.15.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.16.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 64,
+          "parameter_name": "base_model.model.model.layers.16.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.16.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 65,
+          "parameter_name": "base_model.model.model.layers.16.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.16.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 66,
+          "parameter_name": "base_model.model.model.layers.16.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.16.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 67,
+          "parameter_name": "base_model.model.model.layers.16.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.17.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 68,
+          "parameter_name": "base_model.model.model.layers.17.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.17.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 69,
+          "parameter_name": "base_model.model.model.layers.17.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.17.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 70,
+          "parameter_name": "base_model.model.model.layers.17.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.17.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 71,
+          "parameter_name": "base_model.model.model.layers.17.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.18.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 72,
+          "parameter_name": "base_model.model.model.layers.18.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.18.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 73,
+          "parameter_name": "base_model.model.model.layers.18.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.18.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 74,
+          "parameter_name": "base_model.model.model.layers.18.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.18.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 75,
+          "parameter_name": "base_model.model.model.layers.18.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.19.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 76,
+          "parameter_name": "base_model.model.model.layers.19.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.19.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 77,
+          "parameter_name": "base_model.model.model.layers.19.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.19.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 78,
+          "parameter_name": "base_model.model.model.layers.19.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.19.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 79,
+          "parameter_name": "base_model.model.model.layers.19.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.20.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 80,
+          "parameter_name": "base_model.model.model.layers.20.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.20.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 81,
+          "parameter_name": "base_model.model.model.layers.20.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.20.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 82,
+          "parameter_name": "base_model.model.model.layers.20.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.20.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 83,
+          "parameter_name": "base_model.model.model.layers.20.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.21.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 84,
+          "parameter_name": "base_model.model.model.layers.21.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.21.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 85,
+          "parameter_name": "base_model.model.model.layers.21.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.21.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 86,
+          "parameter_name": "base_model.model.model.layers.21.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.21.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 87,
+          "parameter_name": "base_model.model.model.layers.21.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.22.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 88,
+          "parameter_name": "base_model.model.model.layers.22.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.22.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 89,
+          "parameter_name": "base_model.model.model.layers.22.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.22.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 90,
+          "parameter_name": "base_model.model.model.layers.22.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.22.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 91,
+          "parameter_name": "base_model.model.model.layers.22.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.23.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 92,
+          "parameter_name": "base_model.model.model.layers.23.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.23.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 93,
+          "parameter_name": "base_model.model.model.layers.23.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.23.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 94,
+          "parameter_name": "base_model.model.model.layers.23.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.23.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 95,
+          "parameter_name": "base_model.model.model.layers.23.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.24.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 96,
+          "parameter_name": "base_model.model.model.layers.24.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.24.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 97,
+          "parameter_name": "base_model.model.model.layers.24.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.24.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 98,
+          "parameter_name": "base_model.model.model.layers.24.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.24.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 99,
+          "parameter_name": "base_model.model.model.layers.24.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.25.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 100,
+          "parameter_name": "base_model.model.model.layers.25.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.25.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 101,
+          "parameter_name": "base_model.model.model.layers.25.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.25.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 102,
+          "parameter_name": "base_model.model.model.layers.25.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.25.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 103,
+          "parameter_name": "base_model.model.model.layers.25.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.26.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 104,
+          "parameter_name": "base_model.model.model.layers.26.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.26.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 105,
+          "parameter_name": "base_model.model.model.layers.26.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.26.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 106,
+          "parameter_name": "base_model.model.model.layers.26.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.26.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 107,
+          "parameter_name": "base_model.model.model.layers.26.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.27.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 108,
+          "parameter_name": "base_model.model.model.layers.27.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.27.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 109,
+          "parameter_name": "base_model.model.model.layers.27.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.27.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 110,
+          "parameter_name": "base_model.model.model.layers.27.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.27.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 111,
+          "parameter_name": "base_model.model.model.layers.27.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.28.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 112,
+          "parameter_name": "base_model.model.model.layers.28.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.28.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 113,
+          "parameter_name": "base_model.model.model.layers.28.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.28.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 114,
+          "parameter_name": "base_model.model.model.layers.28.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.28.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 115,
+          "parameter_name": "base_model.model.model.layers.28.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.29.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 116,
+          "parameter_name": "base_model.model.model.layers.29.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.29.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 117,
+          "parameter_name": "base_model.model.model.layers.29.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.29.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 118,
+          "parameter_name": "base_model.model.model.layers.29.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.29.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 119,
+          "parameter_name": "base_model.model.model.layers.29.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.30.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 120,
+          "parameter_name": "base_model.model.model.layers.30.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.30.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 121,
+          "parameter_name": "base_model.model.model.layers.30.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.30.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 122,
+          "parameter_name": "base_model.model.model.layers.30.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.30.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 123,
+          "parameter_name": "base_model.model.model.layers.30.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.31.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 124,
+          "parameter_name": "base_model.model.model.layers.31.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.31.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 125,
+          "parameter_name": "base_model.model.model.layers.31.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.31.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 126,
+          "parameter_name": "base_model.model.model.layers.31.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.31.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 127,
+          "parameter_name": "base_model.model.model.layers.31.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.32.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 128,
+          "parameter_name": "base_model.model.model.layers.32.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.32.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 129,
+          "parameter_name": "base_model.model.model.layers.32.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.32.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 130,
+          "parameter_name": "base_model.model.model.layers.32.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.32.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 131,
+          "parameter_name": "base_model.model.model.layers.32.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.33.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 132,
+          "parameter_name": "base_model.model.model.layers.33.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.33.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 133,
+          "parameter_name": "base_model.model.model.layers.33.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.33.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 134,
+          "parameter_name": "base_model.model.model.layers.33.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.33.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 135,
+          "parameter_name": "base_model.model.model.layers.33.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.34.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 136,
+          "parameter_name": "base_model.model.model.layers.34.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.34.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 137,
+          "parameter_name": "base_model.model.model.layers.34.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.34.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 138,
+          "parameter_name": "base_model.model.model.layers.34.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.34.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 139,
+          "parameter_name": "base_model.model.model.layers.34.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.35.self_attn.q_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 140,
+          "parameter_name": "base_model.model.model.layers.35.self_attn.q_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.35.self_attn.q_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 141,
+          "parameter_name": "base_model.model.model.layers.35.self_attn.q_proj.lora_B.learner.weight",
+          "shape": [
+            4096,
+            8
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.35.self_attn.v_proj.lora_A.weight",
+          "dtype": "torch.float32",
+          "numel": 32768,
+          "optimizer_id": 142,
+          "parameter_name": "base_model.model.model.layers.35.self_attn.v_proj.lora_A.learner.weight",
+          "shape": [
+            8,
+            4096
+          ]
+        },
+        {
+          "adapter_key": "base_model.model.model.layers.35.self_attn.v_proj.lora_B.weight",
+          "dtype": "torch.float32",
+          "numel": 8192,
+          "optimizer_id": 143,
+          "parameter_name": "base_model.model.model.layers.35.self_attn.v_proj.lora_B.learner.weight",
+          "shape": [
+            1024,
+            8
+          ]
+        }
+      ],
+      "run_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-cached-teacher-sft-train",
+      "source_archive_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b",
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-sft-train"
+    }
+  },
+  "start_update": 384,
+  "teacher": {
+    "fresh_native_prelearning_check": "all384TRAIN_and96VAL_exact_saved_native_generations_before_learner_load",
+    "new_optimization_updates": 0,
+    "qualification_sha256": "cf9b1ab01ee71e0e9265d2f73a7795e86b8a9f9e83a806d8fec47f3e3f2af91c",
+    "selected_checkpoint": 384,
+    "tensor_sha256": "fab63ae6d7c27209cde004c1fae57cc7758a9fc360fafd791ea8ad3045884f21",
+    "train_correct": 384,
+    "validation_correct": 96
+  },
+  "teacher_checkpoint": {
+    "files": {
+      "adapter_config.json": "92e516f4dd1e47231c9b31925eb67085c0969107eb1489fd66ea7fb166d28feb",
+      "adapter_model.safetensors": "e789118f6e688870b08ef2541bb379af1eb58a6c3c9e5af5a596de9729d711dc"
+    },
+    "optimizer_sha256": "fa05908baa440f6622810b50247ce87c202b9be11950aa30ac0d7e073ddfca7f",
+    "path": "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-train-20260912/checkpoint384/teacher",
+    "tensor_sha256": "fab63ae6d7c27209cde004c1fae57cc7758a9fc360fafd791ea8ad3045884f21",
+    "train_probe_summary": {
+      "sequence_a": {
+        "cap_without_eos": 0.0,
+        "correct": 1.0,
+        "correct_prefix_with_extra_text": 0.0,
+        "count": 32,
+        "digit_position_accuracy": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "exact_body_without_valid_stop": 0.0,
+        "extra_body_characters": 0.0,
+        "format_valid": 1.0,
+        "terminated": 1.0
+      },
+      "sequence_b": {
+        "cap_without_eos": 0.0,
+        "correct": 1.0,
+        "correct_prefix_with_extra_text": 0.0,
+        "count": 32,
+        "digit_position_accuracy": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "exact_body_without_valid_stop": 0.0,
+        "extra_body_characters": 0.0,
+        "format_valid": 1.0,
+        "terminated": 1.0
+      },
+      "sequence_c": {
+        "cap_without_eos": 0.0,
+        "correct": 1.0,
+        "correct_prefix_with_extra_text": 0.0,
+        "count": 32,
+        "digit_position_accuracy": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "exact_body_without_valid_stop": 0.0,
+        "extra_body_characters": 0.0,
+        "format_valid": 1.0,
+        "terminated": 1.0
+      }
+    },
+    "train_probes_sha256": "c30aa75e9c3e17469cca33ca3588fc4feaf2eaae70746fae0918e77f9e7e4ba2"
+  },
+  "tokens": {
+    "additional": 588,
+    "cached_at384": 10752,
+    "cached_at405": 11340,
+    "excess_over_ownprefix": 26,
+    "ownprefix_at384": 11314
+  },
+  "training": {
+    "checkpoint_updates": [
+      32,
+      128,
+      384
+    ],
+    "epochs": 4,
+    "example_exposures_per_arm": 1536,
+    "examples_per_update": 4,
+    "initialization_seed": 91230417,
+    "learning_rate": 0.0003,
+    "max_grad_norm": 1.0,
+    "methods": [
+      "onpolicy_kl",
+      "cached_teacher_kl",
+      "cached_teacher_sft"
+    ],
+    "order_seed": 91230431,
+    "probe_rows_per_task": 8,
+    "selection": "fixed_final384",
+    "updates_per_arm": 384,
+    "weight_decay": 0.0
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "method": "cached_teacher_sft",
+  "protocol": "configs/onpolicy303-budget-protocol.json",
+  "protocol_sha256": "97300f7fd7fda6f209f829708995accaea34381faef29f603ac25e028416dc92",
+  "stage": "continue_and_evaluate",
+  "task_id": "followthrough-20260912-onpolicy303-budget-cached-teacher-sft"
+}

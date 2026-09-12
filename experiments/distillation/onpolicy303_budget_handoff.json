@@ -1,0 +1,468 @@
+{
+  "branch": "research/resume-20260911",
+  "claim_boundary": "Post-observation conservative extra-training control for total loss-token exposure. Cached controls get11340 tokens and405 updates versus fixed ownprefix384 at11314 tokens and384 updates. This is not an exact token, update, or FLOP match and cannot isolate all objective or trajectory differences. One seed, same384TRAIN rows, previously observed192TEST/864unused and128generic. Native export remains ownprefix384 regardless of these outcomes.",
+  "contract": "onpolicy303_cached_controls_384_plus_21_post_observation",
+  "cpu_validation": {
+    "boundary": "CPU artifacts and tiny-model resume controls only. No new405 full-size GPU training, GPU resume parity or405 heldout result is claimed; those remain required parent jobs.",
+    "exit_code": 0,
+    "lint_command": "uv tool run ruff check /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/onpolicy303_budget.py /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/onpolicy303_budget_contract.py /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_onpolicy303_budget.py",
+    "lint_result": "All checks passed!",
+    "meaningful_controls": [
+      "Tiny Qwen rank8 q/v: uninterrupted405 equals saved384+21 bitwise for final adapter AND AdamW under each original SFT/KL loss.",
+      "All144 saved original optimizer states per arm: clock384, FP32 finite moments, exact field/ID/shape/order/options/tensor hashes and bound checkpoint384 files.",
+      "Corrupt clock, missing/NaN/misshaped moment, same-shape parameter-order permutation, LR change and moment-hash mutation reject before any update.",
+      "Original384 batch-ID lists exactly preserved; fixed next-epoch21 batches sealed;10752+588=11340 and26 over ownprefix. Corrupted schedule/cache rejected.",
+      "Failed KL teacher qualification cannot load a student. Failed checkpoint384 native parity cannot start continuation.",
+      "Separate uv-launched CPU evaluator reloads only tiny base+learner; exact logits parity; teacher Path.read_bytes/torch.load/symlink reads rejected; wrong PID/token/receipt rejects.",
+      "Both dispatch configs accept an existing supervisor run directory and use a fresh study child; repeat invocation refuses overwrite.",
+      "Module Torch version and distribution Torch version checked independently without normalization or cross-comparison."
+    ],
+    "result": "32 passed in 14.31s",
+    "runtime": {
+      "packages": {
+        "peft": "0.20.0",
+        "safetensors": "0.8.0",
+        "torch": "2.14.0",
+        "transformers": "5.16.1"
+      },
+      "torch_module_version": "2.14.0"
+    },
+    "test_command": "PYTHONPATH=/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python -B -m pytest -q /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_onpolicy303_budget.py",
+    "tests_passed": 32
+  },
+  "dispatch_performed": false,
+  "fresh_evaluator": {
+    "generic_reload_and_evaluation_rows": 128,
+    "native_train_reload_rows": 24,
+    "optimizer_updates": 0,
+    "process_chain": "training Python -> launched uv -> fresh evaluator Python; verify PIDs, parent link, unique token and training receipt hash",
+    "read_ban": "Python open audit hook and explicit path approval for every frozen local-only model loader; blocks teacher/source-run/cache/optimizer paths including symlink resolution. Not an OS syscall sandbox or a claim of monitoring arbitrary native extension I/O.",
+    "read_ban_blocks": "Original teacher/source run paths, teacher/cache/training-trajectory material and optimizer files; resolves symlinks. Only pinned base and own405 learner model paths approved before loading.",
+    "scoring": "Original whole answer plus native EOS. Generic128 retains original native multiple-choice likelihood scoring.",
+    "teacher_model_loaded": false,
+    "test_rows": 192,
+    "train_memory_release": "Parent function returns only serializable receipts, then GC and CUDA cache release; require zero allocated training tensors before launching child.",
+    "unused_rows": 864
+  },
+  "frozen_original_source_archive_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b",
+  "frozen_sources": {
+    "cached_teacher_kl": {
+      "bound_input_files": 34,
+      "checkpoint384_tensor_sha256": "6e22f9c38f29908acfd9c4e417001a0440877efa874e5de0ff938445cfa3bc9b",
+      "optimizer384_file_sha256": "bab6e55d95bf4c24e8966ef985105231b60975df4f15c19e6b7e9ef839bd5ad3",
+      "optimizer384_tensor_sha256": "cf04218dbd94c95d2991d88849a74f5af093ebc6aa04b76dcde6cd9a05691c1f",
+      "optimizer_parameter_states": 144,
+      "parameter_order_sha256": "51728a49bf71684a1a7aad48cb784eaa74ad0e5204172f62cdd7d26795147788",
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-kl-train",
+      "training_json_sha256": "0aa69650b08cd2349fa4349c6bbebcb3be62defd8a8b082ce91eb13d6f2b3c88"
+    },
+    "cached_teacher_sft": {
+      "bound_input_files": 34,
+      "checkpoint384_tensor_sha256": "5e1d0af63e1549b882552da314e211e6473c8069531a71c0fbd76d95a86cc35b",
+      "optimizer384_file_sha256": "246c15a66cbc88f92bdbc473cf7a9a5dda3dbdf2d1eacd28f0773fa3959ae998",
+      "optimizer384_tensor_sha256": "0addf6eb8c0311fadf03e7be99f1e94451fd002607c994d58236aea93ef7658c",
+      "optimizer_parameter_states": 144,
+      "parameter_order_sha256": "51728a49bf71684a1a7aad48cb784eaa74ad0e5204172f62cdd7d26795147788",
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-sft-train",
+      "training_json_sha256": "4015e562b09fb85cccbd3ca7b2617720f8dee2b024f53ec9c176e77512b7f5ae"
+    }
+  },
+  "hash_closure": {
+    "files": 24,
+    "files_mapping_sha256": "93167f7d90428514e8f96e94eaeb6e6279c83fc880e3407ad959b2fc3e72de76",
+    "files_sha256": {
+      "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+      "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+      "configs/choice_consolidation_protocol.json": "eadd92577ebf0945039ccde7a84f22d1150fd40df31c9c9ee7d14a1bd6f3706e",
+      "configs/coverage_learner_protocol.json": "7f8eb9e06f2472fcdd5e62e5d9017ee4cdf4a63a78daadcd32f46968a8a7ecad",
+      "configs/coverage_teacher_protocol.json": "1724268c16e6b4586f17e1d547076ab52ac9ba4ff613475963a99c4eb3d72340",
+      "configs/generation_consolidation_protocol.json": "5c933efc2fc32d2ae94784056a901d587cd6f5abafe07f87a03f0c78a6d7203e",
+      "configs/generation_teacher_protocol.json": "f618e00551fe75ed9117318869426ee81a6d006bfd8bf0d9046401f99a5f0ab0",
+      "configs/onpolicy303-budget-cached-teacher-kl.json": "eec30ea9dfb84e07700bab6eac0767cf6e5d9b08714a5b23b7f0104c4b9c7095",
+      "configs/onpolicy303-budget-cached-teacher-sft.json": "d24ce61cb264da593e6b3588e3d3a195a9c77f995b95dd4da3629531964c4e3a",
+      "configs/onpolicy303-budget-protocol.json": "8b9118e0d6ec4b73d6c54b3bca90e12aca3d422711bea72faa74da3031fb474d",
+      "configs/onpolicy303_protocol.json": "3590d104cb057852a2dda2d71faade59f055ad9e5e3f628abe6efd5751921aed",
+      "configs/onpolicy303_retention.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+      "coverage_learner.py": "1493db6ff826f604275fa3a0bce7e31fad3db3f36b22eb891a083468414e7aac",
+      "coverage_teacher.py": "0fdfc95ae89dd8063fbb007633b6c4b0579f747f1c1e77b603e03a6b0aad339a",
+      "data/sequence303.json": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2",
+      "data/sequence303_unused_inputs.json": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e",
+      "generation_consolidation.py": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac",
+      "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+      "onpolicy303.py": "21af665aa3f13f13b5423d9939fda839ff1ab1a85179b299f39da38cb2ed23b4",
+      "onpolicy303_budget.py": "e6805cae932a936ce2ab4a7b698409614e2f7f174d99bbf5fff02615391dae0e",
+      "onpolicy303_budget_contract.py": "69297aeec5a3a26f1caa519fcfcc5058af9b7a34a26c38c87eaa5a13d83dbc1b",
+      "onpolicy303_contract.py": "ae7442e01c90062f1988c353d9cd3f310a3d0af32021ffcbdabcd4ab4c2e97b1",
+      "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770",
+      "test_onpolicy303_budget.py": "84863b90c9a015542b715173742b8bfd9884cad87916b017923ebbf588976342"
+    },
+    "root": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation",
+    "scope": "24 explicit scientific/test/config files. This is not the full deployable archive hash. Parent stages the whole finalized lane after other owners freeze and records that archive identity. Handoff itself is not self-hashed; report its final file hash separately."
+  },
+  "jobs": [
+    {
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-cached-teacher-sft.json",
+      "config_sha256": "d24ce61cb264da593e6b3588e3d3a195a9c77f995b95dd4da3629531964c4e3a",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-cached-teacher-sft-train"
+      ],
+      "dispatch_command_for_parent_only": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation --config /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-cached-teacher-sft.json --id followthrough-20260912-onpolicy303-budget-cached-teacher-sft --entrypoint onpolicy303_budget.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on followthrough-20260912-onpolicy303-cached-teacher-sft-train --control-pod \"${ONPOLICY_BUDGET_CONTROL_POD:?set the current qualified control pod}\" --submit",
+      "entrypoint": "onpolicy303_budget.py",
+      "gpus": 1,
+      "method": "cached_teacher_sft",
+      "protocol_sha256": "97300f7fd7fda6f209f829708995accaea34381faef29f603ac25e028416dc92",
+      "run_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-budget-cached-teacher-sft",
+      "stage": "continue_and_evaluate",
+      "supervisor_interface": "Only --config PATH --output-dir EXISTING_RUN_DIR; creates a fresh study child. Each task trains then launches its own fresh evaluator on the same remapped GPU.",
+      "task_id": "followthrough-20260912-onpolicy303-budget-cached-teacher-sft"
+    },
+    {
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-cached-teacher-kl.json",
+      "config_sha256": "eec30ea9dfb84e07700bab6eac0767cf6e5d9b08714a5b23b7f0104c4b9c7095",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-cached-teacher-kl-train",
+        "consolidation-source303-coverage-20260912"
+      ],
+      "dispatch_command_for_parent_only": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation --config /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-cached-teacher-kl.json --id followthrough-20260912-onpolicy303-budget-cached-teacher-kl --entrypoint onpolicy303_budget.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on followthrough-20260912-onpolicy303-cached-teacher-kl-train --depends-on consolidation-source303-coverage-20260912 --control-pod \"${ONPOLICY_BUDGET_CONTROL_POD:?set the current qualified control pod}\" --submit",
+      "entrypoint": "onpolicy303_budget.py",
+      "gpus": 1,
+      "method": "cached_teacher_kl",
+      "protocol_sha256": "97300f7fd7fda6f209f829708995accaea34381faef29f603ac25e028416dc92",
+      "run_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-budget-cached-teacher-kl",
+      "stage": "continue_and_evaluate",
+      "supervisor_interface": "Only --config PATH --output-dir EXISTING_RUN_DIR; creates a fresh study child. Each task trains then launches its own fresh evaluator on the same remapped GPU.",
+      "task_id": "followthrough-20260912-onpolicy303-budget-cached-teacher-kl"
+    }
+  ],
+  "modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/onpolicy303_budget.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/onpolicy303_budget_contract.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_onpolicy303_budget.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-cached-teacher-sft.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-cached-teacher-kl.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/onpolicy303_budget_handoff.json"
+  ],
+  "native_export": {
+    "checkpoint": 384,
+    "method": "onpolicy_kl",
+    "selection_changed_by_control": false
+  },
+  "optimizer_restore": "Restore the original checkpoint384 learner tensors and saved AdamW first/second moments and clocks. Saved AdamW has no parameter names: reconstruct the exact frozen Qwen3/PEFT factory registration order (numeric layer, q then v, A then B), bind explicit names/shapes/IDs against the loaded model, and check all144 saved state slots, exact options and bitwise moment hash before updating. No optimizer reset or scheduler.",
+  "outputs_after_completed_jobs": [
+    "study/prerequisites.json",
+    "study/optimizer_restore.json",
+    "study/parameter_mapping.json",
+    "study/schedule.json",
+    "study/ledger.json",
+    "study/trajectories.jsonl",
+    "study/checkpoint405/learner/adapter_model.safetensors",
+    "study/checkpoint405/optimizer.pt",
+    "study/training.json",
+    "study/evaluation_launch.json",
+    "study/evaluation_process.json",
+    "study/evaluation/panels.json",
+    "study/evaluation/retention.json",
+    "study/evaluation/result.json",
+    "study/result.json"
+  ],
+  "primary_source": "https://docs.pytorch.org/docs/stable/generated/torch.optim.AdamW",
+  "prior_sources_edited": false,
+  "protocol": {
+    "file_sha256": "8b9118e0d6ec4b73d6c54b3bca90e12aca3d422711bea72faa74da3031fb474d",
+    "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-protocol.json",
+    "payload_sha256": "97300f7fd7fda6f209f829708995accaea34381faef29f603ac25e028416dc92"
+  },
+  "provider_mutations": false,
+  "qualification_before_updates": "Before any updates, require checkpoint384 native24TRAIN and all128generic raw records to equal the original saved records exactly. KL first loads the original frozen FP32 coverage expert and freshly requires all384TRAIN+96VAL exact qualified native generations before student load. SFT uses the original all-correct cached responses without loading an expert. Any failed prerequisite stops before updates; no recipe fallback.",
+  "repository": "/Users/sudarshan/Code/attempting-continual-learning",
+  "runtime_versions": {
+    "packages": {
+      "peft": "0.20.0",
+      "safetensors": "0.8.0",
+      "torch": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+      "transformers": "5.16.1"
+    },
+    "torch_module_version": "2.10.0+rocm7.2.4.git3d3aa833"
+  },
+  "runtime_versions_provenance": "Torch module version from parent live qualified worker inspection; each distribution version from immutable original runtime.json packages. These are distinct exact fields with no normalization or cross-comparison.",
+  "schedule": {
+    "continuation_batch_ids": [
+      [
+        "a672584a559f609565c1adfce1c1ee6a2a4fa0316a2d7811c1b5da92151889e9",
+        "25800cebbfff541e8543a07a760e15c69422c9af1e74055b6b6bc4266dafd6c4",
+        "2e58859740b49a82b65c0f7db28b4b0957dab2357940fefe24ae8ccf1f9f13c5",
+        "abf946ea98be14fec152898f42241e0c3f30f85d033a75d394bfbfd606ecb3c9"
+      ],
+      [
+        "56a1a339fcec096de6cb75706d5ee88dc3ae0ef0de39b8e1e764d6cf6b8bd53a",
+        "a31e58a08f7a9ccdfea2d441a873ebd5f24af9f807b9217fd50ae9d665a5b226",
+        "627a6c6b9b4d9fc197a2089e99eeed1370f97d09884072dc6c6af2077bfa9444",
+        "959f2995e876c1885f43f1667a066b90bcbc13911a4f4abf895b54f0d910a8e1"
+      ],
+      [
+        "89110dd00eb1aa6a51c916f9ab46217fe91dd80007871ac07e9342ca81ede757",
+        "9bdf26f1a08a260d1037d849d924f8ecb858f83d0a4ddbf8370774ce820a8a4c",
+        "17021ed299d04fc22cf1698e89388ba93da7ba910b9c3d24c37ff0f6935b989f",
+        "7616c1f7fe87ef57de74be22fcc301a213fe9352708f0a757ba3b1dca9682ce4"
+      ],
+      [
+        "06d9d450d093acc17c3a0ad4202078f608ff04524629f4a46d2ee8416f9995ae",
+        "62a2e536d3d74ec217050373e3ecccd2d1f7a6b9693584a47679064bbe4e8bd9",
+        "54495ca25a920290984ba59d30bf08a6d8805856aee30e523fe5fc6e94254c36",
+        "000aae75dd3c5d3997a8409c2a083ee5b875d0a4dc39d2a0045b71ab991e8729"
+      ],
+      [
+        "2de2c3c3c4c5070200e6cd6b661b57bf53bf8bd3d80027ac51380d6d9523793f",
+        "ab287edc5fcdc7b3f1d0fd36b71a9cfc6b3cc7b7882d44ccd788b6088af0d814",
+        "7f6ed248bd94bd13eda8c28ca6aa72bc825d7056bf08e0887ed5eafbb0a20e90",
+        "2447be5bdbde9354c64dc6d81b339bbf57e5bce64a9640e0cfd7be862b04c420"
+      ],
+      [
+        "5d48375fae0a53aa311776fac82d650a1f0bb9aaac582868ae8cab086b5437dc",
+        "10773e3d09819eddc0a43dad3ed90832fc70f7b4a62ec9e6a808fe0d1c5e969c",
+        "831c3b0a3a2cc7608a2a790e51e2b4f482537269f18cfdd0b9503e6e9d8796a5",
+        "0dab0edfead2080cfdc70e6abc3b536cd35125ccba63e1510c8b600315e62b10"
+      ],
+      [
+        "3e8d88440498f2172150dd3902d84bc259c28b6a30be97e6d466a79279738782",
+        "6f36f26df57ad71742a2c28cfd94fe9bc84ae2beac4697cd8388cc9d651a3681",
+        "5392007c5fb3286f62a392443bd7ab17f0caa85de1f59cc1991b3ff8e9608151",
+        "d7dbab781da2ba55c1d187983067ea7df794aeae25f61d495b66dfa0d8ee8769"
+      ],
+      [
+        "8c059260814a9c5c7d1038ad4a24d193d7a81a3c6ed26b255fa97831c9011c64",
+        "9520e93283a9d06a3c4dcaec1e8958147a127d328b96b23c1a42c1efecb0cedc",
+        "fe5b5016cf4adb3ccc165050c9ca4e2dcd48cb94c2eabff8bd0886d41e69d982",
+        "8bf43c787553672cb7c63968d07e98ee61c5ee2272c0f90f2711b39b68c82a40"
+      ],
+      [
+        "a3ae846c125be983111dc0d3c84d5be6b2d741e4ebab6ec34de49f8bcefba964",
+        "e24a171f12aef1ef4bf69c24b66e0679c8eed31585a256d10caad7e62c8db572",
+        "f27aa74dbafb0389e2495481b8a185e20750bb2b82167a011d60a3fd828eeddb",
+        "dbcce322605a3d364ed0d575ecd6291d2e149c80abdd6598f469a055ee75f7ad"
+      ],
+      [
+        "2a7ad06ec0f6ef3774a56808afc77e205597ae605f8be30bf69bb5b323cf9ce1",
+        "a78001a4f2c2df10866d82f1b1276b799998c0e4ea86894d3dfa51d0df111eda",
+        "b148dde25772b4271c75aab5bfda7b3166b8770ccca00547301511eef1a01a79",
+        "a1b66c97a629187b86cf71e571f2a5f740292b5f4deab3e267f753639b895616"
+      ],
+      [
+        "7eb6f2c9e90ad69185f84c22833c7f18e321272ed3b4a36da21f6001714ddbec",
+        "bde9545f23b9532a69f1b1727dd1781d9d7a2f2a43afbe9071e2baef0acd2568",
+        "1e86ec1847d9aa0a0059c1fd0883dc243531d76e7a692a5997f278884e879f48",
+        "5c15e42acf51ccd9da344838f267b0376b2d6d9eab7739fed5b52df4f4e577be"
+      ],
+      [
+        "6da7319d3baab888df85f7af5481944c1e7ebbe88202f79686a154d6b72e0bf3",
+        "bd887119a374aa09cc76d247a3e83719c4f56286d45de60481ff46ed35918de1",
+        "080fabdd8f98f93aab0640a58974c2a9a5c6dfc89a6f00d4d928116702567cd1",
+        "46e96c3cdc99e988d72293b483eb6dcb85273742ebb7da2b7cc0e43592a8b7e9"
+      ],
+      [
+        "2886bd3d8d08070b965a2ee8aeff9c5b9acad733c809c73d582b312aa2fc5326",
+        "ec158321bb3176883179aa06530687c81386d7f9182a5ba6f7f7cbfedf578b51",
+        "223e0b42c053e606c64f3bb7c1bf73be6f38f98d7cc1c03e67e87bc2adf89d26",
+        "6360408868ff63aad0a47c55bcb324fc19f1d5a06257ad3d268ab12f4cd0a67b"
+      ],
+      [
+        "c6697949c791539de5ce9ccc085024a14b6b8a37c471f91f0419c6338f201eb9",
+        "b5a3ff585428d4471118f0680721947b49244e31abc863894d39984cd3bd7ea8",
+        "e03e9b712fa4547acc10ac5d30551bcab0384aeec10a78a05b14da1230f6ef78",
+        "84cff6e7f3821966237cbdd6f6038dda4cdc2d4082de1e7f2c3e617d33b78eb0"
+      ],
+      [
+        "816bdb03b948d6a70bde9c8a20cf5bd13f9370aac149f5542f5da3a64a9be5b7",
+        "c6ae01444185f94054790521feb93a42040fb017639ce0dfe6e0439e15af8c15",
+        "b81dfa77227db2388dea7e2e4f854632ac1175a44f86149ec60cdf32b53fdbfa",
+        "290c3823c7c93f1b44e292d7e063c284333d8ff26fd2e20aeb37920f2f4a9dfa"
+      ],
+      [
+        "52c4aca4e9dadec28a1f3bf6d6cc43f208354df32106820e5b14daa867f10bb6",
+        "16ea9f5cceba83ac8a6efbacfa06e95bde3cbcdfac4acb0d658816ea14a95cca",
+        "14ab5a68f3f6d2e68cbeccaacb9bd4a2898d060a9f91c83b24944f7cc17da62d",
+        "95cd481c4b1e1d7203a46c554ef4739f2e18af15b03dcb9891b29a54efd1575b"
+      ],
+      [
+        "4fc1dac824d2057ddbaf1c3e2422b568ea7782c1fc0c67c1bfd0cdeac4479fbe",
+        "e9766fdaa7b2eea86d601831035e1127c93b95c287e8afda60922bc36b9c5fbf",
+        "fb6a2d7843b5d3c013c048e13b7eed035c8f5db7fabcb46f43bced87a3ab690c",
+        "bff1fdaba82609385b31b3728d0e0b7ef80c6f2b99640fd54c4858f14abc4fa3"
+      ],
+      [
+        "576c5513da51b620fb57c0793823a6d53f67af7f6542c995d841437745d9270d",
+        "c4d5f9c399c86c4ad9cdf30a18a82a60d859ac38a5339b34b6ab7476bc4549a3",
+        "d01fb81f7c32f209f23b4a78f85f619ab5d73bb720cb521defa05bac0c7ccb8d",
+        "6f42051a85aa7dd8bf85231ba21bd6276816cb0b20f95d9eef4d12900ab633a1"
+      ],
+      [
+        "51913d628cc75c3c55cbda2f3ac271f0f2ba4057452abfe63f94643714c46e75",
+        "50dfd27fe6e80b29f2c51cc2d24818fc21cbf9965de39265284f74c43168c171",
+        "a4bf86f2e52bc77e7c9966cf27e950ad1b43444d8cd106a3084139fc52e1c851",
+        "2656094457c25d4d399c614bbc7f53cfbed395396e91d55c35d7c61d6b9b0caf"
+      ],
+      [
+        "d8f279b71c3de297cb896bf15bbd92be5052ad706af54f0f67c8c20d29ee6efe",
+        "8b7b8d764aef01571f1d34d0988dc8611c2a5a35f1c5ce7d77ba773fb6eb3f4b",
+        "0753cfb95867bb9f9a8a0fa97959752ccf217339b4e9c5fd98cffda174377acb",
+        "43b58b1c9ef62345f6cc9a6620e59b48315f4a720c72d12f9a2e26c74f2da65a"
+      ],
+      [
+        "20b0cdb11c66e04ddf6f0c7027100bc6878e3900427229d183f0b699b9c01c31",
+        "84c96ff273c1f18d10eeee5f5ff80624e0bdcb145c3eceea3191e2c69f170b22",
+        "c1b144135f86784d49e29f799bd0d9039eaca8f8c165e1803d327b77caacd8b0",
+        "0fc112e0d79c1822d0ebd3bcd41e77be6c73cf39165178fd6ef86a61be38ed4b"
+      ]
+    ],
+    "continuation_batch_ids_sha256": "bacaf03b9608aa2662a2846a5a15f032d9ad4f61c8fe90dc629f05dc143c59eb",
+    "continuation_epoch_seed": 91230435,
+    "continuation_indices": [
+      [
+        224,
+        252,
+        304,
+        186
+      ],
+      [
+        229,
+        148,
+        117,
+        0
+      ],
+      [
+        97,
+        139,
+        142,
+        350
+      ],
+      [
+        137,
+        179,
+        282,
+        272
+      ],
+      [
+        226,
+        119,
+        195,
+        274
+      ],
+      [
+        165,
+        75,
+        370,
+        197
+      ],
+      [
+        202,
+        207,
+        99,
+        26
+      ],
+      [
+        115,
+        162,
+        160,
+        64
+      ],
+      [
+        11,
+        301,
+        317,
+        278
+      ],
+      [
+        124,
+        291,
+        191,
+        315
+      ],
+      [
+        58,
+        13,
+        217,
+        12
+      ],
+      [
+        222,
+        141,
+        355,
+        111
+      ],
+      [
+        322,
+        114,
+        174,
+        234
+      ],
+      [
+        53,
+        48,
+        286,
+        106
+      ],
+      [
+        212,
+        230,
+        125,
+        373
+      ],
+      [
+        263,
+        359,
+        348,
+        235
+      ],
+      [
+        104,
+        76,
+        371,
+        321
+      ],
+      [
+        220,
+        105,
+        31,
+        213
+      ],
+      [
+        184,
+        316,
+        6,
+        200
+      ],
+      [
+        188,
+        107,
+        372,
+        102
+      ],
+      [
+        78,
+        284,
+        33,
+        285
+      ]
+    ],
+    "full405_batch_ids_sha256": "a9d73fcb9f8814443730330176d3e681e1ad3b85cef0e855bcb2c0829346b606",
+    "mode": "next_epoch_prefix",
+    "order_seed": 91230431,
+    "original_batch_ids_sha256": "ac013187d3ce573d04e010c1a60768224d0b69b859ae6299fcc4cc7efef22443",
+    "original_prefix_equal": true,
+    "recipe": "Frozen training_schedule generates five full epochs (480 batches); retain its first405. The first384 equal the original schedule exactly. Execute only the final21 batches from epoch seed order_seed+4.",
+    "repeated_original_prefix": false
+  },
+  "scope": "Two cached-control continuations from the exact original384 adapters and AdamW, each21 additional updates to405. No recovery work, ownprefix continuation, endpoint search or native303 edits.",
+  "sealed_utc": "2026-09-12T08:44:00.317360+00:00",
+  "status": "frozen_cpu_tested_ready_for_parent_staging_not_gpu_dispatched",
+  "tokens": {
+    "additional": 588,
+    "cached_at384": 10752,
+    "cached_at405": 11340,
+    "excess_over_ownprefix": 26,
+    "ownprefix_at384": 11314
+  }
+}
