@@ -1,0 +1,883 @@
+{
+  "branch": "research/resume-20260911",
+  "commit_handoff": {
+    "audit_outputs_are_gitignored": true,
+    "explicit_audit_inclusion_paths": [
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/outputs/audits/final_report.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/outputs/audits/head_nullspace.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/outputs/audits/preservation.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/outputs/audits/learned_transfer.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/outputs/audits/learned_transfer.py"
+    ],
+    "instruction": "Parent owns eventual commit. No staging, commit or push performed; audit files require explicit inclusion if retained in Git.",
+    "new_file_this_closeout": "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/outputs/audits/final_report.json"
+  },
+  "evidence": {
+    "head_nullspace": {
+      "bytes": 38920,
+      "collected_files_verified": 82,
+      "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/outputs/audits/head_nullspace.json",
+      "run": "followthrough-20260912-portal-head-nullspace",
+      "sha256": "c57f9835cc32f1d6c12168bf415eee0cb47f31843a802e5e38afd7e48130ae77",
+      "source_sha256": "ac1e2365daeb0aa43a385f69a2297af646aabc8e9be041a3d0371bf4bff967e6"
+    },
+    "learned_transfer": {
+      "bytes": 88556,
+      "collected_files_verified": 83,
+      "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/outputs/audits/learned_transfer.json",
+      "run": "followthrough-20260912-portal-example-learned-target64",
+      "sha256": "d94bfe7dca8e2e7de5ac41f5abbf7087dd3db380f1e037f250d21cac072f7a4d",
+      "source_sha256": "ac1e2365daeb0aa43a385f69a2297af646aabc8e9be041a3d0371bf4bff967e6"
+    },
+    "preservation": {
+      "bytes": 11556,
+      "collected_files_verified": 70,
+      "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/outputs/audits/preservation.json",
+      "run": "followthrough-20260912-portal-preserve-tasks",
+      "sha256": "74d23686569b4b33f7bf6e671b189a6f9509a7315e256849c29e604402d40b6c",
+      "source_sha256": "ebec4621ae9c655d03fcc24b52c2d792c5839c383b234651658fdd25d9fe7d23"
+    }
+  },
+  "final_scope": [
+    "All three target arms first pass the predefined per-task90percent train and85percent validation gates at recorded checkpoint80. Earlier unsaved crossings are unknown; no threshold-speedup claim.",
+    "Learned source has an early advantage over untouched on validation and triples, but not over LoRA; learned and untouched first reach perfect triples and length4 at160, LoRA at80. Final320 alone hides later LoRA regression.",
+    "Source transfer uses the actual jointly qualified heads_new_latents step512 with its learned ABC vectors frozen. The trained heads and task vectors change together, so their separate causal contributions are not identified.",
+    "Nullspace sacrifices new-task heldout generalization for exact adapter conservation on four specified task vectors; both arms acquire and both pass the looser behavioral net-drop tolerance.",
+    "Preservation reduces mean squared normalized matrix drift94.237percent and retains98/99 previously correct answers versus95/99 control, with fewer newly corrected answers. It is regularization, not exact conservation.",
+    "Source tests cover one synthetic ABC stream and128 released-task probes. TargetWinoGrande starts19/32 below the60percent ability gate; only the other three target tasks qualify. All target initial adapter gains are zero because alignment output starts at zero.",
+    "Scoring is the declared character-normalized four-choice answer contract. No free-generation, unfamiliar related-skill, longer-stream, repeated-upgrade, multiple-seed reliability, or general continual-learning claim.",
+    "Native target calibration trains10486912 parameters versus2949120 LoRA parameters. Learned-source pretraining512updates is additional history; no end-to-end efficiency advantage is established.",
+    "Methods are native-adapter distillation/retention regularization and a frozen-feature head constraint. These are not reproductions of NestedLearning, Agent-Dice, LoRAGen or fullAlphaEdit.",
+    "Behavioral checks independently rederive stored scores; collected adapter and optimizer tensors were loaded locally. Frozen-base/reload identity is tied to hashed runtime receipts; full base inference was not repeated locally."
+  ],
+  "lane_freeze": {
+    "changed_existing_source_files_this_closeout": [],
+    "commit_or_push_performed": false,
+    "deployable_files": 95,
+    "source_file_pins": {
+      "anchoring.py": {
+        "bytes": 12610,
+        "sha256": "cc8968c2b2f0fc0baef3a0d8cdab1f9c44f95caf8a7c27de198b212c028039bb"
+      },
+      "audit_anchored.py": {
+        "bytes": 9399,
+        "sha256": "a7ad8d07c011b73c24f129fb1230926bfe2f13577fe3b5411f113162fcb99c5d"
+      },
+      "audit_repair.py": {
+        "bytes": 6418,
+        "sha256": "85ec1c653afd21209b973348eec6305a3825a70f40aad69777535ff810ed60a0"
+      },
+      "calibrate_target.py": {
+        "bytes": 35522,
+        "sha256": "abc7c18c13fe996b8299a39742e984616aca069d2d22cf1035f774d193da6a2b"
+      },
+      "calibrate_teacher.py": {
+        "bytes": 12144,
+        "sha256": "b5783a37dd74b5f9ddbb39c689f4102058cf84c5f14470cfdf6da3aeb5b5eca1"
+      },
+      "compare.py": {
+        "bytes": 19184,
+        "sha256": "de6ff82a42091d9b428ec4050aa566f0a256f4a26a4b496170c2060ba0ec7d25"
+      },
+      "compression_spectrum.py": {
+        "bytes": 11963,
+        "sha256": "707b9090edc943f10b265a53263eb4541403dcf49b2094ab8bd8431c9c20609b"
+      },
+      "configs/anchored/native_replay_anchor0.json": {
+        "bytes": 7004,
+        "sha256": "fe1ac9f0b341f22fd79725327b960dd0488fa5f1ba3744d1a45b484268bbb254"
+      },
+      "configs/anchored/native_replay_anchor1.json": {
+        "bytes": 7004,
+        "sha256": "72613cbef590a1c948a46581c4011ccba052c414c130b3f69fb933d254e7f12a"
+      },
+      "configs/confirmation419/sequence_lora_no_replay.json": {
+        "bytes": 2972,
+        "sha256": "a13fa9128dcf7c4d21b348f7699538101008a27ae05112185e64519db5f8704f"
+      },
+      "configs/confirmation419/sequence_lora_replay.json": {
+        "bytes": 2970,
+        "sha256": "83030380501dcc757bdfbdea4d4d2065382309834c8b3ad9af2ede40c5377d06"
+      },
+      "configs/confirmation419/sequence_native_no_replay.json": {
+        "bytes": 2975,
+        "sha256": "8b8148b746172fbbfe73c46b8bbd3cc303a6aa6ab2f3c07967ad34af3303c55c"
+      },
+      "configs/confirmation419/sequence_native_replay.json": {
+        "bytes": 2973,
+        "sha256": "a4e934a0353b3a1e1511ee82c985e89df905fa607dbbcc9bb2f854ab5f6998b6"
+      },
+      "configs/confirmation419/sequence_target_gemma3_s41901.json": {
+        "bytes": 23139,
+        "sha256": "d57df707c32f7b05fd1963edd832aa6f8e6be7f9a61bc30f59d51b6cef1ccfb8"
+      },
+      "configs/confirmation419/sequence_target_gemma4_s41901.json": {
+        "bytes": 18459,
+        "sha256": "070ef2294c355f9ea78eedb0850cb95c81e4a1ba950f95766af78ebed2c5a0dd"
+      },
+      "configs/confirmation419/sequence_target_mistral7_s41901.json": {
+        "bytes": 22232,
+        "sha256": "5ce40b010eea6a28bbf924cda21d16046c602117df282814a41f7807be319568"
+      },
+      "configs/confirmation419/sequence_target_qwen4_s41901.json": {
+        "bytes": 24025,
+        "sha256": "79a326f1807acf0ad73bcb392d44469ec2be9719af6ffe70b4107fade5fece02"
+      },
+      "configs/consolidation/rank_control303.json": {
+        "bytes": 3204,
+        "sha256": "cd5d6b5d9bf37ce9da710e97cbd6d57d7c3da5dc4f047713b4b2f016c3776afa"
+      },
+      "configs/consolidation/rank_eval303.json": {
+        "bytes": 5829,
+        "sha256": "59c8968fcc24a34cd5de5c95152779ec0aef279acd130d77476c3bd2b31a6615"
+      },
+      "configs/consolidation/spectrum303.json": {
+        "bytes": 1269,
+        "sha256": "bd4a7d3e20b6da27705d10b4a6fd6a4303a20cd3d32734d4990afcfaabbf867d"
+      },
+      "configs/consolidation/teacher303.json": {
+        "bytes": 4056,
+        "sha256": "67f6924e22c0a1ccbe52eb1d985a9dd97b50ff163e606ccb11094294d57ba91a"
+      },
+      "configs/final_retention/constructed_target16.json": {
+        "bytes": 612,
+        "sha256": "b20f6892b34c6a0ed677c309a69b142eaeab25b4a3823e2943cae6cac33d0a07"
+      },
+      "configs/final_retention/constructed_target64.json": {
+        "bytes": 612,
+        "sha256": "a53c4f1e3071bb924a630e0842f91079c793987adbcf4756099b64abcf593424"
+      },
+      "configs/final_retention/examples_released.json": {
+        "bytes": 606,
+        "sha256": "3ad45a996854fc7b538c87163eaa81f7311c2d3de155d5062dcbc50991b987f7"
+      },
+      "configs/follow_through/constructed_retention.json": {
+        "bytes": 12575,
+        "sha256": "877cca787f645cdba4f255807c8e508ec5b06cf2d70141a9eb08c1145f869dad"
+      },
+      "configs/follow_through/constructed_target16.json": {
+        "bytes": 12811,
+        "sha256": "6ed2d09e53f9b0da13c64398109266b7750286dbd3e37628717ffa6a155f9cc7"
+      },
+      "configs/follow_through/constructed_target64.json": {
+        "bytes": 23755,
+        "sha256": "8728ee78273cc2d07f93897788de1545559102f7aec6111aeaa79607361bbaae"
+      },
+      "configs/follow_through/constructed_target64_conservative.json": {
+        "bytes": 24906,
+        "sha256": "19066b2974a7f91f197c15998e230694dd3e85655465ba4291bb1f87bf796685"
+      },
+      "configs/follow_through/examples_released.json": {
+        "bytes": 38208,
+        "sha256": "c2337601e7858cadf43685de7fb5440e611762d571590aa9fd2d99413973d2eb"
+      },
+      "configs/follow_through/examples_zero.json": {
+        "bytes": 37606,
+        "sha256": "b66d4985af7255087d421680224d1d1666a0e85e780a62135f81eef845b55b0b"
+      },
+      "configs/head_nullspace/source.json": {
+        "bytes": 41621,
+        "sha256": "fbce85b352d22591c8667f3e96906cc17123edca42c8a8392d1767eac677c913"
+      },
+      "configs/learned_transfer/source.json": {
+        "bytes": 4101,
+        "sha256": "b62ecacc3d41b0dd43c00437b85a27760392b89ec88beff9473e1bcabf27a73e"
+      },
+      "configs/preservation/heads_new_latents.json": {
+        "bytes": 41376,
+        "sha256": "8e803888a99f8fbcab101aeb43b3663dad0d9c0988ae9ceca22911c448043b93"
+      },
+      "configs/repair/sequence303_native_replay.json": {
+        "bytes": 3911,
+        "sha256": "0c895276ae8bcd45ea2309e3dd0688e766a2156b4694206a75afe8eeef82ab97"
+      },
+      "configs/repair_eval/mistral7.json": {
+        "bytes": 4252,
+        "sha256": "840e0f6cd8409a06b250c6a5b74e3d3b3fe30a7efea796379c94e04fded7412b"
+      },
+      "configs/repair_eval/qwen4.json": {
+        "bytes": 4240,
+        "sha256": "71dcc074d328f09eb93b635c255e04befb81d98507694095f3c6d8a6ba6e9b30"
+      },
+      "configs/repair_eval/source_qwen8.json": {
+        "bytes": 6539,
+        "sha256": "cb1615cc25250314be0727bd2bd8e960c5775a7388bcf27431646eb8697aabc6"
+      },
+      "configs/representability/behavior303.json": {
+        "bytes": 6661,
+        "sha256": "d8d37b14057e48b9e2dadfbfce8871bd5dff05fcae77272d6dba47806f9f00fd"
+      },
+      "configs/representability/constructed_behavior303.json": {
+        "bytes": 5163,
+        "sha256": "b272c54ee7229cbf09c16816f2a542b279208bee19250e0cdbb5cacef5a80aeb"
+      },
+      "configs/representability/learned_alignment303.json": {
+        "bytes": 1292,
+        "sha256": "64e7035cbbc2ad131c8c3635736e40ba47601e721ea387b54475ca7a839ce7dc"
+      },
+      "configs/representability/source_rank8_303.json": {
+        "bytes": 6526,
+        "sha256": "6a0b34da932d9edb2720b64657b8cb026743fe85dbaaf8f243664699690cd694"
+      },
+      "configs/sequence_lora_no_replay.json": {
+        "bytes": 2958,
+        "sha256": "068d07d7d51d0c0549db1d31618ef1cff33f904356acd36b4b43a258d5c2071b"
+      },
+      "configs/sequence_lora_replay.json": {
+        "bytes": 2956,
+        "sha256": "b0eb5913ca38d6267c45c966149d9c5397bb6495b6c1c70621d1aa01ff86cbd4"
+      },
+      "configs/sequence_native_no_replay.json": {
+        "bytes": 2961,
+        "sha256": "9610568cda1764356ea4ba004dfc6a9a8b89042803502c3987bfdb08fe6a9627"
+      },
+      "configs/sequence_native_replay.json": {
+        "bytes": 2959,
+        "sha256": "d99d2a9f941fdc67b63f6309d531721fafda16aa361825c5f8f76684fb6afbbc"
+      },
+      "configs/sequence_target_gemma3_s30301.json": {
+        "bytes": 23093,
+        "sha256": "fe094fdfc745ff28df0a3845c134a9b83c7ea0e5ec372f8859101a1aa7b69577"
+      },
+      "configs/sequence_target_gemma4_s30301.json": {
+        "bytes": 18413,
+        "sha256": "5da64577f51b7d8f576e56ca3beb4fdc4c9c4f6392fe92348dfe8273f257431b"
+      },
+      "configs/sequence_target_mistral7_s30301.json": {
+        "bytes": 22186,
+        "sha256": "d874fe11702440d77faebd7b5e590878a8a573dc9e1f8b93b09288051b3be166"
+      },
+      "configs/sequence_target_qwen4_s30301.json": {
+        "bytes": 23979,
+        "sha256": "b23ad150db6751a9f554f651728b01ec20c728e4cae0d165bfca02dc14527f7a"
+      },
+      "configs/target_calibration/qwen4_sequence303.json": {
+        "bytes": 25350,
+        "sha256": "3b4dc676fe94ad3cc4f7101d5af9c4fa8ce73f9ad5daab09afbd4ffe582f7293"
+      },
+      "construct_representation.py": {
+        "bytes": 7411,
+        "sha256": "480624330e8e014ba5d0db7dd768ceb627557cc10fa5ad1aafb370420fd25539"
+      },
+      "data.py": {
+        "bytes": 11777,
+        "sha256": "fe9e083a41caf518f3285ace906a63d2015f5002faa74337c39d8fa8b67992c2"
+      },
+      "data/amber.json": {
+        "bytes": 185947,
+        "sha256": "6c57de9a7f2cf3730c9291e8d4d8fde51e7da414e8f1ad3c0d1ecf879b87dcae"
+      },
+      "data/released_task_probes.json": {
+        "bytes": 98318,
+        "sha256": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1"
+      },
+      "data/sequence303.json": {
+        "bytes": 255069,
+        "sha256": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2"
+      },
+      "data/sequence303_length4_holdout.json": {
+        "bytes": 133081,
+        "sha256": "570eaf0bc2968a900a8ccc3d5c27dbf0bc4114e0587e091988aed75189ceb83d"
+      },
+      "data/sequence303_unused_inputs.json": {
+        "bytes": 300921,
+        "sha256": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e"
+      },
+      "data/sequence419.json": {
+        "bytes": 255069,
+        "sha256": "cbc34593af7909a1f11a232c41f1538f20fc2dabd34852646cf5f959db25efd1"
+      },
+      "evaluate_constructed.py": {
+        "bytes": 5845,
+        "sha256": "bedbd3d696fb3d7565ee2c33acd065e4f025beaa5d989918f5f157b13a15f533"
+      },
+      "evaluate_rank.py": {
+        "bytes": 10228,
+        "sha256": "a4e8a3ae9ccf2a981680ce544dcc343cac88d8e1cdb0fc787b146960b304cd18"
+      },
+      "evaluate_repair.py": {
+        "bytes": 20999,
+        "sha256": "2e53fe2424d208f1f0b93223a9e313d8ba2867720acbe64edec35dcedc196d11"
+      },
+      "evaluate_representation.py": {
+        "bytes": 5031,
+        "sha256": "4fcf251172ae36c9fad97db70d7a7040ea0a04504e937e6befd6a25bbcc333eb"
+      },
+      "evaluate_targets.py": {
+        "bytes": 36109,
+        "sha256": "8f673b8da7b59937997d6858ecaa1c5a8e5ae347ba1f4dead889b9596212dd6e"
+      },
+      "final_retention.py": {
+        "bytes": 15063,
+        "sha256": "a0ac70a3b6198b3378e1390f3934d9e848823b365772f3c8ce6cb04565a37a53"
+      },
+      "final_retention_handoff.json": {
+        "bytes": 12628,
+        "sha256": "13513aaee050c978cc90e7b213933d591d19dedad0f5540a899c40075ed94eee"
+      },
+      "follow_through.py": {
+        "bytes": 32556,
+        "sha256": "c25b9682ccd890593a2154018678a2548a10d81720244707bb3b6e264945d65d"
+      },
+      "follow_through_handoff.json": {
+        "bytes": 19638,
+        "sha256": "df3f045eb959f29fea05ab78201b32ec460540aa3584bc2bfe9e20add5913405"
+      },
+      "fresh_inputs.py": {
+        "bytes": 4347,
+        "sha256": "f1beb8ced474fb5ccf2cd0764e1edc1aefc94706bf04f476bab3b6ad237d5233"
+      },
+      "handoff.json": {
+        "bytes": 13583,
+        "sha256": "18a57c83103264338b8868c526da2ad6cdc41d5899322f75dc0a08bea455d20c"
+      },
+      "head_nullspace.py": {
+        "bytes": 12623,
+        "sha256": "8396eb0f9a5a348fa3700a1c5762246b90ea0bbdf8cfbff3763da93f9e1e6392"
+      },
+      "head_nullspace_cpu_audit.json": {
+        "bytes": 9166,
+        "sha256": "ccea5272c444214e5be5cb085c743918f5b5fbf05d6fba53859fb8296cf800a5"
+      },
+      "head_nullspace_handoff.json": {
+        "bytes": 14068,
+        "sha256": "7401da39a5344ba0b7242b288bcd263911f24e48d1b6501070eb84ac4fc9bc1e"
+      },
+      "learned_target.py": {
+        "bytes": 9463,
+        "sha256": "1ce5fd0bc82ba7e67dee555d8dd96f4531450a8f8fa5c5922dd17941b3fc420b"
+      },
+      "learned_transfer_handoff.json": {
+        "bytes": 14674,
+        "sha256": "978e9acdbb8a413c0fe8c362122c9781e62e0f3a3b421d2eb8f8d7742a9d95b5"
+      },
+      "learned_transfer_receipt_audit.json": {
+        "bytes": 5805,
+        "sha256": "ab96e5398eacc16603af2231bd6431ad4a8b73b9e7b7c94030112f389261b9cc"
+      },
+      "learner.py": {
+        "bytes": 37216,
+        "sha256": "958ea3e4cd054857f53100456195f08ce1c457237977f7fddb655efb79470874"
+      },
+      "local-checks/follow-through-input-audit.json": {
+        "bytes": 10170,
+        "sha256": "bf4721a79b91d07e39acf1af9e748ed46e5bf37c19be9448cdb57159c68749ac"
+      },
+      "local-checks/head-nullspace/nonzero-nullspace-adapter/config.json": {
+        "bytes": 15930,
+        "sha256": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb"
+      },
+      "local-checks/head-nullspace/nonzero-nullspace-adapter/method.json": {
+        "bytes": 1340,
+        "sha256": "96f15f3192a6b78cb99faa4a9af6628778c4712e2f1570cd00f2b6d48ce2ca20"
+      },
+      "local-checks/preservation-reference/cpu-feasibility.json": {
+        "bytes": 1937,
+        "sha256": "e3bffc0bb539fd90cc12cefec63ae23cf157b3da47227e03caf75086a41bee09"
+      },
+      "local-checks/preservation-reference/preservation_reference.json": {
+        "bytes": 1490,
+        "sha256": "7779c48314b27616e6cd295168041cc8fc33b8d53d50bfa449cbf4154d5eb967"
+      },
+      "metrics.py": {
+        "bytes": 7317,
+        "sha256": "70d8b04f3ecd17881610924b806950fb9fa3259b809b372b221386c17f2a22fc"
+      },
+      "prepare_follow_through.py": {
+        "bytes": 14694,
+        "sha256": "c4d3a0894dca52c7fd21ccd760c26b8b10ea86c5d46eee0c0d9a5802ef428613"
+      },
+      "prepare_learned_transfer.py": {
+        "bytes": 12116,
+        "sha256": "83d27b2ed8b9a8bea2f875617b777df89ca058ff434939a15d394bc9ec877338"
+      },
+      "preservation_handoff.json": {
+        "bytes": 9849,
+        "sha256": "4f7cc936b3539d265eef6b3e6cea2379d21319484734b7be403b7686d8bb6ece"
+      },
+      "preserve_tasks.py": {
+        "bytes": 22524,
+        "sha256": "e9edec5d8e57cc63fa86ee7d86ba8f70b71afbf62d05e1257415e67bdbc8d8a3"
+      },
+      "protocol.json": {
+        "bytes": 15749,
+        "sha256": "9b0859aa6228df81a893fa1189e5388f979e389ed153a30ea20c07e34f462c1d"
+      },
+      "qualify.py": {
+        "bytes": 3142,
+        "sha256": "e3fd0696493ce261568605f683b9996ffb77af7689e07fe901c9f75b9bdc54d0"
+      },
+      "rank_control.py": {
+        "bytes": 18902,
+        "sha256": "38e274f39501f07ed8be9ba7c3995767e9a84281d5631993fc75d63cb832086b"
+      },
+      "repair_alignment.py": {
+        "bytes": 30495,
+        "sha256": "42d5a12b1e8c7ae882b4b5be88796de2ec1b957604fa4e97307955d0b4165a5b"
+      },
+      "representability.py": {
+        "bytes": 42857,
+        "sha256": "880cb1ee2a7391179c5ab35478d5ef06d69a639d1f408df05684e7f435c46f31"
+      },
+      "requirements.txt": {
+        "bytes": 155,
+        "sha256": "bf772f66dcae41ae30727fb41845ffe708a01e27f30ef0f46b0e944fbdfb822c"
+      },
+      "run.py": {
+        "bytes": 46908,
+        "sha256": "33669ecd95aa0184b8fe68661d0d01913a9bb5384abb7e8187768c1d799d5d50"
+      },
+      "train_anchored.py": {
+        "bytes": 29923,
+        "sha256": "22ca989c9e23b760d1ff677532ed2f7f91cb92c1a36f629329586dbec5140422"
+      },
+      "train_head_nullspace.py": {
+        "bytes": 19967,
+        "sha256": "2ed8b539c337d5c5500722e70cebd477ca9358d65b853656a00d740f26cd35e7"
+      }
+    },
+    "source_sha256": "ac1e2365daeb0aa43a385f69a2297af646aabc8e9be041a3d0371bf4bff967e6",
+    "tests_and_prior_audits_unchanged": true
+  },
+  "learned_source_target_curves": {
+    "learned": {
+      "checkpoints": {
+        "0": {
+          "length4_correct_of_384": 135,
+          "mean_validation_nll": 1.4623986172179382,
+          "train_correct_of_192": 70,
+          "triples_correct_of_864": 246,
+          "validation_correct_of_96": 26
+        },
+        "160": {
+          "length4_correct_of_384": 384,
+          "mean_validation_nll": 0.0019573283737864206,
+          "train_correct_of_192": 192,
+          "triples_correct_of_864": 864,
+          "validation_correct_of_96": 96
+        },
+        "20": {
+          "length4_correct_of_384": 329,
+          "mean_validation_nll": 0.7372257531517081,
+          "train_correct_of_192": 158,
+          "triples_correct_of_864": 664,
+          "validation_correct_of_96": 73
+        },
+        "320": {
+          "length4_correct_of_384": 384,
+          "mean_validation_nll": 0.00018485078279212926,
+          "train_correct_of_192": 192,
+          "triples_correct_of_864": 864,
+          "validation_correct_of_96": 96
+        },
+        "80": {
+          "length4_correct_of_384": 382,
+          "mean_validation_nll": 0.10889012756197441,
+          "train_correct_of_192": 192,
+          "triples_correct_of_864": 863,
+          "validation_correct_of_96": 96
+        }
+      },
+      "first_recorded_acquisition_pass": 80,
+      "first_recorded_perfect_triples_and_length4": 160
+    },
+    "lora": {
+      "checkpoints": {
+        "0": {
+          "length4_correct_of_384": 135,
+          "mean_validation_nll": 1.4623986172179382,
+          "train_correct_of_192": 70,
+          "triples_correct_of_864": 246,
+          "validation_correct_of_96": 26
+        },
+        "160": {
+          "length4_correct_of_384": 384,
+          "mean_validation_nll": 1.0865285116068435e-07,
+          "train_correct_of_192": 192,
+          "triples_correct_of_864": 864,
+          "validation_correct_of_96": 96
+        },
+        "20": {
+          "length4_correct_of_384": 362,
+          "mean_validation_nll": 0.5348552863967294,
+          "train_correct_of_192": 178,
+          "triples_correct_of_864": 771,
+          "validation_correct_of_96": 85
+        },
+        "320": {
+          "length4_correct_of_384": 382,
+          "mean_validation_nll": 0.10129580052187222,
+          "train_correct_of_192": 191,
+          "triples_correct_of_864": 862,
+          "validation_correct_of_96": 96
+        },
+        "80": {
+          "length4_correct_of_384": 384,
+          "mean_validation_nll": 0.027422881284165552,
+          "train_correct_of_192": 192,
+          "triples_correct_of_864": 864,
+          "validation_correct_of_96": 96
+        }
+      },
+      "first_recorded_acquisition_pass": 80,
+      "first_recorded_perfect_triples_and_length4": 80
+    },
+    "untouched": {
+      "checkpoints": {
+        "0": {
+          "length4_correct_of_384": 135,
+          "mean_validation_nll": 1.4623986172179382,
+          "train_correct_of_192": 70,
+          "triples_correct_of_864": 246,
+          "validation_correct_of_96": 26
+        },
+        "160": {
+          "length4_correct_of_384": 384,
+          "mean_validation_nll": 0.011965732238476917,
+          "train_correct_of_192": 192,
+          "triples_correct_of_864": 864,
+          "validation_correct_of_96": 96
+        },
+        "20": {
+          "length4_correct_of_384": 307,
+          "mean_validation_nll": 0.8381852778709598,
+          "train_correct_of_192": 139,
+          "triples_correct_of_864": 570,
+          "validation_correct_of_96": 67
+        },
+        "320": {
+          "length4_correct_of_384": 384,
+          "mean_validation_nll": 0.06644005605788447,
+          "train_correct_of_192": 192,
+          "triples_correct_of_864": 864,
+          "validation_correct_of_96": 96
+        },
+        "80": {
+          "length4_correct_of_384": 383,
+          "mean_validation_nll": 0.27378194822368745,
+          "train_correct_of_192": 191,
+          "triples_correct_of_864": 838,
+          "validation_correct_of_96": 95
+        }
+      },
+      "first_recorded_acquisition_pass": 80,
+      "first_recorded_perfect_triples_and_length4": 160
+    }
+  },
+  "matrix_conservation": {
+    "head_nullspace": {
+      "CPU_regenerated_feature_maxima": {
+        "factor_max_abs": 7.450580596923828e-08,
+        "factor_relative_frobenius_max": 2.9247976198634103e-07,
+        "matrix_relative_frobenius_max": 3.5048117811206985e-07
+      },
+      "GPU_factors_and_captured_feature_recomputation": "Bitwise-identical factors and zero effective-matrix difference.",
+      "all_128_old_score_records_identical": true,
+      "artifact_format": "frozen_feature_head_nullspace",
+      "basis_audit": {
+        "null_relative_residual_recomputed": 3.6926032546147047e-16,
+        "nullity": 369,
+        "orthogonality_max_abs_recomputed": 5.329070518200751e-15,
+        "rank": 144,
+        "stored_feature_file_bytes": 4210952,
+        "stored_feature_tensors_bytes": 4210704
+      },
+      "declared_limits": {
+        "basis_orthogonality_max_abs_limit": 1e-12,
+        "factor_max_abs_limit": 1e-05,
+        "factor_relative_frobenius_limit": 1e-06,
+        "matrix_relative_frobenius_limit": 2e-06,
+        "null_residual_relative_limit": 1e-12
+      },
+      "effective_matrices": 288,
+      "feature_design_shape": [
+        144,
+        513
+      ],
+      "layers": 36,
+      "nullity": 369,
+      "precision": "FP32 original heads, coordinates, adapter parameters and optimizer states; FP64 nullspace basis and feature projection. Cross-backend bitwise equality is not claimed.",
+      "projections_per_task": 72,
+      "rank": 144,
+      "reader_requirement": "Dedicated custom reader; no ordinary-native folding/export equivalence claim.",
+      "tasks": 4
+    },
+    "preservation": {
+      "exact_conservation_claim": false,
+      "independent_audit": "QR-based exact Frobenius recomputation of residual products; no random projection.",
+      "matrix_loss": "Mean over288 matrices of squared Frobenius effective-matrix difference divided by reference squared Frobenius norm plus1e-12; exact low-rank products, not factor L2.",
+      "maximum_absolute_CPU_vs_GPU_task_metric_discrepancy": 2.4865639491888913e-08,
+      "mean_normalized_squared_error": {
+        "control": 0.14219791552822197,
+        "preserved": 0.008194275456435335
+      },
+      "method": "native_adapter_retention_regularization",
+      "old_behavioral_training_examples": 0,
+      "old_tasks_per_update": 4,
+      "projections_per_task": 72,
+      "relative_reduction_percent": 94.23741520682908,
+      "weights": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  "retention_transition_counts": {
+    "head_nullspace": {
+      "head_nullspace": {
+        "after_correct": 99,
+        "before_correct": 99,
+        "choice_changes": 0,
+        "correct_to_wrong": 0,
+        "examples": 128,
+        "previously_correct_retained": 99,
+        "score_record_changes": 0,
+        "wrong_to_correct": 0
+      },
+      "head_only_control": {
+        "after_correct": 99,
+        "before_correct": 99,
+        "choice_changes": 6,
+        "correct_to_wrong": 2,
+        "examples": 128,
+        "previously_correct_retained": 97,
+        "score_record_changes": 128,
+        "wrong_to_correct": 2
+      }
+    },
+    "preservation": {
+      "control": {
+        "after_correct": 100,
+        "before_correct": 99,
+        "choice_changes": 12,
+        "correct_to_wrong": 4,
+        "examples": 128,
+        "previously_correct_retained": 95,
+        "score_record_changes": 128,
+        "wrong_to_correct": 5
+      },
+      "preserved": {
+        "after_correct": 99,
+        "before_correct": 99,
+        "choice_changes": 4,
+        "correct_to_wrong": 1,
+        "examples": 128,
+        "previously_correct_retained": 98,
+        "score_record_changes": 128,
+        "wrong_to_correct": 1
+      }
+    }
+  },
+  "scope": "Collected nullspace, native-adapter matrix preservation, and example-learned source target64 calibration; no further implementation or training.",
+  "status": "independent_audit_complete_lane_frozen",
+  "storage_bytes_by_final_arm": {
+    "learned_transfer/learned": {
+      "basis_bytes": 0,
+      "model_file_bytes": 111901976,
+      "model_tensor_bytes": 111900160,
+      "optimizer_file_bytes": 83900937,
+      "optimizer_tensor_bytes": 83895316,
+      "resident_adapter_parameters": 27975040,
+      "trainable_parameters_including_ABC_vectors": 10486912
+    },
+    "learned_transfer/lora": {
+      "basis_bytes": 0,
+      "model_file_bytes": 11808560,
+      "model_tensor_bytes": 11796480,
+      "optimizer_file_bytes": 23716441,
+      "optimizer_tensor_bytes": 23593536,
+      "resident_adapter_parameters": 2949120,
+      "trainable_parameters_including_ABC_vectors": 2949120
+    },
+    "learned_transfer/untouched": {
+      "basis_bytes": 0,
+      "model_file_bytes": 111901976,
+      "model_tensor_bytes": 111900160,
+      "optimizer_file_bytes": 83900937,
+      "optimizer_tensor_bytes": 83895316,
+      "resident_adapter_parameters": 27975040,
+      "trainable_parameters_including_ABC_vectors": 10486912
+    },
+    "nullspace/head_nullspace": {
+      "basis_bytes": 1514376,
+      "head_update_coordinates": 12091392,
+      "model_file_bytes": 174365280,
+      "model_tensor_bytes": 174363016,
+      "optimizer_file_bytes": 96744481,
+      "optimizer_tensor_bytes": 96737308,
+      "resident_adapter_parameters": 43212160,
+      "trainable_parameters_including_ABC_vectors": 12092160
+    },
+    "nullspace/head_only_control": {
+      "basis_bytes": 2105352,
+      "head_update_coordinates": 16809984,
+      "model_file_bytes": 193830624,
+      "model_tensor_bytes": 193828360,
+      "optimizer_file_bytes": 134493217,
+      "optimizer_tensor_bytes": 134486044,
+      "resident_adapter_parameters": 47930752,
+      "trainable_parameters_including_ABC_vectors": 16810752
+    },
+    "preservation/control": {
+      "basis_bytes": 0,
+      "model_file_bytes": 124484888,
+      "model_tensor_bytes": 124483072,
+      "optimizer_file_bytes": 243561805,
+      "optimizer_tensor_bytes": 243547200,
+      "resident_adapter_parameters": 31120768,
+      "trainable_parameters_including_ABC_vectors": 30443392
+    },
+    "preservation/preserved": {
+      "basis_bytes": 0,
+      "model_file_bytes": 124484888,
+      "model_tensor_bytes": 124483072,
+      "optimizer_file_bytes": 243561805,
+      "optimizer_tensor_bytes": 243547200,
+      "resident_adapter_parameters": 31120768,
+      "trainable_parameters_including_ABC_vectors": 30443392
+    }
+  },
+  "storage_scope": {
+    "capacity_accounting": "Nullspace retains31120768 original adapter parameters and adds12091392 U coordinates; matched control adds16809984. Three separately optimized ABC vectors contain768 entries and are synchronized into the existing task table at save time.",
+    "exclusions": "Base-model weights, tokenizer, live gradients, activation memory, allocator overhead, all-checkpoint archives, JSON metadata and common runtime objects are not included. These values are not peak VRAM.",
+    "shared_auxiliary_files": {
+      "nullspace_feature_space_file_bytes": 4210952,
+      "preservation_reference_factor_file_bytes": 61396328,
+      "preservation_reference_factor_tensor_bytes": 61345792
+    },
+    "values": "Exact tensor payload and serialized model/optimizer file sizes at final numeric checkpoint. Basis bytes are already included in model bytes."
+  },
+  "supplementary_preservation_optimizer_audit": {
+    "control": {
+      "0": {
+        "all_state_tensors_finite_fp32": true,
+        "file": {
+          "bytes": 1687,
+          "sha256": "0fd670cba7c2636dd116270bdb7da7cfd57e39683b6dac138e294725b36f1129"
+        },
+        "states": 0,
+        "step_matches_numeric_checkpoint": true,
+        "tensor_bytes": 0
+      },
+      "128": {
+        "all_state_tensors_finite_fp32": true,
+        "file": {
+          "bytes": 243561805,
+          "sha256": "0082536f02de28d44bcf2ff7dea795a03e81288341579f7bd5929013fd52e420"
+        },
+        "states": 16,
+        "step_matches_numeric_checkpoint": true,
+        "tensor_bytes": 243547200
+      },
+      "16": {
+        "all_state_tensors_finite_fp32": true,
+        "file": {
+          "bytes": 243561805,
+          "sha256": "65a7ad7f830cbcec1df04b8472756123a7a3f9fca8ea5725c511e6a9f4119c1f"
+        },
+        "states": 16,
+        "step_matches_numeric_checkpoint": true,
+        "tensor_bytes": 243547200
+      },
+      "256": {
+        "all_state_tensors_finite_fp32": true,
+        "file": {
+          "bytes": 243561805,
+          "sha256": "c95c6ae3d2f63c3ef4cad3192b6a2cb7064b05f1d3d6c508e657c2f9b21d3e07"
+        },
+        "states": 16,
+        "step_matches_numeric_checkpoint": true,
+        "tensor_bytes": 243547200
+      },
+      "512": {
+        "all_state_tensors_finite_fp32": true,
+        "file": {
+          "bytes": 243561805,
+          "sha256": "5b6cff9817af2e6083d62b16805850fc601a072849f89d97f0a6186fc43fe49d"
+        },
+        "states": 16,
+        "step_matches_numeric_checkpoint": true,
+        "tensor_bytes": 243547200
+      },
+      "64": {
+        "all_state_tensors_finite_fp32": true,
+        "file": {
+          "bytes": 243561805,
+          "sha256": "3e6d6054af387308b2b8046ea1faeeb2d44b6f5fb9a975b822f1831ee7700a2d"
+        },
+        "states": 16,
+        "step_matches_numeric_checkpoint": true,
+        "tensor_bytes": 243547200
+      }
+    },
+    "preserved": {
+      "0": {
+        "all_state_tensors_finite_fp32": true,
+        "file": {
+          "bytes": 1687,
+          "sha256": "0fd670cba7c2636dd116270bdb7da7cfd57e39683b6dac138e294725b36f1129"
+        },
+        "states": 0,
+        "step_matches_numeric_checkpoint": true,
+        "tensor_bytes": 0
+      },
+      "128": {
+        "all_state_tensors_finite_fp32": true,
+        "file": {
+          "bytes": 243561805,
+          "sha256": "6f47c55de353c126ba829abc952ef46163b38e421de916ea7a479fe285ef2648"
+        },
+        "states": 16,
+        "step_matches_numeric_checkpoint": true,
+        "tensor_bytes": 243547200
+      },
+      "16": {
+        "all_state_tensors_finite_fp32": true,
+        "file": {
+          "bytes": 243561805,
+          "sha256": "1472edf6a3f0a7f9d49e297a23e061709a0886c1ca77bb3ce0b3036017271ed7"
+        },
+        "states": 16,
+        "step_matches_numeric_checkpoint": true,
+        "tensor_bytes": 243547200
+      },
+      "256": {
+        "all_state_tensors_finite_fp32": true,
+        "file": {
+          "bytes": 243561805,
+          "sha256": "22895d75a1cc5d20bc26682da88ec7514d3a21450fc5e904558b581997e299cc"
+        },
+        "states": 16,
+        "step_matches_numeric_checkpoint": true,
+        "tensor_bytes": 243547200
+      },
+      "512": {
+        "all_state_tensors_finite_fp32": true,
+        "file": {
+          "bytes": 243561805,
+          "sha256": "db1938663c82f7a77aabef8ed2f50643773a6de9f9a869ec28ae02a38d030f45"
+        },
+        "states": 16,
+        "step_matches_numeric_checkpoint": true,
+        "tensor_bytes": 243547200
+      },
+      "64": {
+        "all_state_tensors_finite_fp32": true,
+        "file": {
+          "bytes": 243561805,
+          "sha256": "06b99ea2161c19ad4d58c588944e740705e007e88dc02f42fba673972a743359"
+        },
+        "states": 16,
+        "step_matches_numeric_checkpoint": true,
+        "tensor_bytes": 243547200
+      }
+    }
+  },
+  "validation": {
+    "finite_FP32_and_numeric_steps_verified": true,
+    "learning_curve_crosschecks": "20VAL73/67/85 of96 and all first qualifying at80 independently agree with parent report.",
+    "local_deployable_source_hash_unchanged": true,
+    "prior_independent_audits": "Allpassed and remain byte-identical.",
+    "supplementary_preservation_optimizer_checkpoints": 12
+  }
+}

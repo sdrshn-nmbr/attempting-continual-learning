@@ -1,0 +1,403 @@
+{
+  "arms": {
+    "control": {
+      "checkpoint_tensor_audits": {
+        "0": {
+          "all_tensors_finite_fp32": true,
+          "tensor_hash": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f"
+        },
+        "128": {
+          "all_tensors_finite_fp32": true,
+          "tensor_hash": "c42b1a15c9424c55644dad759c5f13d17953a6693869af945ff7a03e463a6966"
+        },
+        "16": {
+          "all_tensors_finite_fp32": true,
+          "tensor_hash": "7131623a6b03bb1beb8cc409821afbb6e0e7842fe06146f13607713bdd9b6efb"
+        },
+        "256": {
+          "all_tensors_finite_fp32": true,
+          "tensor_hash": "ee700b8fa3a4bc34b097e7ea84e04ca80f3355831bbc67087e95ef20a4c29074"
+        },
+        "512": {
+          "all_tensors_finite_fp32": true,
+          "tensor_hash": "2692133092fe86eedf0da3f7bb5610b5c2836fbb6853a76dc81c92e744650c5a"
+        },
+        "64": {
+          "all_tensors_finite_fp32": true,
+          "tensor_hash": "58350e3ae6f05d945a6d6575f94fc7cb78c0f9a117e80cd02a700ace93ab7653"
+        }
+      },
+      "cpu_qr_exact_matrix_error": {
+        "boolq": 0.10229563798068131,
+        "commonsense_qa": 0.09282596507559836,
+        "hellaswag": 0.2354590856810464,
+        "winogrande": 0.13821097337556185
+      },
+      "example_exposures": 6144,
+      "final_acquisition_qualified": true,
+      "final_panels": {
+        "old_exhaustive_triples": {
+          "correct": 864,
+          "examples": 864,
+          "tasks": {
+            "sequence_a": {
+              "correct": 288,
+              "examples": 288
+            },
+            "sequence_b": {
+              "correct": 288,
+              "examples": 288
+            },
+            "sequence_c": {
+              "correct": 288,
+              "examples": 288
+            }
+          }
+        },
+        "old_validation_test": {
+          "correct": 288,
+          "examples": 288,
+          "tasks": {
+            "sequence_a": {
+              "correct": 96,
+              "examples": 96
+            },
+            "sequence_b": {
+              "correct": 96,
+              "examples": 96
+            },
+            "sequence_c": {
+              "correct": 96,
+              "examples": 96
+            }
+          }
+        },
+        "released_tasks": {
+          "correct": 100,
+          "examples": 128,
+          "tasks": {
+            "boolq": {
+              "correct": 31,
+              "examples": 32
+            },
+            "commonsense_qa": {
+              "correct": 23,
+              "examples": 32
+            },
+            "hellaswag": {
+              "correct": 22,
+              "examples": 32
+            },
+            "winogrande": {
+              "correct": 24,
+              "examples": 32
+            }
+          }
+        },
+        "sealed_length4": {
+          "correct": 384,
+          "examples": 384,
+          "tasks": {
+            "sequence_a": {
+              "correct": 128,
+              "examples": 128
+            },
+            "sequence_b": {
+              "correct": 128,
+              "examples": 128
+            },
+            "sequence_c": {
+              "correct": 128,
+              "examples": 128
+            }
+          }
+        }
+      },
+      "gpu_recorded_matrix_error": {
+        "boolq": 0.1022956364399068,
+        "commonsense_qa": 0.09282596491007238,
+        "hellaswag": 0.2354590608154069,
+        "winogrande": 0.13821096862993595
+      },
+      "matrix_supervision_backward_calls": 0,
+      "mean_cpu_matrix_error": 0.14219791552822197,
+      "old_training_examples": 0,
+      "resident_parameters": 31120768,
+      "retention": {
+        "boolq": {
+          "after": 31,
+          "before": 32,
+          "delta": -1
+        },
+        "commonsense_qa": {
+          "after": 23,
+          "before": 23,
+          "delta": 0
+        },
+        "hellaswag": {
+          "after": 22,
+          "before": 24,
+          "delta": -2
+        },
+        "winogrande": {
+          "after": 24,
+          "before": 20,
+          "delta": 4
+        }
+      },
+      "trainable_parameters": 30443392
+    },
+    "preserved": {
+      "checkpoint_tensor_audits": {
+        "0": {
+          "all_tensors_finite_fp32": true,
+          "tensor_hash": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f"
+        },
+        "128": {
+          "all_tensors_finite_fp32": true,
+          "tensor_hash": "491a10dbf0e903fad873491f9451d5af73e343b550a13d8d6b5fdfddd8eaac84"
+        },
+        "16": {
+          "all_tensors_finite_fp32": true,
+          "tensor_hash": "f89f56c5d9616ac1f7ce041d161bb660598fca39b6edc5472acbf6633a7193f7"
+        },
+        "256": {
+          "all_tensors_finite_fp32": true,
+          "tensor_hash": "df6e5ab240839fcba3cd4d83c99408252e17441e739efeb161ab785afcc5c8ab"
+        },
+        "512": {
+          "all_tensors_finite_fp32": true,
+          "tensor_hash": "a8b0b7f1644aca140d8dc9b0c28cfad538372a4339519cb8946151fd31722af8"
+        },
+        "64": {
+          "all_tensors_finite_fp32": true,
+          "tensor_hash": "c4b1c012c6a9d903364f56747ae5f001e22ea60d5c5578572e8d23bc9ae8cbe0"
+        }
+      },
+      "cpu_qr_exact_matrix_error": {
+        "boolq": 0.01719296510921057,
+        "commonsense_qa": 0.0051394149268687616,
+        "hellaswag": 0.003746070292262499,
+        "winogrande": 0.0066986514973995095
+      },
+      "example_exposures": 6144,
+      "final_acquisition_qualified": true,
+      "final_panels": {
+        "old_exhaustive_triples": {
+          "correct": 864,
+          "examples": 864,
+          "tasks": {
+            "sequence_a": {
+              "correct": 288,
+              "examples": 288
+            },
+            "sequence_b": {
+              "correct": 288,
+              "examples": 288
+            },
+            "sequence_c": {
+              "correct": 288,
+              "examples": 288
+            }
+          }
+        },
+        "old_validation_test": {
+          "correct": 288,
+          "examples": 288,
+          "tasks": {
+            "sequence_a": {
+              "correct": 96,
+              "examples": 96
+            },
+            "sequence_b": {
+              "correct": 96,
+              "examples": 96
+            },
+            "sequence_c": {
+              "correct": 96,
+              "examples": 96
+            }
+          }
+        },
+        "released_tasks": {
+          "correct": 99,
+          "examples": 128,
+          "tasks": {
+            "boolq": {
+              "correct": 32,
+              "examples": 32
+            },
+            "commonsense_qa": {
+              "correct": 23,
+              "examples": 32
+            },
+            "hellaswag": {
+              "correct": 23,
+              "examples": 32
+            },
+            "winogrande": {
+              "correct": 21,
+              "examples": 32
+            }
+          }
+        },
+        "sealed_length4": {
+          "correct": 384,
+          "examples": 384,
+          "tasks": {
+            "sequence_a": {
+              "correct": 128,
+              "examples": 128
+            },
+            "sequence_b": {
+              "correct": 128,
+              "examples": 128
+            },
+            "sequence_c": {
+              "correct": 128,
+              "examples": 128
+            }
+          }
+        }
+      },
+      "gpu_recorded_matrix_error": {
+        "boolq": 0.0171929654074598,
+        "commonsense_qa": 0.005139415130637848,
+        "hellaswag": 0.0037460698280035037,
+        "winogrande": 0.00669865175536889
+      },
+      "matrix_supervision_backward_calls": 2048,
+      "mean_cpu_matrix_error": 0.008194275456435335,
+      "old_training_examples": 0,
+      "resident_parameters": 31120768,
+      "retention": {
+        "boolq": {
+          "after": 32,
+          "before": 32,
+          "delta": 0
+        },
+        "commonsense_qa": {
+          "after": 23,
+          "before": 23,
+          "delta": 0
+        },
+        "hellaswag": {
+          "after": 23,
+          "before": 24,
+          "delta": -1
+        },
+        "winogrande": {
+          "after": 21,
+          "before": 20,
+          "delta": 1
+        }
+      },
+      "trainable_parameters": 30443392
+    }
+  },
+  "collection_files_verified": 70,
+  "collection_pin": {
+    "bytes": 11364,
+    "sha256": "6d481db8faeb44c44baef7e9414a131dee04ca2a5f56843b86d33071916d2e77"
+  },
+  "cpu_matrix_audit_method": "Exact QR factorization of concatenated B factors and signed A factors in FP64, independent of the training Gram formula; all288 effective matrices per arm. Native forward uses local CPU FP32, while teacher factors and recorded errors come from the original GPU runtime. Absolute agreement tolerance2e-7; no base LLM loaded.",
+  "interpretation": [
+    "Both arms qualify ABC acquisition and the two-row old-task retention tolerance. Both score864/864 triples and384/384 length4.",
+    "Regularization greatly reduces exact generated-effective-matrix drift, but total released accuracy is99/128 versus100/128 control. There is no aggregate behavioral-retention advantage on this panel.",
+    "Protected improves BoolQ and HellaSwag by one answer each relative to control and gains fewer WinoGrande answers. These small panel differences do not establish a broad superiority."
+  ],
+  "protected_over_control_mean_matrix_error": 0.05762584793170909,
+  "raw": {
+    "old_exhaustive_triples": {
+      "correct": 286,
+      "examples": 864,
+      "tasks": {
+        "sequence_a": {
+          "correct": 84,
+          "examples": 288
+        },
+        "sequence_b": {
+          "correct": 85,
+          "examples": 288
+        },
+        "sequence_c": {
+          "correct": 117,
+          "examples": 288
+        }
+      }
+    },
+    "old_validation_test": {
+      "correct": 97,
+      "examples": 288,
+      "tasks": {
+        "sequence_a": {
+          "correct": 25,
+          "examples": 96
+        },
+        "sequence_b": {
+          "correct": 22,
+          "examples": 96
+        },
+        "sequence_c": {
+          "correct": 50,
+          "examples": 96
+        }
+      }
+    },
+    "released_tasks": {
+      "correct": 97,
+      "examples": 128,
+      "tasks": {
+        "boolq": {
+          "correct": 29,
+          "examples": 32
+        },
+        "commonsense_qa": {
+          "correct": 25,
+          "examples": 32
+        },
+        "hellaswag": {
+          "correct": 24,
+          "examples": 32
+        },
+        "winogrande": {
+          "correct": 19,
+          "examples": 32
+        }
+      }
+    },
+    "sealed_length4": {
+      "correct": 134,
+      "examples": 384,
+      "tasks": {
+        "sequence_a": {
+          "correct": 43,
+          "examples": 128
+        },
+        "sequence_b": {
+          "correct": 34,
+          "examples": 128
+        },
+        "sequence_c": {
+          "correct": 57,
+          "examples": 128
+        }
+      }
+    }
+  },
+  "raw_score_rechecks": 29696,
+  "reference_serialized_bytes": 61396328,
+  "reference_tensor_bytes": 61345792,
+  "result_pin": {
+    "bytes": 11930141,
+    "sha256": "52b1b4b6dd66589c07d5746270b02dc5d146c20c1e2533da90800a0e54550da6"
+  },
+  "run": "followthrough-20260912-portal-preserve-tasks",
+  "scope": "Read-only audits of collected artifacts; only this report written under excluded outputs. No source edits, GPU dispatch, longer optimization, or old-label training.",
+  "source_sha256": "ebec4621ae9c655d03fcc24b52c2d792c5839c383b234651658fdd25d9fe7d23",
+  "status": "independently_verified",
+  "training_pin": {
+    "bytes": 7511152,
+    "sha256": "f294eea772bf8c21eda67784ec065e5e2244ab801512c90a771e02971328e2f0"
+  }
+}

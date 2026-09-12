@@ -1,0 +1,299 @@
+{
+  "attribution": {
+    "PorTAL": "https://labs.ramp.com/research/portal-portable-task-adaptation/",
+    "source": "https://github.com/ramp-public/portallib"
+  },
+  "boundaries": [
+    "Only BoolQ showed qualified initial adapter gain. All four measured initial abilities qualify; this does not establish adapter improvements on every task.",
+    "The repeated synthetic panels make this an exploratory transfer comparison. No new semantic skill or free-generation claim.",
+    "No NFS export, GPU dispatch, or target learning result has been produced by this lane. Parent execution is the next step."
+  ],
+  "commands": {
+    "bindings": {
+      "PORTABILITY_PYTHON": "/tmp/cl-environments/4a75f5f779a2c224/bin/python",
+      "PORTABILITY_SOURCE": "Parent-staged new portability code directory, distinct from archived ebec4621 and 1e543226 directories.",
+      "SOURCE_EXPORT": "Parent-selected absolute persistent NFS directory that MUST NOT exist, outside both original/corrective runs.",
+      "TARGET_OUTPUT": "Fresh target training/evaluation run directory; dispatcher bookkeeping files are allowed.",
+      "TARGET_PREFLIGHT": "Fresh directory for CPU-only prepare output, different from TARGET_OUTPUT."
+    },
+    "cpu_export": "PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 uv run --no-project --python \"$PORTABILITY_PYTHON\" python \"$PORTABILITY_SOURCE/prepare_learned_transfer.py\" --config \"$PORTABILITY_SOURCE/configs/learned_transfer/source.json\" --output-dir \"$SOURCE_EXPORT\"",
+    "dispatcher_config": "Read SOURCE_EXPORT/target64.json only after successful export; the config contains absolute exported paths and exact hashes. Preserve those values when staging the task.",
+    "dispatcher_entrypoint": "learned_target.py",
+    "target_cpu_prepare": "PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 uv run --no-project --python \"$PORTABILITY_PYTHON\" python \"$PORTABILITY_SOURCE/learned_target.py\" --config \"$SOURCE_EXPORT/target64.json\" --output-dir \"$TARGET_PREFLIGHT\" --prepare-only",
+    "target_training_for_parent_only": "PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 uv run --no-project --python \"$PORTABILITY_PYTHON\" python \"$PORTABILITY_SOURCE/learned_target.py\" --config \"$SOURCE_EXPORT/target64.json\" --output-dir \"$TARGET_OUTPUT\""
+  },
+  "date": "2026-09-12",
+  "decision": "Transfer the actual example-trained heads_new_latents step512 source that jointly qualified ABC acquisition and the declared two-row retention limit. The constructed-source conservative control and preservation experiments are separate and do not gate this transfer.",
+  "exact_modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/prepare_learned_transfer.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/learned_target.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/configs/learned_transfer/source.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/tests/test_learned_transfer.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/learned_transfer_receipt_audit.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/learned_transfer_handoff.json"
+  ],
+  "existing_ebec_dependencies_frozen_unchanged": {
+    "calibrate_target.py": {
+      "bytes": 35522,
+      "sha256": "abc7c18c13fe996b8299a39742e984616aca069d2d22cf1035f774d193da6a2b"
+    },
+    "data.py": {
+      "bytes": 11777,
+      "sha256": "fe9e083a41caf518f3285ace906a63d2015f5002faa74337c39d8fa8b67992c2"
+    },
+    "final_retention.py": {
+      "bytes": 15063,
+      "sha256": "a0ac70a3b6198b3378e1390f3934d9e848823b365772f3c8ce6cb04565a37a53"
+    },
+    "follow_through.py": {
+      "bytes": 32556,
+      "sha256": "c25b9682ccd890593a2154018678a2548a10d81720244707bb3b6e264945d65d"
+    },
+    "learner.py": {
+      "bytes": 37216,
+      "sha256": "958ea3e4cd054857f53100456195f08ce1c457237977f7fddb655efb79470874"
+    },
+    "preserve_tasks.py": {
+      "bytes": 22524,
+      "sha256": "e9edec5d8e57cc63fa86ee7d86ba8f70b71afbf62d05e1257415e67bdbc8d8a3"
+    },
+    "repair_alignment.py": {
+      "bytes": 30495,
+      "sha256": "42d5a12b1e8c7ae882b4b5be88796de2ec1b957604fa4e97307955d0b4165a5b"
+    }
+  },
+  "export_directory_contract": "Do not pass the precreated dispatcher root to the exporter. Run the CPU exporter directly inside the qualified worker environment into a nonexistent artifact directory, then use its generated target64.json for a normal parent-dispatched learned_target job. Old metadata/input paths remain rooted at original archived code, not rewritten to new staged code.",
+  "export_outputs": [
+    "native/config.json",
+    "native/model.safetensors",
+    "source_qualification.json",
+    "target64.json",
+    "request.json"
+  ],
+  "export_prerequisites": [
+    "Exact pinned original and corrective execution/config/result/training receipts and both archived source trees must be readable on NFS.",
+    "All original input files and every arm step0/step512 adapter required by final_retention.inspect_source must be present; both prior manifest identities are reverified.",
+    "The old base files are byte-verified; no base LLM is loaded by the exporter or --prepare-only.",
+    "The learned source native config, tensor/file/shared hashes, all original non-ABC vectors, exact step512 reload, ABC acquisition, and corrected retention must pass before export.",
+    "Failure of acquisition or retention exports no source; there is no automatic acquisition-only fallback."
+  ],
+  "local_receipt_checks": {
+    "bytes": 5805,
+    "path": "learned_transfer_receipt_audit.json",
+    "sha256": "ab96e5398eacc16603af2231bd6431ad4a8b73b9e7b7c94030112f389261b9cc"
+  },
+  "new_files_sealed": {
+    "configs/learned_transfer/source.json": {
+      "bytes": 4101,
+      "sha256": "b62ecacc3d41b0dd43c00437b85a27760392b89ec88beff9473e1bcabf27a73e"
+    },
+    "learned_target.py": {
+      "bytes": 9463,
+      "sha256": "1ce5fd0bc82ba7e67dee555d8dd96f4531450a8f8fa5c5922dd17941b3fc420b"
+    },
+    "learned_transfer_receipt_audit.json": {
+      "bytes": 5805,
+      "sha256": "ab96e5398eacc16603af2231bd6431ad4a8b73b9e7b7c94030112f389261b9cc"
+    },
+    "prepare_learned_transfer.py": {
+      "bytes": 12116,
+      "sha256": "83d27b2ed8b9a8bea2f875617b777df89ca058ff434939a15d394bc9ec877338"
+    },
+    "tests/test_learned_transfer.py": {
+      "bytes": 12405,
+      "sha256": "4f71fb7470342a8c8b66007f9dfa1532faeb92d1048cc853306b6dd133e88434"
+    }
+  },
+  "priority": "next_main_PorTAL_result",
+  "runtime": {
+    "boundary": "The worker environment path is observed in completed run logs, not assumed to exist on another helper. Use that existing qualified worker environment. This lane did not install or alter the remote runtime.",
+    "cpu_test_key_versions": {
+      "portallib": "0.2.1",
+      "pytest": "9.1.1",
+      "safetensors": "0.8.0",
+      "torch": "2.14.0",
+      "transformers": "5.16.1"
+    },
+    "cpu_test_python": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python",
+    "qualification_evidence": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-final-retention-examples/run.log",
+    "qualified_worker_python_observed": "/tmp/cl-environments/4a75f5f779a2c224/bin/python",
+    "runtime_requirements_file": {
+      "bytes": 155,
+      "path": "requirements.txt",
+      "sha256": "bf772f66dcae41ae30727fb41845ffe708a01e27f30ef0f46b0e944fbdfb822c"
+    },
+    "worker_key_versions": {
+      "portallib": "0.2.1",
+      "safetensors": "0.8.0",
+      "torch": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+      "transformers": "5.16.1"
+    },
+    "worker_packages": {
+      "bytes": 1546,
+      "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-final-retention-examples/packages.txt",
+      "sha256": "11943b5b2a91d10996919c27717c50163fc1fe8c6ee83ae30ce68ed0f6023785"
+    },
+    "worker_python_version": "3.12.3"
+  },
+  "source_request": {
+    "arm": "heads_new_latents",
+    "authorization": "Parent reports and authorizes the actual heads_new_latents final512 source, with all ABC train/validation correct and per-task retention drops at most two rows. Export verifies those claims against immutable original and corrective receipts before producing a usable source/config.",
+    "calibration_template": {
+      "bytes": 23755,
+      "path": "configs/follow_through/constructed_target64.json",
+      "sha256": "8728ee78273cc2d07f93897788de1545559102f7aec6111aeaa79607361bbaae"
+    },
+    "code_dependencies": {
+      "calibrate_target.py": {
+        "bytes": 35522,
+        "sha256": "abc7c18c13fe996b8299a39742e984616aca069d2d22cf1035f774d193da6a2b"
+      },
+      "data.py": {
+        "bytes": 11777,
+        "sha256": "fe9e083a41caf518f3285ace906a63d2015f5002faa74337c39d8fa8b67992c2"
+      },
+      "final_retention.py": {
+        "bytes": 15063,
+        "sha256": "a0ac70a3b6198b3378e1390f3934d9e848823b365772f3c8ce6cb04565a37a53"
+      },
+      "follow_through.py": {
+        "bytes": 32556,
+        "sha256": "c25b9682ccd890593a2154018678a2548a10d81720244707bb3b6e264945d65d"
+      },
+      "learned_target.py": {
+        "bytes": 9463,
+        "sha256": "1ce5fd0bc82ba7e67dee555d8dd96f4531450a8f8fa5c5922dd17941b3fc420b"
+      },
+      "learner.py": {
+        "bytes": 37216,
+        "sha256": "958ea3e4cd054857f53100456195f08ce1c457237977f7fddb655efb79470874"
+      },
+      "prepare_learned_transfer.py": {
+        "bytes": 12116,
+        "sha256": "83d27b2ed8b9a8bea2f875617b777df89ca058ff434939a15d394bc9ec877338"
+      },
+      "preserve_tasks.py": {
+        "bytes": 22524,
+        "sha256": "e9edec5d8e57cc63fa86ee7d86ba8f70b71afbf62d05e1257415e67bdbc8d8a3"
+      },
+      "repair_alignment.py": {
+        "bytes": 30495,
+        "sha256": "42d5a12b1e8c7ae882b4b5be88796de2ec1b957604fa4e97307955d0b4165a5b"
+      }
+    },
+    "corrected_retention": {
+      "config_sha256": "b7f0d896449881446b0b543ed8077e184417c4329c2ee7ee51230e11a9154cb4",
+      "files": {
+        "config.json": {
+          "bytes": 606,
+          "sha256": "3ad45a996854fc7b538c87163eaa81f7311c2d3de155d5062dcbc50991b987f7"
+        },
+        "execution.json": {
+          "bytes": 2424,
+          "sha256": "5cf660e4d79970ecf4517db2844983c36b3a6c43bbe956da114d7baefc2a0ebc"
+        },
+        "result.json": {
+          "bytes": 1188138,
+          "sha256": "faccd71bb368b16d3dea5d1735436130ed48e99f88b90b82d8ff7e65733cd829"
+        }
+      },
+      "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-final-retention-examples",
+      "source_sha256": "ebec4621ae9c655d03fcc24b52c2d792c5839c383b234651658fdd25d9fe7d23",
+      "task_id": "followthrough-20260912-portal-final-retention-examples"
+    },
+    "expected_checkpoint": {
+      "artifact": {
+        "files": {
+          "config.json": {
+            "bytes": 15930,
+            "sha256": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb"
+          },
+          "model.safetensors": {
+            "bytes": 124484888,
+            "sha256": "7c4b812ab147dcd42168653639b3d85c6b40f248ae3032f7c2dd9c723b697574"
+          }
+        },
+        "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-examples-released/heads_new_latents/checkpoints/step-0512"
+      },
+      "kind": "portal",
+      "shared_sha256": "9a1d1364bb04009e4321a0966bd0b8198d0d6ddab929f10234612310b28f4165",
+      "tensor_sha256": "2692133092fe86eedf0da3f7bb5610b5c2836fbb6853a76dc81c92e744650c5a"
+    },
+    "expected_source_training_receipt": {
+      "bytes": 13157911,
+      "sha256": "3709d85a1e596f7ccf74f910e9a1c8d2e66cc74e73ff88a1e3f4404866111a91"
+    },
+    "kind": "qualify_example_learned_portal_source",
+    "maximum_lost_rows_per_old_task": 2,
+    "minimum_train_accuracy": 1.0,
+    "minimum_validation_accuracy": 1.0,
+    "qualification_scope": "acquisition_and_retention",
+    "source_run": {
+      "config_sha256": "915addb76eb291a5fdbe6401447cb7f5acd2f3df515e3b7f221228942b05e01b",
+      "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-examples-released",
+      "source_sha256": "1e543226bb2981f5c7b5bd44b069ce6ce9a622d29b94df11505f4d64eee419ab",
+      "task_id": "followthrough-20260912-portal-examples-released"
+    },
+    "step": 512
+  },
+  "status": "cpu_verified_ready_for_parent_staging",
+  "target_protocol": {
+    "alignment_seed": 73303,
+    "arms": [
+      "learned",
+      "untouched",
+      "lora"
+    ],
+    "batch_per_task": 4,
+    "checkpoints": [
+      0,
+      20,
+      80,
+      160,
+      320
+    ],
+    "data_seed": 83303,
+    "evaluation": "Fresh PID; exact validation reload; 864 triples, 384 length4, 288 prior validation/test rows, and the same 128 released-task probes.",
+    "example_exposures_per_arm": 3840,
+    "learning_rate_all_arms": 0.001,
+    "model_seed": 912303,
+    "native_frozen": [
+      "shared core",
+      "every task latent including learned ABC rows"
+    ],
+    "native_trainable": [
+      "fresh target input/output alignment",
+      "fresh target layer embeddings"
+    ],
+    "numeric_retention_endpoints": {
+      "after": 320,
+      "before": 0
+    },
+    "optimizer_updates": 320,
+    "routing": "Each native uses its own frozen ABC task rows; learned vectors are never replaced by fixed RTE. Untouched ABC rows are its original RTE copies.",
+    "scoring": "unchanged character-normalized four-choice likelihood; gold-answer token NLL training",
+    "selection": "Final predefined checkpoint; no best-checkpoint selection or heldout-driven stopping.",
+    "tasks": 3,
+    "trainable_parameters": {
+      "learned": 10486912,
+      "lora": 2949120,
+      "untouched": 10486912
+    },
+    "training_rows_per_task": 64
+  },
+  "tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 uv run --no-project --python '/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python' python -m pytest -q tests/test_learned_transfer.py",
+    "coverage": [
+      "exact acquisition/two-row retention gate",
+      "wrong endpoint/checkpoint/reloaded validation rejection",
+      "complete original/corrective new-PID verification",
+      "byte-identical native export",
+      "learned ABC vectors preserved through transplant and training",
+      "three-arm target new-PID reload and numeric final retention",
+      "fixed-RTE routing rejection",
+      "failed-retention export blocked"
+    ],
+    "cwd": "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability",
+    "passed": 8
+  }
+}

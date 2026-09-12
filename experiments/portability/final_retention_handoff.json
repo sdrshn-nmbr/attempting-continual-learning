@@ -1,0 +1,212 @@
+{
+  "commands": {
+    "conservative_preflight": "uv run --no-project --python \"$PORTABILITY_PYTHON\" python \"$PORTABILITY_SOURCE/follow_through.py\" --config \"$PORTABILITY_SOURCE/configs/follow_through/constructed_target64_conservative.json\" --output-dir NEW_PREFLIGHT_DIRECTORY --prepare-only",
+    "conservative_training": "uv run --no-project --python \"$PORTABILITY_PYTHON\" python \"$PORTABILITY_SOURCE/follow_through.py\" --config \"$PORTABILITY_SOURCE/configs/follow_through/constructed_target64_conservative.json\" --output-dir NEW_TRAINING_DIRECTORY",
+    "environment": "Parent supplies PORTABILITY_SOURCE pointing to the newly staged portability tree and PORTABILITY_PYTHON to its qualified environment.",
+    "evaluation": "uv run --no-project --python \"$PORTABILITY_PYTHON\" python \"$PORTABILITY_SOURCE/final_retention.py\" --config \"$PORTABILITY_SOURCE/configs/final_retention/constructed_target16.json\" --output-dir NEW_EVALUATION_DIRECTORY",
+    "other_sources": "Replace constructed_target16.json with constructed_target64.json or examples_released.json; use unique output directories.",
+    "preflight": "uv run --no-project --python \"$PORTABILITY_PYTHON\" python \"$PORTABILITY_SOURCE/final_retention.py\" --config \"$PORTABILITY_SOURCE/configs/final_retention/constructed_target16.json\" --output-dir NEW_PREFLIGHT_DIRECTORY --prepare-only"
+  },
+  "conservative_control": {
+    "checkpoints": [
+      0,
+      20,
+      80,
+      160,
+      320
+    ],
+    "config": "configs/follow_through/constructed_target64_conservative.json",
+    "decision": "One conservative-rate control tests failure to acquire after 320 finite updates. No other optimizer, initialization, or data changes; next priority is transfer of an example-learned generator once its actual final acquisition and retention qualify.",
+    "learning_rate_all_three_arms": 0.0001,
+    "only_training_change": "protocol.arms[*].learning_rate",
+    "reference_learning_rate": 0.001,
+    "train_rows_per_task": 64
+  },
+  "corrective_evaluation": {
+    "behavior": "128 released probes per raw base and each selected checkpoint; original task routing and scoring; no ABC heldout rerun, checkpoint selection, or original result overwrite.",
+    "configs": {
+      "constructed_target16": {
+        "expected_final_step": 320,
+        "file": {
+          "bytes": 612,
+          "sha256": "b20f6892b34c6a0ed677c309a69b142eaeab25b4a3823e2943cae6cac33d0a07"
+        },
+        "kind": "portal_final_retention",
+        "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/configs/final_retention/constructed_target16.json",
+        "probe_counts": {
+          "boolq": 32,
+          "commonsense_qa": 32,
+          "hellaswag": 32,
+          "winogrande": 32
+        },
+        "selection": "step_zero_and_maximum_numeric_checkpoint_all_arms",
+        "source_run": {
+          "config_sha256": "d272b802c15fdee1bb0c7ae7234d5599191b6b4eea9e658f83b58ee8df892a14",
+          "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-constructed-target16",
+          "source_sha256": "1e543226bb2981f5c7b5bd44b069ce6ce9a622d29b94df11505f4d64eee419ab",
+          "task_id": "followthrough-20260912-portal-constructed-target16"
+        }
+      },
+      "constructed_target64": {
+        "expected_final_step": 320,
+        "file": {
+          "bytes": 612,
+          "sha256": "a53c4f1e3071bb924a630e0842f91079c793987adbcf4756099b64abcf593424"
+        },
+        "kind": "portal_final_retention",
+        "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/configs/final_retention/constructed_target64.json",
+        "probe_counts": {
+          "boolq": 32,
+          "commonsense_qa": 32,
+          "hellaswag": 32,
+          "winogrande": 32
+        },
+        "selection": "step_zero_and_maximum_numeric_checkpoint_all_arms",
+        "source_run": {
+          "config_sha256": "3c09143800be3bdb18fd3d1b62f4198e93be57404b6592fcd5d7d7b46de8e880",
+          "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-constructed-target64",
+          "source_sha256": "1e543226bb2981f5c7b5bd44b069ce6ce9a622d29b94df11505f4d64eee419ab",
+          "task_id": "followthrough-20260912-portal-constructed-target64"
+        }
+      },
+      "examples_released": {
+        "expected_final_step": 512,
+        "file": {
+          "bytes": 606,
+          "sha256": "3ad45a996854fc7b538c87163eaa81f7311c2d3de155d5062dcbc50991b987f7"
+        },
+        "kind": "portal_final_retention",
+        "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/configs/final_retention/examples_released.json",
+        "probe_counts": {
+          "boolq": 32,
+          "commonsense_qa": 32,
+          "hellaswag": 32,
+          "winogrande": 32
+        },
+        "selection": "step_zero_and_maximum_numeric_checkpoint_all_arms",
+        "source_run": {
+          "config_sha256": "915addb76eb291a5fdbe6401447cb7f5acd2f3df515e3b7f221228942b05e01b",
+          "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-examples-released",
+          "source_sha256": "1e543226bb2981f5c7b5bd44b069ce6ce9a622d29b94df11505f4d64eee419ab",
+          "task_id": "followthrough-20260912-portal-examples-released"
+        }
+      }
+    },
+    "new_PID": true,
+    "prepare_only": "CPU file/hash/config/checkpoint preflight without loading the base LLM; GPU validation identity and behavioral scores remain untested here.",
+    "run_directory_rule": "Preflight and evaluation each require separate fresh directories, both disjoint from the source run.",
+    "selection": "Step zero and maximum numeric checkpoint for every arm; source must have completed its exact planned checkpoint schedule and update budget.",
+    "training_updates": 0,
+    "verification": [
+      "completed execution status and exit code",
+      "embedded task/config and supervisor hashes",
+      "canonical source config identity",
+      "archived source tree hash",
+      "training receipt file pin and input manifest",
+      "original SDK code pins and unchanged scoring/loader modules",
+      "selected adapter bundle file hashes, full tensor hash and shared hash",
+      "full base file pins and tensor identity",
+      "exact reloaded validation records before retained-task evaluation",
+      "exact raw and step-zero retained predictions",
+      "source metadata unchanged after evaluation"
+    ]
+  },
+  "entrypoint": "final_retention.py",
+  "files": {
+    "configs/final_retention/constructed_target16.json": {
+      "bytes": 612,
+      "sha256": "b20f6892b34c6a0ed677c309a69b142eaeab25b4a3823e2943cae6cac33d0a07"
+    },
+    "configs/final_retention/constructed_target64.json": {
+      "bytes": 612,
+      "sha256": "a53c4f1e3071bb924a630e0842f91079c793987adbcf4756099b64abcf593424"
+    },
+    "configs/final_retention/examples_released.json": {
+      "bytes": 606,
+      "sha256": "3ad45a996854fc7b538c87163eaa81f7311c2d3de155d5062dcbc50991b987f7"
+    },
+    "configs/follow_through/constructed_target64_conservative.json": {
+      "bytes": 24906,
+      "sha256": "19066b2974a7f91f197c15998e230694dd3e85655465ba4291bb1f87bf796685"
+    },
+    "configs/preservation/heads_new_latents.json": {
+      "bytes": 41376,
+      "sha256": "8e803888a99f8fbcab101aeb43b3663dad0d9c0988ae9ceca22911c448043b93"
+    },
+    "final_retention.py": {
+      "bytes": 15063,
+      "sha256": "a0ac70a3b6198b3378e1390f3934d9e848823b365772f3c8ce6cb04565a37a53"
+    },
+    "follow_through.py": {
+      "bytes": 32556,
+      "sha256": "c25b9682ccd890593a2154018678a2548a10d81720244707bb3b6e264945d65d"
+    },
+    "preservation_handoff.json": {
+      "bytes": 9849,
+      "sha256": "4f7cc936b3539d265eef6b3e6cea2379d21319484734b7be403b7686d8bb6ece"
+    },
+    "preserve_tasks.py": {
+      "bytes": 22524,
+      "sha256": "e9edec5d8e57cc63fa86ee7d86ba8f70b71afbf62d05e1257415e67bdbc8d8a3"
+    },
+    "tests/test_final_retention.py": {
+      "bytes": 10104,
+      "sha256": "72bda9188080897062e98fc6a57b3cd3e5bc465037d0c6b4133b644d1cf4cfea"
+    },
+    "tests/test_follow_through.py": {
+      "bytes": 19521,
+      "sha256": "e5adb9bfe465ffd5e1734026b5397f033f1a874b0182b9bbb14f45877f1733a0"
+    },
+    "tests/test_preserve_tasks.py": {
+      "bytes": 13445,
+      "sha256": "c833c8c895cd1b299dc26446d03855319f98ca444fdd7e05e15aee05f22eeb91"
+    }
+  },
+  "fix": {
+    "archived_code_diff": "Only the ordering expression and explicit retention_steps field differ from archived follow_through.py.",
+    "cause": "JSON writes sort dictionary keys, so list(checkpoints) selected lexicographic 80 or 64 rather than numeric 320 or 512.",
+    "implementation": "Numeric sorting in follow_through.evaluate_saved, explicit before/after retention steps, and an endpoint assertion in preserve_tasks.compare_final.",
+    "insertion_step_zero_comparison_affected": false,
+    "past_artifacts_changed": false
+  },
+  "modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/follow_through.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/preserve_tasks.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/final_retention.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/tests/test_follow_through.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/tests/test_preserve_tasks.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/tests/test_final_retention.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/configs/preservation/heads_new_latents.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/configs/final_retention/constructed_target16.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/configs/final_retention/constructed_target64.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/configs/final_retention/examples_released.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/configs/follow_through/constructed_target64_conservative.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/preservation_handoff.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/final_retention_handoff.json"
+  ],
+  "nullspace_followup": "Paused on explicit parent instruction; only prior CPU feature-rank inspection exists, no implementation or experiment claim.",
+  "ownership": "Only experiments/portability edited. Parent owns remote staging, dispatch and collection. No commit or push.",
+  "status": "cpu_verified_ready_for_parent_preflight_and_dispatch",
+  "validation": {
+    "checks": [
+      "Both 320 and 512 checkpoint ladders fail under the old ordering in a test with different final vs lexicographic-last retention scores.",
+      "Fresh-PID final-only evaluation on tiny Qwen preserves every archived source file byte-for-byte.",
+      "Changed base and changed validation records reject before adapter retention evaluation.",
+      "Wrong provenance, incomplete budget, changed probe counts, source/output overlap, changed verification snapshot, same PID, and reused output reject.",
+      "Matrix regularization uses actual numeric-final retention and explicitly verifies endpoints.",
+      "Conservative-rate config equals target64 after reverting only arm learning rates and removing explanatory metadata."
+    ],
+    "collected_real_target16_metadata_and_source_archive": "Supervisor task/config hashes, training config digest, and 72-file archived source digest checked locally.",
+    "command": "uv run --no-project --python '/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python' python -m pytest -q tests/test_final_retention.py tests/test_follow_through.py tests/test_preserve_tasks.py",
+    "cpu_tests": 41,
+    "lint": "New final_retention.py and its tests, preserve_tasks.py and its tests pass. follow_through.py and its test pass with their existing import-order warning I001 ignored; no unrelated source import changes.",
+    "nested_imports": "none in changed entrypoints",
+    "real_source_sha256": "1e543226bb2981f5c7b5bd44b069ce6ce9a622d29b94df11505f4d64eee419ab",
+    "remote_preflight_or_GPU_evaluation_performed": false,
+    "test_files": [
+      "tests/test_final_retention.py",
+      "tests/test_follow_through.py",
+      "tests/test_preserve_tasks.py"
+    ]
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "architecture": {
+    "additional_frozen_reference_bytes_cpu": 61396328,
+    "freeze": [
+      "base LLM",
+      "shared hidden network",
+      "every original task vector"
+    ],
+    "model_capacity_growth": false,
+    "reference_factor_elements": 15335424,
+    "train": [
+      "shared A/B affine output heads",
+      "input/output alignment",
+      "layer embeddings",
+      "three new ABC task vectors"
+    ],
+    "trainable_parameters_per_arm": 30443392
+  },
+  "checkpoint_order_correction": {
+    "numeric_order_required": true,
+    "preservation_comparison_rejects_wrong_endpoints": true,
+    "prior_cpu_feasibility_record_preserved": true,
+    "protocol_changed": false,
+    "retention_steps_explicit": true,
+    "shared_evaluator": "sorted(training[\"checkpoints\"], key=int)",
+    "validation": "10 preservation tests pass, including a two-arm new-PID run with checkpoints 0,4,12 that would previously have used 4 as final."
+  },
+  "config": "configs/preservation/heads_new_latents.json",
+  "config_sha256": "8e803888a99f8fbcab101aeb43b3663dad0d9c0988ae9ceca22911c448043b93",
+  "entrypoint": "preserve_tasks.py",
+  "execution_owner": "Parent owns remote staging, GPU qualification, dispatch, collection, and experiment continuation. No remote mutations or dispatch performed by this lane.",
+  "existing_dependency_pins_verified_unchanged": {
+    "calibrate_target.py": {
+      "bytes": 35522,
+      "sha256": "abc7c18c13fe996b8299a39742e984616aca069d2d22cf1035f774d193da6a2b"
+    },
+    "data.py": {
+      "bytes": 11777,
+      "sha256": "fe9e083a41caf518f3285ace906a63d2015f5002faa74337c39d8fa8b67992c2"
+    },
+    "follow_through.py": {
+      "bytes": 32556,
+      "sha256": "c25b9682ccd890593a2154018678a2548a10d81720244707bb3b6e264945d65d"
+    },
+    "learner.py": {
+      "bytes": 37216,
+      "sha256": "958ea3e4cd054857f53100456195f08ce1c457237977f7fddb655efb79470874"
+    },
+    "repair_alignment.py": {
+      "bytes": 30495,
+      "sha256": "42d5a12b1e8c7ae882b4b5be88796de2ec1b957604fa4e97307955d0b4165a5b"
+    }
+  },
+  "feasibility": {
+    "behavioral_examples_used": 0,
+    "config_file": {
+      "bytes": 41376,
+      "sha256": "5e3577fde384d0d4984d60fb4dd95e65e55343248b64ca57749f4950e312de05"
+    },
+    "file": {
+      "bytes": 61396328,
+      "sha256": "c6a01f6d5128cac444bc868c232a090a8bb8f2bf7306634ad374aa0611109502"
+    },
+    "identity": {
+      "mean": 0.0,
+      "per_task_mean_normalized_squared_error": {
+        "boolq": 0.0,
+        "commonsense_qa": 0.0,
+        "hellaswag": 0.0,
+        "winogrande": 0.0
+      }
+    },
+    "protocol_sha256": "61ee62d22c50907586e05d2af734e853f153eba25fcf1239a0eec9289e512158",
+    "reference_tensor_sha256": "80d26b3b452bb4b7c864f8b04852bb9b405c8eabd1cfed608a4b485b10fcee93",
+    "source_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+    "tasks": {
+      "boolq": {
+        "matrices": 72,
+        "reference_energy_max": 5014.478732815094,
+        "reference_energy_min": 124.49666220701147,
+        "reference_factor_elements": 3833856,
+        "vector_sha256": "7f9107869a85d58d233c5507d7ea92c633bf0a889684c905f97498fa2fd36d98"
+      },
+      "commonsense_qa": {
+        "matrices": 72,
+        "reference_energy_max": 3154.529960554605,
+        "reference_energy_min": 241.9589071061505,
+        "reference_factor_elements": 3833856,
+        "vector_sha256": "c31026ebf1acc46707c4c84662a44b4ff50fc3a593230f730f0c1651ba280a55"
+      },
+      "hellaswag": {
+        "matrices": 72,
+        "reference_energy_max": 1082.839604573438,
+        "reference_energy_min": 139.31691116212892,
+        "reference_factor_elements": 3833856,
+        "vector_sha256": "69af1eb992a133d7f9d891ffec1c76726b07097719efc142dfbe3e9770cecae6"
+      },
+      "winogrande": {
+        "matrices": 72,
+        "reference_energy_max": 1770.6468298170594,
+        "reference_energy_min": 159.9483158565868,
+        "reference_factor_elements": 3833856,
+        "vector_sha256": "ddb8d0439a78e0fdd9e0c65c7c4d400bead784e740d8dd5ca8f6d5ad1643b254"
+      }
+    },
+    "trainable_parameters_per_arm": 30443392
+  },
+  "interpretation": [
+    "Call this native-adapter distillation/retention regularization, not Nested Learning, Agent-Dice, or a LoRAGen reproduction.",
+    "Computational feasibility and a zero initial penalty do not establish that simultaneous acquisition and retention are achievable. The paired GPU runs answer that.",
+    "Equal learner capacity and ABC exposure do not imply equal total memory or arithmetic: the method adds frozen reference storage and matrix backpropagation.",
+    "Old behavioral questions remain excluded from training. Previously inspected old questions and existing ABC panels make this an exploratory comparison.",
+    "Joint acquisition/retention qualification and protected-minus-control behavioral gain are separately reported; no significance or replication claim.",
+    "If an example-trained checkpoint qualifies both behavior and retention, seal its tensor/file hashes before testing target transfer. For the new-latent arm use its learned ABC vectors, not the RTE routing used by the privileged construction."
+  ],
+  "modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/preserve_tasks.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/tests/test_preserve_tasks.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/configs/preservation/heads_new_latents.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/preservation_handoff.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/local-checks/preservation-reference/cpu-feasibility.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/local-checks/preservation-reference/preservation_reference.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/local-checks/preservation-reference/preservation_reference.safetensors"
+  ],
+  "new_source_files": {
+    "preserve_tasks.py": {
+      "bytes": 22524,
+      "sha256": "e9edec5d8e57cc63fa86ee7d86ba8f70b71afbf62d05e1257415e67bdbc8d8a3"
+    },
+    "tests/test_preserve_tasks.py": {
+      "bytes": 13445,
+      "sha256": "c833c8c895cd1b299dc26446d03855319f98ca444fdd7e05e15aee05f22eeb91"
+    }
+  },
+  "objective": {
+    "ABC_exposures_per_arm": 6144,
+    "approximation": false,
+    "checkpoints": [
+      0,
+      16,
+      64,
+      128,
+      256,
+      512
+    ],
+    "formula": "mean_t(EMA_normalized_gold_answer_NLL_t) + lambda * mean_old_task,projection(||2BA - 2BrefAref||_F^2/(||2BrefAref||_F^2 + 1e-12))",
+    "implementation": "Exact low-rank Gram identity with FP64 scalar products from FP32 factors. No dense stored teacher matrices, random projections, or factor L2.",
+    "lambda": [
+      0,
+      1
+    ],
+    "matrix_backward_calls_per_update": {
+      "control": 0,
+      "preserved": 4
+    },
+    "old_behavioral_training_examples": 0,
+    "old_matrices_per_update": 288,
+    "old_task_generator_forwards_per_update": 4,
+    "old_tasks": [
+      "boolq",
+      "commonsense_qa",
+      "hellaswag",
+      "winogrande"
+    ],
+    "planned_matrix_comparisons_per_arm": 147456,
+    "planned_updates_per_arm": 512,
+    "train_rows_per_ABC_task": 128
+  },
+  "preflight": "Run preserve_tasks.py with --config configs/preservation/heads_new_latents.json --output-dir NEW_PREFLIGHT_DIRECTORY --prepare-only under uv and the helper Python. Preflight verifies source/model/file pins then captures the four source references on CPU without loading the base LLM. GPU execution must use another fresh output directory.",
+  "prior_numerical_review": {
+    "16_row_train_symbol_coverage": "All eight digits occur in every task; the smallest count is three.",
+    "constructed_vs_untouched_head_weight_norm_ratio_range": [
+      12.59,
+      38.47
+    ],
+    "construction_hidden_design_condition_number": 922.1561950826695,
+    "fresh_layer_zero_start_output_map_feature_norm_median": {
+      "constructed": 58.573631286621094,
+      "untouched": 0.664702296257019
+    },
+    "interpretation": "Large reconstructed heads and fresh target layer embeddings create a plausible conditioning/initialization confound. Target64 tests data diversity; train-perfect/validation-imperfect alone does not prove data scarcity is the sole cause.",
+    "source_files_changed": false
+  },
+  "protocol_sha256": "61ee62d22c50907586e05d2af734e853f153eba25fcf1239a0eec9289e512158",
+  "status": "cpu_verified_ready_for_parent_preflight_and_dispatch",
+  "validation": {
+    "command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python -m pytest -q tests/test_preserve_tasks.py",
+    "dense_checks": "Loss and gradients match direct dense effective-matrix residuals with FP32/FP64 factors, including a nontrivial invertible gauge change whose factor L2 is large but effective update difference is zero.",
+    "lint": "passed",
+    "nested_imports": "none",
+    "other_checks": [
+      "same initialization/data/parameter scope between arms",
+      "finite nonzero reference energies; exact zero identity penalty",
+      "frozen old task vectors and full base tensor identity",
+      "reference tamper rejection",
+      "old behavioral evaluator forbidden during training test",
+      "positive penalty reduces matrix drift on deterministic tiny Qwen control",
+      "both arms save/reload/evaluate in new process; invalid acquisition does not qualify retention claim"
+    ],
+    "result": "passed",
+    "tests": 10,
+    "zero_weight_parity": "Exact final native tensors, optimizer state, RNG state, and backbone forward count match the current heads_new_latents trainer."
+  }
+}

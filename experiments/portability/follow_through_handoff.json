@@ -1,0 +1,393 @@
+{
+  "design_decisions": [
+    "The examples-only config contains no path to either successful adapter weights or the reconstructed generator. No reconstruction loss or teacher outputs are used.",
+    "Heads/fixed-RTE changes exactly the component set of the successful construction: input/output alignment and shared A/B affine heads. Hidden network, original task vectors, and layer embeddings remain frozen.",
+    "Heads/new-latents and full/new-latents train the new ABC vectors and layer embeddings, while preserving all original task vectors exactly. Each is compared with a rank8 LoRA initialized from the same released RTE factors.",
+    "Target calibration uses actual constructed core plus fixed original RTE vector for all ABC tasks; untouched source uses the same RTE routing. Fresh target maps and layer embeddings match exactly before optimization. Shared core and every latent remain frozen.",
+    "Use three task microbatches of four examples per update with EMA-normalized gold-answer token NLL. Data, updates and rank match; parameter counts do not.",
+    "Check finite gradients by component family, zero gradients before extra updates, actual update/exposure counts including failed updates, and generated factor RMS and full B@A update norms. Nonfinite/zero-gradient arms stop and return a diagnostic so the runner can continue other arms.",
+    "A single zero B path is deliberate. A double-zero output/head initialization receives zero gradients; a CPU test confirms it stops with zero optimizer updates.",
+    "All old-task retention questions are from the exact saved prior catalog selection: 32 each of BoolQ, HellaSwag, WinoGrande, CommonsenseQA. Native retains original task routing; persistent LoRA has its own baseline and cannot be compared with unmatched absolute task-adapter starting scores.",
+    "The old validation rows are intentionally monitored. Old test, exhaustive-triple, and sealed length4 evaluations occur after every arm finishes training, in a distinct PID. No holdout-based checkpoint selection. Previously exposed triples are reported as exploratory.",
+    "The zero-start config changes both initialization and learning rate relative to the conservative released-initialization config. A success there would not isolate which of those changes helped.",
+    "Length4 is a fresh length-generalization panel on known mappings. It is not free generation, a new task mapping, or a sustained-learning result."
+  ],
+  "dispatch_order": [
+    {
+      "arms": 3,
+      "checkpoints": [
+        0,
+        20,
+        80,
+        160,
+        320
+      ],
+      "config": "constructed_target16",
+      "examples_per_task": 16,
+      "question": "Does the actual 850/864 reconstruction make alignment-only transfer learn faster than untouched source and LoRA?"
+    },
+    {
+      "arms": 2,
+      "config": "constructed_retention",
+      "optimizer_updates": 0,
+      "question": "What happens to the four measured released tasks after inserting the successful reconstruction?"
+    },
+    {
+      "arms": 4,
+      "checkpoints": [
+        0,
+        16,
+        64,
+        128,
+        256,
+        512
+      ],
+      "config": "examples_released",
+      "examples_per_task": 128,
+      "question": "Can TRAIN answers alone teach the constructive component set, new latents, or full decoder?"
+    },
+    {
+      "arms": 2,
+      "checkpoints": [
+        0,
+        16,
+        64,
+        128,
+        256,
+        512
+      ],
+      "condition": "Separate sealed diagnostic if released initialization fails acquisition; train at the published decoder/latent rates from one zero B path.",
+      "config": "examples_zero",
+      "examples_per_task": 128
+    },
+    {
+      "arms": 3,
+      "checkpoints": [
+        0,
+        20,
+        80,
+        160,
+        320
+      ],
+      "condition": "Separately predefined follow-up for data-limited calibration; retains the exact original 16 IDs as a prefix and adds 48 unused TRAIN rows.",
+      "config": "constructed_target64",
+      "examples_per_task": 64
+    }
+  ],
+  "entrypoint": "follow_through.py",
+  "files": {
+    "configs/follow_through/constructed_retention.json": {
+      "bytes": 12575,
+      "sha256": "877cca787f645cdba4f255807c8e508ec5b06cf2d70141a9eb08c1145f869dad"
+    },
+    "configs/follow_through/constructed_target16.json": {
+      "bytes": 12811,
+      "sha256": "6ed2d09e53f9b0da13c64398109266b7750286dbd3e37628717ffa6a155f9cc7"
+    },
+    "configs/follow_through/constructed_target64.json": {
+      "bytes": 23755,
+      "sha256": "8728ee78273cc2d07f93897788de1545559102f7aec6111aeaa79607361bbaae"
+    },
+    "configs/follow_through/examples_released.json": {
+      "bytes": 38208,
+      "sha256": "c2337601e7858cadf43685de7fb5440e611762d571590aa9fd2d99413973d2eb"
+    },
+    "configs/follow_through/examples_zero.json": {
+      "bytes": 37606,
+      "sha256": "b66d4985af7255087d421680224d1d1666a0e85e780a62135f81eef845b55b0b"
+    },
+    "data/released_task_probes.json": {
+      "bytes": 98318,
+      "sha256": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1"
+    },
+    "data/sequence303_length4_holdout.json": {
+      "bytes": 133081,
+      "sha256": "570eaf0bc2968a900a8ccc3d5c27dbf0bc4114e0587e091988aed75189ceb83d"
+    },
+    "follow_through.py": {
+      "bytes": 32393,
+      "sha256": "78f223a4a703f7ab1f0e7661c167e10b85c8c14a7cf2104e006148341319240d"
+    },
+    "prepare_follow_through.py": {
+      "bytes": 14694,
+      "sha256": "c4d3a0894dca52c7fd21ccd760c26b8b10ea86c5d46eee0c0d9a5802ef428613"
+    },
+    "tests/test_follow_through.py": {
+      "bytes": 16273,
+      "sha256": "a4776b22577fa2af906dded1ebd35dcbf39d98a03d589555b35f46c3ba6ad600"
+    }
+  },
+  "first_config": "configs/follow_through/constructed_target16.json",
+  "owner_scope": "experiments/portability only; no commits, pushes, Kubernetes or provider operations, remote staging, or GPU dispatch performed by this lane",
+  "preflight": "Use --prepare-only with a separate fresh output directory; it verifies every pinned file before loading a model. A preflight directory cannot be reused as a training directory.",
+  "protocol_sha256": {
+    "constructed_retention": "86ef67662a92905fe93f6186637763017d93d00557f3ab309778c7cbe707bbb7",
+    "constructed_target16": "729dc37112a626a62c445f58ea87e6ab2097824b09bc1ef12a45001ac3ea244f",
+    "constructed_target64": "65c97c67b3d551bbfd7f42c6513d614a9e9ddea5da535cd5423d6e5b94385079",
+    "examples_released": "674f51ec9b846b925ca21b71dc217c77d7108dad99758027c01b0533ebd8b95a",
+    "examples_zero": "0896ce25f9b0dfb4404d8f41c958e67b8e916eb36f2a64c04e25f30ee6e1ebe4"
+  },
+  "runtime_sources": {
+    "calibrate_target.py": {
+      "bytes": 35522,
+      "sha256": "abc7c18c13fe996b8299a39742e984616aca069d2d22cf1035f774d193da6a2b"
+    },
+    "data.py": {
+      "bytes": 11777,
+      "sha256": "fe9e083a41caf518f3285ace906a63d2015f5002faa74337c39d8fa8b67992c2"
+    },
+    "learner.py": {
+      "bytes": 37216,
+      "sha256": "958ea3e4cd054857f53100456195f08ce1c457237977f7fddb655efb79470874"
+    }
+  },
+  "source_audit": {
+    "constructed_retention": {
+      "arms": {
+        "constructed": {
+          "alignment_sha256": "be76f7918f3f7c117765f3afb41d3fb1c6db0c64c192a98568a27d911e5d52fb",
+          "initial_delta_max": 60.62073445906237,
+          "initial_tensor_sha256": "529e0fa922245ec16457ff7b057f4668a4b123c045c75c11490cd5abf736a619",
+          "resident_parameters": 31120768,
+          "source_nfs": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-constructed-representation/native",
+          "source_tensor_sha256": "529e0fa922245ec16457ff7b057f4668a4b123c045c75c11490cd5abf736a619",
+          "temporary_latent_parameters": 0,
+          "trainable_groups": {
+            "decoder": 0
+          },
+          "trainable_parameters": 0
+        },
+        "untouched": {
+          "alignment_sha256": "23819fd3eb76ee99ae0782f8b5255b57165016e6cfc3af29411c74f7a172679c",
+          "initial_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+          "resident_parameters": 31120768,
+          "source_nfs": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial",
+          "source_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+          "temporary_latent_parameters": 0,
+          "trainable_groups": {
+            "decoder": 0
+          },
+          "trainable_parameters": 0
+        }
+      },
+      "config_file": {
+        "bytes": 12575,
+        "sha256": "877cca787f645cdba4f255807c8e508ec5b06cf2d70141a9eb08c1145f869dad"
+      },
+      "protocol_sha256": "86ef67662a92905fe93f6186637763017d93d00557f3ab309778c7cbe707bbb7"
+    },
+    "constructed_target16": {
+      "arms": {
+        "constructed": {
+          "alignment_sha256": "863341140325cb5480314abf837aae479fe5770cdb9c8bb1e95b9da6d6e50399",
+          "initial_delta_max": 0.0,
+          "initial_tensor_sha256": "45c4b8aed9be395ae220ec3a0bb634b64804181c94be0c9beb94b73340c4d6f3",
+          "resident_parameters": 27975040,
+          "source_nfs": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-constructed-representation/native",
+          "source_tensor_sha256": "529e0fa922245ec16457ff7b057f4668a4b123c045c75c11490cd5abf736a619",
+          "temporary_latent_parameters": 0,
+          "trainable_groups": {
+            "decoder": 10486912
+          },
+          "trainable_parameters": 10486912
+        },
+        "lora": {
+          "alignment_sha256": null,
+          "initial_tensor_sha256": "cf24d67f2abe1c59e4477c27d7ce9e10a882d1fd3e6859dd45fb5b4af9000f42",
+          "resident_parameters": 2949120,
+          "source_nfs": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial",
+          "source_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+          "temporary_latent_parameters": 0,
+          "trainable_groups": {
+            "decoder": 2949120
+          },
+          "trainable_parameters": 2949120
+        },
+        "untouched": {
+          "alignment_sha256": "863341140325cb5480314abf837aae479fe5770cdb9c8bb1e95b9da6d6e50399",
+          "initial_tensor_sha256": "7b32ca60c4ff43aac66aa6d8a02cb3d0cec793ac0fc652adb4072ec72df51356",
+          "resident_parameters": 27975040,
+          "source_nfs": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial",
+          "source_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+          "temporary_latent_parameters": 0,
+          "trainable_groups": {
+            "decoder": 10486912
+          },
+          "trainable_parameters": 10486912
+        }
+      },
+      "config_file": {
+        "bytes": 12811,
+        "sha256": "6ed2d09e53f9b0da13c64398109266b7750286dbd3e37628717ffa6a155f9cc7"
+      },
+      "protocol_sha256": "729dc37112a626a62c445f58ea87e6ab2097824b09bc1ef12a45001ac3ea244f"
+    },
+    "constructed_target64": {
+      "arms": {
+        "constructed": {
+          "alignment_sha256": "863341140325cb5480314abf837aae479fe5770cdb9c8bb1e95b9da6d6e50399",
+          "initial_delta_max": 0.0,
+          "initial_tensor_sha256": "45c4b8aed9be395ae220ec3a0bb634b64804181c94be0c9beb94b73340c4d6f3",
+          "resident_parameters": 27975040,
+          "source_nfs": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-constructed-representation/native",
+          "source_tensor_sha256": "529e0fa922245ec16457ff7b057f4668a4b123c045c75c11490cd5abf736a619",
+          "temporary_latent_parameters": 0,
+          "trainable_groups": {
+            "decoder": 10486912
+          },
+          "trainable_parameters": 10486912
+        },
+        "lora": {
+          "alignment_sha256": null,
+          "initial_tensor_sha256": "cf24d67f2abe1c59e4477c27d7ce9e10a882d1fd3e6859dd45fb5b4af9000f42",
+          "resident_parameters": 2949120,
+          "source_nfs": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial",
+          "source_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+          "temporary_latent_parameters": 0,
+          "trainable_groups": {
+            "decoder": 2949120
+          },
+          "trainable_parameters": 2949120
+        },
+        "untouched": {
+          "alignment_sha256": "863341140325cb5480314abf837aae479fe5770cdb9c8bb1e95b9da6d6e50399",
+          "initial_tensor_sha256": "7b32ca60c4ff43aac66aa6d8a02cb3d0cec793ac0fc652adb4072ec72df51356",
+          "resident_parameters": 27975040,
+          "source_nfs": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial",
+          "source_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+          "temporary_latent_parameters": 0,
+          "trainable_groups": {
+            "decoder": 10486912
+          },
+          "trainable_parameters": 10486912
+        }
+      },
+      "config_file": {
+        "bytes": 23755,
+        "sha256": "8728ee78273cc2d07f93897788de1545559102f7aec6111aeaa79607361bbaae"
+      },
+      "protocol_sha256": "65c97c67b3d551bbfd7f42c6513d614a9e9ddea5da535cd5423d6e5b94385079"
+    },
+    "examples_released": {
+      "arms": {
+        "full_new_latents": {
+          "alignment_sha256": "23819fd3eb76ee99ae0782f8b5255b57165016e6cfc3af29411c74f7a172679c",
+          "initial_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+          "resident_parameters": 31120768,
+          "source_nfs": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial",
+          "source_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+          "temporary_latent_parameters": 768,
+          "trainable_groups": {
+            "decoder": 31116416,
+            "new_latents": 768
+          },
+          "trainable_parameters": 31117184
+        },
+        "heads_fixed_rte": {
+          "alignment_sha256": "23819fd3eb76ee99ae0782f8b5255b57165016e6cfc3af29411c74f7a172679c",
+          "initial_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+          "resident_parameters": 31120768,
+          "source_nfs": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial",
+          "source_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+          "temporary_latent_parameters": 0,
+          "trainable_groups": {
+            "decoder": 30441472
+          },
+          "trainable_parameters": 30441472
+        },
+        "heads_new_latents": {
+          "alignment_sha256": "23819fd3eb76ee99ae0782f8b5255b57165016e6cfc3af29411c74f7a172679c",
+          "initial_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+          "resident_parameters": 31120768,
+          "source_nfs": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial",
+          "source_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+          "temporary_latent_parameters": 768,
+          "trainable_groups": {
+            "decoder": 30442624,
+            "new_latents": 768
+          },
+          "trainable_parameters": 30443392
+        },
+        "lora_rte_start": {
+          "alignment_sha256": null,
+          "initial_tensor_sha256": "6d4b2e630441f69cbebec896ae20e83baad1ce5077139d91a8cfb1d0b2ba081e",
+          "resident_parameters": 3833856,
+          "source_nfs": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial",
+          "source_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+          "temporary_latent_parameters": 0,
+          "trainable_groups": {
+            "decoder": 3833856
+          },
+          "trainable_parameters": 3833856
+        }
+      },
+      "config_file": {
+        "bytes": 38208,
+        "sha256": "c2337601e7858cadf43685de7fb5440e611762d571590aa9fd2d99413973d2eb"
+      },
+      "protocol_sha256": "674f51ec9b846b925ca21b71dc217c77d7108dad99758027c01b0533ebd8b95a"
+    },
+    "examples_zero": {
+      "arms": {
+        "lora_zero": {
+          "alignment_sha256": null,
+          "initial_tensor_sha256": "ab27cafec4b5033b7032c7d52861f22cfb476bf0885a82b80bd73eef583494ac",
+          "resident_parameters": 3833856,
+          "source_nfs": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial",
+          "source_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+          "temporary_latent_parameters": 0,
+          "trainable_groups": {
+            "decoder": 3833856
+          },
+          "trainable_parameters": 3833856
+        },
+        "portal_zero": {
+          "alignment_sha256": "4189329ec05e63f6f8787d7c88b15a22524f61166a8e3bbce0a9cdf82abba437",
+          "initial_tensor_sha256": "0755c33aef1a4d81da239d60b05e64dc0d9b4690cbf4127140ec7bcf87db0c8c",
+          "resident_parameters": 31120768,
+          "source_nfs": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial",
+          "source_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+          "temporary_latent_parameters": 768,
+          "trainable_groups": {
+            "decoder": 31116416,
+            "new_latents": 768
+          },
+          "trainable_parameters": 31117184
+        }
+      },
+      "config_file": {
+        "bytes": 37606,
+        "sha256": "b66d4985af7255087d421680224d1d1666a0e85e780a62135f81eef845b55b0b"
+      },
+      "protocol_sha256": "0896ce25f9b0dfb4404d8f41c958e67b8e916eb36f2a64c04e25f30ee6e1ebe4"
+    }
+  },
+  "status": "cpu_verified_ready_for_parent_dispatch",
+  "validation": {
+    "commands": [
+      "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python -m pytest -q tests/test_target_calibration.py tests/test_follow_through.py",
+      "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python -m pytest -q tests/test_follow_through.py",
+      "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python -m pytest -q tests/test_follow_through.py -k nonfinite"
+    ],
+    "config_builder_idempotence": "passed; five existing config/protocol byte contents unchanged",
+    "coverage": [
+      "real tiny Qwen forward/backward in all training scopes",
+      "frozen core/old latents/base checks",
+      "source-LoRA RTE initialization prediction parity",
+      "real saved artifact input pins and parameter counts",
+      "fresh target alignment identity",
+      "separate-process end-to-end training/reload/holdout evaluation",
+      "strict row partition and deterministic length4 oracle",
+      "zero-gradient and nonfinite update accounting"
+    ],
+    "existing_target_calibration_cpu_tests_passed": 13,
+    "gpu_behavior": "not run by this lane",
+    "lint": "passed; nested imports absent by AST scan",
+    "new_cpu_tests_passed": 18
+  },
+  "parent_review": {
+    "change": "Retention-only comparison now explicitly measures untouched source versus constructed source, rather than each arm versus its own single checkpoint. Training modes retain their own before/after comparison.",
+    "test": "test_insertion_compares_constructed_to_untouched_source",
+    "validation": "2 focused tests passed: insertion comparison and new PID requirement; root import sorting applied."
+  }
+}

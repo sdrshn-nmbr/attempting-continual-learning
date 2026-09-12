@@ -1,0 +1,260 @@
+{
+  "claim_boundary": "CPU factor and exact effective-matrix conservation under a finite nonzero head update; no ABC acquisition, GPU-runtime, behavioral-retention, or target-transfer claim.",
+  "code_files": {
+    "configs/head_nullspace/source.json": {
+      "bytes": 41621,
+      "sha256": "fbce85b352d22591c8667f3e96906cc17123edca42c8a8392d1767eac677c913"
+    },
+    "head_nullspace.py": {
+      "bytes": 12623,
+      "sha256": "8396eb0f9a5a348fa3700a1c5762246b90ea0bbdf8cfbff3763da93f9e1e6392"
+    },
+    "train_head_nullspace.py": {
+      "bytes": 19967,
+      "sha256": "2ed8b539c337d5c5500722e70cebd477ca9358d65b853656a00d740f26cd35e7"
+    }
+  },
+  "coordinate_stress": {
+    "initialization": "independent_normal",
+    "old_behavioral_examples": 0,
+    "optimizer_updates": 0,
+    "seed": 912303,
+    "standard_deviation": 0.1
+  },
+  "custom_artifact": {
+    "artifact": {
+      "files": {
+        "config.json": {
+          "bytes": 15930,
+          "sha256": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb"
+        },
+        "method.json": {
+          "bytes": 1340,
+          "sha256": "96f15f3192a6b78cb99faa4a9af6628778c4712e2f1570cd00f2b6d48ce2ca20"
+        },
+        "model.safetensors": {
+          "bytes": 174365280,
+          "sha256": "47da2635e6932fae776e037ef1d5a193882b551ef1d31dc7cc2389ac2368f94c"
+        }
+      },
+      "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/local-checks/head-nullspace/nonzero-nullspace-adapter"
+    },
+    "kind": "frozen_feature_head_nullspace",
+    "tensor_sha256": "61bf682c64e2cdd60fed021f1a9144e85950a9964fde608cdfe0442fbf52afb3"
+  },
+  "feature_basis": {
+    "bytes": 4210952,
+    "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/local-checks/head-nullspace/feature_space.safetensors",
+    "sha256": "be190f98e3eb8a3c69fa6dc8554dbce88254ed8f6c74660993dbde6e617d3363"
+  },
+  "kind": "exact_source_cpu_nullspace_feasibility_and_nonzero_update_audit",
+  "outcomes": {
+    "head_nullspace": {
+      "initial": {
+        "passed": true,
+        "tasks": {
+          "boolq": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          },
+          "commonsense_qa": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          },
+          "hellaswag": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          },
+          "winogrande": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          }
+        }
+      },
+      "nonzero_coordinates": {
+        "passed": true,
+        "tasks": {
+          "boolq": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          },
+          "commonsense_qa": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          },
+          "hellaswag": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          },
+          "winogrande": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          }
+        }
+      }
+    },
+    "head_only_control": {
+      "initial": {
+        "passed": true,
+        "tasks": {
+          "boolq": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          },
+          "commonsense_qa": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          },
+          "hellaswag": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          },
+          "winogrande": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          }
+        }
+      },
+      "nonzero_coordinates": {
+        "passed": false,
+        "tasks": {
+          "boolq": {
+            "all_factors_bitwise_equal": false,
+            "factor_max_abs": 0.5055610667914152,
+            "factor_relative_frobenius_max": 2.9142106901246256,
+            "matrix_relative_frobenius_max": 7.189371417783046,
+            "projections": 72
+          },
+          "commonsense_qa": {
+            "all_factors_bitwise_equal": false,
+            "factor_max_abs": 0.52400753647089,
+            "factor_relative_frobenius_max": 2.4048320058775943,
+            "matrix_relative_frobenius_max": 5.543882440199335,
+            "projections": 72
+          },
+          "hellaswag": {
+            "all_factors_bitwise_equal": false,
+            "factor_max_abs": 0.5118341110646725,
+            "factor_relative_frobenius_max": 2.9769094350566023,
+            "matrix_relative_frobenius_max": 7.668832212589331,
+            "projections": 72
+          },
+          "winogrande": {
+            "all_factors_bitwise_equal": false,
+            "factor_max_abs": 0.527123901527375,
+            "factor_relative_frobenius_max": 2.6490764641534432,
+            "matrix_relative_frobenius_max": 6.709071773794818,
+            "projections": 72
+          }
+        }
+      }
+    }
+  },
+  "proof": {
+    "ABC_projected_features": {
+      "sequence_a": {
+        "rank": 36,
+        "relative_norm": 0.020163005752465397,
+        "singular_min": 0.0004313732891237098
+      },
+      "sequence_b": {
+        "rank": 36,
+        "relative_norm": 0.020163005752465397,
+        "singular_min": 0.0004313732891237098
+      },
+      "sequence_c": {
+        "rank": 36,
+        "relative_norm": 0.020163005752465397,
+        "singular_min": 0.0004313732891237098
+      }
+    },
+    "basis_bytes_per_learner": {
+      "head_nullspace": 1514376,
+      "head_only_control": 2105352
+    },
+    "full_basis_orthogonality_max_abs": 2.6645352591003757e-15,
+    "null_dimension": 369,
+    "null_relative_residual": 2.7050676611623337e-16,
+    "old_design_shape": [
+      144,
+      513
+    ],
+    "old_design_tensor_sha256": "1d6d1d6c2be231ff593a5c2065ea62df1c3005099c4c3caba888c314d14b179b",
+    "old_features_are_fixed_only_while_core_alignment_and_old_vectors_are_frozen": true,
+    "rank": 144,
+    "rank_tolerance": 1.3772442743739274e-12,
+    "singular_max": 12.090753997794481,
+    "singular_min_nonzero": 0.0005789039402730521,
+    "source_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+    "trainable_parameters": {
+      "head_nullspace": 12092160,
+      "head_only_control": 16810752
+    }
+  },
+  "saved_reload_conservation_exact": true,
+  "saved_reload_tensor_hash_exact": true,
+  "source_local_verified": {
+    "files": {
+      "config.json": {
+        "bytes": 15930,
+        "sha256": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb"
+      },
+      "model.safetensors": {
+        "bytes": 124484888,
+        "sha256": "0dbbd18eacfb9dd870019f68b78188d5c0ed15beb8cfc400f4a48b79d84fb3db"
+      }
+    },
+    "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/repair-alignment-inputs/source_initial"
+  },
+  "source_nfs": {
+    "files": {
+      "config.json": {
+        "bytes": 15930,
+        "sha256": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb"
+      },
+      "model.safetensors": {
+        "bytes": 124484888,
+        "sha256": "0dbbd18eacfb9dd870019f68b78188d5c0ed15beb8cfc400f4a48b79d84fb3db"
+      }
+    },
+    "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial",
+    "tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f"
+  },
+  "source_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f"
+}

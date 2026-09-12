@@ -1,0 +1,270 @@
+{
+  "base": {
+    "cache_dir": "/mnt/shared/cl-smoke/huggingface/hub",
+    "local_path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c",
+    "repo_id": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+  },
+  "claim_boundary": [
+    "Exploratory follow-through on the existing Sequence-303 mapping. The historical 864 exhaustive-triple rows and old validation/test rows have already been evaluated.",
+    "The sealed length4 panel is new length generalization, not a new mapping, free-generation result, or an unfamiliar semantic skill.",
+    "All metrics use unchanged character-normalized choice likelihood and gold-answer token NLL; no prefix extraction or output-contract change.",
+    "Checkpoints and budgets are predefined; validation records diagnose acquisition only. All final panels are first opened in a fresh PID after all arms have finished training. No best-checkpoint selection.",
+    "Released-task retention uses the exact prior catalog selection: 32 each of BoolQ, HellaSwag, WinoGrande, CommonsenseQA. It supports no claim about unmeasured tasks.",
+    "Native old-task evaluation routes its original frozen task vectors. Persistent LoRA applies one adapter to all tasks. Retention compares each arm with its own starting performance, not unmatched absolute cross-arm baselines.",
+    "Rank8 q/v, alpha16, training examples and updates are matched; trainable parameter counts are reported and are not equal.",
+    "Constructed and untouched sources BOTH use the same fixed original RTE vector for ABC. The successful reconstruction was obtained with privileged source adapter weights; this tests transfer of that representation, not learning it from examples."
+  ],
+  "expected_hooks": 72,
+  "inputs": {
+    "base": {
+      "files": {
+        "config.json": {
+          "bytes": 726,
+          "git_blob_sha1": "e49eccdc32f36da9c09cfa0e737084f9e0105e5e"
+        },
+        "generation_config.json": {
+          "bytes": 239,
+          "git_blob_sha1": "20a8a9156fc8c3f25295ca067f61fdf120d517c5"
+        },
+        "merges.txt": {
+          "bytes": 1671853,
+          "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7"
+        },
+        "model-00001-of-00003.safetensors": {
+          "bytes": 3957900840,
+          "sha256": "328a91d3122359d5547f9d79521205bc0a46e1f79a792dfe650e99fc2d651223"
+        },
+        "model-00002-of-00003.safetensors": {
+          "bytes": 3987450520,
+          "sha256": "6cd087b316306a68c562436b5492edbcf6e16c6dba3a1308279caa5a58e21ca5"
+        },
+        "model-00003-of-00003.safetensors": {
+          "bytes": 99630640,
+          "sha256": "e4bf436957184f4eeb86a80e9db394503f1f56446b2e6b7edeac5b81470f4ca1"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 32819,
+          "git_blob_sha1": "95c0a0059df040d75dc6c396b174382cf61d2f91"
+        },
+        "tokenizer.json": {
+          "bytes": 11422654,
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        },
+        "tokenizer_config.json": {
+          "bytes": 9732,
+          "git_blob_sha1": "417d038a63fa3de29cfde265caedae14d1a58d92"
+        },
+        "vocab.json": {
+          "bytes": 2776833,
+          "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569"
+        }
+      },
+      "path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c"
+    },
+    "fixture": {
+      "bytes": 255069,
+      "path": "data/sequence303.json",
+      "sha256": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2"
+    },
+    "length_holdout": {
+      "bytes": 133081,
+      "path": "data/sequence303_length4_holdout.json",
+      "sha256": "570eaf0bc2968a900a8ccc3d5c27dbf0bc4114e0587e091988aed75189ceb83d"
+    },
+    "old_holdout": {
+      "bytes": 300921,
+      "path": "data/sequence303_unused_inputs.json",
+      "sha256": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e"
+    },
+    "retention_probes": {
+      "bytes": 98318,
+      "path": "data/released_task_probes.json",
+      "sha256": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1"
+    },
+    "source_constructed": {
+      "files": {
+        "config.json": {
+          "bytes": 15930,
+          "sha256": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb"
+        },
+        "model.safetensors": {
+          "bytes": 124484888,
+          "sha256": "e69e16ed9b0fd02e709dda37d99eba93e861567053af4cd145aced3190e84500"
+        }
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-constructed-representation/native",
+      "tensor_sha256": "529e0fa922245ec16457ff7b057f4668a4b123c045c75c11490cd5abf736a619"
+    },
+    "source_initial": {
+      "files": {
+        "config.json": {
+          "bytes": 15930,
+          "sha256": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb"
+        },
+        "model.safetensors": {
+          "bytes": 124484888,
+          "sha256": "0dbbd18eacfb9dd870019f68b78188d5c0ed15beb8cfc400f4a48b79d84fb3db"
+        }
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial",
+      "tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f"
+    },
+    "target_portal": {
+      "files": {
+        "config.json": {
+          "bytes": 15876,
+          "sha256": "3848aec36900aa1f890aaa629e3b67b2cdf2b2e48e81ea423971e32cf15420f5"
+        },
+        "model.safetensors": {
+          "bytes": 111898904,
+          "sha256": "bdbc778aef719df2397b2267967d1a64a7b2c0a84cb3fb5203c3d846740725fa"
+        }
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/target_portal",
+      "tensor_sha256": "816cd628a1424dc4e58ef41e1706000be5e1a1b8a6b7d6abc96af254e437d0ea"
+    }
+  },
+  "kind": "portal_follow_through",
+  "method_source": {
+    "source": "https://github.com/ramp-public/portallib",
+    "source_objective": "Balanced gold-answer token NLL with EMA normalization; train task vectors and decoder on a frozen base.",
+    "transfer": "Freeze core and all task vectors; fresh target input/output maps and layer embeddings. Longer curves supplement the published five-epoch point.",
+    "url": "https://labs.ramp.com/research/portal-portable-task-adaptation/",
+    "verified": "2026-09-12"
+  },
+  "protocol": {
+    "acquisition_train_floor": 0.9,
+    "acquisition_validation_floor": 0.85,
+    "arms": [
+      {
+        "initialization": "released",
+        "latent_learning_rate": 0.002,
+        "learning_rate": 0.001,
+        "name": "constructed",
+        "routing": "fixed_rte",
+        "source": "source_constructed",
+        "train": "alignment",
+        "train_latents": false
+      },
+      {
+        "initialization": "released",
+        "latent_learning_rate": 0.002,
+        "learning_rate": 0.001,
+        "name": "untouched",
+        "routing": "fixed_rte",
+        "source": "source_initial",
+        "train": "alignment",
+        "train_latents": false
+      },
+      {
+        "initialization": "released",
+        "latent_learning_rate": 0.002,
+        "learning_rate": 0.001,
+        "name": "lora",
+        "routing": "persistent",
+        "source": "source_initial",
+        "train": "lora",
+        "train_latents": false
+      }
+    ],
+    "batch_per_task": 4,
+    "checkpoints": [
+      0,
+      20,
+      80,
+      160,
+      320
+    ],
+    "continuation": {
+      "finite_improving_but_not_qualified": "complete_all_predefined_checkpoints",
+      "last_checkpoint_underfits_train": "inspect_loss_gradient_and_scale_before_a_separately_sealed_recipe",
+      "successful_acquisition": "retention_and_transfer_are_separate_required_tests",
+      "train_pass_validation_fail": "do_not_extend_same_fit_blindly_test_more_unique_train_rows",
+      "zero_or_nonfinite_gradient": "stop_that_arm_before_more_updates_and_record_diagnostic_then_continue_other_arms"
+    },
+    "data_seed": 83303,
+    "eval_batch": 4,
+    "gradient_clip": 1.0,
+    "gradient_gate_step": 8,
+    "max_prompt": 768,
+    "mode": "calibration",
+    "model_seed": 912303,
+    "retention_indices_sha256": "ec0e597d81232ea00a85256942678d5ffbfce10253624d9ac93f4c418f404186",
+    "scoring": "character_normalized_four_choice_gold_answer_nll",
+    "training_ids": {
+      "sequence_a": [
+        "52d2725c334f2deb8c84754c034b3036e5b8ebdff696787ddd400496a7aa9a4e",
+        "aac771c542cb9bdfc43689d30095ec183619a20ff1cf32c9d3012805713bfbd7",
+        "f5354889ea05f282d82063d5c0bbb92da8924901936e6381a906e528b7763a22",
+        "5aa505999e9e71649342306e3ed04816844ba1424a8f18010273212ed680f090",
+        "7861b4fee08730d4df6424f96d81ea0acab9e31d557240686598c0d3c32d14b9",
+        "91d132b8c630d47abfbbb0b88e38daf5281d729a3856d9a16af5551b775cef0f",
+        "237ca67aec2c1bc681cb7be3b4d8f7d8ab7df78f821e69ea17579b0c6cdad063",
+        "78162d1689a5f4140b429e788157df5387c7306981fa11632b64ff3685e478c0",
+        "d2f7c95e2e734d6d3b2734b4be6ef8c051d346fa39fce3471e3fb89b3cfe1992",
+        "349ab4dc28824eae0d8c544eab92810729c4c3e33b56624d35117444cdaf4925",
+        "83bdeb1861639acb680369595f1205e0e23ae79b6b45f615c6b2f446b2cf65b1",
+        "43b58b1c9ef62345f6cc9a6620e59b48315f4a720c72d12f9a2e26c74f2da65a",
+        "84cff6e7f3821966237cbdd6f6038dda4cdc2d4082de1e7f2c3e617d33b78eb0",
+        "581b56c699fe20a699b8bfc9f83269c14acb7cedf42c1303931db57f4e338a1a",
+        "b5a3ff585428d4471118f0680721947b49244e31abc863894d39984cd3bd7ea8",
+        "e9fe274f434e22d4ac941fbc2fd8c0389d3a0c9cd27e867fd5c4d5eb282cd20e"
+      ],
+      "sequence_b": [
+        "5d48375fae0a53aa311776fac82d650a1f0bb9aaac582868ae8cab086b5437dc",
+        "6a9af770ceb70bf480ae0cc6c1bf01517e7877326c4a245dee4e1ac3d50f9c3d",
+        "14f54b72fb961f7cc9e3c3a423fab11e63fd277d9f188dcaa093de642a7d5a32",
+        "fde1c8cf94f1fc364357995ce548ef436e35712f37c12f1dca1fbdeb355ce06b",
+        "6dfbb699043b0fa5746ae358d5103f4a00db8e9231a1a01f83c4cd8344898352",
+        "9bfb962c63e71d2f599ebc6c77bc701aa715b35b3c77a28bcf4a8aca32483476",
+        "56a1a339fcec096de6cb75706d5ee88dc3ae0ef0de39b8e1e764d6cf6b8bd53a",
+        "66bbe877457538ac9d0989a167fb1da1ab5757864a5d32e27e23e91e4479e02a",
+        "17021ed299d04fc22cf1698e89388ba93da7ba910b9c3d24c37ff0f6935b989f",
+        "bb6ce39423c2b0c9ed177114ade688ed505f827af3b17fa0ec6baeabe7e667d2",
+        "cdac5b26de3449fb366e66d9d8ee22f90293afcf70ed970f089a2999e821b90f",
+        "3c581fa6c3f7c629b0426dc57bb7b2c8816075af6093a69ad98be8d94b668044",
+        "62a2e536d3d74ec217050373e3ecccd2d1f7a6b9693584a47679064bbe4e8bd9",
+        "c96efc74cfcdffe42a16ceba0f7c94a7e1c8c4a06ba2bec95051e8785e30e7fb",
+        "c35bd2c5856ec3f467edb5f35dfef5aa716b65de2e977a979c5b3b65b951e15c",
+        "712c5605a163cccb0da1f54a6f5fc5519d754ad7f1fa7927926d35add08d74a6"
+      ],
+      "sequence_c": [
+        "28b687ec044084498356b4c6ca59cdb1e45208b5386cfe8827d599d2fa8ad20d",
+        "83efb2b50ff0d73bac9960c529717dc22a511d37ef3d8132b91c8d5d639f6985",
+        "6efaf14cd0d0eda7fcd1006d98a98c535370c39d07348a24ab7dc90f0d205a02",
+        "b54dbd0c800590b7cde7ee834d6d2652d5f92f34953faa4324d6e75d80202b4a",
+        "4cede29a915057f6ac53d6625d5003c0c74c61f5605a3429a774738e056fa56e",
+        "9193ef3f3fe6ed2d6c585ac655804cba8bb7ee91077d2d402752f59569e738c1",
+        "68e2b3b8ed2e796aa06180fb89302d69e38b41cdcc08ca72d6ba34a81a036c54",
+        "5d3720c15873bb73f877582bfb9e73d5ec7b02a7437b0e8d9fe2feab3e9d2843",
+        "d753a0588df30397380957d21aaefb11357199e96e9890ac9b57e42f81a7e7e7",
+        "91b86f9514eccf08f6e627aaecc5ed89f3df339fe4a2047e8b8510aaed7157a8",
+        "24f21dfd54736226d3866e43f0b4ef29b953dfa3ac8e1eea5b1c5627e3fc2bd5",
+        "2e58859740b49a82b65c0f7db28b4b0957dab2357940fefe24ae8ccf1f9f13c5",
+        "eed12d32e4b849c29adcd0ac6c29267cf2e12c48ac13e2d9081505fe9a6a8e30",
+        "55506c86878b55a049aa234f0cd8c6c73d99d59def79838aa31353c810774288",
+        "f1a2566c05dc107fa5085e0162fd97470313ff961f8e92be6694f7f65bfc39a7",
+        "fb6a2d7843b5d3c013c048e13b7eed035c8f5db7fabcb46f43bced87a3ab690c"
+      ]
+    }
+  },
+  "protocol_sha256": "729dc37112a626a62c445f58ea87e6ab2097824b09bc1ef12a45001ac3ea244f",
+  "retention_provenance": {
+    "dataset": "RampPublic/portallib-tasks",
+    "original_file": {
+      "bytes": 98318,
+      "sha256": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1"
+    },
+    "original_path": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/runs/catalog-qwen3-8b-screen/selection.json",
+    "revision": "ffc3c0e44f529bf64a5ae62ed5db090952db97ea",
+    "selection_sha256": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b"
+  },
+  "role": "mechanistic_exploratory",
+  "runtime": {
+    "autocast": false,
+    "cpu_threads": 4,
+    "device": "cuda:0",
+    "dtype": "float32"
+  }
+}

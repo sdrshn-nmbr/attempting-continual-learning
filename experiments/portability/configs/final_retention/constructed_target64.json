@@ -1,0 +1,17 @@
+{
+  "expected_final_step": 320,
+  "kind": "portal_final_retention",
+  "probe_counts": {
+    "boolq": 32,
+    "commonsense_qa": 32,
+    "hellaswag": 32,
+    "winogrande": 32
+  },
+  "selection": "step_zero_and_maximum_numeric_checkpoint_all_arms",
+  "source_run": {
+    "config_sha256": "3c09143800be3bdb18fd3d1b62f4198e93be57404b6592fcd5d7d7b46de8e880",
+    "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-constructed-target64",
+    "source_sha256": "1e543226bb2981f5c7b5bd44b069ce6ce9a622d29b94df11505f4d64eee419ab",
+    "task_id": "followthrough-20260912-portal-constructed-target64"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "archive_relative_input_paths_equal_original_manifest": true,
+  "claim_boundary": "Local verification of collected receipt bytes, exact checkpoint identity, acquisition and corrected retention summaries, and original input path mapping. Full NFS files and archived tree byte verification remain mandatory in CPU exporter; no remote export or target training was executed by this lane.",
+  "corrective_files": {
+    "config.json": {
+      "bytes": 606,
+      "sha256": "3ad45a996854fc7b538c87163eaa81f7311c2d3de155d5062dcbc50991b987f7"
+    },
+    "execution.json": {
+      "bytes": 2424,
+      "sha256": "5cf660e4d79970ecf4517db2844983c36b3a6c43bbe956da114d7baefc2a0ebc"
+    },
+    "result.json": {
+      "bytes": 1188138,
+      "sha256": "faccd71bb368b16d3dea5d1735436130ed48e99f88b90b82d8ff7e65733cd829"
+    }
+  },
+  "kind": "collected_immutable_receipts_local_cpu_qualification",
+  "parameter_count_source": "Untouched and target native artifacts loaded from local copies with configured file/tensor hashes; learned architecture has the exact same configuration as untouched, and exported target preflight recomputes all arm counts.",
+  "qualification": {
+    "acquisition_qualified": true,
+    "qualification_scope": "acquisition_and_retention",
+    "retention": {
+      "boolq": {
+        "after": 0.96875,
+        "before": 1.0,
+        "change": -0.03125,
+        "examples": 32,
+        "initial_ability_qualified": true,
+        "initial_adapter_gain_qualified": true,
+        "raw": 0.90625
+      },
+      "commonsense_qa": {
+        "after": 0.71875,
+        "before": 0.71875,
+        "change": 0.0,
+        "examples": 32,
+        "initial_ability_qualified": true,
+        "initial_adapter_gain_qualified": false,
+        "raw": 0.78125
+      },
+      "hellaswag": {
+        "after": 0.6875,
+        "before": 0.75,
+        "change": -0.0625,
+        "examples": 32,
+        "initial_ability_qualified": true,
+        "initial_adapter_gain_qualified": false,
+        "raw": 0.75
+      },
+      "winogrande": {
+        "after": 0.75,
+        "before": 0.625,
+        "change": 0.125,
+        "examples": 32,
+        "initial_ability_qualified": true,
+        "initial_adapter_gain_qualified": false,
+        "raw": 0.59375
+      }
+    },
+    "retention_qualified": true,
+    "source_checkpoint": {
+      "artifact": {
+        "files": {
+          "config.json": {
+            "bytes": 15930,
+            "sha256": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb"
+          },
+          "model.safetensors": {
+            "bytes": 124484888,
+            "sha256": "7c4b812ab147dcd42168653639b3d85c6b40f248ae3032f7c2dd9c723b697574"
+          }
+        },
+        "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-examples-released/heads_new_latents/checkpoints/step-0512"
+      },
+      "kind": "portal",
+      "shared_sha256": "9a1d1364bb04009e4321a0966bd0b8198d0d6ddab929f10234612310b28f4165",
+      "tensor_sha256": "2692133092fe86eedf0da3f7bb5610b5c2836fbb6853a76dc81c92e744650c5a"
+    }
+  },
+  "request": {
+    "bytes": 4101,
+    "sha256": "b62ecacc3d41b0dd43c00437b85a27760392b89ec88beff9473e1bcabf27a73e"
+  },
+  "source_input_manifest": {
+    "bytes": 4932,
+    "sha256": "79e4d1142f2cb6e64f52144671cc99c0d7e905f948b874a3ab13a1739f047785"
+  },
+  "source_training_receipt": {
+    "bytes": 13157911,
+    "sha256": "3709d85a1e596f7ccf74f910e9a1c8d2e66cc74e73ff88a1e3f4404866111a91"
+  },
+  "target_trainable_parameters": {
+    "learned": 10486912,
+    "lora": 2949120,
+    "untouched": 10486912
+  },
+  "verified_original_input_path_count": 18,
+  "verified_original_input_paths": [
+    "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218/config.json",
+    "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218/generation_config.json",
+    "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218/merges.txt",
+    "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218/model-00001-of-00005.safetensors",
+    "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218/model-00002-of-00005.safetensors",
+    "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218/model-00003-of-00005.safetensors",
+    "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218/model-00004-of-00005.safetensors",
+    "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218/model-00005-of-00005.safetensors",
+    "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218/model.safetensors.index.json",
+    "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218/tokenizer.json",
+    "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218/tokenizer_config.json",
+    "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218/vocab.json",
+    "/mnt/shared/cl-portfolio/code/1e543226bb2981f5c7b5bd44b069ce6ce9a622d29b94df11505f4d64eee419ab/data/sequence303.json",
+    "/mnt/shared/cl-portfolio/code/1e543226bb2981f5c7b5bd44b069ce6ce9a622d29b94df11505f4d64eee419ab/data/sequence303_length4_holdout.json",
+    "/mnt/shared/cl-portfolio/code/1e543226bb2981f5c7b5bd44b069ce6ce9a622d29b94df11505f4d64eee419ab/data/sequence303_unused_inputs.json",
+    "/mnt/shared/cl-portfolio/code/1e543226bb2981f5c7b5bd44b069ce6ce9a622d29b94df11505f4d64eee419ab/data/released_task_probes.json",
+    "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial/config.json",
+    "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial/model.safetensors"
+  ]
+}

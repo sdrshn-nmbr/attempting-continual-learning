@@ -1,0 +1,1257 @@
+{
+  "arms": {
+    "head_nullspace": {
+      "GPU_recorded_conservation": {
+        "passed": true,
+        "tasks": {
+          "boolq": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          },
+          "commonsense_qa": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          },
+          "hellaswag": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          },
+          "winogrande": {
+            "all_factors_bitwise_equal": true,
+            "factor_max_abs": 0.0,
+            "factor_relative_frobenius_max": 0.0,
+            "matrix_relative_frobenius_max": 0.0,
+            "projections": 72
+          }
+        }
+      },
+      "all_old_score_records_exact": true,
+      "artifacts": {
+        "0": {
+          "all_finite": true,
+          "basis_bytes": 1514376,
+          "coordinate_parameters": 12091392,
+          "fp32_except_fp64_basis": true,
+          "frozen_nonABC_vectors_and_all_nonU_weights_exact": true,
+          "model_file": {
+            "bytes": 174365280,
+            "sha256": "460191f40bbd67e0e49d0ae6d27343818788cfc6139fb73859e24e88a7f6fd02"
+          },
+          "resident_parameters": 43212160,
+          "tensor_payload_bytes": 174363016,
+          "tensor_sha256": "a45c4c483a01a89de835c9b266e7874399954314d171395143c6ca5c892d12d7",
+          "trainable_parameters_including_vectors": 12092160
+        },
+        "128": {
+          "all_finite": true,
+          "basis_bytes": 1514376,
+          "coordinate_parameters": 12091392,
+          "fp32_except_fp64_basis": true,
+          "frozen_nonABC_vectors_and_all_nonU_weights_exact": true,
+          "model_file": {
+            "bytes": 174365280,
+            "sha256": "daafd3eae577addbff92902b0213d1fe852bf1afb7a0535ef495801d28b149eb"
+          },
+          "resident_parameters": 43212160,
+          "tensor_payload_bytes": 174363016,
+          "tensor_sha256": "82d0822092b1066ea62082d79b371b93f494ab190a9cda1502306fa51c88b1e7",
+          "trainable_parameters_including_vectors": 12092160
+        },
+        "16": {
+          "all_finite": true,
+          "basis_bytes": 1514376,
+          "coordinate_parameters": 12091392,
+          "fp32_except_fp64_basis": true,
+          "frozen_nonABC_vectors_and_all_nonU_weights_exact": true,
+          "model_file": {
+            "bytes": 174365280,
+            "sha256": "bca66ea79238012441cf26acfbd845fa3154290e3657c3588632630e8174c657"
+          },
+          "resident_parameters": 43212160,
+          "tensor_payload_bytes": 174363016,
+          "tensor_sha256": "d3c81802f19fa0fdc682baeb7b0d80609192c87ca80a5bbdb461969dd2541f40",
+          "trainable_parameters_including_vectors": 12092160
+        },
+        "256": {
+          "all_finite": true,
+          "basis_bytes": 1514376,
+          "coordinate_parameters": 12091392,
+          "fp32_except_fp64_basis": true,
+          "frozen_nonABC_vectors_and_all_nonU_weights_exact": true,
+          "model_file": {
+            "bytes": 174365280,
+            "sha256": "e93a99b552317d7820a733132fcbffc6665877948316fae27ddeabe568010949"
+          },
+          "resident_parameters": 43212160,
+          "tensor_payload_bytes": 174363016,
+          "tensor_sha256": "b285a667b333cc63e79c526d7df54b2d0a1110785b5a8d759f36ee33c046b3bc",
+          "trainable_parameters_including_vectors": 12092160
+        },
+        "512": {
+          "all_finite": true,
+          "basis_bytes": 1514376,
+          "coordinate_parameters": 12091392,
+          "fp32_except_fp64_basis": true,
+          "frozen_nonABC_vectors_and_all_nonU_weights_exact": true,
+          "model_file": {
+            "bytes": 174365280,
+            "sha256": "7c68084c69e9821d887b1a22d573741b8b92bdbd7f534f8d676ea8d226174b18"
+          },
+          "resident_parameters": 43212160,
+          "tensor_payload_bytes": 174363016,
+          "tensor_sha256": "b0f9f381e85a61cb628d4a17b1c391d1fed453e1320676569b1ad774ed8cafcc",
+          "trainable_parameters_including_vectors": 12092160
+        },
+        "64": {
+          "all_finite": true,
+          "basis_bytes": 1514376,
+          "coordinate_parameters": 12091392,
+          "fp32_except_fp64_basis": true,
+          "frozen_nonABC_vectors_and_all_nonU_weights_exact": true,
+          "model_file": {
+            "bytes": 174365280,
+            "sha256": "eff172d4921801a49e3d6de9a7676504172794df77ef809d742c4809b80a3afc"
+          },
+          "resident_parameters": 43212160,
+          "tensor_payload_bytes": 174363016,
+          "tensor_sha256": "935af6d37f221c2871223fdbfc23fa35ea841f6e585625dae1b38ed4de00c020",
+          "trainable_parameters_including_vectors": 12092160
+        }
+      },
+      "captured_GPU_features_CPU_affine_and_matrix_recomputation": {
+        "boolq": {
+          "all_factors_bitwise_equal": true,
+          "factor_max_abs": 0.0,
+          "factor_relative_frobenius_max": 0.0,
+          "matrix_relative_frobenius_max": 0.0,
+          "maximum_affine_head_contribution": 3.182846405932976e-17,
+          "projections": 72
+        },
+        "commonsense_qa": {
+          "all_factors_bitwise_equal": true,
+          "factor_max_abs": 0.0,
+          "factor_relative_frobenius_max": 0.0,
+          "matrix_relative_frobenius_max": 0.0,
+          "maximum_affine_head_contribution": 2.2262136818766248e-17,
+          "projections": 72
+        },
+        "hellaswag": {
+          "all_factors_bitwise_equal": true,
+          "factor_max_abs": 0.0,
+          "factor_relative_frobenius_max": 0.0,
+          "matrix_relative_frobenius_max": 0.0,
+          "maximum_affine_head_contribution": 1.705472053411217e-17,
+          "projections": 72
+        },
+        "winogrande": {
+          "all_factors_bitwise_equal": true,
+          "factor_max_abs": 0.0,
+          "factor_relative_frobenius_max": 0.0,
+          "matrix_relative_frobenius_max": 0.0,
+          "maximum_affine_head_contribution": 2.2699994949853843e-17,
+          "projections": 72
+        }
+      },
+      "curve": {
+        "0": {
+          "qualified": false,
+          "train": {
+            "correct": 124,
+            "examples": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 36,
+                "examples": 128
+              },
+              "sequence_b": {
+                "correct": 32,
+                "examples": 128
+              },
+              "sequence_c": {
+                "correct": 56,
+                "examples": 128
+              }
+            }
+          },
+          "validation": {
+            "correct": 36,
+            "examples": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 7,
+                "examples": 32
+              },
+              "sequence_b": {
+                "correct": 10,
+                "examples": 32
+              },
+              "sequence_c": {
+                "correct": 19,
+                "examples": 32
+              }
+            }
+          }
+        },
+        "128": {
+          "qualified": false,
+          "train": {
+            "correct": 270,
+            "examples": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 100,
+                "examples": 128
+              },
+              "sequence_b": {
+                "correct": 89,
+                "examples": 128
+              },
+              "sequence_c": {
+                "correct": 81,
+                "examples": 128
+              }
+            }
+          },
+          "validation": {
+            "correct": 56,
+            "examples": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 16,
+                "examples": 32
+              },
+              "sequence_b": {
+                "correct": 21,
+                "examples": 32
+              },
+              "sequence_c": {
+                "correct": 19,
+                "examples": 32
+              }
+            }
+          }
+        },
+        "16": {
+          "qualified": false,
+          "train": {
+            "correct": 127,
+            "examples": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 35,
+                "examples": 128
+              },
+              "sequence_b": {
+                "correct": 32,
+                "examples": 128
+              },
+              "sequence_c": {
+                "correct": 60,
+                "examples": 128
+              }
+            }
+          },
+          "validation": {
+            "correct": 39,
+            "examples": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 8,
+                "examples": 32
+              },
+              "sequence_b": {
+                "correct": 10,
+                "examples": 32
+              },
+              "sequence_c": {
+                "correct": 21,
+                "examples": 32
+              }
+            }
+          }
+        },
+        "256": {
+          "qualified": false,
+          "train": {
+            "correct": 364,
+            "examples": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 121,
+                "examples": 128
+              },
+              "sequence_b": {
+                "correct": 120,
+                "examples": 128
+              },
+              "sequence_c": {
+                "correct": 123,
+                "examples": 128
+              }
+            }
+          },
+          "validation": {
+            "correct": 76,
+            "examples": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 22,
+                "examples": 32
+              },
+              "sequence_b": {
+                "correct": 25,
+                "examples": 32
+              },
+              "sequence_c": {
+                "correct": 29,
+                "examples": 32
+              }
+            }
+          }
+        },
+        "512": {
+          "qualified": true,
+          "train": {
+            "correct": 382,
+            "examples": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 127,
+                "examples": 128
+              },
+              "sequence_b": {
+                "correct": 127,
+                "examples": 128
+              },
+              "sequence_c": {
+                "correct": 128,
+                "examples": 128
+              }
+            }
+          },
+          "validation": {
+            "correct": 87,
+            "examples": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 28,
+                "examples": 32
+              },
+              "sequence_b": {
+                "correct": 29,
+                "examples": 32
+              },
+              "sequence_c": {
+                "correct": 30,
+                "examples": 32
+              }
+            }
+          }
+        },
+        "64": {
+          "qualified": false,
+          "train": {
+            "correct": 138,
+            "examples": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 42,
+                "examples": 128
+              },
+              "sequence_b": {
+                "correct": 45,
+                "examples": 128
+              },
+              "sequence_c": {
+                "correct": 51,
+                "examples": 128
+              }
+            }
+          },
+          "validation": {
+            "correct": 38,
+            "examples": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 10,
+                "examples": 32
+              },
+              "sequence_b": {
+                "correct": 10,
+                "examples": 32
+              },
+              "sequence_c": {
+                "correct": 18,
+                "examples": 32
+              }
+            }
+          }
+        }
+      },
+      "example_exposures": 6144,
+      "final_panels": {
+        "old_exhaustive_triples": {
+          "correct": 813,
+          "examples": 864,
+          "tasks": {
+            "sequence_a": {
+              "correct": 263,
+              "examples": 288
+            },
+            "sequence_b": {
+              "correct": 274,
+              "examples": 288
+            },
+            "sequence_c": {
+              "correct": 276,
+              "examples": 288
+            }
+          }
+        },
+        "old_validation_test": {
+          "correct": 271,
+          "examples": 288,
+          "tasks": {
+            "sequence_a": {
+              "correct": 91,
+              "examples": 96
+            },
+            "sequence_b": {
+              "correct": 88,
+              "examples": 96
+            },
+            "sequence_c": {
+              "correct": 92,
+              "examples": 96
+            }
+          }
+        },
+        "released_tasks": {
+          "correct": 99,
+          "examples": 128,
+          "tasks": {
+            "boolq": {
+              "correct": 32,
+              "examples": 32
+            },
+            "commonsense_qa": {
+              "correct": 23,
+              "examples": 32
+            },
+            "hellaswag": {
+              "correct": 24,
+              "examples": 32
+            },
+            "winogrande": {
+              "correct": 20,
+              "examples": 32
+            }
+          }
+        },
+        "sealed_length4": {
+          "correct": 350,
+          "examples": 384,
+          "tasks": {
+            "sequence_a": {
+              "correct": 115,
+              "examples": 128
+            },
+            "sequence_b": {
+              "correct": 116,
+              "examples": 128
+            },
+            "sequence_c": {
+              "correct": 119,
+              "examples": 128
+            }
+          }
+        }
+      },
+      "first_qualifying_checkpoint": 512,
+      "full_CPU_feature_regeneration": {
+        "boolq": {
+          "all_factors_bitwise_equal": false,
+          "factor_max_abs": 5.960464477539063e-08,
+          "factor_relative_frobenius_max": 1.5443985359180587e-07,
+          "matrix_relative_frobenius_max": 1.830046233488475e-07,
+          "projections": 72
+        },
+        "commonsense_qa": {
+          "all_factors_bitwise_equal": false,
+          "factor_max_abs": 5.960464477539063e-08,
+          "factor_relative_frobenius_max": 1.4810117974550276e-07,
+          "matrix_relative_frobenius_max": 1.8585345427531408e-07,
+          "projections": 72
+        },
+        "hellaswag": {
+          "all_factors_bitwise_equal": false,
+          "factor_max_abs": 6.705522537231445e-08,
+          "factor_relative_frobenius_max": 2.9247976198634103e-07,
+          "matrix_relative_frobenius_max": 3.5048117811206985e-07,
+          "projections": 72
+        },
+        "winogrande": {
+          "all_factors_bitwise_equal": false,
+          "factor_max_abs": 7.450580596923828e-08,
+          "factor_relative_frobenius_max": 2.1780674510718798e-07,
+          "matrix_relative_frobenius_max": 2.523874655531358e-07,
+          "projections": 72
+        }
+      },
+      "old_choices_preserved": true,
+      "optimizer_states": {
+        "0": {
+          "all_state_tensors_finite_fp32": true,
+          "serialized_bytes": 1687,
+          "states": 0,
+          "tensor_bytes": 0
+        },
+        "128": {
+          "all_state_tensors_finite_fp32": true,
+          "serialized_bytes": 96744481,
+          "states": 7,
+          "tensor_bytes": 96737308
+        },
+        "16": {
+          "all_state_tensors_finite_fp32": true,
+          "serialized_bytes": 96744481,
+          "states": 7,
+          "tensor_bytes": 96737308
+        },
+        "256": {
+          "all_state_tensors_finite_fp32": true,
+          "serialized_bytes": 96744481,
+          "states": 7,
+          "tensor_bytes": 96737308
+        },
+        "512": {
+          "all_state_tensors_finite_fp32": true,
+          "serialized_bytes": 96744481,
+          "states": 7,
+          "tensor_bytes": 96737308
+        },
+        "64": {
+          "all_state_tensors_finite_fp32": true,
+          "serialized_bytes": 96744481,
+          "states": 7,
+          "tensor_bytes": 96737308
+        }
+      },
+      "retention": {
+        "boolq": {
+          "after": 32,
+          "before": 32,
+          "delta": 0
+        },
+        "commonsense_qa": {
+          "after": 23,
+          "before": 23,
+          "delta": 0
+        },
+        "hellaswag": {
+          "after": 24,
+          "before": 24,
+          "delta": 0
+        },
+        "winogrande": {
+          "after": 20,
+          "before": 20,
+          "delta": 0
+        }
+      }
+    },
+    "head_only_control": {
+      "GPU_recorded_conservation": {
+        "passed": false,
+        "tasks": {
+          "boolq": {
+            "all_factors_bitwise_equal": false,
+            "factor_max_abs": 0.07275958359241486,
+            "factor_relative_frobenius_max": 0.42935539062022576,
+            "matrix_relative_frobenius_max": 0.4703482415884936,
+            "projections": 72
+          },
+          "commonsense_qa": {
+            "all_factors_bitwise_equal": false,
+            "factor_max_abs": 0.05972914211452007,
+            "factor_relative_frobenius_max": 0.3169613792457866,
+            "matrix_relative_frobenius_max": 0.35741113214042697,
+            "projections": 72
+          },
+          "hellaswag": {
+            "all_factors_bitwise_equal": false,
+            "factor_max_abs": 0.04379375837743282,
+            "factor_relative_frobenius_max": 0.2817662035117398,
+            "matrix_relative_frobenius_max": 0.3090221735106316,
+            "projections": 72
+          },
+          "winogrande": {
+            "all_factors_bitwise_equal": false,
+            "factor_max_abs": 0.056063984520733356,
+            "factor_relative_frobenius_max": 0.3099821426508532,
+            "matrix_relative_frobenius_max": 0.3508328040389591,
+            "projections": 72
+          }
+        }
+      },
+      "all_old_score_records_exact": false,
+      "artifacts": {
+        "0": {
+          "all_finite": true,
+          "basis_bytes": 2105352,
+          "coordinate_parameters": 16809984,
+          "fp32_except_fp64_basis": true,
+          "frozen_nonABC_vectors_and_all_nonU_weights_exact": true,
+          "model_file": {
+            "bytes": 193830624,
+            "sha256": "001c45318965ee1e03fd3819693acdd70c601dc1130af43e66c66771a2290009"
+          },
+          "resident_parameters": 47930752,
+          "tensor_payload_bytes": 193828360,
+          "tensor_sha256": "0ad9c3d4bd6a3299c522a58b7a328d667e2669927736b1b00bef5a9a3cdd5016",
+          "trainable_parameters_including_vectors": 16810752
+        },
+        "128": {
+          "all_finite": true,
+          "basis_bytes": 2105352,
+          "coordinate_parameters": 16809984,
+          "fp32_except_fp64_basis": true,
+          "frozen_nonABC_vectors_and_all_nonU_weights_exact": true,
+          "model_file": {
+            "bytes": 193830624,
+            "sha256": "b577219b3121f4dbe990125b7c8782c0943d60532b25591298dad138316c270d"
+          },
+          "resident_parameters": 47930752,
+          "tensor_payload_bytes": 193828360,
+          "tensor_sha256": "17775cc77174e87447b1dba2add7979159aac08c09d157bf37245c14250af7ed",
+          "trainable_parameters_including_vectors": 16810752
+        },
+        "16": {
+          "all_finite": true,
+          "basis_bytes": 2105352,
+          "coordinate_parameters": 16809984,
+          "fp32_except_fp64_basis": true,
+          "frozen_nonABC_vectors_and_all_nonU_weights_exact": true,
+          "model_file": {
+            "bytes": 193830624,
+            "sha256": "e344d22a98bf8e321bf24e621711bd6cd7ae87d796aa5175b5423bff6ddeed56"
+          },
+          "resident_parameters": 47930752,
+          "tensor_payload_bytes": 193828360,
+          "tensor_sha256": "bed35ab73bd21a71cac324dbd8a38649f1bc730f879c314d0b7e643b5e73278c",
+          "trainable_parameters_including_vectors": 16810752
+        },
+        "256": {
+          "all_finite": true,
+          "basis_bytes": 2105352,
+          "coordinate_parameters": 16809984,
+          "fp32_except_fp64_basis": true,
+          "frozen_nonABC_vectors_and_all_nonU_weights_exact": true,
+          "model_file": {
+            "bytes": 193830624,
+            "sha256": "c0c3742ab3cac081fee3b1a80edffd7b34885ca41c0bea28fb1c70a502b9fb8a"
+          },
+          "resident_parameters": 47930752,
+          "tensor_payload_bytes": 193828360,
+          "tensor_sha256": "de22a32650ff99691ba6251fdb40859f27e7b97ca2a6b222ca3d2a0ed5bc6802",
+          "trainable_parameters_including_vectors": 16810752
+        },
+        "512": {
+          "all_finite": true,
+          "basis_bytes": 2105352,
+          "coordinate_parameters": 16809984,
+          "fp32_except_fp64_basis": true,
+          "frozen_nonABC_vectors_and_all_nonU_weights_exact": true,
+          "model_file": {
+            "bytes": 193830624,
+            "sha256": "ebf88b0bf9959bef59f630bc556c4275e4083ca946bbc1f0a8f1e4bad4cc88bc"
+          },
+          "resident_parameters": 47930752,
+          "tensor_payload_bytes": 193828360,
+          "tensor_sha256": "4052ae6572877ae2dfd7bf44d73880876c1cfab37c2992c0bb605a72cf556fd4",
+          "trainable_parameters_including_vectors": 16810752
+        },
+        "64": {
+          "all_finite": true,
+          "basis_bytes": 2105352,
+          "coordinate_parameters": 16809984,
+          "fp32_except_fp64_basis": true,
+          "frozen_nonABC_vectors_and_all_nonU_weights_exact": true,
+          "model_file": {
+            "bytes": 193830624,
+            "sha256": "dc8887e209d1cc0791e81b67d316b148b7d33e2f06866bce4217deda25bd7f5b"
+          },
+          "resident_parameters": 47930752,
+          "tensor_payload_bytes": 193828360,
+          "tensor_sha256": "f2e233f4be6f968c911d2d10d29e91925368b9e47aab819769fb92abe7f8a037",
+          "trainable_parameters_including_vectors": 16810752
+        }
+      },
+      "captured_GPU_features_CPU_affine_and_matrix_recomputation": {
+        "boolq": {
+          "all_factors_bitwise_equal": false,
+          "factor_max_abs": 0.0727595544885844,
+          "factor_relative_frobenius_max": 0.42935538831506687,
+          "matrix_relative_frobenius_max": 0.47034824260313934,
+          "maximum_affine_head_contribution": 0.016527889296412468,
+          "projections": 72
+        },
+        "commonsense_qa": {
+          "all_factors_bitwise_equal": false,
+          "factor_max_abs": 0.05972910672426224,
+          "factor_relative_frobenius_max": 0.31696137711937156,
+          "matrix_relative_frobenius_max": 0.3574111341327119,
+          "maximum_affine_head_contribution": 0.013895368203520775,
+          "projections": 72
+        },
+        "hellaswag": {
+          "all_factors_bitwise_equal": false,
+          "factor_max_abs": 0.043793708202429116,
+          "factor_relative_frobenius_max": 0.28176619671727754,
+          "matrix_relative_frobenius_max": 0.30902216492199425,
+          "maximum_affine_head_contribution": 0.010432986542582512,
+          "projections": 72
+        },
+        "winogrande": {
+          "all_factors_bitwise_equal": false,
+          "factor_max_abs": 0.05606395285576582,
+          "factor_relative_frobenius_max": 0.3099821359972836,
+          "matrix_relative_frobenius_max": 0.35083279191442507,
+          "maximum_affine_head_contribution": 0.012853533960878849,
+          "projections": 72
+        }
+      },
+      "curve": {
+        "0": {
+          "qualified": false,
+          "train": {
+            "correct": 124,
+            "examples": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 36,
+                "examples": 128
+              },
+              "sequence_b": {
+                "correct": 32,
+                "examples": 128
+              },
+              "sequence_c": {
+                "correct": 56,
+                "examples": 128
+              }
+            }
+          },
+          "validation": {
+            "correct": 36,
+            "examples": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 7,
+                "examples": 32
+              },
+              "sequence_b": {
+                "correct": 10,
+                "examples": 32
+              },
+              "sequence_c": {
+                "correct": 19,
+                "examples": 32
+              }
+            }
+          }
+        },
+        "128": {
+          "qualified": false,
+          "train": {
+            "correct": 349,
+            "examples": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 125,
+                "examples": 128
+              },
+              "sequence_b": {
+                "correct": 124,
+                "examples": 128
+              },
+              "sequence_c": {
+                "correct": 100,
+                "examples": 128
+              }
+            }
+          },
+          "validation": {
+            "correct": 84,
+            "examples": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 31,
+                "examples": 32
+              },
+              "sequence_b": {
+                "correct": 30,
+                "examples": 32
+              },
+              "sequence_c": {
+                "correct": 23,
+                "examples": 32
+              }
+            }
+          }
+        },
+        "16": {
+          "qualified": false,
+          "train": {
+            "correct": 144,
+            "examples": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 49,
+                "examples": 128
+              },
+              "sequence_b": {
+                "correct": 46,
+                "examples": 128
+              },
+              "sequence_c": {
+                "correct": 49,
+                "examples": 128
+              }
+            }
+          },
+          "validation": {
+            "correct": 32,
+            "examples": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 9,
+                "examples": 32
+              },
+              "sequence_b": {
+                "correct": 8,
+                "examples": 32
+              },
+              "sequence_c": {
+                "correct": 15,
+                "examples": 32
+              }
+            }
+          }
+        },
+        "256": {
+          "qualified": true,
+          "train": {
+            "correct": 374,
+            "examples": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 128,
+                "examples": 128
+              },
+              "sequence_b": {
+                "correct": 128,
+                "examples": 128
+              },
+              "sequence_c": {
+                "correct": 118,
+                "examples": 128
+              }
+            }
+          },
+          "validation": {
+            "correct": 93,
+            "examples": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 31,
+                "examples": 32
+              },
+              "sequence_b": {
+                "correct": 31,
+                "examples": 32
+              },
+              "sequence_c": {
+                "correct": 31,
+                "examples": 32
+              }
+            }
+          }
+        },
+        "512": {
+          "qualified": true,
+          "train": {
+            "correct": 382,
+            "examples": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 128,
+                "examples": 128
+              },
+              "sequence_b": {
+                "correct": 128,
+                "examples": 128
+              },
+              "sequence_c": {
+                "correct": 126,
+                "examples": 128
+              }
+            }
+          },
+          "validation": {
+            "correct": 95,
+            "examples": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 32,
+                "examples": 32
+              },
+              "sequence_b": {
+                "correct": 32,
+                "examples": 32
+              },
+              "sequence_c": {
+                "correct": 31,
+                "examples": 32
+              }
+            }
+          }
+        },
+        "64": {
+          "qualified": false,
+          "train": {
+            "correct": 277,
+            "examples": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 103,
+                "examples": 128
+              },
+              "sequence_b": {
+                "correct": 98,
+                "examples": 128
+              },
+              "sequence_c": {
+                "correct": 76,
+                "examples": 128
+              }
+            }
+          },
+          "validation": {
+            "correct": 60,
+            "examples": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 21,
+                "examples": 32
+              },
+              "sequence_b": {
+                "correct": 22,
+                "examples": 32
+              },
+              "sequence_c": {
+                "correct": 17,
+                "examples": 32
+              }
+            }
+          }
+        }
+      },
+      "example_exposures": 6144,
+      "final_panels": {
+        "old_exhaustive_triples": {
+          "correct": 849,
+          "examples": 864,
+          "tasks": {
+            "sequence_a": {
+              "correct": 288,
+              "examples": 288
+            },
+            "sequence_b": {
+              "correct": 287,
+              "examples": 288
+            },
+            "sequence_c": {
+              "correct": 274,
+              "examples": 288
+            }
+          }
+        },
+        "old_validation_test": {
+          "correct": 280,
+          "examples": 288,
+          "tasks": {
+            "sequence_a": {
+              "correct": 95,
+              "examples": 96
+            },
+            "sequence_b": {
+              "correct": 96,
+              "examples": 96
+            },
+            "sequence_c": {
+              "correct": 89,
+              "examples": 96
+            }
+          }
+        },
+        "released_tasks": {
+          "correct": 99,
+          "examples": 128,
+          "tasks": {
+            "boolq": {
+              "correct": 31,
+              "examples": 32
+            },
+            "commonsense_qa": {
+              "correct": 23,
+              "examples": 32
+            },
+            "hellaswag": {
+              "correct": 23,
+              "examples": 32
+            },
+            "winogrande": {
+              "correct": 22,
+              "examples": 32
+            }
+          }
+        },
+        "sealed_length4": {
+          "correct": 373,
+          "examples": 384,
+          "tasks": {
+            "sequence_a": {
+              "correct": 127,
+              "examples": 128
+            },
+            "sequence_b": {
+              "correct": 128,
+              "examples": 128
+            },
+            "sequence_c": {
+              "correct": 118,
+              "examples": 128
+            }
+          }
+        }
+      },
+      "first_qualifying_checkpoint": 256,
+      "full_CPU_feature_regeneration": {
+        "boolq": {
+          "all_factors_bitwise_equal": false,
+          "factor_max_abs": 0.07275956380181015,
+          "factor_relative_frobenius_max": 0.4293553674488023,
+          "matrix_relative_frobenius_max": 0.4703482571976162,
+          "projections": 72
+        },
+        "commonsense_qa": {
+          "all_factors_bitwise_equal": false,
+          "factor_max_abs": 0.05972911510616541,
+          "factor_relative_frobenius_max": 0.31696137767778176,
+          "matrix_relative_frobenius_max": 0.35741113425186716,
+          "projections": 72
+        },
+        "hellaswag": {
+          "all_factors_bitwise_equal": false,
+          "factor_max_abs": 0.04379373136907816,
+          "factor_relative_frobenius_max": 0.28176615067005223,
+          "matrix_relative_frobenius_max": 0.3090221160958583,
+          "projections": 72
+        },
+        "winogrande": {
+          "all_factors_bitwise_equal": false,
+          "factor_max_abs": 0.05606394540518522,
+          "factor_relative_frobenius_max": 0.3099821159973382,
+          "matrix_relative_frobenius_max": 0.35083273624289835,
+          "projections": 72
+        }
+      },
+      "old_choices_preserved": false,
+      "optimizer_states": {
+        "0": {
+          "all_state_tensors_finite_fp32": true,
+          "serialized_bytes": 1687,
+          "states": 0,
+          "tensor_bytes": 0
+        },
+        "128": {
+          "all_state_tensors_finite_fp32": true,
+          "serialized_bytes": 134493217,
+          "states": 7,
+          "tensor_bytes": 134486044
+        },
+        "16": {
+          "all_state_tensors_finite_fp32": true,
+          "serialized_bytes": 134493217,
+          "states": 7,
+          "tensor_bytes": 134486044
+        },
+        "256": {
+          "all_state_tensors_finite_fp32": true,
+          "serialized_bytes": 134493217,
+          "states": 7,
+          "tensor_bytes": 134486044
+        },
+        "512": {
+          "all_state_tensors_finite_fp32": true,
+          "serialized_bytes": 134493217,
+          "states": 7,
+          "tensor_bytes": 134486044
+        },
+        "64": {
+          "all_state_tensors_finite_fp32": true,
+          "serialized_bytes": 134493217,
+          "states": 7,
+          "tensor_bytes": 134486044
+        }
+      },
+      "retention": {
+        "boolq": {
+          "after": 31,
+          "before": 32,
+          "delta": -1
+        },
+        "commonsense_qa": {
+          "after": 23,
+          "before": 23,
+          "delta": 0
+        },
+        "hellaswag": {
+          "after": 23,
+          "before": 24,
+          "delta": -1
+        },
+        "winogrande": {
+          "after": 22,
+          "before": 20,
+          "delta": 2
+        }
+      }
+    }
+  },
+  "basis_audit": {
+    "null_relative_residual_recomputed": 3.6926032546147047e-16,
+    "nullity": 369,
+    "orthogonality_max_abs_recomputed": 5.329070518200751e-15,
+    "rank": 144,
+    "stored_feature_file_bytes": 4210952,
+    "stored_feature_tensors_bytes": 4210704
+  },
+  "collection_files_verified": 82,
+  "collection_pin": {
+    "bytes": 13773,
+    "sha256": "dda3288629f44dd66821208125afd1171568b4d492d2365b262f6bc82a3b10d0"
+  },
+  "interpretation": [
+    "Both arms meet the predeclared final train>=0.90 and validation>=0.85 gates. Control eligibility was satisfied before protected training.",
+    "Protected preserves all128 old score/prediction records and all288 generated effective matrices in the original arithmetic environment. The original4 task latent vectors and every frozen model tensor remain exact.",
+    "The protected model gives up36 triple answers and23 length4 answers relative to its matched head-only control at the fixed512 budget. This is a measured retention/generalization tradeoff for this source and protocol, not a universal necessity.",
+    "The head control also remains within the looser two-row retention threshold. The distinctive nullspace result is exact preservation, not sole passage of that tolerance.",
+    "Free parameters differ by construction:12,092,160 protected versus16,810,752 control, with43,212,160 versus47,930,752 resident adapter parameters. All original heads stay resident and frozen.",
+    "The custom FP64-basis format is audited as stored, not folded into an ordinary native adapter. Cross-backend regenerated features need not be bitwise identical to the basis-construction environment; the separately reported CPU test must satisfy the predeclared numerical tolerance."
+  ],
+  "matched_GPU_reference_tensor_sha256": "4aa6d9fef6c6e84f3c9b005a2d6e7733206337476bb9d457aabbdfc1d633bc1d",
+  "matrix_audit_method": "Recompute augmented old GPU hidden features times the stored FP64 basis and final FP32 head coordinates, apply original FP32 heads/alignment, and compare every old factor. Bitwise-equal factor pairs imply exact B@A identity; nonidentical pairs use independent exact FP64 QR factorization of concatenated B and signed A. Separately reload both real custom checkpoints and regenerate CPU hidden features; report arithmetic-backend differences explicitly.",
+  "raw": {
+    "old_exhaustive_triples": {
+      "correct": 286,
+      "examples": 864,
+      "tasks": {
+        "sequence_a": {
+          "correct": 84,
+          "examples": 288
+        },
+        "sequence_b": {
+          "correct": 85,
+          "examples": 288
+        },
+        "sequence_c": {
+          "correct": 117,
+          "examples": 288
+        }
+      }
+    },
+    "old_validation_test": {
+      "correct": 97,
+      "examples": 288,
+      "tasks": {
+        "sequence_a": {
+          "correct": 25,
+          "examples": 96
+        },
+        "sequence_b": {
+          "correct": 22,
+          "examples": 96
+        },
+        "sequence_c": {
+          "correct": 50,
+          "examples": 96
+        }
+      }
+    },
+    "released_tasks": {
+      "correct": 97,
+      "examples": 128,
+      "tasks": {
+        "boolq": {
+          "correct": 29,
+          "examples": 32
+        },
+        "commonsense_qa": {
+          "correct": 25,
+          "examples": 32
+        },
+        "hellaswag": {
+          "correct": 24,
+          "examples": 32
+        },
+        "winogrande": {
+          "correct": 19,
+          "examples": 32
+        }
+      }
+    },
+    "sealed_length4": {
+      "correct": 134,
+      "examples": 384,
+      "tasks": {
+        "sequence_a": {
+          "correct": 43,
+          "examples": 128
+        },
+        "sequence_b": {
+          "correct": 34,
+          "examples": 128
+        },
+        "sequence_c": {
+          "correct": 57,
+          "examples": 128
+        }
+      }
+    }
+  },
+  "raw_score_rechecks": 11008,
+  "result_pin": {
+    "bytes": 2977180,
+    "sha256": "4b1f9449d8a3e126254c05ebaffe3452fee78c9281da3574b13dd1b05af41173"
+  },
+  "run": "followthrough-20260912-portal-head-nullspace",
+  "scope": "No source edits, GPU dispatch, longer training, new gates, or old-label supervision. Checkpoint and optimizer bytes were loaded on CPU. Behavioral verification rederived choices from captured raw scores; the8B base was not loaded locally.",
+  "source_files": 95,
+  "source_sha256": "ac1e2365daeb0aa43a385f69a2297af646aabc8e9be041a3d0371bf4bff967e6",
+  "status": "independently_verified",
+  "training_pin": {
+    "bytes": 5651465,
+    "sha256": "13c4dd55f479a836b08d9fb1230323574358225e411a265cfffbeca6d804e972"
+  }
+}

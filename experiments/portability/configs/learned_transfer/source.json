@@ -1,0 +1,101 @@
+{
+  "arm": "heads_new_latents",
+  "authorization": "Parent reports and authorizes the actual heads_new_latents final512 source, with all ABC train/validation correct and per-task retention drops at most two rows. Export verifies those claims against immutable original and corrective receipts before producing a usable source/config.",
+  "calibration_template": {
+    "bytes": 23755,
+    "path": "configs/follow_through/constructed_target64.json",
+    "sha256": "8728ee78273cc2d07f93897788de1545559102f7aec6111aeaa79607361bbaae"
+  },
+  "code_dependencies": {
+    "calibrate_target.py": {
+      "bytes": 35522,
+      "sha256": "abc7c18c13fe996b8299a39742e984616aca069d2d22cf1035f774d193da6a2b"
+    },
+    "data.py": {
+      "bytes": 11777,
+      "sha256": "fe9e083a41caf518f3285ace906a63d2015f5002faa74337c39d8fa8b67992c2"
+    },
+    "final_retention.py": {
+      "bytes": 15063,
+      "sha256": "a0ac70a3b6198b3378e1390f3934d9e848823b365772f3c8ce6cb04565a37a53"
+    },
+    "follow_through.py": {
+      "bytes": 32556,
+      "sha256": "c25b9682ccd890593a2154018678a2548a10d81720244707bb3b6e264945d65d"
+    },
+    "learned_target.py": {
+      "bytes": 9463,
+      "sha256": "1ce5fd0bc82ba7e67dee555d8dd96f4531450a8f8fa5c5922dd17941b3fc420b"
+    },
+    "learner.py": {
+      "bytes": 37216,
+      "sha256": "958ea3e4cd054857f53100456195f08ce1c457237977f7fddb655efb79470874"
+    },
+    "prepare_learned_transfer.py": {
+      "bytes": 12116,
+      "sha256": "83d27b2ed8b9a8bea2f875617b777df89ca058ff434939a15d394bc9ec877338"
+    },
+    "preserve_tasks.py": {
+      "bytes": 22524,
+      "sha256": "e9edec5d8e57cc63fa86ee7d86ba8f70b71afbf62d05e1257415e67bdbc8d8a3"
+    },
+    "repair_alignment.py": {
+      "bytes": 30495,
+      "sha256": "42d5a12b1e8c7ae882b4b5be88796de2ec1b957604fa4e97307955d0b4165a5b"
+    }
+  },
+  "corrected_retention": {
+    "config_sha256": "b7f0d896449881446b0b543ed8077e184417c4329c2ee7ee51230e11a9154cb4",
+    "files": {
+      "config.json": {
+        "bytes": 606,
+        "sha256": "3ad45a996854fc7b538c87163eaa81f7311c2d3de155d5062dcbc50991b987f7"
+      },
+      "execution.json": {
+        "bytes": 2424,
+        "sha256": "5cf660e4d79970ecf4517db2844983c36b3a6c43bbe956da114d7baefc2a0ebc"
+      },
+      "result.json": {
+        "bytes": 1188138,
+        "sha256": "faccd71bb368b16d3dea5d1735436130ed48e99f88b90b82d8ff7e65733cd829"
+      }
+    },
+    "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-final-retention-examples",
+    "source_sha256": "ebec4621ae9c655d03fcc24b52c2d792c5839c383b234651658fdd25d9fe7d23",
+    "task_id": "followthrough-20260912-portal-final-retention-examples"
+  },
+  "expected_checkpoint": {
+    "artifact": {
+      "files": {
+        "config.json": {
+          "bytes": 15930,
+          "sha256": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb"
+        },
+        "model.safetensors": {
+          "bytes": 124484888,
+          "sha256": "7c4b812ab147dcd42168653639b3d85c6b40f248ae3032f7c2dd9c723b697574"
+        }
+      },
+      "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-examples-released/heads_new_latents/checkpoints/step-0512"
+    },
+    "kind": "portal",
+    "shared_sha256": "9a1d1364bb04009e4321a0966bd0b8198d0d6ddab929f10234612310b28f4165",
+    "tensor_sha256": "2692133092fe86eedf0da3f7bb5610b5c2836fbb6853a76dc81c92e744650c5a"
+  },
+  "expected_source_training_receipt": {
+    "bytes": 13157911,
+    "sha256": "3709d85a1e596f7ccf74f910e9a1c8d2e66cc74e73ff88a1e3f4404866111a91"
+  },
+  "kind": "qualify_example_learned_portal_source",
+  "maximum_lost_rows_per_old_task": 2,
+  "minimum_train_accuracy": 1.0,
+  "minimum_validation_accuracy": 1.0,
+  "qualification_scope": "acquisition_and_retention",
+  "source_run": {
+    "config_sha256": "915addb76eb291a5fdbe6401447cb7f5acd2f3df515e3b7f221228942b05e01b",
+    "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-examples-released",
+    "source_sha256": "1e543226bb2981f5c7b5bd44b069ce6ce9a622d29b94df11505f4d64eee419ab",
+    "task_id": "followthrough-20260912-portal-examples-released"
+  },
+  "step": 512
+}

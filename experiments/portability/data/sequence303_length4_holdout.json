@@ -1,0 +1,5008 @@
+{
+  "kind": "sequence303_length4_holdout",
+  "provenance": {
+    "claim_boundary": "Four-choice length generalization on known mappings. No free-generation or new-task-transfer claim.",
+    "evaluation_length": 4,
+    "fresh_length_not_new_mapping": true,
+    "no_training_or_selection_access": true,
+    "selected_before_follow_through_runs": true,
+    "source_fixture_sha256": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2",
+    "training_length": 3
+  },
+  "rows": [
+    {
+      "choices": [
+        " 1 3 5 1",
+        " 2 5 2 6",
+        " 3 0 6 2",
+        " 1 5 1 0"
+      ],
+      "gold_idx": 0,
+      "group": "6 5 1 6",
+      "id": "94ba8ac7f99392cada87086907d0b799e4a8db6475c94723339da662014dd967",
+      "prompt": "Apply the sequence_a code.\nInput: 6 5 1 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 5 4 7",
+        " 7 3 0 4",
+        " 6 0 3 7",
+        " 6 7 7 6"
+      ],
+      "gold_idx": 2,
+      "group": "7 4 5 2",
+      "id": "019a11902b27fbbce2ab12797268263f3b3ba9a895ecaa695f22a4f0e4e4bd04",
+      "prompt": "Apply the sequence_a code.\nInput: 7 4 5 2\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 1 4 6 7",
+        " 7 2 5 0",
+        " 2 0 2 1",
+        " 7 7 2 0"
+      ],
+      "gold_idx": 3,
+      "group": "2 2 0 4",
+      "id": "5a95de6f4dce9dd051dd818f5ad20e18fbba838e8666637dcbf4346ad6c5aa50",
+      "prompt": "Apply the sequence_a code.\nInput: 2 2 0 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 6 0 1 2",
+        " 4 1 3 5",
+        " 6 7 5 6",
+        " 2 7 1 6"
+      ],
+      "gold_idx": 3,
+      "group": "0 2 6 7",
+      "id": "7feaea55f19bb46aef96fe66df272bf0549cb7b6ffd13200bc9acfe6a65b1701",
+      "prompt": "Apply the sequence_a code.\nInput: 0 2 6 7\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 2 2 2",
+        " 3 7 6 4",
+        " 6 7 1 6",
+        " 2 2 2 6"
+      ],
+      "gold_idx": 0,
+      "group": "5 0 0 0",
+      "id": "13fc15279eef8226d2898b1d577ae93b89ebfc580a544ff42425cbaf7dc5e27f",
+      "prompt": "Apply the sequence_a code.\nInput: 5 0 0 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 7 0 4 4",
+        " 1 7 5 3",
+        " 1 5 3 5",
+        " 4 3 0 2"
+      ],
+      "gold_idx": 2,
+      "group": "6 1 5 1",
+      "id": "baf1a102eeb0d86e76da89debc2f47888d08193d47bd2c51ab9b2c2cde65c81e",
+      "prompt": "Apply the sequence_a code.\nInput: 6 1 5 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 0 3 6 2",
+        " 0 3 5 2",
+        " 2 0 4 7",
+        " 5 2 5 2"
+      ],
+      "gold_idx": 0,
+      "group": "4 5 7 0",
+      "id": "37eb98ab60287cee820d3b5a26a105b184c8fc13f64b7384780291fdf019c7d5",
+      "prompt": "Apply the sequence_a code.\nInput: 4 5 7 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 6 1 0",
+        " 3 4 1 6",
+        " 4 2 7 3",
+        " 5 2 1 3"
+      ],
+      "gold_idx": 2,
+      "group": "3 0 2 5",
+      "id": "e71a91e03fb7452fa1d2f91116d28fb3aa9abb0200c76465ae3dfee901055f66",
+      "prompt": "Apply the sequence_a code.\nInput: 3 0 2 5\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 6 7 4 5",
+        " 1 4 5 2",
+        " 7 5 0 7",
+        " 1 7 3 5"
+      ],
+      "gold_idx": 1,
+      "group": "6 3 1 0",
+      "id": "3bd6196c01a2ea1f3165b1263e8f1b56df67f6cf03638adab8cb12d8f0de34c0",
+      "prompt": "Apply the sequence_a code.\nInput: 6 3 1 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 6 0 4",
+        " 2 2 4 7",
+        " 2 0 3 1",
+        " 1 0 6 5"
+      ],
+      "gold_idx": 3,
+      "group": "6 4 7 1",
+      "id": "fcfe82f2eff342109b4077f8e3e6d4269bdc508dda7ae4bc1455927a30a490ae",
+      "prompt": "Apply the sequence_a code.\nInput: 6 4 7 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 4 7 4",
+        " 7 4 7 6",
+        " 5 3 0 4",
+        " 7 3 0 7"
+      ],
+      "gold_idx": 2,
+      "group": "1 5 4 3",
+      "id": "e04eeffa1565471f9a8259374302205efd87820187a8ecaff3c058320eca675c",
+      "prompt": "Apply the sequence_a code.\nInput: 1 5 4 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 7 4 2",
+        " 4 0 7 3",
+        " 4 7 3 3",
+        " 6 4 3 7"
+      ],
+      "gold_idx": 3,
+      "group": "7 3 5 2",
+      "id": "82b5d74c207e67f53e3e6e40f793b029a7b9535868390fca1cf86ad81c149313",
+      "prompt": "Apply the sequence_a code.\nInput: 7 3 5 2\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 7 6 6",
+        " 4 3 5 5",
+        " 1 5 3 1",
+        " 6 6 0 1"
+      ],
+      "gold_idx": 0,
+      "group": "0 2 7 7",
+      "id": "923d243bb71e039b00cb63b734bb1b838881dbc19271ac170fdcf317787a4e1d",
+      "prompt": "Apply the sequence_a code.\nInput: 0 2 7 7\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 3 7 5",
+        " 7 1 6 6",
+        " 6 6 4 6",
+        " 1 7 6 1"
+      ],
+      "gold_idx": 0,
+      "group": "1 5 2 1",
+      "id": "741214e148b3e8791027acbc60728c0d544a751a840d66b0590beaf84d5cada7",
+      "prompt": "Apply the sequence_a code.\nInput: 1 5 2 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 2 5 5",
+        " 7 6 4 2",
+        " 2 5 1 0",
+        " 1 3 1 7"
+      ],
+      "gold_idx": 2,
+      "group": "0 1 6 4",
+      "id": "730b6ce2e4fb17d9ca786cbbd77e475ac3ba63c29923f738b7035c73ab0b6efc",
+      "prompt": "Apply the sequence_a code.\nInput: 0 1 6 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 6 5 1 4",
+        " 0 7 6 4",
+        " 1 2 3 4",
+        " 0 5 5 3"
+      ],
+      "gold_idx": 2,
+      "group": "6 0 5 3",
+      "id": "7d0649dc0c5ac75d9586d399e549c160e481fff9fd41c1ec61c23bd23928a39d",
+      "prompt": "Apply the sequence_a code.\nInput: 6 0 5 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 6 0 4",
+        " 0 6 6 6",
+        " 5 1 5 6",
+        " 0 7 4 4"
+      ],
+      "gold_idx": 1,
+      "group": "4 7 7 7",
+      "id": "22db5b39e1dbfc9f50c3a00abebdaf453deacb61a77c81c575b94a16ecd3d46f",
+      "prompt": "Apply the sequence_a code.\nInput: 4 7 7 7\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 4 0 3",
+        " 4 5 6 0",
+        " 7 1 0 4",
+        " 5 6 1 7"
+      ],
+      "gold_idx": 1,
+      "group": "3 1 7 4",
+      "id": "21b3f4b1fc47eeb00ea220e0346fd456e64a1111b80fdebb71376c96fffb8d17",
+      "prompt": "Apply the sequence_a code.\nInput: 3 1 7 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 0 3 2",
+        " 5 2 3 6",
+        " 3 3 0 0",
+        " 4 6 7 7"
+      ],
+      "gold_idx": 3,
+      "group": "3 7 2 2",
+      "id": "e66540525468a9ef2a2845bd63619d7251eb312e897ced3d18043420d396121f",
+      "prompt": "Apply the sequence_a code.\nInput: 3 7 2 2\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 6 5 3 4",
+        " 5 3 1 2",
+        " 1 7 6 0",
+        " 6 5 6 3"
+      ],
+      "gold_idx": 1,
+      "group": "1 5 6 0",
+      "id": "d6ef4946ad2decf948fe16221e02bee660401c6516eaf827ea9e086dcd63d302",
+      "prompt": "Apply the sequence_a code.\nInput: 1 5 6 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 7 7 5",
+        " 7 5 6 3",
+        " 6 1 6 2",
+        " 3 4 7 0"
+      ],
+      "gold_idx": 3,
+      "group": "5 3 2 4",
+      "id": "0709df7aa1f26e19d26a4b98dae5b541461f1cb4cc762678ae9601c56fc07605",
+      "prompt": "Apply the sequence_a code.\nInput: 5 3 2 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 7 3 1",
+        " 6 5 1 3",
+        " 3 3 7 6",
+        " 3 6 6 2"
+      ],
+      "gold_idx": 0,
+      "group": "3 2 5 6",
+      "id": "281ae9aa0c32f47eb353d13dcfb7a8919fc6dba3a98a8876d6d7098f88eefb22",
+      "prompt": "Apply the sequence_a code.\nInput: 3 2 5 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 7 3 0 0",
+        " 0 2 6 0",
+        " 0 1 5 2",
+        " 0 6 1 4"
+      ],
+      "gold_idx": 1,
+      "group": "4 0 7 4",
+      "id": "ce5a7a89dc1c24151ce6a1da3bca9e6df2837a7732a7a38c22f1857fbe87ca48",
+      "prompt": "Apply the sequence_a code.\nInput: 4 0 7 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 0 5 6",
+        " 0 3 4 2",
+        " 4 7 4 3",
+        " 7 3 6 1"
+      ],
+      "gold_idx": 3,
+      "group": "2 5 7 6",
+      "id": "665b208fcf3614955cd4d5a3d1b9930bebf9af18918ee1d7bff9a59425599d03",
+      "prompt": "Apply the sequence_a code.\nInput: 2 5 7 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 6 4 1 3",
+        " 1 3 4 2",
+        " 2 2 0 1",
+        " 0 6 2 0"
+      ],
+      "gold_idx": 2,
+      "group": "0 0 4 6",
+      "id": "c0626dddc400e394f923872f274a7a01a7dcbb320236ad7f10626dda7ee60d58",
+      "prompt": "Apply the sequence_a code.\nInput: 0 0 4 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 1 0 4",
+        " 3 0 1 7",
+        " 2 3 2 4",
+        " 6 5 6 6"
+      ],
+      "gold_idx": 0,
+      "group": "3 6 4 3",
+      "id": "75ba2857835144c9bacd52262fd2873c69e74169b75734a370213a60eb878541",
+      "prompt": "Apply the sequence_a code.\nInput: 3 6 4 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 2 2 0",
+        " 4 5 7 2",
+        " 6 4 5 2",
+        " 2 4 7 0"
+      ],
+      "gold_idx": 3,
+      "group": "0 3 2 4",
+      "id": "cf8425e653793e6fbb39571817c1fe405ef232fbf8829d3e25bdae1cee3c053a",
+      "prompt": "Apply the sequence_a code.\nInput: 0 3 2 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 7 0 5 3",
+        " 2 4 5 6",
+        " 2 1 4 7",
+        " 6 1 2 0"
+      ],
+      "gold_idx": 1,
+      "group": "0 3 1 7",
+      "id": "b20834d71d98d72ea7f0ca11c2e66e792ba5a7e0be2afc6de9c9d7111a9ac7fa",
+      "prompt": "Apply the sequence_a code.\nInput: 0 3 1 7\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 5 6 7",
+        " 6 3 1 3",
+        " 7 0 2 2",
+        " 0 6 0 3"
+      ],
+      "gold_idx": 0,
+      "group": "5 1 7 2",
+      "id": "b412fb7691b4e0624435efd7d6c4a802cccfe787eb5be47b11bc7bf7f010085e",
+      "prompt": "Apply the sequence_a code.\nInput: 5 1 7 2\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 1 0 4 5",
+        " 5 6 5 0",
+        " 5 4 6 4",
+        " 0 1 1 2"
+      ],
+      "gold_idx": 3,
+      "group": "4 6 6 0",
+      "id": "ea271c7a2f5225a03e00a5258ab29ca2d4d9ba75ec04023d18ec528a906e27eb",
+      "prompt": "Apply the sequence_a code.\nInput: 4 6 6 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 7 4 5",
+        " 6 4 5 1",
+        " 7 4 1 1",
+        " 6 6 7 3"
+      ],
+      "gold_idx": 1,
+      "group": "7 3 1 6",
+      "id": "e0fbed8cbe5089179357652cd09d4ad705250142b7c7baabe54b1f6569a87e4a",
+      "prompt": "Apply the sequence_a code.\nInput: 7 3 1 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 1 0 4",
+        " 7 0 4 1",
+        " 0 1 3 0",
+        " 4 4 2 4"
+      ],
+      "gold_idx": 2,
+      "group": "4 6 5 4",
+      "id": "5a6de001bd79d7a44fce54efa26ee705b46b53a2d232d944a762e4a0319d00b5",
+      "prompt": "Apply the sequence_a code.\nInput: 4 6 5 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 0 6 7 7",
+        " 7 4 0 7",
+        " 7 4 4 1",
+        " 3 3 1 3"
+      ],
+      "gold_idx": 2,
+      "group": "2 3 3 6",
+      "id": "6ac18ffeb5905f8b8755b5c2d616aa882813adf14319711a55cfb5819ba0c102",
+      "prompt": "Apply the sequence_a code.\nInput: 2 3 3 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 7 4 2",
+        " 1 6 2 5",
+        " 6 0 3 5",
+        " 3 3 7 1"
+      ],
+      "gold_idx": 1,
+      "group": "6 7 0 1",
+      "id": "5f802493a492bf656a71341170c8305939e56c746c10d1bf3d5be436ba8c079d",
+      "prompt": "Apply the sequence_a code.\nInput: 6 7 0 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 7 3 2 6",
+        " 5 4 6 2",
+        " 6 2 2 3",
+        " 6 1 7 2"
+      ],
+      "gold_idx": 3,
+      "group": "7 6 2 0",
+      "id": "2bce37509845c93081127667bbc384eec596d12dd39aa18c7f86bcf1144f1670",
+      "prompt": "Apply the sequence_a code.\nInput: 7 6 2 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 3 0 7",
+        " 0 1 6 0",
+        " 4 4 0 4",
+        " 7 5 3 7"
+      ],
+      "gold_idx": 1,
+      "group": "4 6 7 4",
+      "id": "3b885d38b4f0f7619de60aeca2836626e5665ce5dfa66030944bb721801cab9d",
+      "prompt": "Apply the sequence_a code.\nInput: 4 6 7 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 3 6 6",
+        " 7 7 0 1",
+        " 5 7 4 5",
+        " 6 1 2 7"
+      ],
+      "gold_idx": 0,
+      "group": "1 5 7 7",
+      "id": "3cdcc7962597269c07f3519316be95efd54333d684a9400e7f87a6c934f18aac",
+      "prompt": "Apply the sequence_a code.\nInput: 1 5 7 7\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 0 0 4",
+        " 5 0 7 1",
+        " 5 6 3 6",
+        " 0 6 6 4"
+      ],
+      "gold_idx": 0,
+      "group": "3 4 4 3",
+      "id": "cc90109999c11ad426fdff9302fe1b80d175643aba2a4351db2a24a86685b053",
+      "prompt": "Apply the sequence_a code.\nInput: 3 4 4 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 1 0 5 3",
+        " 4 3 1 6",
+        " 0 4 0 2",
+        " 6 6 1 4"
+      ],
+      "gold_idx": 3,
+      "group": "7 7 6 3",
+      "id": "f7cd29e15805120c3cf53458b70a5892dcb4807f5c9450b7ce0601fac8f1a39b",
+      "prompt": "Apply the sequence_a code.\nInput: 7 7 6 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 7 7 0",
+        " 4 7 5 3",
+        " 5 4 6 0",
+        " 2 6 6 3"
+      ],
+      "gold_idx": 2,
+      "group": "1 3 7 4",
+      "id": "e75ba1256271f2e19cc4da2b42c6375e8ed34cb474c5fe001ff86b432a0fd28f",
+      "prompt": "Apply the sequence_a code.\nInput: 1 3 7 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 0 6 5",
+        " 2 7 2 5",
+        " 0 2 4 1",
+        " 4 4 4 1"
+      ],
+      "gold_idx": 3,
+      "group": "3 3 3 6",
+      "id": "cb9d1f549d66116f428c780aae226ed0c34e5b427866021cf26ec60210b1728d",
+      "prompt": "Apply the sequence_a code.\nInput: 3 3 3 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 6 6 7",
+        " 6 1 7 7",
+        " 2 0 7 2",
+        " 0 5 5 5"
+      ],
+      "gold_idx": 2,
+      "group": "0 4 2 0",
+      "id": "6e36f68a4369801962a17c73c847256d83aafb7c91f2d7d16510dad732c66f25",
+      "prompt": "Apply the sequence_a code.\nInput: 0 4 2 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 0 7 5",
+        " 7 2 1 3",
+        " 3 2 1 5",
+        " 3 7 3 3"
+      ],
+      "gold_idx": 3,
+      "group": "5 2 5 5",
+      "id": "d159338dade97dddbbfac548d3fa883e1ee605a630d27fdca64bd3bbf8d13969",
+      "prompt": "Apply the sequence_a code.\nInput: 5 2 5 5\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 6 2 5 5",
+        " 6 0 5 6",
+        " 0 0 3 4",
+        " 1 2 2 4"
+      ],
+      "gold_idx": 3,
+      "group": "6 0 0 3",
+      "id": "9dbe4aad5859cc3492b6a9cc3df7e177038d78dd44cd854bb2ba824197ca28be",
+      "prompt": "Apply the sequence_a code.\nInput: 6 0 0 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 6 3 3 4",
+        " 4 3 7 2",
+        " 0 4 5 1",
+        " 5 3 6 4"
+      ],
+      "gold_idx": 1,
+      "group": "3 5 2 0",
+      "id": "fd4f5d918ac519d0ed2d72fa1f2d04857daf1dd48b6dd58b6db353cacabb52fd",
+      "prompt": "Apply the sequence_a code.\nInput: 3 5 2 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 4 4 4",
+        " 1 5 0 3",
+        " 4 7 2 3",
+        " 4 2 4 7"
+      ],
+      "gold_idx": 1,
+      "group": "6 1 4 5",
+      "id": "4baff45f7d9b4c7067782fe6e704f1981a7ab90798a9cf8631afefaaeebbb43b",
+      "prompt": "Apply the sequence_a code.\nInput: 6 1 4 5\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 6 6 1 5",
+        " 4 2 5 7",
+        " 5 2 1 7",
+        " 3 2 0 3"
+      ],
+      "gold_idx": 2,
+      "group": "1 0 6 2",
+      "id": "8dae50f07c1006850fd149cdb95e35e623825f8248cf314e49912b2b75f32ae2",
+      "prompt": "Apply the sequence_a code.\nInput: 1 0 6 2\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 6 5 7 6",
+        " 3 2 5 1",
+        " 3 1 5 0",
+        " 5 4 3 0"
+      ],
+      "gold_idx": 2,
+      "group": "5 6 1 4",
+      "id": "f0d93fa85fd4255e80f5b6c4093b59b7a7c61017b77ca312116c1b77f9977c8f",
+      "prompt": "Apply the sequence_a code.\nInput: 5 6 1 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 3 7 3",
+        " 7 7 0 2",
+        " 7 6 6 1",
+        " 2 6 7 0"
+      ],
+      "gold_idx": 2,
+      "group": "2 7 7 6",
+      "id": "1f256cd4d55faa041698b20dd8e7ff605b81ed52a26ef9a43a861e614b84f5d3",
+      "prompt": "Apply the sequence_a code.\nInput: 2 7 7 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 0 0 0",
+        " 1 0 0 1",
+        " 6 1 7 0",
+        " 3 0 7 5"
+      ],
+      "gold_idx": 1,
+      "group": "6 4 4 6",
+      "id": "ce33d7ba45428e7c10b63d14a8a5620556294c8224c07863d8f09ff9ade386cf",
+      "prompt": "Apply the sequence_a code.\nInput: 6 4 4 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 0 0 3 5",
+        " 5 7 5 2",
+        " 7 7 0 7",
+        " 3 2 3 1"
+      ],
+      "gold_idx": 0,
+      "group": "4 4 5 1",
+      "id": "1ba76d687d08927b2ca52cf6ca1d09814a5bbd90209cf36f5749766f7b4b9d16",
+      "prompt": "Apply the sequence_a code.\nInput: 4 4 5 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 7 2 1",
+        " 6 6 0 4",
+        " 2 6 5 2",
+        " 6 7 1 0"
+      ],
+      "gold_idx": 3,
+      "group": "7 2 6 4",
+      "id": "09d368f3cb916a2859475906e1e5140823602402c834c89079d69adc510fb0b4",
+      "prompt": "Apply the sequence_a code.\nInput: 7 2 6 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 6 2 1 4",
+        " 3 6 6 7",
+        " 7 6 0 4",
+        " 4 2 7 4"
+      ],
+      "gold_idx": 0,
+      "group": "7 0 6 3",
+      "id": "61bf698fc2527d333194a2396fd6051d2d3831e669bd973427941a129f22b58b",
+      "prompt": "Apply the sequence_a code.\nInput: 7 0 6 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 1 0 2 6",
+        " 4 3 4 3",
+        " 2 5 5 7",
+        " 2 1 0 2"
+      ],
+      "gold_idx": 0,
+      "group": "6 4 0 7",
+      "id": "6d2c13ee58b2231b43fb35dd561c36f8889ba22b0cfba41a4dc025bc7346f78d",
+      "prompt": "Apply the sequence_a code.\nInput: 6 4 0 7\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 4 6 0",
+        " 3 0 7 4",
+        " 7 7 4 2",
+        " 4 3 4 5"
+      ],
+      "gold_idx": 1,
+      "group": "5 4 2 3",
+      "id": "5cc92545774b2c443fc62ec3a7dc959f71164f0c18d6d448ba5bb26188b89150",
+      "prompt": "Apply the sequence_a code.\nInput: 5 4 2 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 3 7 0",
+        " 7 6 2 7",
+        " 1 0 4 5",
+        " 2 3 3 1"
+      ],
+      "gold_idx": 3,
+      "group": "0 5 5 6",
+      "id": "07890cc73143a5e7cb36d00354e03802ad9c50830e2d50305c4d9e0b74552405",
+      "prompt": "Apply the sequence_a code.\nInput: 0 5 5 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 5 7 7",
+        " 1 6 6 5",
+        " 3 4 5 2",
+        " 3 4 3 3"
+      ],
+      "gold_idx": 3,
+      "group": "5 3 5 5",
+      "id": "277db7baf785b65a8c75a32812939608f539fd3605cf41c436a78c883e369ff5",
+      "prompt": "Apply the sequence_a code.\nInput: 5 3 5 5\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 1 2 1 4",
+        " 1 4 5 2",
+        " 5 4 0 2",
+        " 0 3 7 4"
+      ],
+      "gold_idx": 0,
+      "group": "6 0 6 3",
+      "id": "ba7c58919c90d76b1ad1f5b75a820f009e158f3477050d2cd3ae8bd689d523c8",
+      "prompt": "Apply the sequence_a code.\nInput: 6 0 6 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 4 3 2",
+        " 2 0 4 4",
+        " 5 6 2 6",
+        " 7 1 0 5"
+      ],
+      "gold_idx": 0,
+      "group": "5 3 5 0",
+      "id": "0a87a1fddcad299b876341abd776bebb531510474fe1905f5bf252d6c34b4dae",
+      "prompt": "Apply the sequence_a code.\nInput: 5 3 5 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 2 7 0",
+        " 4 5 2 3",
+        " 1 5 2 2",
+        " 5 3 7 6"
+      ],
+      "gold_idx": 3,
+      "group": "1 5 2 7",
+      "id": "0edada0620c635f21a79d0d2b0a34a72105a98fd2c401bb3efb475fdd138a832",
+      "prompt": "Apply the sequence_a code.\nInput: 1 5 2 7\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 0 0 6",
+        " 3 5 2 3",
+        " 4 1 4 5",
+        " 1 3 4 2"
+      ],
+      "gold_idx": 0,
+      "group": "1 4 4 7",
+      "id": "d68035a525a2481f6f82fff285f555ec8ea8e13c4db107b1b613042507426869",
+      "prompt": "Apply the sequence_a code.\nInput: 1 4 4 7\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 6 0 3 7",
+        " 4 4 4 2",
+        " 0 6 2 6",
+        " 2 3 5 1"
+      ],
+      "gold_idx": 1,
+      "group": "3 3 3 0",
+      "id": "1898eb5f16825ec26be921bf6faf4de1204bbf663edb93c971d6d142b24ced1c",
+      "prompt": "Apply the sequence_a code.\nInput: 3 3 3 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 1 5 7 2",
+        " 4 4 0 5",
+        " 3 0 4 5",
+        " 5 0 1 5"
+      ],
+      "gold_idx": 3,
+      "group": "1 4 6 1",
+      "id": "8305e699b6e924172d1adbc226b3b91196c21e866bea57cca71460a006ef1ede",
+      "prompt": "Apply the sequence_a code.\nInput: 1 4 6 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 7 4 2",
+        " 7 1 4 1",
+        " 2 0 5 5",
+        " 5 2 5 7"
+      ],
+      "gold_idx": 2,
+      "group": "0 4 1 1",
+      "id": "84d707f9456f9b0276bd0edc3c77079b838a73781ab27e924a9b9c5faac6372d",
+      "prompt": "Apply the sequence_a code.\nInput: 0 4 1 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 2 5 6",
+        " 5 1 3 7",
+        " 5 1 2 1",
+        " 7 5 4 1"
+      ],
+      "gold_idx": 1,
+      "group": "1 6 5 2",
+      "id": "6dee8cfd183f5abae40f008b2db71d5076756351fa5cc30d9fe3e6e63c045a63",
+      "prompt": "Apply the sequence_a code.\nInput: 1 6 5 2\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 3 5 5",
+        " 6 0 3 2",
+        " 3 4 1 1",
+        " 3 6 7 5"
+      ],
+      "gold_idx": 2,
+      "group": "5 3 6 6",
+      "id": "593aaa07be394fcda451c9605b01051217c0769ef0dc84dba3fb0486ed5a12cf",
+      "prompt": "Apply the sequence_a code.\nInput: 5 3 6 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 2 1 2",
+        " 5 7 5 6",
+        " 3 1 2 7",
+        " 6 4 0 2"
+      ],
+      "gold_idx": 2,
+      "group": "5 6 0 2",
+      "id": "58d5103b88d01580d7e64ff0236d6ff6d3cfa9b968b8177c9c144e579c055209",
+      "prompt": "Apply the sequence_a code.\nInput: 5 6 0 2\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 1 7 0 5",
+        " 4 1 1 1",
+        " 1 6 5 1",
+        " 6 5 6 6"
+      ],
+      "gold_idx": 3,
+      "group": "7 1 7 7",
+      "id": "c89b45e0f25c182a7daea4e43736a1404b4526ccd986a4d217ca02c2fc8a09be",
+      "prompt": "Apply the sequence_a code.\nInput: 7 1 7 7\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 7 1 2",
+        " 5 3 6 3",
+        " 4 0 1 2",
+        " 5 1 7 1"
+      ],
+      "gold_idx": 0,
+      "group": "0 2 6 0",
+      "id": "b5bceb476613dd1e3ee7f0ba3f110968ae482a927cfba365fb5e56f16f5566f0",
+      "prompt": "Apply the sequence_a code.\nInput: 0 2 6 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 1 4 2 3",
+        " 5 1 5 1",
+        " 6 5 2 2",
+        " 3 7 0 7"
+      ],
+      "gold_idx": 1,
+      "group": "1 6 1 6",
+      "id": "3590f39997ed84ee943a2cea0d8c758017de2d088800ae5cae3d4c8ba59bd31c",
+      "prompt": "Apply the sequence_a code.\nInput: 1 6 1 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 6 2 1",
+        " 5 0 2 5",
+        " 3 6 1 6",
+        " 7 0 5 2"
+      ],
+      "gold_idx": 3,
+      "group": "2 4 1 0",
+      "id": "9262248614de1c0a27079cda99b0e50c57c8e058563babc1ba15b6662f654be4",
+      "prompt": "Apply the sequence_a code.\nInput: 2 4 1 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 7 5 7",
+        " 0 5 2 2",
+        " 4 2 7 0",
+        " 7 2 7 0"
+      ],
+      "gold_idx": 2,
+      "group": "3 0 2 4",
+      "id": "835c3a4e54f899dd54f7118e13dd416b543407bfe796c5a30f4e4669866d9cd9",
+      "prompt": "Apply the sequence_a code.\nInput: 3 0 2 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 7 3 2 3",
+        " 3 0 0 0",
+        " 1 1 7 5",
+        " 7 5 6 6"
+      ],
+      "gold_idx": 2,
+      "group": "6 6 2 1",
+      "id": "40c24956cdcf22b2211c6d9aa870cdbd680b81d0c66816e64c97aabde8d64dc0",
+      "prompt": "Apply the sequence_a code.\nInput: 6 6 2 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 7 4 4 3",
+        " 4 5 6 7",
+        " 5 4 2 0",
+        " 0 6 5 6"
+      ],
+      "gold_idx": 0,
+      "group": "2 3 3 5",
+      "id": "d07c432055634bd71a85e6f112851b0823a7e8d1890b0233a20c3fca1743719b",
+      "prompt": "Apply the sequence_a code.\nInput: 2 3 3 5\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 7 4 1",
+        " 7 3 6 0",
+        " 2 2 3 4",
+        " 4 5 5 2"
+      ],
+      "gold_idx": 2,
+      "group": "0 0 5 3",
+      "id": "090bdd4eab0e3c468eb676f2a4e64d34a53cf3adbef86af3478942852aea3343",
+      "prompt": "Apply the sequence_a code.\nInput: 0 0 5 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 6 1 7",
+        " 6 5 1 0",
+        " 5 5 4 3",
+        " 4 2 0 4"
+      ],
+      "gold_idx": 3,
+      "group": "3 0 4 3",
+      "id": "0267c95537b3e778ec0230b70c4f8b40202665ca17640f8a6ab288a572b7fda7",
+      "prompt": "Apply the sequence_a code.\nInput: 3 0 4 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 0 4 6 7",
+        " 3 6 4 0",
+        " 6 1 1 6",
+        " 0 2 0 7"
+      ],
+      "gold_idx": 2,
+      "group": "7 6 6 7",
+      "id": "598b2f2636c426215630c04b84257e2f95b765a4edee85ed1166e620d7fdd84e",
+      "prompt": "Apply the sequence_a code.\nInput: 7 6 6 7\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 6 1 3",
+        " 0 1 3 7",
+        " 5 6 7 7",
+        " 4 7 5 1"
+      ],
+      "gold_idx": 2,
+      "group": "1 7 2 2",
+      "id": "72285e75cdd5db385f39fc15f19ae007d657df6dae46383aa041c15a11bf3ca2",
+      "prompt": "Apply the sequence_a code.\nInput: 1 7 2 2\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 5 7 2",
+        " 0 1 7 7",
+        " 3 6 5 0",
+        " 3 0 3 4"
+      ],
+      "gold_idx": 0,
+      "group": "1 1 2 0",
+      "id": "65a8203385ed1313d9646050fd45ae09a4ce14efda66bd03d9bb56649c97854a",
+      "prompt": "Apply the sequence_a code.\nInput: 1 1 2 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 3 7 1",
+        " 5 1 6 2",
+        " 7 3 5 2",
+        " 4 5 5 5"
+      ],
+      "gold_idx": 0,
+      "group": "0 5 2 6",
+      "id": "4af3b45a0fefb53f965dbb3c29fdddf1fd8f4f9de4e36defbcbf63b87026030c",
+      "prompt": "Apply the sequence_a code.\nInput: 0 5 2 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 0 1 3 1",
+        " 2 1 0 4",
+        " 0 0 1 0",
+        " 5 1 1 2"
+      ],
+      "gold_idx": 1,
+      "group": "0 6 4 3",
+      "id": "2f53cd8f199168b6bf740b9939f2851c424b0dbb39a4276a7ac0ffd5dbfab99d",
+      "prompt": "Apply the sequence_a code.\nInput: 0 6 4 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 3 7 5",
+        " 2 5 7 2",
+        " 3 5 0 3",
+        " 1 2 3 4"
+      ],
+      "gold_idx": 1,
+      "group": "0 1 2 0",
+      "id": "3d8daf185ecfae0eae91757acbb4a12c45a35751d02fdfadb98d48a68822a6f1",
+      "prompt": "Apply the sequence_a code.\nInput: 0 1 2 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 7 7 5 5",
+        " 7 5 5 2",
+        " 6 4 1 0",
+        " 5 5 5 5"
+      ],
+      "gold_idx": 2,
+      "group": "7 3 6 4",
+      "id": "cec20245b92f8d0ce492cb335888a3e825d2f5c6159071e89578fa1ecca549ad",
+      "prompt": "Apply the sequence_a code.\nInput: 7 3 6 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 7 4 3 4",
+        " 2 2 3 0",
+        " 7 0 3 1",
+        " 3 4 0 4"
+      ],
+      "gold_idx": 1,
+      "group": "0 0 5 4",
+      "id": "d8d27d39353512a5ad04d0842c73677b4cfd28fc8e93efc17d4a50a1dd827d82",
+      "prompt": "Apply the sequence_a code.\nInput: 0 0 5 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 6 0 7 1",
+        " 0 3 0 4",
+        " 5 4 0 1",
+        " 7 1 2 5"
+      ],
+      "gold_idx": 1,
+      "group": "4 5 4 3",
+      "id": "4c64823a2feafaac33988645fbe6a1c2aa258ec491dda84d92b2cfacb69e4b0c",
+      "prompt": "Apply the sequence_a code.\nInput: 4 5 4 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 6 1 6",
+        " 0 4 5 2",
+        " 2 2 7 2",
+        " 6 7 7 3"
+      ],
+      "gold_idx": 2,
+      "group": "0 0 2 0",
+      "id": "d67def8e51d76d17e6d5559dfb44c0ce474d464272e02b52f10c1b4aaae75975",
+      "prompt": "Apply the sequence_a code.\nInput: 0 0 2 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 0 4 5 1",
+        " 0 7 4 5",
+        " 4 1 2 4",
+        " 0 0 6 1"
+      ],
+      "gold_idx": 1,
+      "group": "4 2 3 1",
+      "id": "7bcbdc836ae21abdf86368053d919ae2a3e96b65bae4eba4e14caa54142ffa9c",
+      "prompt": "Apply the sequence_a code.\nInput: 4 2 3 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 1 1 1 5",
+        " 0 6 6 2",
+        " 3 6 4 6",
+        " 0 5 6 1"
+      ],
+      "gold_idx": 0,
+      "group": "6 6 6 1",
+      "id": "7db2d7b765ac946cb79db72fa3183ed3ddc42953959a46a363696c0b23db0176",
+      "prompt": "Apply the sequence_a code.\nInput: 6 6 6 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 2 0 6",
+        " 7 1 4 0",
+        " 1 6 4 4",
+        " 2 0 5 6"
+      ],
+      "gold_idx": 3,
+      "group": "0 4 1 7",
+      "id": "4890cf7d9a249ff9737e94a7a063bfdcde52fae81f5744beeb76821377a99547",
+      "prompt": "Apply the sequence_a code.\nInput: 0 4 1 7\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 7 2 4",
+        " 4 2 3 6",
+        " 1 7 2 1",
+        " 4 0 2 0"
+      ],
+      "gold_idx": 2,
+      "group": "6 2 0 6",
+      "id": "7f30280e18ef69b5ee1ee54fe429e394aefbce0c99c9c6b36d7bb4312437c9b7",
+      "prompt": "Apply the sequence_a code.\nInput: 6 2 0 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 1 1 0 7",
+        " 7 5 6 2",
+        " 3 1 1 4",
+        " 0 2 3 5"
+      ],
+      "gold_idx": 1,
+      "group": "2 1 7 0",
+      "id": "23f3a6d798dea10510ce11fe6c2ebeb97b111e690fb6e5e1d970ad8af87e95c4",
+      "prompt": "Apply the sequence_a code.\nInput: 2 1 7 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 7 7 5 1",
+        " 0 5 6 5",
+        " 3 7 6 7",
+        " 4 7 1 5"
+      ],
+      "gold_idx": 2,
+      "group": "5 2 7 2",
+      "id": "2a2d61938f945eeabebc2fc1ecb736feb7045978162e8142b9ddefe7305d8e2d",
+      "prompt": "Apply the sequence_a code.\nInput: 5 2 7 2\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 1 7 3 3",
+        " 2 3 0 0",
+        " 2 1 1 5",
+        " 3 5 5 0"
+      ],
+      "gold_idx": 3,
+      "group": "5 1 1 4",
+      "id": "3c0030f8e5ecfb6dba6d9d7499223a31604e8a3d7f3f49c2972fcb153a32acd5",
+      "prompt": "Apply the sequence_a code.\nInput: 5 1 1 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 4 5 1",
+        " 3 0 0 3",
+        " 4 1 0 1",
+        " 6 3 2 6"
+      ],
+      "gold_idx": 1,
+      "group": "5 4 4 5",
+      "id": "4dcecf4edf63a042b4b851d625450791341ca05cf0643510feffdab28748acd6",
+      "prompt": "Apply the sequence_a code.\nInput: 5 4 4 5\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 0 0 4 1",
+        " 7 6 5 1",
+        " 0 6 4 4",
+        " 2 1 0 2"
+      ],
+      "gold_idx": 1,
+      "group": "2 7 1 6",
+      "id": "026bc0169b2137e2ad768a47cb6fcaa5df5cf6524577658b509d7df847109175",
+      "prompt": "Apply the sequence_a code.\nInput: 2 7 1 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 6 1 0",
+        " 6 1 6 0",
+        " 6 5 7 2",
+        " 2 1 2 1"
+      ],
+      "gold_idx": 2,
+      "group": "7 1 2 0",
+      "id": "315c46ee31db87e617c27d99dfadcf031418ab8e803c44cb8bed3e64c14ccb06",
+      "prompt": "Apply the sequence_a code.\nInput: 7 1 2 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 0 5 0 4",
+        " 1 4 5 0",
+        " 3 2 2 1",
+        " 6 7 0 3"
+      ],
+      "gold_idx": 0,
+      "group": "4 1 4 3",
+      "id": "784bb2c62b236575b8486d023ad340614ba5ac7d24858bc9aa0ebdca1858e871",
+      "prompt": "Apply the sequence_a code.\nInput: 4 1 4 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 7 4 4 3",
+        " 3 0 2 0",
+        " 5 0 3 4",
+        " 6 4 2 2"
+      ],
+      "gold_idx": 3,
+      "group": "7 3 0 0",
+      "id": "78390f7488097221b35112d95513dd80cec2576ba907dda04ebcec57fca17a09",
+      "prompt": "Apply the sequence_a code.\nInput: 7 3 0 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 6 4 3 2",
+        " 4 2 6 1",
+        " 4 0 1 0",
+        " 3 7 1 5"
+      ],
+      "gold_idx": 0,
+      "group": "7 3 5 0",
+      "id": "3e5e7b7d6645754fcaab6233282b2cf0ccabe146a352e2e7b64c8f949f71073f",
+      "prompt": "Apply the sequence_a code.\nInput: 7 3 5 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 7 3 2 7",
+        " 2 0 7 7",
+        " 7 1 2 6",
+        " 7 0 7 4"
+      ],
+      "gold_idx": 0,
+      "group": "2 5 0 2",
+      "id": "06261417ccb5ea08f7c9d295d68670448f0b7c607a7f87de360198acefb5eaa5",
+      "prompt": "Apply the sequence_a code.\nInput: 2 5 0 2\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 0 1 0 5",
+        " 7 3 2 3",
+        " 3 4 7 7",
+        " 6 3 1 7"
+      ],
+      "gold_idx": 0,
+      "group": "4 6 4 1",
+      "id": "5fd960164d05f05bbf201cc94112a6c637d8c50299b2257c2113862c735d705f",
+      "prompt": "Apply the sequence_a code.\nInput: 4 6 4 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 7 7 6 5",
+        " 6 5 3 5",
+        " 3 1 4 5",
+        " 2 3 3 2"
+      ],
+      "gold_idx": 1,
+      "group": "7 1 5 1",
+      "id": "24f72867a4fcea7c278163b61ea8f8ef594341d3774b528ef0c517abca6f1c90",
+      "prompt": "Apply the sequence_a code.\nInput: 7 1 5 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 0 5 3 5",
+        " 5 1 3 2",
+        " 5 1 7 4",
+        " 0 6 4 3"
+      ],
+      "gold_idx": 2,
+      "group": "1 6 2 3",
+      "id": "2cc792b02dc60229cbd7314b37a9ee9efb3489847f84e3802c95f94c4260851b",
+      "prompt": "Apply the sequence_a code.\nInput: 1 6 2 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 7 7 1",
+        " 0 0 5 3",
+        " 0 3 3 4",
+        " 2 5 3 4"
+      ],
+      "gold_idx": 3,
+      "group": "0 1 5 3",
+      "id": "8e2e6c6a7b1edc62bf69ae35b6b3583b376af540d7e32ed1c2b49a12251ef4f6",
+      "prompt": "Apply the sequence_a code.\nInput: 0 1 5 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 1 2 2",
+        " 4 1 7 5",
+        " 1 7 4 5",
+        " 7 2 1 7"
+      ],
+      "gold_idx": 0,
+      "group": "0 6 0 0",
+      "id": "42b6e17211ca17fc3027a35421fb73b12e1ab4ccc686e5ea3540670d14b7a6f9",
+      "prompt": "Apply the sequence_a code.\nInput: 0 6 0 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 1 4 2 0",
+        " 6 7 4 5",
+        " 7 2 2 2",
+        " 0 3 0 0"
+      ],
+      "gold_idx": 0,
+      "group": "6 3 0 4",
+      "id": "008a715ebf8f9bc5e7b437c29f38786051b85f3bd7f1af95ac815763dd1eda7c",
+      "prompt": "Apply the sequence_a code.\nInput: 6 3 0 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 5 1 7",
+        " 3 1 7 3",
+        " 5 2 0 6",
+        " 2 3 4 4"
+      ],
+      "gold_idx": 0,
+      "group": "3 1 6 2",
+      "id": "626a3a642393aa7f908727003ada98290836472b5c983f2bfb1fd50d3213df7c",
+      "prompt": "Apply the sequence_a code.\nInput: 3 1 6 2\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 7 7 4",
+        " 3 0 2 6",
+        " 5 7 2 4",
+        " 6 2 0 5"
+      ],
+      "gold_idx": 0,
+      "group": "1 2 2 3",
+      "id": "ca2b253c15e7ef56445be403cc9681f3bb94e5c42b2b9a79971ffa3e4872bb3f",
+      "prompt": "Apply the sequence_a code.\nInput: 1 2 2 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 7 2 5 3",
+        " 1 4 4 2",
+        " 7 0 2 7",
+        " 0 3 7 4"
+      ],
+      "gold_idx": 1,
+      "group": "6 3 3 0",
+      "id": "08d0eaea7cfb539503dc8f50ca5f251c5da9e532b1f383ac8248dfe5dc4a743e",
+      "prompt": "Apply the sequence_a code.\nInput: 6 3 3 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 6 5 7",
+        " 4 4 6 4",
+        " 2 3 0 4",
+        " 5 3 1 0"
+      ],
+      "gold_idx": 1,
+      "group": "3 3 7 3",
+      "id": "f1dd05e5fb132e8740547a0575cca2543f840a349f11e5634d032aec194ecefc",
+      "prompt": "Apply the sequence_a code.\nInput: 3 3 7 3\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 4 0 7",
+        " 5 5 4 6",
+        " 6 6 1 1",
+        " 2 4 4 2"
+      ],
+      "gold_idx": 3,
+      "group": "0 3 3 0",
+      "id": "617c62efb75a5fbe84f59849ab06a94987233a97156dadd0e5898e371208a4c2",
+      "prompt": "Apply the sequence_a code.\nInput: 0 3 3 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 7 2 0 1",
+        " 1 6 7 5",
+        " 4 5 7 0",
+        " 0 7 0 1"
+      ],
+      "gold_idx": 0,
+      "group": "2 0 4 6",
+      "id": "18d796a562ffc6102d8688df4908cebd2c15cbb020b834a73dff2bdcc63ada4c",
+      "prompt": "Apply the sequence_a code.\nInput: 2 0 4 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 6 0 4",
+        " 5 7 4 3",
+        " 3 5 6 5",
+        " 6 2 4 5"
+      ],
+      "gold_idx": 3,
+      "group": "7 0 3 1",
+      "id": "140af13725d8e88df217d942779c52f4c524cfe2d0e5e93fbaf588cdc6f2436c",
+      "prompt": "Apply the sequence_a code.\nInput: 7 0 3 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 6 2 1 5",
+        " 4 6 3 6",
+        " 7 6 0 6",
+        " 0 7 1 5"
+      ],
+      "gold_idx": 3,
+      "group": "4 2 6 1",
+      "id": "ec4520aefe0ac45ca97a0513331eae0cddb37b36c4007250f26b00915f0b45f9",
+      "prompt": "Apply the sequence_a code.\nInput: 4 2 6 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 5 0 1",
+        " 6 7 6 3",
+        " 0 7 6 4",
+        " 5 1 0 3"
+      ],
+      "gold_idx": 3,
+      "group": "1 6 4 5",
+      "id": "e6c60a2d970f0eb01588672d2937170b81d7fab7b6d0ef93bcfc4fbf86bd514a",
+      "prompt": "Apply the sequence_a code.\nInput: 1 6 4 5\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 5 6 7",
+        " 0 6 4 2",
+        " 4 7 7 4",
+        " 5 4 7 5"
+      ],
+      "gold_idx": 1,
+      "group": "4 7 3 0",
+      "id": "945f6ffe9e0fc92aeaaf658f156037efdb10e0449f9649638fd73f8801808c23",
+      "prompt": "Apply the sequence_a code.\nInput: 4 7 3 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 6 2 0",
+        " 3 2 4 6",
+        " 4 7 4 5",
+        " 0 6 3 4"
+      ],
+      "gold_idx": 2,
+      "group": "3 2 3 1",
+      "id": "0907468ca0a23f3f915c630be3e923b7454e72bbb36794375faa37c7f4bd13bf",
+      "prompt": "Apply the sequence_a code.\nInput: 3 2 3 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 6 0 6 3",
+        " 6 4 3 0",
+        " 0 7 1 4",
+        " 5 1 3 2"
+      ],
+      "gold_idx": 1,
+      "group": "7 3 5 4",
+      "id": "32574b267826379ccd648665985402cb862b69ab717085feb7a80292e1babae0",
+      "prompt": "Apply the sequence_a code.\nInput: 7 3 5 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 7 5 6 0",
+        " 0 4 4 6",
+        " 5 5 0 0",
+        " 0 0 2 6"
+      ],
+      "gold_idx": 2,
+      "group": "1 1 4 4",
+      "id": "7013ea4a6c3fdbb8eb42c1e0ca31e20c8d1d223d493585865b8745dc7195e92e",
+      "prompt": "Apply the sequence_a code.\nInput: 1 1 4 4\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 4 5 2",
+        " 3 1 2 3",
+        " 2 4 7 3",
+        " 0 5 1 2"
+      ],
+      "gold_idx": 3,
+      "group": "4 1 6 0",
+      "id": "81e55911fc8523cad9fb3584f7d4ee5f87c88c2d80ac3ae614b56c5470c6b1c1",
+      "prompt": "Apply the sequence_a code.\nInput: 4 1 6 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 6 2 1",
+        " 3 3 2 1",
+        " 2 7 2 3",
+        " 7 0 4 3"
+      ],
+      "gold_idx": 0,
+      "group": "3 7 0 6",
+      "id": "a8749658948c842c92592f3c811f635f5820af2529f5c54941d7c2a54cca5c9e",
+      "prompt": "Apply the sequence_a code.\nInput: 3 7 0 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 5 5 1 4",
+        " 2 6 5 2",
+        " 1 0 6 2",
+        " 0 7 6 1"
+      ],
+      "gold_idx": 1,
+      "group": "0 7 1 0",
+      "id": "969c72ce594166fffc0dc83a7351650f61a8ee51c49e03addcccf8735a45054b",
+      "prompt": "Apply the sequence_a code.\nInput: 0 7 1 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 6 0 7",
+        " 3 3 7 5",
+        " 4 0 0 2",
+        " 4 6 4 7"
+      ],
+      "gold_idx": 1,
+      "group": "5 5 2 1",
+      "id": "1d2f7d6ec5fd90fe10c3e10bc3a60b52805adfd2f62c3c822b7f1f0da8f6455f",
+      "prompt": "Apply the sequence_a code.\nInput: 5 5 2 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 0 6 7 2",
+        " 1 2 6 2",
+        " 0 5 2 6",
+        " 1 2 4 6"
+      ],
+      "gold_idx": 0,
+      "group": "4 7 2 0",
+      "id": "a0b30faed89fa24fc1d007348de08e6aa6528f8a68275a2bb15a5259cd4407e2",
+      "prompt": "Apply the sequence_a code.\nInput: 4 7 2 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 4 3 0",
+        " 0 2 7 5",
+        " 3 0 5 0",
+        " 1 5 0 5"
+      ],
+      "gold_idx": 1,
+      "group": "4 0 2 1",
+      "id": "f92c28a921530c2d46247fbbabc33504814a30ddde33343a2caacd6601b169b0",
+      "prompt": "Apply the sequence_a code.\nInput: 4 0 2 1\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 1 2 6 5",
+        " 3 7 0 0",
+        " 5 2 6 1",
+        " 5 6 3 1"
+      ],
+      "gold_idx": 2,
+      "group": "1 0 7 6",
+      "id": "55bb7f8649cf38fec0923fe9cc55ed6832cb7ced2742ac2782b5c17adba82fb9",
+      "prompt": "Apply the sequence_a code.\nInput: 1 0 7 6\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 2 5 4 6",
+        " 6 6 1 7",
+        " 4 7 1 2",
+        " 2 2 5 6"
+      ],
+      "gold_idx": 2,
+      "group": "3 2 6 0",
+      "id": "69e85dc6111fefeaf9c8e03c5e0ec8e5a7e72605b0847203df3fd42a405b115f",
+      "prompt": "Apply the sequence_a code.\nInput: 3 2 6 0\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 4 6 4 1",
+        " 1 4 3 5",
+        " 0 1 0 7",
+        " 2 5 5 3"
+      ],
+      "gold_idx": 3,
+      "group": "0 1 1 5",
+      "id": "04693d92964bb96c229426dc78eadce3c9a979a751295094f5b9c3bf4c9df1da",
+      "prompt": "Apply the sequence_a code.\nInput: 0 1 1 5\nOutput:",
+      "task": "sequence_a"
+    },
+    {
+      "choices": [
+        " 3 7 6 3",
+        " 5 5 1 6",
+        " 0 3 3 5",
+        " 0 5 7 2"
+      ],
+      "gold_idx": 0,
+      "group": "6 5 1 6",
+      "id": "030d42c83ca0bca29e8b8d777d8e4741a6df92e10a8489d7658a4c08b49e29a4",
+      "prompt": "Apply the sequence_b code.\nInput: 6 5 1 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 6 6 6 3",
+        " 1 0 7 5",
+        " 4 0 7 2",
+        " 5 2 6 4"
+      ],
+      "gold_idx": 1,
+      "group": "7 4 5 2",
+      "id": "31f283221f6211a849f895f8cb61d2e0079066f74f997ea55a39226957e5c420",
+      "prompt": "Apply the sequence_b code.\nInput: 7 4 5 2\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 4 7 4",
+        " 7 5 2 5",
+        " 7 3 0 7",
+        " 5 5 4 0"
+      ],
+      "gold_idx": 3,
+      "group": "2 2 0 4",
+      "id": "d8918d8f0e4d2e77ec3e4d619fcc6ea72cc654886abaa29d7cda2fcf8ece5aae",
+      "prompt": "Apply the sequence_b code.\nInput: 2 2 0 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 6 1 5 4",
+        " 5 6 1 7",
+        " 4 5 3 1",
+        " 3 4 6 4"
+      ],
+      "gold_idx": 2,
+      "group": "0 2 6 7",
+      "id": "3963a49e66396e9fa70e83dac17258637a434d416cf1804e8de4b312d624cdb1",
+      "prompt": "Apply the sequence_b code.\nInput: 0 2 6 7\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 4 4 4",
+        " 3 1 6 7",
+        " 1 2 7 5",
+        " 3 7 1 0"
+      ],
+      "gold_idx": 0,
+      "group": "5 0 0 0",
+      "id": "4833a83a6934787d83e1d0b9c6329c9acf583f251e816b70422e9d8c5135a918",
+      "prompt": "Apply the sequence_b code.\nInput: 5 0 0 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 2 7 7",
+        " 3 6 7 6",
+        " 1 1 4 7",
+        " 4 4 7 3"
+      ],
+      "gold_idx": 1,
+      "group": "6 1 5 1",
+      "id": "1e74e8706f53af8f38a7efe47ed99358163476f7a251e5d5804fb18b8a0c19f5",
+      "prompt": "Apply the sequence_b code.\nInput: 6 1 5 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 4 3 6",
+        " 7 2 0 4",
+        " 2 6 5 5",
+        " 0 7 1 4"
+      ],
+      "gold_idx": 3,
+      "group": "4 5 7 0",
+      "id": "d3f0057360fb5175669f1dd390e7a1e74ca751f7e410c295e52b77b411bf040c",
+      "prompt": "Apply the sequence_b code.\nInput: 4 5 7 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 3 1 1 6",
+        " 4 1 0 4",
+        " 2 4 5 7",
+        " 2 7 6 4"
+      ],
+      "gold_idx": 2,
+      "group": "3 0 2 5",
+      "id": "1846f77190369ab3ceb1dd109ba9541afa27d3cb2726aa1d2a9a22a974151f53",
+      "prompt": "Apply the sequence_b code.\nInput: 3 0 2 5\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 0 0 2",
+        " 2 3 3 1",
+        " 3 2 6 4",
+        " 7 7 4 7"
+      ],
+      "gold_idx": 2,
+      "group": "6 3 1 0",
+      "id": "5ee0e780c71b6290b28c5e06380f2e9b3be57be97571d74c28d34a9ad0bcf4ab",
+      "prompt": "Apply the sequence_b code.\nInput: 6 3 1 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 5 2 4",
+        " 0 7 4 0",
+        " 4 5 6 7",
+        " 3 0 1 6"
+      ],
+      "gold_idx": 3,
+      "group": "6 4 7 1",
+      "id": "60b01060bc8cb5174f6289cea1b92998965cb56dba2235d6827479cdd0dba077",
+      "prompt": "Apply the sequence_b code.\nInput: 6 4 7 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 7 0 5",
+        " 6 7 0 2",
+        " 0 1 3 7",
+        " 4 2 5 6"
+      ],
+      "gold_idx": 1,
+      "group": "1 5 4 3",
+      "id": "2e4ae68979713a3bf7e897b2998e83fa0637c6d423e9fe3ccc2a55255b9f69f5",
+      "prompt": "Apply the sequence_b code.\nInput: 1 5 4 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 0 2 1",
+        " 1 2 7 5",
+        " 4 1 5 1",
+        " 1 5 0 5"
+      ],
+      "gold_idx": 1,
+      "group": "7 3 5 2",
+      "id": "173fb63ef23be639a13363cba4a78b20e809d7d4c62033378d7e3992d1e86bfb",
+      "prompt": "Apply the sequence_b code.\nInput: 7 3 5 2\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 3 3 1 6",
+        " 5 4 1 3",
+        " 4 5 1 1",
+        " 1 7 2 0"
+      ],
+      "gold_idx": 2,
+      "group": "0 2 7 7",
+      "id": "56ef6a84fee46ad859316eedb9f8be6110ec1641e41f5c582b6dbdcc7e5ea5e5",
+      "prompt": "Apply the sequence_b code.\nInput: 0 2 7 7\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 6 7 5 6",
+        " 0 6 7 2",
+        " 1 5 0 5",
+        " 3 0 2 4"
+      ],
+      "gold_idx": 0,
+      "group": "1 5 2 1",
+      "id": "d9d666712e1020ff15d84065322e5f91544005cb61f666a8964ea97cc7cf6543",
+      "prompt": "Apply the sequence_b code.\nInput: 1 5 2 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 3 5 3",
+        " 7 0 1 6",
+        " 4 6 3 0",
+        " 5 4 3 7"
+      ],
+      "gold_idx": 2,
+      "group": "0 1 6 4",
+      "id": "00746f0e92717001373edbcca07fa27feb68404694a327a49d2efdc57c735b55",
+      "prompt": "Apply the sequence_b code.\nInput: 0 1 6 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 3 4 7 2",
+        " 1 4 6 6",
+        " 7 5 1 6",
+        " 5 2 6 1"
+      ],
+      "gold_idx": 0,
+      "group": "6 0 5 3",
+      "id": "cdc508749b060c44cc2d8817ac0595bbd5a3d0eae2934c92fa5a77771f9b2b66",
+      "prompt": "Apply the sequence_b code.\nInput: 6 0 5 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 0 1 1 1",
+        " 5 5 1 7",
+        " 2 4 4 4",
+        " 5 4 5 4"
+      ],
+      "gold_idx": 0,
+      "group": "4 7 7 7",
+      "id": "996015bb6965b0ecd962d4291e987db2811ea415f7a89fca2063cd311adcb91f",
+      "prompt": "Apply the sequence_b code.\nInput: 4 7 7 7\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 4 0 1",
+        " 2 6 1 0",
+        " 6 4 1 4",
+        " 7 6 1 7"
+      ],
+      "gold_idx": 1,
+      "group": "3 1 7 4",
+      "id": "3f29563fdb2e5df9a37c7c19ab5ee757685f00be7fa171c25aad7759df390261",
+      "prompt": "Apply the sequence_b code.\nInput: 3 1 7 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 1 5 5",
+        " 1 0 5 3",
+        " 1 4 6 7",
+        " 3 3 4 6"
+      ],
+      "gold_idx": 0,
+      "group": "3 7 2 2",
+      "id": "0d04044275a11cb81f9f999e0d838a7862cfed41231a3742b4e9e59574820a98",
+      "prompt": "Apply the sequence_b code.\nInput: 3 7 2 2\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 5 1 2",
+        " 2 7 4 4",
+        " 5 7 5 1",
+        " 6 7 3 4"
+      ],
+      "gold_idx": 3,
+      "group": "1 5 6 0",
+      "id": "0932fbc389a10d279d63bf8ef43af875cbbfcd0f73ef52a78ec88148e21635bb",
+      "prompt": "Apply the sequence_b code.\nInput: 1 5 6 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 0 1 0",
+        " 7 2 5 0",
+        " 0 4 2 2",
+        " 7 6 1 6"
+      ],
+      "gold_idx": 1,
+      "group": "5 3 2 4",
+      "id": "5495b6fbb7ecc3b7463e310044b8531e78f968c86212172b0a2b8502e7220084",
+      "prompt": "Apply the sequence_b code.\nInput: 5 3 2 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 3 2 4 5",
+        " 0 7 2 1",
+        " 4 5 3 6",
+        " 2 5 7 3"
+      ],
+      "gold_idx": 3,
+      "group": "3 2 5 6",
+      "id": "4e1335c33301529a406d4ff537d06660164432e825c98c5c41f0b8bed6b07688",
+      "prompt": "Apply the sequence_b code.\nInput: 3 2 5 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 5 1 6",
+        " 6 0 1 0",
+        " 0 4 1 0",
+        " 3 4 3 6"
+      ],
+      "gold_idx": 2,
+      "group": "4 0 7 4",
+      "id": "8d128912bff2d006d23b9a9c6e8e64f771d8960c48f4e4219a5fb4a57e268b0d",
+      "prompt": "Apply the sequence_b code.\nInput: 4 0 7 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 2 7 5",
+        " 1 3 1 6",
+        " 5 7 1 3",
+        " 7 1 7 4"
+      ],
+      "gold_idx": 2,
+      "group": "2 5 7 6",
+      "id": "9ace87ef1a19f42be3f90ab7970ccf8f3290d64aec176e4740ba1777d8f17192",
+      "prompt": "Apply the sequence_b code.\nInput: 2 5 7 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 7 5 7",
+        " 2 1 1 5",
+        " 4 4 0 3",
+        " 2 2 1 0"
+      ],
+      "gold_idx": 2,
+      "group": "0 0 4 6",
+      "id": "5a96b6500cf6930acd8b59ad75cc80c07221c8f46895f0a4f5ec8533bc8f0f0e",
+      "prompt": "Apply the sequence_b code.\nInput: 0 0 4 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 4 1 1",
+        " 2 3 0 2",
+        " 2 3 1 5",
+        " 7 7 7 2"
+      ],
+      "gold_idx": 1,
+      "group": "3 6 4 3",
+      "id": "5bdb9481ed48cd98f8936f2eb42c3535ad75c71fd4af944e3eb4217615666e1c",
+      "prompt": "Apply the sequence_b code.\nInput: 3 6 4 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 3 3 2",
+        " 4 2 5 0",
+        " 4 2 0 1",
+        " 0 1 3 6"
+      ],
+      "gold_idx": 1,
+      "group": "0 3 2 4",
+      "id": "368e3beb202c6d393853b32b15f27a6a0cd1cdbfcb66d097a35196c2c47493e0",
+      "prompt": "Apply the sequence_b code.\nInput: 0 3 2 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 2 3 2",
+        " 2 0 2 3",
+        " 2 4 5 2",
+        " 4 2 6 1"
+      ],
+      "gold_idx": 3,
+      "group": "0 3 1 7",
+      "id": "f959503b0a14bbfeb3247d7d67e2ee9392b427e4182e1dc92a821fc99e636d4a",
+      "prompt": "Apply the sequence_b code.\nInput: 0 3 1 7\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 0 5 0 6",
+        " 1 1 7 7",
+        " 0 0 0 4",
+        " 7 6 1 5"
+      ],
+      "gold_idx": 3,
+      "group": "5 1 7 2",
+      "id": "66dc85308bb6eefbfc111b76bfe43cf63b14346d72018460500ea34cfa8d03de",
+      "prompt": "Apply the sequence_b code.\nInput: 5 1 7 2\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 0 3 7 0",
+        " 4 1 7 0",
+        " 0 7 2 1",
+        " 0 3 3 4"
+      ],
+      "gold_idx": 3,
+      "group": "4 6 6 0",
+      "id": "3dae2a8dc19d0f24198b8c625a63e22976a3b27973147b2a1caab9b561382370",
+      "prompt": "Apply the sequence_b code.\nInput: 4 6 6 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 2 6 3",
+        " 0 7 3 3",
+        " 3 2 7 7",
+        " 6 4 6 1"
+      ],
+      "gold_idx": 0,
+      "group": "7 3 1 6",
+      "id": "8d65a2fec75a4eb53fa3e8aaeae4505f2a75fd0d513df447c9abf2c9e510b8a9",
+      "prompt": "Apply the sequence_b code.\nInput: 7 3 1 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 0 4 3",
+        " 0 3 7 0",
+        " 5 3 2 4",
+        " 2 1 5 5"
+      ],
+      "gold_idx": 1,
+      "group": "4 6 5 4",
+      "id": "d80fd9e51822484254198048128631cf82e445214118240e095adbf92c8439e0",
+      "prompt": "Apply the sequence_b code.\nInput: 4 6 5 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 6 7 2",
+        " 4 6 2 5",
+        " 0 3 4 4",
+        " 5 2 2 3"
+      ],
+      "gold_idx": 3,
+      "group": "2 3 3 6",
+      "id": "519c63387f7cb993d4c15820bfb64651ff07d5a3948200f435d47f9edd7191ad",
+      "prompt": "Apply the sequence_b code.\nInput: 2 3 3 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 3 1 4 6",
+        " 5 6 2 4",
+        " 7 2 5 5",
+        " 1 5 2 6"
+      ],
+      "gold_idx": 0,
+      "group": "6 7 0 1",
+      "id": "6a0a4c9b29076cf22b1b967cefaf296bda0a1797122357ab814e751a505387f9",
+      "prompt": "Apply the sequence_b code.\nInput: 6 7 0 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 2 0 7",
+        " 1 3 5 4",
+        " 5 3 0 1",
+        " 0 3 1 7"
+      ],
+      "gold_idx": 1,
+      "group": "7 6 2 0",
+      "id": "0e8ac0075559d726e5c0e8cc818950280d39ab4f77ff84fc6cdc19ca06f7dffb",
+      "prompt": "Apply the sequence_b code.\nInput: 7 6 2 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 0 4 6 3",
+        " 0 3 1 0",
+        " 3 2 5 1",
+        " 5 7 0 3"
+      ],
+      "gold_idx": 1,
+      "group": "4 6 7 4",
+      "id": "d9abac152b03b46a753e806b2e6c43531cf9954afd71fa1c5c063d8964736cbd",
+      "prompt": "Apply the sequence_b code.\nInput: 4 6 7 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 7 5 1",
+        " 2 6 7 5",
+        " 6 7 1 1",
+        " 6 1 0 5"
+      ],
+      "gold_idx": 2,
+      "group": "1 5 7 7",
+      "id": "7c6d30231af2e31618ae70c9fe09e4d385428d6c01f4c31af8be5b30561c86b2",
+      "prompt": "Apply the sequence_b code.\nInput: 1 5 7 7\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 0 4 6 3",
+        " 2 0 0 2",
+        " 0 3 5 3",
+        " 5 1 2 3"
+      ],
+      "gold_idx": 1,
+      "group": "3 4 4 3",
+      "id": "58497ab760092767ad6e3858b845d2ea205908607c294fb781007fa1c9060903",
+      "prompt": "Apply the sequence_b code.\nInput: 3 4 4 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 2 3 2",
+        " 1 7 0 3",
+        " 1 1 3 2",
+        " 1 1 6 7"
+      ],
+      "gold_idx": 2,
+      "group": "7 7 6 3",
+      "id": "58a8c0873f2baf1ea9b59618beef60a199f50847525e415889314320fb65b1e1",
+      "prompt": "Apply the sequence_b code.\nInput: 7 7 6 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 6 2 1 0",
+        " 4 6 2 4",
+        " 7 4 1 3",
+        " 7 5 2 1"
+      ],
+      "gold_idx": 0,
+      "group": "1 3 7 4",
+      "id": "aa81d3a2caa3d09d826e3a103fa7569f8aaf492e428f271c49f42450ae1e0eca",
+      "prompt": "Apply the sequence_b code.\nInput: 1 3 7 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 2 2 3",
+        " 7 1 6 4",
+        " 7 4 5 4",
+        " 2 7 1 7"
+      ],
+      "gold_idx": 0,
+      "group": "3 3 3 6",
+      "id": "534271d3bde17c44c2d2688d3c8a1faa14b78893b1679a9b55342580fddd7d93",
+      "prompt": "Apply the sequence_b code.\nInput: 3 3 3 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 3 4 1 6",
+        " 4 0 5 4",
+        " 1 4 4 3",
+        " 1 7 0 3"
+      ],
+      "gold_idx": 1,
+      "group": "0 4 2 0",
+      "id": "81f681a96265e4e839b0d9d646272c05bfaa82156f90564ed2d6972ca822fa48",
+      "prompt": "Apply the sequence_b code.\nInput: 0 4 2 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 3 6 2",
+        " 1 5 3 6",
+        " 7 5 5 4",
+        " 7 5 7 7"
+      ],
+      "gold_idx": 3,
+      "group": "5 2 5 5",
+      "id": "5bd74cc9fb9205cb2c45401ce9f069973f9d7de09a29d6b2f3949ece23aa9f62",
+      "prompt": "Apply the sequence_b code.\nInput: 5 2 5 5\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 6 4 1 1",
+        " 1 7 1 4",
+        " 3 4 4 2",
+        " 2 7 2 5"
+      ],
+      "gold_idx": 2,
+      "group": "6 0 0 3",
+      "id": "9d9ba2f1e3775435a6f937aae3e251588726accf07c5f2d47edd742b50bb9f88",
+      "prompt": "Apply the sequence_b code.\nInput: 6 0 0 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 5 0 7 7",
+        " 2 7 5 4",
+        " 2 1 1 7",
+        " 6 7 0 5"
+      ],
+      "gold_idx": 1,
+      "group": "3 5 2 0",
+      "id": "3d496e80da501ad99c4849c4a511414eb34052205d2ecb0b16a78e2fd406d50b",
+      "prompt": "Apply the sequence_b code.\nInput: 3 5 2 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 4 4 0",
+        " 1 7 3 4",
+        " 3 6 0 7",
+        " 1 2 4 7"
+      ],
+      "gold_idx": 2,
+      "group": "6 1 4 5",
+      "id": "a6b7ce8f160a1b56e71c2fb5a70ceddec678a9d76a5f115933c16f094752edc0",
+      "prompt": "Apply the sequence_b code.\nInput: 6 1 4 5\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 6 4 3 5",
+        " 4 0 0 5",
+        " 1 5 5 4",
+        " 2 1 3 6"
+      ],
+      "gold_idx": 0,
+      "group": "1 0 6 2",
+      "id": "64df51109896a557880459dbe798132804add9ccd8f5ed2bac167fce19c08e1c",
+      "prompt": "Apply the sequence_b code.\nInput: 1 0 6 2\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 4 6 3",
+        " 6 0 4 3",
+        " 7 3 6 0",
+        " 4 5 4 6"
+      ],
+      "gold_idx": 2,
+      "group": "5 6 1 4",
+      "id": "10364b1707f26795570f2bf9e5f6a2e711d33d85160b007ea42d55c57722c25e",
+      "prompt": "Apply the sequence_b code.\nInput: 5 6 1 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 4 5 4",
+        " 6 1 4 5",
+        " 5 1 1 3",
+        " 0 4 6 0"
+      ],
+      "gold_idx": 2,
+      "group": "2 7 7 6",
+      "id": "371f525b0940a954494587906c6ec689d47c7c2eec0765ed1b9ffadc297e9483",
+      "prompt": "Apply the sequence_b code.\nInput: 2 7 7 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 0 3 6 0",
+        " 1 3 7 4",
+        " 7 2 4 6",
+        " 3 0 0 3"
+      ],
+      "gold_idx": 3,
+      "group": "6 4 4 6",
+      "id": "78bc4adbcda13914d858e408bb0d1672e0ee0f1b9d4a1c743a81748bf37b9649",
+      "prompt": "Apply the sequence_b code.\nInput: 6 4 4 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 5 4 3",
+        " 4 6 5 3",
+        " 0 0 7 6",
+        " 2 6 3 2"
+      ],
+      "gold_idx": 2,
+      "group": "4 4 5 1",
+      "id": "0300658e4fe46f1a3beb72ac7995690de6003cf464a1e814dc47f688e4359c88",
+      "prompt": "Apply the sequence_b code.\nInput: 4 4 5 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 5 3 0",
+        " 7 0 1 5",
+        " 3 6 3 2",
+        " 3 2 0 5"
+      ],
+      "gold_idx": 0,
+      "group": "7 2 6 4",
+      "id": "42c52d4193e151245617337ca133d813af285874b9768dc8b0d5f9f124366246",
+      "prompt": "Apply the sequence_b code.\nInput: 7 2 6 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 3 3 5 0",
+        " 1 4 3 2",
+        " 1 0 3 3",
+        " 3 1 4 0"
+      ],
+      "gold_idx": 1,
+      "group": "7 0 6 3",
+      "id": "44607db8e98a69a45d10bc68b7b8360e662f0db13009ef2265bfd09c8ba1bf1b",
+      "prompt": "Apply the sequence_b code.\nInput: 7 0 6 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 3 0 4",
+        " 0 6 2 3",
+        " 6 2 0 5",
+        " 3 0 4 1"
+      ],
+      "gold_idx": 3,
+      "group": "6 4 0 7",
+      "id": "51086e65076f1744f3ca0190aa6a3b77401126579e71fb334e536da1d7199bec",
+      "prompt": "Apply the sequence_b code.\nInput: 6 4 0 7\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 6 3 5 3",
+        " 7 0 5 2",
+        " 0 6 3 4",
+        " 7 1 1 1"
+      ],
+      "gold_idx": 1,
+      "group": "5 4 2 3",
+      "id": "c097c79ba77d5e883372112b4dec3b5d1c168530d3dccf536c4d4639f885e7d9",
+      "prompt": "Apply the sequence_b code.\nInput: 5 4 2 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 7 7 3",
+        " 0 1 3 5",
+        " 1 1 3 0",
+        " 0 3 1 5"
+      ],
+      "gold_idx": 0,
+      "group": "0 5 5 6",
+      "id": "dad5f33f6ce683926ea17b58ed88c7a089a96428bc984726eb964db0483de375",
+      "prompt": "Apply the sequence_b code.\nInput: 0 5 5 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 2 7 7",
+        " 4 1 2 4",
+        " 5 3 3 2",
+        " 6 0 3 3"
+      ],
+      "gold_idx": 0,
+      "group": "5 3 5 5",
+      "id": "ecda84a04e4bc6624d5827a2422f639878fb88dd5157c62d7db2ddfc823765c4",
+      "prompt": "Apply the sequence_b code.\nInput: 5 3 5 5\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 5 7 0 3",
+        " 5 1 6 5",
+        " 5 6 3 0",
+        " 3 4 3 2"
+      ],
+      "gold_idx": 3,
+      "group": "6 0 6 3",
+      "id": "6d90c35ac02de9d6465f25e32ceb33f8f963dec859caf55e22298dc10f272a0c",
+      "prompt": "Apply the sequence_b code.\nInput: 6 0 6 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 2 7 4",
+        " 4 2 2 2",
+        " 5 0 6 3",
+        " 7 6 7 4"
+      ],
+      "gold_idx": 0,
+      "group": "5 3 5 0",
+      "id": "79060656f3b5c61d191505027f14eeb60e2ce3d3ffffaba61017c9a7b7d70ba1",
+      "prompt": "Apply the sequence_b code.\nInput: 5 3 5 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 2 5 0",
+        " 2 1 4 2",
+        " 4 2 3 1",
+        " 6 7 5 1"
+      ],
+      "gold_idx": 3,
+      "group": "1 5 2 7",
+      "id": "af68392f1f72ad6499fa9774b38ef7c2f8f0fd91dd2ac03a16eab949241b334f",
+      "prompt": "Apply the sequence_b code.\nInput: 1 5 2 7\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 6 0 0 1",
+        " 1 7 3 0",
+        " 1 1 5 6",
+        " 0 5 7 3"
+      ],
+      "gold_idx": 0,
+      "group": "1 4 4 7",
+      "id": "7f89bed59fd3dfe96e769ac8f9e6f1d99419ea6fad52fe9e8f5a3c309e1c99c6",
+      "prompt": "Apply the sequence_b code.\nInput: 1 4 4 7\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 1 6 2",
+        " 0 2 2 0",
+        " 2 2 2 4",
+        " 6 0 6 7"
+      ],
+      "gold_idx": 2,
+      "group": "3 3 3 0",
+      "id": "e25ade09849f3a21f4cebc9d5a5f88d3bba28f2335c83c8748db7cb80d6a8639",
+      "prompt": "Apply the sequence_b code.\nInput: 3 3 3 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 0 5 7 4",
+        " 4 6 0 1",
+        " 4 7 4 7",
+        " 6 0 3 6"
+      ],
+      "gold_idx": 3,
+      "group": "1 4 6 1",
+      "id": "46c5c54e6ae23ce62aa325e59b7f407beaab6cb41f2fd3bb04f4133f79a8cac0",
+      "prompt": "Apply the sequence_b code.\nInput: 1 4 6 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 3 1 4 3",
+        " 4 0 6 6",
+        " 1 3 0 3",
+        " 2 5 2 4"
+      ],
+      "gold_idx": 1,
+      "group": "0 4 1 1",
+      "id": "faf799689300de7ca30b3c8431bf3c5ca6ba2529a2f54dcba1606c65bc232c1c",
+      "prompt": "Apply the sequence_b code.\nInput: 0 4 1 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 6 3 7 5",
+        " 3 5 4 4",
+        " 7 6 6 4",
+        " 1 7 4 1"
+      ],
+      "gold_idx": 0,
+      "group": "1 6 5 2",
+      "id": "70fe2227d99376ce30c368bafdaa0f4f75cc5522b2bbfecf36b5bfc49ea63d37",
+      "prompt": "Apply the sequence_b code.\nInput: 1 6 5 2\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 0 3 1",
+        " 7 2 4 6",
+        " 4 6 2 6",
+        " 7 2 3 3"
+      ],
+      "gold_idx": 3,
+      "group": "5 3 6 6",
+      "id": "fb249bb5a00984aae37c4909c4c029877db31002e1dddb84770617ec00cf1d5d",
+      "prompt": "Apply the sequence_b code.\nInput: 5 3 6 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 3 4 5",
+        " 0 2 4 1",
+        " 7 6 6 6",
+        " 6 7 7 4"
+      ],
+      "gold_idx": 0,
+      "group": "5 6 0 2",
+      "id": "4a07b444e98c0fd31b2d7fcc6cfbcf927a3999bbece61f7f3354dbf4f4831d9f",
+      "prompt": "Apply the sequence_b code.\nInput: 5 6 0 2\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 0 1 0",
+        " 2 0 7 7",
+        " 6 1 7 1",
+        " 1 6 1 1"
+      ],
+      "gold_idx": 3,
+      "group": "7 1 7 7",
+      "id": "e98bbfccb085d5ed2ebe93c19e91361ece27aab8ba7a4045138a54214ade8195",
+      "prompt": "Apply the sequence_b code.\nInput: 7 1 7 7\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 2 7 7",
+        " 3 6 2 2",
+        " 4 5 3 4",
+        " 2 0 0 7"
+      ],
+      "gold_idx": 2,
+      "group": "0 2 6 0",
+      "id": "b01e732a5741984fd1f43798317c0af3a92b1547a6cb9fa358127106e704c192",
+      "prompt": "Apply the sequence_b code.\nInput: 0 2 6 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 5 0 2",
+        " 6 3 6 3",
+        " 1 7 4 0",
+        " 0 2 4 6"
+      ],
+      "gold_idx": 1,
+      "group": "1 6 1 6",
+      "id": "c885b25956a8ff26651847a25b5f121cc780268180299d1250c2aa510ad906bb",
+      "prompt": "Apply the sequence_b code.\nInput: 1 6 1 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 7 6 5",
+        " 5 0 6 4",
+        " 2 1 0 3",
+        " 7 1 6 1"
+      ],
+      "gold_idx": 1,
+      "group": "2 4 1 0",
+      "id": "b39b958d86ea002a67fd357db47fc3304546fcf3202d157c59b3a232f16c2227",
+      "prompt": "Apply the sequence_b code.\nInput: 2 4 1 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 4 5 0",
+        " 6 4 2 0",
+        " 6 7 1 4",
+        " 2 0 0 4"
+      ],
+      "gold_idx": 0,
+      "group": "3 0 2 4",
+      "id": "a620558e5696fca45a8123ac05153c782f1774c1d0d7f01ee75f1eed32ea80f1",
+      "prompt": "Apply the sequence_b code.\nInput: 3 0 2 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 3 3 5 6",
+        " 5 3 2 1",
+        " 3 3 7 7",
+        " 0 3 7 0"
+      ],
+      "gold_idx": 0,
+      "group": "6 6 2 1",
+      "id": "bc2c665c66b9599591dfb62c359a1d44ad7420d7d00202a445e8c2c315f1a426",
+      "prompt": "Apply the sequence_b code.\nInput: 6 6 2 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 3 6 1 3",
+        " 5 2 2 7",
+        " 3 7 5 4",
+        " 7 7 4 6"
+      ],
+      "gold_idx": 1,
+      "group": "2 3 3 5",
+      "id": "44a551ed7e4541188041dfc26b6a89c327abc21519d75d0f5b0b56f20090fead",
+      "prompt": "Apply the sequence_b code.\nInput: 2 3 3 5\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 3 6 7 6",
+        " 4 4 7 2",
+        " 6 7 6 2",
+        " 0 4 0 1"
+      ],
+      "gold_idx": 1,
+      "group": "0 0 5 3",
+      "id": "3d830141be625e1e4d2ff8a4486d3fe3cbb7b3247aa4af642e6fb5f0701afefd",
+      "prompt": "Apply the sequence_b code.\nInput: 0 0 5 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 5 4 6 6",
+        " 7 2 0 3",
+        " 6 1 4 1",
+        " 2 4 0 2"
+      ],
+      "gold_idx": 3,
+      "group": "3 0 4 3",
+      "id": "a728f54695a07b6681f88669b5f47b80a94c7a522678fe2e62e2be4b1122d523",
+      "prompt": "Apply the sequence_b code.\nInput: 3 0 4 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 2 5 0",
+        " 7 4 6 5",
+        " 1 3 3 1",
+        " 4 6 4 0"
+      ],
+      "gold_idx": 2,
+      "group": "7 6 6 7",
+      "id": "895f502220dd69a0923109e3b83834da5294edf654821c8dc3e7ca4b9b287680",
+      "prompt": "Apply the sequence_b code.\nInput: 7 6 6 7\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 2 7 2",
+        " 4 5 3 4",
+        " 2 6 1 1",
+        " 6 1 5 5"
+      ],
+      "gold_idx": 3,
+      "group": "1 7 2 2",
+      "id": "2074a4369783497ed124fe283bf043ff0becfe55ccbc29abbd325f8b28f27633",
+      "prompt": "Apply the sequence_b code.\nInput: 1 7 2 2\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 2 6 6",
+        " 6 6 1 5",
+        " 6 6 5 4",
+        " 2 3 7 4"
+      ],
+      "gold_idx": 2,
+      "group": "1 1 2 0",
+      "id": "178cd480e7154af9fbe24d354af982f17afb6d41a63ecd7a6dc1deee3f675ee8",
+      "prompt": "Apply the sequence_b code.\nInput: 1 1 2 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 4 3 1",
+        " 4 7 5 3",
+        " 5 6 1 2",
+        " 5 1 0 1"
+      ],
+      "gold_idx": 1,
+      "group": "0 5 2 6",
+      "id": "5b5e10915ae1bd96e1426ccb0ce49a8d751d80c1fd04d0d79d8762034253dd6a",
+      "prompt": "Apply the sequence_b code.\nInput: 0 5 2 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 6 1 3",
+        " 4 0 1 1",
+        " 3 6 5 3",
+        " 4 3 0 2"
+      ],
+      "gold_idx": 3,
+      "group": "0 6 4 3",
+      "id": "2e8ad8790e0bb614dd0ef5ba56f448c9b47e494298e1d3bad88cd0c62d81b502",
+      "prompt": "Apply the sequence_b code.\nInput: 0 6 4 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 6 3 3",
+        " 1 5 7 7",
+        " 4 6 5 4",
+        " 4 3 3 6"
+      ],
+      "gold_idx": 2,
+      "group": "0 1 2 0",
+      "id": "4c88d63f2b6277fb9e54f30fb1a50d82d9ed28b79e95294177ffcc2b4c66c933",
+      "prompt": "Apply the sequence_b code.\nInput: 0 1 2 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 1 2 3",
+        " 1 2 3 0",
+        " 1 3 6 6",
+        " 2 3 7 7"
+      ],
+      "gold_idx": 1,
+      "group": "7 3 6 4",
+      "id": "0eaf2871c8d8e038ed6d0f89916e91e0e832a4ba1250fa45075367483548fcd6",
+      "prompt": "Apply the sequence_b code.\nInput: 7 3 6 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 5 0 3",
+        " 4 4 7 0",
+        " 3 7 0 4",
+        " 2 0 4 3"
+      ],
+      "gold_idx": 1,
+      "group": "0 0 5 4",
+      "id": "142e6f7d686e28019aaad1708a706f0f745c25920aa2bbd8446c4d3e05a6324d",
+      "prompt": "Apply the sequence_b code.\nInput: 0 0 5 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 5 5 1",
+        " 7 1 5 5",
+        " 6 6 1 3",
+        " 0 7 0 2"
+      ],
+      "gold_idx": 3,
+      "group": "4 5 4 3",
+      "id": "f4ca66e77f3cce7660f4f00464fd2f6860ace14f992c41a425da27917c732ab5",
+      "prompt": "Apply the sequence_b code.\nInput: 4 5 4 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 3 3 0 2",
+        " 3 4 5 7",
+        " 4 4 5 4",
+        " 4 3 3 1"
+      ],
+      "gold_idx": 2,
+      "group": "0 0 2 0",
+      "id": "09ed27c2313163af52f167d8bf68dec04a415572ec14390c07c732c60abbdf40",
+      "prompt": "Apply the sequence_b code.\nInput: 0 0 2 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 0 5 2 6",
+        " 3 5 0 5",
+        " 5 1 4 4",
+        " 6 1 1 0"
+      ],
+      "gold_idx": 0,
+      "group": "4 2 3 1",
+      "id": "2696d9b00a18aaae55fdb957385a3ebceb7f40c9f08b42818c8260cd713900d6",
+      "prompt": "Apply the sequence_b code.\nInput: 4 2 3 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 6 3 7 6",
+        " 3 3 3 6",
+        " 4 7 5 2",
+        " 6 4 3 7"
+      ],
+      "gold_idx": 1,
+      "group": "6 6 6 1",
+      "id": "32d7aae3b419491ca7c10fcdd97a949143e08957f8eb3cdc956738ccd81cdc15",
+      "prompt": "Apply the sequence_b code.\nInput: 6 6 6 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 4 1 6",
+        " 4 2 1 1",
+        " 7 2 1 3",
+        " 4 0 6 1"
+      ],
+      "gold_idx": 3,
+      "group": "0 4 1 7",
+      "id": "4a1bd89cee8a8cc3f8449e759b2b2fd1f60d83d3589cde2cd27d560f0fc1c511",
+      "prompt": "Apply the sequence_b code.\nInput: 0 4 1 7\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 3 1 1",
+        " 3 5 4 3",
+        " 4 0 6 1",
+        " 2 1 5 2"
+      ],
+      "gold_idx": 1,
+      "group": "6 2 0 6",
+      "id": "71d8b8825ab4377999ed3cdecee717b67dfa81bae9e6df63f2ca26c6f28c51e7",
+      "prompt": "Apply the sequence_b code.\nInput: 6 2 0 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 5 2 7 1",
+        " 4 7 6 3",
+        " 6 0 2 5",
+        " 5 6 1 4"
+      ],
+      "gold_idx": 3,
+      "group": "2 1 7 0",
+      "id": "ab7b6fb540a2be89c932355c9a280c95efd1481053c419f64101f48f91641716",
+      "prompt": "Apply the sequence_b code.\nInput: 2 1 7 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 5 2 5 3",
+        " 2 3 6 4",
+        " 7 0 0 3",
+        " 7 5 1 5"
+      ],
+      "gold_idx": 3,
+      "group": "5 2 7 2",
+      "id": "6e495d73ae93a9d39f4cbac7e53b4f9080e451ea6beb50df5b6349cd3f17a4b5",
+      "prompt": "Apply the sequence_b code.\nInput: 5 2 7 2\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 6 6 0",
+        " 5 3 4 0",
+        " 1 4 5 5",
+        " 4 1 4 2"
+      ],
+      "gold_idx": 0,
+      "group": "5 1 1 4",
+      "id": "0817bf38320b0eea5b1f0570153ffa36bf214674a4a74699a4be7792a688dc69",
+      "prompt": "Apply the sequence_b code.\nInput: 5 1 1 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 0 0 7",
+        " 2 1 1 1",
+        " 5 3 4 7",
+        " 4 0 6 4"
+      ],
+      "gold_idx": 0,
+      "group": "5 4 4 5",
+      "id": "0e1677692044f235ba2c1c2659a13af80486e2985ea52e8bf08a3b1d08a5647d",
+      "prompt": "Apply the sequence_b code.\nInput: 5 4 4 5\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 5 1 6 3",
+        " 1 7 3 2",
+        " 7 7 4 1",
+        " 5 1 2 1"
+      ],
+      "gold_idx": 0,
+      "group": "2 7 1 6",
+      "id": "f178bf528e765e834b7f68a79a447e624ca96efcec1bc8e462c5a16666b46b93",
+      "prompt": "Apply the sequence_b code.\nInput: 2 7 1 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 5 1 3 6",
+        " 1 3 6 3",
+        " 7 6 7 1",
+        " 1 6 5 4"
+      ],
+      "gold_idx": 3,
+      "group": "7 1 2 0",
+      "id": "82f7e4fc574811d6075e3028d1e05c19167f67561b5cb283c546c639b95c6f22",
+      "prompt": "Apply the sequence_b code.\nInput: 7 1 2 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 0 6 0 2",
+        " 1 0 2 1",
+        " 4 7 1 5",
+        " 1 0 2 2"
+      ],
+      "gold_idx": 0,
+      "group": "4 1 4 3",
+      "id": "b0a45a49dfc084072ad2082fd286d2d9985cbe1013931e223ea7e6d392b9b8d6",
+      "prompt": "Apply the sequence_b code.\nInput: 4 1 4 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 2 4 4",
+        " 5 4 7 4",
+        " 0 3 3 3",
+        " 4 2 7 3"
+      ],
+      "gold_idx": 0,
+      "group": "7 3 0 0",
+      "id": "bcf729a47ac28646bd75686cbbc184063d5b85e394eb3295b39b0caae101d091",
+      "prompt": "Apply the sequence_b code.\nInput: 7 3 0 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 5 0 0",
+        " 5 3 3 2",
+        " 3 3 4 1",
+        " 1 2 7 4"
+      ],
+      "gold_idx": 3,
+      "group": "7 3 5 0",
+      "id": "0c901a14623973d8680c1a1b17ce68fcd129277e0e7b41fd80c84a00b7a2dbeb",
+      "prompt": "Apply the sequence_b code.\nInput: 7 3 5 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 6 3 3 1",
+        " 0 0 2 4",
+        " 5 7 4 5",
+        " 2 7 5 1"
+      ],
+      "gold_idx": 2,
+      "group": "2 5 0 2",
+      "id": "259591a551b37bd5f10e81bf0b383423ae5c55279358213cc9a606eb7ac3e677",
+      "prompt": "Apply the sequence_b code.\nInput: 2 5 0 2\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 6 7 7 5",
+        " 0 3 0 6",
+        " 4 0 2 4",
+        " 4 1 7 4"
+      ],
+      "gold_idx": 1,
+      "group": "4 6 4 1",
+      "id": "406f6044f6a967210a6a3d786b85daf2ddede85926775ae2d6d75f60560ed4d4",
+      "prompt": "Apply the sequence_b code.\nInput: 4 6 4 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 0 6 2 2",
+        " 0 4 0 1",
+        " 1 6 7 6",
+        " 3 1 6 6"
+      ],
+      "gold_idx": 2,
+      "group": "7 1 5 1",
+      "id": "cb29f76f291b5ab2497db687c9bf6cd01aff03c5055137449483ec0d44741478",
+      "prompt": "Apply the sequence_b code.\nInput: 7 1 5 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 4 3 2",
+        " 6 3 5 2",
+        " 5 1 2 1",
+        " 2 7 2 0"
+      ],
+      "gold_idx": 1,
+      "group": "1 6 2 3",
+      "id": "54c9fda79aa05470c0dec2a8100457182b0bf8dfb378c505683f73b23aca5b80",
+      "prompt": "Apply the sequence_b code.\nInput: 1 6 2 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 6 7 2",
+        " 2 2 1 1",
+        " 3 0 7 4",
+        " 7 5 0 5"
+      ],
+      "gold_idx": 0,
+      "group": "0 1 5 3",
+      "id": "f0ef1a204feb97db558cf4e8da9b90770fc68465311c05e5ea726badd1b9dfc9",
+      "prompt": "Apply the sequence_b code.\nInput: 0 1 5 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 3 4 4",
+        " 2 7 6 0",
+        " 5 0 6 5",
+        " 5 7 3 0"
+      ],
+      "gold_idx": 0,
+      "group": "0 6 0 0",
+      "id": "4e8805bca09a1266435285dcda74260ce5d57fe9dc6ad1b8867cc2807db61d21",
+      "prompt": "Apply the sequence_b code.\nInput: 0 6 0 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 5 7 3",
+        " 3 2 2 4",
+        " 3 2 4 0",
+        " 3 0 0 1"
+      ],
+      "gold_idx": 2,
+      "group": "6 3 0 4",
+      "id": "a3c2c61463487cef6bbe0a5f890d2d693fe9807b34b4de0a4a3bd6c6ba7fbcef",
+      "prompt": "Apply the sequence_b code.\nInput: 6 3 0 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 5 4 2 2",
+        " 4 6 0 3",
+        " 0 3 6 0",
+        " 2 6 3 5"
+      ],
+      "gold_idx": 3,
+      "group": "3 1 6 2",
+      "id": "669819343801dee85905810ee0fe0b87c9c7148e713cb743ab1311e9f301bcb3",
+      "prompt": "Apply the sequence_b code.\nInput: 3 1 6 2\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 5 1 0",
+        " 5 3 3 0",
+        " 6 5 5 2",
+        " 7 4 0 3"
+      ],
+      "gold_idx": 2,
+      "group": "1 2 2 3",
+      "id": "c99eeda29604ad20d2b20e8666c794b731c54850722cfe683361ba303a73dcc3",
+      "prompt": "Apply the sequence_b code.\nInput: 1 2 2 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 0 5 3 2",
+        " 3 2 2 4",
+        " 5 6 3 2",
+        " 6 5 1 0"
+      ],
+      "gold_idx": 1,
+      "group": "6 3 3 0",
+      "id": "25f25d0f53c8234ffe61f11cf3e87980d212af0bdaab2872b1942f2bbf645138",
+      "prompt": "Apply the sequence_b code.\nInput: 6 3 3 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 2 5 0",
+        " 1 5 4 7",
+        " 7 4 7 0",
+        " 2 2 1 2"
+      ],
+      "gold_idx": 3,
+      "group": "3 3 7 3",
+      "id": "9940b4cc776bdbe892af8c8c3ca7e83d4a17ff31833a65716190a43b6b675b87",
+      "prompt": "Apply the sequence_b code.\nInput: 3 3 7 3\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 2 2 4",
+        " 3 6 2 3",
+        " 6 7 7 6",
+        " 5 5 6 5"
+      ],
+      "gold_idx": 0,
+      "group": "0 3 3 0",
+      "id": "87b3ac2e9e2ca0904ea94a28cc9daf69aae4dd39e01a318f7303ad3fd8b188b8",
+      "prompt": "Apply the sequence_b code.\nInput: 0 3 3 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 5 0 0 2",
+        " 5 7 1 5",
+        " 5 2 7 0",
+        " 5 4 0 3"
+      ],
+      "gold_idx": 3,
+      "group": "2 0 4 6",
+      "id": "437627b0aeb1f296268a2927eec97a51f4934d6eae50fcdee97f8daa93622d15",
+      "prompt": "Apply the sequence_b code.\nInput: 2 0 4 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 1 4 2 6",
+        " 0 2 4 1",
+        " 6 2 2 7",
+        " 6 1 2 5"
+      ],
+      "gold_idx": 0,
+      "group": "7 0 3 1",
+      "id": "104541d3677605599b512aec0d9c582ee769586bf0bfea50dab81ec2d49a8bcf",
+      "prompt": "Apply the sequence_b code.\nInput: 7 0 3 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 0 3 4",
+        " 7 5 5 4",
+        " 0 5 3 6",
+        " 5 7 2 7"
+      ],
+      "gold_idx": 2,
+      "group": "4 2 6 1",
+      "id": "12b297ece8cba463370063495c12b305625f70a49b5e1337ebef7abc529323c7",
+      "prompt": "Apply the sequence_b code.\nInput: 4 2 6 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 7 4 0",
+        " 7 3 3 7",
+        " 6 7 5 2",
+        " 6 3 0 7"
+      ],
+      "gold_idx": 3,
+      "group": "1 6 4 5",
+      "id": "af3991e392c522cfe65ef4e1c4dd3d945bfe1cebda0cd957ff17dbcd02997981",
+      "prompt": "Apply the sequence_b code.\nInput: 1 6 4 5\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 6 2 4 5",
+        " 7 1 4 0",
+        " 0 1 2 4",
+        " 7 4 0 3"
+      ],
+      "gold_idx": 2,
+      "group": "4 7 3 0",
+      "id": "c3e93f31666e937252532176e77afc334a491c5b1591f7f4cec9155bb4e9fa4f",
+      "prompt": "Apply the sequence_b code.\nInput: 4 7 3 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 0 6 3 5",
+        " 1 2 6 2",
+        " 2 5 2 6",
+        " 4 1 3 7"
+      ],
+      "gold_idx": 2,
+      "group": "3 2 3 1",
+      "id": "eb59ea1f7c64cfc8dc8010480dbca2a2edf97eb06a8efb7654eb45de09f8c01e",
+      "prompt": "Apply the sequence_b code.\nInput: 3 2 3 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 5 5 1 0",
+        " 3 4 2 2",
+        " 2 1 3 1",
+        " 1 2 7 0"
+      ],
+      "gold_idx": 3,
+      "group": "7 3 5 4",
+      "id": "e7a3fdb9cfe691e48379ad85912b87462c5e87d245602db102243693b1d6c255",
+      "prompt": "Apply the sequence_b code.\nInput: 7 3 5 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 4 4 5",
+        " 5 5 7 5",
+        " 6 6 0 0",
+        " 7 5 0 7"
+      ],
+      "gold_idx": 2,
+      "group": "1 1 4 4",
+      "id": "09a7b46343ac541d6c8aa2d94a1d757daa8d34ccfe88b581538207f1a2159bb6",
+      "prompt": "Apply the sequence_b code.\nInput: 1 1 4 4\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 2 5 5 5",
+        " 6 2 2 4",
+        " 1 0 5 6",
+        " 0 6 3 4"
+      ],
+      "gold_idx": 3,
+      "group": "4 1 6 0",
+      "id": "544d4c91e42cc40aa65218acec72f801f24a50934b38b5ced26127a616b2e9a3",
+      "prompt": "Apply the sequence_b code.\nInput: 4 1 6 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 1 6 1",
+        " 0 4 5 0",
+        " 2 1 4 3",
+        " 7 2 1 2"
+      ],
+      "gold_idx": 2,
+      "group": "3 7 0 6",
+      "id": "222a4623e665e72dc8742ffe029ff67126a886a697836b4778658a358aed72d8",
+      "prompt": "Apply the sequence_b code.\nInput: 3 7 0 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 4 1 6 4",
+        " 7 2 1 1",
+        " 3 3 0 0",
+        " 0 4 6 1"
+      ],
+      "gold_idx": 0,
+      "group": "0 7 1 0",
+      "id": "bb35dbaf3e9cff90783255edb9181bc5302a0ce41970b55460a85b8aa740a10f",
+      "prompt": "Apply the sequence_b code.\nInput: 0 7 1 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 3 0 6",
+        " 3 7 1 1",
+        " 7 7 5 6",
+        " 5 2 7 2"
+      ],
+      "gold_idx": 2,
+      "group": "5 5 2 1",
+      "id": "ecaa242dfbdf698b1e5a79b1f08b83ba38b8ac29257edf8f2f07b4ad8f373343",
+      "prompt": "Apply the sequence_b code.\nInput: 5 5 2 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 3 0 4 3",
+        " 0 1 5 4",
+        " 3 7 5 5",
+        " 3 4 3 5"
+      ],
+      "gold_idx": 1,
+      "group": "4 7 2 0",
+      "id": "58bac21d4e23bae790ff2343c4b8815ecbee0c7d78dad4c76265fe078990c08a",
+      "prompt": "Apply the sequence_b code.\nInput: 4 7 2 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 5 5 2 0",
+        " 0 4 5 6",
+        " 7 6 2 1",
+        " 2 2 0 3"
+      ],
+      "gold_idx": 1,
+      "group": "4 0 2 1",
+      "id": "84c88409bb99104f83a93f08438e67f1f5ffb1113a0ee8533d02ad109ddb6031",
+      "prompt": "Apply the sequence_b code.\nInput: 4 0 2 1\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 6 4 1 3",
+        " 7 7 3 6",
+        " 4 0 7 6",
+        " 2 0 5 2"
+      ],
+      "gold_idx": 0,
+      "group": "1 0 7 6",
+      "id": "171952d767e82f4e9fdb8d881e7e305293b80fbe5d32bd81f7325fcf74cdb26c",
+      "prompt": "Apply the sequence_b code.\nInput: 1 0 7 6\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 7 6 0 4",
+        " 2 5 3 4",
+        " 0 2 5 3",
+        " 4 1 3 2"
+      ],
+      "gold_idx": 1,
+      "group": "3 2 6 0",
+      "id": "eb3a49d631007f33a83f70002d4cc24fd14986acd9745c07f65dc3baa7d64fde",
+      "prompt": "Apply the sequence_b code.\nInput: 3 2 6 0\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 0 4 2 3",
+        " 5 4 2 0",
+        " 4 6 6 7",
+        " 0 4 3 3"
+      ],
+      "gold_idx": 2,
+      "group": "0 1 1 5",
+      "id": "b715fdd5808f3a47c802e01f6217e150d65862bb8adf3e391dd0d3ebd61340c6",
+      "prompt": "Apply the sequence_b code.\nInput: 0 1 1 5\nOutput:",
+      "task": "sequence_b"
+    },
+    {
+      "choices": [
+        " 3 4 2 2",
+        " 4 4 0 6",
+        " 1 0 0 6",
+        " 4 2 1 4"
+      ],
+      "gold_idx": 3,
+      "group": "6 5 1 6",
+      "id": "f547feaac68a4397df46d967d4e5d4496f3ddf47fa02f811978a3c819630569c",
+      "prompt": "Apply the sequence_c code.\nInput: 6 5 1 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 2 1 5 6",
+        " 0 3 4 4",
+        " 2 5 0 0",
+        " 7 6 2 0"
+      ],
+      "gold_idx": 3,
+      "group": "7 4 5 2",
+      "id": "91fbc05778fb2dd92906b44ae4bb55ee10443d45f25702a6b7870fcb2501c9cf",
+      "prompt": "Apply the sequence_c code.\nInput: 7 4 5 2\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 1 7 5 7",
+        " 7 0 2 1",
+        " 1 3 4 3",
+        " 0 0 5 6"
+      ],
+      "gold_idx": 3,
+      "group": "2 2 0 4",
+      "id": "c57f16608b5c6633660f189e0ad9cfc3f8498b331ca07b0e2517995f152f246b",
+      "prompt": "Apply the sequence_c code.\nInput: 2 2 0 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 5 0 4 7",
+        " 7 6 1 2",
+        " 0 4 0 3",
+        " 2 3 2 4"
+      ],
+      "gold_idx": 0,
+      "group": "0 2 6 7",
+      "id": "248bd57950d3f8cfcfb567d46419fd1b216899bc6a2e167324910e64aec30589",
+      "prompt": "Apply the sequence_c code.\nInput: 0 2 6 7\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 1 0 4 7",
+        " 7 0 0 6",
+        " 7 1 6 0",
+        " 2 5 5 5"
+      ],
+      "gold_idx": 3,
+      "group": "5 0 0 0",
+      "id": "9c970eb51db74ee3f388929ec58d2faa60440e40759235e82486f6c4536f7051",
+      "prompt": "Apply the sequence_c code.\nInput: 5 0 0 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 1 2 1",
+        " 3 6 6 0",
+        " 4 3 0 3",
+        " 6 1 5 6"
+      ],
+      "gold_idx": 0,
+      "group": "6 1 5 1",
+      "id": "87d4ba9e6801a5c7075d868f7b8186c7c57969dd8acd99da64612e4cc680e3fd",
+      "prompt": "Apply the sequence_c code.\nInput: 6 1 5 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 0 5 4 5",
+        " 0 4 3 1",
+        " 7 0 0 0",
+        " 6 2 7 5"
+      ],
+      "gold_idx": 3,
+      "group": "4 5 7 0",
+      "id": "b0f5bb5418d165dfdbb37a7733e21eebd60911c8a588efbf9d5a7f146b7286fd",
+      "prompt": "Apply the sequence_c code.\nInput: 4 5 7 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 7 6 0",
+        " 3 5 0 2",
+        " 2 1 1 5",
+        " 3 1 4 6"
+      ],
+      "gold_idx": 1,
+      "group": "3 0 2 5",
+      "id": "8f3fdeecd18a06860522ec2e32c502f4c20d79470eba7321fdec7f37d08930e0",
+      "prompt": "Apply the sequence_c code.\nInput: 3 0 2 5\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 3 1 5",
+        " 4 7 1 0",
+        " 3 7 1 7",
+        " 5 1 5 1"
+      ],
+      "gold_idx": 0,
+      "group": "6 3 1 0",
+      "id": "e82570b32db37aa33f15b0a406c1f61f8b59006e99a4cba224963e67f5e11d31",
+      "prompt": "Apply the sequence_c code.\nInput: 6 3 1 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 4 4 7",
+        " 4 6 7 1",
+        " 1 2 5 1",
+        " 0 7 4 0"
+      ],
+      "gold_idx": 1,
+      "group": "6 4 7 1",
+      "id": "f87565a5c05a6360f41972a63dc2290cbd439a66eaf685e136d8bcc7af0209d3",
+      "prompt": "Apply the sequence_c code.\nInput: 6 4 7 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 1 2 6 3",
+        " 0 1 3 5",
+        " 5 5 0 6",
+        " 4 6 6 7"
+      ],
+      "gold_idx": 0,
+      "group": "1 5 4 3",
+      "id": "9c60aea3f6e38dbb92364dcacc8709e0e85e398b9b566ad0a759892e0da1d047",
+      "prompt": "Apply the sequence_c code.\nInput: 1 5 4 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 4 4 7",
+        " 7 3 2 0",
+        " 1 3 0 7",
+        " 4 1 5 0"
+      ],
+      "gold_idx": 1,
+      "group": "7 3 5 2",
+      "id": "18046d0a68bfa8cd9fbec15aeb30e51ab8d21ca218bba199874dc62e7df6af07",
+      "prompt": "Apply the sequence_c code.\nInput: 7 3 5 2\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 5 4 1",
+        " 4 7 5 2",
+        " 5 0 7 7",
+        " 0 6 2 6"
+      ],
+      "gold_idx": 2,
+      "group": "0 2 7 7",
+      "id": "b379cd25f61ae83879bea4d4d7f1d171ff9d2c4d7d0e1aede0d2441a31137bb0",
+      "prompt": "Apply the sequence_c code.\nInput: 0 2 7 7\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 5 4 0 4",
+        " 5 6 2 4",
+        " 1 2 0 1",
+        " 5 2 6 3"
+      ],
+      "gold_idx": 2,
+      "group": "1 5 2 1",
+      "id": "3af6f8b5b4f36c457d2f3ec1dd42511ef388309187ed0627eb73ee64508738e9",
+      "prompt": "Apply the sequence_c code.\nInput: 1 5 2 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 2 0 3 4",
+        " 0 6 3 7",
+        " 3 6 1 2",
+        " 5 1 4 6"
+      ],
+      "gold_idx": 3,
+      "group": "0 1 6 4",
+      "id": "20f43601abb75c6f5ea686dc5b3cccd6de0a7b68477d026cdc7ef14aa785efb8",
+      "prompt": "Apply the sequence_c code.\nInput: 0 1 6 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 7 0 3",
+        " 7 6 6 0",
+        " 7 4 0 0",
+        " 4 5 2 3"
+      ],
+      "gold_idx": 3,
+      "group": "6 0 5 3",
+      "id": "58d848054bf937e6c6c04feedec4100563cec75893808baecea69b875912f0af",
+      "prompt": "Apply the sequence_c code.\nInput: 6 0 5 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 4 0 2",
+        " 6 7 7 7",
+        " 3 1 4 6",
+        " 7 4 0 5"
+      ],
+      "gold_idx": 1,
+      "group": "4 7 7 7",
+      "id": "4722de786157634a4bf91eb72249a9290168f6ed3f6497c4923a8af57bcf4ea3",
+      "prompt": "Apply the sequence_c code.\nInput: 4 7 7 7\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 4 6 5",
+        " 6 5 3 7",
+        " 3 1 7 6",
+        " 5 7 7 7"
+      ],
+      "gold_idx": 2,
+      "group": "3 1 7 4",
+      "id": "163ebaca0baf518af7c82177b2969fb6065164a89846bd30e707652c5c500793",
+      "prompt": "Apply the sequence_c code.\nInput: 3 1 7 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 1 0 5 5",
+        " 0 7 5 4",
+        " 3 7 0 0",
+        " 1 6 0 2"
+      ],
+      "gold_idx": 2,
+      "group": "3 7 2 2",
+      "id": "331da741d54512249a1d06078a52551f9407f71f94a83646e73cb8da9712dce0",
+      "prompt": "Apply the sequence_c code.\nInput: 3 7 2 2\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 2 6 4 6",
+        " 0 6 5 1",
+        " 0 7 5 7",
+        " 1 2 4 5"
+      ],
+      "gold_idx": 3,
+      "group": "1 5 6 0",
+      "id": "f1495b98ccf688f564d7a70b5b2515b36881ab4ecbcdc85f99842843c70b4e63",
+      "prompt": "Apply the sequence_c code.\nInput: 1 5 6 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 0 0 2 0",
+        " 6 7 1 1",
+        " 2 3 0 6",
+        " 4 7 0 3"
+      ],
+      "gold_idx": 2,
+      "group": "5 3 2 4",
+      "id": "8aaf11439c5244c3298045b47333c16faba28f0019e23d751460c6b699d08881",
+      "prompt": "Apply the sequence_c code.\nInput: 5 3 2 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 2 0 6 2",
+        " 3 0 2 4",
+        " 4 5 3 7",
+        " 4 4 4 5"
+      ],
+      "gold_idx": 1,
+      "group": "3 2 5 6",
+      "id": "bf178046c8cdf80b03b8b6f8d6860d02fa98b132e9fd83c2af149d0fbae6cb82",
+      "prompt": "Apply the sequence_c code.\nInput: 3 2 5 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 5 7 6",
+        " 1 7 3 0",
+        " 4 3 1 2",
+        " 3 6 6 5"
+      ],
+      "gold_idx": 0,
+      "group": "4 0 7 4",
+      "id": "e8c8672e9a94d6c42afdfc05adc0162567d73feb4c0ad99f29aacf4da3502762",
+      "prompt": "Apply the sequence_c code.\nInput: 4 0 7 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 7 7 7",
+        " 0 2 7 4",
+        " 4 5 4 7",
+        " 5 5 5 4"
+      ],
+      "gold_idx": 1,
+      "group": "2 5 7 6",
+      "id": "3860228b3a12f349ea9e74be38d624de7d0e93815f2cb0c1f8acb18155fb12df",
+      "prompt": "Apply the sequence_c code.\nInput: 2 5 7 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 1 0 3 4",
+        " 1 3 5 6",
+        " 4 2 1 7",
+        " 5 5 6 4"
+      ],
+      "gold_idx": 3,
+      "group": "0 0 4 6",
+      "id": "509a48940071f7dea5867070405761900378e45afe6f3e33b326a528db996e8f",
+      "prompt": "Apply the sequence_c code.\nInput: 0 0 4 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 2 0 0",
+        " 3 4 4 7",
+        " 5 1 4 1",
+        " 3 4 6 3"
+      ],
+      "gold_idx": 3,
+      "group": "3 6 4 3",
+      "id": "00459e55871ec81995ec70e80832f4e0a5cd33dfe30b61afd2aaf28d94280a96",
+      "prompt": "Apply the sequence_c code.\nInput: 3 6 4 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 1 5 4",
+        " 5 3 0 6",
+        " 4 6 7 1",
+        " 4 2 1 3"
+      ],
+      "gold_idx": 1,
+      "group": "0 3 2 4",
+      "id": "d03db1faea71f2aee83be3a861c30ff4235a3bf46ad32ff07434e6d2921b2f4a",
+      "prompt": "Apply the sequence_c code.\nInput: 0 3 2 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 3 6 2",
+        " 5 3 1 7",
+        " 4 7 7 2",
+        " 7 7 3 2"
+      ],
+      "gold_idx": 1,
+      "group": "0 3 1 7",
+      "id": "7f18f2d4cb9e4d145de8d1c39215a707361ed24507617319202cd0093aa0eb8e",
+      "prompt": "Apply the sequence_c code.\nInput: 0 3 1 7\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 2 7 0 4",
+        " 2 2 1 1",
+        " 3 0 1 2",
+        " 2 1 7 0"
+      ],
+      "gold_idx": 3,
+      "group": "5 1 7 2",
+      "id": "ebdd90523f0828762b2fda50f33e64e5dd2930bdc6ee8b48a4e01facc90c378d",
+      "prompt": "Apply the sequence_c code.\nInput: 5 1 7 2\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 4 4 5",
+        " 6 2 3 4",
+        " 4 1 3 7",
+        " 7 3 3 2"
+      ],
+      "gold_idx": 0,
+      "group": "4 6 6 0",
+      "id": "f4d45dc508a2e6403d14e599fc3ce782baaaa5928425df242845f926d2e745b1",
+      "prompt": "Apply the sequence_c code.\nInput: 4 6 6 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 2 3 4",
+        " 7 3 1 4",
+        " 7 6 0 3",
+        " 0 3 0 0"
+      ],
+      "gold_idx": 1,
+      "group": "7 3 1 6",
+      "id": "6aa051cacf13d13299eab3516c2403e0e40dd8661dc706517afd3c5157ef1f6b",
+      "prompt": "Apply the sequence_c code.\nInput: 7 3 1 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 4 2 6",
+        " 6 3 1 6",
+        " 6 2 7 3",
+        " 0 3 7 3"
+      ],
+      "gold_idx": 0,
+      "group": "4 6 5 4",
+      "id": "4baa2d49e4f44decdbf38187b26a871e7c684f7fbc1d73eb56c25567f0f0a6e9",
+      "prompt": "Apply the sequence_c code.\nInput: 4 6 5 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 0 0 1 7",
+        " 2 2 0 2",
+        " 0 3 3 4",
+        " 1 5 2 0"
+      ],
+      "gold_idx": 2,
+      "group": "2 3 3 6",
+      "id": "e5b2a5ab28f1e8edec3f18a026c12f96d20c425390c0239a4826a3255a574b57",
+      "prompt": "Apply the sequence_c code.\nInput: 2 3 3 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 1 3 3",
+        " 6 2 4 1",
+        " 4 7 5 1",
+        " 6 6 6 2"
+      ],
+      "gold_idx": 2,
+      "group": "6 7 0 1",
+      "id": "da02102597cfa8b95fea35bcabeb88c78bd29d82162cffd24cacf078fa02d309",
+      "prompt": "Apply the sequence_c code.\nInput: 6 7 0 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 4 0 5",
+        " 0 4 2 7",
+        " 7 7 4 5",
+        " 0 4 1 2"
+      ],
+      "gold_idx": 0,
+      "group": "7 6 2 0",
+      "id": "42f730871064a92446b3f146c820f076efcc3bc9a25c687cf6df3bb650a8d7b1",
+      "prompt": "Apply the sequence_c code.\nInput: 7 6 2 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 4 7 6",
+        " 5 2 1 3",
+        " 5 5 4 3",
+        " 4 6 0 6"
+      ],
+      "gold_idx": 0,
+      "group": "4 6 7 4",
+      "id": "f80c191dbd604364673cc049d0d4ce338e9a23c4014376c28bafc39921a4d3ec",
+      "prompt": "Apply the sequence_c code.\nInput: 4 6 7 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 1 2 7 7",
+        " 7 0 1 3",
+        " 1 3 5 4",
+        " 0 6 5 3"
+      ],
+      "gold_idx": 0,
+      "group": "1 5 7 7",
+      "id": "bc7d9700b36e017f03a47526d18c6b38d9d0a7d95ee64a4b4e57a3c74c8d9f6a",
+      "prompt": "Apply the sequence_c code.\nInput: 1 5 7 7\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 1 0 7",
+        " 1 3 5 2",
+        " 6 2 1 7",
+        " 3 6 6 3"
+      ],
+      "gold_idx": 3,
+      "group": "3 4 4 3",
+      "id": "078890dadb4af783d83bfbcb33516cafbad070b48b6d2fffb777d50884ccd8e4",
+      "prompt": "Apply the sequence_c code.\nInput: 3 4 4 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 0 6 4 0",
+        " 1 3 0 2",
+        " 1 3 0 6",
+        " 7 7 4 3"
+      ],
+      "gold_idx": 3,
+      "group": "7 7 6 3",
+      "id": "472eba718b775ef6586e79feb21014646a7d369bafc339efdb100510535db77b",
+      "prompt": "Apply the sequence_c code.\nInput: 7 7 6 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 1 2 0",
+        " 1 3 7 6",
+        " 0 3 1 6",
+        " 1 7 5 0"
+      ],
+      "gold_idx": 1,
+      "group": "1 3 7 4",
+      "id": "6ba401d5b8a9de634b9436c8e73f008eebeedd863c722110ad25e88cd8205592",
+      "prompt": "Apply the sequence_c code.\nInput: 1 3 7 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 0 6 6",
+        " 3 3 3 4",
+        " 4 7 3 6",
+        " 0 2 5 5"
+      ],
+      "gold_idx": 1,
+      "group": "3 3 3 6",
+      "id": "3113b950fbca1a5fb7b67f7ff1a88b9ad2dd6976f46ee511588e1580476ceb40",
+      "prompt": "Apply the sequence_c code.\nInput: 3 3 3 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 2 1 7 0",
+        " 5 6 0 5",
+        " 3 4 1 3",
+        " 4 0 4 4"
+      ],
+      "gold_idx": 1,
+      "group": "0 4 2 0",
+      "id": "27472449145e0d35c50207389444faf8a09fa53bf4b02ef6a0a8c9ede5ad2420",
+      "prompt": "Apply the sequence_c code.\nInput: 0 4 2 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 5 2 2 2",
+        " 2 1 5 0",
+        " 2 0 2 2",
+        " 1 1 2 4"
+      ],
+      "gold_idx": 2,
+      "group": "5 2 5 5",
+      "id": "5ce369201ed71c2b5b0b7c4cd8439148f96d00a16e3d2a7a1ed24964f57ca837",
+      "prompt": "Apply the sequence_c code.\nInput: 5 2 5 5\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 5 7 5",
+        " 3 4 5 3",
+        " 4 5 5 3",
+        " 2 7 6 1"
+      ],
+      "gold_idx": 2,
+      "group": "6 0 0 3",
+      "id": "d90924d83454b17a6f896d3964897024e9f3a02164c4d02b0139f427ebbe4a50",
+      "prompt": "Apply the sequence_c code.\nInput: 6 0 0 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 1 7 0 7",
+        " 3 2 6 5",
+        " 3 2 0 5",
+        " 1 1 2 3"
+      ],
+      "gold_idx": 2,
+      "group": "3 5 2 0",
+      "id": "11d23ae79fb1a0fcb5706193220e805925c224e4214fae7333d721818e47e333",
+      "prompt": "Apply the sequence_c code.\nInput: 3 5 2 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 2 3 3",
+        " 4 1 6 2",
+        " 4 1 4 6",
+        " 7 7 6 1"
+      ],
+      "gold_idx": 1,
+      "group": "6 1 4 5",
+      "id": "0d4b64024d157e828fb37814dbfbb5c02e83fcb80a2cfaec929a712a97a19744",
+      "prompt": "Apply the sequence_c code.\nInput: 6 1 4 5\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 2 3 0",
+        " 0 3 2 6",
+        " 1 5 4 0",
+        " 1 5 7 7"
+      ],
+      "gold_idx": 2,
+      "group": "1 0 6 2",
+      "id": "2fe05af462717ebf18606bfcb44c83b2a1c179f330c9e6e15fcd6eeaa1b7d301",
+      "prompt": "Apply the sequence_c code.\nInput: 1 0 6 2\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 0 6 6",
+        " 0 3 0 7",
+        " 2 4 1 6",
+        " 3 0 3 5"
+      ],
+      "gold_idx": 2,
+      "group": "5 6 1 4",
+      "id": "40f606c97f277f541ea4670492c792843663fffd0c267eee31c2bbc97e1801c8",
+      "prompt": "Apply the sequence_c code.\nInput: 5 6 1 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 3 0 7",
+        " 2 1 5 3",
+        " 5 7 5 0",
+        " 0 7 7 4"
+      ],
+      "gold_idx": 3,
+      "group": "2 7 7 6",
+      "id": "2368a368c8b22d8ba90c48ae1b8cf512bd59c8da83d99d2e98c62af89df7ed31",
+      "prompt": "Apply the sequence_c code.\nInput: 2 7 7 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 2 3 0 0",
+        " 2 0 0 4",
+        " 0 4 7 4",
+        " 4 6 6 4"
+      ],
+      "gold_idx": 3,
+      "group": "6 4 4 6",
+      "id": "58f90cbd004f32fb6c8c4ea73ef38270aaa4e2968cd792aeee234a2b0d457ca7",
+      "prompt": "Apply the sequence_c code.\nInput: 6 4 4 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 6 7 2",
+        " 0 5 7 6",
+        " 1 2 2 2",
+        " 6 6 2 1"
+      ],
+      "gold_idx": 3,
+      "group": "4 4 5 1",
+      "id": "bec4e4123916f2351f3f26bb4b27f1149f44181d74610bd8aead60a20354b4d3",
+      "prompt": "Apply the sequence_c code.\nInput: 4 4 5 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 2 4 0",
+        " 2 2 3 7",
+        " 7 0 4 6",
+        " 2 7 6 3"
+      ],
+      "gold_idx": 2,
+      "group": "7 2 6 4",
+      "id": "6752bca307bbdd2e3c4433372b891671d7bf96a39f25a9eb7731a80ffd4a751e",
+      "prompt": "Apply the sequence_c code.\nInput: 7 2 6 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 7 7 4",
+        " 1 3 7 5",
+        " 0 6 2 0",
+        " 7 5 4 3"
+      ],
+      "gold_idx": 3,
+      "group": "7 0 6 3",
+      "id": "93a6e8cbe5e94ba32e2e9270d852e388d292430f89ed0dffdc41ff5373be3f54",
+      "prompt": "Apply the sequence_c code.\nInput: 7 0 6 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 3 5 7",
+        " 6 3 0 5",
+        " 6 0 5 3",
+        " 4 6 5 7"
+      ],
+      "gold_idx": 3,
+      "group": "6 4 0 7",
+      "id": "57ab4362f884094eb01749f36e9aa6b7e51393c84415f41638e4cc3bd31cfe8a",
+      "prompt": "Apply the sequence_c code.\nInput: 6 4 0 7\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 0 0 3 5",
+        " 7 3 2 6",
+        " 2 6 0 3",
+        " 4 6 5 7"
+      ],
+      "gold_idx": 2,
+      "group": "5 4 2 3",
+      "id": "3ac8bcd76948361e332d043b3adcd03bab7155412951e1ade236476f8ba07751",
+      "prompt": "Apply the sequence_c code.\nInput: 5 4 2 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 5 2 2 4",
+        " 1 2 6 1",
+        " 7 2 7 5",
+        " 3 6 7 2"
+      ],
+      "gold_idx": 0,
+      "group": "0 5 5 6",
+      "id": "69b9fd0ca4b2d9197fc8b049a7202bc0f65c332b05a3ffe4c4faedb261835243",
+      "prompt": "Apply the sequence_c code.\nInput: 0 5 5 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 7 6 7",
+        " 5 3 6 5",
+        " 5 3 6 7",
+        " 2 3 2 2"
+      ],
+      "gold_idx": 3,
+      "group": "5 3 5 5",
+      "id": "1e0629e946f1a728f29c2a2fbcb888747bad8ba8fd0a5b9e31bb327707f4abc0",
+      "prompt": "Apply the sequence_c code.\nInput: 5 3 5 5\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 2 5 2",
+        " 4 5 4 3",
+        " 0 3 1 2",
+        " 2 6 1 2"
+      ],
+      "gold_idx": 1,
+      "group": "6 0 6 3",
+      "id": "4f919c32f19956360e5f02a0fbbb3c30c629890e1c8313253759d24503b04cf0",
+      "prompt": "Apply the sequence_c code.\nInput: 6 0 6 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 0 7 2 4",
+        " 2 3 2 5",
+        " 5 6 3 3",
+        " 6 2 2 3"
+      ],
+      "gold_idx": 1,
+      "group": "5 3 5 0",
+      "id": "1d9ce90d8670174c2aa9dd25059dbbd9803d646723929aa0ec428d116a6ecf1c",
+      "prompt": "Apply the sequence_c code.\nInput: 5 3 5 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 2 2 1",
+        " 4 1 2 5",
+        " 1 2 0 7",
+        " 4 1 3 6"
+      ],
+      "gold_idx": 2,
+      "group": "1 5 2 7",
+      "id": "5da5135c7cbc5947bd1dfd9664a606f62c58614b5fdcf74c646a65b1ebd6667c",
+      "prompt": "Apply the sequence_c code.\nInput: 1 5 2 7\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 2 6 2 3",
+        " 2 2 3 7",
+        " 7 5 7 5",
+        " 1 6 6 7"
+      ],
+      "gold_idx": 3,
+      "group": "1 4 4 7",
+      "id": "fc0bfd02c939d9ae2bf5995f405240667359a753314e1ed7510c8f4f71501420",
+      "prompt": "Apply the sequence_c code.\nInput: 1 4 4 7\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 3 3 5",
+        " 6 2 2 4",
+        " 7 5 4 2",
+        " 5 6 7 6"
+      ],
+      "gold_idx": 0,
+      "group": "3 3 3 0",
+      "id": "9ca8e525ff34e593e6d67e45b61d6c05c6234bef863e1d04cb4c8c44b1db3a14",
+      "prompt": "Apply the sequence_c code.\nInput: 3 3 3 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 0 7 0",
+        " 1 6 4 1",
+        " 6 4 6 2",
+        " 1 1 1 6"
+      ],
+      "gold_idx": 1,
+      "group": "1 4 6 1",
+      "id": "2b73ff91448de07f62007bc26254602a0f4734a9a3fa1a9ed300c3e6de947035",
+      "prompt": "Apply the sequence_c code.\nInput: 1 4 6 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 6 0 2",
+        " 6 7 3 0",
+        " 4 3 0 4",
+        " 5 6 1 1"
+      ],
+      "gold_idx": 3,
+      "group": "0 4 1 1",
+      "id": "826c1f0c017eb1cc12a1ee58f4ad062405db6ac1d2bd336703d0c064d6a467dd",
+      "prompt": "Apply the sequence_c code.\nInput: 0 4 1 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 5 3 3",
+        " 4 0 3 0",
+        " 3 7 2 7",
+        " 1 4 2 0"
+      ],
+      "gold_idx": 3,
+      "group": "1 6 5 2",
+      "id": "67cb8e4b0c8e597e7dfe58bbec6382ee755efaedb1eb981b709701e874b6b9b1",
+      "prompt": "Apply the sequence_c code.\nInput: 1 6 5 2\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 4 0 0",
+        " 5 3 5 4",
+        " 2 3 4 4",
+        " 0 4 7 2"
+      ],
+      "gold_idx": 2,
+      "group": "5 3 6 6",
+      "id": "dfc70ce4761ab2adc7aab3c4adcfd35340afa5e15760293a28ca7835453e5bd7",
+      "prompt": "Apply the sequence_c code.\nInput: 5 3 6 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 0 6 2 4",
+        " 2 4 5 0",
+        " 0 4 2 5",
+        " 1 3 4 7"
+      ],
+      "gold_idx": 1,
+      "group": "5 6 0 2",
+      "id": "7508eacbf2bab875e966f6dfa6a91d73fa754050062cacae2548bfad72c8ce0f",
+      "prompt": "Apply the sequence_c code.\nInput: 5 6 0 2\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 0 5 7 7",
+        " 7 1 7 7",
+        " 1 7 3 1",
+        " 1 4 6 2"
+      ],
+      "gold_idx": 1,
+      "group": "7 1 7 7",
+      "id": "22ee391bf1983994d857892172f0ea57d1af12e2f01dece02d4a55ec86ef73ff",
+      "prompt": "Apply the sequence_c code.\nInput: 7 1 7 7\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 1 1 2 5",
+        " 2 4 3 2",
+        " 5 0 4 5",
+        " 1 0 5 0"
+      ],
+      "gold_idx": 2,
+      "group": "0 2 6 0",
+      "id": "ed7494b2ed07110e122b2120131bd0aeaf42e21cfcd2c31e2c75994e6cb37b50",
+      "prompt": "Apply the sequence_c code.\nInput: 0 2 6 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 1 3 0 2",
+        " 3 6 7 0",
+        " 1 4 1 4",
+        " 3 3 4 3"
+      ],
+      "gold_idx": 2,
+      "group": "1 6 1 6",
+      "id": "232af05503c6220aa81cba8306d3d8bdeeafe96f328e677280e4c38f6b6bcbe1",
+      "prompt": "Apply the sequence_c code.\nInput: 1 6 1 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 1 3 6",
+        " 6 5 7 3",
+        " 0 6 1 5",
+        " 2 5 3 1"
+      ],
+      "gold_idx": 2,
+      "group": "2 4 1 0",
+      "id": "753b1119985b00432867b7ea2835f5c5aea748b417e6751d74b78970e501980e",
+      "prompt": "Apply the sequence_c code.\nInput: 2 4 1 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 5 0 6",
+        " 7 5 7 4",
+        " 5 0 4 0",
+        " 4 1 1 2"
+      ],
+      "gold_idx": 0,
+      "group": "3 0 2 4",
+      "id": "81ac3089c0e6022027c58f903153662ec272d88b5c4a7551ea367cc2d5fd277d",
+      "prompt": "Apply the sequence_c code.\nInput: 3 0 2 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 5 1 1",
+        " 4 4 0 1",
+        " 6 1 5 4",
+        " 5 1 7 3"
+      ],
+      "gold_idx": 1,
+      "group": "6 6 2 1",
+      "id": "2d4ea6281aa9f194e0599997242f73c4f62db0f2031c0df719c798677abcb648",
+      "prompt": "Apply the sequence_c code.\nInput: 6 6 2 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 5 5 4",
+        " 3 4 2 7",
+        " 0 3 3 2",
+        " 1 3 5 0"
+      ],
+      "gold_idx": 2,
+      "group": "2 3 3 5",
+      "id": "a757b7e57c183caea7212a35b918f4451e95fa4a29a8e23b3ff05d68ae876c8a",
+      "prompt": "Apply the sequence_c code.\nInput: 2 3 3 5\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 7 5 0",
+        " 5 5 2 3",
+        " 7 2 1 5",
+        " 7 0 0 2"
+      ],
+      "gold_idx": 1,
+      "group": "0 0 5 3",
+      "id": "49c8e4c8fba87feb263150644d4a6ce35c22d1bb9319628192bdff2ea649a880",
+      "prompt": "Apply the sequence_c code.\nInput: 0 0 5 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 5 6 3",
+        " 0 5 2 2",
+        " 1 7 7 1",
+        " 4 0 1 2"
+      ],
+      "gold_idx": 0,
+      "group": "3 0 4 3",
+      "id": "067022266be2ee1c2cdfed02e799ab151f100a72f50d56c8c50e3300b9a537cb",
+      "prompt": "Apply the sequence_c code.\nInput: 3 0 4 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 1 6 6 2",
+        " 1 6 7 5",
+        " 7 4 4 7",
+        " 3 0 0 0"
+      ],
+      "gold_idx": 2,
+      "group": "7 6 6 7",
+      "id": "a343e050c4bc3c1a840c89eb4dee3030da78a6332cc19872513dd64a88408f05",
+      "prompt": "Apply the sequence_c code.\nInput: 7 6 6 7\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 1 7 0 0",
+        " 2 4 2 3",
+        " 1 3 0 3",
+        " 0 0 2 7"
+      ],
+      "gold_idx": 0,
+      "group": "1 7 2 2",
+      "id": "72174e28d3a849d4918a65527a38d20002ca3ff488cf0054ffbccf1fb1151d56",
+      "prompt": "Apply the sequence_c code.\nInput: 1 7 2 2\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 2 3 2 7",
+        " 3 2 6 7",
+        " 6 1 0 7",
+        " 1 1 0 5"
+      ],
+      "gold_idx": 3,
+      "group": "1 1 2 0",
+      "id": "cc2b8589e3d818011d488696cc2f3b1733452cda126408c944400aeeebc9e00c",
+      "prompt": "Apply the sequence_c code.\nInput: 1 1 2 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 3 3 7",
+        " 6 2 4 0",
+        " 6 6 6 2",
+        " 5 2 0 4"
+      ],
+      "gold_idx": 3,
+      "group": "0 5 2 6",
+      "id": "70cede94e52716192f322aac3e3af7708c19d56903713ac7de8d12c573a1e98d",
+      "prompt": "Apply the sequence_c code.\nInput: 0 5 2 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 5 4 6 3",
+        " 7 6 7 3",
+        " 6 7 3 0",
+        " 1 2 1 7"
+      ],
+      "gold_idx": 0,
+      "group": "0 6 4 3",
+      "id": "140c91b3a99c29e7c8a1acb6369730d9561cc692f413d10a55d00498d99cdee1",
+      "prompt": "Apply the sequence_c code.\nInput: 0 6 4 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 5 1 0 5",
+        " 3 2 7 4",
+        " 7 6 5 5",
+        " 6 7 2 0"
+      ],
+      "gold_idx": 0,
+      "group": "0 1 2 0",
+      "id": "0df741da552ca2a3feaef2f67bc496b3986d87356b43b7b22e3a89a1c2636e81",
+      "prompt": "Apply the sequence_c code.\nInput: 0 1 2 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 3 4 6",
+        " 2 0 0 4",
+        " 3 7 3 1",
+        " 4 1 4 7"
+      ],
+      "gold_idx": 0,
+      "group": "7 3 6 4",
+      "id": "2a404b194be469af5a89f994feddbba9b9e9d3c0f2d5abca3572552838223570",
+      "prompt": "Apply the sequence_c code.\nInput: 7 3 6 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 7 1 7",
+        " 0 1 1 6",
+        " 5 5 2 6",
+        " 7 4 3 5"
+      ],
+      "gold_idx": 2,
+      "group": "0 0 5 4",
+      "id": "3a0beaf4952e7984bfbd5d892167b8cef24b42eb384239b0296c40e31da6cacf",
+      "prompt": "Apply the sequence_c code.\nInput: 0 0 5 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 1 4 5 3",
+        " 4 1 1 1",
+        " 6 2 6 3",
+        " 1 0 3 7"
+      ],
+      "gold_idx": 2,
+      "group": "4 5 4 3",
+      "id": "9c037bdb09d6bf6940880db2af410b9ba09a4c756b52b772e75351dc4474d8bf",
+      "prompt": "Apply the sequence_c code.\nInput: 4 5 4 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 5 5 2 4",
+        " 5 5 0 5",
+        " 2 2 1 2",
+        " 3 0 4 7"
+      ],
+      "gold_idx": 1,
+      "group": "0 0 2 0",
+      "id": "92e2d7abca23b9d05a2689e889ce556826f3e27444ecddaad0c854af01127c7f",
+      "prompt": "Apply the sequence_c code.\nInput: 0 0 2 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 0 3 1",
+        " 4 2 5 2",
+        " 4 1 4 6",
+        " 1 2 4 3"
+      ],
+      "gold_idx": 0,
+      "group": "4 2 3 1",
+      "id": "9d2f0f15c108101ddb6e91e1c48ebc0e742fea9cce3f7ef48328549718e1ad0e",
+      "prompt": "Apply the sequence_c code.\nInput: 4 2 3 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 0 0 6",
+        " 4 3 7 6",
+        " 7 2 4 5",
+        " 4 4 4 1"
+      ],
+      "gold_idx": 3,
+      "group": "6 6 6 1",
+      "id": "d25b890e0855e4d78177355700afd39945487e28060d344c66b3815569380b12",
+      "prompt": "Apply the sequence_c code.\nInput: 6 6 6 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 5 6 1 7",
+        " 5 7 0 2",
+        " 3 3 2 6",
+        " 6 7 5 2"
+      ],
+      "gold_idx": 0,
+      "group": "0 4 1 7",
+      "id": "4e91098b319b1cded7dba0eab99611920fcec90f70afde2dc3b51e7bef130a21",
+      "prompt": "Apply the sequence_c code.\nInput: 0 4 1 7\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 1 7 4",
+        " 4 0 5 4",
+        " 1 6 4 3",
+        " 5 4 2 1"
+      ],
+      "gold_idx": 1,
+      "group": "6 2 0 6",
+      "id": "98a65c42234b5d95e53187fff14588b2aba9c5925ef25b9f2a6e74061a0825e1",
+      "prompt": "Apply the sequence_c code.\nInput: 6 2 0 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 0 2 7 3",
+        " 2 3 1 0",
+        " 0 1 7 5",
+        " 5 6 5 6"
+      ],
+      "gold_idx": 2,
+      "group": "2 1 7 0",
+      "id": "01d0f43d916dd80f7fa96544fcd9bcb865245f289646efb892b8addc73759ec7",
+      "prompt": "Apply the sequence_c code.\nInput: 2 1 7 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 7 7 2",
+        " 6 6 3 1",
+        " 2 0 7 0",
+        " 3 5 7 3"
+      ],
+      "gold_idx": 2,
+      "group": "5 2 7 2",
+      "id": "c4f68e20949123744cdadec06ba7492745de15a7e0d4597f65a10fcc8a80d893",
+      "prompt": "Apply the sequence_c code.\nInput: 5 2 7 2\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 2 1 1 6",
+        " 2 1 2 3",
+        " 4 1 6 4",
+        " 4 7 7 7"
+      ],
+      "gold_idx": 0,
+      "group": "5 1 1 4",
+      "id": "9eb1e01b6afbe5e0f4d4243ced51d8ecd44abc6caefbe746b02cd19ee956ca3f",
+      "prompt": "Apply the sequence_c code.\nInput: 5 1 1 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 2 6 6 2",
+        " 4 5 0 1",
+        " 1 7 7 5",
+        " 3 5 0 0"
+      ],
+      "gold_idx": 0,
+      "group": "5 4 4 5",
+      "id": "5184928c19e828a48639cc940d329fd2f9c4e7d1da66be602ac182d5a3b1906b",
+      "prompt": "Apply the sequence_c code.\nInput: 5 4 4 5\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 0 6 7 1",
+        " 2 0 3 0",
+        " 0 4 2 1",
+        " 0 7 1 4"
+      ],
+      "gold_idx": 3,
+      "group": "2 7 1 6",
+      "id": "40fc94dfb3cb03d5ad15fa83b4178ab89b1d8033548f4cdd023784724e04fbfa",
+      "prompt": "Apply the sequence_c code.\nInput: 2 7 1 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 2 0 1 1",
+        " 2 1 1 5",
+        " 4 7 1 3",
+        " 7 1 0 5"
+      ],
+      "gold_idx": 3,
+      "group": "7 1 2 0",
+      "id": "a164c6fdf16501f033e788d5ca574aaf05bea0da12e92bb16bc821633d8a6ee6",
+      "prompt": "Apply the sequence_c code.\nInput: 7 1 2 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 0 7 7 2",
+        " 0 4 3 5",
+        " 6 1 6 3",
+        " 0 6 3 1"
+      ],
+      "gold_idx": 2,
+      "group": "4 1 4 3",
+      "id": "e68e55529dd1625a7a1385f5a7b7590ee161c82a2cc15842cce07eb7e80824cb",
+      "prompt": "Apply the sequence_c code.\nInput: 4 1 4 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 2 1 7 3",
+        " 7 3 5 5",
+        " 5 5 5 2",
+        " 2 0 4 3"
+      ],
+      "gold_idx": 1,
+      "group": "7 3 0 0",
+      "id": "4c42e1db55550d2d2f375a6e2f50a3efda76c30917385d9fe0dc5526a6efb9b0",
+      "prompt": "Apply the sequence_c code.\nInput: 7 3 0 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 3 2 5",
+        " 3 4 1 5",
+        " 1 0 3 2",
+        " 2 0 3 7"
+      ],
+      "gold_idx": 0,
+      "group": "7 3 5 0",
+      "id": "3a97ef3ef9cbada1e3b4579191b58fe2c340f47aeb4f63e20bbae42896f1cba8",
+      "prompt": "Apply the sequence_c code.\nInput: 7 3 5 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 2 5 5 0",
+        " 0 7 3 4",
+        " 3 6 7 3",
+        " 0 2 5 0"
+      ],
+      "gold_idx": 3,
+      "group": "2 5 0 2",
+      "id": "fcd9417ec3e48ca0b803dcb16cf56a5177a322dd893d44a9b14beae3e4af9466",
+      "prompt": "Apply the sequence_c code.\nInput: 2 5 0 2\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 4 6 1",
+        " 0 1 5 2",
+        " 0 3 7 6",
+        " 5 4 6 6"
+      ],
+      "gold_idx": 0,
+      "group": "4 6 4 1",
+      "id": "0ded79bcb69d507c4da7c3b21821aa24b5823cd3fb5a4469845bd4b46dae42ef",
+      "prompt": "Apply the sequence_c code.\nInput: 4 6 4 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 6 2 0",
+        " 6 0 0 1",
+        " 7 1 2 1",
+        " 1 6 5 3"
+      ],
+      "gold_idx": 2,
+      "group": "7 1 5 1",
+      "id": "ba36e39f4755e945918c7bd8f783aed33ce0da7ea161d24b9270eaed44d9a9f2",
+      "prompt": "Apply the sequence_c code.\nInput: 7 1 5 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 2 5 0",
+        " 7 2 5 6",
+        " 1 4 0 3",
+        " 6 7 0 3"
+      ],
+      "gold_idx": 2,
+      "group": "1 6 2 3",
+      "id": "f41d22e574360f907fed5a0ef0a3af6faa17b00591c2c7954cc40e0e2969bd33",
+      "prompt": "Apply the sequence_c code.\nInput: 1 6 2 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 5 1 2 3",
+        " 0 1 4 6",
+        " 1 1 1 5",
+        " 1 5 4 7"
+      ],
+      "gold_idx": 0,
+      "group": "0 1 5 3",
+      "id": "526e4612e4ef882e06099efb07c71bf7305e7e10ea7d02c86be77baba591ea54",
+      "prompt": "Apply the sequence_c code.\nInput: 0 1 5 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 5 4 5 5",
+        " 2 3 4 0",
+        " 7 6 5 3",
+        " 3 7 3 6"
+      ],
+      "gold_idx": 0,
+      "group": "0 6 0 0",
+      "id": "c301d70150f52c784dc8f2603ba7ee44b635f8c4d60ff98c386507acc6a1b3e3",
+      "prompt": "Apply the sequence_c code.\nInput: 0 6 0 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 3 5 6",
+        " 7 7 1 0",
+        " 2 5 6 1",
+        " 3 5 4 2"
+      ],
+      "gold_idx": 0,
+      "group": "6 3 0 4",
+      "id": "b8b62a7d8e913b49fb2dd428551c49de4fb69481b8c92a4eaf4f21424da2290e",
+      "prompt": "Apply the sequence_c code.\nInput: 6 3 0 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 1 4 0",
+        " 7 3 6 0",
+        " 5 2 0 3",
+        " 7 7 0 1"
+      ],
+      "gold_idx": 0,
+      "group": "3 1 6 2",
+      "id": "54ef86596025e3f411e3167c23c463ef255767f0543ea6ec1825947a8d664ee9",
+      "prompt": "Apply the sequence_c code.\nInput: 3 1 6 2\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 5 1 4 2",
+        " 1 0 0 3",
+        " 2 1 2 0",
+        " 0 2 1 6"
+      ],
+      "gold_idx": 1,
+      "group": "1 2 2 3",
+      "id": "c2a6df04e9c4df32f516bb3b55babaccdbe3d380f5da6d9e20289b7df7f31903",
+      "prompt": "Apply the sequence_c code.\nInput: 1 2 2 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 4 6 5",
+        " 5 4 1 6",
+        " 4 3 3 5",
+        " 6 7 5 5"
+      ],
+      "gold_idx": 2,
+      "group": "6 3 3 0",
+      "id": "9ccf25d97f3a3d0400fd3c9ef6020ce9f4af86a40bb1059569644f39814fc909",
+      "prompt": "Apply the sequence_c code.\nInput: 6 3 3 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 6 3 0",
+        " 3 3 7 3",
+        " 7 4 1 4",
+        " 1 7 7 0"
+      ],
+      "gold_idx": 1,
+      "group": "3 3 7 3",
+      "id": "8a916c133cb5a3c3cdb368fb2a57ac05aa25f388c3c39e235e719c3548d888cd",
+      "prompt": "Apply the sequence_c code.\nInput: 3 3 7 3\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 4 1 7",
+        " 6 0 1 3",
+        " 1 3 4 4",
+        " 5 3 3 5"
+      ],
+      "gold_idx": 3,
+      "group": "0 3 3 0",
+      "id": "d7e4ffdd63a5842b5ed407bf4aae1c28cc73dcc09c28b11f560e83ee37790457",
+      "prompt": "Apply the sequence_c code.\nInput: 0 3 3 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 2 4 2",
+        " 0 5 6 4",
+        " 7 3 6 3",
+        " 7 2 6 3"
+      ],
+      "gold_idx": 1,
+      "group": "2 0 4 6",
+      "id": "a01df6bbe28697027964dd642c5b634e64e5fc107ba5e79e0e70107fa2f13f6c",
+      "prompt": "Apply the sequence_c code.\nInput: 2 0 4 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 5 3 1",
+        " 0 6 1 4",
+        " 6 7 6 2",
+        " 0 0 7 0"
+      ],
+      "gold_idx": 0,
+      "group": "7 0 3 1",
+      "id": "3500fc804ef74206abc89450302386ad3c514b10b4f38fc7c69b53f258f1d2a6",
+      "prompt": "Apply the sequence_c code.\nInput: 7 0 3 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 0 4 1",
+        " 1 2 2 3",
+        " 4 4 6 4",
+        " 3 3 0 2"
+      ],
+      "gold_idx": 0,
+      "group": "4 2 6 1",
+      "id": "97374bf0ce4af71e642a4ff95770cb4dcaf4492ba504a02db462ed576f56fb5e",
+      "prompt": "Apply the sequence_c code.\nInput: 4 2 6 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 7 3 0",
+        " 2 0 5 3",
+        " 5 5 5 4",
+        " 1 4 6 2"
+      ],
+      "gold_idx": 3,
+      "group": "1 6 4 5",
+      "id": "916709cae77f7a4d38f775a7b80c13ef4995fbcd112114ab4da86d2aa4aa0cdd",
+      "prompt": "Apply the sequence_c code.\nInput: 1 6 4 5\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 3 4 3",
+        " 2 2 2 7",
+        " 6 7 3 5",
+        " 4 5 4 2"
+      ],
+      "gold_idx": 2,
+      "group": "4 7 3 0",
+      "id": "baba4497884ad73e695703c2ac51a5c76d457e1f529f88d83de82ab4379e435b",
+      "prompt": "Apply the sequence_c code.\nInput: 4 7 3 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 3 0 3 1",
+        " 6 2 5 5",
+        " 1 5 0 4",
+        " 6 4 3 1"
+      ],
+      "gold_idx": 0,
+      "group": "3 2 3 1",
+      "id": "aa91bb84f5016430201ddd5813eed5d201393af0ed06935498edca711e90326c",
+      "prompt": "Apply the sequence_c code.\nInput: 3 2 3 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 1 2 0",
+        " 5 7 6 5",
+        " 0 2 1 6",
+        " 7 3 2 6"
+      ],
+      "gold_idx": 3,
+      "group": "7 3 5 4",
+      "id": "8676f050e02ae05d5a2dbedd9b326e000b22f25e400161c67c45874e410491cd",
+      "prompt": "Apply the sequence_c code.\nInput: 7 3 5 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 6 1 0 3",
+        " 0 1 1 2",
+        " 1 7 4 4",
+        " 1 1 6 6"
+      ],
+      "gold_idx": 3,
+      "group": "1 1 4 4",
+      "id": "5674798d06af2cf3ade702813e0ce5019b7d415fa754711e6966b4a996e7a1b6",
+      "prompt": "Apply the sequence_c code.\nInput: 1 1 4 4\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 1 7 3 6",
+        " 6 1 4 5",
+        " 5 5 1 2",
+        " 6 0 3 7"
+      ],
+      "gold_idx": 1,
+      "group": "4 1 6 0",
+      "id": "f6e4da0f6bfa11ab871d556249bd281e7784e8e1919e3b247b3d4820c9f25afa",
+      "prompt": "Apply the sequence_c code.\nInput: 4 1 6 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 1 6 1 1",
+        " 3 7 5 4",
+        " 7 5 0 7",
+        " 0 6 2 4"
+      ],
+      "gold_idx": 1,
+      "group": "3 7 0 6",
+      "id": "c12af975428ded1a23bdcbeaf00dddae3b764506af30a08fa98db2adceeccad4",
+      "prompt": "Apply the sequence_c code.\nInput: 3 7 0 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 0 4 2 3",
+        " 5 7 1 5",
+        " 1 0 2 4",
+        " 3 4 3 3"
+      ],
+      "gold_idx": 1,
+      "group": "0 7 1 0",
+      "id": "27b845b69ad52cc17de36eee63ad8305ad6f90a9556efa9c135d3361aa0f4aeb",
+      "prompt": "Apply the sequence_c code.\nInput: 0 7 1 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 5 0 5",
+        " 2 3 1 0",
+        " 2 2 0 1",
+        " 6 7 0 0"
+      ],
+      "gold_idx": 2,
+      "group": "5 5 2 1",
+      "id": "5261aa78c0c4e7a40bd30db979786086a69562f0275ff378428fea760ea6c03d",
+      "prompt": "Apply the sequence_c code.\nInput: 5 5 2 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 4 1 3",
+        " 6 7 0 5",
+        " 0 0 6 6",
+        " 1 0 4 4"
+      ],
+      "gold_idx": 1,
+      "group": "4 7 2 0",
+      "id": "7c1aece53604c3df50fc9b2f680ff8b2ecb750b118438641ac92b7b14e787531",
+      "prompt": "Apply the sequence_c code.\nInput: 4 7 2 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 7 5 2 5",
+        " 6 5 0 1",
+        " 7 0 0 0",
+        " 6 4 6 2"
+      ],
+      "gold_idx": 1,
+      "group": "4 0 2 1",
+      "id": "c5eef0980dcb9781622d2f02604827ed610e144a6398a885c48c9aeb9ec628eb",
+      "prompt": "Apply the sequence_c code.\nInput: 4 0 2 1\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 1 5 7 4",
+        " 1 4 4 1",
+        " 1 5 2 3",
+        " 1 1 7 6"
+      ],
+      "gold_idx": 0,
+      "group": "1 0 7 6",
+      "id": "9559d354f3706c9f0330547a2e183a1c94d3e317ec7eaa84e8a15946a51ddf32",
+      "prompt": "Apply the sequence_c code.\nInput: 1 0 7 6\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 0 4 7 2",
+        " 3 0 4 5",
+        " 3 4 2 1",
+        " 6 7 5 1"
+      ],
+      "gold_idx": 1,
+      "group": "3 2 6 0",
+      "id": "e00b2901d4f5bf963629f9be24be551b47bba0646d820ddec7f36a26eab5a6e3",
+      "prompt": "Apply the sequence_c code.\nInput: 3 2 6 0\nOutput:",
+      "task": "sequence_c"
+    },
+    {
+      "choices": [
+        " 4 5 3 6",
+        " 5 7 7 2",
+        " 5 1 1 2",
+        " 1 2 1 0"
+      ],
+      "gold_idx": 2,
+      "group": "0 1 1 5",
+      "id": "19c60ac670026a937fef67b36ac2aff5fc14a9fd189b7feeb11ffa82b6d29b52",
+      "prompt": "Apply the sequence_c code.\nInput: 0 1 1 5\nOutput:",
+      "task": "sequence_c"
+    }
+  ],
+  "rows_sha256": "70ea918ad34f50d98277601ecea27335344904cafc6191d796202e492ac0ded7",
+  "seed": 2026091203
+}

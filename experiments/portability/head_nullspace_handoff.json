@@ -1,0 +1,293 @@
+{
+  "attribution": {
+    "boundary": "Not a reproduction of AlphaEdit, Nested Learning, or LoRAGen. AlphaEdit constrains factual model edits using preserved keys; this constrains a hypernetwork affine head using four fixed task/layer feature sets.",
+    "generated_weight_retention_context": "https://arxiv.org/abs/1906.00695",
+    "nullspace_inspiration": "https://arxiv.org/abs/2410.02355"
+  },
+  "boundaries": [
+    "Actual-source CPU geometry, finite nonzero coordinate conservation, and meaningful tiny-model optimizer tests passed. No source-model ABC acquisition or GPU behavioral retention has been run.",
+    "Only the four selected old task vectors are constrained; no claim about other pretrained task vectors or arbitrary latent mixtures.",
+    "If the matched frozen-alignment control cannot learn ABC within the predefined budget, record acquisition unqualified and skip the constrained arm rather than treating that as a nullspace result."
+  ],
+  "checkpoint_format": "Custom frozen_feature_head_nullspace artifact, restored by head_nullspace.restore_adapter. It is not an ordinary portallib artifact; folding/export/transfer would need a separate conservation and behavior qualification.",
+  "commands": {
+    "bindings": {
+      "HEAD_OUTPUT": "Fresh parent-dispatched training/evaluation run directory.",
+      "HEAD_PREFLIGHT": "Fresh CPU preparation directory.",
+      "PORTABILITY_PYTHON": "/tmp/cl-environments/4a75f5f779a2c224/bin/python",
+      "PORTABILITY_SOURCE": "Parent-staged new portability directory; do not replace existing archived code."
+    },
+    "cpu_prepare": "PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 uv run --no-project --python \"$PORTABILITY_PYTHON\" python \"$PORTABILITY_SOURCE/train_head_nullspace.py\" --config \"$PORTABILITY_SOURCE/configs/head_nullspace/source.json\" --output-dir \"$HEAD_PREFLIGHT\" --prepare-only",
+    "dispatcher_config": "configs/head_nullspace/source.json",
+    "dispatcher_entrypoint": "train_head_nullspace.py",
+    "training_for_parent_only": "PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 uv run --no-project --python \"$PORTABILITY_PYTHON\" python \"$PORTABILITY_SOURCE/train_head_nullspace.py\" --config \"$PORTABILITY_SOURCE/configs/head_nullspace/source.json\" --output-dir \"$HEAD_OUTPUT\""
+  },
+  "cpu_feasibility": {
+    "ABC_projected_features": {
+      "sequence_a": {
+        "rank": 36,
+        "relative_norm": 0.020163005752465397,
+        "singular_min": 0.0004313732891237098
+      },
+      "sequence_b": {
+        "rank": 36,
+        "relative_norm": 0.020163005752465397,
+        "singular_min": 0.0004313732891237098
+      },
+      "sequence_c": {
+        "rank": 36,
+        "relative_norm": 0.020163005752465397,
+        "singular_min": 0.0004313732891237098
+      }
+    },
+    "basis_bytes_per_learner": {
+      "head_nullspace": 1514376,
+      "head_only_control": 2105352
+    },
+    "full_basis_orthogonality_max_abs": 2.6645352591003757e-15,
+    "null_dimension": 369,
+    "null_relative_residual": 2.7050676611623337e-16,
+    "old_design_shape": [
+      144,
+      513
+    ],
+    "old_design_tensor_sha256": "1d6d1d6c2be231ff593a5c2065ea62df1c3005099c4c3caba888c314d14b179b",
+    "old_features_are_fixed_only_while_core_alignment_and_old_vectors_are_frozen": true,
+    "rank": 144,
+    "rank_tolerance": 1.3772442743739274e-12,
+    "singular_max": 12.090753997794481,
+    "singular_min_nonzero": 0.0005789039402730521,
+    "source_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+    "trainable_parameters": {
+      "head_nullspace": 12092160,
+      "head_only_control": 16810752
+    }
+  },
+  "cpu_nonzero_update_audit": {
+    "all_protected_factors_bitwise_equal": true,
+    "bytes": 9166,
+    "coordinate_standard_deviation": 0.1,
+    "effective_matrices": 288,
+    "old_tasks": 4,
+    "optimizer_updates": 0,
+    "path": "head_nullspace_cpu_audit.json",
+    "protected_matrix_relative_frobenius_error": 0.0,
+    "save_reload_exact": true,
+    "seed": 912303,
+    "sha256": "ccea5272c444214e5be5cb085c743918f5b5fbf05d6fba53859fb8296cf800a5",
+    "unconstrained_control_changed": true
+  },
+  "date": "2026-09-12",
+  "decision": "Freeze alignment, hidden core, original affine heads, all original task vectors and layer embeddings. Learn new ABC vectors plus head-update coordinates; compare the full orthonormal feature space with its exact old-feature nullspace.",
+  "exact_modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/head_nullspace.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/train_head_nullspace.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/configs/head_nullspace/source.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/tests/test_head_nullspace.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/head_nullspace_cpu_audit.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability/head_nullspace_handoff.json"
+  ],
+  "existing_ebec_dependencies_frozen_unchanged": {
+    "calibrate_target.py": {
+      "bytes": 35522,
+      "sha256": "abc7c18c13fe996b8299a39742e984616aca069d2d22cf1035f774d193da6a2b"
+    },
+    "data.py": {
+      "bytes": 11777,
+      "sha256": "fe9e083a41caf518f3285ace906a63d2015f5002faa74337c39d8fa8b67992c2"
+    },
+    "final_retention.py": {
+      "bytes": 15063,
+      "sha256": "a0ac70a3b6198b3378e1390f3934d9e848823b365772f3c8ce6cb04565a37a53"
+    },
+    "follow_through.py": {
+      "bytes": 32556,
+      "sha256": "c25b9682ccd890593a2154018678a2548a10d81720244707bb3b6e264945d65d"
+    },
+    "learner.py": {
+      "bytes": 37216,
+      "sha256": "958ea3e4cd054857f53100456195f08ce1c457237977f7fddb655efb79470874"
+    },
+    "preserve_tasks.py": {
+      "bytes": 22524,
+      "sha256": "e9edec5d8e57cc63fa86ee7d86ba8f70b71afbf62d05e1257415e67bdbc8d8a3"
+    },
+    "repair_alignment.py": {
+      "bytes": 30495,
+      "sha256": "42d5a12b1e8c7ae882b4b5be88796de2ec1b957604fa4e97307955d0b4165a5b"
+    }
+  },
+  "new_files_sealed": {
+    "configs/head_nullspace/source.json": {
+      "bytes": 41621,
+      "sha256": "fbce85b352d22591c8667f3e96906cc17123edca42c8a8392d1767eac677c913"
+    },
+    "head_nullspace.py": {
+      "bytes": 12623,
+      "sha256": "8396eb0f9a5a348fa3700a1c5762246b90ea0bbdf8cfbff3763da93f9e1e6392"
+    },
+    "head_nullspace_cpu_audit.json": {
+      "bytes": 9166,
+      "sha256": "ccea5272c444214e5be5cb085c743918f5b5fbf05d6fba53859fb8296cf800a5"
+    },
+    "tests/test_head_nullspace.py": {
+      "bytes": 10802,
+      "sha256": "873b2dc08be016739b262f38baebe21073c1fd0e620bd178d01ad77acf623113"
+    },
+    "train_head_nullspace.py": {
+      "bytes": 19967,
+      "sha256": "2ed8b539c337d5c5500722e70cebd477ca9358d65b853656a00d740f26cd35e7"
+    }
+  },
+  "priority": "independent_retention_mechanism_followup",
+  "protocol": {
+    "arms": [
+      "head_only_control",
+      "head_nullspace"
+    ],
+    "basis": "FP64 full SVD, augmented bias; null columns first in full control. Both arms use the same factorized affine-coordinate evaluation; Adam optimizes U and cannot leave the selected basis.",
+    "batch_per_task": 4,
+    "behavior": "All released old-task labels remain heldout; fresh-PID evaluation at numeric step0/final requires old choice predictions agree and validates acquisition before a joint result.",
+    "checkpoints": [
+      0,
+      16,
+      64,
+      128,
+      256,
+      512
+    ],
+    "conservation": "At step0 and every predefined checkpoint: exact four-task factor audit and exact low-rank Frobenius B@A audit, frozen-parameter/basis hash, and base no-gradient/hash checks. Protected arm stops on conservation failure.",
+    "contract": {
+      "basis_dtype": "float64",
+      "basis_orthogonality_max_abs_limit": 1e-12,
+      "bias_in_constraint": true,
+      "control": "all_SVD_directions_with_null_directions_first",
+      "factor_max_abs_limit": 1e-05,
+      "factor_relative_frobenius_limit": 1e-06,
+      "freeze": [
+        "alignment",
+        "layer_embeddings",
+        "hidden_core",
+        "original_heads",
+        "original_task_vectors"
+      ],
+      "head_and_learner_dtype": "float32",
+      "matrix_relative_frobenius_limit": 2e-06,
+      "method": "frozen_feature_head_nullspace",
+      "minimum_ABC_projected_rank": "number_of_layers",
+      "minimum_ABC_projected_relative_norm": 1e-06,
+      "minimum_null_dimension": "number_of_layers",
+      "null_residual_relative_limit": 1e-12,
+      "old_behavioral_training_examples": 0,
+      "old_tasks": [
+        "boolq",
+        "commonsense_qa",
+        "hellaswag",
+        "winogrande"
+      ],
+      "parameterization": "augmented_affine_head_W_equals_W0_plus_U_at_N_transpose",
+      "projection_dtype": "float64",
+      "protected_arm_prerequisite": "control_final_train_and_validation_qualified",
+      "rank_threshold": "max_shape_times_float64_epsilon_times_largest_singular_value",
+      "svd_device": "cpu",
+      "train": [
+        "affine_head_update_coordinates",
+        "three_ABC_vectors"
+      ]
+    },
+    "eligibility": "Complete control must attain train>=0.90 and validation>=0.85 on all ABC tasks before any constrained-arm training. Insufficient numerical nullspace or ABC projection fails before all training. No continuing constrained interventions after an unqualified acquisition prerequisite.",
+    "exact_constraint": "W = W0 + U @ N.T with old-feature H @ N = 0; keep W0 fixed and evaluate as original affine output plus projected update.",
+    "exposures_per_eligible_arm": 6144,
+    "learning_rate_head_coordinates": 0.0001,
+    "learning_rate_new_ABC_vectors": 0.0002,
+    "optimizer": "AdamW, betas 0.9/0.999, eps1e-8, zero weight decay, foreach false; clipped finite gradients",
+    "precision": "Actual-runtime FP32 hidden features captured before GPU training, SVD in CPU FP64, FP64 basis/projection and FP32 U/head outputs. CPU and GPU feature spaces are audited independently.",
+    "rows_per_ABC_task": 128,
+    "updates_per_eligible_arm": 512
+  },
+  "runtime": {
+    "boundary": "The worker environment path is observed in completed run logs, not assumed to exist on another helper. Use that existing qualified worker environment. This lane did not install or alter the remote runtime.",
+    "cpu_test_key_versions": {
+      "portallib": "0.2.1",
+      "pytest": "9.1.1",
+      "safetensors": "0.8.0",
+      "torch": "2.14.0",
+      "transformers": "5.16.1"
+    },
+    "cpu_test_python": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python",
+    "qualification_evidence": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-final-retention-examples/run.log",
+    "qualified_worker_python_observed": "/tmp/cl-environments/4a75f5f779a2c224/bin/python",
+    "runtime_requirements_file": {
+      "bytes": 155,
+      "path": "requirements.txt",
+      "sha256": "bf772f66dcae41ae30727fb41845ffe708a01e27f30ef0f46b0e944fbdfb822c"
+    },
+    "worker_key_versions": {
+      "portallib": "0.2.1",
+      "safetensors": "0.8.0",
+      "torch": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+      "transformers": "5.16.1"
+    },
+    "worker_packages": {
+      "bytes": 1546,
+      "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-final-retention-examples/packages.txt",
+      "sha256": "11943b5b2a91d10996919c27717c50163fc1fe8c6ee83ae30ce68ed0f6023785"
+    },
+    "worker_python_version": "3.12.3"
+  },
+  "source": {
+    "files": {
+      "config.json": {
+        "bytes": 15930,
+        "sha256": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb"
+      },
+      "model.safetensors": {
+        "bytes": 124484888,
+        "sha256": "0dbbd18eacfb9dd870019f68b78188d5c0ed15beb8cfc400f4a48b79d84fb3db"
+      }
+    },
+    "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial",
+    "tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f"
+  },
+  "status": "cpu_verified_ready_for_parent_staging",
+  "storage_accounting": {
+    "all_saved_feature_space_tensor_bytes": 4210704,
+    "basis_bytes_per_active_learner": {
+      "head_nullspace": 1514376,
+      "head_only_control": 2105352
+    },
+    "basis_copies_per_learner": 1,
+    "dense_teacher_matrices_stored": false,
+    "extra_head_U_parameters": {
+      "head_nullspace": 12091392,
+      "head_only_control": 16809984
+    },
+    "new_ABC_training_vector_parameters": 768,
+    "note": "The original heads remain resident and frozen; added trainable coordinate capacity and basis storage are explicit. References use exact factors and FP64 Gram identities, with dense tiny-control value/gradient validation, not random projections.",
+    "original_frozen_native_parameters": 31120768,
+    "resident_adapter_parameters": {
+      "head_nullspace": 43212160,
+      "head_only_control": 47930752
+    },
+    "teacher_reference_factor_elements": 15335424,
+    "trainable_parameters": {
+      "head_nullspace": 12092160,
+      "head_only_control": 16810752
+    }
+  },
+  "tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 uv run --no-project --python '/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python' python -m pytest -q tests/test_head_nullspace.py",
+    "coverage": [
+      "actual augmented bias/rank/count checks",
+      "factorized versus dense affine values and gradients",
+      "Adam updates with constrained conservation and unconstrained negative control",
+      "dense exact effective-matrix comparison",
+      "insufficient nullspace and new-feature eligibility failures",
+      "new-PID tiny-model training/reload with both acquired-control and failed-control paths",
+      "production contract and frozen dependency pins"
+    ],
+    "cwd": "/Users/sudarshan/Code/attempting-continual-learning/experiments/portability",
+    "last_result": "7 passed in 16.28s",
+    "passed": 7
+  }
+}

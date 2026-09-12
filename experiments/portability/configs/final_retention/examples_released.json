@@ -1,0 +1,17 @@
+{
+  "expected_final_step": 512,
+  "kind": "portal_final_retention",
+  "probe_counts": {
+    "boolq": 32,
+    "commonsense_qa": 32,
+    "hellaswag": 32,
+    "winogrande": 32
+  },
+  "selection": "step_zero_and_maximum_numeric_checkpoint_all_arms",
+  "source_run": {
+    "config_sha256": "915addb76eb291a5fdbe6401447cb7f5acd2f3df515e3b7f221228942b05e01b",
+    "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-portal-examples-released",
+    "source_sha256": "1e543226bb2981f5c7b5bd44b069ce6ce9a622d29b94df11505f4d64eee419ab",
+    "task_id": "followthrough-20260912-portal-examples-released"
+  }
+}
