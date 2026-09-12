@@ -11,7 +11,28 @@
     "source_base_dtype": "Pinned source disk snapshot is originally BF16; load full model FP32 exactly as original student, check original FP32 tensor digest. Original files never written; ordinary export weights FP32.",
     "temporary": "unique .stage-* under artifact root, exclusive .publication.lock; failed temporary remains unpromoted"
   },
-  "at": "2026-09-12T08:32:14.063567+00:00",
+  "at": "2026-09-12T08:41:43.250357+00:00",
+  "change_scope": {
+    "model_numerical_source_fixture_scoring_contract_unchanged": true,
+    "modified_files": [
+      "native303_export.py",
+      "test_native303_export.py",
+      "configs/native303_protocol.json",
+      "configs/native303_export.json",
+      "configs/native303_evaluate.json",
+      "native303_handoff.json"
+    ],
+    "only_changed_protocol_fields": [
+      "code_sha256",
+      "evaluate_task_id",
+      "export_task_id",
+      "worker_torch"
+    ],
+    "unchanged_contract_file": {
+      "bytes": 27668,
+      "sha256": "904e323e26e3a02071c18c64d230138fb3be859a1c853b4453042a14800192aa"
+    }
+  },
   "claim_boundary": "Zero-update FP32 export of the fixed own-prefix onpolicy303 checkpoint384 rank8 q/v adapter into standard full Qwen3 weights. Engineering representation/persistence and numerical parity check, not additional learning, direct base-weight optimization, a new consolidation objective, broad continual learning or SDFT/SDPO reproduction. TEST/unused288 are previously observed fixed source panels; generic probes use original multiple-choice scoring, not native generation. Fixed independently of later 384-to405 token-budget controls.",
   "contract": "onpolicy303_fp32_native_weight_export_20260912",
   "cpu_validation": {
@@ -27,7 +48,9 @@
       "Ordinary module tree rejects resident PEFT wrapper and custom dense module",
       "Independent fixed source UID/fixture/grading arithmetic, full exact collected source/archive/receipt/adapter file pins",
       "Header-aware Git blob hashes and immutable JSON writes",
-      "Every changed native record returned; numerical tolerance bounds exercised"
+      "Every changed native record returned; numerical tolerance bounds exercised",
+      "Exact distinct module/distribution identities are independently recorded and accepted; either incorrect identity is rejected with expected/actual values",
+      "Both wrong-identity controls exercise --prepare-only and assert source reads/model loading never start"
     ],
     "cpu_runtime": {
       "peft": "0.20.0",
@@ -35,13 +58,13 @@
       "torch": "2.14.0",
       "transformers": "5.16.1"
     },
-    "passed": 12,
+    "passed": 17,
     "pytest_command": "PYTHONDONTWRITEBYTECODE=1 uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python -m pytest -q -p no:cacheprovider /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_native303_export.py",
-    "pytest_report": "12 passed in 4.97s",
-    "qualification_boundary": "Tiny random fixture is engineering evidence only. No full Qwen3-8B model loading, merge or fresh-process parity has run in this assignment. NFS source base pins remain a required parent prepare-only check.",
+    "pytest_report": "17 passed in 5.11s",
+    "qualification_boundary": "All12 original CPU checks still pass plus5 runtime identity controls. Full-size retry preparation/merge/reload remain pending parent execution. The previous failed job performed no model loading or optimization; its evidence is retained.",
     "ruff_command": "PYTHONDONTWRITEBYTECODE=1 uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python -m ruff check --no-cache /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/native303_export.py /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/native303_contract.py /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_native303_export.py",
     "ruff_report": "All checks passed!",
-    "tests": 12
+    "tests": 17
   },
   "expected_fixed_panels": {
     "TEST_native": 192,
@@ -67,7 +90,7 @@
       "configs/native303_evaluate.json",
       "native303_handoff.json"
     ],
-    "parent_staging": "Wait for both native303 and disjoint onpolicy303_budget file owners to freeze before one immutable lane archive. Runtime binds exact code archive and both executable file hashes; no precomputed whole-lane archive digest while another owner is writing.",
+    "parent_staging": "Stage an isolated temporary distillation snapshot of frozen tracked deployables plus the six source_pins files and this handoff. Exclude unrelated untracked budget drafts. Use that exact snapshot for staging, preflight and both task dispatches; verify archive closure. Parent owns provider actions and collection.",
     "runtime_input_fixtures": {
       "generic": {
         "bytes": 98318,
@@ -96,40 +119,40 @@
     {
       "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/native303_export.json",
       "config_pin": {
-        "bytes": 218,
-        "sha256": "2a84b7b8f836f3736eb0f4f518769a9ed33c19b5f1dd9b3843e27d76751457d6"
+        "bytes": 226,
+        "sha256": "9c242f0de0bf686c6f2ef8bb77dd74eea71b6254c556721ca684c9ac94149b47"
       },
       "depends_on": [
         "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
         "followthrough-20260912-onpolicy303-onpolicy-kl-evaluate"
       ],
-      "dispatch_command_for_parent_only": "PYTHONDONTWRITEBYTECODE=1 uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation --config /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/native303_export.json --id followthrough-20260912-native303-export --entrypoint native303_export.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on followthrough-20260912-onpolicy303-onpolicy-kl-evaluate --control-pod \"${NATIVE303_CONTROL_POD:?set current control pod}\" --submit",
+      "dispatch_command_for_parent_only": "PYTHONDONTWRITEBYTECODE=1 uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir \"${NATIVE303_SNAPSHOT:?set isolated distillation snapshot}\" --config \"${NATIVE303_SNAPSHOT:?set isolated distillation snapshot}/configs/native303_export.json\" --id followthrough-20260912-native303-export-runtime --entrypoint native303_export.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on followthrough-20260912-onpolicy303-onpolicy-kl-evaluate --control-pod \"${NATIVE303_CONTROL_POD:?set current control pod}\" --submit",
       "entrypoint": "native303_export.py",
       "gpus": 1,
       "max_seconds": 14400,
-      "prepare_only_command_template": "PYTHONDONTWRITEBYTECODE=1 /tools/uv run --no-project --python /opt/venv/bin/python python <staged-code-dir>/native303_export.py --config <staged-code-dir>/configs/native303_export.json --prepare-only",
-      "runtime_command_template": "PYTHONDONTWRITEBYTECODE=1 /tools/uv run --no-project --python /opt/venv/bin/python python <staged-code-dir>/native303_export.py --config /mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-export/config.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-export",
+      "prepare_only_command_template": "PYTHONDONTWRITEBYTECODE=1 /tools/uv run --no-project --python /tmp/cl-environments/0d1c35275b5e0598/bin/python python <staged-code-dir>/native303_export.py --config <staged-code-dir>/configs/native303_export.json --prepare-only",
+      "runtime_command_template": "PYTHONDONTWRITEBYTECODE=1 /tools/uv run --no-project --python /tmp/cl-environments/0d1c35275b5e0598/bin/python python <staged-code-dir>/native303_export.py --config /mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-export-runtime/config.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-export-runtime",
       "stage": "export",
-      "task_id": "followthrough-20260912-native303-export"
+      "task_id": "followthrough-20260912-native303-export-runtime"
     },
     {
       "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/native303_evaluate.json",
       "config_pin": {
-        "bytes": 311,
-        "sha256": "c3e1d7377e2a74d7eac9ba3ced33740ae621bbefef274f654a1ea2f1e61ae8e7"
+        "bytes": 327,
+        "sha256": "881a4822ff9c2895fe73affb15a4274e2359d4f920ecf6d8afd7234b92955572"
       },
       "depends_on": [
         "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
-        "followthrough-20260912-native303-export"
+        "followthrough-20260912-native303-export-runtime"
       ],
-      "dispatch_command_for_parent_only": "PYTHONDONTWRITEBYTECODE=1 uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation --config /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/native303_evaluate.json --id followthrough-20260912-native303-evaluate --entrypoint native303_export.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on followthrough-20260912-native303-export --control-pod \"${NATIVE303_CONTROL_POD:?set current control pod}\" --submit",
+      "dispatch_command_for_parent_only": "PYTHONDONTWRITEBYTECODE=1 uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir \"${NATIVE303_SNAPSHOT:?set isolated distillation snapshot}\" --config \"${NATIVE303_SNAPSHOT:?set isolated distillation snapshot}/configs/native303_evaluate.json\" --id followthrough-20260912-native303-evaluate-runtime --entrypoint native303_export.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on followthrough-20260912-native303-export-runtime --control-pod \"${NATIVE303_CONTROL_POD:?set current control pod}\" --submit",
       "entrypoint": "native303_export.py",
       "gpus": 1,
       "max_seconds": 14400,
-      "prepare_only_command_template": "PYTHONDONTWRITEBYTECODE=1 /tools/uv run --no-project --python /opt/venv/bin/python python <staged-code-dir>/native303_export.py --config <staged-code-dir>/configs/native303_evaluate.json --prepare-only",
-      "runtime_command_template": "PYTHONDONTWRITEBYTECODE=1 /tools/uv run --no-project --python /opt/venv/bin/python python <staged-code-dir>/native303_export.py --config /mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-evaluate/config.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-evaluate",
+      "prepare_only_command_template": "PYTHONDONTWRITEBYTECODE=1 /tools/uv run --no-project --python /tmp/cl-environments/0d1c35275b5e0598/bin/python python <staged-code-dir>/native303_export.py --config <staged-code-dir>/configs/native303_evaluate.json --prepare-only",
+      "runtime_command_template": "PYTHONDONTWRITEBYTECODE=1 /tools/uv run --no-project --python /tmp/cl-environments/0d1c35275b5e0598/bin/python python <staged-code-dir>/native303_export.py --config /mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-evaluate-runtime/config.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-evaluate-runtime",
       "stage": "evaluate",
-      "task_id": "followthrough-20260912-native303-evaluate"
+      "task_id": "followthrough-20260912-native303-evaluate-runtime"
     }
   ],
   "optimizer_updates": 0,
@@ -137,8 +160,95 @@
     "https://huggingface.co/docs/peft/developer_guides/lora",
     "https://huggingface.co/docs/transformers/main_classes/model#transformers.PreTrainedModel.save_pretrained"
   ],
-  "protocol_canonical_sha256": "732e9539d2f178896478afda386d9297ca363b2a1c70daf6f6cb5593102bebc9",
+  "prior_failure": {
+    "attempt_id": "64efa580c0d84e6f8c3457d969b18150",
+    "blocked_child_task_id": "followthrough-20260912-native303-evaluate",
+    "child_pid": 7932,
+    "classification": "Core runtime-validation bug comparing torch.__version__ to importlib.metadata.version(torch) pin; correct wrapper environment and vendor runtime. No model or scientific result.",
+    "exit_code": 1,
+    "failed_at": "2026-09-12T08:38:19.072844+00:00",
+    "failed_task_id": "followthrough-20260912-native303-export",
+    "failure": "NATIVE303_PINNED_WORKER_TORCH: None",
+    "merge_started": false,
+    "model_loading_started": false,
+    "old_runtime_record": {
+      "at": "2026-09-12T08:38:17.771018+00:00",
+      "cuda_visible_devices": null,
+      "executable": "/tmp/cl-environments/0d1c35275b5e0598/bin/python",
+      "hip": "7.2.53211",
+      "hostname": "cl-portfolio-recovery-mfxws-scwl6",
+      "packages": {
+        "peft": "0.20.0",
+        "safetensors": "0.8.0",
+        "transformers": "5.16.1"
+      },
+      "parent_pid": 7926,
+      "pid": 7932,
+      "python": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]",
+      "rocr_visible_devices": "0",
+      "torch": "2.10.0+rocm7.2.4.git3d3aa833"
+    },
+    "optimizer_updates": 0,
+    "preservation": "The original failed source archive/run and blocked child remain immutable earlier outcomes. This uses new task IDs and a new sealed source bundle; it does not rewrite, delete, relabel or supersede those outcomes.",
+    "prior_handoff": {
+      "bytes": 14516,
+      "sha256": "d687c0f5ecddf547effbe463b22979662c3d86cf6a3ebd25b94d1e72c7b46a20"
+    },
+    "run_directory": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-export",
+    "run_files": {
+      "config.json": {
+        "bytes": 218,
+        "sha256": "2a84b7b8f836f3736eb0f4f518769a9ed33c19b5f1dd9b3843e27d76751457d6"
+      },
+      "execution.json": {
+        "bytes": 2062,
+        "sha256": "5f04bfaf11b233dfc7c9590fdf75b36de6bf8bd5fd34a6b6d3ae0ba2d5b166aa"
+      },
+      "failure.json": {
+        "bytes": 208,
+        "sha256": "ef49864bdfe82dce2d50fab101efe9ed7823b4ed7a4101054fd0998fc0562a77"
+      },
+      "run.log": {
+        "bytes": 880,
+        "sha256": "214363062a7b5210dd2469ae71aeed5223ef0a9156ddff24b415c0815b5be1fe"
+      },
+      "runtime.json": {
+        "bytes": 496,
+        "sha256": "1c77b45c295850b03c364b476a3d09417eaa99ce18e87510ccac98a025fbdcd3"
+      },
+      "started.json": {
+        "bytes": 2817,
+        "sha256": "37fa2294379d44e3ad689c6ed9fde0685db1f4b0b0c5d5b97b3b017b71f35655"
+      },
+      "task.json": {
+        "bytes": 761,
+        "sha256": "2caea8b795326ab291ab555cdd9cf617e05573cafb5cda05fdaaf6bffb01616b"
+      }
+    },
+    "source_archive": {
+      "archive": {
+        "bytes": 2344960,
+        "sha256": "30926328bc4dbfd58507a638920591aa44a274132368f54b0233afa793f44401"
+      },
+      "files": 134,
+      "remote": "/mnt/shared/cl-portfolio/code/0498be8531bfd0cd9dea2dab4e74946345963ac4a7bf4f40aba867207f6b8bef.tar",
+      "source_sha256": "0498be8531bfd0cd9dea2dab4e74946345963ac4a7bf4f40aba867207f6b8bef",
+      "tasks": [
+        "followthrough-20260912-native303-export"
+      ]
+    }
+  },
+  "protocol_canonical_sha256": "bb39ddb5dd8585eaee0561f5c6b4742ce8ea6bc45ecb509d7efb12affcb02184",
   "reload_read_boundary": "No teacher/base/adapter artifact is read by reload code. Second job consumes its own sealed code/config, completed export metadata, and closed hash-verified export with all rows/references/tokenizer. Python read audit plus standard local-only loader is checked; explicitly not a hostile-native-code OS sandbox.",
+  "runtime_identity": {
+    "guard": "validate_runtime is shared by --prepare-only and normal execution before model load; exact package, module and distribution string equality. No version normalization, prefix stripping or fallback. Single-GPU residency qualification remains normal-execution-only; prepare-only does not load a model or require a GPU slot.",
+    "hip_observed": "7.2.53211",
+    "qualified_worker_python": "/tmp/cl-environments/0d1c35275b5e0598/bin/python",
+    "worker_torch_exact": {
+      "distribution": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+      "module": "2.10.0+rocm7.2.4.git3d3aa833"
+    }
+  },
   "source_adapter": {
     "files": {
       "adapter_config.json": "45581ddb9ac51de6c50c876e1febb804dc84c2c4e367df123234c6dfe40723c6",
@@ -161,31 +271,31 @@
   "source_method": "ownprefix onpolicy_kl; source held fixed independently of subsequent token-budget controls",
   "source_pins": {
     "configs/native303_evaluate.json": {
-      "bytes": 311,
-      "sha256": "c3e1d7377e2a74d7eac9ba3ced33740ae621bbefef274f654a1ea2f1e61ae8e7"
+      "bytes": 327,
+      "sha256": "881a4822ff9c2895fe73affb15a4274e2359d4f920ecf6d8afd7234b92955572"
     },
     "configs/native303_export.json": {
-      "bytes": 218,
-      "sha256": "2a84b7b8f836f3736eb0f4f518769a9ed33c19b5f1dd9b3843e27d76751457d6"
+      "bytes": 226,
+      "sha256": "9c242f0de0bf686c6f2ef8bb77dd74eea71b6254c556721ca684c9ac94149b47"
     },
     "configs/native303_protocol.json": {
-      "bytes": 10442,
-      "sha256": "b5a4c21bce643a4db2a6149d134087449c118daf181104c3f4aee1784f5dc665"
+      "bytes": 10530,
+      "sha256": "0a9bad8399f46fffc3b5446747d8fed0cf579a442f1f4090a8623873a26446f8"
     },
     "native303_contract.py": {
       "bytes": 27668,
       "sha256": "904e323e26e3a02071c18c64d230138fb3be859a1c853b4453042a14800192aa"
     },
     "native303_export.py": {
-      "bytes": 34930,
-      "sha256": "59435f32c6ddc89f08895cc39e066affcef7d7d90eeaf610f143f0a8268580cf"
+      "bytes": 35596,
+      "sha256": "bdece810457377945744187c75006003618d25c5b7902a4f0a04a714a4c8c1c0"
     },
     "test_native303_export.py": {
-      "bytes": 14382,
-      "sha256": "c261c4e7b6a433e70c76525a35393fdd7dfc4112bea684cfc3b70fde64839824"
+      "bytes": 17001,
+      "sha256": "048def48648dc05a61c0aaa9f5aae9e99d38e046b69fcb75fd8580292bc7c84e"
     }
   },
-  "status": "cpu_verified_ready_for_parent_staging_full_size_execution_pending",
+  "status": "runtime_identity_fix_cpu_verified_frozen_parent_retry_staging_pending",
   "tolerances": {
     "merged_scores": {
       "atol": 0.0001,

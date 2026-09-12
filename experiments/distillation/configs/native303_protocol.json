@@ -13,11 +13,11 @@
   "claim_boundary": "Zero-update FP32 export of the fixed own-prefix onpolicy303 checkpoint384 rank8 q/v adapter into standard full Qwen3 weights. Engineering representation/persistence and numerical parity check, not additional learning, direct base-weight optimization, a new consolidation objective, broad continual learning or SDFT/SDPO reproduction. TEST/unused288 are previously observed fixed source panels; generic probes use original multiple-choice scoring, not native generation. Fixed independently of later 384-to405 token-budget controls.",
   "code_sha256": {
     "native303_contract.py": "904e323e26e3a02071c18c64d230138fb3be859a1c853b4453042a14800192aa",
-    "native303_export.py": "59435f32c6ddc89f08895cc39e066affcef7d7d90eeaf610f143f0a8268580cf"
+    "native303_export.py": "bdece810457377945744187c75006003618d25c5b7902a4f0a04a714a4c8c1c0"
   },
   "contract": "onpolicy303_fp32_native_weight_export_20260912",
-  "evaluate_task_id": "followthrough-20260912-native303-evaluate",
-  "export_task_id": "followthrough-20260912-native303-export",
+  "evaluate_task_id": "followthrough-20260912-native303-evaluate-runtime",
+  "export_task_id": "followthrough-20260912-native303-export-runtime",
   "fixtures": {
     "generic": {
       "bytes": 98318,
@@ -274,5 +274,8 @@
       "rtol": 1e-06
     }
   },
-  "worker_torch": "2.10.0+rocm7.2.4.lw.git3d3aa833"
+  "worker_torch": {
+    "distribution": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+    "module": "2.10.0+rocm7.2.4.git3d3aa833"
+  }
 }

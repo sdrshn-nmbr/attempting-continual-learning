@@ -400,3 +400,70 @@ def test_header_aware_git_blob_and_immutable_json(tmp_path):
     contract.write_json(tmp_path / "once.json", {"a": 1})
     with pytest.raises(FileExistsError):
         contract.write_json(tmp_path / "once.json", {"a": 2})
+
+
+def test_runtime_records_module_and_distribution_independently():
+    design = contract.read_json(contract.ROOT / "configs/native303_protocol.json")
+    versions = {**design["packages"], "torch": design["worker_torch"]["distribution"]}
+    with (
+        patch.object(torch, "__version__", design["worker_torch"]["module"]),
+        patch.object(
+            lane.importlib.metadata, "version", side_effect=versions.__getitem__
+        ),
+    ):
+        observed = lane.runtime()
+    assert observed["torch"]["module"] != observed["torch"]["distribution"]
+    assert observed["torch"] == design["worker_torch"]
+    lane.validate_runtime(observed, design)
+
+
+@pytest.mark.parametrize("namespace", ["module", "distribution"])
+def test_runtime_rejects_either_wrong_exact_version(namespace):
+    design = contract.read_json(contract.ROOT / "configs/native303_protocol.json")
+    observed = {
+        "torch": copy.deepcopy(design["worker_torch"]),
+        "packages": design["packages"],
+    }
+    other = "distribution" if namespace == "module" else "module"
+    observed["torch"][namespace] = observed["torch"][other]
+    with pytest.raises(
+        ValueError, match=f"PINNED_WORKER_TORCH_{namespace.upper()}"
+    ) as failure:
+        lane.validate_runtime(observed, design)
+    assert design["worker_torch"][namespace] in str(failure.value)
+    assert observed["torch"][namespace] in str(failure.value)
+
+
+@pytest.mark.parametrize("namespace", ["module", "distribution"])
+def test_prepare_rejects_wrong_runtime_before_source_reads_and_model_load(namespace):
+    design = contract.read_json(contract.ROOT / "configs/native303_protocol.json")
+    observed = {
+        "torch": copy.deepcopy(design["worker_torch"]),
+        "packages": design["packages"],
+    }
+    observed["torch"][namespace] += ".unexpected"
+    with (
+        patch.object(
+            sys,
+            "argv",
+            [
+                "native303_export.py",
+                "--config",
+                str(contract.ROOT / "configs/native303_export.json"),
+                "--prepare-only",
+            ],
+        ),
+        patch.object(lane, "runtime", return_value=observed),
+        patch.object(
+            lane,
+            "source_inputs",
+            side_effect=AssertionError("source reads must not start"),
+        ) as sources,
+        patch.object(
+            lane, "load_standard", side_effect=AssertionError("model must not load")
+        ) as loader,
+        pytest.raises(ValueError, match=f"PINNED_WORKER_TORCH_{namespace.upper()}"),
+    ):
+        lane.main()
+    sources.assert_not_called()
+    loader.assert_not_called()

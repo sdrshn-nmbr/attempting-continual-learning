@@ -531,7 +531,10 @@ def runtime():
         "hostname": socket.gethostname(),
         "python": sys.version,
         "executable": sys.executable,
-        "torch": torch.__version__,
+        "torch": {
+            "module": torch.__version__,
+            "distribution": importlib.metadata.version("torch"),
+        },
         "hip": torch.version.hip,
         "packages": {
             name: importlib.metadata.version(name)
@@ -540,6 +543,23 @@ def runtime():
         "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES"),
         "rocr_visible_devices": os.environ.get("ROCR_VISIBLE_DEVICES"),
     }
+
+
+def validate_runtime(observed, design):
+    require(
+        observed["packages"] == design["packages"],
+        "PINNED_PACKAGES",
+        {"expected": design["packages"], "actual": observed["packages"]},
+    )
+    for namespace in ("module", "distribution"):
+        require(
+            observed["torch"][namespace] == design["worker_torch"][namespace],
+            f"PINNED_WORKER_TORCH_{namespace.upper()}",
+            {
+                "expected": design["worker_torch"][namespace],
+                "actual": observed["torch"][namespace],
+            },
+        )
 
 
 def current_execution(output, dispatch):
@@ -901,6 +921,8 @@ def main():
         "STAGE_TASK_ID",
     )
     if args.prepare_only:
+        observed = runtime()
+        validate_runtime(observed, design)
         if dispatch["stage"] == "export":
             inputs = source_inputs(design)
             proof = {
@@ -923,6 +945,7 @@ def main():
                     "status": "prepared_without_model_load_or_writes",
                     "optimizer_updates": 0,
                     "protocol_sha256": digest(design),
+                    "runtime": observed,
                     "proof": proof,
                 },
                 allow_nan=False,
@@ -957,14 +980,13 @@ def main():
     try:
         observed = runtime()
         write_json(output / "runtime.json", observed)
+        validate_runtime(observed, design)
         require(
             torch.cuda.is_available()
             and torch.cuda.device_count() == 1
             and torch.version.hip is not None,
             "ONE_ROCM_GPU_REQUIRED",
         )
-        require(observed["packages"] == design["packages"], "PINNED_PACKAGES")
-        require(observed["torch"] == design["worker_torch"], "PINNED_WORKER_TORCH")
         torch.set_grad_enabled(False)
         torch.set_float32_matmul_precision("highest")
         if dispatch["stage"] == "export":
