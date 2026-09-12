@@ -1,0 +1,357 @@
+{
+  "status": "rendered_from_independently_audited_analysis",
+  "source_bindings": {
+    "analysis": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-history-analyze/study/analysis.json",
+    "analysis_sha256": "0f3477af996ab9e86f4b91ef903074917127069c3d5be3e20c9a93a9248fa86e",
+    "collection_sha256": "645dc34215255c954de04ea36c8436a53d10462382ef66e2231cc067dfef3a1a",
+    "collected_files_checked": 12,
+    "study_receipt_file_sha256": "c283c7c838d2b4cfb73127c496c079b08e263acea5de75567ea6bf4fbd097cb8",
+    "execution_file_sha256": "8f84b65651983f226467a06a6bd55ded7b90f6561ca1a81c857e76de525794ae",
+    "experiment_code_closure_sha256_from_execution": "d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658",
+    "analysis_attempt_id": "71be99d8b83b4a4aadae8c2b879f79ac",
+    "protocol_file": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/history-control-protocol.json",
+    "protocol_file_sha256": "818e6c527a7edbf146bdf8d6aef44f91a0feff530283436d828cbabf4036bfb9",
+    "protocol_digest": "9d3bd0a4e59a77a7d1c11ed4527940a8eeef68486400df73e61aceebc6c90852",
+    "analysis_finished_at": "2026-09-12T07:57:34.379970+00:00",
+    "independent_audit_file": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/audit_history_controls.json",
+    "independent_audit_sha256": "d4c70e2dc03634d1f595eda951ab889fbf051bc07b4bf02541e27393bdf5fe1f",
+    "independent_auditor_file_sha256": "758ef65d2dee298064e1f23858d8190199c5ddaa856b037bd6da5be0586c0e20",
+    "independent_audit_status": "complete_verified",
+    "independent_audit_finished_at": "2026-09-12T08:25:12.113252+00:00",
+    "independent_audit_self_tests": {
+      "errors": 0,
+      "failures": 0,
+      "passed": true,
+      "tests_run": 9
+    },
+    "independent_audit_native_records": 86208,
+    "independent_audit_record_count_scope": "All scored panel entries, including repeated guard panels; not unique utterances or independent samples."
+  },
+  "script_sha256": "31faf21b3e42a9460c19448f7485d11101ac04f09fba03c5c08eef7f8924c705",
+  "matplotlib_version": "3.11.2",
+  "backend": "Agg",
+  "budgets": [
+    2,
+    4,
+    8,
+    16
+  ],
+  "histories": {
+    "original_history": {
+      "label": "Original history\n128 original + 128 new updates",
+      "color": "#246883",
+      "marker": "o",
+      "linestyle": "-"
+    },
+    "new_only": {
+      "label": "New-only\n128 new updates; lifetime unmatched",
+      "color": "#B7642E",
+      "marker": "s",
+      "linestyle": [
+        0,
+        [
+          5,
+          2
+        ]
+      ]
+    },
+    "alternate_binding": {
+      "label": "Alternate binding\n128 rotated + 128 new; lifetime matched",
+      "color": "#7857A1",
+      "marker": "^",
+      "linestyle": [
+        0,
+        [
+          2,
+          2
+        ]
+      ]
+    }
+  },
+  "plotted": {
+    "fresh-test-a": {
+      "paired_intents": 7,
+      "source_models": 1,
+      "histories": {
+        "original_history": {
+          "intent_ids": [
+            "fresh-test-a/calculator",
+            "fresh-test-a/cancel",
+            "fresh-test-a/credit_limit_change",
+            "fresh-test-a/directions",
+            "fresh-test-a/pto_balance",
+            "fresh-test-a/timezone",
+            "fresh-test-a/what_song"
+          ],
+          "budgets": {
+            "2": {
+              "original_code_accuracy": 1.0,
+              "new_skill_guard_accuracy": 0.8910714285714285,
+              "joint_qualified": 3,
+              "paired_intents": 7
+            },
+            "4": {
+              "original_code_accuracy": 1.0,
+              "new_skill_guard_accuracy": 0.9133928571428571,
+              "joint_qualified": 4,
+              "paired_intents": 7
+            },
+            "8": {
+              "original_code_accuracy": 0.9857142857142858,
+              "new_skill_guard_accuracy": 0.9946428571428572,
+              "joint_qualified": 7,
+              "paired_intents": 7
+            },
+            "16": {
+              "original_code_accuracy": 0.9714285714285714,
+              "new_skill_guard_accuracy": 0.9982142857142857,
+              "joint_qualified": 7,
+              "paired_intents": 7
+            }
+          }
+        },
+        "new_only": {
+          "intent_ids": [
+            "fresh-test-a/calculator",
+            "fresh-test-a/cancel",
+            "fresh-test-a/credit_limit_change",
+            "fresh-test-a/directions",
+            "fresh-test-a/pto_balance",
+            "fresh-test-a/timezone",
+            "fresh-test-a/what_song"
+          ],
+          "budgets": {
+            "2": {
+              "original_code_accuracy": 0.7642857142857142,
+              "new_skill_guard_accuracy": 0.9874999999999999,
+              "joint_qualified": 4,
+              "paired_intents": 7
+            },
+            "4": {
+              "original_code_accuracy": 1.0,
+              "new_skill_guard_accuracy": 0.9339285714285713,
+              "joint_qualified": 6,
+              "paired_intents": 7
+            },
+            "8": {
+              "original_code_accuracy": 0.9857142857142858,
+              "new_skill_guard_accuracy": 0.9910714285714286,
+              "joint_qualified": 7,
+              "paired_intents": 7
+            },
+            "16": {
+              "original_code_accuracy": 0.9642857142857143,
+              "new_skill_guard_accuracy": 0.9928571428571429,
+              "joint_qualified": 7,
+              "paired_intents": 7
+            }
+          }
+        },
+        "alternate_binding": {
+          "intent_ids": [
+            "fresh-test-a/calculator",
+            "fresh-test-a/cancel",
+            "fresh-test-a/credit_limit_change",
+            "fresh-test-a/directions",
+            "fresh-test-a/pto_balance",
+            "fresh-test-a/timezone",
+            "fresh-test-a/what_song"
+          ],
+          "budgets": {
+            "2": {
+              "original_code_accuracy": 0.8571428571428571,
+              "new_skill_guard_accuracy": 0.9973214285714286,
+              "joint_qualified": 6,
+              "paired_intents": 7
+            },
+            "4": {
+              "original_code_accuracy": 1.0,
+              "new_skill_guard_accuracy": 0.99375,
+              "joint_qualified": 7,
+              "paired_intents": 7
+            },
+            "8": {
+              "original_code_accuracy": 1.0,
+              "new_skill_guard_accuracy": 0.9919642857142856,
+              "joint_qualified": 7,
+              "paired_intents": 7
+            },
+            "16": {
+              "original_code_accuracy": 1.0,
+              "new_skill_guard_accuracy": 0.9991071428571429,
+              "joint_qualified": 7,
+              "paired_intents": 7
+            }
+          }
+        }
+      }
+    },
+    "fresh-test-b": {
+      "paired_intents": 6,
+      "source_models": 1,
+      "histories": {
+        "original_history": {
+          "intent_ids": [
+            "fresh-test-b/bill_due",
+            "fresh-test-b/gas",
+            "fresh-test-b/international_visa",
+            "fresh-test-b/measurement_conversion",
+            "fresh-test-b/plug_type",
+            "fresh-test-b/tire_change"
+          ],
+          "budgets": {
+            "2": {
+              "original_code_accuracy": 0.975,
+              "new_skill_guard_accuracy": 1.0,
+              "joint_qualified": 6,
+              "paired_intents": 6
+            },
+            "4": {
+              "original_code_accuracy": 1.0,
+              "new_skill_guard_accuracy": 0.9979166666666667,
+              "joint_qualified": 6,
+              "paired_intents": 6
+            },
+            "8": {
+              "original_code_accuracy": 1.0,
+              "new_skill_guard_accuracy": 0.9979166666666667,
+              "joint_qualified": 6,
+              "paired_intents": 6
+            },
+            "16": {
+              "original_code_accuracy": 1.0,
+              "new_skill_guard_accuracy": 0.9968750000000001,
+              "joint_qualified": 6,
+              "paired_intents": 6
+            }
+          }
+        },
+        "new_only": {
+          "intent_ids": [
+            "fresh-test-b/bill_due",
+            "fresh-test-b/gas",
+            "fresh-test-b/international_visa",
+            "fresh-test-b/measurement_conversion",
+            "fresh-test-b/plug_type",
+            "fresh-test-b/tire_change"
+          ],
+          "budgets": {
+            "2": {
+              "original_code_accuracy": 0.9583333333333334,
+              "new_skill_guard_accuracy": 0.9125,
+              "joint_qualified": 3,
+              "paired_intents": 6
+            },
+            "4": {
+              "original_code_accuracy": 1.0,
+              "new_skill_guard_accuracy": 0.8677083333333333,
+              "joint_qualified": 3,
+              "paired_intents": 6
+            },
+            "8": {
+              "original_code_accuracy": 0.9916666666666667,
+              "new_skill_guard_accuracy": 0.9916666666666667,
+              "joint_qualified": 6,
+              "paired_intents": 6
+            },
+            "16": {
+              "original_code_accuracy": 1.0,
+              "new_skill_guard_accuracy": 0.9927083333333333,
+              "joint_qualified": 6,
+              "paired_intents": 6
+            }
+          }
+        },
+        "alternate_binding": {
+          "intent_ids": [
+            "fresh-test-b/bill_due",
+            "fresh-test-b/gas",
+            "fresh-test-b/international_visa",
+            "fresh-test-b/measurement_conversion",
+            "fresh-test-b/plug_type",
+            "fresh-test-b/tire_change"
+          ],
+          "budgets": {
+            "2": {
+              "original_code_accuracy": 0.6083333333333333,
+              "new_skill_guard_accuracy": 0.9833333333333334,
+              "joint_qualified": 2,
+              "paired_intents": 6
+            },
+            "4": {
+              "original_code_accuracy": 1.0,
+              "new_skill_guard_accuracy": 0.9093749999999999,
+              "joint_qualified": 4,
+              "paired_intents": 6
+            },
+            "8": {
+              "original_code_accuracy": 1.0,
+              "new_skill_guard_accuracy": 0.978125,
+              "joint_qualified": 6,
+              "paired_intents": 6
+            },
+            "16": {
+              "original_code_accuracy": 1.0,
+              "new_skill_guard_accuracy": 0.990625,
+              "joint_qualified": 6,
+              "paired_intents": 6
+            }
+          }
+        }
+      }
+    }
+  },
+  "qualification": {
+    "accuracy_min": 0.8,
+    "gain_min": 0.3,
+    "guard_drop_max": 0.1
+  },
+  "source_clusters": 2,
+  "paired_intents": 13,
+  "scoring": "Consistent 16-code classification, not full-vocabulary generated-answer capability.",
+  "aggregation": "Mean per-intent accuracy within each source model; qualification uses integer per-intent pass counts with source denominators 7 and 6.",
+  "uncertainty": "No significance tests, confidence intervals, or assumption of 13 independent source models.",
+  "axis_ranges_percent": {
+    "original_code_accuracy": [
+      50,
+      105
+    ],
+    "new_skill_guard_accuracy": [
+      80,
+      104
+    ],
+    "joint_qualification": [
+      0,
+      115
+    ]
+  },
+  "positioning": "Budgets are categorical. Line markers have small visual-only horizontal offsets (-0.065,0,0.065) so equal values remain visible; budgets are identical across histories.",
+  "lifetime_adapter_updates_before_repair": {
+    "original_history": 256,
+    "new_only": 128,
+    "alternate_binding": 256
+  },
+  "interpretation": "Original history has the highest original-code mean accuracy at budget2 in each source. Joint qualification is lower than either control in TEST-a and higher in TEST-b. All histories qualify all paired intents at budget8. A pooled old-accuracy advantage does not guarantee a source-wise joint benefit.",
+  "raw_independent_final_audit_complete": true,
+  "verification_boundary": "Plot checks collection hashes, completed analysis receipt, protocol binding, paired IDs, means and qualification against the hash-bound completed independent audit. The separate audit checks 16-code raw logits, targets, input UIDs and threshold arithmetic, including repeated panels; this figure task does not repeat model inference or rerun that audit.",
+  "scientific_inputs_modified": [],
+  "gpu_or_provider_actions": [],
+  "text_canvas_bounds_checked": true,
+  "outputs": {
+    "png": {
+      "path": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/history-controls.png",
+      "sha256": "c1eb9839c0cd2f6da77a95587d410bce07e6153e28200144a663a5e552cef691",
+      "bytes": 352129
+    },
+    "pdf": {
+      "path": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/history-controls.pdf",
+      "sha256": "c1e7bf40cabfff17023452ec6bac553dc11e75770cc1bf9c0aa20e468b51ea09",
+      "bytes": 44705
+    },
+    "svg": {
+      "path": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/history-controls.svg",
+      "sha256": "576c767f76323a74d0c1a13d0a0402a7d20caea98f5013e1c06653f362474a7a",
+      "bytes": 57484
+    }
+  }
+}
