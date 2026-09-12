@@ -1,0 +1,1886 @@
+{
+  "payload": {
+    "authorization": "User explicitly requests one TRAIN-only impossible-gain exclusion and fixed-recipe posthoc refit against unchanged 13 TEST units.",
+    "baselines": [
+      "always/2",
+      "always/8",
+      "always/16",
+      "constant_train"
+    ],
+    "evaluation": "All fixed models and all 40 nulls. Joint qualification, updates, old accuracy, new guard, utility, class Brier and accuracy, per-budget recovery Brier and utility MSE/MAE. Per-source, pooled and equal-source; no policy selection, significance tests, intent bootstrap, or permutation redraws.",
+    "excluded_training_units": [
+      "fresh-train-a/calories"
+    ],
+    "fits_so_far": 0,
+    "fixed_recipe": {
+      "budgets": [
+        2,
+        4,
+        8,
+        16
+      ],
+      "class_rule": "Minimum budget is the smallest tested budget passing unchanged accuracy/gain/guard gates; never if none. Do not assume monotonic recovery. Normalize clipped one-hot ridge scores for multiclass Brier; these are forecasts to test, not assumed calibrated probabilities.",
+      "features": [
+        "confidence",
+        "output",
+        "frozen",
+        "tuned"
+      ],
+      "label_permutations": {
+        "rule": "Seal indices using all eligible fresh TRAIN units at the fresh cohort gate before repair. Fit 40 tuned-feature nulls using TRAIN-label permutations only, shared across all outcome targets. Report actual changed labels and active/inert draw counts by scheme for the minimum class, every one-hot class, per-budget binary recovery and utility. Retain inert scalar draws; no redraw.",
+        "schemes": [
+          "within_source",
+          "pooled_train"
+        ],
+        "seeds": [
+          2026091301,
+          2026091302,
+          2026091303,
+          2026091304,
+          2026091305,
+          2026091306,
+          2026091307,
+          2026091308,
+          2026091309,
+          2026091310,
+          2026091311,
+          2026091312,
+          2026091313,
+          2026091314,
+          2026091315,
+          2026091316,
+          2026091317,
+          2026091318,
+          2026091319,
+          2026091320
+        ]
+      },
+      "policy_rule": "Choose the most probable minimum class, breaking ties toward the smaller numeric budget; never maps to no action. Save choices before TEST repair. The main policy report pairs qualification fraction, updates and utility for each source, pooled and equal-source. Compare every policy with always-2, always-16 and TRAIN-majority (constant_train); retain fixed 4/8/no-action too. Any descriptive savings claim requires positive baseline qualification and no qualification loss on each heldout source. Class accuracy alone is not a policy win. Exhaustive paired-grid evaluation estimates policy behavior, not actual savings in study total updates.",
+      "predictor": "Per-scalar ridge with fixed alpha 10 and TRAIN-only centering/scaling, equal intent weights. Fit 5 one-hot minimum classes (2/4/8/16/never), and per-budget recovery and continuous utility. No hyperparameter or feature selection from TEST.",
+      "recovered": {
+        "accuracy_min": 0.8,
+        "gain_min": 0.3,
+        "guard_drop_max": 0.1
+      },
+      "ridge_alpha": 10.0,
+      "train_gate": {
+        "minimum_budget_classes": 2,
+        "minimum_skills_per_class": 2,
+        "minimum_train_skills": 12
+      }
+    },
+    "hyperparameter_searches_authorized": 0,
+    "input_hashes": {
+      "experiments/recoverability/budget-prediction-interface.json": "3621e14ba2da7050a6fc61ec28dd0128370c60aa242b35785cd0892a04c12061",
+      "experiments/recoverability/budget-prediction-learning.json": "e925ad6ab84803964e26e815aa0ebc0dad7d16f8d3b4a0008e1e5e7a2fb2693e",
+      "experiments/recoverability/budget-prediction-learning.sha256": "a83b6cb47244c363418886eb1cc3a7718e47f9fc8ca162b1a83768e6811e7621",
+      "experiments/recoverability/budget-prediction-protocol.json": "a1c8926fa7eed2d82e2dacd3234474ede09b6c9f5273a72c9968bd80e3098708",
+      "experiments/recoverability/budget-prediction-protocol.sha256": "67bcad88a0d083561bdf4bbf23728b0c87693a8fb9eee7f67c40386e7d9f8bc1",
+      "experiments/recoverability/budget_prediction.py": "13c4abefae778e3ac7324add0257d1055406c961d15d155b88eebeb6517cc35a",
+      "experiments/recoverability/budget_prediction_analysis.py": "7392384bc65571636b62ec3b28ffdcc85bcd9d9210f648027c3270dc688b98fa",
+      "experiments/recoverability/budget_prediction_model.py": "d9d736dea7ff678edd6815c878b0d69fad671b09d4cb61920a333295e60f6d72",
+      "experiments/recoverability/configs/budget-prediction-analyze.json": "405a3cb8607f80a0be1083ded6671cd4b6511e3b7c1034e6972255445bcaa965",
+      "experiments/recoverability/configs/budget-prediction-authorize.json": "4e8c57c791d2a4e1bb4c3e78976d32146a516c40d16d548711ab4f52f79d0069",
+      "experiments/recoverability/configs/budget-prediction-cohort.json": "290ab8dac58a3d77ee8ddbabb23c812cfe0f50fc3aa8e2d685589b4eed89e133",
+      "experiments/recoverability/configs/budget-prediction-fit.json": "fe154513b7095643b5ca97c2bd99881beab14f6147f03a8db2f7e27ab168a5f7",
+      "experiments/recoverability/configs/budget-prediction-forecast.json": "3accd2579e6d0fe124c3a6a3134565e8d9ad3dcae63dbbafa537c2bab8daf713",
+      "experiments/recoverability/configs/budget-prediction-learn-test-a.json": "f4c88246249ee5e0d2f17057b277c75f97de4f92b987d43725ab23fda90088a2",
+      "experiments/recoverability/configs/budget-prediction-learn-test-b.json": "71c8c0bfe7a64d078e9b1550d3b43118af0893db264d67d36aac0cbabfabd65f",
+      "experiments/recoverability/configs/budget-prediction-learn-train-a.json": "85cee83b82cb8618532b92a2c64649c5ef7a936caeff228f713bad1718097604",
+      "experiments/recoverability/configs/budget-prediction-learn-train-b.json": "aac98e6b8579f7c9422f243ac210a81f7266f687435f4039e51df03056eb90fd",
+      "experiments/recoverability/configs/budget-prediction-readout-gate-test.json": "b192414016c28cdaf9ecf3bf2706d16933028cc456a7e974d6a26db2106d6104",
+      "experiments/recoverability/configs/budget-prediction-readout-gate-train.json": "001743b6f569ef30d3b1d48b18a5685f10f6d9acd02c098d9d5a4303e6b5c643",
+      "experiments/recoverability/configs/budget-prediction-readout-test-a.json": "f77b04c2916e45f8d49f112cec91dedca23d3969afd33e3fffe202a386451e40",
+      "experiments/recoverability/configs/budget-prediction-readout-test-b.json": "24297897509e0e54aafa1d8deebcc2782d30ed901be8fa2a16fb8d3b46c45a7f",
+      "experiments/recoverability/configs/budget-prediction-readout-train-a.json": "0c656cc9412522b65b43508a6a3cc1f661f6dff42bd252cfc43e051aa6860233",
+      "experiments/recoverability/configs/budget-prediction-readout-train-b.json": "2cd366498cca0563e94e88483b14317064f93caf7eae48df4d6816a613d06b3f",
+      "experiments/recoverability/configs/budget-prediction-repair-test-a.json": "d9d1ad6541da88b418788593cf2a7516ed431ba99a849b56926346ca728f8b02",
+      "experiments/recoverability/configs/budget-prediction-repair-test-b.json": "2e55fdbf32e99c36cc5ff7054c2514a5d08bee06f9d8bf896d4d03315c93d5b8",
+      "experiments/recoverability/configs/budget-prediction-repair-train-a.json": "3cb711fd10fc30216d9feb13c3f372843e9b230628b2269ef7187d24c1349a4e",
+      "experiments/recoverability/configs/budget-prediction-repair-train-b.json": "69e32094b63c205b3b8e82e2c278abeb752de5c511df0a3cd42437c628ea5d34",
+      "experiments/recoverability/configs/budget-prediction.json": "0e1cbcc6fa66a4674c060c631eb911bc0c1703b5a16c4870cce49e3612da90ed",
+      "experiments/recoverability/configs/minimum-budget-gate.json": "ba648d6410c6dfd25e592e32a36bd175628de5f3039aeec61a921049a9097dd9",
+      "experiments/recoverability/configs/minimum-budget-train-a.json": "e1a5f0f35cff505af7667e6a167f403207b093326c294140feb05ae7e54919cc",
+      "experiments/recoverability/configs/minimum-budget-train-b.json": "07d52ad7b57c184eb6a1fa67546985a2cc66ddb2fcbf777ebab9e4993d56dd90",
+      "experiments/recoverability/configs/prospective.json": "8a3b4c2b6b7d99644d3054e934936587ec33fe8d8d3f1c1629b6924d2c74e4e3",
+      "experiments/recoverability/inputs/budget-prediction-cohort.json": "14781a4cd46816767903e43a0a1cd74b5d7d80b096ad7c0eeb92b69fd29ebc93",
+      "experiments/recoverability/inputs/prospective-cohort.json": "b5b89a67140db92e8f9d281510dcfc873c5e32c46470ef3acb0b4dd3ae861bb8",
+      "experiments/recoverability/minimum-budget-protocol.json": "7b7e01962d72080a4ba5f183713c5dc91746452a08125f221a037afa6ec0116e",
+      "experiments/recoverability/minimum-budget-protocol.sha256": "f20f081f6c18d058f52e4edb81d33868ecfe6a7f2a918ec7d491ce1b4ce6204b",
+      "experiments/recoverability/minimum_budget.py": "ef7230f741e312dfc2d0d5d42678be2af76012989b9ff91d53043843fb346392",
+      "experiments/recoverability/model.py": "5af6edb1a42d6042a3a38b9d0ab4ce01ea6cadac6728d9e0fea84acd695442b2",
+      "experiments/recoverability/prepare_budget_prediction.py": "6bc43f784cc08117ec0fc89d95911185f63f46b805d2afe1dbfcdf3ee6182456",
+      "experiments/recoverability/prospective-protocol.json": "51f2f2771b59e7f4f93090bf8463758032e2c88a41764212849fe4499f0d4719",
+      "experiments/recoverability/prospective-protocol.sha256": "1229d93879693ea94bf5e6d4eb307abfa5438af26ce9e51cbe2a533bb2ccf43a",
+      "experiments/recoverability/prospective.py": "3f2ce28d0c350b26b1e0d8d97a9fc9084e9f75837f20945e82e8c80584f817dc",
+      "experiments/recoverability/prospective_analysis.py": "2eeb9b61a14a58df2cf8f20b5148d73afda3364b4b93424ef408faad6e6ebad6",
+      "experiments/recoverability/prospective_data.py": "8d39002c90359c7c62e65d121ba907d5b6639faa105aad237fc476168dc04048",
+      "experiments/recoverability/prospective_model.py": "46c4c6901e61479759bf38ae2af01a36a1c5282db34639900428aad016447399",
+      "experiments/recoverability/protocol.py": "a1e54302b007827b9c2982d8c366b68b89f573ddeb4b1c8f2ac50bf440d23776",
+      "experiments/recoverability/requirements.txt": "847ae989f281a78cb0fb40f574e23f3baefc20f7bc3ecebf8ebb65857c6c689c",
+      "experiments/recoverability/tuned_lens.py": "c640f82a9e4510287678774625dd6ecebe74063461659b5d763adaf5ddceecc8",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-analyze/collection.json": "9f9be6314cfd7d2a80212aefde1dab26f9e6ecdbf137bef750b6eba5326535ff",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-analyze/execution.json": "871b814f57295a8c7fea2e09f682b9135fe1334dcc1c92f8872efe923c95b2b6",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-analyze/study/analysis.json": "fb805149ced8eb796ede9dac5ad27c729fa0c6ce0d247e1f857989c2cc9fa791",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-analyze/study/receipt.json": "12acda6c8dc5ed14a23d1f594fee47f4a3ec2dd0a184b4891764e020b1dbcaf3",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-fit/collection.json": "e44b0bb6e3c90347dc28ecf40ebd16c8bb2ed71d2c45909ca4776fc8f45dc51d",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-fit/execution.json": "fe6084981ad6132fa4ae0bdd232db50ec729ed8b7d3823e6182dd5ea971d1756",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-fit/study/predictors.json": "ce0eeeccaabe06773881a2c1fa91c6dc4d7e6356b32476c06a21f700488d8df6",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-fit/study/receipt.json": "8ef8a2f0612a78c1e0013f9cc4734471008b143928bd3738a3c83db10d57321a",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-forecast/collection.json": "aff09b774e54cc5076a65008297d3aebc8c405ee4bcee9f291fb9990e27e2e3a",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-forecast/execution.json": "ca482a7b117e0a1a15aacf80cf08a58fa7ad39e1e640c2dd6393560fbcda40ae",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-forecast/study/forecasts.json": "ba0b48ce899c253f6e9dc5aeb1c645e8db3f182bf767e11c1e307902bc303799",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-forecast/study/receipt.json": "ce27377495da6d75bb97931b4c16a9cfd82d3a5a5ca8e4862d0e46146d096adf",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-learn-train-a/collection.json": "3973e778db78519d4ebbd3cbbed515eb9067774587c04ed62dea93321eb93008",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-learn-train-a/execution.json": "8f6263f9735f2553db1c91c5c3038e59b637dd7e55753965d49ec4c0a0796e04",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-learn-train-a/study/observations.json": "49263905fe36467f972e6fb468ecfdd6996698e0ab866b03fd46da6f5c073ce8",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-learn-train-a/study/receipt.json": "f9397fbb8f1d726acd60fed737a9e6fcc3ffb19ae362c5d2462fa2aefd2c3aee",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-learn-train-b/collection.json": "6ded1c3a77cbbcc3dacc4f64107c52fcc61959cdd9292edcf503b3a02dc6ca79",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-learn-train-b/execution.json": "92517ab26672cf775a8c6ce508699d39cd3f2cb868ebfb4209ad687573d8362a",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-learn-train-b/study/observations.json": "4080046dcdf7846a37a2f99b76b458448c4f035896a3b83d9b50bd27190c4cfc",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-learn-train-b/study/receipt.json": "5f9ea996d5974be2d02770c4d659d146395cac6465caca89a023003717b479f6",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-test-a/collection.json": "b267de564311f7f6d8c0fd1e8d4d8c4da36b5a73841b7c64ed752be0c6b74965",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-test-a/execution.json": "285682ee787ac43252634c98524a75b9dedaf48889b674f88b140499fa128ff6",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-test-a/study/readouts.json": "7d7a221ddba135556a187bc4314c80b9b8ad6bf819a96a8a38009a25f351403f",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-test-a/study/receipt.json": "c330b99cc517fef22743c9dbab28d255e46767ee1c33035e6bc387599df93703",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-test-b/collection.json": "9584270d27305e68bc77de2c4e516a7238076967c32434cee9e7a9dc34877bad",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-test-b/execution.json": "d3347319a25dfe7fce65be99bf61f938e0c4fa6cdde8efd35bf41f673082cbbf",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-test-b/study/readouts.json": "e4afb325862364d022d6c2e7a7b0fd7005f2e7f60afcd2a768aa24f43322bd54",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-test-b/study/receipt.json": "fd23eb50d7a4a816512728963c89f2d374156f452b4741689d02f1c582ac231e",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-train-a/collection.json": "4d60a6b1568d5be426815c810b4ea3616f058b1a391b13d2f719283b57d43a1c",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-train-a/execution.json": "8142f3e7f30fa9179ba5f5302490afd7d3d068b896b79708fe430d78fbff1d8c",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-train-a/study/readouts.json": "8735f34fa666415ab39d26221b68ed2ab803d4f656a90ed51a45e2039a7d970c",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-train-a/study/receipt.json": "ef622422a50f9d8c303c16201b6a1f252090f55ba76ca2cfb6343638542c4c4b",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-train-b/collection.json": "ba055974e1217d916e742aa6eb0522c57a7ee371a2c2fc10243cefec23812cfe",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-train-b/execution.json": "626c68c3d6cf540bb769ef3f7ace2689117ef63426bc32c40753d56d023a6f23",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-train-b/study/readouts.json": "a0837da9c1d6b2b78f01244c19f800d90543dbcd00dc66660ba43a5ad2de409f",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-readout-train-b/study/receipt.json": "d8de51108eaf22b3ae1b260b53a46ce6316d6dabb3be04713ecdc3874f711aab",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-test-a/collection.json": "b1e20a29d520ce7416892e3bb02fac5e788aa603d8baf4824a433b55117a4fbe",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-test-a/execution.json": "185243faae630606802e695b0c851de625b09c3eb7d2d3afa66a6215c9369135",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-test-a/study/receipt.json": "fcf0fa774489148e717ac221f99eca5fa88d9520b7a69431330a2cd6a4c8e31f",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-test-a/study/units.json": "7636904c73648ae4e29a4690b6daa14b4670bbe468d283f99898b2b4b2e126da",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-test-b/collection.json": "ed2e76e9c76d58d53f2f81807501d135bf690d11963be28fa6e2530f53b467d4",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-test-b/execution.json": "9c8a3eff0e9a367435d2a6deece912331158ed5315144e3bfaf02224cfe02fe6",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-test-b/study/receipt.json": "ac1a3afe1c52312c6e704ae1963bdef66b391ff7a2e6b7dcabe371c7bc8cc3d6",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-test-b/study/units.json": "b8087a553b0c14ca20fbfb142a548164079153883796c4676ca30835c31c35a0",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-train-a/collection.json": "d067f970171c1699db5836636a603ceba412cee6d2cf41dd836b9fc8a528785c",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-train-a/execution.json": "c06cb7eacb5eb9437776c7eb4078ca6a9659f92d097d393fcac8d539b5535b81",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-train-a/study/receipt.json": "4d28ca8ea7cc802649abb7e56dadd0bbb409607da9e5711b2df05cb849639265",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-train-a/study/units.json": "d179bf78631e5cac49d4690d4d0fe5c1429768026470bca0a409dd51c825004c",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-train-b/collection.json": "4777e36466e91ebb4c30c226ae546989ad7c00939baa4bd74f88b36b44a9be1a",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-train-b/execution.json": "7feb0d7925e73aedf58c2e07f68cd73c7cb4eb15ed1424fd4401e7626e2cf13a",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-train-b/study/receipt.json": "8d8fa564ddfb5155547d34cc39f95bb65ecd4bfaa2b347f7a4e09597957b2a2c",
+      "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-repair-train-b/study/units.json": "fbef55f649c5cdea421744e047d2ff0b044b39aabc330ce2272e80a7b4fc1aeb"
+    },
+    "interpretation": "A sensitivity benefit would require new prospective data before a prediction benefit claim. Thirteen TEST intents comprise two source clusters; those sources and outcomes were already observed.",
+    "name": "one-posthoc-TRAIN-impossible-gain-sensitivity",
+    "numpy_at_seal": "2.5.3",
+    "original_source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+    "original_training_units_sha256": "670b5b76e9845a0f874affb9954df7a81b932611c86e90a52ccd5c61919eb5ac",
+    "permutation_generation_count": 1,
+    "permutation_plan": {
+      "draws": [
+        {
+          "fixed_indices": [
+            11
+          ],
+          "indices": [
+            1,
+            0,
+            4,
+            5,
+            3,
+            2,
+            9,
+            8,
+            10,
+            6,
+            7,
+            11
+          ],
+          "scheme": "within_source",
+          "seed": 2026091301
+        },
+        {
+          "fixed_indices": [],
+          "indices": [
+            4,
+            3,
+            0,
+            5,
+            1,
+            2,
+            9,
+            10,
+            11,
+            8,
+            7,
+            6
+          ],
+          "scheme": "within_source",
+          "seed": 2026091302
+        },
+        {
+          "fixed_indices": [
+            3,
+            4,
+            5,
+            6,
+            10
+          ],
+          "indices": [
+            2,
+            0,
+            1,
+            3,
+            4,
+            5,
+            6,
+            11,
+            9,
+            7,
+            10,
+            8
+          ],
+          "scheme": "within_source",
+          "seed": 2026091303
+        },
+        {
+          "fixed_indices": [
+            3
+          ],
+          "indices": [
+            4,
+            5,
+            0,
+            3,
+            1,
+            2,
+            11,
+            8,
+            9,
+            10,
+            7,
+            6
+          ],
+          "scheme": "within_source",
+          "seed": 2026091304
+        },
+        {
+          "fixed_indices": [
+            3,
+            7,
+            9,
+            11
+          ],
+          "indices": [
+            2,
+            5,
+            4,
+            3,
+            0,
+            1,
+            10,
+            7,
+            6,
+            9,
+            8,
+            11
+          ],
+          "scheme": "within_source",
+          "seed": 2026091305
+        },
+        {
+          "fixed_indices": [
+            0,
+            2,
+            3,
+            4,
+            6,
+            7
+          ],
+          "indices": [
+            0,
+            5,
+            2,
+            3,
+            4,
+            1,
+            6,
+            7,
+            10,
+            11,
+            8,
+            9
+          ],
+          "scheme": "within_source",
+          "seed": 2026091306
+        },
+        {
+          "fixed_indices": [
+            8,
+            9,
+            10
+          ],
+          "indices": [
+            2,
+            3,
+            5,
+            0,
+            1,
+            4,
+            11,
+            6,
+            8,
+            9,
+            10,
+            7
+          ],
+          "scheme": "within_source",
+          "seed": 2026091307
+        },
+        {
+          "fixed_indices": [
+            3,
+            4,
+            5,
+            9
+          ],
+          "indices": [
+            1,
+            2,
+            0,
+            3,
+            4,
+            5,
+            10,
+            8,
+            6,
+            9,
+            11,
+            7
+          ],
+          "scheme": "within_source",
+          "seed": 2026091308
+        },
+        {
+          "fixed_indices": [
+            1,
+            2,
+            8,
+            11
+          ],
+          "indices": [
+            4,
+            1,
+            2,
+            5,
+            3,
+            0,
+            10,
+            6,
+            8,
+            7,
+            9,
+            11
+          ],
+          "scheme": "within_source",
+          "seed": 2026091309
+        },
+        {
+          "fixed_indices": [
+            2
+          ],
+          "indices": [
+            3,
+            0,
+            2,
+            4,
+            5,
+            1,
+            9,
+            8,
+            11,
+            6,
+            7,
+            10
+          ],
+          "scheme": "within_source",
+          "seed": 2026091310
+        },
+        {
+          "fixed_indices": [
+            4,
+            5,
+            7,
+            10,
+            11
+          ],
+          "indices": [
+            3,
+            2,
+            1,
+            0,
+            4,
+            5,
+            9,
+            7,
+            6,
+            8,
+            10,
+            11
+          ],
+          "scheme": "within_source",
+          "seed": 2026091311
+        },
+        {
+          "fixed_indices": [
+            3
+          ],
+          "indices": [
+            1,
+            4,
+            5,
+            3,
+            0,
+            2,
+            11,
+            9,
+            10,
+            6,
+            7,
+            8
+          ],
+          "scheme": "within_source",
+          "seed": 2026091312
+        },
+        {
+          "fixed_indices": [
+            1,
+            3,
+            4,
+            6
+          ],
+          "indices": [
+            5,
+            1,
+            0,
+            3,
+            4,
+            2,
+            6,
+            11,
+            9,
+            7,
+            8,
+            10
+          ],
+          "scheme": "within_source",
+          "seed": 2026091313
+        },
+        {
+          "fixed_indices": [
+            4,
+            10
+          ],
+          "indices": [
+            1,
+            5,
+            3,
+            0,
+            4,
+            2,
+            9,
+            11,
+            6,
+            8,
+            10,
+            7
+          ],
+          "scheme": "within_source",
+          "seed": 2026091314
+        },
+        {
+          "fixed_indices": [
+            1,
+            11
+          ],
+          "indices": [
+            5,
+            1,
+            3,
+            0,
+            2,
+            4,
+            7,
+            10,
+            9,
+            6,
+            8,
+            11
+          ],
+          "scheme": "within_source",
+          "seed": 2026091315
+        },
+        {
+          "fixed_indices": [],
+          "indices": [
+            4,
+            5,
+            3,
+            0,
+            2,
+            1,
+            8,
+            10,
+            11,
+            7,
+            9,
+            6
+          ],
+          "scheme": "within_source",
+          "seed": 2026091316
+        },
+        {
+          "fixed_indices": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "indices": [
+            5,
+            1,
+            2,
+            3,
+            4,
+            0,
+            8,
+            9,
+            7,
+            10,
+            11,
+            6
+          ],
+          "scheme": "within_source",
+          "seed": 2026091317
+        },
+        {
+          "fixed_indices": [
+            0,
+            3,
+            9,
+            11
+          ],
+          "indices": [
+            0,
+            2,
+            5,
+            3,
+            1,
+            4,
+            8,
+            10,
+            7,
+            9,
+            6,
+            11
+          ],
+          "scheme": "within_source",
+          "seed": 2026091318
+        },
+        {
+          "fixed_indices": [
+            0,
+            3
+          ],
+          "indices": [
+            0,
+            2,
+            1,
+            3,
+            5,
+            4,
+            9,
+            8,
+            6,
+            10,
+            11,
+            7
+          ],
+          "scheme": "within_source",
+          "seed": 2026091319
+        },
+        {
+          "fixed_indices": [
+            9
+          ],
+          "indices": [
+            1,
+            0,
+            5,
+            2,
+            3,
+            4,
+            11,
+            6,
+            10,
+            9,
+            8,
+            7
+          ],
+          "scheme": "within_source",
+          "seed": 2026091320
+        },
+        {
+          "fixed_indices": [
+            3,
+            10
+          ],
+          "indices": [
+            9,
+            0,
+            7,
+            3,
+            8,
+            4,
+            1,
+            5,
+            6,
+            11,
+            10,
+            2
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091301
+        },
+        {
+          "fixed_indices": [
+            5,
+            8
+          ],
+          "indices": [
+            3,
+            7,
+            11,
+            2,
+            1,
+            5,
+            0,
+            4,
+            8,
+            6,
+            9,
+            10
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091302
+        },
+        {
+          "fixed_indices": [
+            0,
+            5
+          ],
+          "indices": [
+            0,
+            9,
+            8,
+            1,
+            3,
+            5,
+            11,
+            10,
+            7,
+            2,
+            6,
+            4
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091303
+        },
+        {
+          "fixed_indices": [
+            6,
+            9
+          ],
+          "indices": [
+            5,
+            2,
+            3,
+            4,
+            1,
+            8,
+            6,
+            0,
+            11,
+            9,
+            7,
+            10
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091304
+        },
+        {
+          "fixed_indices": [],
+          "indices": [
+            6,
+            3,
+            8,
+            10,
+            11,
+            4,
+            2,
+            5,
+            9,
+            7,
+            0,
+            1
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091305
+        },
+        {
+          "fixed_indices": [],
+          "indices": [
+            1,
+            0,
+            6,
+            10,
+            5,
+            8,
+            11,
+            2,
+            3,
+            7,
+            4,
+            9
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091306
+        },
+        {
+          "fixed_indices": [
+            6
+          ],
+          "indices": [
+            10,
+            7,
+            11,
+            8,
+            3,
+            4,
+            6,
+            1,
+            2,
+            5,
+            0,
+            9
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091307
+        },
+        {
+          "fixed_indices": [
+            3
+          ],
+          "indices": [
+            8,
+            2,
+            9,
+            3,
+            11,
+            1,
+            0,
+            4,
+            7,
+            10,
+            6,
+            5
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091308
+        },
+        {
+          "fixed_indices": [
+            1,
+            2,
+            3
+          ],
+          "indices": [
+            4,
+            1,
+            2,
+            3,
+            10,
+            11,
+            9,
+            6,
+            5,
+            0,
+            7,
+            8
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091309
+        },
+        {
+          "fixed_indices": [],
+          "indices": [
+            3,
+            11,
+            8,
+            0,
+            1,
+            4,
+            2,
+            6,
+            5,
+            10,
+            7,
+            9
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091310
+        },
+        {
+          "fixed_indices": [
+            2
+          ],
+          "indices": [
+            8,
+            10,
+            2,
+            0,
+            1,
+            3,
+            9,
+            4,
+            6,
+            11,
+            7,
+            5
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091311
+        },
+        {
+          "fixed_indices": [
+            3
+          ],
+          "indices": [
+            5,
+            7,
+            9,
+            3,
+            11,
+            0,
+            1,
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091312
+        },
+        {
+          "fixed_indices": [
+            0,
+            6
+          ],
+          "indices": [
+            0,
+            7,
+            9,
+            11,
+            1,
+            2,
+            6,
+            5,
+            4,
+            8,
+            3,
+            10
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091313
+        },
+        {
+          "fixed_indices": [],
+          "indices": [
+            3,
+            5,
+            6,
+            0,
+            7,
+            10,
+            1,
+            11,
+            9,
+            8,
+            4,
+            2
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091314
+        },
+        {
+          "fixed_indices": [],
+          "indices": [
+            1,
+            11,
+            10,
+            7,
+            8,
+            2,
+            9,
+            3,
+            0,
+            5,
+            4,
+            6
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091315
+        },
+        {
+          "fixed_indices": [],
+          "indices": [
+            4,
+            5,
+            9,
+            8,
+            10,
+            7,
+            3,
+            0,
+            2,
+            11,
+            1,
+            6
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091316
+        },
+        {
+          "fixed_indices": [
+            8
+          ],
+          "indices": [
+            2,
+            3,
+            10,
+            5,
+            6,
+            7,
+            1,
+            9,
+            8,
+            11,
+            4,
+            0
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091317
+        },
+        {
+          "fixed_indices": [
+            3,
+            9
+          ],
+          "indices": [
+            2,
+            11,
+            10,
+            3,
+            0,
+            8,
+            1,
+            5,
+            7,
+            9,
+            6,
+            4
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091318
+        },
+        {
+          "fixed_indices": [],
+          "indices": [
+            2,
+            0,
+            8,
+            10,
+            1,
+            6,
+            5,
+            3,
+            9,
+            7,
+            11,
+            4
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091319
+        },
+        {
+          "fixed_indices": [
+            0
+          ],
+          "indices": [
+            0,
+            7,
+            3,
+            5,
+            11,
+            9,
+            10,
+            1,
+            6,
+            8,
+            2,
+            4
+          ],
+          "scheme": "pooled_train",
+          "seed": 2026091320
+        }
+      ],
+      "redraws": 0,
+      "source_streams": [
+        "fresh-train-a",
+        "fresh-train-a",
+        "fresh-train-a",
+        "fresh-train-a",
+        "fresh-train-a",
+        "fresh-train-a",
+        "fresh-train-b",
+        "fresh-train-b",
+        "fresh-train-b",
+        "fresh-train-b",
+        "fresh-train-b",
+        "fresh-train-b"
+      ],
+      "unit_ids": [
+        "fresh-train-a/insurance",
+        "fresh-train-a/pto_used",
+        "fresh-train-a/repeat",
+        "fresh-train-a/replacement_card_duration",
+        "fresh-train-a/spending_history",
+        "fresh-train-a/translate",
+        "fresh-train-b/change_user_name",
+        "fresh-train-b/credit_limit",
+        "fresh-train-b/payday",
+        "fresh-train-b/transfer",
+        "fresh-train-b/uber",
+        "fresh-train-b/what_are_your_hobbies"
+      ]
+    },
+    "permutation_plan_sha256": "4a56e9dd5461b6c1c163ced74ad84fae7a6e94e8d6c90d1b74d0ef573877f029",
+    "posthoc_gate_boundary": "Report the unchanged prospective class-support gate even when failed. This user-authorized diagnostic uses its frozen ridge, targets, scalers and class rule without the prospective dispatch gate. No new TEST training or prospective authorization follows.",
+    "primary_rule": {
+      "arithmetic": "Exact integer correct/total fractions; strict inequality. Equality remains eligible.",
+      "exclude": "1 - actual pre-repair repair-evaluation-panel accuracy < required gain",
+      "required_gain": 0.3,
+      "split": "train",
+      "unit_name_used_in_selection": false
+    },
+    "prospective_class_gate_after_exclusion": {
+      "counts": {
+        "16": 0,
+        "2": 9,
+        "4": 1,
+        "8": 1,
+        "never": 1
+      },
+      "counts_by_source": {
+        "fresh-train-a": {
+          "16": 0,
+          "2": 4,
+          "4": 1,
+          "8": 1,
+          "never": 0
+        },
+        "fresh-train-b": {
+          "16": 0,
+          "2": 5,
+          "4": 0,
+          "8": 0,
+          "never": 1
+        }
+      },
+      "decision": "stop_before_predictors_and_TEST; new_TRAIN_protocol_required",
+      "later_qualification_loss_ids": [
+        "fresh-train-a/replacement_card_duration",
+        "fresh-train-b/credit_limit",
+        "fresh-train-b/payday",
+        "fresh-train-b/transfer"
+      ],
+      "qualified": false,
+      "source_clusters": 2,
+      "status": "no_identifiable_prediction_task",
+      "supported_classes": [
+        "2"
+      ],
+      "test_readout_permitted": false,
+      "train_skills": 12,
+      "unobserved_classes": [
+        "16"
+      ]
+    },
+    "refit_variants_authorized": 1,
+    "retained_training_units": [
+      "fresh-train-a/insurance",
+      "fresh-train-a/pto_used",
+      "fresh-train-a/repeat",
+      "fresh-train-a/replacement_card_duration",
+      "fresh-train-a/spending_history",
+      "fresh-train-a/translate",
+      "fresh-train-b/change_user_name",
+      "fresh-train-b/credit_limit",
+      "fresh-train-b/payday",
+      "fresh-train-b/transfer",
+      "fresh-train-b/uber",
+      "fresh-train-b/what_are_your_hobbies"
+    ],
+    "retained_training_units_sha256": "f364dc6f1964be6f66396f401010f93743d09be81e229bff6cf202f968162f9d",
+    "scope": "Posthoc sensitivity after original TEST outcomes were observed. Not prospective, independently held-out replication, or a revised original study.",
+    "sealed_at": "2026-09-12T08:11:37.895485+00:00",
+    "secondary_eligibility": "Report actual acquired-panel floor, actual after maximum, actual before-after drop. Initial actual-panel scores are absent, so actual acquisition gain is unknown. These diagnostics add no exclusions.",
+    "training_eligibility": [
+      {
+        "actual_initial_panel": {
+          "acquisition_gain_passed": null,
+          "measured_rows": 0,
+          "required_rows": 20,
+          "status": "not_recorded; validation rows cannot supply actual-panel initial scores"
+        },
+        "actual_repair_panel": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 20,
+            "total": 20
+          },
+          "pre_repair": {
+            "accuracy": 0.9,
+            "correct": 18,
+            "total": 20
+          }
+        },
+        "diagnostic_checks": {
+          "acquired_floor": true,
+          "forgetting_drop": false,
+          "forgotten_after_max": false
+        },
+        "diagnostic_filter_used_for_refit": false,
+        "diagnostic_known_failures": [
+          "forgotten_after_max",
+          "forgetting_drop"
+        ],
+        "fully_eligible_actual_panel": false,
+        "id": "fresh-train-a/calories",
+        "intent": "calories",
+        "maximum_possible_gain": {
+          "denominator": 20,
+          "numerator": 2,
+          "value": 0.09999999999999998
+        },
+        "primary_excluded_impossible_gain": true,
+        "primary_retained": false,
+        "split": "train",
+        "stream": "fresh-train-a",
+        "validation_gate_scores": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 10,
+            "total": 10
+          },
+          "forgotten": {
+            "accuracy": 0.3,
+            "correct": 3,
+            "total": 10
+          },
+          "initial": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          }
+        }
+      },
+      {
+        "actual_initial_panel": {
+          "acquisition_gain_passed": null,
+          "measured_rows": 0,
+          "required_rows": 20,
+          "status": "not_recorded; validation rows cannot supply actual-panel initial scores"
+        },
+        "actual_repair_panel": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 20,
+            "total": 20
+          },
+          "pre_repair": {
+            "accuracy": 0.2,
+            "correct": 4,
+            "total": 20
+          }
+        },
+        "diagnostic_checks": {
+          "acquired_floor": true,
+          "forgetting_drop": true,
+          "forgotten_after_max": true
+        },
+        "diagnostic_filter_used_for_refit": false,
+        "diagnostic_known_failures": [],
+        "fully_eligible_actual_panel": null,
+        "id": "fresh-train-a/insurance",
+        "intent": "insurance",
+        "maximum_possible_gain": {
+          "denominator": 20,
+          "numerator": 16,
+          "value": 0.8
+        },
+        "primary_excluded_impossible_gain": false,
+        "primary_retained": true,
+        "split": "train",
+        "stream": "fresh-train-a",
+        "validation_gate_scores": {
+          "acquired": {
+            "accuracy": 0.8,
+            "correct": 8,
+            "total": 10
+          },
+          "forgotten": {
+            "accuracy": 0.1,
+            "correct": 1,
+            "total": 10
+          },
+          "initial": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          }
+        }
+      },
+      {
+        "actual_initial_panel": {
+          "acquisition_gain_passed": null,
+          "measured_rows": 0,
+          "required_rows": 20,
+          "status": "not_recorded; validation rows cannot supply actual-panel initial scores"
+        },
+        "actual_repair_panel": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 20,
+            "total": 20
+          },
+          "pre_repair": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 20
+          }
+        },
+        "diagnostic_checks": {
+          "acquired_floor": true,
+          "forgetting_drop": true,
+          "forgotten_after_max": true
+        },
+        "diagnostic_filter_used_for_refit": false,
+        "diagnostic_known_failures": [],
+        "fully_eligible_actual_panel": null,
+        "id": "fresh-train-a/pto_used",
+        "intent": "pto_used",
+        "maximum_possible_gain": {
+          "denominator": 20,
+          "numerator": 20,
+          "value": 1.0
+        },
+        "primary_excluded_impossible_gain": false,
+        "primary_retained": true,
+        "split": "train",
+        "stream": "fresh-train-a",
+        "validation_gate_scores": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 10,
+            "total": 10
+          },
+          "forgotten": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          },
+          "initial": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          }
+        }
+      },
+      {
+        "actual_initial_panel": {
+          "acquisition_gain_passed": null,
+          "measured_rows": 0,
+          "required_rows": 20,
+          "status": "not_recorded; validation rows cannot supply actual-panel initial scores"
+        },
+        "actual_repair_panel": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 20,
+            "total": 20
+          },
+          "pre_repair": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 20
+          }
+        },
+        "diagnostic_checks": {
+          "acquired_floor": true,
+          "forgetting_drop": true,
+          "forgotten_after_max": true
+        },
+        "diagnostic_filter_used_for_refit": false,
+        "diagnostic_known_failures": [],
+        "fully_eligible_actual_panel": null,
+        "id": "fresh-train-a/repeat",
+        "intent": "repeat",
+        "maximum_possible_gain": {
+          "denominator": 20,
+          "numerator": 20,
+          "value": 1.0
+        },
+        "primary_excluded_impossible_gain": false,
+        "primary_retained": true,
+        "split": "train",
+        "stream": "fresh-train-a",
+        "validation_gate_scores": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 10,
+            "total": 10
+          },
+          "forgotten": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          },
+          "initial": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          }
+        }
+      },
+      {
+        "actual_initial_panel": {
+          "acquisition_gain_passed": null,
+          "measured_rows": 0,
+          "required_rows": 20,
+          "status": "not_recorded; validation rows cannot supply actual-panel initial scores"
+        },
+        "actual_repair_panel": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 20,
+            "total": 20
+          },
+          "pre_repair": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 20
+          }
+        },
+        "diagnostic_checks": {
+          "acquired_floor": true,
+          "forgetting_drop": true,
+          "forgotten_after_max": true
+        },
+        "diagnostic_filter_used_for_refit": false,
+        "diagnostic_known_failures": [],
+        "fully_eligible_actual_panel": null,
+        "id": "fresh-train-a/replacement_card_duration",
+        "intent": "replacement_card_duration",
+        "maximum_possible_gain": {
+          "denominator": 20,
+          "numerator": 20,
+          "value": 1.0
+        },
+        "primary_excluded_impossible_gain": false,
+        "primary_retained": true,
+        "split": "train",
+        "stream": "fresh-train-a",
+        "validation_gate_scores": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 10,
+            "total": 10
+          },
+          "forgotten": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          },
+          "initial": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          }
+        }
+      },
+      {
+        "actual_initial_panel": {
+          "acquisition_gain_passed": null,
+          "measured_rows": 0,
+          "required_rows": 20,
+          "status": "not_recorded; validation rows cannot supply actual-panel initial scores"
+        },
+        "actual_repair_panel": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 20,
+            "total": 20
+          },
+          "pre_repair": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 20
+          }
+        },
+        "diagnostic_checks": {
+          "acquired_floor": true,
+          "forgetting_drop": true,
+          "forgotten_after_max": true
+        },
+        "diagnostic_filter_used_for_refit": false,
+        "diagnostic_known_failures": [],
+        "fully_eligible_actual_panel": null,
+        "id": "fresh-train-a/spending_history",
+        "intent": "spending_history",
+        "maximum_possible_gain": {
+          "denominator": 20,
+          "numerator": 20,
+          "value": 1.0
+        },
+        "primary_excluded_impossible_gain": false,
+        "primary_retained": true,
+        "split": "train",
+        "stream": "fresh-train-a",
+        "validation_gate_scores": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 10,
+            "total": 10
+          },
+          "forgotten": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          },
+          "initial": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          }
+        }
+      },
+      {
+        "actual_initial_panel": {
+          "acquisition_gain_passed": null,
+          "measured_rows": 0,
+          "required_rows": 20,
+          "status": "not_recorded; validation rows cannot supply actual-panel initial scores"
+        },
+        "actual_repair_panel": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 20,
+            "total": 20
+          },
+          "pre_repair": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 20
+          }
+        },
+        "diagnostic_checks": {
+          "acquired_floor": true,
+          "forgetting_drop": true,
+          "forgotten_after_max": true
+        },
+        "diagnostic_filter_used_for_refit": false,
+        "diagnostic_known_failures": [],
+        "fully_eligible_actual_panel": null,
+        "id": "fresh-train-a/translate",
+        "intent": "translate",
+        "maximum_possible_gain": {
+          "denominator": 20,
+          "numerator": 20,
+          "value": 1.0
+        },
+        "primary_excluded_impossible_gain": false,
+        "primary_retained": true,
+        "split": "train",
+        "stream": "fresh-train-a",
+        "validation_gate_scores": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 10,
+            "total": 10
+          },
+          "forgotten": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          },
+          "initial": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          }
+        }
+      },
+      {
+        "actual_initial_panel": {
+          "acquisition_gain_passed": null,
+          "measured_rows": 0,
+          "required_rows": 20,
+          "status": "not_recorded; validation rows cannot supply actual-panel initial scores"
+        },
+        "actual_repair_panel": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 20,
+            "total": 20
+          },
+          "pre_repair": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 20
+          }
+        },
+        "diagnostic_checks": {
+          "acquired_floor": true,
+          "forgetting_drop": true,
+          "forgotten_after_max": true
+        },
+        "diagnostic_filter_used_for_refit": false,
+        "diagnostic_known_failures": [],
+        "fully_eligible_actual_panel": null,
+        "id": "fresh-train-b/change_user_name",
+        "intent": "change_user_name",
+        "maximum_possible_gain": {
+          "denominator": 20,
+          "numerator": 20,
+          "value": 1.0
+        },
+        "primary_excluded_impossible_gain": false,
+        "primary_retained": true,
+        "split": "train",
+        "stream": "fresh-train-b",
+        "validation_gate_scores": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 10,
+            "total": 10
+          },
+          "forgotten": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          },
+          "initial": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          }
+        }
+      },
+      {
+        "actual_initial_panel": {
+          "acquisition_gain_passed": null,
+          "measured_rows": 0,
+          "required_rows": 20,
+          "status": "not_recorded; validation rows cannot supply actual-panel initial scores"
+        },
+        "actual_repair_panel": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 20,
+            "total": 20
+          },
+          "pre_repair": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 20
+          }
+        },
+        "diagnostic_checks": {
+          "acquired_floor": true,
+          "forgetting_drop": true,
+          "forgotten_after_max": true
+        },
+        "diagnostic_filter_used_for_refit": false,
+        "diagnostic_known_failures": [],
+        "fully_eligible_actual_panel": null,
+        "id": "fresh-train-b/credit_limit",
+        "intent": "credit_limit",
+        "maximum_possible_gain": {
+          "denominator": 20,
+          "numerator": 20,
+          "value": 1.0
+        },
+        "primary_excluded_impossible_gain": false,
+        "primary_retained": true,
+        "split": "train",
+        "stream": "fresh-train-b",
+        "validation_gate_scores": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 10,
+            "total": 10
+          },
+          "forgotten": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          },
+          "initial": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          }
+        }
+      },
+      {
+        "actual_initial_panel": {
+          "acquisition_gain_passed": null,
+          "measured_rows": 0,
+          "required_rows": 20,
+          "status": "not_recorded; validation rows cannot supply actual-panel initial scores"
+        },
+        "actual_repair_panel": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 20,
+            "total": 20
+          },
+          "pre_repair": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 20
+          }
+        },
+        "diagnostic_checks": {
+          "acquired_floor": true,
+          "forgetting_drop": true,
+          "forgotten_after_max": true
+        },
+        "diagnostic_filter_used_for_refit": false,
+        "diagnostic_known_failures": [],
+        "fully_eligible_actual_panel": null,
+        "id": "fresh-train-b/payday",
+        "intent": "payday",
+        "maximum_possible_gain": {
+          "denominator": 20,
+          "numerator": 20,
+          "value": 1.0
+        },
+        "primary_excluded_impossible_gain": false,
+        "primary_retained": true,
+        "split": "train",
+        "stream": "fresh-train-b",
+        "validation_gate_scores": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 10,
+            "total": 10
+          },
+          "forgotten": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          },
+          "initial": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          }
+        }
+      },
+      {
+        "actual_initial_panel": {
+          "acquisition_gain_passed": null,
+          "measured_rows": 0,
+          "required_rows": 20,
+          "status": "not_recorded; validation rows cannot supply actual-panel initial scores"
+        },
+        "actual_repair_panel": {
+          "acquired": {
+            "accuracy": 0.95,
+            "correct": 19,
+            "total": 20
+          },
+          "pre_repair": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 20
+          }
+        },
+        "diagnostic_checks": {
+          "acquired_floor": true,
+          "forgetting_drop": true,
+          "forgotten_after_max": true
+        },
+        "diagnostic_filter_used_for_refit": false,
+        "diagnostic_known_failures": [],
+        "fully_eligible_actual_panel": null,
+        "id": "fresh-train-b/transfer",
+        "intent": "transfer",
+        "maximum_possible_gain": {
+          "denominator": 20,
+          "numerator": 20,
+          "value": 1.0
+        },
+        "primary_excluded_impossible_gain": false,
+        "primary_retained": true,
+        "split": "train",
+        "stream": "fresh-train-b",
+        "validation_gate_scores": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 10,
+            "total": 10
+          },
+          "forgotten": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          },
+          "initial": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          }
+        }
+      },
+      {
+        "actual_initial_panel": {
+          "acquisition_gain_passed": null,
+          "measured_rows": 0,
+          "required_rows": 20,
+          "status": "not_recorded; validation rows cannot supply actual-panel initial scores"
+        },
+        "actual_repair_panel": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 20,
+            "total": 20
+          },
+          "pre_repair": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 20
+          }
+        },
+        "diagnostic_checks": {
+          "acquired_floor": true,
+          "forgetting_drop": true,
+          "forgotten_after_max": true
+        },
+        "diagnostic_filter_used_for_refit": false,
+        "diagnostic_known_failures": [],
+        "fully_eligible_actual_panel": null,
+        "id": "fresh-train-b/uber",
+        "intent": "uber",
+        "maximum_possible_gain": {
+          "denominator": 20,
+          "numerator": 20,
+          "value": 1.0
+        },
+        "primary_excluded_impossible_gain": false,
+        "primary_retained": true,
+        "split": "train",
+        "stream": "fresh-train-b",
+        "validation_gate_scores": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 10,
+            "total": 10
+          },
+          "forgotten": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          },
+          "initial": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          }
+        }
+      },
+      {
+        "actual_initial_panel": {
+          "acquisition_gain_passed": null,
+          "measured_rows": 0,
+          "required_rows": 20,
+          "status": "not_recorded; validation rows cannot supply actual-panel initial scores"
+        },
+        "actual_repair_panel": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 20,
+            "total": 20
+          },
+          "pre_repair": {
+            "accuracy": 0.2,
+            "correct": 4,
+            "total": 20
+          }
+        },
+        "diagnostic_checks": {
+          "acquired_floor": true,
+          "forgetting_drop": true,
+          "forgotten_after_max": true
+        },
+        "diagnostic_filter_used_for_refit": false,
+        "diagnostic_known_failures": [],
+        "fully_eligible_actual_panel": null,
+        "id": "fresh-train-b/what_are_your_hobbies",
+        "intent": "what_are_your_hobbies",
+        "maximum_possible_gain": {
+          "denominator": 20,
+          "numerator": 16,
+          "value": 0.8
+        },
+        "primary_excluded_impossible_gain": false,
+        "primary_retained": true,
+        "split": "train",
+        "stream": "fresh-train-b",
+        "validation_gate_scores": {
+          "acquired": {
+            "accuracy": 1.0,
+            "correct": 10,
+            "total": 10
+          },
+          "forgotten": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          },
+          "initial": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 10
+          }
+        }
+      }
+    ]
+  },
+  "sha256": "f008b8f02e6817278ca8be61bb90079b6ed3aa05fb7448aa058c9012605a13ca"
+}

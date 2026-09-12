@@ -1,0 +1,17 @@
+{
+  "at": "2026-09-12T08:19:01.530902+00:00",
+  "stopped_owned_local_collector_pid": 38987,
+  "stopped_local_transport_children": [
+    49670
+  ],
+  "provider_experiments_untouched": true,
+  "staged_files_untrusted_until_manifest_reverified": true,
+  "migrations": [
+    {
+      "from": "outputs/portfolio/followthrough-20260912/cl-collect-9ys84hwc/followthrough-20260912-recovery-history-repair-alternate-binding-train-b",
+      "to": "outputs/portfolio/followthrough-20260912/.collecting/followthrough-20260912-recovery-history-repair-alternate-binding-train-b",
+      "files": 53,
+      "bytes": 1908208603
+    }
+  ]
+}
