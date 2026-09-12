@@ -1,0 +1,154 @@
+[
+  {
+    "id": "replay-sequences",
+    "title": "Three-task replay comparison",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/sequence-fp32-confirmation419/replication-comparison.json",
+    "sha256": "0fd8943d4e5e9c614afcca621c14a5fa972ee0206ee7a153e0735380aa4599be",
+    "bytes": 55483,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "replay-small",
+    "title": "32-example replay comparison",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/plasticity/.artifacts/plasticity-clinc-support-two-seed/analysis.json",
+    "sha256": "7960beb8ea6a5be39f6085e142677399b2a9d0a248a5c666426c7ca778defab8",
+    "bytes": 12148,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "replay-generated",
+    "title": "Replay with generated answers",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/onpolicy/.artifacts/resume-20260908-oracle-sft-replay-qwen35-4b-s37/comparison.json",
+    "sha256": "cd556dda5b185e87ecd7b6b2748512be302ebfd8d78b52d75e51792f90175660",
+    "bytes": 12370,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "upgrade",
+    "title": "Learning after a model upgrade",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/outputs/portfolio/analyses/portability-amber-confirmation.json",
+    "sha256": "18527df9a90148da19156a1962c88a5e0c78623febc0957f74251af845c11a66",
+    "bytes": 4294,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "active",
+    "title": "Choosing informative examples",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/outputs/portfolio/analyses/active-evidence-confirmation-seed43.json",
+    "sha256": "034d429e27e79215af1726654f3d62aad0a45c9e09f79cd283a2b402c6cc0421",
+    "bytes": 3167,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "catalog",
+    "title": "Six-model catalog audit",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/review/catalog-results-audit.json",
+    "sha256": "8bc008224cc1691f87aa6ab672aababecfe2ad64b960c32b66a3a56b1d3e2187",
+    "bytes": 85400,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "transfer",
+    "title": "Four-target transfer confirmation",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/sequence-targets419-gpu/two-fixture-comparison.json",
+    "sha256": "dbba1b35e94215a488767cd29ab9766bc584cb7288f2b9f2830651e11c5ee9b5",
+    "bytes": 95706,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "repair",
+    "title": "Alignment repair audit",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/repair-eval-gpu/independent-audit.json",
+    "sha256": "dd18e7e416f9bf5c867b01878f31bb87ea91c30e90c97aee74784bc958603d0f",
+    "bytes": 3611,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "anchor",
+    "title": "Preservation penalty audit",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/anchored-gpu/independent-audit.json",
+    "sha256": "c9bbeca35792346deca6d747161a36379fd7bc64a10c1c3b91210053e0bef94f",
+    "bytes": 17308,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "rank",
+    "title": "Rank-8 compression audit",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/rank-eval-gpu/independent-audit.json",
+    "sha256": "13e55f6e7e874b3b4d9e16e66e6b948dfa44fdef0725461edf345a8920cdda38",
+    "bytes": 1134,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "chain",
+    "title": "External chaining audit",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/onpolicy/outputs/chain-control-gpu/independent-audit.json",
+    "sha256": "6a8065fbf7c837e8989d2ac463dd88ffdc73aa0cd3f1915e229256b60c99a888",
+    "bytes": 1335,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "teacher",
+    "title": "Learned Qwen3-8B teacher qualification",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/teacher-calibration-gpu/result.json",
+    "sha256": "fee7f62f933aba6f9e3bc570d4de338c9294b3a3f97e4aa25c396bd73a0d74ee",
+    "bytes": 8332,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "teacher-ending",
+    "title": "Teacher answer and stopping audit",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/teacher-calibration-gpu/termination-audit.json",
+    "sha256": "bfcf39d4cfc67de95b0f1fb7c76512451ba652bc71ebc9f5862725ef5a18493b",
+    "bytes": 1825,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "teacher-early",
+    "title": "Early teacher composition audit",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/outputs/portfolio/analyses/onpolicy-oracle-audit.json",
+    "sha256": "7e033dce36e85cd9a248c1da41e3d8de1232884558e845bbfa3edc90a79e4c86",
+    "bytes": 16288,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "plasticity",
+    "title": "Initial reset experiment",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/plasticity/.artifacts/plasticity-clinc-pilot-seed17/analysis.json",
+    "sha256": "17bc5b6cf34614f4aec49f6c5282565688783fc197a0c0c8a6e290792aa012b9",
+    "bytes": 58410,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "nla",
+    "title": "Native activation readout diagnostic",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/nla/.artifacts/nla-native-diagnostic-seed2718/run/metrics.json",
+    "sha256": "5ed600dbc5270f903d9d9c0f1edead7e38662e9f79e5d856bf754ed3284a9b4f",
+    "bytes": 62603,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "inkling",
+    "title": "Guarded Inkling attempt verification",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/runtime/outputs/loader-qualification/inkling-terminal-20260908-015511/verification.json",
+    "sha256": "a1c700a99bab7640b2e8642bc63142fbc0a14e58cc2030dd490a18ff5117d5f3",
+    "bytes": 11014,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "closeout",
+    "title": "Final execution and cleanup audit",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/outputs/portfolio/meta-20260909-execution-audit.json",
+    "sha256": "d3311c742a333aefc55cd20c380819b64463da6f133b37c025daa56601e8c572",
+    "bytes": 6914,
+    "snapshot_copied": "2026-09-11"
+  },
+  {
+    "id": "research",
+    "title": "Complete saved research inventory",
+    "original_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/research-artifact-coverage.json",
+    "sha256": "a1feba14ec11c288c063af3d53ccb307be5a866b2164eddad36d40a0541d9e03",
+    "bytes": 27204,
+    "snapshot_copied": "2026-09-11"
+  }
+]

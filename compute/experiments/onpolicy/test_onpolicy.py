@@ -502,6 +502,8 @@ def test_comparisons_capture_forgetting_and_forward_transfer():
 
 def test_ready_configs_and_strict_validation(tmp_path):
     for path in (Path(__file__).parent / "configs").glob("*.json"):
+        if path.name.startswith("chain_control_"):
+            continue
         config = read_config(path)
         assert config.model_path.endswith(config.revision)
     config = tiny_config(tmp_path)

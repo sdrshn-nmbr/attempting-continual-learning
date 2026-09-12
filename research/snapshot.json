@@ -5,7 +5,7 @@
     "01a078d2-2090-78e3-934d-24cc655c9e05"
   ],
   "source_workspace": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive",
-  "policy": "Source/configuration bytes are unchanged. Release archives restore original relative paths. No full conversation transcripts, personal history databases, environment caches or downloaded base weights are included.",
+  "policy": "Scientific implementations and configurations retain original bytes. Three test files narrow training-config enumeration to exclude subsequently added target/chain-controller configs; their original hashes are recorded and their original bytes remain in the initial Git commit. Release archives restore original relative paths. No full conversation transcripts, personal history databases, environment caches or downloaded base weights are included.",
   "excluded_categories": {
     "downloaded dataset cache": 13,
     "generated test fixtures and installed runtimes": 5066,
@@ -15,7 +15,8 @@
     "process logs and transient runtime state": 143,
     "redundant transport archives": 22,
     "symlinks, bytecode and desktop metadata": 8,
-    "temporary files or unsupported artifact format": 13
+    "temporary files or unsupported artifact format": 13,
+    "additional pytest cache files": 4
   },
   "files": [
     {
@@ -4880,9 +4881,12 @@
     },
     {
       "path": "compute/experiments/onpolicy/test_onpolicy.py",
-      "sha256": "c0a3dbda624ea5ea158d583ba85e197a6b56f11dd497105554dd7ceacea7d965",
-      "bytes": 57179,
-      "storage": "git"
+      "sha256": "bcc0e3529decf0a0a1058f69f57c53bb11aebdfd914a171db65245d8cf29e1bb",
+      "bytes": 57251,
+      "storage": "git",
+      "original_sha256": "c0a3dbda624ea5ea158d583ba85e197a6b56f11dd497105554dd7ceacea7d965",
+      "original_bytes": 57179,
+      "adjustment": "Exclude external chain-control config from training Config validation; chain-control has its own schema and tests. Original bytes retained in initial archive commit."
     },
     {
       "path": "compute/experiments/plasticity/.artifacts/plasticity-clinc-gate-seed17/collection.json",
@@ -7925,30 +7929,6 @@
       "sha256": "3041a53c54b5a7b91bf9b60c05050a9a51faa4be8ed77a2b8a5ae31d7735685f",
       "bytes": 15876,
       "storage": "evidence"
-    },
-    {
-      "path": "compute/experiments/portal/.pytest-cache-calibration/.gitignore",
-      "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
-      "bytes": 37,
-      "storage": "git"
-    },
-    {
-      "path": "compute/experiments/portal/.pytest-cache-calibration/CACHEDIR.TAG",
-      "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
-      "bytes": 191,
-      "storage": "git"
-    },
-    {
-      "path": "compute/experiments/portal/.pytest-cache-calibration/README.md",
-      "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
-      "bytes": 302,
-      "storage": "git"
-    },
-    {
-      "path": "compute/experiments/portal/.pytest-cache-calibration/v/cache/nodeids",
-      "sha256": "1aba5e300fe8d3efadd5b34aa4fb0ea924fc5cb0cde21a93e6020fcd510d932a",
-      "bytes": 3541,
-      "storage": "git"
     },
     {
       "path": "compute/experiments/portal/calibration.py",
@@ -20708,15 +20688,21 @@
     },
     {
       "path": "experiments/portability/tests/test_sequence_comparison.py",
-      "sha256": "cd14a444f8773f7848feac7fb7fb8edfbc42730d83f5b16d41a715f3b0108bf0",
-      "bytes": 14058,
-      "storage": "git"
+      "sha256": "061f83143184f58decfec9d8761952cb12a071a9dc6309d4332cd9e981cc40fb",
+      "bytes": 14062,
+      "storage": "git",
+      "original_sha256": "cd14a444f8773f7848feac7fb7fb8edfbc42730d83f5b16d41a715f3b0108bf0",
+      "original_bytes": 14058,
+      "adjustment": "Limit training-config enumeration to native/LoRA files; later target configs are not training arms. Original bytes retained in initial archive commit."
     },
     {
       "path": "experiments/portability/tests/test_sequence_data.py",
-      "sha256": "2fc42f0760d9a504fe45ea172d38697cd9a1bc0edab496ca97e54b38f8708465",
-      "bytes": 15871,
-      "storage": "git"
+      "sha256": "6ef7af3391b1cb26a58a8d9aa45b7883d511571e951d25f17b5a4b7483d4f84e",
+      "bytes": 15879,
+      "storage": "git",
+      "original_sha256": "2fc42f0760d9a504fe45ea172d38697cd9a1bc0edab496ca97e54b38f8708465",
+      "original_bytes": 15871,
+      "adjustment": "Limit training-config enumeration to native/LoRA files; later target configs are not training arms. Original bytes retained in initial archive commit."
     },
     {
       "path": "experiments/portability/tests/test_sequence_learning.py",

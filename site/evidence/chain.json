@@ -1,0 +1,49 @@
+{
+  "checks": {
+    "after_symbol_map": {
+      "logical_calls": 640,
+      "paired_groups": 32,
+      "unique_calls": 373
+    },
+    "initial": {
+      "logical_calls": 633,
+      "paired_groups": 32,
+      "unique_calls": 383
+    }
+  },
+  "contrasts": {
+    "learned_chain_minus_initial_chain": {
+      "interval95": [
+        0.5546875,
+        0.6953125
+      ],
+      "mean": 0.625
+    },
+    "learned_chain_minus_learned_one_shot": {
+      "interval95": [
+        0.5703125,
+        0.7109375
+      ],
+      "mean": 0.640625
+    },
+    "learned_oracle_last_step_minus_chain": {
+      "interval95": [
+        0.140625,
+        0.234375
+      ],
+      "mean": 0.1875
+    }
+  },
+  "method": "IndependentPythonoperationimplementation, strictwholeJSONgrading, everyrecord\u2192callroute andmodel-producedintermediatetransition checked, nohiddenoraclereplacement, exactcall/tokenaccounting. Input-groupbootstrap20000drawsseed90309 for descriptivepairedintervals.",
+  "original_gate_unchanged": {
+    "checks": {
+      "chain_gain_over_initial_at_least_025": true,
+      "chain_gain_over_one_shot_at_least_025": true,
+      "final_chain_accuracy_at_least_090": false
+    },
+    "passed": false,
+    "training_started": false
+  },
+  "passed": true,
+  "result_sha256": "c626ae010375203b45829a219e878d48546fa84754577631fd5045b9b1b0c781"
+}

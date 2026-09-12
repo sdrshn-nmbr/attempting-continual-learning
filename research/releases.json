@@ -1,0 +1,21 @@
+{
+  "tag": "research-snapshot-2026-09-11",
+  "assets": [
+    {
+      "name": "evidence.tar.gz",
+      "sha256": "2e73d7c169f27c6d3b39c29b59fbdfc763b8740a16d55168af09e6b712e6958d",
+      "bytes": 41007092,
+      "files": 4207,
+      "expanded_bytes": 310964450,
+      "url": "https://github.com/sdrshn-nmbr/attempting-continual-learning/releases/download/research-snapshot-2026-09-11/evidence.tar.gz"
+    },
+    {
+      "name": "checkpoints.tar.gz",
+      "sha256": "cf657c5db556467e80fbbe296340b40efcbcdc74c009415c63e5aabef19fba75",
+      "bytes": 1333462191,
+      "files": 271,
+      "expanded_bytes": 1932150496,
+      "url": "https://github.com/sdrshn-nmbr/attempting-continual-learning/releases/download/research-snapshot-2026-09-11/checkpoints.tar.gz"
+    }
+  ]
+}

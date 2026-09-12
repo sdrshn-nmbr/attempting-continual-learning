@@ -1,0 +1,299 @@
+{
+  "analyzed_at_utc": "2026-09-09T00:07:31.055946+00:00",
+  "source_bundle_sha256": "ff342b53b34252e00f6de531d0f3ff596a4fd6614ee0ea5ade83f98a03151009",
+  "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+  "seeds": [
+    23,
+    47
+  ],
+  "all_predeclared_seeds_included": true,
+  "seed_selection": "Both predeclared seeds are included without choosing a best seed.",
+  "pairs": {
+    "23": {
+      "audit_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/plasticity/.artifacts/plasticity-clinc-support-primary-seed23/analysis.json",
+      "audit_sha256": "a5d43cc05cdc7d798655bd6d828878ec35cf1bdee0c51384a4c8555b91acbd7d",
+      "audit_checks": 5067,
+      "global_score_records_recomputed": 176,
+      "gates": {
+        "both_acquisition_at_least_90_percent_every_task": true,
+        "bounded_acquisition_at_most_5_points_below_full": true,
+        "bounded_final_old_at_least_90_percent": true,
+        "bounded_final_old_at_most_5_points_below_full": true
+      },
+      "all_gates_passed": true,
+      "shared_slots_sha256": "d6dc397a7f9c1a5c2eb48f1038bdc834da1d602a4d7a5e379e3fe05cc446ead8",
+      "results": {
+        "full": {
+          "acquisition": [
+            {
+              "correct": 78,
+              "examples": 80
+            },
+            {
+              "correct": 80,
+              "examples": 80
+            },
+            {
+              "correct": 80,
+              "examples": 80
+            },
+            {
+              "correct": 79,
+              "examples": 80
+            }
+          ],
+          "final_old": {
+            "correct": 235,
+            "examples": 240
+          },
+          "final_all": {
+            "correct": 314,
+            "examples": 320
+          }
+        },
+        "bounded": {
+          "acquisition": [
+            {
+              "correct": 78,
+              "examples": 80
+            },
+            {
+              "correct": 80,
+              "examples": 80
+            },
+            {
+              "correct": 80,
+              "examples": 80
+            },
+            {
+              "correct": 80,
+              "examples": 80
+            }
+          ],
+          "final_old": {
+            "correct": 238,
+            "examples": 240
+          },
+          "final_all": {
+            "correct": 318,
+            "examples": 320
+          }
+        }
+      },
+      "actual_after_task_a_adapter_weight_sha256": "eda0fe928895067dac205626bf1b59defbe2767a1e976b32fb17a839b6fd5086",
+      "base_content_verification_sha256": "995aafa983be84bfb3affbbe840684f6be48f07ede256beae81b22a5db5fd66f"
+    },
+    "47": {
+      "audit_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/plasticity/.artifacts/plasticity-clinc-support-confirmation-seed47/analysis.json",
+      "audit_sha256": "2628320e47a1e4adb6d3f4f4797fc32b8691ee2e37e61c250e921f8e28d21ac9",
+      "audit_checks": 5069,
+      "global_score_records_recomputed": 176,
+      "gates": {
+        "both_acquisition_at_least_90_percent_every_task": true,
+        "bounded_acquisition_at_most_5_points_below_full": true,
+        "bounded_final_old_at_least_90_percent": true,
+        "bounded_final_old_at_most_5_points_below_full": true
+      },
+      "all_gates_passed": true,
+      "shared_slots_sha256": "9948a33ff7cfae91175042dda4ad4be0269953e9b89f410550ecda0f01f04139",
+      "results": {
+        "full": {
+          "acquisition": [
+            {
+              "correct": 80,
+              "examples": 80
+            },
+            {
+              "correct": 80,
+              "examples": 80
+            },
+            {
+              "correct": 76,
+              "examples": 80
+            },
+            {
+              "correct": 80,
+              "examples": 80
+            }
+          ],
+          "final_old": {
+            "correct": 236,
+            "examples": 240
+          },
+          "final_all": {
+            "correct": 316,
+            "examples": 320
+          }
+        },
+        "bounded": {
+          "acquisition": [
+            {
+              "correct": 80,
+              "examples": 80
+            },
+            {
+              "correct": 79,
+              "examples": 80
+            },
+            {
+              "correct": 80,
+              "examples": 80
+            },
+            {
+              "correct": 79,
+              "examples": 80
+            }
+          ],
+          "final_old": {
+            "correct": 238,
+            "examples": 240
+          },
+          "final_all": {
+            "correct": 317,
+            "examples": 320
+          }
+        }
+      },
+      "actual_after_task_a_adapter_weight_sha256": "8eed145fd08002e9d0a9c3e375d7754f326355e497f529e74f48e8299e06c083",
+      "base_content_verification_sha256": "472e0515cb5024722c2067d71b1b90586b1c116ee860f67c05efbd600a457f79"
+    }
+  },
+  "all_four_gates_passed_in_both_seeds": true,
+  "pooled_descriptive_counts": {
+    "full": {
+      "final_old": {
+        "correct": 471,
+        "examples": 480
+      },
+      "final_all": {
+        "correct": 630,
+        "examples": 640
+      }
+    },
+    "bounded": {
+      "final_old": {
+        "correct": 476,
+        "examples": 480
+      },
+      "final_all": {
+        "correct": 635,
+        "examples": 640
+      }
+    }
+  },
+  "pooled_bounded_minus_full_correct": {
+    "final_old": 5,
+    "final_all": 5
+  },
+  "verification": {
+    "config_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/plasticity/.artifacts/plasticity-clinc-support-two-seed/verification.json",
+    "config_sha256": "a2eaa90a76df3a90fd741d44078af7a0313d2b5006b28aa139a2424cb2805a06",
+    "entrypoint": "verify.py",
+    "entrypoint_sha256": "4c90cd425d4c0af189afd1150a56e6f4ac73ce253ab76c072fef4b409a55eaaa",
+    "source_file_count": 19,
+    "expected_adapters": 4,
+    "expected_predictions_per_seed": 640,
+    "expected_total_predictions": 1280,
+    "expected_total_updates": 0,
+    "dispatch_performed": false,
+    "gpu_verification_status": "pending_parent_dispatch",
+    "runs": [
+      {
+        "run_dir": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-support-full-s23",
+        "metrics_sha256": "c50b1e74cc8470805b61398d60ca2b98456ebf11656213efd59f816b1164a87c",
+        "execution_sha256": "86c7326fd4fcfbff41044db636f494ce444a94bb01052af50eab9636ce87b738",
+        "events_sha256": "c9db23fb92838acf04112d3aadc34fdafd68bc5aab7812c9975deb100d97f723",
+        "seed": 23,
+        "capacity": null,
+        "source_config": "support-full-seed23.json",
+        "config_sha256": "cab01678b7e569974cf017dd201b1ff6a8497852bf562814ce1322e61a5a4f7c",
+        "source_sha256": "ff342b53b34252e00f6de531d0f3ff596a4fd6614ee0ea5ade83f98a03151009",
+        "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+        "checkpoint_sha256": "05daff0809a0b5ab9e1c908c2c73a0ed893373ebdb2a943836bdb8bf8f51959a",
+        "final_adapter_files_sha256": {
+          "README.md": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2",
+          "adapter_config.json": "e0979fc164cd0f7d42659bdc21f13d69c1e25981a743c6109f21b5377170dadc",
+          "adapter_model.safetensors": "2b4430d13760579f4a260f4e7b2d01c463f3718da70cefd6742409e88ef4844a"
+        },
+        "expected_methods": [
+          "balanced_replay"
+        ],
+        "expected_predictions": 320
+      },
+      {
+        "run_dir": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-support-32-s23",
+        "metrics_sha256": "e241cfedde7b052ce5d5b1985fa1c3c217072103cc8cbd3a0f4542286f32c59a",
+        "execution_sha256": "00e3ee161c6c223b1373b75bf7231996014bd405c2a2d84c78257fd994ed29d2",
+        "events_sha256": "07e951b677fd3960c408a9ee8cd6f11ca865b2db35c26905773914d87eacd19e",
+        "seed": 23,
+        "capacity": 32,
+        "source_config": "support-32-seed23.json",
+        "config_sha256": "63d4dea436bf7d198ddc5c33929479b10fad8374a4955b8eb88bce195a652516",
+        "source_sha256": "ff342b53b34252e00f6de531d0f3ff596a4fd6614ee0ea5ade83f98a03151009",
+        "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+        "checkpoint_sha256": "bf0efd380d655555980d2d71ef3a574ac71c6e7e01f0f783f93cbde951f2735a",
+        "final_adapter_files_sha256": {
+          "README.md": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2",
+          "adapter_config.json": "55027d28827b7b7d1ddcd5b85dd5d6c85b70a79f0c8535364ac5bebb81b271f6",
+          "adapter_model.safetensors": "f5795e24a072ac8d585d01805d143586aa6af322e7c3b85377eda33fa731f9e7"
+        },
+        "expected_methods": [
+          "balanced_replay"
+        ],
+        "expected_predictions": 320
+      },
+      {
+        "run_dir": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-support-full-s47",
+        "metrics_sha256": "1101021abef560f278c05a0a2b1db9985133ce87f9a173f87fcaa8ebdb2ccd00",
+        "execution_sha256": "a21a44e926932222c5c5d22a087a617af42a14d4c8bd523fde9d6aab34cb7496",
+        "events_sha256": "5ed3216a14ea42bc1a4a0f55d60bf9463dccba8f1f30c7d49e5f629a82fd4a9e",
+        "seed": 47,
+        "capacity": null,
+        "source_config": "support-full-seed47.json",
+        "config_sha256": "3f6a7b30b50cbd67508341bba71e0877bad148dcb024f460fd5a81ba87bfcffb",
+        "source_sha256": "ff342b53b34252e00f6de531d0f3ff596a4fd6614ee0ea5ade83f98a03151009",
+        "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+        "checkpoint_sha256": "62c6a74769a42eff4d8a0bdab047b4e19f0de82c59eb9f1f3829d055a43f49be",
+        "final_adapter_files_sha256": {
+          "README.md": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2",
+          "adapter_config.json": "e0979fc164cd0f7d42659bdc21f13d69c1e25981a743c6109f21b5377170dadc",
+          "adapter_model.safetensors": "8a10f3e10a3840dd5521140faa56d35ea47b009bf7b0314b5f31ca3bfcfab9cf"
+        },
+        "expected_methods": [
+          "balanced_replay"
+        ],
+        "expected_predictions": 320
+      },
+      {
+        "run_dir": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-support-32-s47",
+        "metrics_sha256": "a1c6cc2022ab00b5437faa713531c29405fc79add2f18b8f251dc99071044737",
+        "execution_sha256": "ac78dd8cb585546b0310a80b2e3cd3d4eba82bd9dc5f84e5e0609de40bccb764",
+        "events_sha256": "0ffc24e643fe9cbcd3619925c55903c881f309d59ddf4c14d30e58453176abd7",
+        "seed": 47,
+        "capacity": 32,
+        "source_config": "support-32-seed47.json",
+        "config_sha256": "e7928d67c6243797e8fecc4ac54e82b091b0583d9007af891ccc1b01dd2cefc7",
+        "source_sha256": "ff342b53b34252e00f6de531d0f3ff596a4fd6614ee0ea5ade83f98a03151009",
+        "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+        "checkpoint_sha256": "24ca735cbd4c7d39d38e5b9bab2c4dfbaec3dfca6e2598f38a2d450972332c19",
+        "final_adapter_files_sha256": {
+          "README.md": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2",
+          "adapter_config.json": "e0979fc164cd0f7d42659bdc21f13d69c1e25981a743c6109f21b5377170dadc",
+          "adapter_model.safetensors": "96541b0564364f7b2d898dbbaf78a04aa6cf9402f8a2dd3d43cc5a1a8046c0cc"
+        },
+        "expected_methods": [
+          "balanced_replay"
+        ],
+        "expected_predictions": 320
+      }
+    ]
+  },
+  "analysis_script_sha256": "b79f931124ac3722c1ab14ac3f0241b66ba0330cf8b8bd931d4238ac7891590a",
+  "limits": [
+    "Replay candidate support is capped at 32; historical rows remain loaded, so physical host RAM is not bounded.",
+    "Current row references and replay class slots/exposures match; replay input tokens and padded tokens differ.",
+    "Each seed jointly fixes task order, code mapping, samples, retention priorities and initialization. These two repetitions do not establish statistical significance.",
+    "Pooled counts describe both seeds together; every scientific gate is applied separately to each seed.",
+    "Saved support adapters have verified content hashes; fresh-process zero-update GPU reloading is pending parent dispatch."
+  ]
+}

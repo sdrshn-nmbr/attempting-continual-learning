@@ -1,0 +1,1853 @@
+{
+  "run_id": "plasticity-clinc-pilot-seed17",
+  "source_code_sha256": "90659d4f001cc7fb70062ef1321c93139d886483e9026a1f2da1ea0f36c72bea",
+  "metrics_sha256": "717157c40c2326a21ca9435ade3e4cdaea7e38f0508e951696f76c3261cdfa3b",
+  "analysis_script_sha256": "0716fc037533e4354eedbee09d9067ec73b05cc1c73c5101790956f1101a580e",
+  "checks": {
+    "execution_completed_exit0": true,
+    "metrics_completed_512_updates": true,
+    "progress_completed_512_updates": true,
+    "all_metrics_finite": true,
+    "source_files_match_frozen_run": true,
+    "submitted_config_matches": true,
+    "budgets_match": true,
+    "identical_first_task_test_predictions": true,
+    "identical_first_task_update_metrics": true,
+    "unique_training_event_ids": true,
+    "eval_every_two_updates": true,
+    "test_rows_per_task": true,
+    "global_evaluations_recomputed_from_predictions": 336
+  },
+  "config": {
+    "model_id": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "model_path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "seed": 17,
+    "pilot": true,
+    "methods": [
+      "persistent",
+      "optimizer_reset",
+      "selective_reset",
+      "fresh_base"
+    ],
+    "tasks": 4,
+    "classes_per_task": 4,
+    "train_per_class": 32,
+    "validation_per_class": 10,
+    "test_per_class": 20,
+    "updates_per_task": 32,
+    "batch_size": 4,
+    "gradient_accumulation_steps": 2,
+    "eval_batch_size": 8,
+    "eval_every": 2,
+    "checkpoint_every": 8,
+    "max_length": 128,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "reset_fraction": 0.25,
+    "acquisition_threshold": 0.7,
+    "diagnostic_examples": 32,
+    "diagnostic_features": 256,
+    "dataset_cache_dir": null,
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "gradient_checkpointing": false
+  },
+  "methods": [
+    {
+      "method": "persistent",
+      "test_accuracy_at_acquisition_by_task": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mean_test_accuracy_at_acquisition": 1.0,
+      "later_tasks_validation_auc": 0.89453125,
+      "later_tasks_early8_validation_auc": 0.6010416666666667,
+      "first_observed_70pct_validation_update": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "first_observed_95pct_validation_update": [
+        6,
+        6,
+        6,
+        4
+      ],
+      "final_old_correct": 70,
+      "final_old_examples": 240,
+      "final_old_global_accuracy": 0.2916666666666667,
+      "final_old_task_local_accuracy": 0.75,
+      "final_all_global_accuracy": 0.46875,
+      "final_test_global_accuracy_by_task": [
+        0.2,
+        0.425,
+        0.25,
+        1.0
+      ],
+      "final_test_task_local_accuracy_by_task": [
+        0.6875,
+        0.825,
+        0.7375,
+        1.0
+      ],
+      "final_test_loss_by_task": [
+        8.520698887109756,
+        4.632018676085863,
+        10.880042800307274,
+        0.0011406003565866741
+      ],
+      "retention_comparable": true
+    },
+    {
+      "method": "optimizer_reset",
+      "test_accuracy_at_acquisition_by_task": [
+        1.0,
+        1.0,
+        1.0,
+        0.9875
+      ],
+      "mean_test_accuracy_at_acquisition": 0.996875,
+      "later_tasks_validation_auc": 0.9255208333333333,
+      "later_tasks_early8_validation_auc": 0.7302083333333333,
+      "first_observed_70pct_validation_update": [
+        4,
+        2,
+        4,
+        4
+      ],
+      "first_observed_95pct_validation_update": [
+        6,
+        4,
+        6,
+        4
+      ],
+      "final_old_correct": 47,
+      "final_old_examples": 240,
+      "final_old_global_accuracy": 0.19583333333333333,
+      "final_old_task_local_accuracy": 0.8208333333333333,
+      "final_all_global_accuracy": 0.39375,
+      "final_test_global_accuracy_by_task": [
+        0.0,
+        0.125,
+        0.4625,
+        0.9875
+      ],
+      "final_test_task_local_accuracy_by_task": [
+        0.95,
+        0.7625,
+        0.75,
+        0.9875
+      ],
+      "final_test_loss_by_task": [
+        12.205205154418945,
+        8.939778763055802,
+        8.515694522112607,
+        0.04035257845932385
+      ],
+      "retention_comparable": true
+    },
+    {
+      "method": "selective_reset",
+      "test_accuracy_at_acquisition_by_task": [
+        1.0,
+        1.0,
+        0.9875,
+        0.9875
+      ],
+      "mean_test_accuracy_at_acquisition": 0.99375,
+      "later_tasks_validation_auc": 0.9359375,
+      "later_tasks_early8_validation_auc": 0.7447916666666666,
+      "first_observed_70pct_validation_update": [
+        4,
+        2,
+        4,
+        4
+      ],
+      "first_observed_95pct_validation_update": [
+        6,
+        4,
+        4,
+        6
+      ],
+      "final_old_correct": 0,
+      "final_old_examples": 240,
+      "final_old_global_accuracy": 0.0,
+      "final_old_task_local_accuracy": 0.6083333333333333,
+      "final_all_global_accuracy": 0.246875,
+      "final_test_global_accuracy_by_task": [
+        0.0,
+        0.0,
+        0.0,
+        0.9875
+      ],
+      "final_test_task_local_accuracy_by_task": [
+        0.475,
+        0.8375,
+        0.5125,
+        0.9875
+      ],
+      "final_test_loss_by_task": [
+        17.60386896133423,
+        16.93129434585571,
+        16.258340072631835,
+        0.18132358806467935
+      ],
+      "retention_comparable": true
+    },
+    {
+      "method": "fresh_base",
+      "test_accuracy_at_acquisition_by_task": [
+        1.0,
+        0.95,
+        1.0,
+        0.975
+      ],
+      "mean_test_accuracy_at_acquisition": 0.98125,
+      "later_tasks_validation_auc": 0.91328125,
+      "later_tasks_early8_validation_auc": 0.7270833333333333,
+      "first_observed_70pct_validation_update": [
+        4,
+        4,
+        4,
+        2
+      ],
+      "first_observed_95pct_validation_update": [
+        6,
+        4,
+        6,
+        4
+      ],
+      "final_old_correct": 0,
+      "final_old_examples": 240,
+      "final_old_global_accuracy": 0.0,
+      "final_old_task_local_accuracy": 0.2041666666666667,
+      "final_all_global_accuracy": 0.24375,
+      "final_test_global_accuracy_by_task": [
+        0.0,
+        0.0,
+        0.0,
+        0.975
+      ],
+      "final_test_task_local_accuracy_by_task": [
+        0.1,
+        0.1125,
+        0.4,
+        0.975
+      ],
+      "final_test_loss_by_task": [
+        19.199903678894042,
+        16.307758331298828,
+        18.120922470092772,
+        0.2676236915517222
+      ],
+      "retention_comparable": false
+    }
+  ],
+  "paired_contrasts": {
+    "selective_reset_minus_optimizer_reset": {
+      "acquisition_test": {
+        "estimate": -0.003125,
+        "ci95_percentile": [
+          -0.009375,
+          0.0
+        ],
+        "estimate_percentage_points": -0.3125,
+        "ci95_percentage_points": [
+          -0.9375,
+          0.0
+        ],
+        "bootstrap_standard_error": 0.003040640861304891,
+        "analytic_stratified_standard_error": 0.0031249999999999997,
+        "unique_examples": 320,
+        "observation_denominator": 320,
+        "tasks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "left_better_examples": 0,
+        "right_better_examples": 1,
+        "empirically_degenerate": false
+      },
+      "final_old_test": {
+        "estimate": -0.19583333333333333,
+        "ci95_percentile": [
+          -0.21666666666666667,
+          -0.17083333333333334
+        ],
+        "estimate_percentage_points": -19.583333333333332,
+        "ci95_percentage_points": [
+          -21.666666666666668,
+          -17.083333333333332
+        ],
+        "bootstrap_standard_error": 0.011476700879217826,
+        "analytic_stratified_standard_error": 0.011746282228808842,
+        "unique_examples": 240,
+        "observation_denominator": 240,
+        "tasks": [
+          0,
+          1,
+          2
+        ],
+        "split": "test",
+        "left_better_examples": 0,
+        "right_better_examples": 47,
+        "empirically_degenerate": false
+      },
+      "final_all_test": {
+        "estimate": -0.146875,
+        "ci95_percentile": [
+          -0.1625,
+          -0.128125
+        ],
+        "estimate_percentage_points": -14.6875,
+        "ci95_percentage_points": [
+          -16.25,
+          -12.812499999999998
+        ],
+        "bootstrap_standard_error": 0.008607525659413367,
+        "analytic_stratified_standard_error": 0.008809711671606631,
+        "unique_examples": 320,
+        "observation_denominator": 320,
+        "tasks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "left_better_examples": 0,
+        "right_better_examples": 47,
+        "empirically_degenerate": false
+      },
+      "later_tasks_auc": {
+        "estimate": 0.010416666666666668,
+        "ci95_percentile": [
+          0.002604166666666666,
+          0.018229166666666664
+        ],
+        "estimate_percentage_points": 1.0416666666666667,
+        "ci95_percentage_points": [
+          0.26041666666666663,
+          1.8229166666666665
+        ],
+        "bootstrap_standard_error": 0.003981360618981934,
+        "analytic_stratified_standard_error": 0.004202680012816043,
+        "unique_examples": 120,
+        "observation_denominator": 120,
+        "tasks": [
+          1,
+          2,
+          3
+        ],
+        "split": "validation",
+        "left_better_examples": 33,
+        "right_better_examples": 13,
+        "empirically_degenerate": false
+      },
+      "later_tasks_early8_auc": {
+        "estimate": 0.014583333333333334,
+        "ci95_percentile": [
+          -0.011458333333333334,
+          0.039583333333333345
+        ],
+        "estimate_percentage_points": 1.4583333333333333,
+        "ci95_percentage_points": [
+          -1.1458333333333335,
+          3.9583333333333344
+        ],
+        "bootstrap_standard_error": 0.01310140994721884,
+        "analytic_stratified_standard_error": 0.013758064413999271,
+        "unique_examples": 120,
+        "observation_denominator": 120,
+        "tasks": [
+          1,
+          2,
+          3
+        ],
+        "split": "validation",
+        "left_better_examples": 28,
+        "right_better_examples": 16,
+        "empirically_degenerate": false
+      },
+      "by_task_acquisition_test": [
+        {
+          "estimate": 0.0,
+          "ci95_percentile": [
+            0.0,
+            0.0
+          ],
+          "estimate_percentage_points": 0.0,
+          "ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_standard_error": 0.0,
+          "analytic_stratified_standard_error": 0.0,
+          "unique_examples": 80,
+          "observation_denominator": 80,
+          "tasks": [
+            0
+          ],
+          "split": "test",
+          "left_better_examples": 0,
+          "right_better_examples": 0,
+          "empirically_degenerate": true
+        },
+        {
+          "estimate": 0.0,
+          "ci95_percentile": [
+            0.0,
+            0.0
+          ],
+          "estimate_percentage_points": 0.0,
+          "ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_standard_error": 0.0,
+          "analytic_stratified_standard_error": 0.0,
+          "unique_examples": 80,
+          "observation_denominator": 80,
+          "tasks": [
+            1
+          ],
+          "split": "test",
+          "left_better_examples": 0,
+          "right_better_examples": 0,
+          "empirically_degenerate": true
+        },
+        {
+          "estimate": -0.0125,
+          "ci95_percentile": [
+            -0.0375,
+            0.0
+          ],
+          "estimate_percentage_points": -1.25,
+          "ci95_percentage_points": [
+            -3.75,
+            0.0
+          ],
+          "bootstrap_standard_error": 0.012162563445219564,
+          "analytic_stratified_standard_error": 0.012499999999999999,
+          "unique_examples": 80,
+          "observation_denominator": 80,
+          "tasks": [
+            2
+          ],
+          "split": "test",
+          "left_better_examples": 0,
+          "right_better_examples": 1,
+          "empirically_degenerate": false
+        },
+        {
+          "estimate": 0.0,
+          "ci95_percentile": [
+            0.0,
+            0.0
+          ],
+          "estimate_percentage_points": 0.0,
+          "ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_standard_error": 0.0,
+          "analytic_stratified_standard_error": 0.0,
+          "unique_examples": 80,
+          "observation_denominator": 80,
+          "tasks": [
+            3
+          ],
+          "split": "test",
+          "left_better_examples": 0,
+          "right_better_examples": 0,
+          "empirically_degenerate": true
+        }
+      ],
+      "by_task_later_auc": [
+        {
+          "estimate": 0.0078125,
+          "ci95_percentile": [
+            0.0015625,
+            0.0140625
+          ],
+          "estimate_percentage_points": 0.78125,
+          "ci95_percentage_points": [
+            0.15625,
+            1.40625
+          ],
+          "bootstrap_standard_error": 0.003162588977306534,
+          "analytic_stratified_standard_error": 0.0033349605403296093,
+          "unique_examples": 40,
+          "observation_denominator": 40,
+          "tasks": [
+            1
+          ],
+          "split": "validation",
+          "left_better_examples": 5,
+          "right_better_examples": 0,
+          "empirically_degenerate": false
+        },
+        {
+          "estimate": 0.040625,
+          "ci95_percentile": [
+            0.026562500000000003,
+            0.0546875
+          ],
+          "estimate_percentage_points": 4.0625,
+          "ci95_percentage_points": [
+            2.6562500000000004,
+            5.46875
+          ],
+          "bootstrap_standard_error": 0.007315949408682441,
+          "analytic_stratified_standard_error": 0.0077602418884121565,
+          "unique_examples": 40,
+          "observation_denominator": 40,
+          "tasks": [
+            2
+          ],
+          "split": "validation",
+          "left_better_examples": 21,
+          "right_better_examples": 1,
+          "empirically_degenerate": false
+        },
+        {
+          "estimate": -0.0171875,
+          "ci95_percentile": [
+            -0.034375,
+            -4.336808689942018e-19
+          ],
+          "estimate_percentage_points": -1.7187500000000002,
+          "ci95_percentage_points": [
+            -3.4375000000000004,
+            -4.336808689942018e-17
+          ],
+          "bootstrap_standard_error": 0.008899950776387748,
+          "analytic_stratified_standard_error": 0.009360521226880953,
+          "unique_examples": 40,
+          "observation_denominator": 40,
+          "tasks": [
+            3
+          ],
+          "split": "validation",
+          "left_better_examples": 7,
+          "right_better_examples": 12,
+          "empirically_degenerate": false
+        }
+      ],
+      "immediate_boundary_accuracy_change": {
+        "estimate": 0.014583333333333334,
+        "ci95_percentile": [
+          0.00625,
+          0.022916666666666665
+        ],
+        "estimate_percentage_points": 1.4583333333333333,
+        "ci95_percentage_points": [
+          0.625,
+          2.2916666666666665
+        ],
+        "bootstrap_standard_error": 0.004439700352168852,
+        "analytic_stratified_standard_error": 0.004559347124186796,
+        "unique_examples": 240,
+        "observation_denominator": 480,
+        "tasks": [
+          0,
+          1,
+          2
+        ],
+        "split": "test",
+        "left_better_examples": 7,
+        "right_better_examples": 0,
+        "empirically_degenerate": false
+      }
+    },
+    "optimizer_reset_minus_persistent": {
+      "acquisition_test": {
+        "estimate": -0.003125,
+        "ci95_percentile": [
+          -0.009375,
+          0.0
+        ],
+        "estimate_percentage_points": -0.3125,
+        "ci95_percentage_points": [
+          -0.9375,
+          0.0
+        ],
+        "bootstrap_standard_error": 0.0030340991329791327,
+        "analytic_stratified_standard_error": 0.0031249999999999997,
+        "unique_examples": 320,
+        "observation_denominator": 320,
+        "tasks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "left_better_examples": 0,
+        "right_better_examples": 1,
+        "empirically_degenerate": false
+      },
+      "final_old_test": {
+        "estimate": -0.09583333333333335,
+        "ci95_percentile": [
+          -0.12916666666666668,
+          -0.06249999999999997
+        ],
+        "estimate_percentage_points": -9.583333333333336,
+        "ci95_percentage_points": [
+          -12.916666666666668,
+          -6.249999999999997
+        ],
+        "bootstrap_standard_error": 0.018007478879654135,
+        "analytic_stratified_standard_error": 0.018411912937326635,
+        "unique_examples": 240,
+        "observation_denominator": 240,
+        "tasks": [
+          0,
+          1,
+          2
+        ],
+        "split": "test",
+        "left_better_examples": 35,
+        "right_better_examples": 58,
+        "empirically_degenerate": false
+      },
+      "final_all_test": {
+        "estimate": -0.075,
+        "ci95_percentile": [
+          -0.10312499999999998,
+          -0.04687500000000001
+        ],
+        "estimate_percentage_points": -7.5,
+        "ci95_percentage_points": [
+          -10.312499999999998,
+          -4.687500000000001
+        ],
+        "bootstrap_standard_error": 0.01384339078400747,
+        "analytic_stratified_standard_error": 0.01415811790569562,
+        "unique_examples": 320,
+        "observation_denominator": 320,
+        "tasks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "left_better_examples": 35,
+        "right_better_examples": 59,
+        "empirically_degenerate": false
+      },
+      "later_tasks_auc": {
+        "estimate": 0.030989583333333334,
+        "ci95_percentile": [
+          0.02395833333333334,
+          0.03802083333333333
+        ],
+        "estimate_percentage_points": 3.0989583333333335,
+        "ci95_percentage_points": [
+          2.395833333333334,
+          3.802083333333333
+        ],
+        "bootstrap_standard_error": 0.0035556714109991187,
+        "analytic_stratified_standard_error": 0.0037447317031463526,
+        "unique_examples": 120,
+        "observation_denominator": 120,
+        "tasks": [
+          1,
+          2,
+          3
+        ],
+        "split": "validation",
+        "left_better_examples": 61,
+        "right_better_examples": 9,
+        "empirically_degenerate": false
+      },
+      "later_tasks_early8_auc": {
+        "estimate": 0.12916666666666665,
+        "ci95_percentile": [
+          0.10520833333333336,
+          0.15208333333333332
+        ],
+        "estimate_percentage_points": 12.916666666666664,
+        "ci95_percentage_points": [
+          10.520833333333336,
+          15.208333333333332
+        ],
+        "bootstrap_standard_error": 0.01173557596891131,
+        "analytic_stratified_standard_error": 0.012334944214119174,
+        "unique_examples": 120,
+        "observation_denominator": 120,
+        "tasks": [
+          1,
+          2,
+          3
+        ],
+        "split": "validation",
+        "left_better_examples": 63,
+        "right_better_examples": 7,
+        "empirically_degenerate": false
+      },
+      "by_task_acquisition_test": [
+        {
+          "estimate": 0.0,
+          "ci95_percentile": [
+            0.0,
+            0.0
+          ],
+          "estimate_percentage_points": 0.0,
+          "ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_standard_error": 0.0,
+          "analytic_stratified_standard_error": 0.0,
+          "unique_examples": 80,
+          "observation_denominator": 80,
+          "tasks": [
+            0
+          ],
+          "split": "test",
+          "left_better_examples": 0,
+          "right_better_examples": 0,
+          "empirically_degenerate": true
+        },
+        {
+          "estimate": 0.0,
+          "ci95_percentile": [
+            0.0,
+            0.0
+          ],
+          "estimate_percentage_points": 0.0,
+          "ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_standard_error": 0.0,
+          "analytic_stratified_standard_error": 0.0,
+          "unique_examples": 80,
+          "observation_denominator": 80,
+          "tasks": [
+            1
+          ],
+          "split": "test",
+          "left_better_examples": 0,
+          "right_better_examples": 0,
+          "empirically_degenerate": true
+        },
+        {
+          "estimate": 0.0,
+          "ci95_percentile": [
+            0.0,
+            0.0
+          ],
+          "estimate_percentage_points": 0.0,
+          "ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_standard_error": 0.0,
+          "analytic_stratified_standard_error": 0.0,
+          "unique_examples": 80,
+          "observation_denominator": 80,
+          "tasks": [
+            2
+          ],
+          "split": "test",
+          "left_better_examples": 0,
+          "right_better_examples": 0,
+          "empirically_degenerate": true
+        },
+        {
+          "estimate": -0.0125,
+          "ci95_percentile": [
+            -0.0375,
+            0.0
+          ],
+          "estimate_percentage_points": -1.25,
+          "ci95_percentage_points": [
+            -3.75,
+            0.0
+          ],
+          "bootstrap_standard_error": 0.01213639653191653,
+          "analytic_stratified_standard_error": 0.012499999999999999,
+          "unique_examples": 80,
+          "observation_denominator": 80,
+          "tasks": [
+            3
+          ],
+          "split": "test",
+          "left_better_examples": 0,
+          "right_better_examples": 1,
+          "empirically_degenerate": false
+        }
+      ],
+      "by_task_later_auc": [
+        {
+          "estimate": 0.0640625,
+          "ci95_percentile": [
+            0.05625,
+            0.071875
+          ],
+          "estimate_percentage_points": 6.406249999999999,
+          "ci95_percentage_points": [
+            5.625,
+            7.187499999999999
+          ],
+          "bootstrap_standard_error": 0.003867275068594536,
+          "analytic_stratified_standard_error": 0.00406783837286805,
+          "unique_examples": 40,
+          "observation_denominator": 40,
+          "tasks": [
+            1
+          ],
+          "split": "validation",
+          "left_better_examples": 35,
+          "right_better_examples": 0,
+          "empirically_degenerate": false
+        },
+        {
+          "estimate": 0.009375,
+          "ci95_percentile": [
+            -0.006249999999999999,
+            0.025
+          ],
+          "estimate_percentage_points": 0.9375,
+          "ci95_percentage_points": [
+            -0.6249999999999999,
+            2.5
+          ],
+          "bootstrap_standard_error": 0.00767607363347327,
+          "analytic_stratified_standard_error": 0.008102265201095856,
+          "unique_examples": 40,
+          "observation_denominator": 40,
+          "tasks": [
+            2
+          ],
+          "split": "validation",
+          "left_better_examples": 13,
+          "right_better_examples": 7,
+          "empirically_degenerate": false
+        },
+        {
+          "estimate": 0.01953125,
+          "ci95_percentile": [
+            0.00703125,
+            0.03125
+          ],
+          "estimate_percentage_points": 1.953125,
+          "ci95_percentage_points": [
+            0.703125,
+            3.125
+          ],
+          "bootstrap_standard_error": 0.006310264006966061,
+          "analytic_stratified_standard_error": 0.006634239168154686,
+          "unique_examples": 40,
+          "observation_denominator": 40,
+          "tasks": [
+            3
+          ],
+          "split": "validation",
+          "left_better_examples": 13,
+          "right_better_examples": 2,
+          "empirically_degenerate": false
+        }
+      ]
+    },
+    "selective_reset_minus_persistent": {
+      "acquisition_test": {
+        "estimate": -0.00625,
+        "ci95_percentile": [
+          -0.015625,
+          0.0
+        ],
+        "estimate_percentage_points": -0.625,
+        "ci95_percentage_points": [
+          -1.5625,
+          0.0
+        ],
+        "bootstrap_standard_error": 0.004303801493330011,
+        "analytic_stratified_standard_error": 0.004419417382415922,
+        "unique_examples": 320,
+        "observation_denominator": 320,
+        "tasks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "left_better_examples": 0,
+        "right_better_examples": 2,
+        "empirically_degenerate": false
+      },
+      "final_old_test": {
+        "estimate": -0.29166666666666663,
+        "ci95_percentile": [
+          -0.31666666666666665,
+          -0.2625
+        ],
+        "estimate_percentage_points": -29.166666666666664,
+        "ci95_percentage_points": [
+          -31.666666666666664,
+          -26.25
+        ],
+        "bootstrap_standard_error": 0.01383000148970393,
+        "analytic_stratified_standard_error": 0.01417827182039001,
+        "unique_examples": 240,
+        "observation_denominator": 240,
+        "tasks": [
+          0,
+          1,
+          2
+        ],
+        "split": "test",
+        "left_better_examples": 0,
+        "right_better_examples": 70,
+        "empirically_degenerate": false
+      },
+      "final_all_test": {
+        "estimate": -0.221875,
+        "ci95_percentile": [
+          -0.24374999999999997,
+          -0.2
+        ],
+        "estimate_percentage_points": -22.1875,
+        "ci95_percentage_points": [
+          -24.374999999999996,
+          -20.0
+        ],
+        "bootstrap_standard_error": 0.010802898929772544,
+        "analytic_stratified_standard_error": 0.011083378676862793,
+        "unique_examples": 320,
+        "observation_denominator": 320,
+        "tasks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "left_better_examples": 0,
+        "right_better_examples": 71,
+        "empirically_degenerate": false
+      },
+      "later_tasks_auc": {
+        "estimate": 0.04140625,
+        "ci95_percentile": [
+          0.03463541666666667,
+          0.047656250000000004
+        ],
+        "estimate_percentage_points": 4.140625,
+        "ci95_percentage_points": [
+          3.463541666666667,
+          4.765625
+        ],
+        "bootstrap_standard_error": 0.003323808802534842,
+        "analytic_stratified_standard_error": 0.0034906196636949826,
+        "unique_examples": 120,
+        "observation_denominator": 120,
+        "tasks": [
+          1,
+          2,
+          3
+        ],
+        "split": "validation",
+        "left_better_examples": 73,
+        "right_better_examples": 6,
+        "empirically_degenerate": false
+      },
+      "later_tasks_early8_auc": {
+        "estimate": 0.14375,
+        "ci95_percentile": [
+          0.11875000000000002,
+          0.16770833333333332
+        ],
+        "estimate_percentage_points": 14.374999999999998,
+        "ci95_percentage_points": [
+          11.875000000000002,
+          16.770833333333332
+        ],
+        "bootstrap_standard_error": 0.012199196995064025,
+        "analytic_stratified_standard_error": 0.012814334782809677,
+        "unique_examples": 120,
+        "observation_denominator": 120,
+        "tasks": [
+          1,
+          2,
+          3
+        ],
+        "split": "validation",
+        "left_better_examples": 66,
+        "right_better_examples": 7,
+        "empirically_degenerate": false
+      },
+      "by_task_acquisition_test": [
+        {
+          "estimate": 0.0,
+          "ci95_percentile": [
+            0.0,
+            0.0
+          ],
+          "estimate_percentage_points": 0.0,
+          "ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_standard_error": 0.0,
+          "analytic_stratified_standard_error": 0.0,
+          "unique_examples": 80,
+          "observation_denominator": 80,
+          "tasks": [
+            0
+          ],
+          "split": "test",
+          "left_better_examples": 0,
+          "right_better_examples": 0,
+          "empirically_degenerate": true
+        },
+        {
+          "estimate": 0.0,
+          "ci95_percentile": [
+            0.0,
+            0.0
+          ],
+          "estimate_percentage_points": 0.0,
+          "ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_standard_error": 0.0,
+          "analytic_stratified_standard_error": 0.0,
+          "unique_examples": 80,
+          "observation_denominator": 80,
+          "tasks": [
+            1
+          ],
+          "split": "test",
+          "left_better_examples": 0,
+          "right_better_examples": 0,
+          "empirically_degenerate": true
+        },
+        {
+          "estimate": -0.0125,
+          "ci95_percentile": [
+            -0.0375,
+            0.0
+          ],
+          "estimate_percentage_points": -1.25,
+          "ci95_percentage_points": [
+            -3.75,
+            0.0
+          ],
+          "bootstrap_standard_error": 0.012162563445219564,
+          "analytic_stratified_standard_error": 0.012499999999999999,
+          "unique_examples": 80,
+          "observation_denominator": 80,
+          "tasks": [
+            2
+          ],
+          "split": "test",
+          "left_better_examples": 0,
+          "right_better_examples": 1,
+          "empirically_degenerate": false
+        },
+        {
+          "estimate": -0.0125,
+          "ci95_percentile": [
+            -0.0375,
+            0.0
+          ],
+          "estimate_percentage_points": -1.25,
+          "ci95_percentage_points": [
+            -3.75,
+            0.0
+          ],
+          "bootstrap_standard_error": 0.01213639653191653,
+          "analytic_stratified_standard_error": 0.012499999999999999,
+          "unique_examples": 80,
+          "observation_denominator": 80,
+          "tasks": [
+            3
+          ],
+          "split": "test",
+          "left_better_examples": 0,
+          "right_better_examples": 1,
+          "empirically_degenerate": false
+        }
+      ],
+      "by_task_later_auc": [
+        {
+          "estimate": 0.071875,
+          "ci95_percentile": [
+            0.0640625,
+            0.078125
+          ],
+          "estimate_percentage_points": 7.187499999999999,
+          "ci95_percentage_points": [
+            6.406249999999999,
+            7.8125
+          ],
+          "bootstrap_standard_error": 0.0035592480181595725,
+          "analytic_stratified_standard_error": 0.003755782578608322,
+          "unique_examples": 40,
+          "observation_denominator": 40,
+          "tasks": [
+            1
+          ],
+          "split": "validation",
+          "left_better_examples": 37,
+          "right_better_examples": 0,
+          "empirically_degenerate": false
+        },
+        {
+          "estimate": 0.05,
+          "ci95_percentile": [
+            0.0375,
+            0.0625
+          ],
+          "estimate_percentage_points": 5.0,
+          "ci95_percentage_points": [
+            3.75,
+            6.25
+          ],
+          "bootstrap_standard_error": 0.006291021609997567,
+          "analytic_stratified_standard_error": 0.006629126073623884,
+          "unique_examples": 40,
+          "observation_denominator": 40,
+          "tasks": [
+            2
+          ],
+          "split": "validation",
+          "left_better_examples": 26,
+          "right_better_examples": 0,
+          "empirically_degenerate": false
+        },
+        {
+          "estimate": 0.00234375,
+          "ci95_percentile": [
+            -0.012499999999999999,
+            0.01484375
+          ],
+          "estimate_percentage_points": 0.234375,
+          "ci95_percentage_points": [
+            -1.25,
+            1.484375
+          ],
+          "bootstrap_standard_error": 0.006823024983731422,
+          "analytic_stratified_standard_error": 0.007183913658402981,
+          "unique_examples": 40,
+          "observation_denominator": 40,
+          "tasks": [
+            3
+          ],
+          "split": "validation",
+          "left_better_examples": 10,
+          "right_better_examples": 6,
+          "empirically_degenerate": false
+        }
+      ]
+    }
+  },
+  "fresh_base_adjusted": {
+    "persistent": {
+      "acquisition_test": {
+        "estimate": 0.018750000000000003,
+        "ci95_percentile": [
+          0.00625,
+          0.034375
+        ],
+        "estimate_percentage_points": 1.8750000000000002,
+        "ci95_percentage_points": [
+          0.625,
+          3.4375000000000004
+        ],
+        "bootstrap_standard_error": 0.0069762644142695425,
+        "analytic_stratified_standard_error": 0.007169241683455056,
+        "unique_examples": 320,
+        "observation_denominator": 320,
+        "tasks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "left_better_examples": 6,
+        "right_better_examples": 0,
+        "empirically_degenerate": false
+      },
+      "later_tasks_auc": {
+        "estimate": -0.01875,
+        "ci95_percentile": [
+          -0.031510416666666666,
+          -0.00390625
+        ],
+        "estimate_percentage_points": -1.875,
+        "ci95_percentage_points": [
+          -3.1510416666666665,
+          -0.390625
+        ],
+        "bootstrap_standard_error": 0.007055609140055926,
+        "analytic_stratified_standard_error": 0.007460229236064373,
+        "unique_examples": 120,
+        "observation_denominator": 120,
+        "tasks": [
+          1,
+          2,
+          3
+        ],
+        "split": "validation",
+        "left_better_examples": 16,
+        "right_better_examples": 56,
+        "empirically_degenerate": false
+      },
+      "by_task_auc_difference": [
+        0.0,
+        -0.04140624999999998,
+        0.0078125,
+        -0.022656249999999933
+      ]
+    },
+    "optimizer_reset": {
+      "acquisition_test": {
+        "estimate": 0.015625,
+        "ci95_percentile": [
+          0.003125,
+          0.028125
+        ],
+        "estimate_percentage_points": 1.5625,
+        "ci95_percentage_points": [
+          0.3125,
+          2.8125
+        ],
+        "bootstrap_standard_error": 0.0063546204667445936,
+        "analytic_stratified_standard_error": 0.006531490016994994,
+        "unique_examples": 320,
+        "observation_denominator": 320,
+        "tasks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "left_better_examples": 5,
+        "right_better_examples": 0,
+        "empirically_degenerate": false
+      },
+      "later_tasks_auc": {
+        "estimate": 0.012239583333333333,
+        "ci95_percentile": [
+          0.0002604166666666666,
+          0.02604166666666667
+        ],
+        "estimate_percentage_points": 1.2239583333333333,
+        "ci95_percentage_points": [
+          0.02604166666666666,
+          2.604166666666667
+        ],
+        "bootstrap_standard_error": 0.006663289571705646,
+        "analytic_stratified_standard_error": 0.007043028543244503,
+        "unique_examples": 120,
+        "observation_denominator": 120,
+        "tasks": [
+          1,
+          2,
+          3
+        ],
+        "split": "validation",
+        "left_better_examples": 34,
+        "right_better_examples": 28,
+        "empirically_degenerate": false
+      },
+      "by_task_auc_difference": [
+        0.0,
+        0.022656250000000044,
+        0.017187500000000022,
+        -0.0031249999999999334
+      ]
+    },
+    "selective_reset": {
+      "acquisition_test": {
+        "estimate": 0.0125,
+        "ci95_percentile": [
+          0.0,
+          0.028124999999999997
+        ],
+        "estimate_percentage_points": 1.25,
+        "ci95_percentage_points": [
+          0.0,
+          2.8124999999999996
+        ],
+        "bootstrap_standard_error": 0.007038413215619386,
+        "analytic_stratified_standard_error": 0.007240579178636559,
+        "unique_examples": 320,
+        "observation_denominator": 320,
+        "tasks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "left_better_examples": 5,
+        "right_better_examples": 1,
+        "empirically_degenerate": false
+      },
+      "later_tasks_auc": {
+        "estimate": 0.02265625,
+        "ci95_percentile": [
+          0.009375000000000001,
+          0.03802083333333333
+        ],
+        "estimate_percentage_points": 2.265625,
+        "ci95_percentage_points": [
+          0.9375000000000001,
+          3.802083333333333
+        ],
+        "bootstrap_standard_error": 0.007286904406007388,
+        "analytic_stratified_standard_error": 0.007711050415777379,
+        "unique_examples": 120,
+        "observation_denominator": 120,
+        "tasks": [
+          1,
+          2,
+          3
+        ],
+        "split": "validation",
+        "left_better_examples": 44,
+        "right_better_examples": 28,
+        "empirically_degenerate": false
+      },
+      "by_task_auc_difference": [
+        0.0,
+        0.030468750000000044,
+        0.057812500000000044,
+        -0.020312499999999956
+      ]
+    },
+    "fresh_base": {
+      "acquisition_test": {
+        "estimate": 0.0,
+        "ci95_percentile": [
+          0.0,
+          0.0
+        ],
+        "estimate_percentage_points": 0.0,
+        "ci95_percentage_points": [
+          0.0,
+          0.0
+        ],
+        "bootstrap_standard_error": 0.0,
+        "analytic_stratified_standard_error": 0.0,
+        "unique_examples": 320,
+        "observation_denominator": 320,
+        "tasks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "left_better_examples": 0,
+        "right_better_examples": 0,
+        "empirically_degenerate": true
+      },
+      "later_tasks_auc": {
+        "estimate": 0.0,
+        "ci95_percentile": [
+          0.0,
+          0.0
+        ],
+        "estimate_percentage_points": 0.0,
+        "ci95_percentage_points": [
+          0.0,
+          0.0
+        ],
+        "bootstrap_standard_error": 0.0,
+        "analytic_stratified_standard_error": 0.0,
+        "unique_examples": 120,
+        "observation_denominator": 120,
+        "tasks": [
+          1,
+          2,
+          3
+        ],
+        "split": "validation",
+        "left_better_examples": 0,
+        "right_better_examples": 0,
+        "empirically_degenerate": true
+      },
+      "by_task_auc_difference": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "boundary_endpoints": {
+    "persistent": [
+      {
+        "incoming_task": 1,
+        "old_tasks": [
+          {
+            "task": 0,
+            "n": 80,
+            "correct_before_boundary": 80,
+            "correct_after_boundary": 80,
+            "correct_after_training": 2,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": -0.975,
+            "loss_before_boundary": 9.238705125369507e-08,
+            "loss_after_boundary": 9.238705125369507e-08,
+            "loss_after_training": 17.09250831604004,
+            "task_local_accuracy_before_boundary": 1.0,
+            "task_local_accuracy_after_boundary": 1.0,
+            "task_local_accuracy_after_training": 0.5625
+          }
+        ],
+        "old_accuracy_before_boundary": 1.0,
+        "old_accuracy_after_boundary": 1.0,
+        "old_accuracy_after_training": 0.025,
+        "effective_boundary_update_frobenius": 0.0
+      },
+      {
+        "incoming_task": 2,
+        "old_tasks": [
+          {
+            "task": 0,
+            "n": 80,
+            "correct_before_boundary": 2,
+            "correct_after_boundary": 2,
+            "correct_after_training": 0,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": -0.025,
+            "loss_before_boundary": 17.09250831604004,
+            "loss_after_boundary": 17.09250831604004,
+            "loss_after_training": 17.467290019989015,
+            "task_local_accuracy_before_boundary": 0.5625,
+            "task_local_accuracy_after_boundary": 0.5625,
+            "task_local_accuracy_after_training": 0.7375
+          },
+          {
+            "task": 1,
+            "n": 80,
+            "correct_before_boundary": 80,
+            "correct_after_boundary": 80,
+            "correct_after_training": 38,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": -0.525,
+            "loss_before_boundary": 0.0020133621279466497,
+            "loss_after_boundary": 0.0020133621279466497,
+            "loss_after_training": 4.476594694331288,
+            "task_local_accuracy_before_boundary": 1.0,
+            "task_local_accuracy_after_boundary": 1.0,
+            "task_local_accuracy_after_training": 0.75
+          }
+        ],
+        "old_accuracy_before_boundary": 0.5125,
+        "old_accuracy_after_boundary": 0.5125,
+        "old_accuracy_after_training": 0.2375,
+        "effective_boundary_update_frobenius": 0.0
+      },
+      {
+        "incoming_task": 3,
+        "old_tasks": [
+          {
+            "task": 0,
+            "n": 80,
+            "correct_before_boundary": 0,
+            "correct_after_boundary": 0,
+            "correct_after_training": 16,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": 0.2,
+            "loss_before_boundary": 17.467290019989015,
+            "loss_after_boundary": 17.467290019989015,
+            "loss_after_training": 8.520698887109756,
+            "task_local_accuracy_before_boundary": 0.7375,
+            "task_local_accuracy_after_boundary": 0.7375,
+            "task_local_accuracy_after_training": 0.6875
+          },
+          {
+            "task": 1,
+            "n": 80,
+            "correct_before_boundary": 38,
+            "correct_after_boundary": 38,
+            "correct_after_training": 34,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": -0.05,
+            "loss_before_boundary": 4.476594694331288,
+            "loss_after_boundary": 4.476594694331288,
+            "loss_after_training": 4.632018676085863,
+            "task_local_accuracy_before_boundary": 0.75,
+            "task_local_accuracy_after_boundary": 0.75,
+            "task_local_accuracy_after_training": 0.825
+          },
+          {
+            "task": 2,
+            "n": 80,
+            "correct_before_boundary": 80,
+            "correct_after_boundary": 80,
+            "correct_after_training": 20,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": -0.75,
+            "loss_before_boundary": 0.0003302536253585231,
+            "loss_after_boundary": 0.0003302536253585231,
+            "loss_after_training": 10.880042800307274,
+            "task_local_accuracy_before_boundary": 1.0,
+            "task_local_accuracy_after_boundary": 1.0,
+            "task_local_accuracy_after_training": 0.7375
+          }
+        ],
+        "old_accuracy_before_boundary": 0.49166666666666664,
+        "old_accuracy_after_boundary": 0.49166666666666664,
+        "old_accuracy_after_training": 0.2916666666666667,
+        "effective_boundary_update_frobenius": 0.0
+      }
+    ],
+    "optimizer_reset": [
+      {
+        "incoming_task": 1,
+        "old_tasks": [
+          {
+            "task": 0,
+            "n": 80,
+            "correct_before_boundary": 80,
+            "correct_after_boundary": 80,
+            "correct_after_training": 0,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": -1.0,
+            "loss_before_boundary": 9.238705125369507e-08,
+            "loss_after_boundary": 9.238705125369507e-08,
+            "loss_after_training": 18.84673442840576,
+            "task_local_accuracy_before_boundary": 1.0,
+            "task_local_accuracy_after_boundary": 1.0,
+            "task_local_accuracy_after_training": 0.5125
+          }
+        ],
+        "old_accuracy_before_boundary": 1.0,
+        "old_accuracy_after_boundary": 1.0,
+        "old_accuracy_after_training": 0.0,
+        "effective_boundary_update_frobenius": 0.0
+      },
+      {
+        "incoming_task": 2,
+        "old_tasks": [
+          {
+            "task": 0,
+            "n": 80,
+            "correct_before_boundary": 0,
+            "correct_after_boundary": 0,
+            "correct_after_training": 0,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": 0.0,
+            "loss_before_boundary": 18.84673442840576,
+            "loss_after_boundary": 18.84673442840576,
+            "loss_after_training": 11.177777099609376,
+            "task_local_accuracy_before_boundary": 0.5125,
+            "task_local_accuracy_after_boundary": 0.5125,
+            "task_local_accuracy_after_training": 0.8
+          },
+          {
+            "task": 1,
+            "n": 80,
+            "correct_before_boundary": 80,
+            "correct_after_boundary": 80,
+            "correct_after_training": 19,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": -0.7625,
+            "loss_before_boundary": 0.0004886615221021629,
+            "loss_after_boundary": 0.0004886615221021629,
+            "loss_after_training": 5.59221431016922,
+            "task_local_accuracy_before_boundary": 1.0,
+            "task_local_accuracy_after_boundary": 1.0,
+            "task_local_accuracy_after_training": 0.9875
+          }
+        ],
+        "old_accuracy_before_boundary": 0.5,
+        "old_accuracy_after_boundary": 0.5,
+        "old_accuracy_after_training": 0.11875,
+        "effective_boundary_update_frobenius": 0.0
+      },
+      {
+        "incoming_task": 3,
+        "old_tasks": [
+          {
+            "task": 0,
+            "n": 80,
+            "correct_before_boundary": 0,
+            "correct_after_boundary": 0,
+            "correct_after_training": 0,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": 0.0,
+            "loss_before_boundary": 11.177777099609376,
+            "loss_after_boundary": 11.177777099609376,
+            "loss_after_training": 12.205205154418945,
+            "task_local_accuracy_before_boundary": 0.8,
+            "task_local_accuracy_after_boundary": 0.8,
+            "task_local_accuracy_after_training": 0.95
+          },
+          {
+            "task": 1,
+            "n": 80,
+            "correct_before_boundary": 19,
+            "correct_after_boundary": 19,
+            "correct_after_training": 10,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": -0.1125,
+            "loss_before_boundary": 5.59221431016922,
+            "loss_after_boundary": 5.59221431016922,
+            "loss_after_training": 8.939778763055802,
+            "task_local_accuracy_before_boundary": 0.9875,
+            "task_local_accuracy_after_boundary": 0.9875,
+            "task_local_accuracy_after_training": 0.7625
+          },
+          {
+            "task": 2,
+            "n": 80,
+            "correct_before_boundary": 80,
+            "correct_after_boundary": 80,
+            "correct_after_training": 37,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": -0.5375,
+            "loss_before_boundary": 0.0012860405322498991,
+            "loss_after_boundary": 0.0012860405322498991,
+            "loss_after_training": 8.515694522112607,
+            "task_local_accuracy_before_boundary": 1.0,
+            "task_local_accuracy_after_boundary": 1.0,
+            "task_local_accuracy_after_training": 0.75
+          }
+        ],
+        "old_accuracy_before_boundary": 0.4125,
+        "old_accuracy_after_boundary": 0.4125,
+        "old_accuracy_after_training": 0.19583333333333333,
+        "effective_boundary_update_frobenius": 0.0
+      }
+    ],
+    "selective_reset": [
+      {
+        "incoming_task": 1,
+        "old_tasks": [
+          {
+            "task": 0,
+            "n": 80,
+            "correct_before_boundary": 80,
+            "correct_after_boundary": 80,
+            "correct_after_training": 0,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": -1.0,
+            "loss_before_boundary": 9.238705125369507e-08,
+            "loss_after_boundary": 2.5211393799651206e-05,
+            "loss_after_training": 26.441911888122558,
+            "task_local_accuracy_before_boundary": 1.0,
+            "task_local_accuracy_after_boundary": 1.0,
+            "task_local_accuracy_after_training": 0.4125
+          }
+        ],
+        "old_accuracy_before_boundary": 1.0,
+        "old_accuracy_after_boundary": 1.0,
+        "old_accuracy_after_training": 0.0,
+        "effective_boundary_update_frobenius": 2.5790714726539843
+      },
+      {
+        "incoming_task": 2,
+        "old_tasks": [
+          {
+            "task": 0,
+            "n": 80,
+            "correct_before_boundary": 0,
+            "correct_after_boundary": 0,
+            "correct_after_training": 0,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": 0.0,
+            "loss_before_boundary": 26.441911888122558,
+            "loss_after_boundary": 21.326738548278808,
+            "loss_after_training": 7.445333194732666,
+            "task_local_accuracy_before_boundary": 0.4125,
+            "task_local_accuracy_after_boundary": 0.5875,
+            "task_local_accuracy_after_training": 0.85
+          },
+          {
+            "task": 1,
+            "n": 80,
+            "correct_before_boundary": 80,
+            "correct_after_boundary": 80,
+            "correct_after_training": 2,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": -0.975,
+            "loss_before_boundary": 3.9904640230759016e-05,
+            "loss_after_boundary": 1.6204233332928197e-05,
+            "loss_after_training": 8.912078952789306,
+            "task_local_accuracy_before_boundary": 1.0,
+            "task_local_accuracy_after_boundary": 1.0,
+            "task_local_accuracy_after_training": 0.525
+          }
+        ],
+        "old_accuracy_before_boundary": 0.5,
+        "old_accuracy_after_boundary": 0.5,
+        "old_accuracy_after_training": 0.0125,
+        "effective_boundary_update_frobenius": 2.575559775463393
+      },
+      {
+        "incoming_task": 3,
+        "old_tasks": [
+          {
+            "task": 0,
+            "n": 80,
+            "correct_before_boundary": 0,
+            "correct_after_boundary": 0,
+            "correct_after_training": 0,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": 0.0,
+            "loss_before_boundary": 7.445333194732666,
+            "loss_after_boundary": 4.886190462112427,
+            "loss_after_training": 17.60386896133423,
+            "task_local_accuracy_before_boundary": 0.85,
+            "task_local_accuracy_after_boundary": 0.85,
+            "task_local_accuracy_after_training": 0.475
+          },
+          {
+            "task": 1,
+            "n": 80,
+            "correct_before_boundary": 2,
+            "correct_after_boundary": 9,
+            "correct_after_training": 0,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 7,
+            "immediate_accuracy_change": 0.0875,
+            "subsequent_training_accuracy_change": -0.1125,
+            "loss_before_boundary": 8.912078952789306,
+            "loss_after_boundary": 6.424966764450073,
+            "loss_after_training": 16.93129434585571,
+            "task_local_accuracy_before_boundary": 0.525,
+            "task_local_accuracy_after_boundary": 0.7,
+            "task_local_accuracy_after_training": 0.8375
+          },
+          {
+            "task": 2,
+            "n": 80,
+            "correct_before_boundary": 79,
+            "correct_after_boundary": 79,
+            "correct_after_training": 0,
+            "correct_to_wrong_at_boundary": 0,
+            "wrong_to_correct_at_boundary": 0,
+            "immediate_accuracy_change": 0.0,
+            "subsequent_training_accuracy_change": -0.9875,
+            "loss_before_boundary": 0.05102351138011727,
+            "loss_after_boundary": 0.021510981384335538,
+            "loss_after_training": 16.258340072631835,
+            "task_local_accuracy_before_boundary": 0.9875,
+            "task_local_accuracy_after_boundary": 0.9875,
+            "task_local_accuracy_after_training": 0.5125
+          }
+        ],
+        "old_accuracy_before_boundary": 0.3375,
+        "old_accuracy_after_boundary": 0.36666666666666664,
+        "old_accuracy_after_training": 0.0,
+        "effective_boundary_update_frobenius": 2.5335789624469873
+      }
+    ]
+  },
+  "ci_method": {
+    "method": "Paired, intent-stratified, nonparametric percentile bootstrap",
+    "n_resamples": 50000,
+    "seed": 170917,
+    "numpy_version": "2.5.3",
+    "pairing": "For each task and intent, resample the same example indices for both methods and every validation checkpoint. Thus AUC intervals retain within-example temporal dependence. Boundary intervals also reuse each old example's draw across repeated task boundaries.",
+    "strata": "Twenty test or ten validation examples per intent; intent/task identities are fixed, not resampled.",
+    "interval": "2.5th and 97.5th percentiles of 50000 paired contrast replicates; estimates and intervals are conditional on these trained models and selected tasks.",
+    "reference": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html"
+  },
+  "runtime": {
+    "events": {
+      "preparing": 13,
+      "prepared": 1,
+      "initialized": 1,
+      "checkpoint": 98,
+      "acquisition": 272,
+      "task_started": 16,
+      "update": 512,
+      "task_completed": 16,
+      "completed": 1
+    },
+    "attempts": 1,
+    "gpu_disk_reload_or_resume_observed": false,
+    "measured_experiment_wall_seconds": 667.9449520210001,
+    "timing_seconds": {
+      "training": 395.5178162999987,
+      "evaluation": 215.28672544100004,
+      "diagnostics": 22.636688141997183,
+      "boundary": 0.15420415700032208
+    },
+    "peak_allocated_gib": 12.494316101074219,
+    "gradient_clipped_steps": 169,
+    "zero_loss_steps": 12,
+    "zero_gradient_steps": 0,
+    "effective_adapter_update_norm_range": [
+      0.03101765130644028,
+      1.0019829140988343
+    ]
+  },
+  "decision": {
+    "candidate": "selective_reset versus optimizer_reset",
+    "classification": "negative screening result for beneficial selective renewal in this regime",
+    "fresh_seed_candidate_replication_recommended": false,
+    "reason": "Near-ceiling new-task acquisition is preserved by every method. Selective renewal adds at most a small, task-dependent acquisition AUC gain while losing substantially more old-task global accuracy than optimizer reset; there is no evidence of sustained loss of acquisition ability to repair on this four-task stream.",
+    "mechanism_boundary": "The observed retention harm appears during subsequent adaptation, not as net immediate heldout accuracy damage at reset boundaries. Task-local accuracy diagnoses both class competition and some lost within-task discrimination; neither mechanism is isolated causally by this run.",
+    "next_config_created": false,
+    "expansion": "Do not scale this renewal candidate to model-size or seed matrices based on this result. The useful outcome is a validated interference assay and a negative result for this heuristic, conditional on the tested seed/tasks/budget.",
+    "limits": [
+      "One training seed and one four-task order; test-example confidence intervals do not quantify training-seed, order, task-selection or model uncertainty.",
+      "All accuracy intervals are pointwise, exploratory paired stratified percentile bootstrap intervals. They are not multiplicity-corrected confirmatory tests.",
+      "Only global per-example predictions are stored. Task-local accuracies and losses have no computable paired per-example CI in these receipts.",
+      "Ceiling endpoints can have empirically degenerate bootstrap intervals; these are not equivalence proofs.",
+      "The early-eight-update analysis is a post-hoc diagnostic; fixed 32-update budgets and final endpoints were not changed.",
+      "Public English intent classification with arbitrary codes does not establish general continual intelligence or pretraining-independent novel skill acquisition.",
+      "No causal claim that shortening the 32-update tasks would repair forgetting can be made: old-task retention was measured at boundaries and endpoints, not throughout new-task training."
+    ]
+  }
+}

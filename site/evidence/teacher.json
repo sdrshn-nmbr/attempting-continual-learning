@@ -1,0 +1,215 @@
+{
+  "adapter_after_sha256": {
+    "initial": "319efd067252857b8b3a3b48e04e31d7a530def4a3d6f2302e9a78895d9b085a",
+    "teacher": "f3a7a74323bd85634f23faad504daff548f2e59d6d6c88b4ef8112218cbd3678"
+  },
+  "adapter_before_sha256": {
+    "initial": "319efd067252857b8b3a3b48e04e31d7a530def4a3d6f2302e9a78895d9b085a",
+    "teacher": "f3a7a74323bd85634f23faad504daff548f2e59d6d6c88b4ef8112218cbd3678"
+  },
+  "base_after_sha256": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31",
+  "base_before_sha256": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31",
+  "checkpoint_files": {
+    "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/initial/lora/checkpoint/adapter_config.json": "88aeeaa34d6de94e14722699a9ef172f877783144e804539785602233c32da83",
+    "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/initial/lora/checkpoint/adapter_model.safetensors": "0af95c2348eb699211bd87a905031349aaab3bb566daba9fb78e3acc9d92c72a",
+    "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/stages/after_c/checkpoint/adapter_config.json": "88aeeaa34d6de94e14722699a9ef172f877783144e804539785602233c32da83",
+    "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/stages/after_c/checkpoint/adapter_model.safetensors": "761115de00055eaa9a72fb66aa75bddaff9e954a77a7b7b9318347333d19efff"
+  },
+  "config": {
+    "base": {
+      "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+      "local_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+      "repo_id": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+    },
+    "base_tensor_sha256": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31",
+    "checkpoints": {
+      "initial": {
+        "files": {
+          "adapter_config.json": "88aeeaa34d6de94e14722699a9ef172f877783144e804539785602233c32da83",
+          "adapter_model.safetensors": "0af95c2348eb699211bd87a905031349aaab3bb566daba9fb78e3acc9d92c72a"
+        },
+        "path": "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/initial/lora/checkpoint",
+        "tensor_sha256": "319efd067252857b8b3a3b48e04e31d7a530def4a3d6f2302e9a78895d9b085a"
+      },
+      "teacher": {
+        "files": {
+          "adapter_config.json": "88aeeaa34d6de94e14722699a9ef172f877783144e804539785602233c32da83",
+          "adapter_model.safetensors": "761115de00055eaa9a72fb66aa75bddaff9e954a77a7b7b9318347333d19efff"
+        },
+        "path": "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/stages/after_c/checkpoint",
+        "tensor_sha256": "f3a7a74323bd85634f23faad504daff548f2e59d6d6c88b4ef8112218cbd3678"
+      }
+    },
+    "gate": {
+      "checkpoint_and_base_unchanged": true,
+      "minimum_accuracy_each_task_and_split": 0.9,
+      "minimum_validation_gain_over_initial": 0.5
+    },
+    "generation": {
+      "answer": "entire first generated line must equal three expected space-separated digits; no extraction or corrective filtering",
+      "batch_size": 8,
+      "do_sample": false,
+      "max_new_tokens": 16,
+      "prompt": "original raw prompt, no chat template, no choices, no demonstrations, no rules",
+      "stop": "first newline or native EOS or token cap"
+    },
+    "inputs": [
+      {
+        "path": "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/data/sequence_a_train.json",
+        "sha256": "0fbea32a61fa27f9739de5988e1946bdfac3dcc4a16b99ed49f59abcf73bec7a",
+        "split": "train",
+        "take_first": 32,
+        "task": "sequence_a",
+        "total_rows": 128
+      },
+      {
+        "path": "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/data/sequence_a_validation.json",
+        "sha256": "495a0a5b5a852762a69d57fd1a25b85a49b69855c6552be8043bbc94996728a4",
+        "split": "validation",
+        "take_first": 32,
+        "task": "sequence_a",
+        "total_rows": 32
+      },
+      {
+        "path": "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/data/sequence_b_train.json",
+        "sha256": "17739c3576360ce9ed3f6a151de64adf2b3eda4c1a616814dc135066d4e33e98",
+        "split": "train",
+        "take_first": 32,
+        "task": "sequence_b",
+        "total_rows": 128
+      },
+      {
+        "path": "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/data/sequence_b_validation.json",
+        "sha256": "d8abc08ecb95b60632fae7252ee60876d1a78be18ae8850ef6738da6185a92e3",
+        "split": "validation",
+        "take_first": 32,
+        "task": "sequence_b",
+        "total_rows": 32
+      },
+      {
+        "path": "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/data/sequence_c_train.json",
+        "sha256": "3345b80c70944a9ba603291c7eb32b92b93d8fb75809913ecf3158be103f75b7",
+        "split": "train",
+        "take_first": 32,
+        "task": "sequence_c",
+        "total_rows": 128
+      },
+      {
+        "path": "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/data/sequence_c_validation.json",
+        "sha256": "1df1222a9d8588c3a2aa4fab13baee7b8570a00dcabe2b70148db0d185e3fc91",
+        "split": "validation",
+        "take_first": 32,
+        "task": "sequence_c",
+        "total_rows": 32
+      }
+    ],
+    "kind": "sequence303_free_generation_teacher_calibration",
+    "proof_boundary": "Train and validation only, 0 optimizer updates. Tests free-generation teacher competence before any distillation. Not a held-out skill result or SDFT reproduction.",
+    "seed": 90302
+  },
+  "device": "cuda:0",
+  "generation_teacher_qualified": false,
+  "hip": "7.2.53211",
+  "kind": "sequence303_free_generation_teacher_calibration",
+  "optimizer_updates": 0,
+  "panels": {
+    "initial": {
+      "sequence_a/train": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "generated_tokens": 255,
+        "token_cap_hits": 2,
+        "total": 32
+      },
+      "sequence_a/validation": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "generated_tokens": 239,
+        "token_cap_hits": 1,
+        "total": 32
+      },
+      "sequence_b/train": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "generated_tokens": 242,
+        "token_cap_hits": 2,
+        "total": 32
+      },
+      "sequence_b/validation": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "generated_tokens": 263,
+        "token_cap_hits": 3,
+        "total": 32
+      },
+      "sequence_c/train": {
+        "accuracy": 0.03125,
+        "correct": 1,
+        "generated_tokens": 266,
+        "token_cap_hits": 4,
+        "total": 32
+      },
+      "sequence_c/validation": {
+        "accuracy": 0.0625,
+        "correct": 2,
+        "generated_tokens": 284,
+        "token_cap_hits": 6,
+        "total": 32
+      }
+    },
+    "teacher": {
+      "sequence_a/train": {
+        "accuracy": 0.03125,
+        "correct": 1,
+        "generated_tokens": 455,
+        "token_cap_hits": 25,
+        "total": 32
+      },
+      "sequence_a/validation": {
+        "accuracy": 0.03125,
+        "correct": 1,
+        "generated_tokens": 471,
+        "token_cap_hits": 27,
+        "total": 32
+      },
+      "sequence_b/train": {
+        "accuracy": 0.1875,
+        "correct": 6,
+        "generated_tokens": 449,
+        "token_cap_hits": 25,
+        "total": 32
+      },
+      "sequence_b/validation": {
+        "accuracy": 0.15625,
+        "correct": 5,
+        "generated_tokens": 440,
+        "token_cap_hits": 24,
+        "total": 32
+      },
+      "sequence_c/train": {
+        "accuracy": 0.125,
+        "correct": 4,
+        "generated_tokens": 463,
+        "token_cap_hits": 26,
+        "total": 32
+      },
+      "sequence_c/validation": {
+        "accuracy": 0.0625,
+        "correct": 2,
+        "generated_tokens": 494,
+        "token_cap_hits": 30,
+        "total": 32
+      }
+    }
+  },
+  "pid": 609,
+  "proof_boundary": "Train and validation only, 0 optimizer updates. Tests free-generation teacher competence before any distillation. Not a held-out skill result or SDFT reproduction.",
+  "torch_version": "2.10.0+rocm7.2.4.git3d3aa833",
+  "trainable_parameters": 0,
+  "validation_gain": {
+    "sequence_a": 0.03125,
+    "sequence_b": 0.15625,
+    "sequence_c": 0.0
+  }
+}

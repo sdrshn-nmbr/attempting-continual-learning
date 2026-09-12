@@ -1,0 +1,52 @@
+{
+  "input_files_sha256": {
+    "config.json": "67f6924e22c0a1ccbe52eb1d985a9dd97b50ff163e606ccb11094294d57ba91a",
+    "events.jsonl": "83ced310f0fba26bb7afcc3ac13505c228551b7fe6b1302692f9502fb39d30ec",
+    "execution.json": "93b1e2a8926c9fc70fa0bcacae98b8c9b28f735761f1180cb19b19051d0d4f9a",
+    "initial.json": "f40f25fa1de6f73f43f26e920045abcc979e761156a7e5d4779d5797a06c72ec",
+    "result.json": "fee7f62f933aba6f9e3bc570d4de338c9294b3a3f97e4aa25c396bd73a0d74ee",
+    "task.json": "853b10dbdb736f449c3b5c991c367160da57c5a696be53f8320bcc7924169678",
+    "teacher.json": "1b5965261f450894895c1a7c9065cf5de81f51866a14ababf28a141a2f9670b6"
+  },
+  "original_generation_gate_unchanged_failed": true,
+  "panels": {
+    "sequence_a/train": {
+      "first_three_digits_correct": 21,
+      "full_response_correct": 1,
+      "token_cap_hits": 25,
+      "total": 32
+    },
+    "sequence_a/validation": {
+      "first_three_digits_correct": 26,
+      "full_response_correct": 1,
+      "token_cap_hits": 27,
+      "total": 32
+    },
+    "sequence_b/train": {
+      "first_three_digits_correct": 23,
+      "full_response_correct": 6,
+      "token_cap_hits": 25,
+      "total": 32
+    },
+    "sequence_b/validation": {
+      "first_three_digits_correct": 20,
+      "full_response_correct": 5,
+      "token_cap_hits": 24,
+      "total": 32
+    },
+    "sequence_c/train": {
+      "first_three_digits_correct": 31,
+      "full_response_correct": 4,
+      "token_cap_hits": 26,
+      "total": 32
+    },
+    "sequence_c/validation": {
+      "first_three_digits_correct": 32,
+      "full_response_correct": 2,
+      "token_cap_hits": 30,
+      "total": 32
+    }
+  },
+  "posthoc_only": true,
+  "purpose": "Separate correct first-three-digit content from extra-continuation/termination errors; this does not qualify the unrestricted teacher."
+}

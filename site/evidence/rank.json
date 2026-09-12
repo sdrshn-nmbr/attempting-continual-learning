@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "result_sha256": "ab270e7c8772926fb9b2a6cb0569b7a60032707566051f1b9c1b5884d1ed0f2f",
+  "prediction_count_regraded": 3456,
+  "all_paired_intervals_recomputed": true,
+  "full_final_exactly_reproduced_prior_fresh_input_scores": true,
+  "all_initial_choices_preserved": true,
+  "initial_max_score_gap": 1.875559488939693e-05,
+  "all_gain_criteria_feasible": true,
+  "rank8_control_qualified": true,
+  "counts": {
+    "full_final": {
+      "sequence_a": 287,
+      "sequence_b": 287,
+      "sequence_c": 288
+    },
+    "full_initial": {
+      "sequence_a": 86,
+      "sequence_b": 79,
+      "sequence_c": 125
+    },
+    "rank8_final": {
+      "sequence_a": 288,
+      "sequence_b": 280,
+      "sequence_c": 282
+    },
+    "rank8_initial": {
+      "sequence_a": 86,
+      "sequence_b": 79,
+      "sequence_c": 125
+    }
+  },
+  "full_final_correct": 862,
+  "rank8_final_correct": 850,
+  "claim_boundary": "A high-performing rank8 source adapter exists for this fixture. Does not establish native shared-generator representability, optimization, free generation, target transfer, new mapping or training replication."
+}

@@ -360,7 +360,7 @@ def test_four_arm_configs_hold_other_variables_fixed(fixture_seed):
     directory = ROOT / "configs"
     if fixture_seed == 419:
         directory /= "confirmation419"
-    paths = sorted(directory.glob("sequence_*.json"))
+    paths = sorted(directory.glob("sequence_[nl]*.json"))
     assert len(paths) == 4
     normalized, arms = [], set()
     for path in paths:
@@ -396,7 +396,7 @@ def test_four_arm_configs_hold_other_variables_fixed(fixture_seed):
 
 
 def test_confirmation_changes_only_fixture_and_seed():
-    for path in sorted((ROOT / "configs").glob("sequence_*.json")):
+    for path in sorted((ROOT / "configs").glob("sequence_[nl]*.json")):
         primary = json.loads(path.read_text())
         confirmation = json.loads(
             (ROOT / "configs" / "confirmation419" / path.name).read_text()

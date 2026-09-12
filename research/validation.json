@@ -1,0 +1,141 @@
+{
+  "date": "2026-09-11",
+  "platform": "Darwin",
+  "architecture": "arm64",
+  "python": "3.12.11",
+  "scope": "CPU checks during repository assembly. No GPU training or historical model evaluation repeated.",
+  "totals": {
+    "tests": 446,
+    "passed": 391,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 55
+  },
+  "counting": "JUnit testcase counts include 8 plasticity and 6 supervisor subtests; 377 parent test cases passed plus 14 subtests. 55 test cases skipped for unavailable CUDA, Linux-only facilities, or pinned tokenizer fixtures.",
+  "suites": [
+    {
+      "suite": "portability",
+      "environment": "portability-cpu.txt",
+      "tests": 192,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 191,
+      "skip_reasons": {
+        "CUDA device is unavailable": 1
+      }
+    },
+    {
+      "suite": "onpolicy",
+      "environment": "onpolicy-cpu.txt",
+      "tests": 58,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 58,
+      "skip_reasons": {}
+    },
+    {
+      "suite": "plasticity",
+      "environment": "portability-cpu.txt",
+      "tests": 26,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 26,
+      "skip_reasons": {}
+    },
+    {
+      "suite": "continual",
+      "environment": "portability-cpu.txt",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 13,
+      "skip_reasons": {}
+    },
+    {
+      "suite": "nla",
+      "environment": "portability-cpu.txt",
+      "tests": 50,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 18,
+      "passed": 32,
+      "skip_reasons": {
+        "Native tokenizer integration requires pinned cached tokenizer files; pure alignment tests still run offline": 18
+      }
+    },
+    {
+      "suite": "portal",
+      "environment": "portability-cpu.txt",
+      "tests": 37,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 37,
+      "skip_reasons": {}
+    },
+    {
+      "suite": "distillation",
+      "environment": "portability-cpu.txt",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 10,
+      "skip_reasons": {}
+    },
+    {
+      "suite": "catalog",
+      "environment": "portability-cpu.txt",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 2,
+      "skip_reasons": {}
+    },
+    {
+      "suite": "runtime",
+      "environment": "portability-cpu.txt",
+      "tests": 45,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 36,
+      "passed": 9,
+      "skip_reasons": {
+        "requires real Linux pidfds, prctl and procfs": 36
+      }
+    },
+    {
+      "suite": "supervisor",
+      "environment": "portability-cpu.txt",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 13,
+      "skip_reasons": {}
+    }
+  ],
+  "runtime_requirements": {
+    "onpolicy": "Separate environment from requirements-test.txt with torch 2.10.0.",
+    "catalog": "PYTHONPATH includes experiments/runtime for the loader_guard module.",
+    "plasticity": "TMPDIR uses a canonical real directory on macOS so adapter receipt paths do not differ through /var symlinks."
+  },
+  "test_collection_repairs": [
+    "Portability training tests exclude subsequently added target-evaluation configurations.",
+    "On-policy training configuration tests exclude the separate chain-controller schema."
+  ],
+  "integrity": {
+    "source_and_curated_evidence_files_verified": 297,
+    "all_source_and_release_files_plus_curated_copies_verified": 4775,
+    "isolated_checkout_passed": true,
+    "modified_source_fixture_rejected": true,
+    "modified_evidence_rejected": true,
+    "artifact_sha256_manifest": "releases.json",
+    "secret_scan": "Gitleaks clean after reviewing and narrowly allowing scientific token hashes, scientific-notation losses, and a Transformers class-name false positive."
+  }
+}

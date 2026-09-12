@@ -1,0 +1,11 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Scientific token hashes, floating-point losses, and a Transformers class name"
+regexTarget = "match"
+regexes = [
+  '''(?:native_prompt_token_ids_sha256|student_prompt_token_ids_sha256|teacher_prompt_token_ids_sha256|tokenizer_config\.json|tokenizer\.json|special_tokens_map\.json|tokenizer\.model|added_tokens\.json|native_training_tokens\.json|native_training_tokens\.py)"\s*:\s*"[0-9a-f]{40,64}''',
+  '''(?:gold_nll_per_token|loss_per_token)"\s*:\s*[0-9]+\.[0-9]+[eE]-[0-9]+''',
+  '''AutoTokenizer, Qwen3_5ForConditionalGeneration''',
+]

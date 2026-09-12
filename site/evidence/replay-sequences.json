@@ -1,0 +1,1603 @@
+{
+  "all_eight_arms_included": true,
+  "all_prespecified_paired_contrasts": {
+    "method_replay_interaction": {
+      "confirmation419": {
+        "acquisition_gain_over_own_initial": {
+          "bootstrap_seed": 41901,
+          "estimate": -0.03125,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.0625,
+            -0.005208333333333333
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "final_accuracy": {
+          "bootstrap_seed": 41901,
+          "estimate": -0.3958333333333333,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.46354166666666663,
+            -0.32291666666666663
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "forward_transfer_before_arrival": {
+          "bootstrap_seed": 41901,
+          "estimate": -0.125,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.1953125,
+            -0.0625
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "initial_accuracy": {
+          "bootstrap_seed": 41901,
+          "estimate": 0.0,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "own_stage_increment": {
+          "bootstrap_seed": 41901,
+          "estimate": 0.05208333333333333,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.010416666666666666,
+            0.09895833333333333
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "retention_change_after_c": {
+          "bootstrap_seed": 41901,
+          "estimate": -0.546875,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.640625,
+            -0.453125
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        }
+      },
+      "final_accuracy_effect_direction_matches": true,
+      "mean_final_accuracy_effect_across_the_two_fixtures": -0.32291666666666663,
+      "primary303": {
+        "acquisition_gain_over_own_initial": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.005208333333333333,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.010416666666666666,
+            0.020833333333333332
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "final_accuracy": {
+          "bootstrap_seed": 30301,
+          "estimate": -0.25,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.3177083333333333,
+            -0.18229166666666666
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "forward_transfer_before_arrival": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.0,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.046875,
+            0.0390625
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "initial_accuracy": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.0,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "own_stage_increment": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.005208333333333333,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.026041666666666664,
+            0.03645833333333333
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "retention_change_after_c": {
+          "bootstrap_seed": 30301,
+          "estimate": -0.3828125,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.484375,
+            -0.2890625
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        }
+      }
+    },
+    "native_minus_lora_with_replay": {
+      "confirmation419": {
+        "acquisition_gain_over_own_initial": {
+          "bootstrap_seed": 41901,
+          "estimate": -0.07291666666666666,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.109375,
+            -0.041666666666666664
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "final_accuracy": {
+          "bootstrap_seed": 41901,
+          "estimate": -0.18229166666666666,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.24479166666666666,
+            -0.125
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "forward_transfer_before_arrival": {
+          "bootstrap_seed": 41901,
+          "estimate": -0.0703125,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.171875,
+            0.015625
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "initial_accuracy": {
+          "bootstrap_seed": 41901,
+          "estimate": 0.0,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "own_stage_increment": {
+          "bootstrap_seed": 41901,
+          "estimate": -0.026041666666666664,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.09895833333333333,
+            0.046875
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "retention_change_after_c": {
+          "bootstrap_seed": 41901,
+          "estimate": -0.1640625,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.2421875,
+            -0.09375
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        }
+      },
+      "final_accuracy_effect_direction_matches": true,
+      "mean_final_accuracy_effect_across_the_two_fixtures": -0.11197916666666666,
+      "primary303": {
+        "acquisition_gain_over_own_initial": {
+          "bootstrap_seed": 30301,
+          "estimate": -0.015625,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.03645833333333333,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "final_accuracy": {
+          "bootstrap_seed": 30301,
+          "estimate": -0.041666666666666664,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.06770833333333333,
+            -0.015625
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "forward_transfer_before_arrival": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.109375,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.015625,
+            0.203125
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "initial_accuracy": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.0,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "own_stage_increment": {
+          "bootstrap_seed": 30301,
+          "estimate": -0.08854166666666666,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.15104166666666666,
+            -0.026041666666666664
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "retention_change_after_c": {
+          "bootstrap_seed": 30301,
+          "estimate": -0.0390625,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.078125,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        }
+      }
+    },
+    "native_minus_lora_without_replay": {
+      "confirmation419": {
+        "acquisition_gain_over_own_initial": {
+          "bootstrap_seed": 41901,
+          "estimate": -0.041666666666666664,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.07291666666666666,
+            -0.015625
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "final_accuracy": {
+          "bootstrap_seed": 41901,
+          "estimate": 0.21354166666666666,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.14583333333333331,
+            0.28125
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "forward_transfer_before_arrival": {
+          "bootstrap_seed": 41901,
+          "estimate": 0.0546875,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.0546875,
+            0.15625
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "initial_accuracy": {
+          "bootstrap_seed": 41901,
+          "estimate": 0.0,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "own_stage_increment": {
+          "bootstrap_seed": 41901,
+          "estimate": -0.078125,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.15104166666666666,
+            -0.005208333333333333
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "retention_change_after_c": {
+          "bootstrap_seed": 41901,
+          "estimate": 0.3828125,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.28125,
+            0.484375
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        }
+      },
+      "final_accuracy_effect_direction_matches": true,
+      "mean_final_accuracy_effect_across_the_two_fixtures": 0.2109375,
+      "primary303": {
+        "acquisition_gain_over_own_initial": {
+          "bootstrap_seed": 30301,
+          "estimate": -0.020833333333333332,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.041666666666666664,
+            -0.005208333333333333
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "final_accuracy": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.20833333333333331,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.140625,
+            0.2708333333333333
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "forward_transfer_before_arrival": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.109375,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.015625,
+            0.203125
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "initial_accuracy": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.0,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "own_stage_increment": {
+          "bootstrap_seed": 30301,
+          "estimate": -0.09375,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.16145833333333331,
+            -0.026041666666666664
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "retention_change_after_c": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.34375,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.2421875,
+            0.4453125
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        }
+      }
+    },
+    "replay_effect_lora": {
+      "confirmation419": {
+        "acquisition_gain_over_own_initial": {
+          "bootstrap_seed": 41901,
+          "estimate": 0.0,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "final_accuracy": {
+          "bootstrap_seed": 41901,
+          "estimate": 0.5364583333333333,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.484375,
+            0.5833333333333333
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "forward_transfer_before_arrival": {
+          "bootstrap_seed": 41901,
+          "estimate": 0.109375,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.0546875,
+            0.171875
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "initial_accuracy": {
+          "bootstrap_seed": 41901,
+          "estimate": 0.0,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "own_stage_increment": {
+          "bootstrap_seed": 41901,
+          "estimate": -0.07291666666666666,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.11458333333333333,
+            -0.03645833333333333
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "retention_change_after_c": {
+          "bootstrap_seed": 41901,
+          "estimate": 0.8046875,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.7265625,
+            0.875
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        }
+      },
+      "final_accuracy_effect_direction_matches": true,
+      "mean_final_accuracy_effect_across_the_two_fixtures": 0.5572916666666666,
+      "primary303": {
+        "acquisition_gain_over_own_initial": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.0,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "final_accuracy": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.578125,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.5364583333333333,
+            0.6145833333333333
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "forward_transfer_before_arrival": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.0078125,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.03125,
+            0.046875
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "initial_accuracy": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.0,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "own_stage_increment": {
+          "bootstrap_seed": 30301,
+          "estimate": -0.005208333333333333,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.03125,
+            0.020833333333333332
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "retention_change_after_c": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.8671875,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.8046875,
+            0.921875
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        }
+      }
+    },
+    "replay_effect_native": {
+      "confirmation419": {
+        "acquisition_gain_over_own_initial": {
+          "bootstrap_seed": 41901,
+          "estimate": -0.03125,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.0625,
+            -0.005208333333333333
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "final_accuracy": {
+          "bootstrap_seed": 41901,
+          "estimate": 0.140625,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.078125,
+            0.20833333333333331
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "forward_transfer_before_arrival": {
+          "bootstrap_seed": 41901,
+          "estimate": -0.015625,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.0390625,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "initial_accuracy": {
+          "bootstrap_seed": 41901,
+          "estimate": 0.0,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "own_stage_increment": {
+          "bootstrap_seed": 41901,
+          "estimate": -0.020833333333333332,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.046875,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "retention_change_after_c": {
+          "bootstrap_seed": 41901,
+          "estimate": 0.2578125,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.1640625,
+            0.3515625
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        }
+      },
+      "final_accuracy_effect_direction_matches": true,
+      "mean_final_accuracy_effect_across_the_two_fixtures": 0.234375,
+      "primary303": {
+        "acquisition_gain_over_own_initial": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.005208333333333333,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.010416666666666666,
+            0.020833333333333332
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "final_accuracy": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.328125,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.265625,
+            0.390625
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "forward_transfer_before_arrival": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.0078125,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.0,
+            0.0234375
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "initial_accuracy": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.0,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "own_stage_increment": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.0,
+          "examples": 192,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            -0.020833333333333332,
+            0.020833333333333332
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        },
+        "retention_change_after_c": {
+          "bootstrap_seed": 30301,
+          "estimate": 0.484375,
+          "examples": 128,
+          "group_unit": "input_digit_triple_shared_across_tasks",
+          "groups": 64,
+          "interval_95": [
+            0.390625,
+            0.578125
+          ],
+          "replicates": 2000,
+          "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+        }
+      }
+    }
+  },
+  "arms": {
+    "lora_no_replay": {
+      "acquired_all_tasks_both_fixtures": true,
+      "fixtures": {
+        "303": {
+          "final_all_correct_out_of_192": 80,
+          "final_old_correct_out_of_128": 16,
+          "per_task": {
+            "sequence_a": {
+              "acquired": true,
+              "max_forgetting": 0.875,
+              "own_stage_correct": 64
+            },
+            "sequence_b": {
+              "acquired": true,
+              "max_forgetting": 0.875,
+              "own_stage_correct": 64
+            },
+            "sequence_c": {
+              "acquired": true,
+              "max_forgetting": 0,
+              "own_stage_correct": 64
+            }
+          },
+          "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+          "sequence_learning_signal": false,
+          "source_counts_out_of_64": {
+            "after_a": [
+              64,
+              19,
+              17
+            ],
+            "after_b": [
+              23,
+              64,
+              12
+            ],
+            "after_c": [
+              8,
+              8,
+              64
+            ],
+            "initial": [
+              18,
+              14,
+              33
+            ],
+            "raw": [
+              18,
+              13,
+              31
+            ]
+          }
+        },
+        "419": {
+          "final_all_correct_out_of_192": 89,
+          "final_old_correct_out_of_128": 25,
+          "per_task": {
+            "sequence_a": {
+              "acquired": true,
+              "forgetting_by_boundary": {
+                "after_b": 0.5,
+                "after_c": 0.703125
+              },
+              "max_forgetting": 0.703125,
+              "own_stage_correct": 64
+            },
+            "sequence_b": {
+              "acquired": true,
+              "forgetting_by_boundary": {
+                "after_c": 0.90625
+              },
+              "max_forgetting": 0.90625,
+              "own_stage_correct": 64
+            },
+            "sequence_c": {
+              "acquired": true,
+              "forgetting_by_boundary": {},
+              "max_forgetting": 0,
+              "own_stage_correct": 64
+            }
+          },
+          "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+          "sequence_learning_signal": false,
+          "source_counts_out_of_64": {
+            "after_a": [
+              64,
+              31,
+              27
+            ],
+            "after_b": [
+              32,
+              64,
+              10
+            ],
+            "after_c": [
+              19,
+              6,
+              64
+            ],
+            "initial": [
+              33,
+              23,
+              24
+            ],
+            "raw": [
+              24,
+              19,
+              22
+            ]
+          }
+        }
+      },
+      "meets_full_sequence_gate_both_fixtures": false
+    },
+    "lora_replay": {
+      "acquired_all_tasks_both_fixtures": true,
+      "fixtures": {
+        "303": {
+          "final_all_correct_out_of_192": 191,
+          "final_old_correct_out_of_128": 127,
+          "per_task": {
+            "sequence_a": {
+              "acquired": true,
+              "max_forgetting": 0.015625,
+              "own_stage_correct": 64
+            },
+            "sequence_b": {
+              "acquired": true,
+              "max_forgetting": 0,
+              "own_stage_correct": 64
+            },
+            "sequence_c": {
+              "acquired": true,
+              "max_forgetting": 0,
+              "own_stage_correct": 64
+            }
+          },
+          "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+          "sequence_learning_signal": true,
+          "source_counts_out_of_64": {
+            "after_a": [
+              64,
+              19,
+              17
+            ],
+            "after_b": [
+              64,
+              64,
+              13
+            ],
+            "after_c": [
+              63,
+              64,
+              64
+            ],
+            "initial": [
+              18,
+              14,
+              33
+            ],
+            "raw": [
+              18,
+              13,
+              31
+            ]
+          }
+        },
+        "419": {
+          "final_all_correct_out_of_192": 192,
+          "final_old_correct_out_of_128": 128,
+          "per_task": {
+            "sequence_a": {
+              "acquired": true,
+              "forgetting_by_boundary": {
+                "after_b": 0,
+                "after_c": 0
+              },
+              "max_forgetting": 0,
+              "own_stage_correct": 64
+            },
+            "sequence_b": {
+              "acquired": true,
+              "forgetting_by_boundary": {
+                "after_c": 0
+              },
+              "max_forgetting": 0,
+              "own_stage_correct": 64
+            },
+            "sequence_c": {
+              "acquired": true,
+              "forgetting_by_boundary": {},
+              "max_forgetting": 0,
+              "own_stage_correct": 64
+            }
+          },
+          "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+          "sequence_learning_signal": true,
+          "source_counts_out_of_64": {
+            "after_a": [
+              64,
+              31,
+              27
+            ],
+            "after_b": [
+              64,
+              64,
+              24
+            ],
+            "after_c": [
+              64,
+              64,
+              64
+            ],
+            "initial": [
+              33,
+              23,
+              24
+            ],
+            "raw": [
+              24,
+              19,
+              22
+            ]
+          }
+        }
+      },
+      "meets_full_sequence_gate_both_fixtures": true
+    },
+    "native_no_replay": {
+      "acquired_all_tasks_both_fixtures": true,
+      "fixtures": {
+        "303": {
+          "final_all_correct_out_of_192": 120,
+          "final_old_correct_out_of_128": 58,
+          "per_task": {
+            "sequence_a": {
+              "acquired": true,
+              "max_forgetting": 0.546875,
+              "own_stage_correct": 62
+            },
+            "sequence_b": {
+              "acquired": true,
+              "max_forgetting": 0.515625,
+              "own_stage_correct": 64
+            },
+            "sequence_c": {
+              "acquired": true,
+              "max_forgetting": 0,
+              "own_stage_correct": 62
+            }
+          },
+          "qwen17": {
+            "counts_out_of_64": {
+              "after_a": [
+                15,
+                17,
+                28
+              ],
+              "after_b": [
+                16,
+                15,
+                31
+              ],
+              "after_c": [
+                16,
+                13,
+                22
+              ],
+              "initial": [
+                16,
+                19,
+                28
+              ],
+              "raw": [
+                18,
+                19,
+                34
+              ]
+            },
+            "final_all_correct_out_of_192": 51,
+            "gain_over_both_floors": {
+              "after_a": {
+                "sequence_a": -0.046875,
+                "sequence_b": -0.03125,
+                "sequence_c": -0.09375
+              },
+              "after_b": {
+                "sequence_a": -0.03125,
+                "sequence_b": -0.0625,
+                "sequence_c": -0.046875
+              },
+              "after_c": {
+                "sequence_a": -0.03125,
+                "sequence_b": -0.09375,
+                "sequence_c": -0.1875
+              }
+            },
+            "strongest_baseline_correct_out_of_192": 71,
+            "target_gain_flags": {
+              "after_a": {
+                "sequence_a": false,
+                "sequence_b": false,
+                "sequence_c": false
+              },
+              "after_b": {
+                "sequence_a": false,
+                "sequence_b": false,
+                "sequence_c": false
+              },
+              "after_c": {
+                "sequence_a": false,
+                "sequence_b": false,
+                "sequence_c": false
+              }
+            }
+          },
+          "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+          "sequence_learning_signal": false,
+          "source_counts_out_of_64": {
+            "after_a": [
+              62,
+              18,
+              32
+            ],
+            "after_b": [
+              52,
+              64,
+              27
+            ],
+            "after_c": [
+              27,
+              31,
+              62
+            ],
+            "initial": [
+              18,
+              14,
+              33
+            ],
+            "raw": [
+              18,
+              13,
+              31
+            ]
+          }
+        },
+        "419": {
+          "final_all_correct_out_of_192": 130,
+          "final_old_correct_out_of_128": 68,
+          "per_task": {
+            "sequence_a": {
+              "acquired": true,
+              "forgetting_by_boundary": {
+                "after_b": 0.421875,
+                "after_c": 0.453125
+              },
+              "max_forgetting": 0.453125,
+              "own_stage_correct": 58
+            },
+            "sequence_b": {
+              "acquired": true,
+              "forgetting_by_boundary": {
+                "after_c": 0.390625
+              },
+              "max_forgetting": 0.390625,
+              "own_stage_correct": 64
+            },
+            "sequence_c": {
+              "acquired": true,
+              "forgetting_by_boundary": {},
+              "max_forgetting": 0,
+              "own_stage_correct": 62
+            }
+          },
+          "qwen17": {
+            "counts_out_of_64": {
+              "after_a": [
+                25,
+                22,
+                24
+              ],
+              "after_b": [
+                25,
+                21,
+                23
+              ],
+              "after_c": [
+                24,
+                15,
+                18
+              ],
+              "initial": [
+                33,
+                20,
+                23
+              ],
+              "raw": [
+                28,
+                18,
+                22
+              ]
+            },
+            "final_all_correct_out_of_192": 57,
+            "gain_over_both_floors": {
+              "after_a": {
+                "sequence_a": -0.125,
+                "sequence_b": 0.03125,
+                "sequence_c": 0.015625
+              },
+              "after_b": {
+                "sequence_a": -0.125,
+                "sequence_b": 0.015625,
+                "sequence_c": 0.0
+              },
+              "after_c": {
+                "sequence_a": -0.140625,
+                "sequence_b": -0.078125,
+                "sequence_c": -0.078125
+              }
+            },
+            "strongest_baseline_correct_out_of_192": 76,
+            "target_gain_flags": {
+              "after_a": {
+                "sequence_a": false,
+                "sequence_b": false,
+                "sequence_c": false
+              },
+              "after_b": {
+                "sequence_a": false,
+                "sequence_b": false,
+                "sequence_c": false
+              },
+              "after_c": {
+                "sequence_a": false,
+                "sequence_b": false,
+                "sequence_c": false
+              }
+            }
+          },
+          "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+          "sequence_learning_signal": false,
+          "source_counts_out_of_64": {
+            "after_a": [
+              58,
+              22,
+              22
+            ],
+            "after_b": [
+              31,
+              64,
+              26
+            ],
+            "after_c": [
+              29,
+              39,
+              62
+            ],
+            "initial": [
+              33,
+              23,
+              24
+            ],
+            "raw": [
+              24,
+              19,
+              22
+            ]
+          }
+        }
+      },
+      "meets_full_sequence_gate_both_fixtures": false
+    },
+    "native_replay": {
+      "acquired_all_tasks_both_fixtures": true,
+      "fixtures": {
+        "303": {
+          "final_all_correct_out_of_192": 183,
+          "final_old_correct_out_of_128": 120,
+          "per_task": {
+            "sequence_a": {
+              "acquired": true,
+              "max_forgetting": 0.078125,
+              "own_stage_correct": 62
+            },
+            "sequence_b": {
+              "acquired": true,
+              "max_forgetting": 0.015625,
+              "own_stage_correct": 64
+            },
+            "sequence_c": {
+              "acquired": true,
+              "max_forgetting": 0,
+              "own_stage_correct": 63
+            }
+          },
+          "qwen17": {
+            "counts_out_of_64": {
+              "after_a": [
+                15,
+                17,
+                28
+              ],
+              "after_b": [
+                13,
+                9,
+                29
+              ],
+              "after_c": [
+                18,
+                13,
+                24
+              ],
+              "initial": [
+                16,
+                19,
+                28
+              ],
+              "raw": [
+                18,
+                19,
+                34
+              ]
+            },
+            "final_all_correct_out_of_192": 55,
+            "gain_over_both_floors": {
+              "after_a": {
+                "sequence_a": -0.046875,
+                "sequence_b": -0.03125,
+                "sequence_c": -0.09375
+              },
+              "after_b": {
+                "sequence_a": -0.078125,
+                "sequence_b": -0.15625,
+                "sequence_c": -0.078125
+              },
+              "after_c": {
+                "sequence_a": 0.0,
+                "sequence_b": -0.09375,
+                "sequence_c": -0.15625
+              }
+            },
+            "strongest_baseline_correct_out_of_192": 71,
+            "target_gain_flags": {
+              "after_a": {
+                "sequence_a": false,
+                "sequence_b": false,
+                "sequence_c": false
+              },
+              "after_b": {
+                "sequence_a": false,
+                "sequence_b": false,
+                "sequence_c": false
+              },
+              "after_c": {
+                "sequence_a": false,
+                "sequence_b": false,
+                "sequence_c": false
+              }
+            }
+          },
+          "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+          "sequence_learning_signal": false,
+          "source_counts_out_of_64": {
+            "after_a": [
+              62,
+              18,
+              32
+            ],
+            "after_b": [
+              61,
+              64,
+              28
+            ],
+            "after_c": [
+              57,
+              63,
+              63
+            ],
+            "initial": [
+              18,
+              14,
+              33
+            ],
+            "raw": [
+              18,
+              13,
+              31
+            ]
+          }
+        },
+        "419": {
+          "final_all_correct_out_of_192": 157,
+          "final_old_correct_out_of_128": 100,
+          "per_task": {
+            "sequence_a": {
+              "acquired": true,
+              "forgetting_by_boundary": {
+                "after_b": 0.34375,
+                "after_c": 0.171875
+              },
+              "max_forgetting": 0.34375,
+              "own_stage_correct": 58
+            },
+            "sequence_b": {
+              "acquired": true,
+              "forgetting_by_boundary": {
+                "after_c": 0.15625
+              },
+              "max_forgetting": 0.15625,
+              "own_stage_correct": 63
+            },
+            "sequence_c": {
+              "acquired": true,
+              "forgetting_by_boundary": {},
+              "max_forgetting": 0,
+              "own_stage_correct": 57
+            }
+          },
+          "qwen17": {
+            "counts_out_of_64": {
+              "after_a": [
+                25,
+                22,
+                24
+              ],
+              "after_b": [
+                24,
+                17,
+                23
+              ],
+              "after_c": [
+                24,
+                20,
+                29
+              ],
+              "initial": [
+                33,
+                20,
+                23
+              ],
+              "raw": [
+                28,
+                18,
+                22
+              ]
+            },
+            "final_all_correct_out_of_192": 73,
+            "gain_over_both_floors": {
+              "after_a": {
+                "sequence_a": -0.125,
+                "sequence_b": 0.03125,
+                "sequence_c": 0.015625
+              },
+              "after_b": {
+                "sequence_a": -0.140625,
+                "sequence_b": -0.046875,
+                "sequence_c": 0.0
+              },
+              "after_c": {
+                "sequence_a": -0.140625,
+                "sequence_b": 0.0,
+                "sequence_c": 0.09375
+              }
+            },
+            "strongest_baseline_correct_out_of_192": 76,
+            "target_gain_flags": {
+              "after_a": {
+                "sequence_a": false,
+                "sequence_b": false,
+                "sequence_c": false
+              },
+              "after_b": {
+                "sequence_a": false,
+                "sequence_b": false,
+                "sequence_c": false
+              },
+              "after_c": {
+                "sequence_a": false,
+                "sequence_b": false,
+                "sequence_c": true
+              }
+            }
+          },
+          "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+          "sequence_learning_signal": false,
+          "source_counts_out_of_64": {
+            "after_a": [
+              58,
+              22,
+              22
+            ],
+            "after_b": [
+              36,
+              63,
+              24
+            ],
+            "after_c": [
+              47,
+              53,
+              57
+            ],
+            "initial": [
+              33,
+              23,
+              24
+            ],
+            "raw": [
+              24,
+              19,
+              22
+            ]
+          }
+        }
+      },
+      "meets_full_sequence_gate_both_fixtures": false
+    }
+  },
+  "created_at": "2026-09-09T00:11:19.701794+00:00",
+  "design_match": {
+    "lora_no_replay": {
+      "changed_fields": [
+        "seed",
+        "sequence"
+      ],
+      "confirmation_config_sha256": "a13fa9128dcf7c4d21b348f7699538101008a27ae05112185e64519db5f8704f",
+      "primary_config_sha256": "068d07d7d51d0c0549db1d31618ef1cff33f904356acd36b4b43a258d5c2071b"
+    },
+    "lora_replay": {
+      "changed_fields": [
+        "seed",
+        "sequence"
+      ],
+      "confirmation_config_sha256": "83030380501dcc757bdfbdea4d4d2065382309834c8b3ad9af2ede40c5377d06",
+      "primary_config_sha256": "b0eb5913ca38d6267c45c966149d9c5397bb6495b6c1c70621d1aa01ff86cbd4"
+    },
+    "native_no_replay": {
+      "changed_fields": [
+        "seed",
+        "sequence"
+      ],
+      "confirmation_config_sha256": "8b8148b746172fbbfe73c46b8bbd3cc303a6aa6ab2f3c07967ad34af3303c55c",
+      "primary_config_sha256": "9610568cda1764356ea4ba004dfc6a9a8b89042803502c3987bfdb08fe6a9627"
+    },
+    "native_replay": {
+      "changed_fields": [
+        "seed",
+        "sequence"
+      ],
+      "confirmation_config_sha256": "a4e934a0353b3a1e1511ee82c985e89df905fa607dbbcc9bb2f854ab5f6998b6",
+      "primary_config_sha256": "d99d2a9f941fdc67b63f6309d531721fafda16aa361825c5f8f76684fb6afbbc"
+    }
+  },
+  "evidence": {
+    "303": {
+      "comparison": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/sequence-fp32-primary/comparison.json",
+      "comparison_sha256": "7c6937716e902a6eec29b252aef31ae98a38ebcbc57eddd7b6b84931a2169480",
+      "raw_audit": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/sequence-fp32-primary/verification.json",
+      "raw_audit_sha256": "b23690b1a69a0eca984a40cdac3bc6f7e5cebf83ce35f1e79e0799e4da9b361f"
+    },
+    "419": {
+      "comparison": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/sequence-fp32-confirmation419/comparison.json",
+      "comparison_sha256": "c7d1a4a606798d4fedc6003ed4f4e4dd97f39d4853f27b210d1a1a490b10f0f5",
+      "raw_audit": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/sequence-fp32-confirmation419/verification.json",
+      "raw_audit_sha256": "98df031006ce39bd8aba130df8d8cabbee1cae147c8ce21bb1176fb5a2ec40fb"
+    }
+  },
+  "fixture_training_seeds": {
+    "303": 30301,
+    "419": 41901
+  },
+  "full_sequence_gate_replicated_by": [
+    "lora_replay"
+  ],
+  "interpretation": "LoRA replay meets the fixed acquisition and every-boundary retention criteria on both frozen fixtures. The other three arms do not. Replay improves final source accuracy for both methods, and native versus LoRA effect direction reverses between no-replay and replay strata on both fixtures. Qwen1.7 complete three-task transfer is unsupported; native replay has one task-C target-gain flag only on confirmation419, with final macro accuracy still below its initial baseline. All negative arms, boundaries and target results are included.",
+  "source_bundle_sha256": "370dfd20b44b1fa2f66a8b0a6b67ca15217b239cff4c112ad38a98077b53533c",
+  "status": "complete_two_fixture_four_arm_replication_comparison",
+  "uncertainty": "Each saved interval resamples the 64 paired heldout input groups within its own fixture. These intervals do not measure training-seed uncertainty. The two fixtures also change the hidden mappings and training seed, so the comparison documents replication on these two fixed sequences rather than broad method superiority. No pooled significance claim or best-arm/target selection is made."
+}

@@ -1,0 +1,533 @@
+{
+  "mechanical_audit_passed": true,
+  "audit_source_sha256": "a7ad8d07c011b73c24f129fb1230926bfe2f13577fe3b5411f113162fcb99c5d",
+  "matched_288_update_data_and_anchor_schedules": true,
+  "saved_references_and_checkpoint_files_verified": 44,
+  "total_predictions_regraded": 2880,
+  "arms": {
+    "anchor0": {
+      "result_sha256": "c5dc24b7c895c47b1b531eec54330bff163d3238fdd9bf5a283ef141dadde99e",
+      "prediction_count_regraded": 1440,
+      "counts": {
+        "initial": {
+          "train": {
+            "sequence_a": 36,
+            "sequence_b": 32,
+            "sequence_c": 56
+          },
+          "validation": {
+            "sequence_a": 7,
+            "sequence_b": 10,
+            "sequence_c": 19
+          }
+        },
+        "after_a": {
+          "train": {
+            "sequence_a": 124
+          },
+          "validation": {
+            "sequence_a": 31
+          }
+        },
+        "after_b": {
+          "train": {
+            "sequence_a": 115,
+            "sequence_b": 128
+          },
+          "validation": {
+            "sequence_a": 28,
+            "sequence_b": 32
+          }
+        },
+        "after_c": {
+          "train": {
+            "sequence_a": 107,
+            "sequence_b": 117,
+            "sequence_c": 126
+          },
+          "validation": {
+            "sequence_a": 26,
+            "sequence_b": 31,
+            "sequence_c": 32
+          }
+        }
+      },
+      "infeasible_preregistered_criteria": {
+        "sequence_c": {
+          "initial_validation_accuracy": 0.59375,
+          "maximum_possible_gain": 0.40625,
+          "required_gain": 0.5,
+          "interpretation": "Preregistered criterion unattainable because of baseline headroom. This gate is not evidence against the learning algorithm."
+        }
+      },
+      "source_gates_as_recorded": {
+        "claim_boundary": "Original four-choice source accuracy. This does not establish free-generation competence or target transfer.",
+        "forgetting_reference": "own_acquisition_boundary_at_every_later_saved_boundary",
+        "passed": false,
+        "status": "failed",
+        "target_evaluation_eligible": false,
+        "tasks": {
+          "sequence_a": {
+            "checks": {
+              "all_later_boundaries_retained": false,
+              "own_train": true,
+              "own_validation": true,
+              "own_validation_gain": true
+            },
+            "initial_validation_accuracy": 0.21875,
+            "later": {
+              "after_b": {
+                "accuracy": 0.875,
+                "forgetting_from_acquisition": 0.09375
+              },
+              "after_c": {
+                "accuracy": 0.8125,
+                "forgetting_from_acquisition": 0.15625
+              }
+            },
+            "own_boundary": "after_a",
+            "own_train_accuracy": 0.96875,
+            "own_validation_accuracy": 0.96875,
+            "passed": false,
+            "validation_gain": 0.75
+          },
+          "sequence_b": {
+            "checks": {
+              "all_later_boundaries_retained": true,
+              "own_train": true,
+              "own_validation": true,
+              "own_validation_gain": true
+            },
+            "initial_validation_accuracy": 0.3125,
+            "later": {
+              "after_c": {
+                "accuracy": 0.96875,
+                "forgetting_from_acquisition": 0.03125
+              }
+            },
+            "own_boundary": "after_b",
+            "own_train_accuracy": 1.0,
+            "own_validation_accuracy": 1.0,
+            "passed": true,
+            "validation_gain": 0.6875
+          },
+          "sequence_c": {
+            "checks": {
+              "all_later_boundaries_retained": true,
+              "own_train": true,
+              "own_validation": true,
+              "own_validation_gain": false
+            },
+            "initial_validation_accuracy": 0.59375,
+            "later": {},
+            "own_boundary": "after_c",
+            "own_train_accuracy": 0.984375,
+            "own_validation_accuracy": 1.0,
+            "passed": false,
+            "validation_gain": 0.40625
+          }
+        },
+        "thresholds": {
+          "checkpoint_selection": "fixed_final_per_stage",
+          "failure_action": "skip_target_evaluation_after_completing_fixed_budget",
+          "max_later_validation_forgetting": 0.05,
+          "own_train_accuracy_min": 0.9,
+          "own_validation_accuracy_min": 0.9,
+          "own_validation_gain_min": 0.5,
+          "reloaded_all_boundaries": true,
+          "updates_each_arm": 288
+        },
+        "training_budget_action": "all288updates_already_completed"
+      },
+      "final_geometry": {
+        "acquired": {
+          "surface_means": {
+            "mistral7": 0.038161255760898696,
+            "qwen4": 0.03202271263957493,
+            "qwen8": 0.04033138780489029
+          },
+          "tasks": {
+            "sequence_a": {
+              "mistral7": 0.054259142988896475,
+              "qwen4": 0.047105681107673325,
+              "qwen8": 0.05681724449148396
+            },
+            "sequence_b": {
+              "mistral7": 0.022063368532900925,
+              "qwen4": 0.01693974417147653,
+              "qwen8": 0.023845531118296612
+            }
+          }
+        },
+        "holdout": {
+          "surface_means": {
+            "mistral7": 0.09504629459919473,
+            "qwen4": 0.12713774505056089,
+            "qwen8": 0.1188364857311363
+          },
+          "tasks": {
+            "arc_challenge": {
+              "mistral7": 0.08683704873618366,
+              "qwen4": 0.14483396723841305,
+              "qwen8": 0.1337705865519235
+            },
+            "sciq": {
+              "mistral7": 0.07626768088647518,
+              "qwen4": 0.07820494529092832,
+              "qwen8": 0.07770732698623924
+            },
+            "truthfulqa": {
+              "mistral7": 0.15230906475440165,
+              "qwen4": 0.15979176086517669,
+              "qwen8": 0.16493814147742059
+            },
+            "winogrande": {
+              "mistral7": 0.06477138401971844,
+              "qwen4": 0.12572030680772553,
+              "qwen8": 0.09892988790896184
+            }
+          }
+        },
+        "train": {
+          "surface_means": {
+            "mistral7": 0.1330310470554141,
+            "qwen4": 0.17374148176506352,
+            "qwen8": 0.13975653859551912
+          },
+          "tasks": {
+            "arc_easy": {
+              "mistral7": 0.11881711623780937,
+              "qwen4": 0.20761705072378983,
+              "qwen8": 0.1831823044679777
+            },
+            "boolq": {
+              "mistral7": 0.11324145207762855,
+              "qwen4": 0.09726825556627351,
+              "qwen8": 0.0965762194073246
+            },
+            "cb": {
+              "mistral7": 0.17187090320484838,
+              "qwen4": 0.1744860329089457,
+              "qwen8": 0.13846729790736362
+            },
+            "commonsense_qa": {
+              "mistral7": 0.084596794099724,
+              "qwen4": 0.12648781183807545,
+              "qwen8": 0.07065301605585593
+            },
+            "copa": {
+              "mistral7": 0.11254608746355901,
+              "qwen4": 0.0812775998693094,
+              "qwen8": 0.12336365801490536
+            },
+            "hellaswag": {
+              "mistral7": 0.15258551582251914,
+              "qwen4": 0.34577594421133007,
+              "qwen8": 0.2425265167662205
+            },
+            "openbookqa": {
+              "mistral7": 0.10515540466747206,
+              "qwen4": 0.1904506264208005,
+              "qwen8": 0.15182086794240188
+            },
+            "rte": {
+              "mistral7": 0.21087661268468455,
+              "qwen4": 0.2523942578044444,
+              "qwen8": 0.17875171117142818
+            },
+            "wic": {
+              "mistral7": 0.12543303955841817,
+              "qwen4": 0.12731759034208254,
+              "qwen8": 0.09678854765628823
+            },
+            "wsc": {
+              "mistral7": 0.13518754473747785,
+              "qwen4": 0.13433964796558379,
+              "qwen8": 0.11543524656542531
+            }
+          }
+        }
+      }
+    },
+    "anchor1": {
+      "result_sha256": "502d25ea7e754c66533f547b6ae31e46383de3e8f51869a3343fe380dff6deb6",
+      "prediction_count_regraded": 1440,
+      "counts": {
+        "initial": {
+          "train": {
+            "sequence_a": 36,
+            "sequence_b": 32,
+            "sequence_c": 56
+          },
+          "validation": {
+            "sequence_a": 7,
+            "sequence_b": 10,
+            "sequence_c": 19
+          }
+        },
+        "after_a": {
+          "train": {
+            "sequence_a": 122
+          },
+          "validation": {
+            "sequence_a": 31
+          }
+        },
+        "after_b": {
+          "train": {
+            "sequence_a": 125,
+            "sequence_b": 128
+          },
+          "validation": {
+            "sequence_a": 30,
+            "sequence_b": 31
+          }
+        },
+        "after_c": {
+          "train": {
+            "sequence_a": 120,
+            "sequence_b": 118,
+            "sequence_c": 126
+          },
+          "validation": {
+            "sequence_a": 29,
+            "sequence_b": 28,
+            "sequence_c": 30
+          }
+        }
+      },
+      "infeasible_preregistered_criteria": {
+        "sequence_c": {
+          "initial_validation_accuracy": 0.59375,
+          "maximum_possible_gain": 0.40625,
+          "required_gain": 0.5,
+          "interpretation": "Preregistered criterion unattainable because of baseline headroom. This gate is not evidence against the learning algorithm."
+        }
+      },
+      "source_gates_as_recorded": {
+        "claim_boundary": "Original four-choice source accuracy. This does not establish free-generation competence or target transfer.",
+        "forgetting_reference": "own_acquisition_boundary_at_every_later_saved_boundary",
+        "passed": false,
+        "status": "failed",
+        "target_evaluation_eligible": false,
+        "tasks": {
+          "sequence_a": {
+            "checks": {
+              "all_later_boundaries_retained": false,
+              "own_train": true,
+              "own_validation": true,
+              "own_validation_gain": true
+            },
+            "initial_validation_accuracy": 0.21875,
+            "later": {
+              "after_b": {
+                "accuracy": 0.9375,
+                "forgetting_from_acquisition": 0.03125
+              },
+              "after_c": {
+                "accuracy": 0.90625,
+                "forgetting_from_acquisition": 0.0625
+              }
+            },
+            "own_boundary": "after_a",
+            "own_train_accuracy": 0.953125,
+            "own_validation_accuracy": 0.96875,
+            "passed": false,
+            "validation_gain": 0.75
+          },
+          "sequence_b": {
+            "checks": {
+              "all_later_boundaries_retained": false,
+              "own_train": true,
+              "own_validation": true,
+              "own_validation_gain": true
+            },
+            "initial_validation_accuracy": 0.3125,
+            "later": {
+              "after_c": {
+                "accuracy": 0.875,
+                "forgetting_from_acquisition": 0.09375
+              }
+            },
+            "own_boundary": "after_b",
+            "own_train_accuracy": 1.0,
+            "own_validation_accuracy": 0.96875,
+            "passed": false,
+            "validation_gain": 0.65625
+          },
+          "sequence_c": {
+            "checks": {
+              "all_later_boundaries_retained": true,
+              "own_train": true,
+              "own_validation": true,
+              "own_validation_gain": false
+            },
+            "initial_validation_accuracy": 0.59375,
+            "later": {},
+            "own_boundary": "after_c",
+            "own_train_accuracy": 0.984375,
+            "own_validation_accuracy": 0.9375,
+            "passed": false,
+            "validation_gain": 0.34375
+          }
+        },
+        "thresholds": {
+          "checkpoint_selection": "fixed_final_per_stage",
+          "failure_action": "skip_target_evaluation_after_completing_fixed_budget",
+          "max_later_validation_forgetting": 0.05,
+          "own_train_accuracy_min": 0.9,
+          "own_validation_accuracy_min": 0.9,
+          "own_validation_gain_min": 0.5,
+          "reloaded_all_boundaries": true,
+          "updates_each_arm": 288
+        },
+        "training_budget_action": "all288updates_already_completed"
+      },
+      "final_geometry": {
+        "acquired": {
+          "surface_means": {
+            "mistral7": 0.017851834433972112,
+            "qwen4": 0.014930765344679821,
+            "qwen8": 0.021320588583630434
+          },
+          "tasks": {
+            "sequence_a": {
+              "mistral7": 0.020415677583015497,
+              "qwen4": 0.0171646257462237,
+              "qwen8": 0.025088731382681972
+            },
+            "sequence_b": {
+              "mistral7": 0.015287991284928724,
+              "qwen4": 0.012696904943135941,
+              "qwen8": 0.017552445784578895
+            }
+          }
+        },
+        "holdout": {
+          "surface_means": {
+            "mistral7": 0.023442938227388795,
+            "qwen4": 0.024994758971296195,
+            "qwen8": 0.03151675766929492
+          },
+          "tasks": {
+            "arc_challenge": {
+              "mistral7": 0.013811073812201586,
+              "qwen4": 0.016651848089786606,
+              "qwen8": 0.02356279934498388
+            },
+            "sciq": {
+              "mistral7": 0.018517335437375132,
+              "qwen4": 0.011348534399636484,
+              "qwen8": 0.020253542959018142
+            },
+            "truthfulqa": {
+              "mistral7": 0.04517425090524728,
+              "qwen4": 0.04301781153084718,
+              "qwen8": 0.05411715757774802
+            },
+            "winogrande": {
+              "mistral7": 0.016269092754731186,
+              "qwen4": 0.028960841864914516,
+              "qwen8": 0.028133530795429622
+            }
+          }
+        },
+        "train": {
+          "surface_means": {
+            "mistral7": 0.021333511980601728,
+            "qwen4": 0.01953152867975011,
+            "qwen8": 0.0234442814695408
+          },
+          "tasks": {
+            "arc_easy": {
+              "mistral7": 0.013289934222482076,
+              "qwen4": 0.017489578654795994,
+              "qwen8": 0.022369792138789438
+            },
+            "boolq": {
+              "mistral7": 0.0243156305284707,
+              "qwen4": 0.013405280755964036,
+              "qwen8": 0.022813723882845242
+            },
+            "cb": {
+              "mistral7": 0.020834189906558217,
+              "qwen4": 0.016731980351248284,
+              "qwen8": 0.01978828174585919
+            },
+            "commonsense_qa": {
+              "mistral7": 0.01240073875569344,
+              "qwen4": 0.014510061064388919,
+              "qwen8": 0.012312941141526635
+            },
+            "copa": {
+              "mistral7": 0.023516592958265414,
+              "qwen4": 0.011139450364555596,
+              "qwen8": 0.02801899574317044
+            },
+            "hellaswag": {
+              "mistral7": 0.009357093769492793,
+              "qwen4": 0.018283185115435825,
+              "qwen8": 0.017566858478002472
+            },
+            "openbookqa": {
+              "mistral7": 0.011483161936757542,
+              "qwen4": 0.016786648821276402,
+              "qwen8": 0.018719258316876486
+            },
+            "rte": {
+              "mistral7": 0.04889176041615837,
+              "qwen4": 0.05102264609383843,
+              "qwen8": 0.04720196908325102
+            },
+            "wic": {
+              "mistral7": 0.023901735746114733,
+              "qwen4": 0.018934569687792613,
+              "qwen8": 0.021246575114866263
+            },
+            "wsc": {
+              "mistral7": 0.025344281566023984,
+              "qwen4": 0.017011885888205007,
+              "qwen8": 0.024404419050220786
+            }
+          }
+        }
+      }
+    }
+  },
+  "final_validation_paired_contrasts": {
+    "sequence_a": {
+      "anchor1_minus_anchor0": 0.09375,
+      "interval_95": [
+        -0.09375,
+        0.28125
+      ],
+      "groups": 32
+    },
+    "sequence_b": {
+      "anchor1_minus_anchor0": -0.09375,
+      "interval_95": [
+        -0.21875,
+        0.03125
+      ],
+      "groups": 32
+    },
+    "sequence_c": {
+      "anchor1_minus_anchor0": -0.0625,
+      "interval_95": [
+        -0.15625,
+        0.0
+      ],
+      "groups": 32
+    },
+    "macro": {
+      "anchor1_minus_anchor0": -0.020833333333333332,
+      "interval_95": [
+        -0.09375,
+        0.05208333333333333
+      ],
+      "groups": 32
+    }
+  },
+  "statistical_scope": "Descriptive paired bootstrap over the32validation input groups,20000draws,seed90311. One mapping and training seed; no independent replication or multiplicity correction.",
+  "gate_limitation": "TaskC's50point gain requirement is impossible from the59.375percent initial validation baseline. The overall pass flag cannot establish algorithm success or failure. Raw gates are preserved; feasible retention components remain interpretable. No target evaluation was run."
+}

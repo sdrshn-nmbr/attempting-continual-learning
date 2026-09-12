@@ -1,0 +1,656 @@
+{
+  "kind": "research_artifact_coverage_and_synthesis",
+  "version": 1,
+  "recorded_at_utc": "2026-09-09T02:33:34.771Z",
+  "scope": {
+    "normalized_corpus_entries_inventoried": 4653,
+    "corpus": "Initial stub plus three September5/7/8 project conversation export shards, ending before renewed request at September8 entry1279.",
+    "method": "Identifiers searched across the bounded corpus; substantive source-bearing entries and local implementation contracts inspected. Selected primary sources refreshed for this synthesis.",
+    "families": 26,
+    "source_urls": 76,
+    "claim": "Coverage inventory of the bounded project corpus, not exhaustive reading of every cited bibliography or an independent replication of external experiments."
+  },
+  "families": [
+    {
+      "family": "Base research framing",
+      "coverage": "opened in original corpus",
+      "boundary": "Agenda and scope; no single executable learning method.",
+      "artifacts": [
+        {
+          "name": "Base agenda",
+          "url": "https://labs.baseten.co/agenda"
+        },
+        {
+          "name": "Base manifesto",
+          "url": "https://labs.baseten.co/manifesto"
+        },
+        {
+          "name": "Base research collection",
+          "url": "https://labs.baseten.co/articles"
+        }
+      ]
+    },
+    {
+      "family": "Base post-training and factual memory",
+      "coverage": "articles opened; key sources refreshed",
+      "boundary": "Separates data breadth, objective and sampling choices; factual reachability evidence does not settle skill learning.",
+      "artifacts": [
+        {
+          "name": "SFT study",
+          "url": "https://labs.baseten.co/articles/post-training-science-for-supervised-fine-tuning"
+        },
+        {
+          "name": "Dense, on-policy, or both?",
+          "url": "https://labs.baseten.co/articles/dense-on-policy-or-both"
+        },
+        {
+          "name": "Continual factual memory",
+          "url": "https://arxiv.org/html/2607.11020v2"
+        }
+      ]
+    },
+    {
+      "family": "Amortized cache compaction",
+      "coverage": "opened in original corpus",
+      "boundary": "Preserves inference context; persistent parameter learning requires a separate consolidation mechanism.",
+      "artifacts": [
+        {
+          "name": "STILL",
+          "url": "https://arxiv.org/abs/2606.07878"
+        },
+        {
+          "name": "Neural KV compaction",
+          "url": "https://labs.baseten.co/articles/towards-infinite-context-windows-neural-kv-cache-compaction"
+        },
+        {
+          "name": "Repeated KV compaction",
+          "url": "https://labs.baseten.co/articles/repeated-kv-cache-for-long-running-agents"
+        }
+      ]
+    },
+    {
+      "family": "Natural Language Autoencoders",
+      "coverage": "article, implementation and local contract inspected",
+      "boundary": "Model/layer-specific activation verbalization and reconstruction; useful diagnostic, not proof of causal repair or portable skills.",
+      "artifacts": [
+        {
+          "name": "NLA article",
+          "url": "https://transformer-circuits.pub/2026/nla/"
+        },
+        {
+          "name": "NLA implementation",
+          "url": "https://github.com/kitft/natural_language_autoencoders"
+        }
+      ]
+    },
+    {
+      "family": "Jacobian and representation geometry",
+      "coverage": "article, repositories and metadata inspected",
+      "boundary": "Geometry/correspondence diagnostics require behavioral and causal controls.",
+      "artifacts": [
+        {
+          "name": "Jacobian Lens",
+          "url": "https://github.com/anthropics/jacobian-lens"
+        },
+        {
+          "name": "Global workspace article",
+          "url": "https://transformer-circuits.pub/2026/workspace/"
+        },
+        {
+          "name": "Open lens data",
+          "url": "https://github.com/eliebak/open-jlens-data"
+        },
+        {
+          "name": "CKA",
+          "url": "https://proceedings.mlr.press/v97/kornblith19a.html"
+        }
+      ]
+    },
+    {
+      "family": "Released lens checkpoints",
+      "coverage": "checkpoint metadata inspected",
+      "boundary": "Assets are specific to the source model; full Inkling, Inkling-Small, Laguna and Qwen checkpoints are not interchangeable.",
+      "artifacts": [
+        {
+          "name": "Inkling lens",
+          "url": "https://huggingface.co/PrimeIntellect/inkling-jlens"
+        },
+        {
+          "name": "Laguna lens",
+          "url": "https://huggingface.co/PrimeIntellect/Laguna-XS.2-jlens"
+        },
+        {
+          "name": "Qwen2.5 lens",
+          "url": "https://huggingface.co/anicka/jlens-qwen2.5-7b-instruct"
+        }
+      ]
+    },
+    {
+      "family": "Activation interfaces and recovery",
+      "coverage": "opened or retrieved in original corpus",
+      "boundary": "Activation access/recovery evidence does not directly establish binding repair or continual cross-model transfer.",
+      "artifacts": [
+        {
+          "name": "Universal Activation Interface",
+          "url": "https://arxiv.org/abs/2608.09521"
+        },
+        {
+          "name": "J-Access",
+          "url": "https://arxiv.org/abs/2608.11408"
+        },
+        {
+          "name": "Trait persistence comparator",
+          "url": "https://github.com/manu-scriptum/j-lens-trait-persistence-test-v2"
+        }
+      ]
+    },
+    {
+      "family": "Patching and transfer counterevidence",
+      "coverage": "retrieved in original corpus",
+      "boundary": "Counterexamples to interpreting isolated patches or representation similarity as sufficient causal evidence.",
+      "artifacts": [
+        {
+          "name": "Multiple-mediator patching interactions",
+          "url": "https://arxiv.org/abs/2606.27510"
+        },
+        {
+          "name": "Pythia activation-transfer negative result",
+          "url": "https://arxiv.org/abs/2606.03280"
+        }
+      ]
+    },
+    {
+      "family": "Goodfire mechanism mixtures and temporal features",
+      "coverage": "papers/repos inspected in original corpus",
+      "boundary": "Mechanism decomposition and temporal feature analysis; any retained temporal state must be counted as memory.",
+      "artifacts": [
+        {
+          "name": "Mixing Mechanisms",
+          "url": "https://github.com/yoavgur/mixing-mechs"
+        },
+        {
+          "name": "Temporal Feature Analysis",
+          "url": "https://github.com/eslubana/TemporalFeatureAnalysis"
+        }
+      ]
+    },
+    {
+      "family": "Goodfire manifold interventions",
+      "coverage": "articles/repos opened in original corpus",
+      "boundary": "Activation interventions and subspaces; not the same mathematical object as PorTAL adapter-generation geometry.",
+      "artifacts": [
+        {
+          "name": "Manifold Steering",
+          "url": "https://www.goodfire.com/research/manifold-steering"
+        },
+        {
+          "name": "Causalab manifold steering implementation",
+          "url": "https://github.com/goodfire-ai/causalab/tree/manifold_steering"
+        },
+        {
+          "name": "SAE Manifold",
+          "url": "https://github.com/goodfire-ai/sae-manifold"
+        }
+      ]
+    },
+    {
+      "family": "Goodfire reward and reasoning diagnostics",
+      "coverage": "articles/repos inspected; release coverage varied",
+      "boundary": "Probe rewards and computation-versus-reasoning tests; a reusable official RLFR training/probe release was not established by this audit.",
+      "artifacts": [
+        {
+          "name": "Features as Rewards",
+          "url": "https://www.goodfire.com/research/rlfr"
+        },
+        {
+          "name": "Reasoning Theater",
+          "url": "https://www.goodfire.com/research/reasoning-theater"
+        },
+        {
+          "name": "Forking Fast",
+          "url": "https://github.com/ericb-goodfire/forking-fast"
+        }
+      ]
+    },
+    {
+      "family": "Goodfire released features and auxiliary methods",
+      "coverage": "mixed article/checkpoint inspection",
+      "boundary": "Model-specific SAEs and feature analysis; no established continual native-adapter combination.",
+      "artifacts": [
+        {
+          "name": "R1 interpretability",
+          "url": "https://github.com/goodfire-ai/r1-interpretability"
+        },
+        {
+          "name": "DeepSeek R1 SAE",
+          "url": "https://huggingface.co/Goodfire/DeepSeek-R1-SAE-l37"
+        },
+        {
+          "name": "Stories in Space",
+          "url": "https://www.goodfire.com/research/stories-in-space"
+        },
+        {
+          "name": "Covariance Pooling",
+          "url": "https://www.goodfire.com/research/covariance-pooling"
+        }
+      ]
+    },
+    {
+      "family": "PorTAL",
+      "coverage": "primary article, pinned implementation and all seven released-port catalog entries inspected",
+      "boundary": "Published porting freezes shared core and task vectors while fitting target alignment on task calibration data. Continually updating the shared core adds a separate stability requirement.",
+      "artifacts": [
+        {
+          "name": "PorTAL article",
+          "url": "https://labs.ramp.com/research/portal-portable-task-adaptation/"
+        },
+        {
+          "name": "portallib",
+          "url": "https://github.com/ramp-public/portallib"
+        },
+        {
+          "name": "PorTAL task dataset",
+          "url": "https://huggingface.co/datasets/RampPublic/portallib-tasks"
+        }
+      ]
+    },
+    {
+      "family": "Other Ramp artifacts",
+      "coverage": "articles opened in original corpus",
+      "boundary": "KV communication and an interpretability interface; not persistent parameter learning.",
+      "artifacts": [
+        {
+          "name": "Latent Briefing",
+          "url": "https://labs.ramp.com/research/latent-briefing-kv-cache/"
+        },
+        {
+          "name": "Steer",
+          "url": "https://labs.ramp.com/research/how-we-built-steer/"
+        }
+      ]
+    },
+    {
+      "family": "LoRA generation and matrix reconstruction",
+      "coverage": "originally related-work citations; primary material checked during renewed audit",
+      "boundary": "LoRAGen directly motivates matching complete adaptation matrices to avoid LoRA factor non-uniqueness. Continual product anchoring is our extension.",
+      "artifacts": [
+        {
+          "name": "Text-to-LoRA",
+          "url": "https://proceedings.mlr.press/v267/charakorn25a.html"
+        },
+        {
+          "name": "LoRAGen paper",
+          "url": "https://openreview.net/pdf?id=mrafO7aTYj"
+        },
+        {
+          "name": "LoRAGen official implementation",
+          "url": "https://github.com/tsinghua-fib-lab/LoRAGen"
+        }
+      ]
+    },
+    {
+      "family": "Profile/context adapter generation",
+      "coverage": "citation-only in original corpus",
+      "boundary": "Adjacent generation methods; not verified evidence of indefinite accumulation or backbone-independent skills.",
+      "artifacts": [
+        {
+          "name": "SHINE",
+          "url": "https://arxiv.org/abs/2602.06358"
+        },
+        {
+          "name": "Profile-to-PEFT",
+          "url": "https://arxiv.org/abs/2510.16282"
+        }
+      ]
+    },
+    {
+      "family": "Existing adapter transfer",
+      "coverage": "related-work citations in original corpus",
+      "boundary": "Transfer via subspace or manifold mappings; LoRA-X's text-to-image evidence must not be silently generalized to this LLM setting.",
+      "artifacts": [
+        {
+          "name": "Cross-LoRA",
+          "url": "https://arxiv.org/abs/2508.05232"
+        },
+        {
+          "name": "LoRA-X",
+          "url": "https://arxiv.org/abs/2501.16559"
+        },
+        {
+          "name": "CAST",
+          "url": "https://arxiv.org/abs/2510.17902"
+        }
+      ]
+    },
+    {
+      "family": "Cache matching, repair and editing",
+      "coverage": "paper/code retrieval with access limitations",
+      "boundary": "Per-context memory preservation uses retained cache/archive state; does not by itself consolidate model competence.",
+      "artifacts": [
+        {
+          "name": "Attention Matching",
+          "url": "https://arxiv.org/abs/2602.16284"
+        },
+        {
+          "name": "Attention Matching code",
+          "url": "https://github.com/adamzweiger/compaction"
+        },
+        {
+          "name": "RepairKV",
+          "url": "https://openreview.net/pdf?id=LsrmZrp7tW"
+        },
+        {
+          "name": "E2RAG",
+          "url": "https://github.com/tongxuluo/e2rag"
+        }
+      ]
+    },
+    {
+      "family": "Cache selection and reversible eviction",
+      "coverage": "repository/search coverage varied",
+      "boundary": "Use repository-level attribution for repository-only claims; these mechanisms concern runtime state.",
+      "artifacts": [
+        {
+          "name": "EVOKE",
+          "url": "https://github.com/Anyesh/EVOKE"
+        },
+        {
+          "name": "Thought-Aware Attention Matching",
+          "url": "https://arxiv.org/abs/2608.12331"
+        },
+        {
+          "name": "SparK",
+          "url": "https://ojs.aaai.org/index.php/AAAI/article/view/40466"
+        }
+      ]
+    },
+    {
+      "family": "Compression limits and knowledge-to-KV",
+      "coverage": "retrieved; SR-KI search-only in original corpus",
+      "boundary": "Compression and selection limits are relevant controls, not evidence of weight consolidation.",
+      "artifacts": [
+        {
+          "name": "Pitfalls of KV Compression",
+          "url": "https://arxiv.org/abs/2510.00231"
+        },
+        {
+          "name": "Operational Proto-Introspection",
+          "url": "https://arxiv.org/abs/2607.18553"
+        },
+        {
+          "name": "SR-KI",
+          "url": "https://arxiv.org/abs/2511.06446"
+        }
+      ]
+    },
+    {
+      "family": "Doc-to-LoRA",
+      "coverage": "original search result; full method and limitations refreshed",
+      "boundary": "Amortizes context distillation into adapters. Chunking grows effective rank to r*K; unrelated-query interference is reported. Not a fixed-capacity continual-portability result.",
+      "artifacts": [
+        {
+          "name": "Doc-to-LoRA full paper",
+          "url": "https://arxiv.org/html/2602.15902"
+        }
+      ]
+    },
+    {
+      "family": "Self-editing and on-policy distillation",
+      "coverage": "papers, recipe and engineering notes inspected",
+      "boundary": "Useful consolidation ingredients. Teacher advantage must be demonstrated; local hybrids are not exact reproductions of published systems.",
+      "artifacts": [
+        {
+          "name": "SEAL",
+          "url": "https://arxiv.org/abs/2506.10943"
+        },
+        {
+          "name": "SDFT v2",
+          "url": "https://arxiv.org/html/2601.19897v2"
+        },
+        {
+          "name": "Official SDFT recipe",
+          "url": "https://tinker-docs.thinkingmachines.ai/cookbook/recipes/sdft/"
+        },
+        {
+          "name": "SDPO",
+          "url": "https://arxiv.org/abs/2601.20802"
+        },
+        {
+          "name": "SDPO engineering notes",
+          "url": "https://www.trajectory.ai/field-notes/scaling-sdpo"
+        }
+      ]
+    },
+    {
+      "family": "Skill learning and experimental interaction",
+      "coverage": "opened in original corpus",
+      "boundary": "Skill descriptions, refinement and interaction are adjacent; in-context skill reuse alone does not meet weight-persistence criteria.",
+      "artifacts": [
+        {
+          "name": "Skill-SD",
+          "url": "https://arxiv.org/abs/2604.10674"
+        },
+        {
+          "name": "SkillMaster",
+          "url": "https://arxiv.org/abs/2605.08693"
+        },
+        {
+          "name": "HExA",
+          "url": "https://arxiv.org/abs/2606.29315"
+        }
+      ]
+    },
+    {
+      "family": "Latent and subgoal distillation",
+      "coverage": "retrieved in original corpus",
+      "boundary": "Privileged latent or subgoal supervision; no demonstrated PorTAL consolidation in the inspected sources.",
+      "artifacts": [
+        {
+          "name": "Latent On-Policy Self-Distillation",
+          "url": "https://arxiv.org/abs/2608.13040"
+        },
+        {
+          "name": "Subgoal Distillation",
+          "url": "https://arxiv.org/abs/2405.02749"
+        }
+      ]
+    },
+    {
+      "family": "Continual update architectures and plasticity",
+      "coverage": "Nested Learning/Agent-Dice originally named in supplied feedback; primary identities checked during audit",
+      "boundary": "Nested optimization and consensus/curvature-based fusion are established directions. The present fixed-objective pair implements neither architecture.",
+      "artifacts": [
+        {
+          "name": "Nested Learning",
+          "url": "https://arxiv.org/abs/2512.24695"
+        },
+        {
+          "name": "Agent-Dice",
+          "url": "https://arxiv.org/abs/2601.03641"
+        },
+        {
+          "name": "Agent-Dice implementation",
+          "url": "https://github.com/Wuzheng02/Agent-Dice"
+        },
+        {
+          "name": "Zyphra plasticity study",
+          "url": "https://arxiv.org/abs/2606.24752"
+        }
+      ]
+    },
+    {
+      "family": "Evaluation assets",
+      "coverage": "local contracts; ToolAlpaca suggestion-only for the inspected distillation handoff",
+      "boundary": "Datasets rather than learning methods; asset selection is separate from a demonstrated algorithm.",
+      "artifacts": [
+        {
+          "name": "CLINC paper",
+          "url": "https://aclanthology.org/D19-1131/"
+        },
+        {
+          "name": "CLINC dataset",
+          "url": "https://huggingface.co/datasets/clinc/clinc_oos"
+        },
+        {
+          "name": "ToolAlpaca dataset",
+          "url": "https://huggingface.co/datasets/Ahren09/ToolAlpaca"
+        }
+      ]
+    }
+  ],
+  "selected_primary_refresh": [
+    {
+      "name": "PorTAL article",
+      "url": "https://labs.ramp.com/research/portal-portable-task-adaptation/",
+      "scope": "full primary article"
+    },
+    {
+      "name": "LoRAGen official implementation",
+      "url": "https://github.com/tsinghua-fib-lab/LoRAGen",
+      "scope": "README matrix-supervision passage"
+    },
+    {
+      "name": "Text-to-LoRA",
+      "url": "https://proceedings.mlr.press/v267/charakorn25a.html",
+      "scope": "official proceedings abstract"
+    },
+    {
+      "name": "Doc-to-LoRA",
+      "url": "https://arxiv.org/html/2602.15902",
+      "scope": "full paper including sections3.2 andC.4"
+    },
+    {
+      "name": "Base factual memory",
+      "url": "https://arxiv.org/html/2607.11020v2",
+      "scope": "full paper including sections9.1 and9.2"
+    },
+    {
+      "name": "Base dense/on-policy",
+      "url": "https://labs.baseten.co/articles/dense-on-policy-or-both",
+      "scope": "primary article"
+    },
+    {
+      "name": "Base SFT",
+      "url": "https://labs.baseten.co/articles/post-training-science-for-supervised-fine-tuning",
+      "scope": "primary article landing page"
+    },
+    {
+      "name": "SDFT",
+      "url": "https://arxiv.org/html/2601.19897v2",
+      "scope": "full paper practical implementation and teacher ablation"
+    },
+    {
+      "name": "SEAL",
+      "url": "https://arxiv.org/abs/2506.10943",
+      "scope": "primary abstract"
+    },
+    {
+      "name": "SDPO",
+      "url": "https://arxiv.org/abs/2601.20802",
+      "scope": "primary abstract"
+    },
+    {
+      "name": "STILL",
+      "url": "https://arxiv.org/abs/2606.07878",
+      "scope": "primary abstract"
+    },
+    {
+      "name": "NLA",
+      "url": "https://github.com/kitft/natural_language_autoencoders",
+      "scope": "official README; article URL refresh returned internal error"
+    },
+    {
+      "name": "Jacobian Lens",
+      "url": "https://github.com/anthropics/jacobian-lens",
+      "scope": "official repository landing page"
+    },
+    {
+      "name": "Nested Learning",
+      "url": "https://arxiv.org/abs/2512.24695",
+      "scope": "primary abstract"
+    },
+    {
+      "name": "Agent-Dice",
+      "url": "https://arxiv.org/abs/2601.03641",
+      "scope": "primary abstract"
+    }
+  ],
+  "later_parent_additions": [
+    {
+      "name": "Thomson",
+      "url": "https://arxiv.org/abs/2608.27147",
+      "coverage": "later parent addition; primary abstract refreshed, full experiment audit not performed here"
+    },
+    {
+      "name": "AdamO / Preserving Plasticity via Dynamical Isometry",
+      "url": "https://arxiv.org/abs/2606.09762",
+      "coverage": "later parent addition; primary title/abstract page refreshed, full method audit not performed here"
+    },
+    {
+      "name": "Denser != Better",
+      "url": "https://arxiv.org/abs/2607.01763",
+      "coverage": "later parent addition; primary title/abstract page refreshed, full experiment audit not performed here"
+    }
+  ],
+  "gaps": [
+    "Some stored source/tool excerpts were truncated; those cannot establish inspection of omitted content.",
+    "Citation-only, search-only, repository-level and checkpoint-metadata evidence remain explicitly distinguished from method/code inspection.",
+    "The NLA article refresh failed; the official implementation README was successfully inspected.",
+    "The LoRAGen OpenReview PDF was blocked during this audit; the official repository explicitly supports full-matrix supervision.",
+    "SLEP has no exact-name occurrence in the bounded pre-renewal corpus. A primary-source search gives multiple unrelated acronym expansions; no identity is assigned without provenance.",
+    "Thomson, AdamO and Denser != Better were later parent additions and are separated from the bounded inventory; this sidecar refreshes their primary metadata only.",
+    "The parent owns all GPU behavior audits. This synthesis does not treat exit0, queue admission or a pre-update launch failure as a scientific outcome.",
+    "L1/L2 use the same learned mapping/training-seed303. The288reserved triples per task are new inputs, not a new-mapping or independent-training-seed replication.",
+    "Released target adapter functions provide privileged target supervision even though new-task target examples are excluded from fitting.",
+    "Successful reconstruction at fourteen published latent points, with only four held out from fitting, does not identify behavior throughout latent space or unrestricted generation."
+  ],
+  "synthesis": {
+    "prior_interpretation": "Earlier negative transfers establish failure for the tested unchanged target alignments after source learning. They do not by themselves reject PorTAL's published freeze-core-and-refit recipe or prove that learned task information is absent.",
+    "L1": {
+      "question": "Can target alignment express the learned shared core when calibrated to old generated-adapter functions?",
+      "method": "Keep learned core and all vectors fixed. Fit target alignment including layer embeddings on10old published tasks; evaluate4heldout old tasks, identity and mismatched-anchor controls. Match scaled DeltaW=(alpha/r)BA rather than arbitrary LoRA factors.",
+      "relation_to_primary_work": "PorTAL supplies frozen-core target refitting; LoRAGen supplies full-adaptation-matrix supervision. The old-function calibration objective is our hybrid, not the published PorTAL target-task NLL recipe.",
+      "cpu_observation": {
+        "status": "geometry_gates_passed_both_targets",
+        "holdout_relative_squared_error_final_over_initial": {
+          "qwen4": 0.13125292275742625,
+          "mistral7": 0.182531983086199
+        },
+        "every_heldout_task_nonworsening": true,
+        "correct_anchor_beats_mismatch": true,
+        "identity_exact": true,
+        "separate_process_reload_audit": "passed"
+      },
+      "behavioral_interpretation": "A fresh-input behavioral gain would support recoverable alignment mismatch at this operating point. Geometry recovery without behavior gain would show that old-function calibration is insufficient for the new skills; it would not prove erased information.",
+      "proof": "outputs/repair-alignment-cpu/fits/result.json"
+    },
+    "L2": {
+      "question": "Does preserving generated adaptations during source learning reduce interference while retaining acquisition and transfer?",
+      "method": "Matched replay pair with anchor_weight0 versus1,288source updates each. Shared core and current vector learn; source/Qwen4/Mistral alignments and old vectors stay frozen. Published references use initial outputs; prior A/B references use immutable acquisition-boundary outputs.",
+      "relation_to_primary_work": "Generated-adapter reconstruction supplies a preservation loss. Agent-Dice motivates measuring conflicting updates; Nested Learning motivates richer update organization. This experiment implements neither consensus fusion nor a learned multilevel update rule.",
+      "inference_limits": "Gains identify the effect of this anchor penalty conditional on replay, these three surfaces and one operating point. They do not identify anchoring-by-replay interaction because no fresh no-replay factorial arms run. Better retention with failed new-task acquisition is not a success.",
+      "gates": "Both fixed288-update runs finish unless execution is invalid/nonfinite. Own train/validation accuracy>=0.90 and validation gain>=0.50; maximum forgetting from acquisition<=0.05 at every later boundary. Failed source gates stop target evaluation.",
+      "execution_boundary": "Parent reports anchor0 initial GPU launch failed before any updates because extended target alignment remained on CPU while shared core was on GPU. Parent owns device-only fix and retry. CPU proof did not cover CUDA placement. This is not scientific evidence for or against anchors."
+    },
+    "distillation": {
+      "status": "Deferred by parent after frozen free-generation teacher qualification failed.",
+      "rationale": "Text-to-LoRA and Doc-to-LoRA show adapter generation/internalization; SDFT and SDPO supply dense teacher signals. These do not remove the need to demonstrate teacher competence under the exact output contract.",
+      "primary_limits": "SDFTv2's practical implementation favors forward KL and uses an EMA teacher by default; our proposed fixed competent LoRA teacher would be a distinct hybrid. Doc-to-LoRA reports unrelated-query interference and grows rank under chunk composition."
+    },
+    "interpretation_order": [
+      "Audited fresh-input behavioral outcomes",
+      "Acquisition and every-boundary retention",
+      "Generated-adapter geometry and negative controls",
+      "Speculative mechanism or research novelty"
+    ],
+    "bottom_claim": "The justified advance is a testable separation of source acquisition/retention, compatibility with existing target alignments, and behavioral transfer after calibration. None is interchangeable with general continual learning."
+  },
+  "local_contracts": [
+    "experiments/catalog/manifest.json",
+    "experiments/catalog/upstream/src/portallib/_architecture.py",
+    "experiments/distillation/handoff.json",
+    "experiments/plasticity/handoff.json",
+    "experiments/active_evidence/handoff.json",
+    "compute/experiments/nla/upstream_contract.json"
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "status": "passed",
+  "audit_source_sha256": "85ec1c653afd21209b973348eec6305a3825a70f40aad69777535ff810ed60a0",
+  "fixture_sha256": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e",
+  "row_count": 864,
+  "groups": 288,
+  "total_predictions_regraded": 12096,
+  "results": {
+    "source": {
+      "task": "meta-20260909-repair-source-verified-qwen8-fresh303",
+      "source_sha256": "d1be04affa359eb73628a60d384d03bb03dc6fd8a0523e3049e799400c848e2e",
+      "result_sha256": "bc770151acd466d15dc72d09a5fca31c0c62bc2692936ef85658f395e1858e55",
+      "all_prediction_scores_regraded": true,
+      "all_reported_paired_intervals_recomputed": false,
+      "prediction_count": 3456,
+      "fresh_process": true,
+      "fp32_no_grad_and_no_updates": true,
+      "counts": {
+        "initial": {
+          "sequence_a": 86,
+          "sequence_b": 79,
+          "sequence_c": 125
+        },
+        "lora_replay": {
+          "sequence_a": 287,
+          "sequence_b": 287,
+          "sequence_c": 288
+        },
+        "native_replay": {
+          "sequence_a": 243,
+          "sequence_b": 277,
+          "sequence_c": 281
+        },
+        "raw": {
+          "sequence_a": 84,
+          "sequence_b": 85,
+          "sequence_c": 117
+        }
+      }
+    },
+    "qwen4": {
+      "task": "meta-20260909-repair-target-qwen4-fresh303",
+      "source_sha256": "d1be04affa359eb73628a60d384d03bb03dc6fd8a0523e3049e799400c848e2e",
+      "result_sha256": "79aaefed21f50af03c6e16c0f8ca2ddd536127ef749201e29ce584461b7a6434",
+      "all_prediction_scores_regraded": true,
+      "all_reported_paired_intervals_recomputed": true,
+      "prediction_count": 4320,
+      "fresh_process": true,
+      "fp32_no_grad_and_no_updates": true,
+      "counts": {
+        "initial": {
+          "sequence_a": 72,
+          "sequence_b": 62,
+          "sequence_c": 123
+        },
+        "mismatch": {
+          "sequence_a": 77,
+          "sequence_b": 72,
+          "sequence_c": 111
+        },
+        "raw": {
+          "sequence_a": 71,
+          "sequence_b": 73,
+          "sequence_c": 102
+        },
+        "repair": {
+          "sequence_a": 77,
+          "sequence_b": 79,
+          "sequence_c": 115
+        },
+        "unchanged": {
+          "sequence_a": 77,
+          "sequence_b": 71,
+          "sequence_c": 110
+        }
+      }
+    },
+    "mistral7": {
+      "task": "meta-20260909-repair-target-mistral7-fresh303",
+      "source_sha256": "d1be04affa359eb73628a60d384d03bb03dc6fd8a0523e3049e799400c848e2e",
+      "result_sha256": "faff833d8befc779177c53103bb8213a361d58ac4e13ddfded5e9ec1dabf01bd",
+      "all_prediction_scores_regraded": true,
+      "all_reported_paired_intervals_recomputed": true,
+      "prediction_count": 4320,
+      "fresh_process": true,
+      "fp32_no_grad_and_no_updates": true,
+      "counts": {
+        "initial": {
+          "sequence_a": 69,
+          "sequence_b": 66,
+          "sequence_c": 132
+        },
+        "mismatch": {
+          "sequence_a": 74,
+          "sequence_b": 74,
+          "sequence_c": 149
+        },
+        "raw": {
+          "sequence_a": 69,
+          "sequence_b": 65,
+          "sequence_c": 123
+        },
+        "repair": {
+          "sequence_a": 82,
+          "sequence_b": 71,
+          "sequence_c": 153
+        },
+        "unchanged": {
+          "sequence_a": 72,
+          "sequence_b": 83,
+          "sequence_c": 160
+        }
+      }
+    }
+  },
+  "claim_boundary": "All remaining inputs of fixture303; no independent mapping or training replicate. Independent audit uses saved choice scores, not another model inference."
+}

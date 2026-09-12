@@ -1,0 +1,155 @@
+{
+  "worker_job": "cl-portfolio-2xvsc",
+  "worker_job_uid": "2a8fcc21-504a-407d-b27d-5357798ea104",
+  "supervisor_observed_at": "2026-09-09T02:59:46.633054+00:00",
+  "supervisor_active": [],
+  "queue_count": 92,
+  "queue_unseen": [],
+  "new_wave_execution_records": {
+    "meta-20260909-anchor0-device-qwen8-s30301": {
+      "status": "completed",
+      "exit_code": 0,
+      "started_at": "2026-09-09T02:34:17.135187+00:00",
+      "finished_at": "2026-09-09T02:41:33.199555+00:00",
+      "source_sha256": "5b13abaab519f0fe1962dcef85b3790b05bba0374cb36db633508501bb6a980c",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-2xvsc-hrrq6",
+      "pid": 1209
+    },
+    "meta-20260909-anchor0-qwen8-s30301": {
+      "status": "failed",
+      "exit_code": 1,
+      "started_at": "2026-09-09T02:18:02.612141+00:00",
+      "finished_at": "2026-09-09T02:18:23.089785+00:00",
+      "source_sha256": "f269dd8f925d7ddd809b6dac4c8fcade03924b5f3dfe38ab616bc0ebe6fc790b",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-2xvsc-hrrq6",
+      "pid": 1096
+    },
+    "meta-20260909-anchor1-device-qwen8-s30301": {
+      "status": "completed",
+      "exit_code": 0,
+      "started_at": "2026-09-09T02:35:04.012898+00:00",
+      "finished_at": "2026-09-09T02:43:06.937510+00:00",
+      "source_sha256": "5b13abaab519f0fe1962dcef85b3790b05bba0374cb36db633508501bb6a980c",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-2xvsc-hrrq6",
+      "pid": 1242
+    },
+    "meta-20260909-anchor1-qwen8-s30301": {
+      "status": "failed",
+      "exit_code": 1,
+      "started_at": "2026-09-09T02:18:18.970820+00:00",
+      "finished_at": "2026-09-09T02:18:41.435065+00:00",
+      "source_sha256": "f269dd8f925d7ddd809b6dac4c8fcade03924b5f3dfe38ab616bc0ebe6fc790b",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-2xvsc-hrrq6",
+      "pid": 1129
+    },
+    "meta-20260909-chain-control-launch-qwen35-4b-s37": {
+      "status": "completed",
+      "exit_code": 0,
+      "started_at": "2026-09-09T01:59:33.802301+00:00",
+      "finished_at": "2026-09-09T02:07:02.716456+00:00",
+      "source_sha256": "a7394ecd262af527bc5e52bc11426c48fcf50d7a924ac27b0386e8681163ecaa",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-2xvsc-hrrq6",
+      "pid": 899
+    },
+    "meta-20260909-chain-control-qwen35-4b-s37": {
+      "status": "failed",
+      "exit_code": 2,
+      "started_at": "2026-09-09T01:57:43.968493+00:00",
+      "finished_at": "2026-09-09T01:57:52.143461+00:00",
+      "source_sha256": "61b4605a83da83e5e7cc7c5d83c49865bdbaeec453ccdbcc151ccfa5db2a4c78",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-2xvsc-hrrq6",
+      "pid": 623
+    },
+    "meta-20260909-qualify-qwen3-8b": {
+      "status": "completed",
+      "exit_code": 0,
+      "started_at": "2026-09-09T01:53:55.574126+00:00",
+      "finished_at": "2026-09-09T01:55:25.556538+00:00",
+      "source_sha256": "a50d8e4ecd2812c11a891643d0988e76bfdf9e2bde22cb7d91b023e3bb0396e7",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-2xvsc-hrrq6",
+      "pid": 12
+    },
+    "meta-20260909-rank8-qwen8-s30301": {
+      "status": "completed",
+      "exit_code": 0,
+      "started_at": "2026-09-09T02:52:30.735842+00:00",
+      "finished_at": "2026-09-09T02:57:23.941195+00:00",
+      "source_sha256": "9d6cf6a8bed13a81d48212ddae486082e217526fbe39fd4e2d501bedc05e2ae4",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-2xvsc-hrrq6",
+      "pid": 1313
+    },
+    "meta-20260909-repair-source-qwen8-fresh303": {
+      "status": "failed",
+      "exit_code": 1,
+      "started_at": "2026-09-09T02:09:04.996897+00:00",
+      "finished_at": "2026-09-09T02:09:17.289349+00:00",
+      "source_sha256": "990c7acd19aacb04af5cc028306efdb79cf7ec3f3a54753945e45f2e39c3eddd",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-2xvsc-hrrq6",
+      "pid": 956
+    },
+    "meta-20260909-repair-source-verified-qwen8-fresh303": {
+      "status": "completed",
+      "exit_code": 0,
+      "started_at": "2026-09-09T02:12:44.691291+00:00",
+      "finished_at": "2026-09-09T02:17:38.056539+00:00",
+      "source_sha256": "d1be04affa359eb73628a60d384d03bb03dc6fd8a0523e3049e799400c848e2e",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-2xvsc-hrrq6",
+      "pid": 988
+    },
+    "meta-20260909-repair-target-mistral7-fresh303": {
+      "status": "completed",
+      "exit_code": 0,
+      "started_at": "2026-09-09T02:13:58.183736+00:00",
+      "finished_at": "2026-09-09T02:19:38.411319+00:00",
+      "source_sha256": "d1be04affa359eb73628a60d384d03bb03dc6fd8a0523e3049e799400c848e2e",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-2xvsc-hrrq6",
+      "pid": 1056
+    },
+    "meta-20260909-repair-target-qwen4-fresh303": {
+      "status": "completed",
+      "exit_code": 0,
+      "started_at": "2026-09-09T02:13:31.679923+00:00",
+      "finished_at": "2026-09-09T02:16:57.360482+00:00",
+      "source_sha256": "d1be04affa359eb73628a60d384d03bb03dc6fd8a0523e3049e799400c848e2e",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-2xvsc-hrrq6",
+      "pid": 1024
+    },
+    "meta-20260909-runtime-qwen35-4b": {
+      "status": "completed",
+      "exit_code": 0,
+      "started_at": "2026-09-09T01:53:55.648101+00:00",
+      "finished_at": "2026-09-09T01:55:07.188450+00:00",
+      "source_sha256": "94c50adb4a72c6ebc53ec1e0d334763fbcdc6aafa81c04386712c74eb04ef921",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-2xvsc-hrrq6",
+      "pid": 19
+    },
+    "meta-20260909-teacher-sequence303-qwen8": {
+      "status": "completed",
+      "exit_code": 0,
+      "started_at": "2026-09-09T01:55:25.615059+00:00",
+      "finished_at": "2026-09-09T01:57:01.093492+00:00",
+      "source_sha256": "51c5dcdf9a7183c280e9af1fd28f466107446823faed3bd1041497a54c69333e",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-2xvsc-hrrq6",
+      "pid": 338
+    }
+  },
+  "new_wave_completed": 10,
+  "new_wave_failed_startup_attempts": 4,
+  "new_wave_pending": 0,
+  "cleanup": "owned_worker_job_deleted_and_pod_absent",
+  "active_gpu_pods_after_cleanup": []
+}

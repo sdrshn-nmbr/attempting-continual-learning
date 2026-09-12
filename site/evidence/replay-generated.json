@@ -1,0 +1,331 @@
+{
+  "control_run_id": "resume-20260908-oracle-sft-qwen35-4b-s37",
+  "replay_run_id": "resume-20260908-oracle-sft-replay-qwen35-4b-s37",
+  "gpu_stage_a_pair_exact": true,
+  "saved_gpu_lora_adapter_pairs": {
+    "initial": {
+      "tensor_exact_match": true,
+      "tensor_count": 496,
+      "parameters": 16232448,
+      "changed_tensors": [],
+      "changed_values": 0,
+      "max_abs_difference": 0.0,
+      "l2_difference": 0.0,
+      "control_file_sha256": "01da5206631ffc71c3c28cf1ea435bdcbddc653ef9e384482fbf19f44e2dc6dd",
+      "replay_file_sha256": "01da5206631ffc71c3c28cf1ea435bdcbddc653ef9e384482fbf19f44e2dc6dd"
+    },
+    "after_permutation": {
+      "tensor_exact_match": true,
+      "tensor_count": 496,
+      "parameters": 16232448,
+      "changed_tensors": [],
+      "changed_values": 0,
+      "max_abs_difference": 0.0,
+      "l2_difference": 0.0,
+      "control_file_sha256": "7ed7688238f333fc074ce2f907fc43d8ab2f9687d6c2bbdbd741cad98fa8ca5a",
+      "replay_file_sha256": "7ed7688238f333fc074ce2f907fc43d8ab2f9687d6c2bbdbd741cad98fa8ca5a"
+    }
+  },
+  "first_32_update_records_exact": true,
+  "first_32_loss_and_gradient_records_exact": true,
+  "stage_a_update_differences": [],
+  "same_480_heldout_queries_prompts_and_parser": true,
+  "independent_oracle_output_recomputations": {
+    "control": 480,
+    "replay": 480,
+    "total": 960
+  },
+  "control_eval_row_audit_sha256": "733e55a2b6b3e584d5c062032adc3fab9d27a891f5f9573d70a20a04a167a3fb",
+  "full_initial_and_after_a_evaluation_records_exact": true,
+  "raw_counts": {
+    "initial": {
+      "permutation/inputs": {
+        "n": 32,
+        "control_correct": 2,
+        "replay_correct": 2,
+        "replay_minus_control_accuracy": 0.0
+      },
+      "permutation/compositions": {
+        "n": 32,
+        "control_correct": 6,
+        "replay_correct": 6,
+        "replay_minus_control_accuracy": 0.0
+      },
+      "symbol_map/inputs": {
+        "n": 32,
+        "control_correct": 1,
+        "replay_correct": 1,
+        "replay_minus_control_accuracy": 0.0
+      },
+      "symbol_map/compositions": {
+        "n": 32,
+        "control_correct": 2,
+        "replay_correct": 2,
+        "replay_minus_control_accuracy": 0.0
+      },
+      "cross_task/compositions": {
+        "n": 32,
+        "control_correct": 1,
+        "replay_correct": 1,
+        "replay_minus_control_accuracy": 0.0
+      }
+    },
+    "after_permutation": {
+      "permutation/inputs": {
+        "n": 32,
+        "control_correct": 25,
+        "replay_correct": 25,
+        "replay_minus_control_accuracy": 0.0
+      },
+      "permutation/compositions": {
+        "n": 32,
+        "control_correct": 0,
+        "replay_correct": 0,
+        "replay_minus_control_accuracy": 0.0
+      },
+      "symbol_map/inputs": {
+        "n": 32,
+        "control_correct": 3,
+        "replay_correct": 3,
+        "replay_minus_control_accuracy": 0.0
+      },
+      "symbol_map/compositions": {
+        "n": 32,
+        "control_correct": 3,
+        "replay_correct": 3,
+        "replay_minus_control_accuracy": 0.0
+      },
+      "cross_task/compositions": {
+        "n": 32,
+        "control_correct": 1,
+        "replay_correct": 1,
+        "replay_minus_control_accuracy": 0.0
+      }
+    },
+    "after_symbol_map": {
+      "permutation/inputs": {
+        "n": 32,
+        "control_correct": 1,
+        "replay_correct": 32,
+        "replay_minus_control_accuracy": 0.96875
+      },
+      "permutation/compositions": {
+        "n": 32,
+        "control_correct": 0,
+        "replay_correct": 0,
+        "replay_minus_control_accuracy": 0.0
+      },
+      "symbol_map/inputs": {
+        "n": 32,
+        "control_correct": 27,
+        "replay_correct": 25,
+        "replay_minus_control_accuracy": -0.0625
+      },
+      "symbol_map/compositions": {
+        "n": 32,
+        "control_correct": 0,
+        "replay_correct": 0,
+        "replay_minus_control_accuracy": 0.0
+      },
+      "cross_task/compositions": {
+        "n": 32,
+        "control_correct": 1,
+        "replay_correct": 1,
+        "replay_minus_control_accuracy": 0.0
+      }
+    }
+  },
+  "generated_token_sequence_comparison": {
+    "initial": {
+      "identical_generated_token_sequences": 160,
+      "different_example_ids": []
+    },
+    "after_permutation": {
+      "identical_generated_token_sequences": 160,
+      "different_example_ids": []
+    },
+    "after_symbol_map": {
+      "identical_generated_token_sequences": 48,
+      "different_example_ids": [
+        "permutation/heldout/dax/3122",
+        "permutation/heldout/wug/0200",
+        "permutation/heldout/dax/2321",
+        "permutation/heldout/wug/1333",
+        "permutation/heldout/dax/0020",
+        "permutation/heldout/wug/2010",
+        "permutation/heldout/dax/2301",
+        "permutation/heldout/wug/3130",
+        "permutation/heldout/dax/0111",
+        "permutation/heldout/wug/1320",
+        "permutation/heldout/dax/0332",
+        "permutation/heldout/dax/2320",
+        "permutation/heldout/wug/2121",
+        "permutation/heldout/dax/3030",
+        "permutation/heldout/wug/3310",
+        "permutation/heldout/dax/0222",
+        "permutation/heldout/wug/2131",
+        "permutation/heldout/dax/2110",
+        "permutation/heldout/wug/2103",
+        "permutation/heldout/dax/1321",
+        "permutation/heldout/wug/0132",
+        "permutation/heldout/dax/2100",
+        "permutation/heldout/wug/2302",
+        "permutation/heldout/dax/3010",
+        "permutation/heldout/wug/0223",
+        "permutation/heldout/dax/3203",
+        "permutation/heldout/wug/3023",
+        "permutation/heldout/dax/2133",
+        "permutation/heldout/wug/2000",
+        "permutation/heldout/dax/3222",
+        "permutation/heldout/wug/0300",
+        "permutation/heldout_compositions/wug-dax/3122",
+        "permutation/heldout_compositions/dax-wug/0200",
+        "permutation/heldout_compositions/wug-dax/2321",
+        "permutation/heldout_compositions/dax-wug/1333",
+        "permutation/heldout_compositions/wug-dax/0020",
+        "permutation/heldout_compositions/dax-wug/2010",
+        "permutation/heldout_compositions/wug-dax/2301",
+        "permutation/heldout_compositions/dax-wug/3130",
+        "permutation/heldout_compositions/wug-dax/0111",
+        "permutation/heldout_compositions/dax-wug/1320",
+        "permutation/heldout_compositions/wug-dax/0332",
+        "permutation/heldout_compositions/wug-dax/2320",
+        "permutation/heldout_compositions/dax-wug/2121",
+        "permutation/heldout_compositions/wug-dax/3030",
+        "permutation/heldout_compositions/dax-wug/3310",
+        "permutation/heldout_compositions/wug-dax/0222",
+        "permutation/heldout_compositions/dax-wug/2131",
+        "permutation/heldout_compositions/wug-dax/2110",
+        "permutation/heldout_compositions/wug-dax/1321",
+        "permutation/heldout_compositions/dax-wug/0132",
+        "permutation/heldout_compositions/wug-dax/2100",
+        "permutation/heldout_compositions/dax-wug/2302",
+        "permutation/heldout_compositions/wug-dax/3010",
+        "permutation/heldout_compositions/dax-wug/0223",
+        "permutation/heldout_compositions/wug-dax/3203",
+        "permutation/heldout_compositions/dax-wug/3023",
+        "permutation/heldout_compositions/wug-dax/2133",
+        "permutation/heldout_compositions/dax-wug/2000",
+        "permutation/heldout_compositions/wug-dax/3222",
+        "permutation/heldout_compositions/dax-wug/0300",
+        "symbol_map/heldout/fep/3122",
+        "symbol_map/heldout/kiv/1333",
+        "symbol_map/heldout/kiv/2010",
+        "symbol_map/heldout/fep/0111",
+        "symbol_map/heldout/kiv/1320",
+        "symbol_map/heldout/kiv/1010",
+        "symbol_map/heldout/fep/2110",
+        "symbol_map/heldout/kiv/2103",
+        "symbol_map/heldout/kiv/0132",
+        "symbol_map/heldout/fep/2100",
+        "symbol_map/heldout/kiv/0223",
+        "symbol_map/heldout/fep/2133",
+        "symbol_map/heldout_compositions/kiv-fep/2321",
+        "symbol_map/heldout_compositions/fep-kiv/2010",
+        "symbol_map/heldout_compositions/fep-kiv/3130",
+        "symbol_map/heldout_compositions/kiv-fep/0111",
+        "symbol_map/heldout_compositions/kiv-fep/0332",
+        "symbol_map/heldout_compositions/kiv-fep/2320",
+        "symbol_map/heldout_compositions/fep-kiv/2131",
+        "symbol_map/heldout_compositions/kiv-fep/2110",
+        "symbol_map/heldout_compositions/fep-kiv/2103",
+        "symbol_map/heldout_compositions/kiv-fep/1321",
+        "symbol_map/heldout_compositions/fep-kiv/0132",
+        "symbol_map/heldout_compositions/kiv-fep/2100",
+        "symbol_map/heldout_compositions/kiv-fep/3010",
+        "cross_task/heldout/dax-fep/3122",
+        "cross_task/heldout/wug-kiv/0200",
+        "cross_task/heldout/fep-dax-kiv/2321",
+        "cross_task/heldout/dax-fep/1333",
+        "cross_task/heldout/wug-kiv/0020",
+        "cross_task/heldout/fep-dax-kiv/2010",
+        "cross_task/heldout/dax-fep/2301",
+        "cross_task/heldout/wug-kiv/3130",
+        "cross_task/heldout/fep-dax-kiv/0111",
+        "cross_task/heldout/dax-fep/1320",
+        "cross_task/heldout/wug-kiv/0332",
+        "cross_task/heldout/dax-fep/2320",
+        "cross_task/heldout/wug-kiv/2121",
+        "cross_task/heldout/dax-fep/3310",
+        "cross_task/heldout/wug-kiv/0222",
+        "cross_task/heldout/fep-dax-kiv/2131",
+        "cross_task/heldout/dax-fep/2110",
+        "cross_task/heldout/wug-kiv/2103",
+        "cross_task/heldout/dax-fep/0132",
+        "cross_task/heldout/wug-kiv/2100",
+        "cross_task/heldout/dax-fep/3010",
+        "cross_task/heldout/wug-kiv/0223",
+        "cross_task/heldout/dax-fep/3023",
+        "cross_task/heldout/wug-kiv/2133",
+        "cross_task/heldout/dax-fep/3222",
+        "cross_task/heldout/wug-kiv/0300"
+      ]
+    }
+  },
+  "control_gates": {
+    "acquisition": {
+      "permutation": {
+        "initial_accuracy": 0.0625,
+        "after_task_accuracy": 0.78125,
+        "gain_over_initial": 0.71875,
+        "passed": true
+      },
+      "symbol_map": {
+        "initial_accuracy": 0.03125,
+        "after_task_accuracy": 0.84375,
+        "gain_over_initial": 0.8125,
+        "passed": true
+      }
+    },
+    "retention": {
+      "eligible": true,
+      "condition": "Both primitive acquisition gates pass",
+      "accuracy_drop": 0.75,
+      "maximum_drop": 0.1,
+      "passed": false
+    },
+    "feasible": false
+  },
+  "replay_gates": {
+    "acquisition": {
+      "permutation": {
+        "initial_accuracy": 0.0625,
+        "after_task_accuracy": 0.78125,
+        "gain_over_initial": 0.71875,
+        "passed": true
+      },
+      "symbol_map": {
+        "initial_accuracy": 0.03125,
+        "after_task_accuracy": 0.78125,
+        "gain_over_initial": 0.75,
+        "passed": true
+      }
+    },
+    "retention": {
+      "eligible": true,
+      "condition": "Both primitive acquisition gates pass",
+      "accuracy_drop": -0.21875,
+      "maximum_drop": 0.1,
+      "passed": true
+    },
+    "feasible": true
+  },
+  "retention_drop_change": -0.96875,
+  "stage_b_exposure": {
+    "control_current_answers": 128,
+    "control_replay_answers": 0,
+    "replay_current_answers": 64,
+    "replay_old_answers": 64,
+    "current_exposure_fraction": 0.5,
+    "total_supervised_tokens_each_run": 2560
+  },
+  "comparison_scope": "One fixed seed and total token budget. Stage B intentionally halves current-task exposure to allocate half of its tokens to old-task training examples. Composition scores are descriptive; no grid or broader comparative claim.",
+  "provenance": {
+    "control_source_bundle_sha256": "3d6d3496a5ea10416690a9163359f1227f3de9fa13e3c84bcc8aa990dacdfdf3",
+    "replay_source_bundle_sha256": "8f3fc441c3d874b3d08dedca96113740386955319a822cc67a4e2c66d24e22ad",
+    "control_metrics_sha256": "93dc3b64060b19a37ff1c322fbe257fbadd47ad3b63bea77499c3cb770a6b3b9",
+    "replay_metrics_sha256": "7fc84bcbd09050bcf6e4b4ad2bb9f660478e7b6b71ea680149d5bbe55f3f31b3",
+    "control_audit_sha256": "1c7995ba0a190be16d57c43259cbe52917c101e5833bdce0d26aca8ff743db56"
+  },
+  "limits": "Tensor comparisons cover every saved LoRA tensor, not base-model weight shards. GPU stage-A optimizer state is not retained separately by the fixed runner; exact paired AdamW state equality was established by the already-reviewed native CPU proof. No numerical tolerance substitutes for the reported exact GPU tensor/loss comparison."
+}

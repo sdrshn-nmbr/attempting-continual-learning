@@ -1,0 +1,73 @@
+{
+  "status": "prespecified_post_upgrade_learning_confirmation_passed",
+  "claim": "Shared-core plus new-vector learning after the 4B-to-8B upgrade met the prespecified new-task acquisition and average old-task retention gates on the screen and fresh confirmation fixture.",
+  "evidence": {
+    "17": {
+      "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/outputs/portfolio/analyses/portability-amber-seed17.json",
+      "sha256": "a9e41430a6f853dfee768db9b1b1d972ba3a2e35a3fc616f29b056ac3a6a1495"
+    },
+    "29": {
+      "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/outputs/portfolio/analyses/portability-amber-seed29.json",
+      "sha256": "e0eeff942745925253be6aa949ef88b3da0b6e60d40f9947965453fac1b36b1f"
+    }
+  },
+  "source_comparison": {
+    "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/amber-confirmation-seed29/python-semantic-diff.json",
+    "sha256": "c7b235aacfd9bf9defaedac774b6fefcae8b0de45122843d3a589aa99d0ef819"
+  },
+  "fixture_generation": {
+    "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/amber-confirmation-seed29/generation.json",
+    "sha256": "962c7f8b731cbb41b9f57c0e3cf79f951dbb66c120fd9836d3cfbd5b334bcf73"
+  },
+  "checks": {
+    "core_acquisition_and_retention_point_gates_both_fixtures": true,
+    "core_gain_intervals_above_zero_against_both_floors": true,
+    "core_minus_latent_intervals_above_zero_both_fixtures": true,
+    "native_lora_learnability_control_both_fixtures": true,
+    "full_frozen_state_and_fresh_process_checks_reported_both_fixtures": true,
+    "matched_b_exposure_within_and_between_fixtures": true,
+    "distinct_fixture_hashes": true,
+    "both_core_new_skill_transport_gates_failed": true
+  },
+  "core_results": {
+    "17": {
+      "learned_b_accuracy": 0.9375,
+      "raw_b_accuracy": 0.4375,
+      "initial_b_accuracy": 0.421875,
+      "b_gain": 0.5,
+      "a_macro_forgetting": 0.03125,
+      "transport_b_accuracy": 0.34375,
+      "transport_b_gain": -0.125,
+      "transport_a_macro_forgetting": 0.015625
+    },
+    "29": {
+      "learned_b_accuracy": 0.921875,
+      "raw_b_accuracy": 0.171875,
+      "initial_b_accuracy": 0.234375,
+      "b_gain": 0.6875,
+      "a_macro_forgetting": 0.010416666666666666,
+      "transport_b_accuracy": 0.234375,
+      "transport_b_gain": -0.09375,
+      "transport_a_macro_forgetting": 0.010416666666666666
+    }
+  },
+  "new_skill_transport_confirmed": false,
+  "method_superiority_confirmed": false,
+  "general_continual_learning_confirmed": false,
+  "limits": [
+    "One skill family, two fixtures and one training seed per fixture; no estimate of broad task or training-seed variability.",
+    "Core training has more trainable parameters than LoRA and adds 96 old-task replay examples.",
+    "LoRA reaches 100 percent on both fixtures; this is a mechanism-feasibility result, not a superiority or efficiency result.",
+    "Externally supplied task identity; four-choice likelihood scoring; public old-task retention sample.",
+    "The untouched 1.7B alignment did not transport the newly learned core skill successfully on either fixture.",
+    "The vector-only arm passes its point learning gate only on the fresh fixture and is not a replicated acquisition result.",
+    "Full-tensor invariants and four-probe fresh-process equalities rely on recorded execution checks; the independent analysis does not reload GPU tensors.",
+    "The fresh fixture has a different hidden mapping, but 12 test input triples overlap the screen test and 13 overlap screen training; every run starts anew from the published initialization.",
+    "One old-task BoolQ prompt was truncated. Some equivalent old-task score arrays vary while predicted labels and all new-task baselines remain consistent; this does not establish full-evaluation score equality."
+  ],
+  "independent_paired_review": {
+    "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/review/portability-results-audit.json",
+    "sha256": "6a9a79b29b0a3f2988fa903b31f773877eea2095aced9381f4f2195c2df7f377"
+  },
+  "independent_review_status": "closed_two_fixture_review_no_blocking_discrepancies"
+}

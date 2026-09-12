@@ -1,0 +1,2192 @@
+{
+  "all_four_prespecified_targets_included": true,
+  "all_three_tasks_included": true,
+  "both_source_arms_included": true,
+  "calibration_examples": 0,
+  "comparisons": {
+    "gemma3": {
+      "native_no_replay": {
+        "sequence_a": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.0,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.140625,
+                    0.140625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.15625,
+                    0.125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.015625,
+              "gain_over_initial": 0.0,
+              "gain_over_raw": -0.015625,
+              "initial_correct_out_of_64": 13,
+              "learned_correct_out_of_64": 13,
+              "raw_correct_out_of_64": 14,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.09375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.234375,
+                    0.046875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.171875,
+                    0.09375
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.09375,
+              "gain_over_initial": -0.09375,
+              "gain_over_raw": -0.046875,
+              "initial_correct_out_of_64": 22,
+              "learned_correct_out_of_64": 16,
+              "raw_correct_out_of_64": 19,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_b": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.03125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.15625,
+                    0.09375
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.140625,
+                    0.109375
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.03125,
+              "gain_over_initial": -0.03125,
+              "gain_over_raw": -0.015625,
+              "initial_correct_out_of_64": 17,
+              "learned_correct_out_of_64": 15,
+              "raw_correct_out_of_64": 16,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.109375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.25,
+                    0.03125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.03125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.15625,
+                    0.09375
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.109375,
+              "gain_over_initial": -0.109375,
+              "gain_over_raw": -0.03125,
+              "initial_correct_out_of_64": 23,
+              "learned_correct_out_of_64": 16,
+              "raw_correct_out_of_64": 18,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_c": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.09375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.21875,
+                    0.03125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.03125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.078125,
+                    0.140625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.09375,
+              "gain_over_initial": -0.09375,
+              "gain_over_raw": 0.03125,
+              "initial_correct_out_of_64": 36,
+              "learned_correct_out_of_64": 30,
+              "raw_correct_out_of_64": 28,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.25,
+                    0.0
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.078125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.1875,
+                    0.03125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.125,
+              "gain_over_initial": -0.125,
+              "gain_over_raw": -0.078125,
+              "initial_correct_out_of_64": 23,
+              "learned_correct_out_of_64": 15,
+              "raw_correct_out_of_64": 20,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        }
+      },
+      "native_replay": {
+        "sequence_a": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.0625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.078125,
+                    0.203125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.078125,
+                    0.171875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": 0.046875,
+              "gain_over_initial": 0.0625,
+              "gain_over_raw": 0.046875,
+              "initial_correct_out_of_64": 13,
+              "learned_correct_out_of_64": 17,
+              "raw_correct_out_of_64": 14,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.0625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.1875,
+                    0.0625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.140625,
+                    0.125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.0625,
+              "gain_over_initial": -0.0625,
+              "gain_over_raw": -0.015625,
+              "initial_correct_out_of_64": 22,
+              "learned_correct_out_of_64": 18,
+              "raw_correct_out_of_64": 19,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_b": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.03125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.09375,
+                    0.15625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.09375,
+                    0.171875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": 0.03125,
+              "gain_over_initial": 0.03125,
+              "gain_over_raw": 0.046875,
+              "initial_correct_out_of_64": 17,
+              "learned_correct_out_of_64": 19,
+              "raw_correct_out_of_64": 16,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.140625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.265625,
+                    -0.015625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.0625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.1875,
+                    0.046875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.140625,
+              "gain_over_initial": -0.140625,
+              "gain_over_raw": -0.0625,
+              "initial_correct_out_of_64": 23,
+              "learned_correct_out_of_64": 14,
+              "raw_correct_out_of_64": 18,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_c": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.0625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.171875,
+                    0.046875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.0625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.0625,
+                    0.1875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.0625,
+              "gain_over_initial": -0.0625,
+              "gain_over_raw": 0.0625,
+              "initial_correct_out_of_64": 36,
+              "learned_correct_out_of_64": 32,
+              "raw_correct_out_of_64": 28,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.0625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.171875,
+                    0.046875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.125,
+                    0.09375
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.0625,
+              "gain_over_initial": -0.0625,
+              "gain_over_raw": -0.015625,
+              "initial_correct_out_of_64": 23,
+              "learned_correct_out_of_64": 19,
+              "raw_correct_out_of_64": 20,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        }
+      }
+    },
+    "gemma4": {
+      "native_no_replay": {
+        "sequence_a": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.125,
+                    0.09375
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.0,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.109375,
+                    0.109375
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.015625,
+              "gain_over_initial": -0.015625,
+              "gain_over_raw": 0.0,
+              "initial_correct_out_of_64": 13,
+              "learned_correct_out_of_64": 12,
+              "raw_correct_out_of_64": 12,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.09375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.25,
+                    0.0625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": 0.0,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.15625,
+                    0.15625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.09375,
+              "gain_over_initial": -0.09375,
+              "gain_over_raw": 0.0,
+              "initial_correct_out_of_64": 27,
+              "learned_correct_out_of_64": 21,
+              "raw_correct_out_of_64": 21,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_b": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.03125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.140625,
+                    0.0625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.15625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.28125,
+                    -0.046875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.15625,
+              "gain_over_initial": -0.03125,
+              "gain_over_raw": -0.15625,
+              "initial_correct_out_of_64": 10,
+              "learned_correct_out_of_64": 8,
+              "raw_correct_out_of_64": 18,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.109375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.25,
+                    0.03125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.0625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.1875,
+                    0.0625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.109375,
+              "gain_over_initial": -0.109375,
+              "gain_over_raw": -0.0625,
+              "initial_correct_out_of_64": 19,
+              "learned_correct_out_of_64": 12,
+              "raw_correct_out_of_64": 16,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_c": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.09375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.1875,
+                    0.0
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.0625,
+                    0.15625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.09375,
+              "gain_over_initial": -0.09375,
+              "gain_over_raw": 0.046875,
+              "initial_correct_out_of_64": 38,
+              "learned_correct_out_of_64": 32,
+              "raw_correct_out_of_64": 29,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": 0.0,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.140625,
+                    0.140625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": 0.0,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.140625,
+                    0.140625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": 0.0,
+              "gain_over_initial": 0.0,
+              "gain_over_raw": 0.0,
+              "initial_correct_out_of_64": 20,
+              "learned_correct_out_of_64": 20,
+              "raw_correct_out_of_64": 20,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        }
+      },
+      "native_replay": {
+        "sequence_a": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.09375,
+                    0.140625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.03125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.078125,
+                    0.140625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": 0.015625,
+              "gain_over_initial": 0.015625,
+              "gain_over_raw": 0.03125,
+              "initial_correct_out_of_64": 13,
+              "learned_correct_out_of_64": 14,
+              "raw_correct_out_of_64": 12,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.03125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.1875,
+                    0.125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": 0.0625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.09375,
+                    0.21875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.03125,
+              "gain_over_initial": -0.03125,
+              "gain_over_raw": 0.0625,
+              "initial_correct_out_of_64": 27,
+              "learned_correct_out_of_64": 25,
+              "raw_correct_out_of_64": 21,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_b": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.125,
+                    0.09375
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.140625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.265625,
+                    -0.015625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.140625,
+              "gain_over_initial": -0.015625,
+              "gain_over_raw": -0.140625,
+              "initial_correct_out_of_64": 10,
+              "learned_correct_out_of_64": 9,
+              "raw_correct_out_of_64": 18,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.09375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.234375,
+                    0.046875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.171875,
+                    0.078125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.09375,
+              "gain_over_initial": -0.09375,
+              "gain_over_raw": -0.046875,
+              "initial_correct_out_of_64": 19,
+              "learned_correct_out_of_64": 13,
+              "raw_correct_out_of_64": 16,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_c": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.09375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.203125,
+                    0.015625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.0625,
+                    0.171875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.09375,
+              "gain_over_initial": -0.09375,
+              "gain_over_raw": 0.046875,
+              "initial_correct_out_of_64": 38,
+              "learned_correct_out_of_64": 32,
+              "raw_correct_out_of_64": 29,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": 0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.078125,
+                    0.171875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": 0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.078125,
+                    0.1875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": 0.046875,
+              "gain_over_initial": 0.046875,
+              "gain_over_raw": 0.046875,
+              "initial_correct_out_of_64": 20,
+              "learned_correct_out_of_64": 23,
+              "raw_correct_out_of_64": 20,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        }
+      }
+    },
+    "mistral7": {
+      "native_no_replay": {
+        "sequence_a": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.09375,
+                    0.140625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.15625,
+                    0.109375
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.015625,
+              "gain_over_initial": 0.015625,
+              "gain_over_raw": -0.015625,
+              "initial_correct_out_of_64": 16,
+              "learned_correct_out_of_64": 17,
+              "raw_correct_out_of_64": 18,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.078125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.234375,
+                    0.078125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.171875,
+                    0.140625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.078125,
+              "gain_over_initial": -0.078125,
+              "gain_over_raw": -0.015625,
+              "initial_correct_out_of_64": 26,
+              "learned_correct_out_of_64": 21,
+              "raw_correct_out_of_64": 22,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_b": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.03125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.109375,
+                    0.15625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.0,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.15625,
+                    0.140625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": 0.0,
+              "gain_over_initial": 0.03125,
+              "gain_over_raw": 0.0,
+              "initial_correct_out_of_64": 17,
+              "learned_correct_out_of_64": 19,
+              "raw_correct_out_of_64": 19,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.1875,
+                    0.09375
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": 0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.125,
+                    0.140625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.046875,
+              "gain_over_initial": -0.046875,
+              "gain_over_raw": 0.015625,
+              "initial_correct_out_of_64": 20,
+              "learned_correct_out_of_64": 17,
+              "raw_correct_out_of_64": 16,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_c": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.046875,
+                    0.140625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.109375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    0.0,
+                    0.21875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": 0.046875,
+              "gain_over_initial": 0.046875,
+              "gain_over_raw": 0.109375,
+              "initial_correct_out_of_64": 35,
+              "learned_correct_out_of_64": 38,
+              "raw_correct_out_of_64": 31,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.203125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.34375,
+                    -0.046875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.171875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.3125,
+                    -0.03125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.203125,
+              "gain_over_initial": -0.203125,
+              "gain_over_raw": -0.171875,
+              "initial_correct_out_of_64": 30,
+              "learned_correct_out_of_64": 17,
+              "raw_correct_out_of_64": 28,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        }
+      },
+      "native_replay": {
+        "sequence_a": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.109375,
+                    0.140625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.15625,
+                    0.125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.015625,
+              "gain_over_initial": 0.015625,
+              "gain_over_raw": -0.015625,
+              "initial_correct_out_of_64": 16,
+              "learned_correct_out_of_64": 17,
+              "raw_correct_out_of_64": 18,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.265625,
+                    0.03125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.0625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.1875,
+                    0.078125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.125,
+              "gain_over_initial": -0.125,
+              "gain_over_raw": -0.0625,
+              "initial_correct_out_of_64": 26,
+              "learned_correct_out_of_64": 18,
+              "raw_correct_out_of_64": 22,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_b": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.109375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.25,
+                    0.015625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.140625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.28125,
+                    0.0
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.140625,
+              "gain_over_initial": -0.109375,
+              "gain_over_raw": -0.140625,
+              "initial_correct_out_of_64": 17,
+              "learned_correct_out_of_64": 10,
+              "raw_correct_out_of_64": 19,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.109375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.234375,
+                    0.015625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.171875,
+                    0.078125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.109375,
+              "gain_over_initial": -0.109375,
+              "gain_over_raw": -0.046875,
+              "initial_correct_out_of_64": 20,
+              "learned_correct_out_of_64": 13,
+              "raw_correct_out_of_64": 16,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_c": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": true,
+              "clears_target_gain_threshold": true,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.078125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.03125,
+                    0.1875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.140625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    0.015625,
+                    0.28125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": 0.078125,
+              "gain_over_initial": 0.078125,
+              "gain_over_raw": 0.140625,
+              "initial_correct_out_of_64": 35,
+              "learned_correct_out_of_64": 40,
+              "raw_correct_out_of_64": 31,
+              "retained_source_target_gain": true,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.109375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.25,
+                    0.03125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.078125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.203125,
+                    0.0625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.109375,
+              "gain_over_initial": -0.109375,
+              "gain_over_raw": -0.078125,
+              "initial_correct_out_of_64": 30,
+              "learned_correct_out_of_64": 23,
+              "raw_correct_out_of_64": 28,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        }
+      }
+    },
+    "qwen4": {
+      "native_no_replay": {
+        "sequence_a": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.078125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.03125,
+                    0.1875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.03125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.09375,
+                    0.15625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": 0.03125,
+              "gain_over_initial": 0.078125,
+              "gain_over_raw": 0.03125,
+              "initial_correct_out_of_64": 16,
+              "learned_correct_out_of_64": 21,
+              "raw_correct_out_of_64": 19,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.09375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.234375,
+                    0.046875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.109375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.25,
+                    0.046875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.109375,
+              "gain_over_initial": -0.09375,
+              "gain_over_raw": -0.109375,
+              "initial_correct_out_of_64": 30,
+              "learned_correct_out_of_64": 24,
+              "raw_correct_out_of_64": 31,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_b": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.0,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.09375,
+                    0.078125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.125,
+                    0.03125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.046875,
+              "gain_over_initial": 0.0,
+              "gain_over_raw": -0.046875,
+              "initial_correct_out_of_64": 16,
+              "learned_correct_out_of_64": 16,
+              "raw_correct_out_of_64": 19,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": 0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.125,
+                    0.15625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": 0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.09375,
+                    0.1875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": 0.015625,
+              "gain_over_initial": 0.015625,
+              "gain_over_raw": 0.046875,
+              "initial_correct_out_of_64": 18,
+              "learned_correct_out_of_64": 19,
+              "raw_correct_out_of_64": 16,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_c": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.109375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.203125,
+                    -0.03125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.140625,
+                    0.046875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.109375,
+              "gain_over_initial": -0.109375,
+              "gain_over_raw": -0.046875,
+              "initial_correct_out_of_64": 32,
+              "learned_correct_out_of_64": 25,
+              "raw_correct_out_of_64": 28,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.078125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.203125,
+                    0.046875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.0625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.1875,
+                    0.0625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.078125,
+              "gain_over_initial": -0.078125,
+              "gain_over_raw": -0.0625,
+              "initial_correct_out_of_64": 22,
+              "learned_correct_out_of_64": 17,
+              "raw_correct_out_of_64": 21,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        }
+      },
+      "native_replay": {
+        "sequence_a": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.03125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.0625,
+                    0.125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.140625,
+                    0.109375
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.015625,
+              "gain_over_initial": 0.03125,
+              "gain_over_raw": -0.015625,
+              "initial_correct_out_of_64": 16,
+              "learned_correct_out_of_64": 18,
+              "raw_correct_out_of_64": 19,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.09375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.21875,
+                    0.046875
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.109375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.25,
+                    0.03125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.109375,
+              "gain_over_initial": -0.09375,
+              "gain_over_raw": -0.109375,
+              "initial_correct_out_of_64": 30,
+              "learned_correct_out_of_64": 24,
+              "raw_correct_out_of_64": 31,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_b": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": 0.0,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.109375,
+                    0.109375
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.171875,
+                    0.078125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.046875,
+              "gain_over_initial": 0.0,
+              "gain_over_raw": -0.046875,
+              "initial_correct_out_of_64": 16,
+              "learned_correct_out_of_64": 16,
+              "raw_correct_out_of_64": 19,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.171875,
+                    0.078125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.015625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.15625,
+                    0.109375
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.046875,
+              "gain_over_initial": -0.046875,
+              "gain_over_raw": -0.015625,
+              "initial_correct_out_of_64": 18,
+              "learned_correct_out_of_64": 15,
+              "raw_correct_out_of_64": 16,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": false
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        },
+        "sequence_c": {
+          "clears_fixed_acquisition_conditioned_threshold_in_both_fixtures": false,
+          "fixtures": {
+            "303": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.15625,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.25,
+                    -0.078125
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 30301,
+                  "estimate": -0.09375,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.203125,
+                    0.015625
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.15625,
+              "gain_over_initial": -0.15625,
+              "gain_over_raw": -0.09375,
+              "initial_correct_out_of_64": 32,
+              "learned_correct_out_of_64": 22,
+              "raw_correct_out_of_64": 28,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            },
+            "419": {
+              "acquired_source_target_gain": false,
+              "clears_target_gain_threshold": false,
+              "gain_intervals": {
+                "initial": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.046875,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.1875,
+                    0.09375
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                },
+                "raw": {
+                  "bootstrap_seed": 41901,
+                  "estimate": -0.03125,
+                  "examples": 64,
+                  "group_unit": "input_digit_triple_shared_across_tasks",
+                  "groups": 64,
+                  "interval_95": [
+                    -0.1875,
+                    0.109375
+                  ],
+                  "replicates": 2000,
+                  "scope": "Descriptive paired resampling within one fixture. It does not measure training-seed uncertainty, confirm superiority, or correct for multiple comparisons."
+                }
+              },
+              "gain_over_both_floors": -0.046875,
+              "gain_over_initial": -0.046875,
+              "gain_over_raw": -0.03125,
+              "initial_correct_out_of_64": 22,
+              "learned_correct_out_of_64": 19,
+              "raw_correct_out_of_64": 21,
+              "retained_source_target_gain": false,
+              "source_acquired": true,
+              "source_acquired_and_retained": true
+            }
+          },
+          "positive_gain_over_both_floors_in_both_fixtures": false
+        }
+      }
+    }
+  },
+  "created_at": "2026-09-09T00:23:00.700281+00:00",
+  "cross_target_pooling": false,
+  "fixture_specific_cells": 48,
+  "fixture_summaries": {
+    "303": {
+      "artifact_sha256": {
+        "checkpoint-byte-check.json": "0310279b908bb92bf16aaf5100417f936819de1c4004144d6eb807e5ced7f761",
+        "collection.json": "0b65e5ae02bf63f5d7d8f62f2ebd98364e3792c8c4fa4c58a20cf825fb5aa5e7",
+        "comparison.json": "b0e6495d13894f26262a318302f93978a118e4d6f406aabafe4d1931f306e600",
+        "verification.json": "3f30a13dba5ed5e3a004efd1079503f80985cb9927a8ee2228d93de25686afaf"
+      },
+      "panels": 16,
+      "predictions": 3072,
+      "source_bundle_sha256": "6e49856265176a1d50e4841f28c1d4843403a1274e6e7a46d3cbf842d893edee",
+      "target_jobs_completed": 4,
+      "threshold_crossings": [
+        {
+          "arm": "native_replay",
+          "gain_over_both_floors": 0.078125,
+          "target": "mistral7",
+          "task": "sequence_c"
+        }
+      ]
+    },
+    "419": {
+      "artifact_sha256": {
+        "checkpoint-byte-check.json": "3a4c8c87762c55716d8ed23c3032692f8d62fdbe1ae6942f8536a495aa1d8459",
+        "collection.json": "bae5b64762f563f50772882be17ac677edc49f43b9ed887265f893169b8908b8",
+        "comparison.json": "bc874524b6dd15e65eb9251ad1b616d144daf114ae72fc28746c65b3ab0063e7",
+        "verification.json": "87e4815e91ee6454b746e59252fae1667cb3ed974c05ce0b61228d7cb697e358"
+      },
+      "panels": 16,
+      "predictions": 3072,
+      "source_bundle_sha256": "f892cb5912489d72dceec4b3b6de6d96b6e6a8b8a2b88a50fac0660d3577e3d4",
+      "target_jobs_completed": 4,
+      "threshold_crossings": []
+    }
+  },
+  "interpretation": "The isolated fixture303 native-replay Mistral task-C threshold crossing did not repeat on fixture419: learned40/64 versus raw31/64 and initial35/64 became learned23/64 versus raw28/64 and initial30/64. None of the24 target/arm/task comparisons clears the fixed gain threshold on fixture419, and none clears it on both fixtures. This panel does not establish reliable new-skill transfer to these four target backbones.",
+  "panels_verified": 32,
+  "predictions_verified": 6144,
+  "selected_arm": null,
+  "selected_target": null,
+  "status": "complete_fixed_four_target_two_fixture_comparison",
+  "target_arm_task_cells": 24,
+  "target_optimizer_updates": 0,
+  "threshold_crossings_present_in_both_fixtures": [],
+  "uncertainty": "Every stored interval is the original paired64-input-group interval for that target, arm, task and fixture. No intervals are pooled across targets or fixtures, no favorable arm or target is selected, and no general model-family superiority claim is made. The separate Qwen1.7 stage-transfer receipts remain in the complete source-sequence comparison."
+}

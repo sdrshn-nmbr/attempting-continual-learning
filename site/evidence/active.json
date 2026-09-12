@@ -1,0 +1,87 @@
+{
+  "status": "prespecified_confirmation_failed",
+  "seed": 43,
+  "source_sha256": "9e9449df61927208fb73aa5091e7a180f15b9473f7e3ee5a8c4f3e4e3465518f",
+  "configs_differ_only_by_seed": true,
+  "same_budgets": true,
+  "exact_reload_and_real_updates_qualified": true,
+  "decisions": [
+    {
+      "arm": "random",
+      "decision": "baseline",
+      "stage0_accuracy": 0.703125,
+      "stage1_accuracy": 0.64375,
+      "stage1_delta_vs_random": 0.0,
+      "stage0_gain_vs_unadapted_base": 0.21484375,
+      "retention_difference_vs_random": 0.0,
+      "stable_retention_change": 0.0,
+      "maximum_stable_forgetting": 0.05,
+      "next_skill_gain_difference_vs_random": 0.0,
+      "stage1_composition_accuracy": 0.4125,
+      "new_skill_learning_gain": -0.0625,
+      "learner_fit_qualified": true
+    },
+    {
+      "arm": "hypothesis_elimination_oracle",
+      "decision": "inconclusive_durable_learning_not_qualified",
+      "stage0_accuracy": 0.74609375,
+      "stage1_accuracy": 0.6625,
+      "stage1_delta_vs_random": 0.018749999999999933,
+      "stage0_gain_vs_unadapted_base": 0.2578125,
+      "retention_difference_vs_random": 0.0,
+      "stable_retention_change": 0.0,
+      "maximum_stable_forgetting": 0.05,
+      "next_skill_gain_difference_vs_random": 0.046875,
+      "stage1_composition_accuracy": 0.4875,
+      "new_skill_learning_gain": -0.015625,
+      "learner_fit_qualified": true
+    }
+  ],
+  "primary_contrast": {
+    "effect": 0.01875,
+    "interval_95": [
+      -0.05057653696539576,
+      0.08545647136709697
+    ],
+    "paired_examples": 320,
+    "causal_groups_by_device": {
+      "0": 32,
+      "1": 30,
+      "2": 29,
+      "3": 29,
+      "4": 28
+    },
+    "bootstrap_seed": 43,
+    "replicates": 2000,
+    "scope": "Device-stratified paired resampling of causal-input groups; unadjusted for multiple contrasts and not uncertainty over training seeds."
+  },
+  "initial_screen_primary": {
+    "effect": 0.053125,
+    "interval_95": [
+      -0.04690216234990493,
+      0.16496778050051653
+    ],
+    "paired_examples": 320,
+    "causal_groups_by_device": {
+      "0": 25,
+      "1": 30,
+      "2": 29,
+      "3": 31,
+      "4": 27
+    },
+    "bootstrap_seed": 29,
+    "replicates": 2000,
+    "scope": "Device-stratified paired resampling of causal-input groups; unadjusted for multiple contrasts and not uncertainty over training seeds."
+  },
+  "conclusion": "The seed29 observed-label active effect did not replicate the minimum-effect or next-skill-learning gates. No confirmed active-acquisition benefit under this recipe. Do not pool the failed next-skill regime into a positive retention claim.",
+  "evidence": [
+    {
+      "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/outputs/portfolio/runs/active-evidence-observed-replay-seed29/result.json",
+      "sha256": "c803331f5b918b3ee45b737371cf7fdddd84e29809d894a84688a66a0a9f23fa"
+    },
+    {
+      "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/outputs/portfolio/runs/active-evidence-observed-replay-seed43/result.json",
+      "sha256": "a439c0e52d816487cd5b513a25eba6a7c48b43273c20c30087f82ce5035fc8c7"
+    }
+  ]
+}

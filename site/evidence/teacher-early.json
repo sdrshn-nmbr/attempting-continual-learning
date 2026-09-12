@@ -1,0 +1,504 @@
+{
+  "schema_version": 1,
+  "scope": "Independent read-only semantic audit of the frozen onpolicy teacher calibration; one JSON output, no source edits or cluster mutations.",
+  "conclusion": {
+    "verdict": "Actual semantic failure in this frozen prompt/format; no oracle, left-to-right prompt, demonstration, EOS normalization, executable-score, or split-overlap bug found.",
+    "bounded_to": "Qwen/Qwen3.5-4B revision 851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a, seed 37, 16 shared dev inputs across 5 suites, 2 paired instruction variants, greedy non-thinking decoding, max_new_tokens 32.",
+    "independent_dev_cases": 80,
+    "paired_generation_records": 160,
+    "composition_correct": {
+      "current": [
+        0,
+        48
+      ],
+      "numbered": [
+        1,
+        48
+      ]
+    },
+    "primitive_correct": {
+      "current": [
+        28,
+        32
+      ],
+      "numbered": [
+        24,
+        32
+      ]
+    },
+    "optimizer_updates": 0,
+    "teacher_min_accuracy": 1,
+    "selected_variant": null,
+    "bug_findings": []
+  },
+  "provenance": {
+    "remote_context": "us-mi355x-nambiar-k8s",
+    "remote_pod": "cl-portfolio-b94bq-5mcr7",
+    "remote_source": "/mnt/shared/cl-portfolio/code/8874b1bf990658d5dcc4c23421eebf0db374d7869c182e11ba37f81bb838fe0d",
+    "remote_run": "/mnt/shared/cl-portfolio/runs/onpolicy-teacher-calibration-qwen35-4b-seed37",
+    "source_bundle_id": "8874b1bf990658d5dcc4c23421eebf0db374d7869c182e11ba37f81bb838fe0d",
+    "runtime_source_sha256": "0e76e5652bf0e0bbc51ef9ea703a2bc3b006ce4ec89e8211513f1c0632c2d7e1",
+    "source_hash_note": "The runtime hashes five ordered source filenames plus bytes (run.py:73-78), a different digest construction from the bundle identifier. Runtime digest was independently reproduced.",
+    "file_hashes": {
+      "config.json": "691fcdf8a22feaa49b56f5e0e45eb490f554def409cbae06e67a4c48c6252367",
+      "execution.json": "ce84b027bed73b2df3d86a4b63a4149b00cb0a4a577e5c95178e15f8ddd869af",
+      "data_manifest.json": "a918665f15bc228a1f0e12e13826774f93f6e51b88288244503a7b4ec33a3f85",
+      "metrics.json": "bf42c751fd09dc6dea23a2f3b7f4da0d905cc196d0c7c9387f7773e9cb04b789"
+    },
+    "sources": {
+      "tasks.py": "862c4f2e56168f5d4a2e5639835773c8c1545ab19a0e4fe06f91d35e342e2347",
+      "model.py": "623d7ca5f033a8fc711a8fbd74466cdaee96271ed524cd603a0bce4473eae137",
+      "run.py": "029c7188eb57d2715d4c4459b918ea1e90763840ebe260f670cc0614ae7e520e",
+      "objectives.py": "4e07333b0033d5e0e3bddfb6e8211a205015069adb76bce30803876551b66037",
+      "config.py": "6e017948d6ae4bae21b3036797b1806af416eceea617d3c862432ead2d0d5b12"
+    },
+    "model_metadata_hashes": {
+      "config.json": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670",
+      "tokenizer_config.json": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+      "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+      "tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+    },
+    "local_receipts": "compute/experiments/onpolicy/.artifacts/onpolicy-teacher-calibration-qwen35-4b-seed37",
+    "local_evidence_note": "Read actual remote source/run first; independently analyzed author-collected raw receipts and metadata after their SHA-256 matched the remote originals. Did not read author analysis conclusions or duplicate artifacts.",
+    "terminal_status": "teacher_calibration_failed",
+    "execution_exit_code": 2
+  },
+  "independent_checks": {
+    "oracle_method": "Independent sequential state transform: dax uses explicit descending index enumeration; wug uses index (i+1) modulo list length; fep uses lookup {0:1,1:2,2:3,3:0}; kiv uses lookup {0:1,1:0,2:3,3:2}. Each step consumes the preceding result. Gold was computed before comparison to production execute.",
+    "gold_expected_matches": 160,
+    "unique_gold_cases": 80,
+    "gold_sha256": "4f1d8ef1318a1d9932876a068564ccddc59957986df14d3579216510adb8e6ea",
+    "gold_digest_encoding": "SHA-256 of JSON mapping example_id to independently computed integer list, keys sorted, separators comma and colon without spaces.",
+    "exhaustive_oracle_checks": 2816,
+    "exhaustive_oracle_domain": "All 256 four-item lists over 0..3, including constant lists, across all 11 distinct manifest programs.",
+    "gold_disagreements": 0,
+    "all_eight_demo_answers_verified": true,
+    "prompt_hash_matches": 160,
+    "prompt_reconstruction": "Independently reconstructed both formats from their literal instructions, eight primitive demonstrations with independently computed answers, task-specific authoritative rules, and unanswered final query; all 160 SHA-256 values matched records.",
+    "prompt_order": "Current explicitly says given order; numbered gives step 1 then step 2 and requires the preceding result. Definition and demo semantics agree.",
+    "model_chat_template": "Cached Qwen3.5 template preserves the user content and appends assistant with empty think block when enable_thinking=False, consistent with model.py:165-178; no conflicting instruction detected.",
+    "paired_schedule_exact": true,
+    "aggregate_counts_match": true,
+    "event_log_matches_all_160_records": true,
+    "event_counts": {
+      "model_loading": 1,
+      "model_ready": 1,
+      "evaluation_example": 160,
+      "teacher_calibration_complete": 1
+    },
+    "source_and_receipt_hashes_verified": true
+  },
+  "split_check": {
+    "pool_size": 252,
+    "seed": 37,
+    "intervals_are_zero_based_half_open": true,
+    "calibration_demo_indices": [
+      0,
+      4
+    ],
+    "calibration_train_indices": [
+      4,
+      20
+    ],
+    "calibration_dev_indices": [
+      64,
+      80
+    ],
+    "primary_partitions": {
+      "pilot_qwen35_4b.json": {
+        "train_indices": [
+          4,
+          20
+        ],
+        "gate_indices": [
+          20,
+          24
+        ],
+        "heldout_indices": [
+          24,
+          32
+        ],
+        "dev_overlap": 0
+      },
+      "pilot_qwen3_4b.json": {
+        "train_indices": [
+          4,
+          20
+        ],
+        "gate_indices": [
+          20,
+          24
+        ],
+        "heldout_indices": [
+          24,
+          32
+        ],
+        "dev_overlap": 0
+      },
+      "preflight_qwen35_4b.json": {
+        "train_indices": [
+          4,
+          20
+        ],
+        "gate_indices": [
+          20,
+          22
+        ],
+        "heldout_indices": [
+          22,
+          24
+        ],
+        "dev_overlap": 0
+      },
+      "preflight_qwen3_4b.json": {
+        "train_indices": [
+          4,
+          20
+        ],
+        "gate_indices": [
+          20,
+          22
+        ],
+        "heldout_indices": [
+          22,
+          24
+        ],
+        "dev_overlap": 0
+      }
+    },
+    "exact_input_overlap": 0,
+    "heldout_present_in_calibration_manifest": false,
+    "training_schedules_empty": true,
+    "composed_programs_in_training": 0,
+    "interpretation": "Same 16 dev inputs are intentionally reused across five suites; current/numbered are paired. The 160 outputs are not 160 independent input samples. Primary heldout boundaries were recomputed from all four frozen preflight/pilot configs, without scoring heldout cases."
+  },
+  "normalization_and_score": {
+    "decoded_output_matches": 160,
+    "valid_json_arrays": 160,
+    "recorded_correct_flags_reproduced": 160,
+    "end_token_id": 248046,
+    "end_token_text": "<|im_end|>",
+    "records_with_exactly_one_terminal_chat_eos": 160,
+    "effective_eos_ids": [
+      248046,
+      248044
+    ],
+    "model_default_eos_and_pad_id": 248044,
+    "internal_special_tokens": 0,
+    "truncations": 0,
+    "output_lengths_including_eos": {
+      "10": 46,
+      "13": 114
+    },
+    "replay_method": "Native tokenizer vocabulary spells every body token as one of [, ], comma, digits 0..3, or ByteLevel space. Concatenation plus terminal EOS removal exactly reproduces every recorded output.",
+    "grading": "Parse the entire stripped output as JSON, require four true integers in 0..3, compare the ordered list with independent gold. Whitespace does not affect correctness; no substring extraction or removal of internal special tokens.",
+    "logprob_limit": "Gold log probability scores one compact JSON serialization and includes EOS only in gold_complete_logprob. It is format-sensitive; it is not used to decide executable correctness.",
+    "evidence_lines": [
+      "tasks.py:192-206",
+      "model.py:151-160",
+      "model.py:189-223",
+      "objectives.py:15-26",
+      "run.py:366-404"
+    ]
+  },
+  "suite_results": [
+    {
+      "variant": "current",
+      "suite": "permutation/inputs",
+      "n": 16,
+      "correct": 15,
+      "valid": 16
+    },
+    {
+      "variant": "numbered",
+      "suite": "permutation/inputs",
+      "n": 16,
+      "correct": 13,
+      "valid": 16
+    },
+    {
+      "variant": "current",
+      "suite": "permutation/compositions",
+      "n": 16,
+      "correct": 0,
+      "valid": 16
+    },
+    {
+      "variant": "numbered",
+      "suite": "permutation/compositions",
+      "n": 16,
+      "correct": 1,
+      "valid": 16
+    },
+    {
+      "variant": "current",
+      "suite": "symbol_map/inputs",
+      "n": 16,
+      "correct": 13,
+      "valid": 16
+    },
+    {
+      "variant": "numbered",
+      "suite": "symbol_map/inputs",
+      "n": 16,
+      "correct": 11,
+      "valid": 16
+    },
+    {
+      "variant": "current",
+      "suite": "symbol_map/compositions",
+      "n": 16,
+      "correct": 0,
+      "valid": 16
+    },
+    {
+      "variant": "numbered",
+      "suite": "symbol_map/compositions",
+      "n": 16,
+      "correct": 0,
+      "valid": 16
+    },
+    {
+      "variant": "current",
+      "suite": "cross_task/compositions",
+      "n": 16,
+      "correct": 0,
+      "valid": 16
+    },
+    {
+      "variant": "numbered",
+      "suite": "cross_task/compositions",
+      "n": 16,
+      "correct": 0,
+      "valid": 16
+    }
+  ],
+  "failure_categories": {
+    "method": "Exclusive classification of composition outputs: correct full program, exact output of a nonempty proper subsequence of the requested steps, reversed full program, unchanged input, other. Matches are output equivalences, not evidence of the model's hidden reasoning.",
+    "current": {
+      "n": 48,
+      "correct": 0,
+      "proper_subsequence": 25,
+      "reverse_order": 0,
+      "unchanged_input": 0,
+      "other": 23
+    },
+    "numbered": {
+      "n": 48,
+      "correct": 1,
+      "proper_subsequence": 28,
+      "reverse_order": 0,
+      "unchanged_input": 0,
+      "other": 19
+    },
+    "wrong_outputs": 95,
+    "wrong_matching_proper_subsequence": 53,
+    "other_wrong_outputs": 42,
+    "wrong_matching_full_reverse_order": 0,
+    "examples": [
+      {
+        "variant": "current",
+        "example_id": "permutation/gate_compositions/wug-dax/1220",
+        "input": [
+          1,
+          2,
+          2,
+          0
+        ],
+        "program": [
+          "wug",
+          "dax"
+        ],
+        "correct_intermediate_results": [
+          [
+            2,
+            2,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            2,
+            2
+          ]
+        ],
+        "expected": [
+          1,
+          0,
+          2,
+          2
+        ],
+        "actual": [
+          0,
+          2,
+          2,
+          1
+        ],
+        "category": "proper_subsequence",
+        "proper_subsequence_matches": [
+          [
+            "dax"
+          ]
+        ],
+        "single_primitive_matches": [
+          "single_dax"
+        ]
+      },
+      {
+        "variant": "numbered",
+        "example_id": "symbol_map/gate_compositions/fep-kiv/0232",
+        "input": [
+          0,
+          2,
+          3,
+          2
+        ],
+        "program": [
+          "fep",
+          "kiv"
+        ],
+        "correct_intermediate_results": [
+          [
+            1,
+            3,
+            0,
+            3
+          ],
+          [
+            0,
+            2,
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          0,
+          2,
+          1,
+          2
+        ],
+        "actual": [
+          1,
+          3,
+          0,
+          3
+        ],
+        "category": "proper_subsequence",
+        "proper_subsequence_matches": [
+          [
+            "fep"
+          ]
+        ],
+        "single_primitive_matches": [
+          "single_fep"
+        ]
+      },
+      {
+        "variant": "current",
+        "example_id": "cross_task/gate/dax-fep/1220",
+        "input": [
+          1,
+          2,
+          2,
+          0
+        ],
+        "program": [
+          "dax",
+          "fep"
+        ],
+        "correct_intermediate_results": [
+          [
+            0,
+            2,
+            2,
+            1
+          ],
+          [
+            1,
+            3,
+            3,
+            2
+          ]
+        ],
+        "expected": [
+          1,
+          3,
+          3,
+          2
+        ],
+        "actual": [
+          0,
+          3,
+          3,
+          1
+        ],
+        "category": "other",
+        "proper_subsequence_matches": [],
+        "single_primitive_matches": [
+          "single_kiv"
+        ]
+      }
+    ],
+    "notes": "Current wug-dax example matches dax alone. Numbered fep-kiv example matches fep alone. Current dax-fep example matches kiv on the original input, an operation absent from that query. A global order reversal cannot explain the observed errors."
+  },
+  "source_review": {
+    "rules_and_oracle": [
+      "tasks.py:10-26",
+      "tasks.py:52-65"
+    ],
+    "partitions_and_program_schedule": [
+      "tasks.py:73-149"
+    ],
+    "prompt_order_and_demonstrations": [
+      "tasks.py:155-189"
+    ],
+    "privileged_teacher_disables_adapter": [
+      "model.py:46-57",
+      "model.py:203-207",
+      "run.py:471-478"
+    ],
+    "fixed_gate_and_zero_update_guards": [
+      "config.py:106-119",
+      "run.py:110-118",
+      "run.py:530-551"
+    ]
+  },
+  "frozen_qwen3_control": {
+    "meaningful": true,
+    "interpretation": "Meaningful diagnostic model-family/runtime control under an already frozen task protocol. It cannot isolate architecture causally because checkpoint weights, model training, tokenizer, native chat template, and model implementation differ.",
+    "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "config_sha256": "50c3cb8a7ee0f8916ab48701fac7cbd5e719dc7667671c1b974c24d6ee771e4b",
+    "only_explicit_config_differences": [
+      "model_id",
+      "revision",
+      "model_path"
+    ],
+    "cached_qwen35_model_type": "qwen3_5",
+    "cached_qwen35_architecture": "Qwen3_5ForConditionalGeneration",
+    "cached_qwen35_layer_types": [
+      "full_attention",
+      "linear_attention"
+    ],
+    "cached_qwen3_model_type": "qwen3",
+    "cached_qwen3_architecture": "Qwen3ForCausalLM",
+    "template_difference": "Qwen3.5 enable_thinking=False appends an empty think block; cached Qwen3-4B-Instruct-2507 template appends only the assistant header.",
+    "implementation_lines": [
+      "model.py:105-118",
+      "model.py:165-178",
+      "configs/teacher_calibration_qwen3_4b.json:1-19"
+    ],
+    "both_use_same_dev_inputs_rules_demos_variants_greedy_budget_and_threshold": true,
+    "pass_interpretation": "A passing control would qualify that checkpoint on this frozen dev protocol and narrow the present failure to the tested Qwen3.5 setup.",
+    "fail_interpretation": "A failing control would leave qualification unresolved for these prompts; it would not establish a universal limit on teacher composition.",
+    "launch_performed": false
+  },
+  "limitations": [
+    "No new model generation or forward pass; this is an independent semantic and source audit of persisted outputs.",
+    "Zero updates are supported by source guards, event log, empty schedules and run receipts; model weight shards were not rehashed.",
+    "Full serialized chat token prefixes are not saved in records; plaintext prompt hashes and native template source were verified.",
+    "No conclusions about general teacher capability, continual learning, or a causal architectural mechanism follow from this calibration."
+  ],
+  "audited_at_utc": "2026-09-07T23:15:32.670869+00:00"
+}

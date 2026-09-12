@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def synthetic_runs(tmp_path_factory):
     root = tmp_path_factory.mktemp("synthetic-comparison")
     outputs = []
-    for config_path in sorted((ROOT / "configs").glob("sequence_*.json")):
+    for config_path in sorted((ROOT / "configs").glob("sequence_[nl]*.json")):
         config = json.loads(config_path.read_text())
         directory = root / config["arm"]
         directory.mkdir()

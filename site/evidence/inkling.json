@@ -1,0 +1,342 @@
+{
+  "archive": {
+    "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/runtime/outputs/loader-qualification/inkling-terminal-20260908-015511/attempt.tar",
+    "sha256": "c1fc382457f5ea9953022e540d9f81c140335999c9b7c03bc77032758d482a60"
+  },
+  "attempt_bytes": 10656245,
+  "attempt_file_count": 17,
+  "attempt_files": {
+    "actual-start.json": {
+      "bytes": 1430,
+      "sha256": "558f2ea1c20c1c02478bfaa2d81d0fcb02957ba458a078ff1d1853f46c1cc762"
+    },
+    "combined.log": {
+      "bytes": 14196,
+      "sha256": "1d65c24287ec66f53b8bb1150d6309663bdcdb11e02c102488101d3fab3b38e9"
+    },
+    "guard/events.jsonl": {
+      "bytes": 10496952,
+      "sha256": "44455606fd60ad4274ab3208a587ef5863802651297e8e1b31abedf86445eafc"
+    },
+    "guard/launch.json": {
+      "bytes": 291,
+      "sha256": "a596d1b32de6d6f44bc99fe763442468313c142eef5f81288be7fd5132e85226"
+    },
+    "guard/request.json": {
+      "bytes": 1965,
+      "sha256": "238eea8b9e991a45fca922ac140f3d2f60506756f4bc9254d93d1b2b93d52039"
+    },
+    "guard/result.json": {
+      "bytes": 8147,
+      "sha256": "08f9c4828d6446adda0bb9dd1abdbde73f9eb75e8f27006345fb033d4b83727a"
+    },
+    "manual-execution.json": {
+      "bytes": 2139,
+      "sha256": "569e18bd487a191e4bb02df9df8d0652e652031782541e61e770b15e1ceaecfd"
+    },
+    "manual-launch.json": {
+      "bytes": 300,
+      "sha256": "fd0acb5f3bc6fb70994f387c3863c50b69a5aea581369a369731b1c11cabf213"
+    },
+    "manual-reaped.json": {
+      "bytes": 501,
+      "sha256": "10ed66a7f0046d024c809c94631ee098484d1efecf1b81bc6f297d5b6bed7dc2"
+    },
+    "manual-request.json": {
+      "bytes": 962,
+      "sha256": "e800a1d86f193b4664502ab6d452485d197528937490f6fe0284cf7e3cfa7b4b"
+    },
+    "workflow/catalog/cache_verified.json": {
+      "bytes": 25729,
+      "sha256": "683104cd2c0fd70895a3bfdbe1e838f4ed32774b75e1d9e35d6f40b6707bea3f"
+    },
+    "workflow/catalog/load_started.json": {
+      "bytes": 343,
+      "sha256": "1fb278c3e7f7d9af929162c46db5e9fbb249dcce2619ad1db44ffbd4623b0200"
+    },
+    "workflow/catalog/request.json": {
+      "bytes": 1938,
+      "sha256": "c1762c9411f8c4b800a91363a54eed41a4db756a620b6b6d276fad364490459f"
+    },
+    "workflow/catalog/selection.json": {
+      "bytes": 98318,
+      "sha256": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1"
+    },
+    "workflow/download/download.json": {
+      "bytes": 557,
+      "sha256": "85a4d5cea3014d5612934e46056e4a200e2ae3b6a5ec945810a866eb3207e5a1"
+    },
+    "workflow/download_accepted.json": {
+      "bytes": 1590,
+      "sha256": "98dc42b08c906e09df7c4a62dd703fb94c030314286f65865f69cc6362189c8b"
+    },
+    "workflow/workflow_started.json": {
+      "bytes": 887,
+      "sha256": "955b530e435e75dfcd01aa3c81b6efb9aaef84d4b0725a3b4036d7ba3c47427a"
+    }
+  },
+  "cache_verification": {
+    "all_snapshot_entries_match_pinned_manifest": true,
+    "asset_key": "model:thinkingmachines/Inkling@828496eeae4c243ff1a22f7f28ff83694f2f7bc9",
+    "bytes": 1904787120669,
+    "files": 118,
+    "first_download_receipt_bound": true,
+    "manifest_sha256": "f7cf070b03b2fe89cadba0421e4e8bd5402684f38040d8c275cec369da1ca6f7",
+    "observer_rehashed_model_weights": false,
+    "second_full_verification_receipt_bound": true
+  },
+  "claims": {
+    "inkling_evaluation_completed": false,
+    "inkling_load_complete": false,
+    "optimizer_updates_performed": 0,
+    "release_or_retry_authorized_by_this_receipt": false,
+    "seven_model_paired_analysis_completed": false
+  },
+  "collection": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/runtime/outputs/loader-qualification/inkling-terminal-20260908-015511",
+  "execution_bundle": {
+    "all_20_bound_remote_and_local_files_match": true,
+    "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/outputs/portfolio/runtime-proof/inkling-catalog-20260908-015511/bundle.json",
+    "sha256": "ff116a8a2e41bb675fc6c15027a4ef2fd339e694f7b0f137d547dbb647de8c86"
+  },
+  "failure": {
+    "after_hash_baseline": {
+      "allowed": true,
+      "current": 1980519686144,
+      "file": 1922677944320,
+      "phase": "after_hash",
+      "sample_started": 17990.881366287,
+      "verified_received": 17990.869281128
+    },
+    "details_are_atomic_with_raw_sample": false,
+    "excess_bytes": 90951680,
+    "first_raw_bytes": 2199114207232,
+    "kill_request_after_sample_seconds": 0.0002405969971732702,
+    "kill_requested_monotonic": 18040.448185027,
+    "last_details": {
+      "anon": 214230675456,
+      "file": 1922678112256,
+      "kernel": 56839745536
+    },
+    "last_details_age_seconds": 0.750624295000307,
+    "memory_events": {
+      "high": 0,
+      "low": 0,
+      "max": 0,
+      "oom": 0,
+      "oom_group_kill": 0,
+      "oom_kill": 0
+    },
+    "raw_sample_monotonic": 18040.44794443,
+    "raw_sample_utc": null,
+    "raw_sample_utc_note": "Guard stores this sample on the monotonic clock; no exact UTC timestamp is asserted.",
+    "reason": "memory_tripwire",
+    "seconds_after_load_event": 49.53905475000283,
+    "status": "infrastructure_abort_guard",
+    "tripwire_bytes": 2199023255552
+  },
+  "observations": {
+    "pod_identity": {
+      "container_id": "containerd://1fef77b940590f2ab53c5efd21ad2c2987344321e9f74f6ee3e8abb19d250d62",
+      "generation": 2,
+      "phase": "Running",
+      "restart_count": 0,
+      "uid": "4dd44f6d-d975-4273-99b6-3d732ed26bbb"
+    },
+    "remote_terminal": {
+      "at_utc": "2026-09-08T03:30:24.490215+00:00",
+      "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/runtime/outputs/loader-qualification/inkling-terminal-20260908-015511/remote-terminal-observation.json",
+      "sha256": "ed36bd0375df709323ba4a6ff0938419762f9ee871e8bd5d8a7a5b0db7f340c0"
+    },
+    "watch_terminal": {
+      "at_utc": "2026-09-08T03:21:34.664366+00:00",
+      "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/runtime/outputs/loader-qualification/inkling-terminal-20260908-015511/watch-terminal.json",
+      "sha256": "bc3e60123799eed7913d323739b8344320d1fa271e1c2a96de96f6244fdbc790"
+    }
+  },
+  "process_verification": {
+    "absent_by_pid": {
+      "833": true,
+      "841": true,
+      "842": true,
+      "844": true,
+      "845": true,
+      "846": true,
+      "847": true,
+      "848": true
+    },
+    "all_8_ever_observed_owned_pids_independently_absent": true,
+    "all_guard_reaped_identities_match_observed_starts": true,
+    "guard_cleanup": {
+      "all_reaped": true,
+      "finished_at": 18043.55816516,
+      "reaped": [
+        {
+          "exit_code": 0,
+          "pgid": 842,
+          "pid": 844,
+          "ppid": 842,
+          "session": 842,
+          "signal": null,
+          "start_ticks": 1377823,
+          "state": "Z",
+          "uid": 0
+        },
+        {
+          "exit_code": -9,
+          "pgid": 842,
+          "pid": 846,
+          "ppid": 842,
+          "session": 842,
+          "signal": 9,
+          "start_ticks": 1377824,
+          "state": "Z",
+          "uid": 0
+        },
+        {
+          "exit_code": -9,
+          "pgid": 842,
+          "pid": 847,
+          "ppid": 842,
+          "session": 842,
+          "signal": 9,
+          "start_ticks": 1377824,
+          "state": "Z",
+          "uid": 0
+        },
+        {
+          "exit_code": -9,
+          "pgid": 845,
+          "pid": 845,
+          "ppid": 842,
+          "session": 845,
+          "signal": 9,
+          "start_ticks": 1377824,
+          "state": "Z",
+          "uid": 0
+        }
+      ],
+      "remaining": []
+    },
+    "outer_waitpid_exit_code": 1,
+    "owned_identities": [
+      {
+        "pgid": 833,
+        "pid": 833,
+        "ppid": 0,
+        "session": 833,
+        "start_ticks": 1377806,
+        "state": "S"
+      },
+      {
+        "pgid": 833,
+        "pid": 841,
+        "ppid": 833,
+        "session": 833,
+        "start_ticks": 1377809,
+        "state": "S"
+      },
+      {
+        "pgid": 842,
+        "pid": 842,
+        "ppid": 841,
+        "session": 842,
+        "start_ticks": 1377817,
+        "state": "S"
+      },
+      {
+        "pgid": 842,
+        "pid": 844,
+        "ppid": 842,
+        "session": 842,
+        "start_ticks": 1377823,
+        "state": "S"
+      },
+      {
+        "pgid": 845,
+        "pid": 845,
+        "ppid": 844,
+        "session": 845,
+        "start_ticks": 1377824,
+        "state": "R"
+      },
+      {
+        "pgid": 842,
+        "pid": 846,
+        "ppid": 844,
+        "session": 842,
+        "start_ticks": 1377824,
+        "state": "S"
+      },
+      {
+        "pgid": 842,
+        "pid": 847,
+        "ppid": 844,
+        "session": 842,
+        "start_ticks": 1377824,
+        "state": "S"
+      },
+      {
+        "pgid": 845,
+        "pid": 848,
+        "ppid": 845,
+        "session": 845,
+        "start_ticks": 1377830,
+        "state": "R"
+      }
+    ],
+    "supervisor": {
+      "children": [],
+      "start_ticks": 638811,
+      "state": "T"
+    }
+  },
+  "protocol": {
+    "ack_evidence_boundary": "Receipt reports every logger sequence acknowledged; contiguous full log and its final SHA were independently verified. Individual ACK packets are not retained.",
+    "both_stage_receipt_hashes_valid": true,
+    "cache_barrier_after_fresh_sample_and_before_native_load": true,
+    "child_sequences": [
+      1,
+      2
+    ],
+    "event_counts": {
+      "baseline_after_hash": 1,
+      "child_stage": 3,
+      "controller_started": 1,
+      "memory_details": 4259,
+      "memory_sample": 17036,
+      "smaps_rollup": 1
+    },
+    "event_sequences_contiguous": true,
+    "events_count": 21301,
+    "events_sha256": "44455606fd60ad4274ab3208a587ef5863802651297e8e1b31abedf86445eafc",
+    "load_complete_barrier_reached": false,
+    "log_finalization_error": null,
+    "missing_receipts": [
+      "workflow/catalog/load_complete.json",
+      "workflow/catalog/evaluation_started.json",
+      "workflow/catalog/result.json",
+      "workflow/catalog/evaluation_complete.json"
+    ],
+    "stage_sequence": [
+      "cache_verified",
+      "load_started"
+    ],
+    "telemetry_log_complete": true,
+    "terminal_complete": false,
+    "unacknowledged_log_sequences": []
+  },
+  "receipt_times": {
+    "download_accepted_utc": "2026-09-08T03:02:37.087158+00:00",
+    "download_verified_log_utc": "2026-09-08T03:02:36.996706+00:00",
+    "launcher_finished_utc": "2026-09-08T03:18:05.070750+00:00",
+    "load_started_utc": "2026-09-08T03:17:12.342253+00:00",
+    "outer_reaped_utc": "2026-09-08T03:18:05.088144+00:00",
+    "second_cache_verified_utc": "2026-09-08T03:17:12.295903+00:00",
+    "second_full_hash_log_utc": "2026-09-08T03:17:11.406184+00:00"
+  },
+  "remote_attempt": "/mnt/shared/cl-portfolio/loader-qualification/inkling-catalog-20260908-015511/attempt/",
+  "run_id": "inkling-catalog-20260908-015511",
+  "schema_version": 1,
+  "status": "terminal_failure_evidence_verified",
+  "verified_at_utc": "2026-09-08T03:48:39.601664+00:00"
+}
