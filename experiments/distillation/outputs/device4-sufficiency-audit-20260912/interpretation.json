@@ -1,0 +1,135 @@
+{
+  "audit_path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/outputs/device4-sufficiency-audit-20260912/collected-audit.json",
+  "comparison": "A-chain14/96 versus A-oracle6/96 is one fixture/seed result on reused TEST. It does not establish reliable generalization improvement or a unique teacher-objective advantage.",
+  "decision": "TRAIN_acquisition_resolved_unseen_program_generalization_not_demonstrated",
+  "denominators": {
+    "depth_order": [
+      3,
+      4
+    ],
+    "test": 96,
+    "test_each_depth": 48,
+    "train": 128,
+    "train_each_depth": 64
+  },
+  "fixed_final_updates_per_arm": 1024,
+  "further_optimization_performed": false,
+  "new_updates_per_arm": 896,
+  "objective": "All four learners use response cross entropy. A-chain uses actual cached teacher outputs; its two wrong target sequences differ from oracle. This is not a distinct teacher-only objective or SDFT/SDPO reproduction.",
+  "results": [
+    {
+      "arm": "A_oracle",
+      "evaluation_pid": 7704,
+      "test_by_depth": [
+        1,
+        5
+      ],
+      "test_correct": 6,
+      "train_by_depth": [
+        64,
+        64
+      ],
+      "train_gold": 128,
+      "train_target_match": 128,
+      "training_pid": 7466
+    },
+    {
+      "arm": "A_chain",
+      "evaluation_pid": 7830,
+      "test_by_depth": [
+        5,
+        9
+      ],
+      "test_correct": 14,
+      "train_by_depth": [
+        63,
+        63
+      ],
+      "train_gold": 126,
+      "train_target_match": 128,
+      "training_pid": 7482
+    },
+    {
+      "arm": "B_oracle",
+      "evaluation_pid": 7786,
+      "test_by_depth": [
+        4,
+        1
+      ],
+      "test_correct": 5,
+      "train_by_depth": [
+        64,
+        64
+      ],
+      "train_gold": 128,
+      "train_target_match": 128,
+      "training_pid": 7498
+    },
+    {
+      "arm": "C_oracle",
+      "evaluation_pid": 7742,
+      "test_by_depth": [
+        3,
+        0
+      ],
+      "test_correct": 3,
+      "train_by_depth": [
+        64,
+        64
+      ],
+      "train_gold": 128,
+      "train_target_match": 128,
+      "training_pid": 7518
+    }
+  ],
+  "scope": "Final persistent learners master the supplied128 TRAIN examples, including the two noisy cached labels, and reload exactly without teacher/chaining. TEST correctness remains3\u201314 of96 across arms. The result is bounded to this model, data, seed, prompt and fixed budget; it does not establish composition unlearnability.",
+  "selection": "Fixed1024 for every arm; no early selection or hyperparameter changes.",
+  "source_bundle_sha256": "03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f",
+  "status": "completed_and_independently_audited",
+  "test_status": "post_observation_reused_diagnostic_not_new_confirmatory",
+  "train_mastery_gate": {
+    "all_four_passed": true,
+    "each_depth": 0.9,
+    "overall": 0.95
+  },
+  "verification": {
+    "all_test_format_and_native_eos_valid": true,
+    "full_train_reload_record_bytes_identical_all": true,
+    "source_bound_all": true,
+    "teacher_absent_evaluation_all": true
+  },
+  "wrong_teacher_targets": {
+    "both_exactly_reproduced_by_final_chain_learner": true,
+    "count": 2,
+    "exposures_each": {
+      "new": 28,
+      "original": 4,
+      "total": 32
+    },
+    "records": [
+      {
+        "cached_teacher_answer": "8 6 6 0",
+        "gold": "8 6 0 6",
+        "gold_correct": false,
+        "learner_final_answer": "8 6 6 0",
+        "new_exposures": 28,
+        "retained_exposures": 4,
+        "target_match": true,
+        "total_exposures": 32,
+        "uid": "870b35ae791e4e6281922beee8f2da7667cf5c0568aecffc28a8695d07ff4d98"
+      },
+      {
+        "cached_teacher_answer": "0 9 9 0",
+        "gold": "9 9 0 0",
+        "gold_correct": false,
+        "learner_final_answer": "0 9 9 0",
+        "new_exposures": 28,
+        "retained_exposures": 4,
+        "target_match": true,
+        "total_exposures": 32,
+        "uid": "1ad97001f35643eda43f3a416d4859562cef6b875e61e05a382ce2ea3927b6d9"
+      }
+    ],
+    "retained_without_filtering_or_gold_substitution": true
+  }
+}

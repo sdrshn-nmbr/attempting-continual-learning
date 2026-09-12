@@ -1,0 +1,517 @@
+{
+  "audit_kind": "read_only_sufficiency_checkpoints_through512",
+  "observed_at": "2026-09-12T08:15:09.395916+00:00",
+  "source_bundle_sha256": "03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f",
+  "protocol_canonical_sha256": "4495ab6e736a98aed7ef99dda1e3751f304bc6edd70fe1347d586c0babe06ba6",
+  "scope": "Completed TRAIN checkpoints only. No new optimization, model inference, source edits, checkpoint selection, or TEST selection by auditor.",
+  "starting_point": {
+    "adapter_files_byte_identical_to_original128": true,
+    "optimizer_files_byte_identical_to_original128": true,
+    "all128_native_generations_equal_original": true,
+    "all8_probe_records_equal": true,
+    "original128_uid_schedule_prefix_exact": true
+  },
+  "arms": {
+    "A_chain": {
+      "execution": {
+        "pid": 7473,
+        "source_sha256": "03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f",
+        "started_at": "2026-09-12T07:54:47.838731+00:00",
+        "status": "running"
+      },
+      "latest_observed_update": 707,
+      "new_example_rows_verified": 2316,
+      "checkpoints": {
+        "128": {
+          "all": {
+            "format_valid": 128,
+            "gold_correct": 36,
+            "mean_gold_token_loss": 0.25993844035838265,
+            "mean_target_token_loss": 0.2547567910660291,
+            "n": 128,
+            "native_eos": 128,
+            "target_match": 37
+          },
+          "depth3": {
+            "format_valid": 64,
+            "gold_correct": 17,
+            "mean_gold_token_loss": 0.24223615077789873,
+            "mean_target_token_loss": 0.23954940668772906,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 17
+          },
+          "depth4": {
+            "format_valid": 64,
+            "gold_correct": 19,
+            "mean_gold_token_loss": 0.27764072993886657,
+            "mean_target_token_loss": 0.26996417544432916,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 20
+          },
+          "mastery": false,
+          "sha256": "060132cdbeb52ef935335f6cbdd19e4cf7c1d0e14696d7c3ad599a9dcbe65769"
+        },
+        "256": {
+          "all": {
+            "format_valid": 128,
+            "gold_correct": 102,
+            "mean_gold_token_loss": 0.09647871502500038,
+            "mean_target_token_loss": 0.08383862619564297,
+            "n": 128,
+            "native_eos": 128,
+            "target_match": 102
+          },
+          "depth3": {
+            "format_valid": 64,
+            "gold_correct": 52,
+            "mean_gold_token_loss": 0.08035762430307614,
+            "mean_target_token_loss": 0.08401966353784474,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 51
+          },
+          "depth4": {
+            "format_valid": 64,
+            "gold_correct": 50,
+            "mean_gold_token_loss": 0.11259980574692463,
+            "mean_target_token_loss": 0.08365758885344121,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 51
+          },
+          "mastery": false,
+          "sha256": "f97892cf066adc3f087df03490916d52ac8beeb30cac5c41f58b576fc6648e03"
+        },
+        "512": {
+          "all": {
+            "format_valid": 128,
+            "gold_correct": 124,
+            "mean_gold_token_loss": 0.0661374437153549,
+            "mean_target_token_loss": 0.014557776648792653,
+            "n": 128,
+            "native_eos": 128,
+            "target_match": 126
+          },
+          "depth3": {
+            "format_valid": 64,
+            "gold_correct": 62,
+            "mean_gold_token_loss": 0.035870623707281224,
+            "mean_target_token_loss": 0.004131633868140083,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 63
+          },
+          "depth4": {
+            "format_valid": 64,
+            "gold_correct": 62,
+            "mean_gold_token_loss": 0.09640426372342858,
+            "mean_target_token_loss": 0.024983919429445223,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 63
+          },
+          "mastery": true,
+          "sha256": "e118434590340e099880691f1f378c8cd9a74f91324adbedc2f325583ca1dc57"
+        }
+      },
+      "optimizer_clocks": {
+        "256": {
+          "all_step_values": [
+            256
+          ],
+          "metadata_matches_restored128": true,
+          "optimizer_sha256": "6e60ddfe3287ce235b7014eb08545e6ad26ce7d65de9ceff27601d9a08d7d27f",
+          "scalar_step_storages": 128
+        },
+        "512": {
+          "all_step_values": [
+            512
+          ],
+          "metadata_matches_restored128": true,
+          "optimizer_sha256": "ab3d39eae7594ef1bda6b7c3713ab89cde439114edd7029310a63946bb3f3cf4",
+          "scalar_step_storages": 128
+        }
+      }
+    },
+    "A_oracle": {
+      "execution": {
+        "pid": 7457,
+        "source_sha256": "03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f",
+        "started_at": "2026-09-12T07:54:43.597693+00:00",
+        "status": "running"
+      },
+      "latest_observed_update": 810,
+      "new_example_rows_verified": 2731,
+      "checkpoints": {
+        "128": {
+          "all": {
+            "format_valid": 128,
+            "gold_correct": 41,
+            "mean_gold_token_loss": 0.254597228122293,
+            "mean_target_token_loss": 0.254597228122293,
+            "n": 128,
+            "native_eos": 128,
+            "target_match": 41
+          },
+          "depth3": {
+            "format_valid": 64,
+            "gold_correct": 22,
+            "mean_gold_token_loss": 0.23259097256232053,
+            "mean_target_token_loss": 0.23259097256232053,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 22
+          },
+          "depth4": {
+            "format_valid": 64,
+            "gold_correct": 19,
+            "mean_gold_token_loss": 0.2766034836822655,
+            "mean_target_token_loss": 0.2766034836822655,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 19
+          },
+          "mastery": false,
+          "sha256": "75cdca0390154d1c8c96896d814ca9fce5f0a2b0cef7a09bcc9fddde670edefc"
+        },
+        "256": {
+          "all": {
+            "format_valid": 128,
+            "gold_correct": 114,
+            "mean_gold_token_loss": 0.045726483175826615,
+            "mean_target_token_loss": 0.045726483175826615,
+            "n": 128,
+            "native_eos": 128,
+            "target_match": 114
+          },
+          "depth3": {
+            "format_valid": 64,
+            "gold_correct": 60,
+            "mean_gold_token_loss": 0.03940179212645489,
+            "mean_target_token_loss": 0.03940179212645489,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 60
+          },
+          "depth4": {
+            "format_valid": 64,
+            "gold_correct": 54,
+            "mean_gold_token_loss": 0.05205117422519834,
+            "mean_target_token_loss": 0.05205117422519834,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 54
+          },
+          "mastery": false,
+          "sha256": "f32f56b41a085ad44485879c174a59d70e7114d642ad3fe5884dbfa53e795508"
+        },
+        "512": {
+          "all": {
+            "format_valid": 127,
+            "gold_correct": 118,
+            "mean_gold_token_loss": 0.03253275420383195,
+            "mean_target_token_loss": 0.03253275420383195,
+            "n": 128,
+            "native_eos": 128,
+            "target_match": 118
+          },
+          "depth3": {
+            "format_valid": 63,
+            "gold_correct": 57,
+            "mean_gold_token_loss": 0.045919903131948825,
+            "mean_target_token_loss": 0.045919903131948825,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 57
+          },
+          "depth4": {
+            "format_valid": 64,
+            "gold_correct": 61,
+            "mean_gold_token_loss": 0.019145605275715072,
+            "mean_target_token_loss": 0.019145605275715072,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 61
+          },
+          "mastery": false,
+          "sha256": "c225a911bafe5371ac641f24e3374b9fcb8d76f998b06960c7899ce6fd0e3e56"
+        }
+      },
+      "optimizer_clocks": {
+        "256": {
+          "all_step_values": [
+            256
+          ],
+          "metadata_matches_restored128": true,
+          "optimizer_sha256": "cd875a45b3eea2517e1f80bf4f56ddb8ec9380433c5d4c24bc9c822e6d293ef1",
+          "scalar_step_storages": 128
+        },
+        "512": {
+          "all_step_values": [
+            512
+          ],
+          "metadata_matches_restored128": true,
+          "optimizer_sha256": "7a708f874298fc14cfa926ff07cd5384cc71c7fdcad1f9e148bab064991c3777",
+          "scalar_step_storages": 128
+        }
+      }
+    },
+    "B_oracle": {
+      "execution": {
+        "pid": 7486,
+        "source_sha256": "03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f",
+        "started_at": "2026-09-12T07:54:49.991719+00:00",
+        "status": "running"
+      },
+      "latest_observed_update": 767,
+      "new_example_rows_verified": 2558,
+      "checkpoints": {
+        "128": {
+          "all": {
+            "format_valid": 128,
+            "gold_correct": 12,
+            "mean_gold_token_loss": 0.44819923723116517,
+            "mean_target_token_loss": 0.44819923723116517,
+            "n": 128,
+            "native_eos": 128,
+            "target_match": 12
+          },
+          "depth3": {
+            "format_valid": 64,
+            "gold_correct": 4,
+            "mean_gold_token_loss": 0.4581185891292989,
+            "mean_target_token_loss": 0.4581185891292989,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 4
+          },
+          "depth4": {
+            "format_valid": 64,
+            "gold_correct": 8,
+            "mean_gold_token_loss": 0.4382798853330314,
+            "mean_target_token_loss": 0.4382798853330314,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 8
+          },
+          "mastery": false,
+          "sha256": "74319525b3d21fe8e0a510f5905cca377571a9a002e3cf2f1956bc9c2194b174"
+        },
+        "256": {
+          "all": {
+            "format_valid": 127,
+            "gold_correct": 41,
+            "mean_gold_token_loss": 0.28490471131726736,
+            "mean_target_token_loss": 0.28490471131726736,
+            "n": 128,
+            "native_eos": 128,
+            "target_match": 41
+          },
+          "depth3": {
+            "format_valid": 63,
+            "gold_correct": 20,
+            "mean_gold_token_loss": 0.279569860198535,
+            "mean_target_token_loss": 0.279569860198535,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 20
+          },
+          "depth4": {
+            "format_valid": 64,
+            "gold_correct": 21,
+            "mean_gold_token_loss": 0.2902395624359997,
+            "mean_target_token_loss": 0.2902395624359997,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 21
+          },
+          "mastery": false,
+          "sha256": "46182728cc9753a3082581ed0897aced7cf3049b43b2e0ac2eeccf7fee8626b8"
+        },
+        "512": {
+          "all": {
+            "format_valid": 128,
+            "gold_correct": 122,
+            "mean_gold_token_loss": 0.03598656691107749,
+            "mean_target_token_loss": 0.03598656691107749,
+            "n": 128,
+            "native_eos": 128,
+            "target_match": 122
+          },
+          "depth3": {
+            "format_valid": 64,
+            "gold_correct": 63,
+            "mean_gold_token_loss": 0.016576477799901568,
+            "mean_target_token_loss": 0.016576477799901568,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 63
+          },
+          "depth4": {
+            "format_valid": 64,
+            "gold_correct": 59,
+            "mean_gold_token_loss": 0.05539665602225341,
+            "mean_target_token_loss": 0.05539665602225341,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 59
+          },
+          "mastery": true,
+          "sha256": "608e88eb605607447f61d570ac873c4878c3b5ef381b9a69d19f8acc0041b9bd"
+        }
+      },
+      "optimizer_clocks": {
+        "256": {
+          "all_step_values": [
+            256
+          ],
+          "metadata_matches_restored128": true,
+          "optimizer_sha256": "3767162af59eca9d0b07af6f7602458f07ab3da39b05e4fdab3fca175c5c75c9",
+          "scalar_step_storages": 128
+        },
+        "512": {
+          "all_step_values": [
+            512
+          ],
+          "metadata_matches_restored128": true,
+          "optimizer_sha256": "e781ce28cc0a2defdc48595e39242ba0b6fc24e717f49b8ff001216dd581f9ac",
+          "scalar_step_storages": 128
+        }
+      }
+    },
+    "C_oracle": {
+      "execution": {
+        "pid": 7509,
+        "source_sha256": "03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f",
+        "started_at": "2026-09-12T07:54:52.144848+00:00",
+        "status": "running"
+      },
+      "latest_observed_update": 811,
+      "new_example_rows_verified": 2733,
+      "checkpoints": {
+        "128": {
+          "all": {
+            "format_valid": 128,
+            "gold_correct": 50,
+            "mean_gold_token_loss": 0.29170150522077165,
+            "mean_target_token_loss": 0.29170150522077165,
+            "n": 128,
+            "native_eos": 128,
+            "target_match": 50
+          },
+          "depth3": {
+            "format_valid": 64,
+            "gold_correct": 29,
+            "mean_gold_token_loss": 0.26701126710759127,
+            "mean_target_token_loss": 0.26701126710759127,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 29
+          },
+          "depth4": {
+            "format_valid": 64,
+            "gold_correct": 21,
+            "mean_gold_token_loss": 0.31639174333395204,
+            "mean_target_token_loss": 0.31639174333395204,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 21
+          },
+          "mastery": false,
+          "sha256": "9221217c858d69f9614a97ef61d6fede60911936b0bb01c7a058f08a20168dc9"
+        },
+        "256": {
+          "all": {
+            "format_valid": 128,
+            "gold_correct": 95,
+            "mean_gold_token_loss": 0.13003959848720115,
+            "mean_target_token_loss": 0.13003959848720115,
+            "n": 128,
+            "native_eos": 128,
+            "target_match": 95
+          },
+          "depth3": {
+            "format_valid": 64,
+            "gold_correct": 47,
+            "mean_gold_token_loss": 0.11463035313136061,
+            "mean_target_token_loss": 0.11463035313136061,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 47
+          },
+          "depth4": {
+            "format_valid": 64,
+            "gold_correct": 48,
+            "mean_gold_token_loss": 0.1454488438430417,
+            "mean_target_token_loss": 0.1454488438430417,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 48
+          },
+          "mastery": false,
+          "sha256": "be18c2274190d30bf997075f12018d1e4b55fc34d6f8b04da93669a8c94f1e5f"
+        },
+        "512": {
+          "all": {
+            "format_valid": 128,
+            "gold_correct": 123,
+            "mean_gold_token_loss": 0.01319887371168127,
+            "mean_target_token_loss": 0.01319887371168127,
+            "n": 128,
+            "native_eos": 128,
+            "target_match": 123
+          },
+          "depth3": {
+            "format_valid": 64,
+            "gold_correct": 62,
+            "mean_gold_token_loss": 0.005413205425644385,
+            "mean_target_token_loss": 0.005413205425644385,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 62
+          },
+          "depth4": {
+            "format_valid": 64,
+            "gold_correct": 61,
+            "mean_gold_token_loss": 0.020984541997718154,
+            "mean_target_token_loss": 0.020984541997718154,
+            "n": 64,
+            "native_eos": 64,
+            "target_match": 61
+          },
+          "mastery": true,
+          "sha256": "adf86a6005040f961916589dde8a7f0ab973c2d0a1e816adcb292cc046553de7"
+        }
+      },
+      "optimizer_clocks": {
+        "256": {
+          "all_step_values": [
+            256
+          ],
+          "metadata_matches_restored128": true,
+          "optimizer_sha256": "482f6aac1178f5375cf74476010d6341b681e7d2c275b86e318571f222bb567e",
+          "scalar_step_storages": 128
+        },
+        "512": {
+          "all_step_values": [
+            512
+          ],
+          "metadata_matches_restored128": true,
+          "optimizer_sha256": "a29c99dffd9891fb2ac4dce3836af300c5188f19f5ae95d492f1ac3090bbdf1f",
+          "scalar_step_storages": 128
+        }
+      }
+    }
+  },
+  "checks": [
+    "TRAIN UID order equals sealed dataset; independent correct-answer scoring from native emitted token IDs and EOS.",
+    "Gold correctness and cached-target agreement separate; both wrong cached targets preserved.",
+    "Every observed new response, prompt token sequence, UID, task digest, and chain binding matches original archived TRAIN records and deterministic continuation.",
+    "Optimizer metadata identical to restored128; all128 scalar clock storages verified at256 and512."
+  ],
+  "interpretation": "At checkpoint512 A_chain, B_oracle and C_oracle pass TRAIN mastery. A_oracle does not. Every arm remains assigned the fixed final1024 budget. This intermediate audit makes no final generalization claim.",
+  "final_evaluation_pending": true,
+  "new_moment_finiteness_cpu_tensor_audit_pending_collection": true
+}
