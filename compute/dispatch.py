@@ -41,9 +41,17 @@ def main():
         parser.error("INVALID_GPU_COUNT: --gpus must be between 1 and 8")
     if not re.fullmatch(r"[a-z0-9][a-z0-9_.-]*", args.id):
         raise ValueError("Task ID must be one path component")
+    if not args.lane_dir.is_dir():
+        parser.error(f"SOURCE_LANE_MISSING: {args.lane_dir}")
+    files = deployable_paths(args.lane_dir)
+    if not files:
+        parser.error(f"SOURCE_LANE_EMPTY: {args.lane_dir}")
+    if Path(args.entrypoint) not in {
+        path.relative_to(args.lane_dir) for path in files
+    }:
+        parser.error(f"SOURCE_ENTRYPOINT_MISSING: {args.entrypoint}")
     config = json.loads(args.config.read_text())
     digest = hashlib.sha256()
-    files = deployable_paths(args.lane_dir)
     captured = [(path.relative_to(args.lane_dir), path.read_bytes()) for path in files]
     for name, content in captured:
         digest.update(str(name).encode() + b"\0" + content)
