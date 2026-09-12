@@ -1,4 +1,5 @@
 import argparse
+import base64
 import hashlib
 import io
 import json
@@ -8,6 +9,7 @@ import stat
 import subprocess
 import sys
 import tarfile
+import zlib
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
@@ -37,6 +39,7 @@ CONTROL_FILES = {
 }
 DOCUMENT_NAMES = {
     "receipt.json",
+    "export_receipt.json",
     "seal.json",
     "result.json",
     "metrics.json",
@@ -51,8 +54,19 @@ DOCUMENT_NAMES = {
     "source-verification.json",
     "failure.json",
 }
+EVALUATION_COPY_FILES = (
+    "parameter_mapping.json",
+    "checkpoint405/train_probes.json",
+    "checkpoint405/retention.json",
+    "checkpoint405/learner/adapter_config.json",
+    "checkpoint405/learner/adapter_model.safetensors",
+)
 CHILD_CONFIG_FILES = {
     ("device4_chain.py", "evaluation/seal.json"): "evaluate_config.json",
+    ("device4_sufficiency.py", "evaluation/seal.json"): "evaluate_config.json",
+}
+BLOCKED_DISPATCH_FILES = {
+    "followthrough-20260912-native303-evaluate": "native303-blocked-dispatch-binding.json",
 }
 SKIP_RECORDS = {
     "trace",
@@ -366,7 +380,15 @@ def execute_remote_plan(request, enabled, script, issues, issue_scope):
     ]
     if not worker:
         command.extend(["--python", "/usr/local/bin/python"])
-    command.extend(["python", "-B", "-c", script.read_text(), "--remote-hash-stdin"])
+    command.extend(
+        [
+            "python",
+            "-B",
+            "-c",
+            remote_bootstrap(script.read_bytes()),
+            "--remote-hash-stdin",
+        ]
+    )
     report["read_only_exec_calls"] = 1
     print(
         f"PROVENANCE_REMOTE_HASH {pod} {len(request['paths'])} unique paths, {len(request['git_blob_paths'])} blob hashes",
@@ -467,18 +489,30 @@ def implementation_source_check(pin, worker, local):
     } | selected
 
 
-def verify_external_pins(bindings, enabled, script):
+def remote_bootstrap(source):
+    encoded = base64.b64encode(zlib.compress(source)).decode("ascii")
+    return f"import base64,zlib; exec(compile(zlib.decompress(base64.b64decode({encoded!r})), '<portfolio-auditor>', 'exec'))"
+
+
+def verify_external_pins(bindings, enabled, script, worker_snapshot=None):
     pins = sorted(bindings.unavailable.values(), key=lambda p: (p["path"], p["sha256"]))
     plans = {
         "shared": remote_plan(pins, bindings.git_blob_inputs),
         "worker_implementation": remote_plan(pins, scope="worker_implementation"),
     }
     snapshots = {
-        name: execute_remote_plan(
+        name: worker_snapshot
+        if name == "worker_implementation" and worker_snapshot is not None
+        else execute_remote_plan(
             request, enabled, script, bindings.issues, str(bindings.root)
         )
         for name, request in plans.items()
     }
+    if worker_snapshot is not None:
+        require(
+            worker_snapshot["request"] == plans["worker_implementation"],
+            "early worker hash request differs from referenced implementation pins",
+        )
     observed = {
         item["path"]: item
         for snapshot in snapshots.values()
@@ -870,6 +904,123 @@ def task_identity(value, task_id):
         )
 
 
+def blocked_dispatch_binding(directory, execution_raw, submitted_raw, evidence):
+    task_id = directory.name
+    execution = decode(execution_raw)
+    require(
+        execution.get("task_id") == task_id
+        and execution.get("status") == "blocked"
+        and not any(
+            key in execution
+            for key in (
+                "task",
+                "task_sha256",
+                "config_sha256",
+                "source_sha256",
+                "pid",
+                "started_at",
+                "finished_at",
+                "exit_code",
+                "runtime_sha256",
+                "gpus",
+                "pod",
+                "supervisor",
+                "attempt_id",
+            )
+        ),
+        "separate dispatch evidence requires an unlaunched blocked receipt",
+    )
+    require(
+        evidence["task_id"] == task_id
+        and evidence["execution_record"] == str(directory / "execution.json")
+        and evidence["execution_sha256"] == sha(execution_raw),
+        "blocked sidecar task/execution binding",
+    )
+    manifest_path = directory.parents[2] / "manifests" / f"{task_id}.json"
+    require(
+        evidence["local_submitted_manifest_path"] == str(manifest_path),
+        "blocked submitted manifest path",
+    )
+    require(
+        type(evidence["dispatch_bytes"]) is int
+        and evidence["dispatch_bytes"] == len(submitted_raw)
+        and HASH.fullmatch(evidence["dispatch_sha256"])
+        and evidence["dispatch_sha256"] == sha(submitted_raw),
+        "blocked submitted manifest exact bytes/hash",
+    )
+    require(
+        evidence["remote_dispatch_path"] == f"{REMOTE}queue/{task_id}.json"
+        and evidence["remote_bytes_equal_local_submitted_manifest"] is True,
+        "blocked remote queue observation/pin",
+    )
+    require(
+        timestamp(evidence["observed_at"]) >= timestamp(execution["observed_at"]),
+        "blocked dispatch observation predates receipt",
+    )
+    task = decode(submitted_raw)
+    require(
+        task == evidence["task"]
+        and task["id"] == task_id
+        and task["config"]["task_id"] == task_id,
+        "blocked sidecar versus submitted task/config",
+    )
+    require(
+        HASH.fullmatch(task["source_sha256"])
+        and task["code_dir"] == f"{REMOTE}code/{task['source_sha256']}",
+        "blocked submitted source identity",
+    )
+    relative(task["entrypoint"])
+    dependencies, observed = task["depends_on"], execution["dependencies"]
+    require(
+        isinstance(dependencies, list)
+        and dependencies
+        and all(isinstance(name, str) for name in dependencies)
+        and len(set(dependencies)) == len(dependencies)
+        and task_id not in dependencies
+        and isinstance(observed, dict)
+        and set(dependencies) <= set(observed)
+        and all(value is None or value in STATES for value in observed.values())
+        and any(value in {"failed", "blocked"} for value in observed.values()),
+        "blocked submitted dependencies versus receipt observations",
+    )
+    return {
+        "saved_submission_binding_verified": True,
+        "embedded_execution_task_identity": False,
+        "model_execution_proven": False,
+        "runtime_identity_proven": False,
+        "task": task,
+        "execution_sha256": sha(execution_raw),
+        "submitted_manifest": {
+            "path": str(manifest_path),
+            "sha256": sha(submitted_raw),
+            "bytes": len(submitted_raw),
+        },
+        "remote_queue_observation": {
+            "path": evidence["remote_dispatch_path"],
+            "sha256": evidence["dispatch_sha256"],
+            "bytes": evidence["dispatch_bytes"],
+            "observed_at": evidence["observed_at"],
+            "saved_observation_reports_exact_local_bytes": True,
+            "independently_reobserved_here": False,
+        },
+        "declared_dependency_observations": {
+            name: observed[name] for name in dependencies
+        },
+        "implicit_dependency_observations": {
+            name: status
+            for name, status in observed.items()
+            if name not in dependencies
+        },
+        "boundary": "Separately saved submitted-task identity and queue-byte observation bound to the immutable blocked receipt. No task/source identity was embedded in that receipt; no launch, runtime or model execution is inferred. Optional remote hashing rechecks queue bytes separately.",
+    }
+
+
+def run_source(run):
+    return run.get("execution", {}).get("source_sha256") or run.get(
+        "submitted_task", {}
+    ).get("source_sha256")
+
+
 def verify_chain(task_id, execution_raw, snapshots):
     current = decode(execution_raw)
     task_identity(current, task_id)
@@ -1075,6 +1226,44 @@ def verify_run(directory, files, issues):
                     f"{name} file identity",
                 )
             report["task_config_identity"] = True
+        elif (
+            scope in BLOCKED_DISPATCH_FILES
+            and (directory.parent.parent / BLOCKED_DISPATCH_FILES[scope]).is_file()
+        ):
+            sidecar_path = directory.parent.parent / BLOCKED_DISPATCH_FILES[scope]
+            manifest_path = directory.parents[2] / "manifests" / f"{scope}.json"
+            evidence = files.json(sidecar_path)
+            binding = blocked_dispatch_binding(
+                directory,
+                execution_entry["raw"],
+                files.get(manifest_path)["raw"],
+                evidence,
+            )
+            require(
+                all(
+                    item["status"] == "blocked"
+                    and item["pid"] is None
+                    and item["started_at"] is None
+                    for attempt in report["history"]["attempts"].values()
+                    for item in attempt
+                ),
+                "blocked submitted-only binding has launched predecessor",
+            )
+            require(
+                not (set(actual) - {"execution.json"} - set(snapshots)),
+                "unlaunched blocked collection contains execution artifacts",
+            )
+            binding["sidecar"] = {"path": str(sidecar_path), **files.info(sidecar_path)}
+            state["submitted_task"] = state["task"] = binding["task"]
+            report.update(
+                submitted_dispatch=binding,
+                submitted_source_sha256=binding["task"]["source_sha256"],
+                task_config_identity=False,
+                submitted_task_config_identity=True,
+                unlaunched=True,
+                lane=binding["task"]["lane"],
+                entrypoint=binding["task"]["entrypoint"],
+            )
         else:
             issue(
                 issues,
@@ -1086,7 +1275,14 @@ def verify_run(directory, files, issues):
         for name in actual:
             path = Path(name)
             if (
-                path.name in DOCUMENT_NAMES
+                (
+                    path.name in DOCUMENT_NAMES
+                    or (
+                        state.get("task", {}).get("entrypoint")
+                        == "onpolicy303_budget_evaluate.py"
+                        and name in {"study/copy.json", "study/original_training.json"}
+                    )
+                )
                 and len(path.parts) <= 3
                 and not name.startswith("attempts/")
             ):
@@ -1108,7 +1304,7 @@ class Bindings:
 
     def resolve(self, path, run):
         if path.startswith(("data/", "configs/", "inputs/")):
-            source = run.get("execution", {}).get("source_sha256")
+            source = run_source(run)
             path = f"{REMOTE}code/{source}/{path}"
         if path.startswith(REMOTE + "code/"):
             parts = path.removeprefix(REMOTE + "code/").split("/", 1)
@@ -1206,13 +1402,13 @@ class Bindings:
         if name.startswith("/"):
             self.pin(name, expected, run, origin)
             return
-        source = run.get("execution", {}).get("source_sha256")
+        source = run_source(run)
         self.pin(f"{REMOTE}code/{source}/{name}", expected, run, origin)
         self.counts["declared_code_file_pins_checked"] += 1
 
     def protocol(self, config, payload, run, origin):
         name = str(relative(config["protocol"]))
-        source = run.get("execution", {}).get("source_sha256")
+        source = run_source(run)
         raw = self.archives.get(source, {}).get("members", {}).get(name)
         if raw is None:
             record = {
@@ -1306,16 +1502,293 @@ def child_dispatch_config(dispatch, candidates, entrypoint, seal_name):
     return name
 
 
+def budget_evaluation_copy(
+    copy_record,
+    original_raw,
+    projected_raw,
+    spec,
+    destination,
+    copied_files,
+    source_files,
+    local_names,
+):
+    require(
+        copy_record["kind"]
+        == "zero_update_evaluator_input_copy_not_a_new_training_receipt"
+        and copy_record["new_optimizer_updates"] == 0
+        and copy_record["original_optimizer_copied"] is False,
+        "budget evaluation copy type/zero-update boundary",
+    )
+    require(copy_record["source_run"] == spec["run_dir"], "budget copy source run")
+    for name, checksum in spec["files_sha256"].items():
+        relative(name)
+        require(
+            HASH.fullmatch(checksum)
+            and name in source_files
+            and source_files[name]["sha256"] == checksum,
+            f"budget copy original source file missing/changed: {name}",
+        )
+    origin_sha = spec["files_sha256"]["study/training.json"]
+    require(
+        sha(original_raw) == origin_sha == copy_record["origin_training_sha256"],
+        "budget byte-exact original training receipt",
+    )
+    original, projected = decode(original_raw), decode(projected_raw)
+    require(
+        "evaluation_only_origin_sha256" not in original
+        and original["checkpoint405"]["path"]
+        == spec["run_dir"] + "/study/checkpoint405/learner"
+        and original["checkpoint405"] == spec["checkpoint405"],
+        "budget original checkpoint405 source",
+    )
+    expected_projection = original | {
+        "checkpoint405": original["checkpoint405"]
+        | {"path": destination + "/checkpoint405/learner"},
+        "evaluation_only_origin_sha256": origin_sha,
+    }
+    require(
+        projected == expected_projection
+        and sha(projected_raw) == copy_record["projected_training_sha256"]
+        and copy_record["exact_allowed_json_changes"]
+        == ["/checkpoint405/path", "/evaluation_only_origin_sha256"],
+        "budget projected receipt changed beyond path/origin or hash differs",
+    )
+    expected_copies = {"original_training.json": origin_sha} | {
+        name: spec["files_sha256"]["study/" + name] for name in EVALUATION_COPY_FILES
+    }
+    require(
+        copy_record["copies_sha256"] == expected_copies,
+        "budget exact declared copy set",
+    )
+    require(
+        set(copied_files) == set(expected_copies)
+        and all(
+            copied_files[name]["sha256"] == checksum
+            for name, checksum in expected_copies.items()
+        ),
+        "budget copied artifact missing/changed",
+    )
+    resolved = {}
+    for name, checksum in original["files_sha256"].items():
+        relative(name)
+        original_name = "study/" + name
+        require(
+            HASH.fullmatch(checksum)
+            and original_name in source_files
+            and source_files[original_name]["sha256"] == checksum,
+            f"budget inherited original artifact missing/changed: {name}",
+        )
+        copied = name in EVALUATION_COPY_FILES
+        if copied:
+            require(
+                copied_files[name]["sha256"] == checksum,
+                f"budget inherited copied artifact changed: {name}",
+            )
+        else:
+            require(
+                name not in local_names,
+                f"budget unpermitted original training artifact copied: {name}",
+            )
+        resolved[name] = {
+            "path": (destination if copied else spec["run_dir"] + "/study")
+            + "/"
+            + name,
+            "sha256": checksum,
+            "binding": "byte_exact_evaluator_copy"
+            if copied
+            else "original_training_study",
+        }
+    return {
+        "verified": True,
+        "kind": copy_record["kind"],
+        "source_run": spec["run_dir"],
+        "origin_training_sha256": origin_sha,
+        "projected_training_sha256": sha(projected_raw),
+        "exact_allowed_json_changes": copy_record["exact_allowed_json_changes"],
+        "copied_files": copied_files,
+        "inherited_training_manifest": resolved,
+        "original_source_files_verified": len(spec["files_sha256"]),
+        "new_optimizer_updates": 0,
+        "boundary": "The original receipt and copied subset retain their byte identities. Only checkpoint405.path and evaluation_only_origin_sha256 change in the projected receipt. Its full training file map remains an original-study manifest; uncopied entries are required and verified at the original source, not waived or inferred present in the evaluator copy.",
+    }
+
+
+def verify_budget_evaluation_copy(run, bindings):
+    documents = run["documents"]
+    require(
+        "study/copy.json" in documents, "completed budget evaluator lacks copy binding"
+    )
+    config = run["task"]["config"]
+    require(config["stage"] == "evaluate_only", "budget evaluation-only dispatch stage")
+    archived = bindings.archives[run_source(run)]["members"]
+    design = decode(archived[str(relative(config["protocol"]))])
+    require(
+        design["contract"] == "onpolicy303_budget405_zero_update_evaluation_recovery"
+        and canonical(design) == config["protocol_sha256"]
+        and design["files_sha256"]["onpolicy303_budget_evaluate.py"]
+        == sha(archived["onpolicy303_budget_evaluate.py"]),
+        "budget copy archived helper/protocol binding",
+    )
+    spec = design["sources"][config["method"]]
+    require(
+        spec["run_dir"] == f"{REMOTE}runs/{spec['task_id']}",
+        "budget original run path identity",
+    )
+    source = bindings.states.get(spec["task_id"])
+    require(source is not None, "budget copy original run is not collected")
+    require(
+        source["report"]["collection_integrity"]
+        and source["report"]["execution_chain_integrity"]
+        and source["execution"]["status"] == "failed",
+        "budget copy original failed run integrity",
+    )
+    copied = documents["study/copy.json"]
+    source_gate = bindings.files.json(run["path"] / "study/source_gate.json")
+    require(copied["source_gate"] == source_gate, "budget copy source gate identity")
+    terminal = source_gate["terminal"]
+    require(
+        terminal["task_id"] == spec["task_id"]
+        and terminal["attempt_id"] == source["execution"]["attempt_id"]
+        and terminal["source_sha256"] == source["execution"]["source_sha256"]
+        and terminal["finished_at"] == source["execution"]["finished_at"],
+        "budget copy original terminal execution binding",
+    )
+    original = bindings.files.get(run["path"] / "study/original_training.json")["raw"]
+    projected = bindings.files.get(run["path"] / "study/training.json")["raw"]
+    require(
+        original is not None and projected is not None, "budget copy receipt read limit"
+    )
+    local_names = {
+        name.removeprefix("study/")
+        for name in run["actual"]
+        if name.startswith("study/")
+    }
+    copied_files = {
+        name: run["actual"]["study/" + name]
+        for name in ("original_training.json", *EVALUATION_COPY_FILES)
+        if "study/" + name in run["actual"]
+    }
+    proof = budget_evaluation_copy(
+        copied,
+        original,
+        projected,
+        spec,
+        f"{REMOTE}runs/{run['path'].name}/study",
+        copied_files,
+        source["actual"],
+        local_names,
+    )
+    proof["copy_receipt"] = run["actual"]["study/copy.json"]
+    proof["original_execution_sha256"] = source["report"]["execution_sha256"]
+    run["report"]["budget_evaluation_copy"] = proof
+    bindings.counts["typed_budget_evaluation_copies_verified"] += 1
+    bindings.counts["inherited_original_training_file_pins_verified"] += len(
+        proof["inherited_training_manifest"]
+    )
+
+
+def native_artifact_pins(artifact):
+    root = artifact["directory"]
+    require(
+        root
+        == REMOTE + "artifacts/followthrough-20260912-native-consolidated303/export",
+        "native external artifact root",
+    )
+    files = artifact["files"]
+    expected_shards = {
+        name.removeprefix("model/"): pin
+        for name, pin in files.items()
+        if name.startswith("model/") and name.endswith(".safetensors")
+    }
+    require(
+        artifact["shards"] == expected_shards and len(expected_shards) == 9,
+        "native standard shard manifest subset",
+    )
+    require(
+        artifact["tensor_payload_bytes"] == 4 * artifact["weight_elements"],
+        "native FP32 payload accounting",
+    )
+    pins = {root + "/native303_manifest.json": artifact["manifest"]}
+    for name, pin in files.items():
+        relative(name)
+        require(
+            "adapter" not in Path(name).name and not name.endswith(".py"),
+            "native export unexpected adapter/code file",
+        )
+        pins[root + "/" + name] = pin
+    return pins
+
+
+def verify_native_artifact(run, payload, bindings, origin):
+    require(
+        payload["contract"] == "onpolicy303_fp32_native_weight_export_20260912"
+        and payload["optimizer_updates"] == 0,
+        "native export/persistence contract",
+    )
+    artifact = payload["artifact"]
+    if origin == "result.json":
+        dependency = payload["export_dependency"]
+        export_id = dependency["execution"]["task_id"]
+        export_run = bindings.states.get(export_id)
+        require(
+            export_run is not None and export_run["execution"]["status"] == "completed",
+            "native export dependency not collected/completed",
+        )
+        require(
+            dependency["execution"] == export_run["execution"],
+            "native export dependency execution identity",
+        )
+        require(
+            dependency["execution_pin"] == export_run["actual"]["execution.json"]
+            and dependency["receipt_pin"]
+            == export_run["actual"]["export_receipt.json"],
+            "native export dependency receipt pins",
+        )
+        exported = export_run["documents"]["export_receipt.json"]["artifact"]
+        require(
+            artifact
+            == {key: value for key, value in exported.items() if key != "directory"},
+            "native reload/export external manifest equality",
+        )
+        artifact = exported
+    pins = native_artifact_pins(artifact)
+    for path, pin in pins.items():
+        bindings.pin(path, pin, run, origin + "/artifact")
+    run["report"]["native_external_artifact"] = {
+        "directory": artifact["directory"],
+        "files_pinned_including_manifest": len(pins),
+        "shards": len(artifact["shards"]),
+        "tensor_payload_bytes": artifact["tensor_payload_bytes"],
+        "scope": "Receipt-bound external model/evidence SHA256 and byte pins; current bytes verified by optional remote hashing. No re-scoring or new model execution.",
+    }
+    bindings.counts["native_external_artifact_bindings_verified"] += 1
+
+
 def verify_documents(run, bindings, issues):
     directory = run["path"]
     scope = directory.name
     verified = []
+    if run.get("task", {}).get("entrypoint") == "onpolicy303_budget_evaluate.py" and (
+        "study/copy.json" in run["documents"]
+        or run.get("execution", {}).get("status") == "completed"
+    ):
+        try:
+            verify_budget_evaluation_copy(run, bindings)
+        except (AuditError, OSError, ValueError, KeyError, TypeError) as error:
+            issue(issues, "error", "typed_budget_evaluation_copy_binding", scope, error)
     for name, value in run["documents"].items():
         try:
             require(
                 isinstance(value, dict), f"provenance document is not object {name}"
             )
             payload = value
+            if run.get("task", {}).get(
+                "entrypoint"
+            ) == "native303_export.py" and name in {
+                "export_receipt.json",
+                "result.json",
+            }:
+                verify_native_artifact(run, payload, bindings, name)
             if set(value) == {"payload", "sha256"}:
                 require(
                     canonical(value["payload"]) == value["sha256"],
@@ -1484,6 +1957,7 @@ def scientific_outcome(run, files):
         if Path(name).name not in {
             "result.json",
             "receipt.json",
+            "export_receipt.json",
             "metrics.json",
             "qualification.json",
             "training.json",
@@ -1532,6 +2006,16 @@ def scientific_outcome(run, files):
     elif state == "completed":
         if run.get("task", {}).get("lane") in {"qualification", "runtime"}:
             report["classification"] = "runtime_qualification_only"
+        elif (
+            run.get("task", {}).get("entrypoint") == "native303_export.py"
+            and documents.get("export_receipt.json", {}).get("contract")
+            == "onpolicy303_fp32_native_weight_export_20260912"
+            and documents["export_receipt.json"].get("optimizer_updates") == 0
+            and "exported_pending_separate_job_parity" in status_values
+        ):
+            report["classification"] = (
+                "completed_engineering_export_separate_parity_not_in_this_run"
+            )
         elif not report["documents"]:
             report["classification"] = (
                 "completed_process_no_recognized_scientific_result"
@@ -1588,6 +2072,12 @@ def verify_runtimes(root, states, files, issues):
         except (AuditError, OSError, ValueError, KeyError, TypeError) as error:
             issue(issues, "error", "runtime_snapshot_integrity", str(path), error)
     for task_id, state in states.items():
+        if state["report"].get("unlaunched"):
+            state["report"].update(
+                runtime_snapshot_verified=None,
+                runtime_proof_status="not_applicable_unlaunched_blocked_submission",
+            )
+            continue
         digest = state.get("execution", {}).get("runtime_sha256")
         state["report"]["runtime_snapshot_verified"] = digest in result
         if digest not in result:
@@ -1647,6 +2137,9 @@ def verify_dependencies(states, issues):
                 "task": name,
                 "dependency": dependency,
                 "collected": dependency in states,
+                "task_identity_basis": "separate_submitted_dispatch"
+                if run.get("submitted_task")
+                else "embedded_execution_task",
             }
             if dependency not in states:
                 issue(
@@ -2128,6 +2621,70 @@ def self_test():
     require(
         child_dispatch_config(
             child,
+            {"evaluate_config.json": child},
+            "device4_sufficiency.py",
+            "evaluation/seal.json",
+        )
+        == "evaluate_config.json",
+        "sufficiency child config contract",
+    )
+    passed.append(
+        "sufficiency evaluation seal binds archived writer evaluate_config spelling and dispatch"
+    )
+    rejects(
+        "sufficiency altered child dispatch despite matching filename",
+        lambda: child_dispatch_config(
+            child,
+            {"evaluate_config.json": child | {"family": "C"}},
+            "device4_sufficiency.py",
+            "evaluation/seal.json",
+        ),
+    )
+    rejects(
+        "sufficiency wrong config spelling despite identical contents",
+        lambda: child_dispatch_config(
+            child,
+            {"evaluation_config.json": child},
+            "device4_sufficiency.py",
+            "evaluation/seal.json",
+        ),
+    )
+    export_record = {
+        "contract": "onpolicy303_fp32_native_weight_export_20260912",
+        "status": "exported_pending_separate_job_parity",
+        "optimizer_updates": 0,
+    }
+    export_run = {
+        "execution": {"status": "completed"},
+        "task": {"lane": "distillation", "entrypoint": "native303_export.py"},
+        "documents": {"export_receipt.json": export_record},
+        "actual": {"export_receipt.json": {"sha256": canonical(export_record)}},
+    }
+    export_outcome = scientific_outcome(export_run, None)
+    require(
+        export_outcome["classification"]
+        == "completed_engineering_export_separate_parity_not_in_this_run"
+        and export_outcome["scientific_completion_claimed_by_this_audit"] is False,
+        "native export remains a zero-update engineering stage",
+    )
+    passed.append("native export recognizes evidence without claiming parity or learning")
+    require(
+        scientific_outcome(
+            export_run
+            | {
+                "documents": {
+                    "export_receipt.json": export_record | {"optimizer_updates": 1}
+                }
+            },
+            None,
+        )["classification"]
+        != "completed_engineering_export_separate_parity_not_in_this_run",
+        "optimization cannot qualify as a zero-update export",
+    )
+    passed.append("nonzero updates cannot receive native zero-update export classification")
+    require(
+        child_dispatch_config(
+            child,
             {
                 "evaluation_config.json": child,
                 "qualification_config.json": {"stage": "qualify"},
@@ -2163,6 +2720,416 @@ def self_test():
             "evaluation/seal.json",
         ),
     )
+    blocked_directory = Path("/audit/portfolio/wave/runs/blocked-fixture")
+    blocked_task = {
+        "id": blocked_directory.name,
+        "lane": "distillation",
+        "source_sha256": "a" * 64,
+        "code_dir": REMOTE + "code/" + "a" * 64,
+        "entrypoint": "native303_export.py",
+        "gpus": 1,
+        "config": {"task_id": blocked_directory.name},
+        "depends_on": ["prior"],
+    }
+    blocked = {
+        "task_id": blocked_directory.name,
+        "status": "blocked",
+        "observed_at": "2026-09-12T00:00:00+00:00",
+        "dependencies": {"prior": "failed", "implicit-runtime": "completed"},
+        "previous_receipt": None,
+    }
+    blocked_raw, submitted_raw = (
+        supervisor_bytes(blocked),
+        supervisor_bytes(blocked_task),
+    )
+    evidence = {
+        "task_id": blocked_directory.name,
+        "execution_record": str(blocked_directory / "execution.json"),
+        "execution_sha256": sha(blocked_raw),
+        "local_submitted_manifest_path": str(
+            blocked_directory.parents[2]
+            / "manifests"
+            / f"{blocked_directory.name}.json"
+        ),
+        "dispatch_bytes": len(submitted_raw),
+        "dispatch_sha256": sha(submitted_raw),
+        "remote_dispatch_path": f"{REMOTE}queue/{blocked_directory.name}.json",
+        "remote_bytes_equal_local_submitted_manifest": True,
+        "observed_at": "2026-09-12T00:01:00+00:00",
+        "task": blocked_task,
+    }
+    bound = blocked_dispatch_binding(
+        blocked_directory, blocked_raw, submitted_raw, evidence
+    )
+    require(
+        bound["saved_submission_binding_verified"]
+        and not bound["embedded_execution_task_identity"]
+        and not bound["model_execution_proven"]
+        and not bound["runtime_identity_proven"]
+        and bound["declared_dependency_observations"] == {"prior": "failed"}
+        and bound["implicit_dependency_observations"]
+        == {"implicit-runtime": "completed"}
+        and "source_sha256" not in blocked
+        and run_source({"execution": blocked, "submitted_task": bound["task"]})
+        == "a" * 64,
+        "separate submitted identity must not invent embedded source or runtime proof",
+    )
+    passed.append(
+        "separate blocked submission binds bytes/source without inventing execution or runtime"
+    )
+    for label, changed in (
+        ("wrong blocked sidecar task ID", {"task_id": "other"}),
+        ("wrong blocked sidecar execution hash", {"execution_sha256": "b" * 64}),
+        (
+            "wrong blocked sidecar execution path",
+            {"execution_record": "/elsewhere/execution.json"},
+        ),
+        (
+            "wrong submitted manifest path",
+            {"local_submitted_manifest_path": "/elsewhere/task.json"},
+        ),
+        ("wrong submitted byte count", {"dispatch_bytes": len(submitted_raw) + 1}),
+        ("wrong saved remote queue hash pin", {"dispatch_sha256": "b" * 64}),
+        (
+            "wrong remote queue path",
+            {"remote_dispatch_path": f"{REMOTE}queue/other.json"},
+        ),
+        (
+            "remote queue equality not established",
+            {"remote_bytes_equal_local_submitted_manifest": False},
+        ),
+        (
+            "wrong sidecar dependency list",
+            {"task": blocked_task | {"depends_on": ["other"]}},
+        ),
+        (
+            "wrong sidecar source identity",
+            {"task": blocked_task | {"source_sha256": "b" * 64}},
+        ),
+        (
+            "sidecar observation before blocked receipt",
+            {"observed_at": "2026-09-11T00:00:00+00:00"},
+        ),
+    ):
+        rejects(
+            label,
+            lambda changed=changed: blocked_dispatch_binding(
+                blocked_directory, blocked_raw, submitted_raw, evidence | changed
+            ),
+        )
+    rejects(
+        "semantically equal manifest with changed bytes",
+        lambda: blocked_dispatch_binding(
+            blocked_directory, blocked_raw, submitted_raw + b" ", evidence
+        ),
+    )
+    for label, changed_task in (
+        (
+            "submitted dependency absent from receipt",
+            blocked_task | {"depends_on": ["missing"]},
+        ),
+        (
+            "submitted source differs from code directory",
+            blocked_task | {"source_sha256": "b" * 64},
+        ),
+    ):
+        changed_raw = supervisor_bytes(changed_task)
+        changed_evidence = evidence | {
+            "task": changed_task,
+            "dispatch_sha256": sha(changed_raw),
+            "dispatch_bytes": len(changed_raw),
+        }
+        rejects(
+            label,
+            lambda changed_raw=changed_raw, changed_evidence=changed_evidence: (
+                blocked_dispatch_binding(
+                    blocked_directory, blocked_raw, changed_raw, changed_evidence
+                )
+            ),
+        )
+    for label, changed_execution in (
+        (
+            "blocked receipt with child PID cannot become unlaunched",
+            blocked | {"pid": 41},
+        ),
+        (
+            "blocked receipt with embedded source cannot use submitted-only proof",
+            blocked | {"source_sha256": "a" * 64},
+        ),
+        (
+            "blocked receipt without failed or blocked dependency",
+            blocked | {"dependencies": {"prior": "completed"}},
+        ),
+    ):
+        changed_raw = supervisor_bytes(changed_execution)
+        rejects(
+            label,
+            lambda changed_raw=changed_raw: blocked_dispatch_binding(
+                blocked_directory,
+                changed_raw,
+                submitted_raw,
+                evidence | {"execution_sha256": sha(changed_raw)},
+            ),
+        )
+    original_root = REMOTE + "runs/original405"
+    destination = REMOTE + "runs/evaluate405/study"
+    content = {
+        name: name.encode()
+        for name in (
+            *EVALUATION_COPY_FILES,
+            "checkpoint405/optimizer.pt",
+            "ledger.json",
+        )
+    }
+    original = {
+        "pid": 101,
+        "updates_this_run": 21,
+        "tokens": {"additional": 588},
+        "checkpoint405": {
+            "path": original_root + "/study/checkpoint405/learner",
+            "files": {
+                "adapter_config.json": sha(content[EVALUATION_COPY_FILES[3]]),
+                "adapter_model.safetensors": sha(content[EVALUATION_COPY_FILES[4]]),
+            },
+        },
+        "files_sha256": {
+            name: sha(raw) for name, raw in content.items() if "/learner/" not in name
+        },
+    }
+    original_raw = supervisor_bytes(original)
+    projected = original | {
+        "checkpoint405": original["checkpoint405"]
+        | {"path": destination + "/checkpoint405/learner"},
+        "evaluation_only_origin_sha256": sha(original_raw),
+    }
+    projected_raw = supervisor_bytes(projected)
+    source_files = {
+        "study/" + name: {"sha256": sha(raw), "bytes": len(raw)}
+        for name, raw in content.items()
+    }
+    source_files["study/training.json"] = {
+        "sha256": sha(original_raw),
+        "bytes": len(original_raw),
+    }
+    spec = {
+        "run_dir": original_root,
+        "checkpoint405": original["checkpoint405"],
+        "files_sha256": {name: info["sha256"] for name, info in source_files.items()},
+    }
+    copied_files = {
+        name: source_files["study/" + name] for name in EVALUATION_COPY_FILES
+    }
+    copied_files["original_training.json"] = source_files["study/training.json"]
+    copy_record = {
+        "kind": "zero_update_evaluator_input_copy_not_a_new_training_receipt",
+        "source_run": original_root,
+        "origin_training_sha256": sha(original_raw),
+        "projected_training_sha256": sha(projected_raw),
+        "new_optimizer_updates": 0,
+        "original_optimizer_copied": False,
+        "exact_allowed_json_changes": [
+            "/checkpoint405/path",
+            "/evaluation_only_origin_sha256",
+        ],
+        "copies_sha256": {name: info["sha256"] for name, info in copied_files.items()},
+    }
+    local_names = set(copied_files) | {
+        "training.json",
+        "copy.json",
+        "evaluation/result.json",
+    }
+    copy_arguments = (
+        copy_record,
+        original_raw,
+        projected_raw,
+        spec,
+        destination,
+        copied_files,
+        source_files,
+        local_names,
+    )
+    proof = budget_evaluation_copy(*copy_arguments)
+    require(
+        proof["verified"]
+        and proof["new_optimizer_updates"] == 0
+        and proof["inherited_training_manifest"]["checkpoint405/optimizer.pt"]["path"]
+        == original_root + "/study/checkpoint405/optimizer.pt"
+        and proof["inherited_training_manifest"]["checkpoint405/train_probes.json"][
+            "path"
+        ]
+        == destination + "/checkpoint405/train_probes.json",
+        "typed copy must resolve inherited references at their actual locations",
+    )
+    passed.append(
+        "typed zero-update copy resolves copied probes locally and uncopied optimizer at original study"
+    )
+    for label, changes in (
+        ("copy from wrong original run", {"source_run": REMOTE + "runs/other"}),
+        ("copy wrong origin receipt hash", {"origin_training_sha256": "b" * 64}),
+        ("copy wrong projected receipt hash", {"projected_training_sha256": "b" * 64}),
+        ("copy cannot claim new training updates", {"new_optimizer_updates": 1}),
+        ("copy wrong typed kind", {"kind": "training"}),
+        ("copy cannot include original optimizer", {"original_optimizer_copied": True}),
+        (
+            "copy cannot authorize extra receipt changes",
+            {
+                "exact_allowed_json_changes": [
+                    "/checkpoint405/path",
+                    "/evaluation_only_origin_sha256",
+                    "/pid",
+                ]
+            },
+        ),
+        (
+            "copy declared file set incomplete",
+            {
+                "copies_sha256": {
+                    name: checksum
+                    for name, checksum in copy_record["copies_sha256"].items()
+                    if name != "parameter_mapping.json"
+                }
+            },
+        ),
+    ):
+        rejects(
+            label,
+            lambda changes=changes: budget_evaluation_copy(
+                copy_record | changes, *copy_arguments[1:]
+            ),
+        )
+    rejects(
+        "copy original receipt semantic equality cannot replace exact bytes",
+        lambda: budget_evaluation_copy(
+            copy_record, original_raw + b" ", *copy_arguments[2:]
+        ),
+    )
+    for label, changes in (
+        ("copy altered original training PID", {"pid": 102}),
+        ("copy altered original loss token counts", {"tokens": {"additional": 587}}),
+        (
+            "copy checkpoint relocated to wrong destination",
+            {
+                "checkpoint405": projected["checkpoint405"]
+                | {"path": destination + "/wrong"}
+            },
+        ),
+    ):
+        changed_raw = supervisor_bytes(projected | changes)
+        rejects(
+            label,
+            lambda changed_raw=changed_raw: budget_evaluation_copy(
+                copy_record | {"projected_training_sha256": sha(changed_raw)},
+                original_raw,
+                changed_raw,
+                *copy_arguments[3:],
+            ),
+        )
+    missing_copy = {
+        name: info
+        for name, info in copied_files.items()
+        if name != "checkpoint405/learner/adapter_model.safetensors"
+    }
+    rejects(
+        "missing copied adapter cannot be skipped",
+        lambda: budget_evaluation_copy(
+            *copy_arguments[:5], missing_copy, source_files, local_names
+        ),
+    )
+    bad_copy = copied_files | {
+        "checkpoint405/learner/adapter_model.safetensors": {
+            "sha256": "b" * 64,
+            "bytes": 1,
+        }
+    }
+    rejects(
+        "changed copied adapter bytes",
+        lambda: budget_evaluation_copy(
+            *copy_arguments[:5], bad_copy, source_files, local_names
+        ),
+    )
+    missing_original = {
+        name: info
+        for name, info in source_files.items()
+        if name != "study/checkpoint405/optimizer.pt"
+    }
+    rejects(
+        "uncopied original optimizer still required",
+        lambda: budget_evaluation_copy(
+            *copy_arguments[:6], missing_original, local_names
+        ),
+    )
+    bad_original = source_files | {
+        "study/ledger.json": {"sha256": "b" * 64, "bytes": 1}
+    }
+    rejects(
+        "uncopied original ledger still hash-checked",
+        lambda: budget_evaluation_copy(*copy_arguments[:6], bad_original, local_names),
+    )
+    rejects(
+        "unreported original optimizer copied into evaluator",
+        lambda: budget_evaluation_copy(
+            *copy_arguments[:7], local_names | {"checkpoint405/optimizer.pt"}
+        ),
+    )
+    artifact = {
+        "directory": REMOTE
+        + "artifacts/followthrough-20260912-native-consolidated303/export",
+        "files": {
+            f"model/model-{i:05d}-of-00009.safetensors": {
+                "sha256": "a" * 64,
+                "bytes": 4,
+            }
+            for i in range(1, 10)
+        },
+        "manifest": {"sha256": "b" * 64, "bytes": 20},
+        "tensor_payload_bytes": 36,
+        "weight_elements": 9,
+    }
+    artifact["shards"] = {
+        name.removeprefix("model/"): pin for name, pin in artifact["files"].items()
+    }
+    require(
+        len(native_artifact_pins(artifact)) == 10,
+        "native model manifest plus every shard pinned",
+    )
+    passed.append("native external manifest and all nine shards registered")
+    rejects(
+        "native shard subset mismatch",
+        lambda: native_artifact_pins(artifact | {"shards": {}}),
+    )
+    rejects(
+        "native artifact root changed",
+        lambda: native_artifact_pins(artifact | {"directory": REMOTE + "other"}),
+    )
+    rejects(
+        "native artifact relative escape",
+        lambda: native_artifact_pins(
+            artifact
+            | {"files": artifact["files"] | {"../escape.json": {"sha256": "c" * 64}}}
+        ),
+    )
+    payload = b"print('bounded-transport-control')\n"
+    observed = subprocess.run(
+        [
+            "uv",
+            "run",
+            "--no-project",
+            "--python",
+            sys.executable,
+            "python",
+            "-B",
+            "-c",
+            remote_bootstrap(payload),
+        ],
+        capture_output=True,
+        check=True,
+        timeout=30,
+    )
+    require(
+        observed.stdout == b"bounded-transport-control\n",
+        "compressed remote transport exact program",
+    )
+    passed.append("bounded compressed script transport executes exact program bytes")
     return {
         "passed": len(passed),
         "cases": passed,
@@ -2176,14 +3143,30 @@ def audit(root, verify_remote=False, baseline=None):
     require(selected, "no terminal collected runs")
     archive_paths = sorted((root / "code").glob("*.tar"))
     files, issues, archives, states = Files(), [], {}, {}
+    worker_snapshot = execute_remote_plan(
+        {
+            "scope": "worker_implementation",
+            "paths": sorted(IMPLEMENTATION_COPIES),
+            "git_blob_paths": [],
+        },
+        verify_remote,
+        Path(__file__).resolve(),
+        issues,
+        str(root),
+    )
     for path in archive_paths:
         report, members = verify_archive(path, files, issues)
         archives[path.stem] = {"report": report, "members": members}
     for index, (name, path) in enumerate(selected.items(), 1):
         print(f"PROVENANCE_AUDIT {index}/{len(selected)} {name}", flush=True)
         state = states[name] = verify_run(path, files, issues)
-        source = state.get("execution", {}).get("source_sha256")
+        source = run_source(state)
         archive = archives.get(source)
+        state["report"]["source_archive_identity_basis"] = (
+            "separate_submitted_dispatch"
+            if state.get("submitted_task")
+            else "embedded_execution_source"
+        )
         state["report"]["source_archive_closure_verified"] = bool(
             archive and archive["report"]["closure_verified"]
         )
@@ -2212,6 +3195,31 @@ def audit(root, verify_remote=False, baseline=None):
         state["report"]["scientific_outcome"] = scientific_outcome(state, files)
     bindings = Bindings(root, states, archives, files, issues)
     for state in states.values():
+        if state.get("submitted_task"):
+            try:
+                binding = state["report"]["submitted_dispatch"]
+                origin = Path(binding["sidecar"]["path"]).name
+                bindings.pin(
+                    binding["remote_queue_observation"]["path"],
+                    binding["remote_queue_observation"],
+                    state,
+                    origin,
+                )
+                bindings.protocol(
+                    state["submitted_task"]["config"],
+                    {},
+                    state,
+                    origin,
+                )
+                bindings.counts["separate_blocked_dispatch_bindings_verified"] += 1
+            except (AuditError, OSError, ValueError, KeyError, TypeError) as error:
+                issue(
+                    issues,
+                    "error",
+                    "blocked_submitted_dispatch_binding",
+                    state["path"].name,
+                    error,
+                )
         verify_documents(state, bindings, issues)
     try:
         dependencies = verify_dependencies(states, issues)
@@ -2223,7 +3231,21 @@ def audit(root, verify_remote=False, baseline=None):
     except (AuditError, ValueError, KeyError, TypeError) as error:
         issue(issues, "error", "runtime_or_interruption_proof", str(root), error)
         runtimes = {}
-    external = verify_external_pins(bindings, verify_remote, Path(__file__).resolve())
+    external = verify_external_pins(
+        bindings, verify_remote, Path(__file__).resolve(), worker_snapshot
+    )
+    for state in states.values():
+        if state.get("submitted_task"):
+            binding = state["report"]["submitted_dispatch"]
+            binding["remote_queue_reverification"] = next(
+                (
+                    check
+                    for check in external["sha256_pin_checks"]
+                    if check["expected"]["path"]
+                    == binding["remote_queue_observation"]["path"]
+                ),
+                None,
+            )
     requested_pins = reconcile_requested_pins(bindings, baseline or [], external)
     for name, run in states.items():
         actual_names = set(run["actual"]) | {"collection.json"}
@@ -2322,6 +3344,7 @@ def audit(root, verify_remote=False, baseline=None):
         ),
         "boundaries": [
             "Execution completion, scientific qualification and successful scientific findings are distinct. This audit does not rescore predictions or reproduce training.",
+            "An unlaunched blocked task may have separately verified submitted manifest and saved queue-byte evidence. Its submitted source archive/protocol are checked without inserting task/source/runtime fields into the execution receipt; submitted identity is not proof of model execution. Optional current queue hashing is reported separately from the saved observation.",
             "Each complete local collection is hashed against its recorded file manifest; every execution predecessor snapshot and source archive closure is checked, including failed/interrupted attempts.",
             "Study receipt closures, declared artifact subsets, explicit path/hash pointers, adapter/optimizer checkpoint pins and available source-file hashes are checked. Tensor-content hashes without a file-byte contract are not recomputed.",
             "External SHA256 pins and canonical Git blob identities have separate verification results. Remote reads are opt-in and restricted to the two authorized NFS roots on the control pod and two exact portallib paths on the named active worker. Local source copies are checked only at the explicitly authorized paths. Only status/hash/byte-count metadata is returned; missing sizes remain unknown metadata.",
