@@ -1,0 +1,3923 @@
+{
+  "wave": "followthrough-20260912",
+  "status": "selected_followthrough_wave_complete_and_independently_verified",
+  "started_at": "2026-09-12T04:16:18.501245+00:00",
+  "prior_evidence": "experiments/review/resume-20260911.json",
+  "base_commit": "282ade16b999d8a85bba75cc363607aea035f9b4",
+  "intent": "Resolve failed prerequisites and execute substantive recovery, example-trained PorTAL, consolidation, and varied related-skill transfer experiments.",
+  "decisions": [
+    {
+      "id": "recovery_contract",
+      "reason": "Historical models learned a restricted code classifier; full-vocabulary retroactive eligibility invalidated the prior pilot.",
+      "action": "Use one declared 16-code score throughout acquisition, forgetting and repair; check eligibility before repair work. Compare tuned lens, frozen lens and output-only prediction on heldout skills."
+    },
+    {
+      "id": "portal_connection",
+      "reason": "Earlier target calibration used a weaker source, not the successful reconstructed native generator.",
+      "action": "Calibrate the actual reconstructed generator on the new model; independently train PorTAL from examples and measure existing tasks."
+    },
+    {
+      "id": "consolidation_teacher",
+      "reason": "Failed four-digit generation teachers should not block other qualified supervision.",
+      "action": "Qualify the successful rank8 adapter under its actual four-choice contract and distill its distributions into a separate saved learner; compare oracle supervision."
+    },
+    {
+      "id": "varied_workflows",
+      "reason": "Optimization seeds on fixed numeric-threshold tasks do not measure related skill transfer.",
+      "action": "Independently vary task families, order and mappings; qualify generated tool conventions before unfamiliar workflow tests; implement a substantive published alternative with provenance."
+    },
+    {
+      "id": "compute",
+      "reason": "The cluster is reachable but initially has no GPU nodes.",
+      "action": "Submitted one eight-GPU worker through the existing default Kueue market; no provider policy change. Require fresh runtime qualification."
+    },
+    {
+      "id": "repair_strength",
+      "reason": "Post-hoc original-code audit found five learned-then-forgotten skills but almost no response to the old 4/12-step SGD repairs; restoring early weights loses later skills.",
+      "action": "Add a training-only repair feasibility stage and stronger predefined repair budgets, including a guard-preserving replay mixture, before heldout predictor comparisons."
+    },
+    {
+      "id": "lens_predictive_scope",
+      "reason": "Primary J-Access paper reports model-level recovery prediction but not individual fact prediction, and audit optimization can encourage concealment.",
+      "action": "Keep lens scores out of training objectives; record run-level aggregation alongside heldout skill-level prediction. Treat skill-level prediction as the harder hypothesis, not an established property.",
+      "primary_source": "https://arxiv.org/html/2608.11408v1"
+    },
+    {
+      "id": "teacher_failure_mechanism",
+      "reason": "Trained four-digit fallback already formatted and stopped correctly on every validation case, but two-command accuracy was8/54 versus12/18 for one command.",
+      "action": "Test primitive acquisition and compositional training separately; do not spend this branch on output-format fixes. Continue independent successful-adapter supervision route."
+    },
+    {
+      "id": "recovery_vs_new_learning",
+      "reason": "Repair accuracy alone cannot distinguish recovering an old association from learning it anew from the supplied repair examples.",
+      "action": "Include a model trained only on later tasks and apply identical repair examples and updates; compare excess recovery. Treat CLINC code bindings as the measured skill.",
+      "primary_source": "https://arxiv.org/html/2608.11408v1"
+    },
+    {
+      "id": "conditional_adapter_chain",
+      "reason": "Successful adapters, actual parameter fusion, rank8 compression and native generator reconstruction now have reusable interfaces; their combination has not been tested.",
+      "action": "After primitive qualification and a useful fusion result, evaluate fixed-rank SVD compression of actual effective updates. Only a behaviorally qualified compressed result may feed teacher distillation or target transfer. No claim that this reproduces LoRAGen or that individual steps compose automatically."
+    },
+    {
+      "id": "constructed_calibration_data",
+      "reason": "At320 updates the constructed source fits all16 training examples per task, but validation remains .8125/1/.84375. The untouched source qualifies all tasks earlier.",
+      "action": "Execute the predefined64-example calibration comparison with the same update schedule. This tests additional unique training examples, not a post-hoc selected checkpoint."
+    },
+    {
+      "id": "preserve_original_native_updates",
+      "reason": "The successful construction damages all four original-task ability panels. BoolQ falls32/32 to14/32 and is the only panel where the initial adapter gain over the raw model qualified.",
+      "action": "Prepare example learning with new task vectors plus supervision from the untouched generator's original effective adapter matrices. Compare with a matched unregularized arm; do not train on retention evaluation answers."
+    },
+    {
+      "id": "numeric_checkpoint_retention",
+      "reason": "The JSON writer sorts checkpoint keys lexicographically. Initial evaluate_saved code used that order, so retention was measured at80 instead of320 for calibration and64 instead of512 for example learning. All checkpoint task scores remain recorded, but final retention was missing.",
+      "action": "Preserve original run artifacts, sort checkpoint steps numerically in the implementation, and evaluate initial/final saved adapters in separate retention-only runs. Do not interpret intermediate retention as final retention."
+    },
+    {
+      "id": "workflow_runtime_guard",
+      "reason": "First workflow attempt stopped before baseline evaluation because the placement guard required optional hf_device_map metadata. Installed Transformers5.16.1 skips Accelerate dispatch for a uniform single-device map.",
+      "action": "Validate actual tensor placement and offload hooks, inspect optional metadata when present, and rerun with a new attempt ID. Keep the original failed execution record; no capability result exists for that attempt."
+    },
+    {
+      "id": "qualified_generation_teacher",
+      "reason": "Source diagnosis found no native stopping and imperfect full-vocabulary digits. Whole-answer supervision repaired both: the predefined32-update checkpoint qualified at94/96 strict validation answers, after independent reload.",
+      "action": "Proceed to separate persistent learner training from cached qualified teacher generations, retaining teacher mistakes and comparing matched oracle supervision."
+    },
+    {
+      "id": "constructed_conditioning_control",
+      "reason": "The constructed generator failed to fit64 examples per task at the original rate; untouched PorTAL and LoRA acquired the same data. Reconstructed heads have12.59 to38.47 times larger norms.",
+      "action": "Run one matched1e-4 calibration control with identical data, initialization and320-update budget; prioritize the now successful example-trained generator next."
+    },
+    {
+      "id": "recovery_feasibility_passed",
+      "reason": "All four TRAIN pilot skills respond, and guard-adjusted utilities vary. Target-only repair restores answers but harms newer skills; balanced replay largely preserves them.",
+      "action": "Continue the sealed16-update repair study with tuned and frozen lenses, output-only predictors and retain-only references. Keep lens fitting separate from model repair."
+    },
+    {
+      "id": "four_digit_teacher_curriculum",
+      "reason": "The original24-update fallback generated the required format and EOS but failed state computation, especially two-step compositions.",
+      "action": "Prepare a separately sealed384-update flat versus primitive-first teacher study with matched data exposures and fixed-final qualification; preserve the original failed protocol."
+    },
+    {
+      "id": "teacher_atomic_coverage",
+      "reason": "All eight teacher TRAIN errors concentrate on sequenceA third-position input5: expected3 but emitted2. The teacher gets7/15 examples in that cell correct; aggregate family accuracy hides a context-dependent weakness. Learner errors concentrate there too.",
+      "action": "Add a separate TRAIN-only coverage qualification across task,position,andinputdigit using existing32/128/384savedteachercheckpoints; selectearliestcoveragequalifiedbeforevalidationandfreshlearnertraining. Preserveoriginalaggregatequalification andoutcomes.",
+      "denominator_correction": "An intermediate message incorrectly inferred zero accuracy from eight errors without counting all15 cases. Corrected to7/15; original raw predictions are unchanged."
+    },
+    {
+      "at": "2026-09-12T05:32:30.138836+00:00",
+      "decision": "Diagnose tool-transfer starting state and novel pattern behavior before choosing a new intervention.",
+      "reason": "Completed streams can saturate ordinary workflow accuracy while novel patterns differ sharply; stream2207 text reaches64/64 ordinary with all arms but fresh26/relevant64/irrelevant63/replay64/arithmetic1/AgentDice4 on64 novel cases. Initial-checkpoint behavior separates transfer from subsequent training damage.",
+      "boundary": "Observed final heldout outcomes motivate a posthoc diagnosis only; no heldout-driven checkpoint or hyperparameter selection."
+    },
+    {
+      "at": "2026-09-12T05:41:18.310519+00:00",
+      "decision": "Test fixed-capacity replay after qualified expert fusion and rank8 compression.",
+      "reason": "On stream4409, compressedAgentDice retains255/256primitiveTEST and passes originalDEV family/operation thresholds (calendaradd5/8). Compression sharply lowers resident inference state but does not establish workflow competence. Compare compact-factor workflowlearning with/without64total replay entries.",
+      "selection": "Trainingeligibility usesoriginalDEV thresholds only. Arithmeticcompressedcalendaradd4/8failsperoperationfloor andcannotbecalledqualified. TEST counts motivate diagnosis, notcheckpoint/rank/recipe selection.",
+      "status": "implementation_requested_not_gpu_dispatched",
+      "resolution": "completed_compact_replay_hybrid_and_matched_current_exposure_control",
+      "resolution_observed_at": "2026-09-12T09:11:33.044778+00:00"
+    },
+    {
+      "at": "2026-09-12T05:47:33.294955+00:00",
+      "decision": "Move interpretability followthrough to minimum sufficient repair, beginning with a TRAIN-only budget pilot.",
+      "reason": "One repair maximizesutilityonall14TESTskills; choosingbetweenrepairsprovidesnoopportunityforlenspolicygain. Strongerreadoutcalibrationdidnotproducepolicyvalue.",
+      "planned_gate": "Matchedbalancedreplay2/4/8/16prefixes; unchangedqualification; requireatleast2fastestqualifiedbudgetclasseswithatleast2TRAINskillseachbeforepredictionevaluation. FreshdisjointTESTintentsandacquisition/forgettinggatesrequiredforanewprospectivepredictionclaim.",
+      "status": "implementation_requested_not_dispatched",
+      "resolution": "completed_TRAIN_pilot_then_fresh_prospective_prediction",
+      "resolution_observed_at": "2026-09-12T09:11:33.044778+00:00"
+    },
+    {
+      "at": "2026-09-12T06:05:01.093869+00:00",
+      "decision": "Make content-addressed source installation atomic and never rewrite an existing verified source directory.",
+      "reason": "Initialdiagnosis1103failedpre-modelwhiletheidenticala11sourcebundlewasbeingre-extractedfor4409. Archivedfollowup.pycontainscomparisonandimportpassesafterextraction. Thisisconsistentwithatransientpartial-fileimport,notacapabilityfailure.",
+      "changes": [
+        "compute/stage_sources.py",
+        "compute/dispatch.py",
+        "compute/test_stage_sources.py"
+      ],
+      "verification": {
+        "filesystem_tests": 6,
+        "concurrent_publish_test": true,
+        "NFS_existing_source_and_archive_inodes_and_mtimes_unchanged": true,
+        "audit": "outputs/portfolio/followthrough-20260912/atomic-staging-audit.json"
+      },
+      "retry": {
+        "task_id": "followthrough-20260912-skills-initial-diagnosis1103-atomic",
+        "source_sha256": "a11b30e89879aeeaec860b018784828405229d298f570aba76320cd996d2143c",
+        "code_and_scientific_config_unchanged": true
+      },
+      "source_bundle_difference_between_diagnosis_tasks": "Onlyunusedcompressed_replay.pychangedbetween60b28canda11; alldispatcheddiagnosisdependenciesidentical."
+    },
+    {
+      "at": "2026-09-12T06:17:37.009644+00:00",
+      "decision": "Prepare an independently gated external single-command chain and transfer its final outputs into persistent full-program learners.",
+      "reason": "At384 teacher updates, TRAIN single-command competence is substantially stronger than two-command competence; requiring every native multi-command family to qualify can block usable components.",
+      "design": "Preserve original curriculum and native depth34 study. Qualify all teacher-family primitive branches with consistent scoring, chain only native emitted states, qualify actual full-chain TRAIN and validation outputs before learner work, then train each admitted family and test unseen programs with teacher/chaining absent. Measure privileged raw-teacher baseline to distinguish context-supplied ability from training gain.",
+      "status": "implementation_requested_not_dispatched",
+      "boundary": "Separate per-family composition experiment. No oracle substitution in teacher chains, no TEST-driven selection, no SDFT reproduction claim.",
+      "resolution": "completed_external_chain_qualification_and_internal_learner_training",
+      "resolution_observed_at": "2026-09-12T09:11:33.044778+00:00"
+    },
+    {
+      "at": "2026-09-12T06:22:00.051877+00:00",
+      "decision": "Run one matched-current-exposure control, then park compact-hybrid optimization.",
+      "reason": "Compact replay improves old retention and novel workflow accuracy versus compact continue, while sequential replay remains at least as strong. Existing comparison also halves current-task exposures.",
+      "control": "Same initial compact factors, same128 updates and exact256 current rows as replay; omit old examples and keep current gradient coefficient by dividing two per-example losses by4. Fixed final standalone evaluation.",
+      "status": "implementation_requested_not_dispatched",
+      "scope": "Posthoc mechanism control on an already observed stream; no general superiority claim.",
+      "resolution": "completed_matched_current_control_and_parked_hybrid_optimization",
+      "resolution_observed_at": "2026-09-12T09:11:33.044778+00:00"
+    },
+    {
+      "at": "2026-09-12T06:47:36.999556+00:00",
+      "decision": "Close compact hybrid optimization after matched exposure control; prioritize fresh guard-aware recovery prediction and independent chain internalization.",
+      "reason": "Matchedcontrol61/64novel versusreplay63/64 limits earlier18versus63 interpretation. Pilot curves provide multiple supported labels for fresh prospective testing.",
+      "status": "control_complete_fresh_prediction_running_chain_implementation_pending",
+      "resolution": "completed_fresh_prediction_and_chain_followthrough",
+      "resolution_observed_at": "2026-09-12T09:11:33.044778+00:00"
+    },
+    {
+      "at": "2026-09-12T07:04:58.887335+00:00",
+      "decision": "Always train the oracle composition reference in each family, even if no external-chain teacher qualifies.",
+      "reason": "Separate learner learnability from teacher quality; avoid zero internal-composition updates when the teacher prerequisite fails.",
+      "budget": "128updates x4examples per family; every qualified teacher-output arm gets the same schedule, shared oracle once per family.",
+      "status": "sealed_CPU_verified_and_submitted",
+      "resolution": "completed_all_oracle_references_and_training_sufficiency_followthrough",
+      "resolution_observed_at": "2026-09-12T09:11:33.044778+00:00"
+    },
+    {
+      "at": "2026-09-12T07:04:58.887335+00:00",
+      "decision": "Use the fully qualified three-digit teacher for an actual full-vocabulary on-policy distillation comparison.",
+      "reason": "Source303 teacher passed384/384TRAIN and96/96VAL; that already removes the competence blocker independently of device4 teachers.",
+      "methods": [
+        "fixed_teacher_forward_KL_on_student_trajectories",
+        "fixed_teacher_forward_KL_on_cached_teacher_trajectories",
+        "cached_teacher_answer_SFT"
+      ],
+      "recipe": "Same fresh rank8 learner and384x4 coverage schedule; frozen qualified teacher, native full-answer heldout evaluation and fresh reload. Log actual sampled prefixes and full-vocabulary losses.",
+      "scope": "Fixed-expert hybrid inspired by SDFT practical objective; not full EMA/context-self-teacher SDFT or SDPO reproduction. Generic ability retention probes included if implementation supports exact parity.",
+      "status": "assigned_implementation_not_dispatched",
+      "resolution": "completed_three_arm_ownprefix_comparison_and_extra_training_controls",
+      "resolution_observed_at": "2026-09-12T09:11:33.044778+00:00"
+    },
+    {
+      "at": "2026-09-12T07:12:26.537466+00:00",
+      "decision": "Measure whether specific prior bindings help small-budget repair using matched alternate-binding history and new-only controls.",
+      "scientific_motivation": "Previous16-update new-only references nearly saturated, leaving stored-binding reuse unresolved. Minimum-budget pilot variation was mostlynew-task guard damage.",
+      "dataset_sha256": "14781a4cd46816767903e43a0a1cd74b5d7d80b096ad7c0eeb92b69fd29ebc93",
+      "sources": "four fresh cohorts with13historicallyeligibleTRAIN and13TEST skills",
+      "conditions": [
+        "existing_true_old128_new128",
+        "alternate_old128_new128",
+        "new_only128"
+      ],
+      "alternate_mapping": "Rotate the eight old code assignments by one position in each stream old-intent order, no fixedpoints; allprompts/text/UIDorder unchanged, newlabelsunchanged.",
+      "repair_budgets": [
+        2,
+        4,
+        8,
+        16
+      ],
+      "repair": "Original bindings for allconditions; sameold/new examples,prefixes,freshAdamW. Separate analysis neverfeeds originalpredictor.",
+      "eligibility": "Beforecontrolrepairs: historicaleligible intersectionwithalternate-own-binding acquisition; eachcontrolpassesnewacquisition. Atleast4perstream,8persplit,twoindependentmodels. Reportexclusions andfailedgates.",
+      "temporal_boundary": "ParentproposalbeforefreshTESTrepairoutcomesobserved; TESTcontrolrepairs mustdependon original sealedforecast. Existingpredictorpipelineunchanged.",
+      "status": "protocol_and_implementation_assigned_not_dispatched",
+      "interpretation_limit": "Behavioral evidencefor specifictraininghistory, notcircuitlocalization or directproof of astoredlatentmemory.",
+      "resolution": "completed_matched_history_controls_and_independent_audit",
+      "resolution_observed_at": "2026-09-12T09:11:33.044778+00:00"
+    },
+    {
+      "at": "2026-09-12T07:32:06.228067+00:00",
+      "decision": "Retain the negative prospective predictor result and test whether specific old bindings explain rapid repair.",
+      "reason": "Tuned lens policy had no pooled qualification gain, worsened oneheldout source, and was outperformed by27/40fixedpermuted utility baselines.",
+      "action": "History control source frozen; matched alternate-binding and new-only learners dispatched. Allcontrolrepairs depend on commoneligiblecohort.",
+      "temporal_boundary": "History protocol sealed07:13afterTESTexecution started07:12butbeforeparentobservation. No claim allimplementation predatesTESTexecution."
+    },
+    {
+      "at": "2026-09-12T07:37:21.187688+00:00",
+      "decision": "Test training sufficiency for all four unmastered composition learners.",
+      "evidence": "Final128-update native TRAIN probes: Aoracle3/8,Achain2/8,Boracle1/8,Coracle4/8. AllTESToutputs format+EOSvalid but low semanticaccuracy.",
+      "protocol": "Continue exact saved128adapter+AdamW to fixed1024totalupdates; nativefull128TRAINat128/256/512/1024, sameoriginaltarget/prompt/precision/LR/rank. Fourarms Aoracle/Aactualcachedchain/Boracle/Coracle. Allfixedfinals freshPIDevaluated, teacherabsent.",
+      "mastery_gate": "Atleast.95overallTRAIN and.9eachdepth; interpretation aftermastery only when passed.",
+      "evaluation_boundary": "Previouslyobserved96TEST/family explicitlyreusedpost-observationdiagnostic; no claim newconfirmatorytest.",
+      "status": "implementation_assigned_newfilesonly_existing_sources_frozen",
+      "resolution": "completed_all_four_1024update_composition_arms_and_independent_audit",
+      "resolution_observed_at": "2026-09-12T09:11:33.044778+00:00"
+    },
+    {
+      "at": "2026-09-12T08:09:31.120370+00:00",
+      "decision": "Audit impossible-gain TRAIN labels and run exactly one posthoc eligibility sensitivity for the repair predictor.",
+      "finding": "TRAIN source calories has90%actualpre-repairTEST-panel accuracy, so required30-pointgainisimpossible despiteeligibilityonindependentvalidationpanel. Never-qualifiedhere cannotmean irrecoverable forgottenmemory.",
+      "sensitivity": "ExcludeeveryTRAIN casewhere1-baselineaccuracy<requiredgain; unchangedfeatures/ridgehyperparameters/13TESTcases/outcomes. Refitpredeclaredpredictors+40seededpermutationcontrols once. Originalprospectiveforecastsimmutable; no selectionorprospectiveclaimfromposthocrefit.",
+      "status": "assigned_no_gpu_updates",
+      "resolution": "completed_single_fixed_posthoc_sensitivity_original_forecasts_unchanged",
+      "resolution_observed_at": "2026-09-12T09:11:33.044778+00:00"
+    },
+    {
+      "at": "2026-09-12T08:19:37.971908+00:00",
+      "decision": "Export the successful own-prefix KL learner as standard model weights and verify persistence in a separate job.",
+      "reason": "The persistent rank-8 learner passed strict native generation. A zero-update merge and reload can establish whether the same behavior survives without an adapter or teacher.",
+      "boundary": "Engineering export/parity check. Merging an optimized adapter does not mean the base was directly optimized. FP32 fusion can change rounding; report every changed prediction.",
+      "status": "implementation_assigned",
+      "resolution": "completed_standard_weight_export_and_independent_fresh_reload_audit",
+      "resolution_observed_at": "2026-09-12T09:11:33.044778+00:00"
+    },
+    {
+      "at": "2026-09-12T08:19:37.971908+00:00",
+      "decision": "Resume large evidence collections with per-run locks, validated persistent staging and independent local copies of byte-identical payloads.",
+      "reason": "Repeated repair-prefix weights caused avoidable transport duplication; preserve every logical artifact and verify both source manifests.",
+      "cpu_tests_passed": 20,
+      "live_partial_bytes_preserved": 1908208603,
+      "migration_receipt": "outputs/portfolio/followthrough-20260912/collector-resume-migration.json",
+      "provider_experiments_untouched": true
+    },
+    {
+      "at": "2026-09-12T08:24:18.494013+00:00",
+      "decision": "Give the cached-answer baselines a fixed conservative extra-training control.",
+      "reason": "Successful own-prefix KL used11314 loss tokens versus10752 for each cached baseline; update matching alone does not isolate an objective advantage.",
+      "design": "Restore cachedSFT and cachedKL checkpoint384 withAdamW, train21more fixedbatch4updates through405. Each receives11340total loss tokens,26more thanownprefix384. Same data/objective/LR/precision, noadaptiveendpoint. SeparatefreshPIDteacher-absentevaluation.",
+      "scope": "Post-observation reusedheldouts. Conservativeextra-trainingcontrol, notexacttoken/FLOP/updatematch. Nativeexportselectedownprefix384 remainsfixed.",
+      "status": "implementation_assigned",
+      "resolution": "completed_both405_controls_and_independent_zero_update_evaluation_audit",
+      "resolution_observed_at": "2026-09-12T09:11:33.044778+00:00"
+    },
+    {
+      "at": "2026-09-12T08:55:28.961209+00:00",
+      "decision": "Recover only evaluation after the cached controls completed training but failed the parent-process GPU cleanup check.",
+      "evidence": "Both arms wrote complete21-update ledgers,588 additional tokens, checkpoint405 and training receipts before the cleanup assertion. No TEST evaluation started.",
+      "scope": "Load the same saved checkpoints in separate jobs with fresh processes. Preserve original receipts; explicitly bind any relocated input copies. No training repeats, new teacher, changed endpoint, tolerance change or scientific outcome selection."
+    },
+    {
+      "at": "2026-09-12T09:11:33.044778+00:00",
+      "decision": "Close optimization for this wave after the two fixed extra-training controls and finish independent verification.",
+      "reason": "All selected scientific branches now have executed follow-through beyond failed prerequisites. The remaining work is raw-record, checkpoint, native-export and portfolio provenance verification.",
+      "results": "Own-prefix consolidation retains its small fixture-specific advantage after conservative extra training; ordinary-weight export preserves its answers. Recovery readouts showed no intervention-allocation benefit; composition training mastery did not produce strong unseen-program generalization.",
+      "unresolved": "Broader histories and repeated upgrades; multiple optimization seeds on these new tool streams; Jacobian or causal feature interventions; complete Nested Learning, SDFT and SDPO mechanisms. No general continual-learning claim."
+    },
+    {
+      "at": "2026-09-12T09:21:58.262962+00:00",
+      "decision": "Close the selected follow-through wave after completed experiments, independent raw-record audits, full artifact verification, and verified idle-worker cleanup.",
+      "reason": "The central prerequisites were advanced into actual learning, forgetting/repair, target transfer, persistent consolidation and composition tests. Failed prerequisite branches received separate qualification, oracle, sufficiency or evaluation-recovery followups.",
+      "scope": "This closes the selected wave, not the full research inventory or general continual learning. Open questions remain explicit.",
+      "provider_action": "Deleted only the owned idle GPU Job and verified its Pod absent. Shared artifacts and the control pod remain. No publication, push or provider-policy change."
+    }
+  ],
+  "prerequisite_policy": {
+    "acquisition_before_intervention": true,
+    "consistent_scores": true,
+    "failed_recipe_is_not_end_of_direction": true,
+    "new_followups_preserve_failed_evidence": true,
+    "heldout_never_used_to_select_training": true
+  },
+  "compute": {
+    "context": "us-mi355x-nambiar-k8s",
+    "job": "cl-portfolio-kzjmt",
+    "control_pod": "cl-portfolio-control-20260912",
+    "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+    "gates": [
+      "followthrough-20260912-qualify-qwen3-8b",
+      "followthrough-20260912-qualify-qwen35-4b"
+    ],
+    "pod": "cl-portfolio-kzjmt-x4cvd",
+    "node": "gilded-ibex",
+    "node_uid": "bfbf0c05-d04c-41da-a32c-b32d4f26ec55",
+    "gpu_count": 8,
+    "admission_observed_at": "2026-09-12T04:25:39.736930+00:00",
+    "status": "owned_gpu_worker_closed_after_all_selected_experiments_and_audits",
+    "interruption": {
+      "at": "2026-09-12T06:22:27Z",
+      "cause": "Parent submitted CPU analysis with gpus0; supervisor rejected that count by aborting the queue and killing active children.",
+      "failed_job": "cl-portfolio-kzjmt",
+      "failed_pod": "cl-portfolio-kzjmt-x4cvd",
+      "completed_artifacts_preserved": true,
+      "interrupted_tasks": [
+        "distillation-device4-curriculum-20260912"
+      ],
+      "last_completed_optimizer_update": {
+        "arm": "legacy96_budget",
+        "step": 223
+      },
+      "fully_saved_arms": {
+        "flat_mixed": 384,
+        "primitive_first": 384
+      },
+      "latest_complete_legacy_checkpoint": 96,
+      "original_receipt_marked_interrupted_with_immutable_history": true,
+      "child_exit_code_observed": false,
+      "proof": "outputs/portfolio/followthrough-20260912/worker-failure.json",
+      "original_invalid_gate_withdrawn": true,
+      "replacement_gate": "followthrough-20260912-recovery-budget-pilot-gate-slot",
+      "source_and_scientific_config_unchanged": true
+    },
+    "recovery_worker": {
+      "job": "cl-portfolio-recovery-mfxws",
+      "uid": "dc7bcbdf-9121-4d46-adc0-0b884939e791",
+      "runtime_sha256": "90ecf9c331a615f19b344af363d3dc4ddd72a7e3104fa538d94c0ef314d13227",
+      "status": "owned_job_and_pod_deleted_after_idle_and_audit_verification",
+      "request": "outputs/portfolio/followthrough-20260912/job-recovery-request.json",
+      "runtime_configmap": "outputs/portfolio/followthrough-20260912/runtime-configmap-recovery.json",
+      "provider_policy_changed": false,
+      "queue_and_owner_preflight_passed": true,
+      "parent_tests": {
+        "tests": 18,
+        "subtests": 22
+      },
+      "pod": "cl-portfolio-recovery-mfxws-scwl6",
+      "pod_uid": "e2ab7748-4a8d-407e-b472-617e2d61bed1",
+      "node": "gilded-ibex",
+      "node_uid": "bfbf0c05-d04c-41da-a32c-b32d4f26ec55",
+      "provisioning_request": "job-cl-portfolio-recovery-mfxws-a6804-market-1",
+      "load_qualification": "followthrough-20260912-recovery-worker-qualify-qwen35-4b",
+      "provisioning_request_uid": "0d603869-96a1-4385-aa67-80e5cd1320c7",
+      "qwen3_8b_load_gate": "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+      "qwen3_8b_load_gate_status": "completed",
+      "closed_at": "2026-09-12T09:20:58.744508+00:00"
+    },
+    "closeout": "outputs/portfolio/followthrough-20260912/worker-closeout.json",
+    "active_scientific_tasks": 0,
+    "queued_nonterminal_tasks": 0,
+    "control_pod_status": "retained_for_NFS_access",
+    "NFS_artifacts_retained": true
+  },
+  "results": {
+    "historical_code_recovery": {
+      "kind": "post_hoc_original_code_score_feasibility",
+      "counts": {
+        "train": {
+          "previously_learned": 4,
+          "forgotten": 3,
+          "recovered": {}
+        },
+        "test": {
+          "previously_learned": 2,
+          "forgotten": 2,
+          "recovered": {}
+        }
+      },
+      "boundary": "Post-hoc rescoring of previously executed observations using their original 16-code classifier. This does not revise the failed sealed primary experiment or qualify a recovery predictor. No new GPU operations or repair updates.",
+      "path": "outputs/portfolio/followthrough-20260912/historical-code-recovery-audit.json",
+      "sha256": "c1f57d2efa8cf2e1aab470677a5a138bad9325f46d86d36487d1c8a9b22f2cb2"
+    },
+    "teacher_error_audit": {
+      "path": "outputs/portfolio/followthrough-20260912/teacher-error-audit.json",
+      "sha256": "5ba06d4e5820e2843ffd777582d69ca598cb97c9406c8d7748d3dcef8f6c998c",
+      "trained_fallback_validation": {
+        "n": 72,
+        "correct_format_and_eos": 72,
+        "single_command": {
+          "correct": 12,
+          "n": 18
+        },
+        "two_commands": {
+          "correct": 8,
+          "n": 54
+        },
+        "incorrect_digits_despite_correct_format": 52
+      },
+      "scope": "Post-hoc diagnostic only; unchanged prior qualification failure."
+    },
+    "choice_consolidation": {
+      "status": "completed_and_independently_rescored",
+      "teacher_kl": {
+        "test": [
+          187,
+          192
+        ],
+        "unused": [
+          838,
+          864
+        ]
+      },
+      "oracle_sft": {
+        "test": [
+          192,
+          192
+        ],
+        "unused": [
+          864,
+          864
+        ]
+      },
+      "updates_per_arm": 384,
+      "exposures_per_arm": 1536,
+      "new_process_reload": true,
+      "teacher_present_in_learner_training": false,
+      "audit": "outputs/portfolio/followthrough-20260912/consolidation-audit.json",
+      "boundary": "Four-choice prediction on one historical fixture; not free generation or independent replication."
+    },
+    "prospective_acquisition": {
+      "old_skills_acquired": 31,
+      "old_skills_attempted": 32,
+      "excluded_previously_able": 1,
+      "learned_then_forgotten": 28,
+      "train_forgotten": 14,
+      "test_forgotten": 14,
+      "cohort_gate": "followthrough-20260912-recovery-cohort",
+      "repair_pilot_gate": "followthrough-20260912-recovery-pilot-gate",
+      "pilot_qualified": true,
+      "recovery_prediction_status": "completed_and_independently_audited; fresh_budget_prediction_and_matched_history_followups_completed"
+    },
+    "portal_example_learning": {
+      "run": "followthrough-20260912-portal-examples-released",
+      "status": "completed_collected_independently_rescored",
+      "final_step": 512,
+      "each_arm_triples": [
+        864,
+        864
+      ],
+      "each_arm_length4": [
+        384,
+        384
+      ],
+      "arms": [
+        "heads_fixed_rte",
+        "heads_new_latents",
+        "full_new_latents",
+        "lora_rte_start"
+      ],
+      "final_retention": {
+        "status": "completed_corrective_new_process",
+        "run": "followthrough-20260912-portal-final-retention-examples",
+        "selected_for_transfer": "heads_new_latents",
+        "selection_basis": "Qualified final512 acquisition plus no more than2/32 lost on each predeclared original-task panel; full_hidden variant rejected for HellaSwag loss.",
+        "heads_new_latents_before": [
+          32,
+          23,
+          24,
+          20
+        ],
+        "heads_new_latents_after": [
+          31,
+          23,
+          22,
+          24
+        ],
+        "task_order": [
+          "boolq",
+          "commonsense_qa",
+          "hellaswag",
+          "winogrande"
+        ],
+        "denominator_per_task": 32,
+        "full_new_latents_after": [
+          31,
+          23,
+          12,
+          23
+        ],
+        "old_adapter_gain_qualified_tasks": [
+          "boolq"
+        ]
+      },
+      "boundary": "Examples-only source acquisition under four-choice scoring; no successful-adapter weights supplied.",
+      "audit": "outputs/portfolio/followthrough-20260912/portal-audit.json",
+      "matrix_preservation": {
+        "status": "completed_collected_independently_rescored",
+        "run": "followthrough-20260912-portal-preserve-tasks",
+        "source_sha256": "ebec4621ae9c655d03fcc24b52c2d792c5839c383b234651658fdd25d9fe7d23",
+        "old_initial": [
+          32,
+          23,
+          24,
+          20
+        ],
+        "control_old_final": [
+          31,
+          23,
+          22,
+          24
+        ],
+        "preserved_old_final": [
+          32,
+          23,
+          23,
+          21
+        ],
+        "old_n_each": 32,
+        "control_new_triples": 864,
+        "preserved_new_triples": 864,
+        "new_triples_n": 864,
+        "control_new_length4": 384,
+        "preserved_new_length4": 384,
+        "new_length4_n": 384,
+        "boundary": "One knownfixtureseed; smalloldpanels; onlyBoolQoldadaptergainqualified. Improvementinmaximumlossdoesnotmeanaggregateoldaccuracyimprovement:control100/128andpreserved99/128versusinitial99/128.",
+        "independent_conservation_audit": {
+          "exact_conservation_claim": false,
+          "independent_audit": "QR-based exact Frobenius recomputation of residual products; no random projection.",
+          "matrix_loss": "Mean over288 matrices of squared Frobenius effective-matrix difference divided by reference squared Frobenius norm plus1e-12; exact low-rank products, not factor L2.",
+          "maximum_absolute_CPU_vs_GPU_task_metric_discrepancy": 2.4865639491888913e-08,
+          "mean_normalized_squared_error": {
+            "control": 0.14219791552822197,
+            "preserved": 0.008194275456435335
+          },
+          "method": "native_adapter_retention_regularization",
+          "old_behavioral_training_examples": 0,
+          "old_tasks_per_update": 4,
+          "projections_per_task": 72,
+          "relative_reduction_percent": 94.23741520682908,
+          "weights": [
+            0.0,
+            1.0
+          ]
+        },
+        "retention_transitions": {
+          "control": {
+            "after_correct": 100,
+            "before_correct": 99,
+            "choice_changes": 12,
+            "correct_to_wrong": 4,
+            "examples": 128,
+            "previously_correct_retained": 95,
+            "score_record_changes": 128,
+            "wrong_to_correct": 5
+          },
+          "preserved": {
+            "after_correct": 99,
+            "before_correct": 99,
+            "choice_changes": 4,
+            "correct_to_wrong": 1,
+            "examples": 128,
+            "previously_correct_retained": 98,
+            "score_record_changes": 128,
+            "wrong_to_correct": 1
+          }
+        }
+      },
+      "head_nullspace": {
+        "status": "completed_collected_independent_behavior_and_conservation_audits_passed",
+        "run": "followthrough-20260912-portal-head-nullspace",
+        "source_sha256": "ac1e2365daeb0aa43a385f69a2297af646aabc8e9be041a3d0371bf4bff967e6",
+        "protected": {
+          "triples_correct": 813,
+          "length4_correct": 350,
+          "old_task_correct": [
+            32,
+            23,
+            24,
+            20
+          ],
+          "old_predictions_all_preserved": true
+        },
+        "matched_unconstrained": {
+          "triples_correct": 849,
+          "length4_correct": 373,
+          "old_task_correct": [
+            31,
+            23,
+            23,
+            22
+          ]
+        },
+        "triples_n": 864,
+        "length4_n": 384,
+        "old_task_n_each": 32,
+        "joint_acquisition_conservation_retention_qualified": true,
+        "boundary": "Frozenalignmentandlayerembeddings; customheadcoordinates; unequaltrainablecoordinates; fourknownoldtaskrepresentationsonly. Generalizationlowerunderconstraint despitealloldpredictionspreserved.",
+        "matrix_conservation": {
+          "CPU_regenerated_feature_maxima": {
+            "factor_max_abs": 7.450580596923828e-08,
+            "factor_relative_frobenius_max": 2.9247976198634103e-07,
+            "matrix_relative_frobenius_max": 3.5048117811206985e-07
+          },
+          "GPU_factors_and_captured_feature_recomputation": "Bitwise-identical factors and zero effective-matrix difference.",
+          "all_128_old_score_records_identical": true,
+          "artifact_format": "frozen_feature_head_nullspace",
+          "basis_audit": {
+            "null_relative_residual_recomputed": 3.6926032546147047e-16,
+            "nullity": 369,
+            "orthogonality_max_abs_recomputed": 5.329070518200751e-15,
+            "rank": 144,
+            "stored_feature_file_bytes": 4210952,
+            "stored_feature_tensors_bytes": 4210704
+          },
+          "declared_limits": {
+            "basis_orthogonality_max_abs_limit": 1e-12,
+            "factor_max_abs_limit": 1e-05,
+            "factor_relative_frobenius_limit": 1e-06,
+            "matrix_relative_frobenius_limit": 2e-06,
+            "null_residual_relative_limit": 1e-12
+          },
+          "effective_matrices": 288,
+          "feature_design_shape": [
+            144,
+            513
+          ],
+          "layers": 36,
+          "nullity": 369,
+          "precision": "FP32 original heads, coordinates, adapter parameters and optimizer states; FP64 nullspace basis and feature projection. Cross-backend bitwise equality is not claimed.",
+          "projections_per_task": 72,
+          "rank": 144,
+          "reader_requirement": "Dedicated custom reader; no ordinary-native folding/export equivalence claim.",
+          "tasks": 4
+        },
+        "retention_transitions": {
+          "head_nullspace": {
+            "after_correct": 99,
+            "before_correct": 99,
+            "choice_changes": 0,
+            "correct_to_wrong": 0,
+            "examples": 128,
+            "previously_correct_retained": 99,
+            "score_record_changes": 0,
+            "wrong_to_correct": 0
+          },
+          "head_only_control": {
+            "after_correct": 99,
+            "before_correct": 99,
+            "choice_changes": 6,
+            "correct_to_wrong": 2,
+            "examples": 128,
+            "previously_correct_retained": 97,
+            "score_record_changes": 128,
+            "wrong_to_correct": 2
+          }
+        }
+      },
+      "learned_source_transfer": {
+        "status": "completed_collected_independently_rescored",
+        "run": "followthrough-20260912-portal-example-learned-target64",
+        "source_sha256": "ac1e2365daeb0aa43a385f69a2297af646aabc8e9be041a3d0371bf4bff967e6",
+        "final_scores": {
+          "learned": {
+            "old_exhaustive_triples": {
+              "per_task": {
+                "sequence_a": {
+                  "correct": 288,
+                  "n": 288,
+                  "accuracy": 1.0
+                },
+                "sequence_b": {
+                  "correct": 288,
+                  "n": 288,
+                  "accuracy": 1.0
+                },
+                "sequence_c": {
+                  "correct": 288,
+                  "n": 288,
+                  "accuracy": 1.0
+                }
+              },
+              "correct": 864,
+              "n": 864
+            },
+            "sealed_length4": {
+              "per_task": {
+                "sequence_a": {
+                  "correct": 128,
+                  "n": 128,
+                  "accuracy": 1.0
+                },
+                "sequence_b": {
+                  "correct": 128,
+                  "n": 128,
+                  "accuracy": 1.0
+                },
+                "sequence_c": {
+                  "correct": 128,
+                  "n": 128,
+                  "accuracy": 1.0
+                }
+              },
+              "correct": 384,
+              "n": 384
+            },
+            "released_tasks": {
+              "per_task": {
+                "boolq": {
+                  "correct": 27,
+                  "n": 32,
+                  "accuracy": 0.84375
+                },
+                "commonsense_qa": {
+                  "correct": 24,
+                  "n": 32,
+                  "accuracy": 0.75
+                },
+                "hellaswag": {
+                  "correct": 18,
+                  "n": 32,
+                  "accuracy": 0.5625
+                },
+                "winogrande": {
+                  "correct": 17,
+                  "n": 32,
+                  "accuracy": 0.53125
+                }
+              },
+              "correct": 86,
+              "n": 128
+            }
+          },
+          "lora": {
+            "old_exhaustive_triples": {
+              "per_task": {
+                "sequence_a": {
+                  "correct": 288,
+                  "n": 288,
+                  "accuracy": 1.0
+                },
+                "sequence_b": {
+                  "correct": 288,
+                  "n": 288,
+                  "accuracy": 1.0
+                },
+                "sequence_c": {
+                  "correct": 286,
+                  "n": 288,
+                  "accuracy": 0.9930555555555556
+                }
+              },
+              "correct": 862,
+              "n": 864
+            },
+            "sealed_length4": {
+              "per_task": {
+                "sequence_a": {
+                  "correct": 128,
+                  "n": 128,
+                  "accuracy": 1.0
+                },
+                "sequence_b": {
+                  "correct": 128,
+                  "n": 128,
+                  "accuracy": 1.0
+                },
+                "sequence_c": {
+                  "correct": 126,
+                  "n": 128,
+                  "accuracy": 0.984375
+                }
+              },
+              "correct": 382,
+              "n": 384
+            },
+            "released_tasks": {
+              "per_task": {
+                "boolq": {
+                  "correct": 27,
+                  "n": 32,
+                  "accuracy": 0.84375
+                },
+                "commonsense_qa": {
+                  "correct": 15,
+                  "n": 32,
+                  "accuracy": 0.46875
+                },
+                "hellaswag": {
+                  "correct": 14,
+                  "n": 32,
+                  "accuracy": 0.4375
+                },
+                "winogrande": {
+                  "correct": 18,
+                  "n": 32,
+                  "accuracy": 0.5625
+                }
+              },
+              "correct": 74,
+              "n": 128
+            }
+          },
+          "untouched": {
+            "old_exhaustive_triples": {
+              "per_task": {
+                "sequence_a": {
+                  "correct": 288,
+                  "n": 288,
+                  "accuracy": 1.0
+                },
+                "sequence_b": {
+                  "correct": 288,
+                  "n": 288,
+                  "accuracy": 1.0
+                },
+                "sequence_c": {
+                  "correct": 288,
+                  "n": 288,
+                  "accuracy": 1.0
+                }
+              },
+              "correct": 864,
+              "n": 864
+            },
+            "sealed_length4": {
+              "per_task": {
+                "sequence_a": {
+                  "correct": 128,
+                  "n": 128,
+                  "accuracy": 1.0
+                },
+                "sequence_b": {
+                  "correct": 128,
+                  "n": 128,
+                  "accuracy": 1.0
+                },
+                "sequence_c": {
+                  "correct": 128,
+                  "n": 128,
+                  "accuracy": 1.0
+                }
+              },
+              "correct": 384,
+              "n": 384
+            },
+            "released_tasks": {
+              "per_task": {
+                "boolq": {
+                  "correct": 28,
+                  "n": 32,
+                  "accuracy": 0.875
+                },
+                "commonsense_qa": {
+                  "correct": 20,
+                  "n": 32,
+                  "accuracy": 0.625
+                },
+                "hellaswag": {
+                  "correct": 18,
+                  "n": 32,
+                  "accuracy": 0.5625
+                },
+                "winogrande": {
+                  "correct": 20,
+                  "n": 32,
+                  "accuracy": 0.625
+                }
+              },
+              "correct": 86,
+              "n": 128
+            }
+          }
+        },
+        "validation_curves": {
+          "learned": [
+            {
+              "updates": 0,
+              "validation": {
+                "sequence_a": 0.21875,
+                "sequence_b": 0.15625,
+                "sequence_c": 0.4375
+              },
+              "all_tasks_qualified": false
+            },
+            {
+              "updates": 20,
+              "validation": {
+                "sequence_a": 0.6875,
+                "sequence_b": 0.71875,
+                "sequence_c": 0.875
+              },
+              "all_tasks_qualified": false
+            },
+            {
+              "updates": 80,
+              "validation": {
+                "sequence_a": 1.0,
+                "sequence_b": 1.0,
+                "sequence_c": 1.0
+              },
+              "all_tasks_qualified": true
+            },
+            {
+              "updates": 160,
+              "validation": {
+                "sequence_a": 1.0,
+                "sequence_b": 1.0,
+                "sequence_c": 1.0
+              },
+              "all_tasks_qualified": true
+            },
+            {
+              "updates": 320,
+              "validation": {
+                "sequence_a": 1.0,
+                "sequence_b": 1.0,
+                "sequence_c": 1.0
+              },
+              "all_tasks_qualified": true
+            }
+          ],
+          "untouched": [
+            {
+              "updates": 0,
+              "validation": {
+                "sequence_a": 0.21875,
+                "sequence_b": 0.15625,
+                "sequence_c": 0.4375
+              },
+              "all_tasks_qualified": false
+            },
+            {
+              "updates": 20,
+              "validation": {
+                "sequence_a": 0.6875,
+                "sequence_b": 0.59375,
+                "sequence_c": 0.8125
+              },
+              "all_tasks_qualified": false
+            },
+            {
+              "updates": 80,
+              "validation": {
+                "sequence_a": 1.0,
+                "sequence_b": 0.96875,
+                "sequence_c": 1.0
+              },
+              "all_tasks_qualified": true
+            },
+            {
+              "updates": 160,
+              "validation": {
+                "sequence_a": 1.0,
+                "sequence_b": 1.0,
+                "sequence_c": 1.0
+              },
+              "all_tasks_qualified": true
+            },
+            {
+              "updates": 320,
+              "validation": {
+                "sequence_a": 1.0,
+                "sequence_b": 1.0,
+                "sequence_c": 1.0
+              },
+              "all_tasks_qualified": true
+            }
+          ],
+          "lora": [
+            {
+              "updates": 0,
+              "validation": {
+                "sequence_a": 0.21875,
+                "sequence_b": 0.15625,
+                "sequence_c": 0.4375
+              },
+              "all_tasks_qualified": false
+            },
+            {
+              "updates": 20,
+              "validation": {
+                "sequence_a": 0.71875,
+                "sequence_b": 0.9375,
+                "sequence_c": 1.0
+              },
+              "all_tasks_qualified": false
+            },
+            {
+              "updates": 80,
+              "validation": {
+                "sequence_a": 1.0,
+                "sequence_b": 1.0,
+                "sequence_c": 1.0
+              },
+              "all_tasks_qualified": true
+            },
+            {
+              "updates": 160,
+              "validation": {
+                "sequence_a": 1.0,
+                "sequence_b": 1.0,
+                "sequence_c": 1.0
+              },
+              "all_tasks_qualified": true
+            },
+            {
+              "updates": 320,
+              "validation": {
+                "sequence_a": 1.0,
+                "sequence_b": 1.0,
+                "sequence_c": 1.0
+              },
+              "all_tasks_qualified": true
+            }
+          ]
+        },
+        "first_observed_qualified_update": {
+          "learned": 80,
+          "untouched": 80,
+          "lora": 80
+        },
+        "interpretation": "The learned generator and learned task vectors transfer successfully. Modest early validation advantage over untouched; LoRA is stronger at update20 and all qualify by80. No clear learning-speed superiority on this fixture. Frozen task representations and generator; only target alignment and layer embeddings fitted."
+      },
+      "supplementary_audit": "experiments/portability/outputs/audits/final_report.json"
+    },
+    "portal_constructed_transfer": {
+      "target16": {
+        "constructed_triples": [
+          816,
+          864
+        ],
+        "constructed_length4": [
+          84,
+          384
+        ],
+        "untouched_triples": [
+          802,
+          864
+        ],
+        "untouched_length4": [
+          361,
+          384
+        ],
+        "lora_triples": [
+          855,
+          864
+        ],
+        "lora_length4": [
+          380,
+          384
+        ]
+      },
+      "target64": {
+        "constructed_triples": [
+          215,
+          864
+        ],
+        "constructed_length4": [
+          99,
+          384
+        ],
+        "untouched_triples": [
+          864,
+          864
+        ],
+        "untouched_length4": [
+          384,
+          384
+        ],
+        "lora_triples": [
+          862,
+          864
+        ],
+        "lora_length4": [
+          382,
+          384
+        ]
+      },
+      "final_step": 320,
+      "training_data_only_control": "followthrough-20260912-portal-constructed-target64-conservative",
+      "boundary": "Calibrates target alignment against the actual constructed generator. More data failed to repair its optimization under the original rate.",
+      "conservative_target64": {
+        "status": "completed_collected_independently_rescored",
+        "task_id": "followthrough-20260912-portal-constructed-target64-conservative",
+        "learning_rate": 0.0001,
+        "final_step": 320,
+        "constructed": {
+          "triples_correct": 864,
+          "triples_n": 864,
+          "length4_correct": 384,
+          "length4_n": 384,
+          "old_task_correct": [
+            22,
+            11,
+            10,
+            17
+          ]
+        },
+        "untouched": {
+          "triples_correct": 856,
+          "length4_correct": 381
+        },
+        "lora": {
+          "triples_correct": 863,
+          "length4_correct": 383
+        },
+        "old_task_n_each": 32,
+        "old_initial_correct": [
+          27,
+          21,
+          20,
+          19
+        ],
+        "conclusion": "Smaller learning rate resolves acquisition/generalization failure of constructed representation; oldtask retention still fails."
+      }
+    },
+    "generated_answer_consolidation": {
+      "run": "consolidation-generated303-20260912",
+      "status": "completed_collected_independently_rescored",
+      "teacher_outputs": {
+        "test": [
+          179,
+          192
+        ],
+        "unused": [
+          820,
+          864
+        ]
+      },
+      "oracle": {
+        "test": [
+          187,
+          192
+        ],
+        "unused": [
+          854,
+          864
+        ]
+      },
+      "untouched": {
+        "test": [
+          0,
+          192
+        ],
+        "unused": [
+          0,
+          864
+        ]
+      },
+      "updates_per_arm": 384,
+      "exposures_per_arm": 1536,
+      "loss_token_exposures_per_arm": 10752,
+      "teacher_wrong_training_answers_retained": 8,
+      "new_process_reload_exact": true,
+      "teacher_present_in_learner_training": false,
+      "audit": "outputs/portfolio/followthrough-20260912/consolidation-audit.json",
+      "boundary": "Persistent rank8 learner on one3-digit mapping fixture; not fullbase-weight or general compositional consolidation. SequenceA remains below90percent on both learner evaluation panels.",
+      "coverage_teacher_followup": {
+        "status": "qualified_and_independently_audited",
+        "run": "consolidation-source303-coverage-20260912",
+        "source_sha256": "20643be28fc30b45cdb847f4381f300b40ae4b548f509e94b1fa72b564689ffa",
+        "candidate_TRAIN_correct": {
+          "32": 376,
+          "128": 383,
+          "384": 384
+        },
+        "candidate_TRAIN_n": 384,
+        "selected_step": 384,
+        "selected_TRAIN_cells_passed": 72,
+        "required_cells": 72,
+        "selected_validation_correct": 96,
+        "selected_validation_n": 96,
+        "new_teacher_updates": 0,
+        "qualification_sha256": "cf9b1ab01ee71e0e9265d2f73a7795e86b8a9f9e83a806d8fec47f3e3f2af91c",
+        "new_learner_status": "implementation_in_progress",
+        "note": "Existing384-update teacher selected only byperfectcompleteTRAINcoverage; rawgeneratedlabelsnowequaloracleSFTtargets. Originalaggregate-selected32result preserved."
+      },
+      "coverage_followthrough": {
+        "status": "completed_collected_independently_audited",
+        "run": "consolidation-coverage303-20260912",
+        "teacher_checkpoint": 384,
+        "teacher_TRAIN_correct": 384,
+        "teacher_TRAIN_n": 384,
+        "teacher_validation_correct": 96,
+        "teacher_validation_n": 96,
+        "scores": {
+          "test": {
+            "oracle_sft": {
+              "correct": 187,
+              "count": 192,
+              "tasks": {
+                "sequence_a": {
+                  "correct": 64,
+                  "count": 64
+                },
+                "sequence_b": {
+                  "correct": 61,
+                  "count": 64
+                },
+                "sequence_c": {
+                  "correct": 62,
+                  "count": 64
+                }
+              }
+            },
+            "teacher_output_sft": {
+              "correct": 187,
+              "count": 192,
+              "tasks": {
+                "sequence_a": {
+                  "correct": 64,
+                  "count": 64
+                },
+                "sequence_b": {
+                  "correct": 61,
+                  "count": 64
+                },
+                "sequence_c": {
+                  "correct": 62,
+                  "count": 64
+                }
+              }
+            },
+            "untouched": {
+              "correct": 0,
+              "count": 192,
+              "tasks": {
+                "sequence_a": {
+                  "correct": 0,
+                  "count": 64
+                },
+                "sequence_b": {
+                  "correct": 0,
+                  "count": 64
+                },
+                "sequence_c": {
+                  "correct": 0,
+                  "count": 64
+                }
+              }
+            }
+          },
+          "unused288": {
+            "oracle_sft": {
+              "correct": 854,
+              "count": 864,
+              "tasks": {
+                "sequence_a": {
+                  "correct": 288,
+                  "count": 288
+                },
+                "sequence_b": {
+                  "correct": 284,
+                  "count": 288
+                },
+                "sequence_c": {
+                  "correct": 282,
+                  "count": 288
+                }
+              }
+            },
+            "teacher_output_sft": {
+              "correct": 854,
+              "count": 864,
+              "tasks": {
+                "sequence_a": {
+                  "correct": 288,
+                  "count": 288
+                },
+                "sequence_b": {
+                  "correct": 284,
+                  "count": 288
+                },
+                "sequence_c": {
+                  "correct": 282,
+                  "count": 288
+                }
+              }
+            },
+            "untouched": {
+              "correct": 0,
+              "count": 864,
+              "tasks": {
+                "sequence_a": {
+                  "correct": 0,
+                  "count": 288
+                },
+                "sequence_b": {
+                  "correct": 0,
+                  "count": 288
+                },
+                "sequence_c": {
+                  "correct": 0,
+                  "count": 288
+                }
+              }
+            }
+          }
+        },
+        "target_identity": {
+          "all_384_teacher_targets_equal_oracle": true,
+          "final_arm_tensors_equal": true,
+          "initial_and_schedule_match_previous_noisy_teacher_run": true,
+          "interpretation": "Correct teacher outputs induce the same SFT objective as the oracle. This is a target-quality comparison with the earlier noisy teacher and a replication control, not a superior distillation objective."
+        },
+        "initial_and_training_schedule_match_previous": true,
+        "teacher_absent_during_learner_training_and_evaluation": true,
+        "persistent_learner_rank": 8,
+        "updates_per_arm": 384,
+        "exposures_per_arm": 1536,
+        "audit": "outputs/portfolio/followthrough-20260912/consolidation-audit.json"
+      },
+      "device4_curriculum": {
+        "status": "completed_after_verified_resume_and_independently_audited",
+        "source_run": "distillation-device4-recovery-20260912",
+        "new_resume_updates": 288,
+        "retained_scientific_updates": 1152,
+        "minimum_actual_executed_updates_including_discarded_suffix": 1279,
+        "discarded_repeated_updates": 127,
+        "repeated_loss_and_gradient_records_exact": 127,
+        "validation_family_counts": {
+          "flat_mixed": {
+            "A": [
+              23,
+              24
+            ],
+            "B": [
+              12,
+              24
+            ],
+            "C": [
+              15,
+              24
+            ]
+          },
+          "primitive_first": {
+            "A": [
+              22,
+              24
+            ],
+            "B": [
+              8,
+              24
+            ],
+            "C": [
+              10,
+              24
+            ]
+          },
+          "legacy96_budget": {
+            "A": [
+              17,
+              24
+            ],
+            "B": [
+              7,
+              24
+            ],
+            "C": [
+              8,
+              24
+            ]
+          }
+        },
+        "validation_format_and_eos": {
+          "flat_mixed": [
+            72,
+            72
+          ],
+          "primitive_first": [
+            72,
+            72
+          ],
+          "legacy96_budget": [
+            72,
+            72
+          ]
+        },
+        "flat_mixed_validation_single_command": [
+          18,
+          18
+        ],
+        "flat_mixed_validation_two_command": [
+          32,
+          54
+        ],
+        "native_depth34_status": "rejected_no_eligible_depth12_teacher;0learnerupdates",
+        "interpretation": "Formatting failure resolved. Multi-command semantic generalization remains weak; repeating the narrower96-example pool fits TRAIN72/72 but generalizes32/72. Mandatory independent per-family oracle composition references continue beside separately gated chains."
+      }
+    },
+    "prospective_recovery_prediction": {
+      "status": "completed_and_independently_audited",
+      "run": "followthrough-20260912-recovery-analyze",
+      "test_skills": 14,
+      "test_source_clusters": 2,
+      "replay_balanced_qualified_recovery_count": 14,
+      "always_balanced_mean_utility": 0.8888392857142857,
+      "always_target_mean_utility": 0.46428571428571425,
+      "all_predictor_policies_choose_balanced_for_all_skills": true,
+      "adaptive_policy_gain": 0.0,
+      "balanced_binary_TEST_variation": false,
+      "claim": "Valid acquisition, forgetting and recovery under consistent16-code scoring. No demonstrated lens benefit for repair choice. Historical and retain-only references nearly tie on final old accuracy after16 balanced updates; target-only repair better preserves new skills in historical models, with training-history confounds.",
+      "audit": "outputs/portfolio/followthrough-20260912/recovery-audit.causal.json",
+      "records_audited": 75328,
+      "completed_stages_audited": 26,
+      "binary_shuffle_changed_labels": {
+        "replay_balanced": 0,
+        "replay_target": 0
+      },
+      "binary_shuffle_inert": true,
+      "continuous_utility_forecasts": {
+        "replay_balanced": {
+          "confidence": {
+            "equal_source_mae": 0.12234762721540351,
+            "equal_source_mse": 0.03323527430923352,
+            "mae": 0.12783070268256905,
+            "mae_by_source": {
+              "test-a": 0.08396609894524483,
+              "test-b": 0.16072915548556221
+            },
+            "mse": 0.034437293778281634,
+            "mse_by_source": {
+              "test-a": 0.024821138025896746,
+              "test-b": 0.0416494105925703
+            }
+          },
+          "frozen": {
+            "equal_source_mae": 0.15591615482083365,
+            "equal_source_mse": 0.0474032777157507,
+            "mae": 0.16178774391873918,
+            "mae_by_source": {
+              "test-a": 0.11481503113549507,
+              "test-b": 0.19701727850617223
+            },
+            "mse": 0.049128939189073025,
+            "mse_by_source": {
+              "test-a": 0.03532364740249443,
+              "test-b": 0.05948290802900697
+            }
+          },
+          "output": {
+            "equal_source_mae": 0.11746766298315775,
+            "equal_source_mse": 0.032370541974798356,
+            "mae": 0.12455963687407519,
+            "mae_by_source": {
+              "test-a": 0.0678238457467356,
+              "test-b": 0.1671114802195799
+            },
+            "mse": 0.034705436431563284,
+            "mse_by_source": {
+              "test-a": 0.016026280777443856,
+              "test-b": 0.048714803172152855
+            }
+          },
+          "permuted": {
+            "equal_source_mae": 0.12962279857205736,
+            "equal_source_mse": 0.0434162257021195,
+            "mae": 0.1384531985317814,
+            "mae_by_source": {
+              "test-a": 0.0678099988539891,
+              "test-b": 0.19143559829012563
+            },
+            "mse": 0.047201226621491364,
+            "mse_by_source": {
+              "test-a": 0.016921219266516466,
+              "test-b": 0.06991123213772253
+            }
+          },
+          "train_mean": {
+            "equal_source_mae": 0.12544642857142851,
+            "equal_source_mse": 0.027307411245748314,
+            "mae": 0.13335459183673462,
+            "mae_by_source": {
+              "test-a": 0.07008928571428558,
+              "test-b": 0.18080357142857142
+            },
+            "mse": 0.030436463647959204,
+            "mse_by_source": {
+              "test-a": 0.00540404443027209,
+              "test-b": 0.049210778061224536
+            }
+          },
+          "tuned": {
+            "equal_source_mae": 0.11170001182032316,
+            "equal_source_mse": 0.02591723422457795,
+            "mae": 0.11752456703876689,
+            "mae_by_source": {
+              "test-a": 0.07092812529121699,
+              "test-b": 0.1524718983494293
+            },
+            "mse": 0.02747428183501995,
+            "mse_by_source": {
+              "test-a": 0.015017900951483986,
+              "test-b": 0.03681656749767192
+            }
+          }
+        },
+        "replay_target": {
+          "confidence": {
+            "equal_source_mae": 0.3791139513167602,
+            "equal_source_mse": 0.20481285997049417,
+            "mae": 0.355791056337963,
+            "mae_by_source": {
+              "test-a": 0.5423742161683403,
+              "test-b": 0.21585368646518008
+            },
+            "mse": 0.18323562486917871,
+            "mse_by_source": {
+              "test-a": 0.3558535056797023,
+              "test-b": 0.05377221426128603
+            }
+          },
+          "frozen": {
+            "equal_source_mae": 0.3948089221210289,
+            "equal_source_mse": 0.22418064215488248,
+            "mae": 0.37345831382601274,
+            "mae_by_source": {
+              "test-a": 0.544263180186142,
+              "test-b": 0.24535466405591588
+            },
+            "mse": 0.20366858735072693,
+            "mse_by_source": {
+              "test-a": 0.36776502578397124,
+              "test-b": 0.0805962585257937
+            }
+          },
+          "output": {
+            "equal_source_mae": 0.3679890461501682,
+            "equal_source_mse": 0.19800060343318499,
+            "mae": 0.34456511372070403,
+            "mae_by_source": {
+              "test-a": 0.5319565731564173,
+              "test-b": 0.20402151914391908
+            },
+            "mse": 0.1771111613893636,
+            "mse_by_source": {
+              "test-a": 0.34422669773993453,
+              "test-b": 0.051774509126435435
+            }
+          },
+          "permuted": {
+            "equal_source_mae": 0.32526592568933277,
+            "equal_source_mse": 0.15593633775091487,
+            "mae": 0.3025411383286707,
+            "mae_by_source": {
+              "test-a": 0.48433943721396727,
+              "test-b": 0.16619241416469827
+            },
+            "mse": 0.1395925700283725,
+            "mse_by_source": {
+              "test-a": 0.2703427118087113,
+              "test-b": 0.04152996369311843
+            }
+          },
+          "train_mean": {
+            "equal_source_mae": 0.3777157738095238,
+            "equal_source_mse": 0.20030608923256804,
+            "mae": 0.35293367346938775,
+            "mae_by_source": {
+              "test-a": 0.5511904761904762,
+              "test-b": 0.2042410714285714
+            },
+            "mse": 0.17921077806122448,
+            "mse_by_source": {
+              "test-a": 0.3479732674319728,
+              "test-b": 0.052638911033163246
+            }
+          },
+          "tuned": {
+            "equal_source_mae": 0.33397444743077714,
+            "equal_source_mse": 0.16897123638933775,
+            "mae": 0.3143384705914735,
+            "mae_by_source": {
+              "test-a": 0.47142628530590264,
+              "test-b": 0.19652260955565165
+            },
+            "mse": 0.15323696242716112,
+            "mse_by_source": {
+              "test-a": 0.27911115412457427,
+              "test-b": 0.05883131865410124
+            }
+          }
+        }
+      },
+      "reference_aggregates": {
+        "test": {
+          "complete_split": true,
+          "equal_source_means": {
+            "none": {
+              "both_at_accuracy_ceiling": 0,
+              "fresh_acquisition_accuracy": 0.0,
+              "fresh_baseline": 0.0,
+              "fresh_guard": 0.9875,
+              "fresh_guard_baseline": 0.9875,
+              "fresh_guard_drop": 0.0,
+              "fresh_minus_recovery_guard_drop": 0.0,
+              "fresh_utility": 0.0,
+              "recovery_accuracy": 0.08125,
+              "recovery_baseline": 0.08125,
+              "recovery_guard": 0.98125,
+              "recovery_guard_baseline": 0.98125,
+              "recovery_guard_drop": 0.0,
+              "recovery_minus_fresh_accuracy": 0.08125,
+              "recovery_minus_fresh_gain": 0.0,
+              "recovery_minus_fresh_guard_accuracy": -0.006249999999999978,
+              "recovery_minus_fresh_guard_baseline": -0.006249999999999978,
+              "recovery_minus_fresh_utility": 0.0,
+              "recovery_utility": 0.0
+            },
+            "replay_balanced": {
+              "both_at_accuracy_ceiling": 0.47916666666666663,
+              "fresh_acquisition_accuracy": 0.975,
+              "fresh_baseline": 0.0,
+              "fresh_guard": 0.979296875,
+              "fresh_guard_baseline": 0.9875,
+              "fresh_guard_drop": 0.011328125000000003,
+              "fresh_minus_recovery_guard_drop": 0.0032552083333333127,
+              "fresh_utility": 0.963671875,
+              "recovery_accuracy": 0.9885416666666667,
+              "recovery_baseline": 0.08125,
+              "recovery_guard": 0.979296875,
+              "recovery_guard_baseline": 0.98125,
+              "recovery_guard_drop": 0.00807291666666669,
+              "recovery_minus_fresh_accuracy": 0.013541666666666664,
+              "recovery_minus_fresh_gain": -0.06770833333333333,
+              "recovery_minus_fresh_guard_accuracy": -2.6020852139652106e-18,
+              "recovery_minus_fresh_guard_baseline": -0.006249999999999978,
+              "recovery_minus_fresh_utility": -0.06445312500000003,
+              "recovery_utility": 0.89921875
+            },
+            "replay_target": {
+              "both_at_accuracy_ceiling": 1,
+              "fresh_acquisition_accuracy": 1.0,
+              "fresh_baseline": 0.0,
+              "fresh_guard": 0.047265625,
+              "fresh_guard_baseline": 0.9875,
+              "fresh_guard_drop": 0.940234375,
+              "fresh_minus_recovery_guard_drop": 0.5178385416666667,
+              "fresh_utility": 0.05976562500000001,
+              "recovery_accuracy": 1.0,
+              "recovery_baseline": 0.08125,
+              "recovery_guard": 0.5588541666666667,
+              "recovery_guard_baseline": 0.98125,
+              "recovery_guard_drop": 0.42239583333333336,
+              "recovery_minus_fresh_accuracy": 0.0,
+              "recovery_minus_fresh_gain": -0.08125,
+              "recovery_minus_fresh_guard_accuracy": 0.5115885416666667,
+              "recovery_minus_fresh_guard_baseline": -0.006249999999999978,
+              "recovery_minus_fresh_utility": 0.4365885416666666,
+              "recovery_utility": 0.49635416666666665
+            },
+            "sham": {
+              "both_at_accuracy_ceiling": 0,
+              "fresh_acquisition_accuracy": 0.0,
+              "fresh_baseline": 0.0,
+              "fresh_guard": 0.9826822916666667,
+              "fresh_guard_baseline": 0.9875,
+              "fresh_guard_drop": 0.006380208333333319,
+              "fresh_minus_recovery_guard_drop": 0.005598958333333315,
+              "fresh_utility": -0.006380208333333319,
+              "recovery_accuracy": 0.0,
+              "recovery_baseline": 0.08125,
+              "recovery_guard": 0.9899739583333333,
+              "recovery_guard_baseline": 0.98125,
+              "recovery_guard_drop": 0.0007812500000000042,
+              "recovery_minus_fresh_accuracy": 0.0,
+              "recovery_minus_fresh_gain": -0.08125,
+              "recovery_minus_fresh_guard_accuracy": 0.007291666666666682,
+              "recovery_minus_fresh_guard_baseline": -0.006249999999999978,
+              "recovery_minus_fresh_utility": -0.07565104166666668,
+              "recovery_utility": -0.08203125000000001
+            }
+          },
+          "intents": 14,
+          "pooled_intent_means": {
+            "none": {
+              "both_at_accuracy_ceiling": 0,
+              "fresh_acquisition_accuracy": 0.0,
+              "fresh_baseline": 0.0,
+              "fresh_guard": 0.9857142857142857,
+              "fresh_guard_baseline": 0.9857142857142857,
+              "fresh_guard_drop": 0.0,
+              "fresh_minus_recovery_guard_drop": 0.0,
+              "fresh_utility": 0.0,
+              "recovery_accuracy": 0.09285714285714286,
+              "recovery_baseline": 0.09285714285714286,
+              "recovery_guard": 0.9821428571428572,
+              "recovery_guard_baseline": 0.9821428571428572,
+              "recovery_guard_drop": 0.0,
+              "recovery_minus_fresh_accuracy": 0.09285714285714286,
+              "recovery_minus_fresh_gain": 0.0,
+              "recovery_minus_fresh_guard_accuracy": -0.0035714285714285427,
+              "recovery_minus_fresh_guard_baseline": -0.0035714285714285427,
+              "recovery_minus_fresh_utility": 0.0,
+              "recovery_utility": 0.0
+            },
+            "replay_balanced": {
+              "both_at_accuracy_ceiling": 0.5,
+              "fresh_acquisition_accuracy": 0.975,
+              "fresh_baseline": 0.0,
+              "fresh_guard": 0.9785714285714285,
+              "fresh_guard_baseline": 0.9857142857142857,
+              "fresh_guard_drop": 0.010714285714285716,
+              "fresh_minus_recovery_guard_drop": 0.003124999999999973,
+              "fresh_utility": 0.9642857142857143,
+              "recovery_accuracy": 0.9892857142857143,
+              "recovery_baseline": 0.09285714285714286,
+              "recovery_guard": 0.9803571428571428,
+              "recovery_guard_baseline": 0.9821428571428572,
+              "recovery_guard_drop": 0.007589285714285743,
+              "recovery_minus_fresh_accuracy": 0.014285714285714282,
+              "recovery_minus_fresh_gain": -0.07857142857142858,
+              "recovery_minus_fresh_guard_accuracy": 0.0017857142857142794,
+              "recovery_minus_fresh_guard_baseline": -0.0035714285714285427,
+              "recovery_minus_fresh_utility": -0.07544642857142861,
+              "recovery_utility": 0.8888392857142857
+            },
+            "replay_target": {
+              "both_at_accuracy_ceiling": 1,
+              "fresh_acquisition_accuracy": 1.0,
+              "fresh_baseline": 0.0,
+              "fresh_guard": 0.040625,
+              "fresh_guard_baseline": 0.9857142857142857,
+              "fresh_guard_drop": 0.9450892857142857,
+              "fresh_minus_recovery_guard_drop": 0.5022321428571428,
+              "fresh_utility": 0.0549107142857143,
+              "recovery_accuracy": 1.0,
+              "recovery_baseline": 0.09285714285714286,
+              "recovery_guard": 0.5392857142857143,
+              "recovery_guard_baseline": 0.9821428571428572,
+              "recovery_guard_drop": 0.4428571428571429,
+              "recovery_minus_fresh_accuracy": 0.0,
+              "recovery_minus_fresh_gain": -0.09285714285714286,
+              "recovery_minus_fresh_guard_accuracy": 0.4986607142857143,
+              "recovery_minus_fresh_guard_baseline": -0.0035714285714285427,
+              "recovery_minus_fresh_utility": 0.40937499999999993,
+              "recovery_utility": 0.46428571428571425
+            },
+            "sham": {
+              "both_at_accuracy_ceiling": 0,
+              "fresh_acquisition_accuracy": 0.0,
+              "fresh_baseline": 0.0,
+              "fresh_guard": 0.98125,
+              "fresh_guard_baseline": 0.9857142857142857,
+              "fresh_guard_drop": 0.006249999999999986,
+              "fresh_minus_recovery_guard_drop": 0.005357142857142838,
+              "fresh_utility": -0.006249999999999986,
+              "recovery_accuracy": 0.0,
+              "recovery_baseline": 0.09285714285714286,
+              "recovery_guard": 0.9897321428571428,
+              "recovery_guard_baseline": 0.9821428571428572,
+              "recovery_guard_drop": 0.0008928571428571476,
+              "recovery_minus_fresh_accuracy": 0.0,
+              "recovery_minus_fresh_gain": -0.09285714285714286,
+              "recovery_minus_fresh_guard_accuracy": 0.008482142857142874,
+              "recovery_minus_fresh_guard_baseline": -0.0035714285714285427,
+              "recovery_minus_fresh_utility": -0.08750000000000002,
+              "recovery_utility": -0.09375000000000001
+            }
+          },
+          "source_clusters": 2
+        },
+        "train": {
+          "complete_split": true,
+          "equal_source_means": {
+            "none": {
+              "both_at_accuracy_ceiling": 0,
+              "fresh_acquisition_accuracy": 0.010714285714285714,
+              "fresh_baseline": 0.010714285714285714,
+              "fresh_guard": 0.9875,
+              "fresh_guard_baseline": 0.9875,
+              "fresh_guard_drop": 0.0,
+              "fresh_minus_recovery_guard_drop": 0.0,
+              "fresh_utility": 0.0,
+              "recovery_accuracy": 0.04642857142857143,
+              "recovery_baseline": 0.04642857142857143,
+              "recovery_guard": 0.9875,
+              "recovery_guard_baseline": 0.9875,
+              "recovery_guard_drop": 0.0,
+              "recovery_minus_fresh_accuracy": 0.03571428571428571,
+              "recovery_minus_fresh_gain": 0.0,
+              "recovery_minus_fresh_guard_accuracy": 0.0,
+              "recovery_minus_fresh_guard_baseline": 0.0,
+              "recovery_minus_fresh_utility": 0.0,
+              "recovery_utility": 0.0
+            },
+            "replay_balanced": {
+              "both_at_accuracy_ceiling": 0.5714285714285714,
+              "fresh_acquisition_accuracy": 0.9642857142857142,
+              "fresh_baseline": 0.010714285714285714,
+              "fresh_guard": 0.98125,
+              "fresh_guard_baseline": 0.9875,
+              "fresh_guard_drop": 0.008928571428571421,
+              "fresh_minus_recovery_guard_drop": 0.0035714285714285744,
+              "fresh_utility": 0.9446428571428571,
+              "recovery_accuracy": 0.9535714285714285,
+              "recovery_baseline": 0.04642857142857143,
+              "recovery_guard": 0.9839285714285715,
+              "recovery_guard_baseline": 0.9875,
+              "recovery_guard_drop": 0.005357142857142846,
+              "recovery_minus_fresh_accuracy": -0.010714285714285714,
+              "recovery_minus_fresh_gain": -0.04642857142857143,
+              "recovery_minus_fresh_guard_accuracy": 0.0026785714285714347,
+              "recovery_minus_fresh_guard_baseline": 0.0,
+              "recovery_minus_fresh_utility": -0.04285714285714286,
+              "recovery_utility": 0.9017857142857143
+            },
+            "replay_target": {
+              "both_at_accuracy_ceiling": 1,
+              "fresh_acquisition_accuracy": 1.0,
+              "fresh_baseline": 0.010714285714285714,
+              "fresh_guard": 0.06607142857142857,
+              "fresh_guard_baseline": 0.9875,
+              "fresh_guard_drop": 0.9214285714285715,
+              "fresh_minus_recovery_guard_drop": 0.1375,
+              "fresh_utility": 0.06785714285714287,
+              "recovery_accuracy": 1.0,
+              "recovery_baseline": 0.04642857142857143,
+              "recovery_guard": 0.20357142857142857,
+              "recovery_guard_baseline": 0.9875,
+              "recovery_guard_drop": 0.7839285714285714,
+              "recovery_minus_fresh_accuracy": 0.0,
+              "recovery_minus_fresh_gain": -0.03571428571428571,
+              "recovery_minus_fresh_guard_accuracy": 0.1375,
+              "recovery_minus_fresh_guard_baseline": 0.0,
+              "recovery_minus_fresh_utility": 0.10178571428571428,
+              "recovery_utility": 0.16964285714285715
+            },
+            "sham": {
+              "both_at_accuracy_ceiling": 0,
+              "fresh_acquisition_accuracy": 0.0,
+              "fresh_baseline": 0.010714285714285714,
+              "fresh_guard": 0.9709821428571428,
+              "fresh_guard_baseline": 0.9875,
+              "fresh_guard_drop": 0.020089285714285705,
+              "fresh_minus_recovery_guard_drop": -0.006696428571428563,
+              "fresh_utility": -0.03080357142857142,
+              "recovery_accuracy": 0.0,
+              "recovery_baseline": 0.04642857142857143,
+              "recovery_guard": 0.9611607142857144,
+              "recovery_guard_baseline": 0.9875,
+              "recovery_guard_drop": 0.02678571428571427,
+              "recovery_minus_fresh_accuracy": 0.0,
+              "recovery_minus_fresh_gain": -0.03571428571428571,
+              "recovery_minus_fresh_guard_accuracy": -0.009821428571428576,
+              "recovery_minus_fresh_guard_baseline": 0.0,
+              "recovery_minus_fresh_utility": -0.04241071428571428,
+              "recovery_utility": -0.0732142857142857
+            }
+          },
+          "intents": 14,
+          "pooled_intent_means": {
+            "none": {
+              "both_at_accuracy_ceiling": 0,
+              "fresh_acquisition_accuracy": 0.010714285714285714,
+              "fresh_baseline": 0.010714285714285714,
+              "fresh_guard": 0.9875,
+              "fresh_guard_baseline": 0.9875,
+              "fresh_guard_drop": 0.0,
+              "fresh_minus_recovery_guard_drop": 0.0,
+              "fresh_utility": 0.0,
+              "recovery_accuracy": 0.04642857142857143,
+              "recovery_baseline": 0.04642857142857143,
+              "recovery_guard": 0.9875,
+              "recovery_guard_baseline": 0.9875,
+              "recovery_guard_drop": 0.0,
+              "recovery_minus_fresh_accuracy": 0.03571428571428571,
+              "recovery_minus_fresh_gain": 0.0,
+              "recovery_minus_fresh_guard_accuracy": 0.0,
+              "recovery_minus_fresh_guard_baseline": 0.0,
+              "recovery_minus_fresh_utility": 0.0,
+              "recovery_utility": 0.0
+            },
+            "replay_balanced": {
+              "both_at_accuracy_ceiling": 0.5714285714285714,
+              "fresh_acquisition_accuracy": 0.9642857142857143,
+              "fresh_baseline": 0.010714285714285714,
+              "fresh_guard": 0.98125,
+              "fresh_guard_baseline": 0.9875,
+              "fresh_guard_drop": 0.008928571428571421,
+              "fresh_minus_recovery_guard_drop": 0.003571428571428575,
+              "fresh_utility": 0.9446428571428571,
+              "recovery_accuracy": 0.9535714285714285,
+              "recovery_baseline": 0.04642857142857143,
+              "recovery_guard": 0.9839285714285715,
+              "recovery_guard_baseline": 0.9875,
+              "recovery_guard_drop": 0.005357142857142846,
+              "recovery_minus_fresh_accuracy": -0.010714285714285716,
+              "recovery_minus_fresh_gain": -0.04642857142857143,
+              "recovery_minus_fresh_guard_accuracy": 0.002678571428571435,
+              "recovery_minus_fresh_guard_baseline": 0.0,
+              "recovery_minus_fresh_utility": -0.04285714285714286,
+              "recovery_utility": 0.9017857142857143
+            },
+            "replay_target": {
+              "both_at_accuracy_ceiling": 1,
+              "fresh_acquisition_accuracy": 1.0,
+              "fresh_baseline": 0.010714285714285714,
+              "fresh_guard": 0.06607142857142857,
+              "fresh_guard_baseline": 0.9875,
+              "fresh_guard_drop": 0.9214285714285714,
+              "fresh_minus_recovery_guard_drop": 0.13749999999999998,
+              "fresh_utility": 0.06785714285714287,
+              "recovery_accuracy": 1.0,
+              "recovery_baseline": 0.04642857142857143,
+              "recovery_guard": 0.20357142857142857,
+              "recovery_guard_baseline": 0.9875,
+              "recovery_guard_drop": 0.7839285714285714,
+              "recovery_minus_fresh_accuracy": 0.0,
+              "recovery_minus_fresh_gain": -0.03571428571428571,
+              "recovery_minus_fresh_guard_accuracy": 0.1375,
+              "recovery_minus_fresh_guard_baseline": 0.0,
+              "recovery_minus_fresh_utility": 0.10178571428571428,
+              "recovery_utility": 0.16964285714285715
+            },
+            "sham": {
+              "both_at_accuracy_ceiling": 0,
+              "fresh_acquisition_accuracy": 0.0,
+              "fresh_baseline": 0.010714285714285714,
+              "fresh_guard": 0.9709821428571429,
+              "fresh_guard_baseline": 0.9875,
+              "fresh_guard_drop": 0.020089285714285705,
+              "fresh_minus_recovery_guard_drop": -0.006696428571428563,
+              "fresh_utility": -0.03080357142857142,
+              "recovery_accuracy": 0.0,
+              "recovery_baseline": 0.04642857142857143,
+              "recovery_guard": 0.9611607142857143,
+              "recovery_guard_baseline": 0.9875,
+              "recovery_guard_drop": 0.02678571428571427,
+              "recovery_minus_fresh_accuracy": 0.0,
+              "recovery_minus_fresh_gain": -0.03571428571428571,
+              "recovery_minus_fresh_guard_accuracy": -0.009821428571428576,
+              "recovery_minus_fresh_guard_baseline": 0.0,
+              "recovery_minus_fresh_utility": -0.04241071428571428,
+              "recovery_utility": -0.0732142857142857
+            }
+          },
+          "source_clusters": 2
+        }
+      },
+      "reference_inference": "The clearest historical advantage at 16 target-only updates is newer-skill retention, with both old-accuracy endpoints at 100%. Balanced fresh acquisition nearly matches historical old accuracy; higher residual baseline on TEST-b reverses the apparent historical advantage when measuring additional gain or utility. This endpoint does not identify stored-binding reuse or recovery speed. Extra old training and continuous optimizer history through newer training are not isolated from binding storage.",
+      "minimum_budget_pilot": {
+        "status": "completed_independently_audited",
+        "gate_task": "followthrough-20260912-recovery-budget-pilot-gate-slot",
+        "minimum_budget_counts": {
+          "2": 9,
+          "4": 0,
+          "8": 1,
+          "16": 3,
+          "never": 1
+        },
+        "raw_observations_verified": 18360,
+        "saved_prefixes_verified": 140,
+        "original_16_update_anchors_verified": 14,
+        "fixed_permutations": 40,
+        "inactive_16update_binary_draws": 5,
+        "later_qualification_losses": 0,
+        "interpretation": "Allfive budget2 failures violate newer-task guard; fouralready meet old accuracy/gain. Guard-aware repair target. Repair moments not saved; clocks and exact trace/weight reproduction verified.",
+        "audit": "outputs/portfolio/followthrough-20260912/audit_recovery_budgets.json"
+      },
+      "fresh_budget_prediction": {
+        "status": "completed_collected_independently_audited; see_fresh_recovery_budget_prediction_and_recovery_eligibility_sensitivity",
+        "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+        "intents": 64,
+        "source_streams": {
+          "train": 2,
+          "test": 2
+        },
+        "task_count": 19,
+        "predictive_result": null,
+        "forgotten_skills": {
+          "train": 13,
+          "test": 13
+        },
+        "all_four_learning_sources_qualified": true,
+        "train_lenses_qualified_at_acquired_and_forgotten": true
+      }
+    },
+    "varied_tools": {
+      "status": "four_streams_completed_independent_record_audits_passed",
+      "streams": [
+        1103,
+        2207,
+        3301,
+        4409
+      ],
+      "independently_rescored_records": 31104,
+      "audit": "outputs/portfolio/followthrough-20260912/tool-stream-audit.json",
+      "figure": "outputs/portfolio/followthrough-20260912/tool-transfer.png",
+      "conclusion": "Near-ceilingfamiliarworkflowaccuracyconcealsstrongcondition/taskdifferencesonnovelcombinations. Relevantpretrainingimprovesinitialvalidationversusfreshacross4streams,butdoesnotuniversallybeatunrelatedpretrainingorotherconditions.",
+      "boundary": "Explicitsteprequestsandargumentschemas; fourtaskfamilies/conventionmappings/orders,datasets; oneoptimizationseed. AgentDiceandmeaninitialmergesloseaprimitivemethodgatein3of4streams. DensefusionnotmemorymatchedtoLoRAreplay.",
+      "persistence": {
+        "status": "verified_and_independently_audited",
+        "streams": 4,
+        "conditions_per_stream": 7,
+        "raw_records_reproduced": 10752,
+        "audit": "outputs/portfolio/followthrough-20260912/tool-followup-audit.json"
+      },
+      "compression": {
+        "status": "completed_and_independently_audited",
+        "eligible_streams": [
+          4409
+        ],
+        "ineligible_streams_rejected_before_SVD": [
+          1103,
+          2207,
+          3301
+        ],
+        "rank": 8,
+        "offsets_after": null,
+        "records_rescored": 2176,
+        "dense_resident_bytes": 758644736,
+        "compressed_resident_bytes": 3670016,
+        "qualified_agent_dice_primitive_TEST": {
+          "original_correct": 256,
+          "compressed_correct": 255,
+          "n": 256
+        },
+        "boundary": "Compressed and uncompressed pre-workflow states; this does not retain the final workflow adaptations. Continued compressed-factor training is now running. Expert history and stored source archives are accounted separately."
+      },
+      "compressed_workflow_hybrid": {
+        "status": "completed_collected_independently_audited",
+        "train": "followthrough-20260912-skills-compressed-workflow4409",
+        "audit": "outputs/portfolio/followthrough-20260912/tool-followup-audit.json",
+        "rank": 8,
+        "offset": null,
+        "arms": {
+          "compressed_continue": {
+            "resident_adapter_bytes": 3670016,
+            "updates": 128,
+            "exposures": {
+              "current_exposures": 512,
+              "input_tokens": 148913,
+              "old_exposures": 0,
+              "target_tokens": 32234,
+              "updates": 128
+            },
+            "replay_capacity": 0,
+            "test": {
+              "primitive-calendar.test": [
+                48,
+                64
+              ],
+              "primitive-files.test": [
+                54,
+                64
+              ],
+              "primitive-records.test": [
+                64,
+                64
+              ],
+              "primitive-text.test": [
+                62,
+                64
+              ],
+              "workflow.novel-test": [
+                18,
+                64
+              ],
+              "workflow.test": [
+                64,
+                64
+              ]
+            }
+          },
+          "compressed_replay": {
+            "resident_adapter_bytes": 3670016,
+            "updates": 128,
+            "exposures": {
+              "current_exposures": 256,
+              "input_tokens": 128730,
+              "old_exposures": 256,
+              "target_tokens": 21098,
+              "updates": 128
+            },
+            "replay_capacity": 64,
+            "test": {
+              "primitive-calendar.test": [
+                63,
+                64
+              ],
+              "primitive-files.test": [
+                64,
+                64
+              ],
+              "primitive-records.test": [
+                64,
+                64
+              ],
+              "primitive-text.test": [
+                64,
+                64
+              ],
+              "workflow.novel-test": [
+                63,
+                64
+              ],
+              "workflow.test": [
+                64,
+                64
+              ]
+            }
+          }
+        },
+        "updates_per_arm": 128,
+        "exposures_per_arm": 512,
+        "replay_capacity_total": 64,
+        "selection": "Original primitive DEV gates before optimizer construction; no TEST selection.",
+        "training_records_rescored": 1120,
+        "evaluation_records_rescored": 1088,
+        "baseline_sequential_replay": {
+          "primitive": [
+            255,
+            256
+          ],
+          "workflow": [
+            64,
+            64
+          ],
+          "novel": [
+            64,
+            64
+          ],
+          "workflow_stage_current_exposures": 512,
+          "workflow_stage_old_exposures": 0
+        },
+        "interpretation": "Compact merging plus replay successfully continues learning while preserving primitives, but does not beat the simpler sequential replay reference. One calendar stream; replay halves current-task exposures and adds old examples."
+      },
+      "history_label_clarification": "In the original seven-condition comparison, continue and replay label the earlier primitive-training history. ALL seven original workflow-training arms use512 current examples and zero rehearsal examples. Workflow-stage replay is introduced only in the compact-hybrid followup.",
+      "initial_state_diagnosis": {
+        "status": "four_streams_independently_audited",
+        "analysis": "experiments/skill_transfer/outputs/analysis/initial-diagnosis-interpretation.json",
+        "native_records": 17024,
+        "original_final_records": 15232,
+        "discrepancies": 0,
+        "text2207_Dice_novel_before_after_n": [
+          51,
+          4,
+          64
+        ],
+        "text2207_mean_novel_before_after_n": [
+          50,
+          1,
+          64
+        ],
+        "files3301_relevant_novel_before_after_n": [
+          60,
+          32,
+          64
+        ],
+        "interpretation": "Task-level means conceal both initial operation-binding errors and newly lost compositions after workflow training. Independent primitive success can coexist with composition failure. Repeated familiar plans and wrong argument choices recur on separate diagnostic scenes.",
+        "scope": "Posthoc diagnosis; sixteen fresh inputs per diagnostic panel preserve task templates, mappings, and operation parameters."
+      },
+      "delete_rehearsal_control": {
+        "status": "completed_independently_audited",
+        "current_exposures": 256,
+        "old_exposures": 0,
+        "updates": 128,
+        "current_loss_coefficient": 0.25,
+        "primitive_test": [
+          248,
+          256
+        ],
+        "workflow_test": [
+          64,
+          64
+        ],
+        "novel_workflow_test": [
+          61,
+          64
+        ],
+        "matched_replay": {
+          "primitive_test": [
+            255,
+            256
+          ],
+          "workflow_test": [
+            64,
+            64
+          ],
+          "novel_workflow_test": [
+            63,
+            64
+          ]
+        },
+        "decision": "park_compact_hybrid_optimization",
+        "interpretation": "Large earlier novel-workflow contrast largely disappears at matched current exposures. Modest rehearsal benefit on this singlecalendar stream; no general superiority.",
+        "parent_records_verified": 1184,
+        "independent_records_verified": 1184,
+        "novel_paired_changes": {
+          "gained_with_replay": 3,
+          "lost_with_replay": 1
+        },
+        "figure": "outputs/portfolio/followthrough-20260912/tool-compact-control.png"
+      }
+    },
+    "fresh_recovery_budget_prediction": {
+      "status": "complete_independently_verified",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "stages": 19,
+      "train_intents": 13,
+      "test_intents": 13,
+      "test_source_clusters": 2,
+      "train_class_counts": {
+        "16": 0,
+        "2": 9,
+        "4": 1,
+        "8": 1,
+        "never": 2
+      },
+      "test_class_counts": {
+        "16": 0,
+        "2": 9,
+        "4": 2,
+        "8": 2,
+        "never": 0
+      },
+      "policies": {
+        "constant_train": {
+          "by_source": {
+            "fresh-test-a": {
+              "mean_updates": 2.0,
+              "qualified_fraction": 0.42857142857142855,
+              "utility": 0.8910714285714284
+            },
+            "fresh-test-b": {
+              "mean_updates": 2.0,
+              "qualified_fraction": 1.0,
+              "utility": 0.9666666666666667
+            }
+          },
+          "equal_source_mean": {
+            "mean_updates": 2.0,
+            "qualified_fraction": 0.7142857142857143,
+            "utility": 0.9288690476190475
+          },
+          "pooled": {
+            "mean_updates": 2.0,
+            "qualified_fraction": 0.6923076923076923,
+            "utility": 0.9259615384615383
+          }
+        },
+        "tuned": {
+          "by_source": {
+            "fresh-test-a": {
+              "mean_updates": 2.2857142857142856,
+              "qualified_fraction": 0.5714285714285714,
+              "utility": 0.9169642857142856
+            },
+            "fresh-test-b": {
+              "mean_updates": 2.6666666666666665,
+              "qualified_fraction": 0.8333333333333334,
+              "utility": 0.8083333333333332
+            }
+          },
+          "equal_source_mean": {
+            "mean_updates": 2.4761904761904763,
+            "qualified_fraction": 0.7023809523809523,
+            "utility": 0.8626488095238094
+          },
+          "pooled": {
+            "mean_updates": 2.4615384615384617,
+            "qualified_fraction": 0.6923076923076923,
+            "utility": 0.8668269230769231
+          }
+        },
+        "always/2": {
+          "by_source": {
+            "fresh-test-a": {
+              "mean_updates": 2.0,
+              "qualified_fraction": 0.42857142857142855,
+              "utility": 0.8910714285714284
+            },
+            "fresh-test-b": {
+              "mean_updates": 2.0,
+              "qualified_fraction": 1.0,
+              "utility": 0.9666666666666667
+            }
+          },
+          "equal_source_mean": {
+            "mean_updates": 2.0,
+            "qualified_fraction": 0.7142857142857143,
+            "utility": 0.9288690476190475
+          },
+          "pooled": {
+            "mean_updates": 2.0,
+            "qualified_fraction": 0.6923076923076923,
+            "utility": 0.9259615384615383
+          }
+        },
+        "always/4": {
+          "by_source": {
+            "fresh-test-a": {
+              "mean_updates": 4.0,
+              "qualified_fraction": 0.5714285714285714,
+              "utility": 0.9133928571428571
+            },
+            "fresh-test-b": {
+              "mean_updates": 4.0,
+              "qualified_fraction": 1.0,
+              "utility": 0.9895833333333334
+            }
+          },
+          "equal_source_mean": {
+            "mean_updates": 4.0,
+            "qualified_fraction": 0.7857142857142857,
+            "utility": 0.9514880952380953
+          },
+          "pooled": {
+            "mean_updates": 4.0,
+            "qualified_fraction": 0.7692307692307693,
+            "utility": 0.9485576923076924
+          }
+        },
+        "always/8": {
+          "by_source": {
+            "fresh-test-a": {
+              "mean_updates": 8.0,
+              "qualified_fraction": 1.0,
+              "utility": 0.9803571428571428
+            },
+            "fresh-test-b": {
+              "mean_updates": 8.0,
+              "qualified_fraction": 1.0,
+              "utility": 0.9895833333333334
+            }
+          },
+          "equal_source_mean": {
+            "mean_updates": 8.0,
+            "qualified_fraction": 1.0,
+            "utility": 0.9849702380952381
+          },
+          "pooled": {
+            "mean_updates": 8.0,
+            "qualified_fraction": 1.0,
+            "utility": 0.9846153846153846
+          }
+        },
+        "always/16": {
+          "by_source": {
+            "fresh-test-a": {
+              "mean_updates": 16.0,
+              "qualified_fraction": 1.0,
+              "utility": 0.9696428571428571
+            },
+            "fresh-test-b": {
+              "mean_updates": 16.0,
+              "qualified_fraction": 1.0,
+              "utility": 0.9885416666666668
+            }
+          },
+          "equal_source_mean": {
+            "mean_updates": 16.0,
+            "qualified_fraction": 1.0,
+            "utility": 0.979092261904762
+          },
+          "pooled": {
+            "mean_updates": 16.0,
+            "qualified_fraction": 1.0,
+            "utility": 0.9783653846153845
+          }
+        }
+      },
+      "claim": "Tuned predictor recovers9/13, same count asalways2withmoreupdates; sourceAimproves4/7vs3/7, sourceBworsens5/6vs6/6. Fixed8updatesrecovers13/13; no demonstrated internal-predictor policy benefit.",
+      "predictions_sealed_before_test_repairs": true,
+      "permutations": 40,
+      "permuted_utility_at_least_tuned": 27,
+      "scoring": "consistent16-code classification, not whole-vocabulary answer generation",
+      "next": "Matched specific-binding history controls completed; see matched_history_controls. One fixed posthoc training-label eligibility sensitivity also completed.",
+      "independent_audit": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/recovery-prediction-audit.final.json",
+      "independently_rescored_records": 36360,
+      "figure": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/recovery-prediction.png"
+    },
+    "device4_chain": {
+      "status": "completed_collected_independently_audited",
+      "source_sha256": "8d36ba48bb9c429d28d2cbca78f9f4362120639568ab9b60380cc62a73b98361",
+      "qualification": {
+        "A_flat_mixed": {
+          "train": 126,
+          "train_n": 128,
+          "validation": 47,
+          "validation_n": 48,
+          "qualified": true,
+          "incorrect_train_targets_retained": 2
+        },
+        "B_flat_mixed": {
+          "train": 104,
+          "train_n": 128,
+          "validation": 37,
+          "validation_n": 48,
+          "qualified": false
+        },
+        "C_flat_mixed": {
+          "train": 86,
+          "train_n": 128,
+          "validation": 25,
+          "validation_n": 48,
+          "qualified": false
+        }
+      },
+      "completed_oracle_only": {
+        "b": {
+          "updates": 128,
+          "test": {
+            "oracle_sft": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "format_valid": 96,
+              "literal_position_accuracy": [
+                0.08333333333333333,
+                0.10416666666666667,
+                0.052083333333333336,
+                0.09375
+              ],
+              "n": 96,
+              "returned_input_wrong_state": 2,
+              "stopped_after_first_command_wrong_state": 0,
+              "terminated": 96,
+              "wrong_state_with_valid_format_and_eos": 96
+            },
+            "untouched": {
+              "accuracy": 0.010416666666666666,
+              "correct": 1,
+              "format_valid": 95,
+              "literal_position_accuracy": [
+                0.052083333333333336,
+                0.09375,
+                0.125,
+                0.08333333333333333
+              ],
+              "n": 96,
+              "returned_input_wrong_state": 93,
+              "stopped_after_first_command_wrong_state": 0,
+              "terminated": 95,
+              "wrong_state_with_valid_format_and_eos": 94
+            }
+          },
+          "final_train_probe_correct": 1,
+          "final_train_probe_n": 8,
+          "interpretation": "TRAIN probe acquisition weak; cannot interpret TEST failure as failure after mastered composition training."
+        },
+        "c": {
+          "updates": 128,
+          "test": {
+            "oracle_sft": {
+              "accuracy": 0.041666666666666664,
+              "correct": 4,
+              "format_valid": 96,
+              "literal_position_accuracy": [
+                0.3020833333333333,
+                0.4270833333333333,
+                0.3541666666666667,
+                0.17708333333333334
+              ],
+              "n": 96,
+              "returned_input_wrong_state": 26,
+              "stopped_after_first_command_wrong_state": 0,
+              "terminated": 96,
+              "wrong_state_with_valid_format_and_eos": 92
+            },
+            "untouched": {
+              "accuracy": 0.052083333333333336,
+              "correct": 5,
+              "format_valid": 95,
+              "literal_position_accuracy": [
+                0.2916666666666667,
+                0.3333333333333333,
+                0.2708333333333333,
+                0.2604166666666667
+              ],
+              "n": 96,
+              "returned_input_wrong_state": 90,
+              "stopped_after_first_command_wrong_state": 0,
+              "terminated": 95,
+              "wrong_state_with_valid_format_and_eos": 90
+            }
+          },
+          "final_train_probe_correct": 4,
+          "final_train_probe_n": 8,
+          "interpretation": "TRAIN probe acquisition weak; cannot interpret TEST failure as failure after mastered composition training."
+        }
+      },
+      "completed_A": {
+        "updates": 256,
+        "teacher_output_updates": 128,
+        "test": {
+          "chain_output_flat_mixed": {
+            "accuracy": 0.041666666666666664,
+            "correct": 4,
+            "format_valid": 96,
+            "literal_position_accuracy": [
+              0.34375,
+              0.3229166666666667,
+              0.28125,
+              0.3333333333333333
+            ],
+            "n": 96,
+            "returned_input_wrong_state": 5,
+            "stopped_after_first_command_wrong_state": 0,
+            "terminated": 96,
+            "wrong_state_with_valid_format_and_eos": 92
+          },
+          "oracle_sft": {
+            "accuracy": 0.0625,
+            "correct": 6,
+            "format_valid": 96,
+            "literal_position_accuracy": [
+              0.34375,
+              0.3958333333333333,
+              0.3125,
+              0.3541666666666667
+            ],
+            "n": 96,
+            "returned_input_wrong_state": 1,
+            "stopped_after_first_command_wrong_state": 0,
+            "terminated": 96,
+            "wrong_state_with_valid_format_and_eos": 90
+          },
+          "untouched": {
+            "accuracy": 0.03125,
+            "correct": 3,
+            "format_valid": 96,
+            "literal_position_accuracy": [
+              0.2916666666666667,
+              0.2708333333333333,
+              0.40625,
+              0.34375
+            ],
+            "n": 96,
+            "returned_input_wrong_state": 92,
+            "stopped_after_first_command_wrong_state": 0,
+            "terminated": 96,
+            "wrong_state_with_valid_format_and_eos": 93
+          }
+        },
+        "final_train_probes": {
+          "oracle": {
+            "correct": 3,
+            "n": 8
+          },
+          "chain_output": {
+            "correct": 2,
+            "n": 8
+          }
+        }
+      },
+      "full_native_train_at128": {
+        "A_oracle": {
+          "correct": 41,
+          "n": 128
+        },
+        "A_chain": {
+          "correct": 36,
+          "n": 128
+        },
+        "B_oracle": {
+          "correct": 12,
+          "n": 128
+        },
+        "C_oracle": {
+          "correct": 50,
+          "n": 128
+        }
+      },
+      "independent_audit_directory": "experiments/distillation/outputs/device4-audit-20260912"
+    },
+    "onpolicy303": {
+      "status": "all_six_jobs_complete_independently_audited",
+      "source_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b",
+      "teacher_fresh_qualification": {
+        "train_correct": 384,
+        "train_n": 384,
+        "validation_correct": 96,
+        "validation_n": 96,
+        "before_learner_load": true
+      },
+      "arms": {
+        "cached_teacher_sft": {
+          "updates": 384,
+          "exposures": 1536,
+          "loss_tokens": 10752,
+          "final_tensor_sha256": "5e1d0af63e1549b882552da314e211e6473c8069531a71c0fbd76d95a86cc35b",
+          "native": {
+            "test": {
+              "correct": 187,
+              "n": 192
+            },
+            "unused288": {
+              "correct": 854,
+              "n": 864
+            }
+          },
+          "generic_retention": {
+            "final": {
+              "boolq": {
+                "correct": 28,
+                "count": 32
+              },
+              "commonsense_qa": {
+                "correct": 23,
+                "count": 32
+              },
+              "hellaswag": {
+                "correct": 25,
+                "count": 32
+              },
+              "winogrande": {
+                "correct": 20,
+                "count": 32
+              }
+            },
+            "initial": {
+              "boolq": {
+                "correct": 29,
+                "count": 32
+              },
+              "commonsense_qa": {
+                "correct": 25,
+                "count": 32
+              },
+              "hellaswag": {
+                "correct": 24,
+                "count": 32
+              },
+              "winogrande": {
+                "correct": 19,
+                "count": 32
+              }
+            }
+          },
+          "teacher_loaded_during_evaluation": false,
+          "teacher_artifact_files_read_during_evaluation": false,
+          "reload_exact": true
+        },
+        "cached_teacher_kl": {
+          "updates": 384,
+          "exposures": 1536,
+          "loss_tokens": 10752,
+          "final_tensor_sha256": "6e22f9c38f29908acfd9c4e417001a0440877efa874e5de0ff938445cfa3bc9b",
+          "native": {
+            "test": {
+              "correct": 191,
+              "n": 192
+            },
+            "unused288": {
+              "correct": 862,
+              "n": 864
+            }
+          },
+          "generic_retention": {
+            "final": {
+              "boolq": {
+                "correct": 29,
+                "count": 32
+              },
+              "commonsense_qa": {
+                "correct": 23,
+                "count": 32
+              },
+              "hellaswag": {
+                "correct": 25,
+                "count": 32
+              },
+              "winogrande": {
+                "correct": 20,
+                "count": 32
+              }
+            },
+            "initial": {
+              "boolq": {
+                "correct": 29,
+                "count": 32
+              },
+              "commonsense_qa": {
+                "correct": 25,
+                "count": 32
+              },
+              "hellaswag": {
+                "correct": 24,
+                "count": 32
+              },
+              "winogrande": {
+                "correct": 19,
+                "count": 32
+              }
+            }
+          },
+          "teacher_loaded_during_evaluation": false,
+          "teacher_artifact_files_read_during_evaluation": false,
+          "reload_exact": true
+        },
+        "onpolicy_kl": {
+          "updates": 384,
+          "exposures": 1536,
+          "loss_tokens": 11314,
+          "final_tensor_sha256": "ce1441892f01f7a6fabb005892b5ca845c1c92e340f45f411ccef659ed4008f1",
+          "native": {
+            "test": {
+              "correct": 192,
+              "n": 192
+            },
+            "unused288": {
+              "correct": 864,
+              "n": 864
+            }
+          },
+          "generic_retention": {
+            "final": {
+              "boolq": {
+                "correct": 29,
+                "count": 32
+              },
+              "commonsense_qa": {
+                "correct": 23,
+                "count": 32
+              },
+              "hellaswag": {
+                "correct": 24,
+                "count": 32
+              },
+              "winogrande": {
+                "correct": 20,
+                "count": 32
+              }
+            },
+            "initial": {
+              "boolq": {
+                "correct": 29,
+                "count": 32
+              },
+              "commonsense_qa": {
+                "correct": 25,
+                "count": 32
+              },
+              "hellaswag": {
+                "correct": 24,
+                "count": 32
+              },
+              "winogrande": {
+                "correct": 19,
+                "count": 32
+              }
+            }
+          },
+          "teacher_loaded_during_evaluation": false,
+          "teacher_artifact_files_read_during_evaluation": false,
+          "reload_exact": true
+        }
+      },
+      "claim": "Fixed expert full-vocabulary forward KL along student samples reached192/192+864/864nativeanswers+EOS; cachedKL191/192+862/864; SFT187/192+854/864. Teacherabsentafterreload. Onefreshlearnerseed,reusedknownfixturetests; not broadCL/nativebaseconsolidation/SDFTorSDPOreproduction. Sameupdates/rows, onpolicy11314tokensvscached10752, notcomputematched.",
+      "independent_audit": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/onpolicy303-independent-audit/final-audit-20260912T074811993684Z.json",
+      "verified_native_answers": 3168,
+      "verified_trajectories": 4608
+    },
+    "matched_history_controls": {
+      "status": "completed_collected_independently_verified",
+      "source_sha256": "d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658",
+      "qualified": true,
+      "counts": {
+        "test": 13,
+        "train": 13
+      },
+      "source_clusters": {
+        "test": 2,
+        "train": 2
+      },
+      "common": {
+        "fresh-test-a": [
+          "calculator",
+          "cancel",
+          "credit_limit_change",
+          "directions",
+          "pto_balance",
+          "timezone",
+          "what_song"
+        ],
+        "fresh-test-b": [
+          "bill_due",
+          "gas",
+          "international_visa",
+          "measurement_conversion",
+          "plug_type",
+          "tire_change"
+        ],
+        "fresh-train-a": [
+          "calories",
+          "insurance",
+          "pto_used",
+          "repeat",
+          "replacement_card_duration",
+          "spending_history",
+          "translate"
+        ],
+        "fresh-train-b": [
+          "change_user_name",
+          "credit_limit",
+          "payday",
+          "transfer",
+          "uber",
+          "what_are_your_hobbies"
+        ]
+      },
+      "alternate_bindings_acquired": 32,
+      "new_only_old_updates": 0,
+      "alternate_history_updates": {
+        "old": 128,
+        "new": 128
+      },
+      "new_only_updates": 128,
+      "frozen_protocol": true,
+      "analysis": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-history-analyze/study/analysis.json",
+      "test_equal_source_means": {
+        "alternate_binding": {
+          "0": {
+            "accuracy": 0.0,
+            "accuracy_passed": 0.0,
+            "gain": 0.0,
+            "guard": 0.996875,
+            "guard_change": 0.0,
+            "guard_loss": 0.0,
+            "guard_passed": 1.0,
+            "qualified": 0.0,
+            "updates": 0.0,
+            "utility": 0.0
+          },
+          "16": {
+            "accuracy": 1.0,
+            "accuracy_passed": 1.0,
+            "gain": 1.0,
+            "guard": 0.9948660714285714,
+            "guard_change": -0.002008928571428574,
+            "guard_loss": 0.0030505952380952364,
+            "guard_passed": 1.0,
+            "qualified": 1.0,
+            "updates": 16.0,
+            "utility": 0.9969494047619047
+          },
+          "2": {
+            "accuracy": 0.7327380952380952,
+            "accuracy_passed": 0.5952380952380952,
+            "gain": 0.7327380952380952,
+            "guard": 0.9903273809523809,
+            "guard_change": -0.006547619047619043,
+            "guard_loss": 0.007068452380952374,
+            "guard_passed": 1.0,
+            "qualified": 0.5952380952380952,
+            "updates": 2.0,
+            "utility": 0.7256696428571429
+          },
+          "4": {
+            "accuracy": 1.0,
+            "accuracy_passed": 1.0,
+            "gain": 1.0,
+            "guard": 0.9515625000000001,
+            "guard_change": -0.0453125,
+            "guard_loss": 0.04583333333333333,
+            "guard_passed": 0.8333333333333333,
+            "qualified": 0.8333333333333333,
+            "updates": 4.0,
+            "utility": 0.9541666666666666
+          },
+          "8": {
+            "accuracy": 1.0,
+            "accuracy_passed": 1.0,
+            "gain": 1.0,
+            "guard": 0.9850446428571429,
+            "guard_change": -0.011830357142857146,
+            "guard_loss": 0.012351190476190477,
+            "guard_passed": 1.0,
+            "qualified": 1.0,
+            "updates": 8.0,
+            "utility": 0.9876488095238095
+          }
+        },
+        "new_only": {
+          "0": {
+            "accuracy": 0.0,
+            "accuracy_passed": 0.0,
+            "gain": 0.0,
+            "guard": 0.99375,
+            "guard_change": 0.0,
+            "guard_loss": 0.0,
+            "guard_passed": 1.0,
+            "qualified": 0.0,
+            "updates": 0.0,
+            "utility": 0.0
+          },
+          "16": {
+            "accuracy": 0.9821428571428572,
+            "accuracy_passed": 1.0,
+            "gain": 0.9821428571428572,
+            "guard": 0.9927827380952381,
+            "guard_change": -0.0009672619047619185,
+            "guard_loss": 0.0029761904761904825,
+            "guard_passed": 1.0,
+            "qualified": 1.0,
+            "updates": 16.0,
+            "utility": 0.9791666666666667
+          },
+          "2": {
+            "accuracy": 0.8613095238095239,
+            "accuracy_passed": 0.7023809523809523,
+            "gain": 0.8613095238095239,
+            "guard": 0.95,
+            "guard_change": -0.043750000000000004,
+            "guard_loss": 0.044196428571428574,
+            "guard_passed": 0.8333333333333333,
+            "qualified": 0.5357142857142857,
+            "updates": 2.0,
+            "utility": 0.8171130952380952
+          },
+          "4": {
+            "accuracy": 1.0,
+            "accuracy_passed": 1.0,
+            "gain": 1.0,
+            "guard": 0.9008184523809524,
+            "guard_change": -0.09293154761904764,
+            "guard_loss": 0.09293154761904764,
+            "guard_passed": 0.6785714285714286,
+            "qualified": 0.6785714285714286,
+            "updates": 4.0,
+            "utility": 0.9070684523809524
+          },
+          "8": {
+            "accuracy": 0.9886904761904762,
+            "accuracy_passed": 1.0,
+            "gain": 0.9886904761904762,
+            "guard": 0.9913690476190476,
+            "guard_change": -0.00238095238095239,
+            "guard_loss": 0.003348214285714291,
+            "guard_passed": 1.0,
+            "qualified": 1.0,
+            "updates": 8.0,
+            "utility": 0.9853422619047618
+          }
+        },
+        "original_history": {
+          "0": {
+            "accuracy": 0.004166666666666667,
+            "accuracy_passed": 0.0,
+            "gain": 0.0,
+            "guard": 1.0,
+            "guard_change": 0.0,
+            "guard_loss": 0.0,
+            "guard_passed": 1.0,
+            "qualified": 0.0,
+            "updates": 0.0,
+            "utility": 0.0
+          },
+          "16": {
+            "accuracy": 0.9857142857142858,
+            "accuracy_passed": 1.0,
+            "gain": 0.9815476190476191,
+            "guard": 0.9975446428571428,
+            "guard_change": -0.0024553571428571437,
+            "guard_loss": 0.0024553571428571437,
+            "guard_passed": 1.0,
+            "qualified": 1.0,
+            "updates": 16.0,
+            "utility": 0.979092261904762
+          },
+          "2": {
+            "accuracy": 0.9875,
+            "accuracy_passed": 1.0,
+            "gain": 0.9833333333333334,
+            "guard": 0.9455357142857143,
+            "guard_change": -0.05446428571428573,
+            "guard_loss": 0.05446428571428573,
+            "guard_passed": 0.7142857142857143,
+            "qualified": 0.7142857142857143,
+            "updates": 2.0,
+            "utility": 0.9288690476190475
+          },
+          "4": {
+            "accuracy": 1.0,
+            "accuracy_passed": 1.0,
+            "gain": 0.9958333333333333,
+            "guard": 0.955654761904762,
+            "guard_change": -0.04434523809523809,
+            "guard_loss": 0.04434523809523809,
+            "guard_passed": 0.7857142857142857,
+            "qualified": 0.7857142857142857,
+            "updates": 4.0,
+            "utility": 0.9514880952380953
+          },
+          "8": {
+            "accuracy": 0.9928571428571429,
+            "accuracy_passed": 1.0,
+            "gain": 0.9886904761904762,
+            "guard": 0.9962797619047619,
+            "guard_change": -0.003720238095238098,
+            "guard_loss": 0.003720238095238098,
+            "guard_passed": 1.0,
+            "qualified": 1.0,
+            "updates": 8.0,
+            "utility": 0.9849702380952381
+          }
+        }
+      },
+      "test_minimum_budget_counts": {
+        "fresh-test-a": {
+          "alternate_binding": {
+            "16": 0,
+            "2": 6,
+            "4": 1,
+            "8": 0,
+            "never": 0
+          },
+          "new_only": {
+            "16": 0,
+            "2": 4,
+            "4": 2,
+            "8": 1,
+            "never": 0
+          },
+          "original_history": {
+            "16": 0,
+            "2": 3,
+            "4": 2,
+            "8": 2,
+            "never": 0
+          }
+        },
+        "fresh-test-b": {
+          "alternate_binding": {
+            "16": 0,
+            "2": 2,
+            "4": 3,
+            "8": 1,
+            "never": 0
+          },
+          "new_only": {
+            "16": 0,
+            "2": 3,
+            "4": 1,
+            "8": 2,
+            "never": 0
+          },
+          "original_history": {
+            "16": 0,
+            "2": 6,
+            "4": 0,
+            "8": 0,
+            "never": 0
+          }
+        }
+      },
+      "interpretation": "Correct prior bindings improve2-updateoldcodeaccuracyagainstbothcontrols,butjointretention reversesbysource. Originalhistoryhasnoequal-sourcemeanminimum-budgetadvantageoveralternatehistory. All13TESTqualifyby8updatesinallconditions; nostoredmemorylocalizationorreadoutpolicybenefitclaim.",
+      "independent_audit": {
+        "path": "outputs/portfolio/followthrough-20260912/audit_history_controls.json",
+        "sha256": "d4c70e2dc03634d1f595eda951ab889fbf051bc07b4bf02541e27393bdf5fe1f",
+        "status": "complete_verified",
+        "raw_native_records": 86208,
+        "self_tests": 9,
+        "issues": 0,
+        "pending": 0
+      }
+    },
+    "recovery_eligibility_sensitivity": {
+      "status": "completed_posthoc_parent_verified",
+      "rule": "Exclude TRAIN cases whose maximum possible actual-panel gain is below the required 0.30.",
+      "excluded": [
+        "fresh-train-a/calories"
+      ],
+      "train_retained": 12,
+      "test_unchanged": 13,
+      "original_prospective_forecasts_unchanged": true,
+      "tuned_qualified": 9,
+      "always2_qualified": 9,
+      "always8_qualified": 13,
+      "tuned_updates": 26,
+      "always2_updates": 26,
+      "always8_updates": 104,
+      "prospective_class_support_after_exclusion": "failed",
+      "interpretation": "No tuned-lens repair-policy advantage after exclusion. Numerical calibration improves unevenly by source, requiring fresh prospective data before a benefit claim.",
+      "report": "outputs/portfolio/followthrough-20260912/repair_eligibility_sensitivity.json",
+      "parent_pinned_input_files_verified": 100,
+      "parent_cpu_controls_passed": 5
+    },
+    "device4_training_sufficiency": {
+      "status": "completed_collected_independently_verified",
+      "source_sha256": "03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f",
+      "arms": {
+        "A_oracle": {
+          "training_gold_correct": 128,
+          "test_correct": 6
+        },
+        "A_chain": {
+          "training_gold_correct": 126,
+          "training_supplied_target_correct": 128,
+          "test_correct": 14
+        },
+        "B_oracle": {
+          "training_gold_correct": 128,
+          "test_correct": 5
+        },
+        "C_oracle": {
+          "training_gold_correct": 128,
+          "test_correct": 3
+        }
+      },
+      "training_rows_per_arm": 128,
+      "test_rows_per_arm": 96,
+      "final_updates_per_arm": 1024,
+      "new_updates_per_arm": 896,
+      "teacher_absent_in_learner_training_and_eval": true,
+      "all_arms_training_mastery_passed": true,
+      "scope": "Post-observation fixed endpoint with reused TEST. More training resolved acquisition, but unseen-program whole-answer accuracy remains low. Two incorrect A teacher targets retained unchanged. No reliable internal-composition claim.",
+      "independent_audit": {
+        "path": "experiments/distillation/outputs/device4-sufficiency-audit-20260912/collected-audit.json",
+        "files_verified": 217,
+        "checkpoint_optimizer_pairs": 16,
+        "native_records_decoded": 2976,
+        "separate_evaluator_pids": 4,
+        "full_training_reload_exact": true
+      }
+    },
+    "native303_persistence": {
+      "status": "standard_export_and_fresh_reload_completed_independently_verified",
+      "source_checkpoint": 384,
+      "method": "own-prefix KL student",
+      "initial_source_sha256": "0498be8531bfd0cd9dea2dab4e74946345963ac4a7bf4f40aba867207f6b8bef",
+      "initial_source_files": 134,
+      "initial_export_execution": "failed_before_model_load",
+      "initial_evaluation_execution": "blocked_by_export_failure",
+      "optimizer_updates": 0,
+      "failure": "Runtime check compared torch.__version__ with distribution metadata; both exact labels belong to the same installed vendor Torch.",
+      "observed_torch_module": "2.10.0+rocm7.2.4.git3d3aa833",
+      "observed_torch_distribution": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+      "correction": "Check both exact fields separately, also during worker preflight; preserve model, data, tolerances and original failed source/receipts.",
+      "dispatch": "outputs/portfolio/followthrough-20260912/native303-dispatch.json",
+      "retry_source_sha256": "0dfad5e45ba37d6077163f56f8158ba1d39502d87f97fdf63f569756cdbadf50",
+      "retry_source_files": 134,
+      "retry_parent_cpu_tests_passed": 17,
+      "retry_worker_preflight_passed": true,
+      "retry_dispatch": "outputs/portfolio/followthrough-20260912/native303-runtime-dispatch.json",
+      "native_test_correct": 192,
+      "native_test_total": 192,
+      "native_unused_correct": 864,
+      "native_unused_total": 864,
+      "all1056_native_records_identical_to_adapter": true,
+      "teacher_and_adapter_not_loaded_in_reload": true,
+      "independent_audit": "outputs/portfolio/followthrough-20260912/audit_native303.json",
+      "audit_sha256": "b848558486cce06ee71022b3d41c59886fbe672feefc01ca9ad19ae994aaf28b",
+      "parent_auditor_cpu_checks_passed": 12,
+      "shards_verified_remotely": 9,
+      "serialized_tensors_verified": 399,
+      "generic_choices_identical": 128,
+      "generic_correct": 96,
+      "generic_total": 128,
+      "merged_to_reload_logit_and_score_max_difference": 0.0,
+      "native_weight_directory": "/mnt/shared/cl-portfolio/artifacts/followthrough-20260912-native-consolidated303/export/model",
+      "claim": "The fixed own-prefix384 learned adapter was merged into ordinary base weights and reloaded in a separate process with identical answers. Zero export updates; no direct base-weight optimization. Small source-to-merged roundoff within predefined tolerances. Python file-read audit is not an OS sandbox."
+    },
+    "onpolicy303_extra_training_control": {
+      "status": "training_and_fresh_reload_evaluations_independently_verified",
+      "source_sha256": "d11de8b7ba587cb7c99315232785ac2a20f8353130ab2db15bba3fa0e1e1d9f4",
+      "source_files": 157,
+      "parent_cpu_tests_passed": 32,
+      "frozen_files_verified": 24,
+      "methods": [
+        "cached_teacher_sft",
+        "cached_teacher_kl"
+      ],
+      "original_updates": 384,
+      "new_updates": 21,
+      "final_updates": 405,
+      "cached_original_tokens": 10752,
+      "additional_tokens": 588,
+      "final_tokens": 11340,
+      "fixed_ownprefix_tokens": 11314,
+      "schedule": "Continue with the next epoch prefix; the first384 batches of the extended schedule equal the original schedule exactly.",
+      "checkpoint_selection": "Fixed405 for both controls. Own-prefix384 export choice remains fixed.",
+      "scope": "Post-observation conservative extra-training control with reused evaluations; more tokens and updates, not an exact token or FLOP match.",
+      "dispatch": "outputs/portfolio/followthrough-20260912/onpolicy303-budget-dispatch.json",
+      "saved_final_checkpoint": 405,
+      "verified_new_updates_per_arm": 21,
+      "verified_new_tokens_per_arm": 588,
+      "original_envelope_status": "failed at post-training zero-GPU-allocation cleanup assertion before evaluator launch",
+      "recovery": "Separate evaluation-only jobs from the exact saved405 checkpoints; no repeated or additional training, preserve original failed runs and derive copied inputs with explicit relocation provenance.",
+      "evaluation_source_sha256": "78806a1515c8027c1a334694fe45fcb5d74bd50b8649f10b4d47d1d8f8b6a454",
+      "evaluation_source_files": 163,
+      "evaluation_parent_cpu_tests_passed": 35,
+      "evaluation_dispatch": "outputs/portfolio/followthrough-20260912/onpolicy303-budget-evaluation-recovery-dispatch.json",
+      "arms": {
+        "sft": {
+          "final_updates": 405,
+          "total_loss_tokens": 11340,
+          "recovery_updates": 0,
+          "native": {
+            "test": {
+              "correct": 189,
+              "total": 192
+            },
+            "unused288": {
+              "correct": 854,
+              "total": 864
+            }
+          },
+          "generic_correct": 97,
+          "generic_total": 128,
+          "evaluation_result": "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-onpolicy303-budget-sft-evaluate-only/study/result.json"
+        },
+        "kl": {
+          "final_updates": 405,
+          "total_loss_tokens": 11340,
+          "recovery_updates": 0,
+          "native": {
+            "test": {
+              "correct": 191,
+              "total": 192
+            },
+            "unused288": {
+              "correct": 862,
+              "total": 864
+            }
+          },
+          "generic_correct": 97,
+          "generic_total": 128,
+          "evaluation_result": "outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-onpolicy303-budget-kl-evaluate-only/study/result.json"
+        }
+      },
+      "interpretation": "The conservative extra-training controls did not close the original own-prefix gap. SFT405 scores189/192 and854/864; cachedKL405 scores191/192 and862/864; fixedownprefix384 scores192/192 and864/864. One fixture and learner seed, previously observed panels, and no exact update/token/FLOP equality.",
+      "independent_audit": "outputs/portfolio/followthrough-20260912/audit_onpolicy303_budget.json",
+      "audit_sha256": "5964c2005e05c9fd5560bb8f9dfb261b921edbdc54d180e4653b29c7320879e8",
+      "auditor_sha256": "f7a230671257bc3ea77ece3b287a6351dc3625c55acbb603ed40921af0b1dced",
+      "auditor_cpu_controls_passed": 15,
+      "paired_counts": {
+        "cached_teacher_sft405_versus_cached_teacher_sft384": {
+          "test": {
+            "before_correct": 187,
+            "after_correct": 189,
+            "gained": 5,
+            "lost": 3,
+            "still_wrong": 0,
+            "both_correct": 184,
+            "changed_answers": 8,
+            "count": 192,
+            "net_gain": 2
+          },
+          "unused288": {
+            "before_correct": 854,
+            "after_correct": 854,
+            "gained": 10,
+            "lost": 10,
+            "still_wrong": 0,
+            "both_correct": 844,
+            "changed_answers": 20,
+            "count": 864,
+            "net_gain": 0
+          },
+          "generic_retention": {
+            "gained": 1,
+            "lost": 0,
+            "net_gain": 1
+          }
+        },
+        "cached_teacher_sft405_versus_onpolicy_kl384": {
+          "test": {
+            "before_correct": 192,
+            "after_correct": 189,
+            "gained": 0,
+            "lost": 3,
+            "still_wrong": 0,
+            "both_correct": 189,
+            "changed_answers": 3,
+            "count": 192,
+            "net_gain": -3
+          },
+          "unused288": {
+            "before_correct": 864,
+            "after_correct": 854,
+            "gained": 0,
+            "lost": 10,
+            "still_wrong": 0,
+            "both_correct": 854,
+            "changed_answers": 10,
+            "count": 864,
+            "net_gain": -10
+          },
+          "generic_retention": {
+            "gained": 3,
+            "lost": 2,
+            "net_gain": 1
+          }
+        },
+        "cached_teacher_kl405_versus_cached_teacher_kl384": {
+          "test": {
+            "before_correct": 191,
+            "after_correct": 191,
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 1,
+            "both_correct": 191,
+            "changed_answers": 0,
+            "count": 192,
+            "net_gain": 0
+          },
+          "unused288": {
+            "before_correct": 862,
+            "after_correct": 862,
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 2,
+            "both_correct": 862,
+            "changed_answers": 0,
+            "count": 864,
+            "net_gain": 0
+          },
+          "generic_retention": {
+            "gained": 0,
+            "lost": 0,
+            "net_gain": 0
+          }
+        },
+        "cached_teacher_kl405_versus_onpolicy_kl384": {
+          "test": {
+            "before_correct": 192,
+            "after_correct": 191,
+            "gained": 0,
+            "lost": 1,
+            "still_wrong": 0,
+            "both_correct": 191,
+            "changed_answers": 1,
+            "count": 192,
+            "net_gain": -1
+          },
+          "unused288": {
+            "before_correct": 864,
+            "after_correct": 862,
+            "gained": 0,
+            "lost": 2,
+            "still_wrong": 0,
+            "both_correct": 862,
+            "changed_answers": 2,
+            "count": 864,
+            "net_gain": -2
+          },
+          "generic_retention": {
+            "gained": 3,
+            "lost": 2,
+            "net_gain": 1
+          }
+        },
+        "cached_teacher_kl405_versus_cached_teacher_sft405": {
+          "test": {
+            "before_correct": 189,
+            "after_correct": 191,
+            "gained": 3,
+            "lost": 1,
+            "still_wrong": 0,
+            "both_correct": 188,
+            "changed_answers": 4,
+            "count": 192,
+            "net_gain": 2
+          },
+          "unused288": {
+            "before_correct": 854,
+            "after_correct": 862,
+            "gained": 10,
+            "lost": 2,
+            "still_wrong": 0,
+            "both_correct": 852,
+            "changed_answers": 12,
+            "count": 864,
+            "net_gain": 8
+          },
+          "generic_retention": {
+            "gained": 2,
+            "lost": 2,
+            "net_gain": 0
+          }
+        }
+      },
+      "read_ban_audit_correction": "Auditor now checks the exact source-pinned list of base root, copied learner root, and individual base files; unexpected extra roots and order changes are rejected. Experiment source and receipts unchanged."
+    }
+  },
+  "followup_dispatches": [
+    {
+      "observed_at": "2026-09-12T05:32:30.138836+00:00",
+      "task_id": "distillation-device4-curriculum-20260912",
+      "source_sha256": "d97a779ec0edeadc04d4a012896994368827c1c80a7b8266e9708cee377ba9f5",
+      "stage": "teacher_budget_and_curriculum",
+      "status": "submitted",
+      "cpu_tests": 11,
+      "collected_execution_states_as_of_close": {
+        "distillation-device4-curriculum-20260912": "interrupted"
+      }
+    },
+    {
+      "observed_at": "2026-09-12T05:32:30.138836+00:00",
+      "task_ids": [
+        "followthrough-20260912-skills-compress4409",
+        "followthrough-20260912-skills-compress1103",
+        "followthrough-20260912-skills-compress2207",
+        "followthrough-20260912-skills-compress3301",
+        "followthrough-20260912-skills-audit4409",
+        "followthrough-20260912-skills-audit1103",
+        "followthrough-20260912-skills-audit2207",
+        "followthrough-20260912-skills-audit3301"
+      ],
+      "source_sha256": "9b2c2edeacb75a332751691a50801bbbacfb4453cabd31f0e0e7353c3ecbe788",
+      "stage": "qualified_fusion_compression_and_separate_process_persistence",
+      "status": "submitted",
+      "cpu_tests": 37,
+      "collected_execution_states_as_of_close": {
+        "followthrough-20260912-skills-compress4409": "completed",
+        "followthrough-20260912-skills-compress1103": "completed",
+        "followthrough-20260912-skills-compress2207": "completed",
+        "followthrough-20260912-skills-compress3301": "completed",
+        "followthrough-20260912-skills-audit4409": "completed",
+        "followthrough-20260912-skills-audit1103": "completed",
+        "followthrough-20260912-skills-audit2207": "completed",
+        "followthrough-20260912-skills-audit3301": "completed"
+      }
+    },
+    {
+      "observed_at": "2026-09-12T05:41:18.310519+00:00",
+      "task_ids": [
+        "followthrough-20260912-portal-head-nullspace",
+        "followthrough-20260912-portal-example-learned-target64"
+      ],
+      "source_sha256": "ac1e2365daeb0aa43a385f69a2297af646aabc8e9be041a3d0371bf4bff967e6",
+      "status": "submitted",
+      "source_export": {
+        "tensor_sha256": "2692133092fe86eedf0da3f7bb5610b5c2836fbb6853a76dc81c92e744650c5a",
+        "target_config_sha256": "e96fac01335eabb046f06b65d7d5f018bf4f09804d893970f95f6ddb9a925678",
+        "qualification_sha256": "8d822798f422d216a32afefa3976de107f4d90f94f11202759e509dd061dce04",
+        "old_vectors_frozen": true,
+        "learned_ABC_vectors_preserved": true,
+        "CPU_target_preparation": "passed_before_dispatch"
+      },
+      "collected_execution_states_as_of_close": {
+        "followthrough-20260912-portal-head-nullspace": "completed",
+        "followthrough-20260912-portal-example-learned-target64": "completed"
+      }
+    },
+    {
+      "observed_at": "2026-09-12T05:44:18.330121+00:00",
+      "task_id": "consolidation-source303-coverage-20260912",
+      "source_sha256": "20643be28fc30b45cdb847f4381f300b40ae4b548f509e94b1fa72b564689ffa",
+      "stage": "TRAIN_coverage_then_validation_qualification",
+      "status": "running",
+      "cpu_tests": 9,
+      "teacher_updates": 0,
+      "existing_candidate_steps": [
+        32,
+        128,
+        384
+      ],
+      "collected_execution_states_as_of_close": {
+        "consolidation-source303-coverage-20260912": "completed"
+      }
+    },
+    {
+      "observed_at": "2026-09-12T05:57:58.664777+00:00",
+      "task_id": "consolidation-coverage303-20260912",
+      "source_sha256": "70832a0f6412574f88016759669d679f1a2d6e2539d166e9adc2e0e096fb5c5b",
+      "status": "submitted",
+      "cpu_tests": 7,
+      "updates_per_arm": 384,
+      "examples_per_arm": 1536,
+      "initial_and_schedule_matched_to_previous_noisy_teacher": true,
+      "collected_execution_states_as_of_close": {
+        "consolidation-coverage303-20260912": "completed"
+      }
+    },
+    {
+      "observed_at": "2026-09-12T05:59:36.178496+00:00",
+      "task_ids": [
+        "followthrough-20260912-skills-initial-diagnosis2207",
+        "followthrough-20260912-skills-initial-diagnosis3301",
+        "followthrough-20260912-skills-initial-diagnosis1103",
+        "followthrough-20260912-skills-initial-diagnosis4409"
+      ],
+      "source_sha256_by_seed": {
+        "2207": "60b28c301869499949144994503b1edafb85c42dc213d8cfaf547ea950cc62b3",
+        "3301": "60b28c301869499949144994503b1edafb85c42dc213d8cfaf547ea950cc62b3",
+        "1103": "a11b30e89879aeeaec860b018784828405229d298f570aba76320cd996d2143c",
+        "4409": "a11b30e89879aeeaec860b018784828405229d298f570aba76320cd996d2143c"
+      },
+      "status": "submitted",
+      "cpu_tests": 15,
+      "updates": 0,
+      "scope": "Posthocinitialvsfinalskilldiagnosis; originalevaluationplus32newscenesneverusedforrecipeselection.",
+      "collected_execution_states_as_of_close": {
+        "followthrough-20260912-skills-initial-diagnosis2207": "completed",
+        "followthrough-20260912-skills-initial-diagnosis3301": "completed",
+        "followthrough-20260912-skills-initial-diagnosis1103": "failed",
+        "followthrough-20260912-skills-initial-diagnosis4409": "completed"
+      }
+    },
+    {
+      "observed_at": "2026-09-12T06:12:40.220885+00:00",
+      "task_ids": [
+        "followthrough-20260912-skills-compressed-workflow4409",
+        "followthrough-20260912-skills-compressed-workflow-audit4409"
+      ],
+      "source_sha256": "8456e8752d39b1ed9fbfeafe46485d68f4a349e4b607726998629b76449b45ad",
+      "status": "submitted",
+      "parent_targeted_cpu_tests": 11,
+      "scope": "Qualified compact merger, continued workflow training, fixed64-example replay control, then separate process audit.",
+      "collected_execution_states_as_of_close": {
+        "followthrough-20260912-skills-compressed-workflow4409": "completed",
+        "followthrough-20260912-skills-compressed-workflow-audit4409": "completed"
+      }
+    },
+    {
+      "observed_at": "2026-09-12T06:12:40.220885+00:00",
+      "task_ids": [
+        "followthrough-20260912-recovery-budget-pilot-train-a",
+        "followthrough-20260912-recovery-budget-pilot-train-b",
+        "followthrough-20260912-recovery-budget-pilot-gate"
+      ],
+      "source_sha256": "674800836fba82539ed5e8eff984b367888afa0ec592b3a7e02b6f1192464711",
+      "status": "pilot_sources_completed; invalid_zero_gpu_gate_withdrawn; exact_replacement_gate_slot_completed",
+      "parent_targeted_cpu_tests": 17,
+      "scope": "TRAIN-only2/4/8/16-update exact prefixes; require multiple supported minimum-budget classes before a separately sealed new-intent study.",
+      "collected_execution_states_as_of_close": {
+        "followthrough-20260912-recovery-budget-pilot-train-a": "completed",
+        "followthrough-20260912-recovery-budget-pilot-train-b": "completed"
+      }
+    },
+    {
+      "observed_at": "2026-09-12T06:12:40.220885+00:00",
+      "task_ids": [
+        "distillation-device4-depth34-20260912"
+      ],
+      "source_sha256": "20a989e776c76faeb5634bcba7973489605b6c8f49ea69e0d5b7f34d5eca583c",
+      "status": "withdrawn_before_execution_after_upstream_interruption",
+      "parent_targeted_cpu_tests": 9,
+      "scope": "Conditional deeper teacher qualification followed automatically by actual fixed-teacher context forward-KL learner training and fresh-process evaluation.",
+      "collected_execution_states_as_of_close": {}
+    },
+    {
+      "task_ids": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-learn-test-a",
+        "followthrough-20260912-recovery-predict-learn-test-b",
+        "followthrough-20260912-recovery-predict-learn-train-a",
+        "followthrough-20260912-recovery-predict-learn-train-b",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-readout-train-a",
+        "followthrough-20260912-recovery-predict-readout-train-b",
+        "followthrough-20260912-recovery-predict-readout-gate-train",
+        "followthrough-20260912-recovery-predict-repair-train-a",
+        "followthrough-20260912-recovery-predict-repair-train-b",
+        "followthrough-20260912-recovery-predict-fit",
+        "followthrough-20260912-recovery-predict-readout-test-a",
+        "followthrough-20260912-recovery-predict-readout-test-b",
+        "followthrough-20260912-recovery-predict-readout-gate-test",
+        "followthrough-20260912-recovery-predict-forecast",
+        "followthrough-20260912-recovery-predict-repair-test-a",
+        "followthrough-20260912-recovery-predict-repair-test-b",
+        "followthrough-20260912-recovery-predict-analyze"
+      ],
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "status": "submitted_learning_running",
+      "parent_targeted_cpu_tests": 40,
+      "scope": "Fresh64 intents disjoint from all80 prior intents; twoTRAIN/twoTEST independent models. Acquisition/forgetting, tuned-lens qualification, TRAIN budget/predictor fitting, then sealed forecasts before heldout repairs.",
+      "observed_at": "2026-09-12T06:47:36.999556+00:00",
+      "collected_execution_states_as_of_close": {
+        "followthrough-20260912-recovery-predict-authorize": "completed",
+        "followthrough-20260912-recovery-predict-learn-test-a": "completed",
+        "followthrough-20260912-recovery-predict-learn-test-b": "completed",
+        "followthrough-20260912-recovery-predict-learn-train-a": "completed",
+        "followthrough-20260912-recovery-predict-learn-train-b": "completed",
+        "followthrough-20260912-recovery-predict-cohort": "completed",
+        "followthrough-20260912-recovery-predict-readout-train-a": "completed",
+        "followthrough-20260912-recovery-predict-readout-train-b": "completed",
+        "followthrough-20260912-recovery-predict-readout-gate-train": "completed",
+        "followthrough-20260912-recovery-predict-repair-train-a": "completed",
+        "followthrough-20260912-recovery-predict-repair-train-b": "completed",
+        "followthrough-20260912-recovery-predict-fit": "completed",
+        "followthrough-20260912-recovery-predict-readout-test-a": "completed",
+        "followthrough-20260912-recovery-predict-readout-test-b": "completed",
+        "followthrough-20260912-recovery-predict-readout-gate-test": "completed",
+        "followthrough-20260912-recovery-predict-forecast": "completed",
+        "followthrough-20260912-recovery-predict-repair-test-a": "completed",
+        "followthrough-20260912-recovery-predict-repair-test-b": "completed",
+        "followthrough-20260912-recovery-predict-analyze": "completed"
+      }
+    },
+    {
+      "task_ids": [
+        "distillation-device4-recovery-20260912"
+      ],
+      "source_sha256": "c38c5d8c180c6358fbfd6f7850cb9f2bcecc0eda5b2d0f1e6100d5880d5effea",
+      "status": "running",
+      "parent_targeted_cpu_tests": 8,
+      "scope": "Reuse two complete arms; resume legacy adapter+AdamW96to384 with replay agreement97to223. Fresh-process original teacher qualification. Interrupted artifacts immutable.",
+      "observed_at": "2026-09-12T06:47:36.999556+00:00",
+      "collected_execution_states_as_of_close": {
+        "distillation-device4-recovery-20260912": "completed"
+      }
+    },
+    {
+      "task_ids": [
+        "followthrough-20260912-skills-delete-rehearsal4409",
+        "followthrough-20260912-skills-delete-rehearsal-audit4409"
+      ],
+      "source_sha256": "7c339f6cc2fd02fae10e13d9cfea57b0dbdd87e9a989270d56a1ed1a575c17f6",
+      "status": "completed_collected_independent_audit_pending",
+      "parent_targeted_cpu_tests": 3,
+      "scope": "Delete old loss, same256 current rows,128updates and current loss coefficient as replay.",
+      "observed_at": "2026-09-12T06:47:36.999556+00:00",
+      "collected_execution_states_as_of_close": {
+        "followthrough-20260912-skills-delete-rehearsal4409": "completed",
+        "followthrough-20260912-skills-delete-rehearsal-audit4409": "completed"
+      }
+    },
+    {
+      "observed_at": "2026-09-12T07:04:58.887335+00:00",
+      "task_id": "distillation-device4-chain-qualify-20260912",
+      "source_sha256": "8d36ba48bb9c429d28d2cbca78f9f4362120639568ab9b60380cc62a73b98361",
+      "status": "queued_on_recovered_teacher_qualification",
+      "parent_targeted_cpu_tests": 12,
+      "collected_execution_states_as_of_close": {
+        "distillation-device4-chain-qualify-20260912": "completed"
+      }
+    },
+    {
+      "observed_at": "2026-09-12T07:04:58.887335+00:00",
+      "task_id": "distillation-device4-chain-a-20260912",
+      "source_sha256": "8d36ba48bb9c429d28d2cbca78f9f4362120639568ab9b60380cc62a73b98361",
+      "status": "queued_on_recovered_teacher_qualification",
+      "parent_targeted_cpu_tests": 12,
+      "collected_execution_states_as_of_close": {
+        "distillation-device4-chain-a-20260912": "completed"
+      }
+    },
+    {
+      "observed_at": "2026-09-12T07:04:58.887335+00:00",
+      "task_id": "distillation-device4-chain-b-20260912",
+      "source_sha256": "8d36ba48bb9c429d28d2cbca78f9f4362120639568ab9b60380cc62a73b98361",
+      "status": "queued_on_recovered_teacher_qualification",
+      "parent_targeted_cpu_tests": 12,
+      "collected_execution_states_as_of_close": {
+        "distillation-device4-chain-b-20260912": "completed"
+      }
+    },
+    {
+      "observed_at": "2026-09-12T07:04:58.887335+00:00",
+      "task_id": "distillation-device4-chain-c-20260912",
+      "source_sha256": "8d36ba48bb9c429d28d2cbca78f9f4362120639568ab9b60380cc62a73b98361",
+      "status": "queued_on_recovered_teacher_qualification",
+      "parent_targeted_cpu_tests": 12,
+      "collected_execution_states_as_of_close": {
+        "distillation-device4-chain-c-20260912": "completed"
+      }
+    },
+    {
+      "observed_at": "2026-09-12T07:04:58.887335+00:00",
+      "task_id": "distillation-device4-native34-20260912",
+      "source_sha256": "8d36ba48bb9c429d28d2cbca78f9f4362120639568ab9b60380cc62a73b98361",
+      "status": "queued_on_recovered_teacher_qualification",
+      "parent_targeted_cpu_tests": 7,
+      "collected_execution_states_as_of_close": {
+        "distillation-device4-native34-20260912": "completed"
+      }
+    },
+    {
+      "line": "onpolicy303",
+      "at": "2026-09-12T07:32:06.228067+00:00",
+      "status": "3train_running_3evaluation_queued",
+      "source_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b",
+      "source_files": 130,
+      "parent_cpu_tests_passed": 12,
+      "scientific_source_hashes_verified": 25,
+      "dispatch_artifact": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/onpolicy303-dispatch.json",
+      "runtime": "preservedFP32coverage path; genericBF16load gate only; actualfreshFP32teacher TRAIN384+VAL96 requalification beforelearnerloading",
+      "claim_boundary": "fixed expert on student trajectories +cached KL andSFT controls; not fullSDFTorSDPO",
+      "collected_execution_states_as_of_close": {
+        "followthrough-20260912-onpolicy303-cached-teacher-kl-evaluate": "completed",
+        "followthrough-20260912-onpolicy303-cached-teacher-kl-train": "completed",
+        "followthrough-20260912-onpolicy303-cached-teacher-sft-evaluate": "completed",
+        "followthrough-20260912-onpolicy303-cached-teacher-sft-train": "completed",
+        "followthrough-20260912-onpolicy303-onpolicy-kl-evaluate": "completed",
+        "followthrough-20260912-onpolicy303-onpolicy-kl-train": "completed"
+      }
+    },
+    {
+      "line": "matched_history_controls",
+      "at": "2026-09-12T07:37:21.187688+00:00",
+      "source_sha256": "d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658",
+      "source_files": 134,
+      "jobs": 18,
+      "status": "learners_running_repairs_gated",
+      "parent_cpu_tests_passed": 31,
+      "sealed_hashes_verified": 76,
+      "dispatch_artifact": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/history-control-dispatch.json",
+      "collected_execution_states_as_of_close": {
+        "followthrough-20260912-recovery-history-analyze": "completed",
+        "followthrough-20260912-recovery-history-gate": "completed",
+        "followthrough-20260912-recovery-history-learn-alternate-binding-test-a": "completed",
+        "followthrough-20260912-recovery-history-learn-alternate-binding-test-b": "completed",
+        "followthrough-20260912-recovery-history-learn-alternate-binding-train-a": "completed",
+        "followthrough-20260912-recovery-history-learn-alternate-binding-train-b": "completed",
+        "followthrough-20260912-recovery-history-learn-new-only-test-a": "completed",
+        "followthrough-20260912-recovery-history-learn-new-only-test-b": "completed",
+        "followthrough-20260912-recovery-history-learn-new-only-train-a": "completed",
+        "followthrough-20260912-recovery-history-learn-new-only-train-b": "completed",
+        "followthrough-20260912-recovery-history-repair-alternate-binding-test-a": "completed",
+        "followthrough-20260912-recovery-history-repair-alternate-binding-test-b": "completed",
+        "followthrough-20260912-recovery-history-repair-alternate-binding-train-a": "completed",
+        "followthrough-20260912-recovery-history-repair-alternate-binding-train-b": "completed",
+        "followthrough-20260912-recovery-history-repair-new-only-test-a": "completed",
+        "followthrough-20260912-recovery-history-repair-new-only-test-b": "completed",
+        "followthrough-20260912-recovery-history-repair-new-only-train-a": "completed",
+        "followthrough-20260912-recovery-history-repair-new-only-train-b": "completed"
+      }
+    },
+    {
+      "line": "device4_training_sufficiency",
+      "at": "2026-09-12T08:09:31.120370+00:00",
+      "source_sha256": "03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f",
+      "source_files": 143,
+      "jobs": 4,
+      "status": "completed_pending_final_raw_audit",
+      "parent_cpu_tests_passed": 10,
+      "source_file_hashes_verified": 32,
+      "retained_updates_per_arm": 128,
+      "new_updates_per_arm": 896,
+      "final_total_per_arm": 1024,
+      "dispatch": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/device4-sufficiency-dispatch.json",
+      "source_full_native_TRAIN_correct": {
+        "A_oracle": 41,
+        "A_chain": 36,
+        "B_oracle": 12,
+        "C_oracle": 50
+      },
+      "collected_execution_states_as_of_close": {
+        "distillation-device4-sufficiency-a-chain-20260912": "completed",
+        "distillation-device4-sufficiency-a-oracle-20260912": "completed",
+        "distillation-device4-sufficiency-b-oracle-20260912": "completed",
+        "distillation-device4-sufficiency-c-oracle-20260912": "completed"
+      }
+    },
+    {
+      "line": "native303_persistence",
+      "at": "2026-09-12T08:40:39.400138+00:00",
+      "source_sha256": "0498be8531bfd0cd9dea2dab4e74946345963ac4a7bf4f40aba867207f6b8bef",
+      "source_files": 134,
+      "jobs": 2,
+      "status": "export_failed_preload_evaluate_blocked",
+      "parent_cpu_tests_passed": 12,
+      "source_pins_verified": 6,
+      "collected_execution_states_as_of_close": {
+        "followthrough-20260912-native303-export": "failed"
+      }
+    },
+    {
+      "line": "native303_persistence_runtime_retry",
+      "at": "2026-09-12T08:49:11.398416+00:00",
+      "source_sha256": "0dfad5e45ba37d6077163f56f8158ba1d39502d87f97fdf63f569756cdbadf50",
+      "source_files": 134,
+      "jobs": 2,
+      "status": "both_completed_pending_independent_audit",
+      "preflight_passed": true,
+      "parent_cpu_tests_passed": 17,
+      "collected_execution_states_as_of_close": {
+        "followthrough-20260912-native303-evaluate-runtime": "completed",
+        "followthrough-20260912-native303-export-runtime": "completed"
+      },
+      "final_audit_status": "independently_verified"
+    },
+    {
+      "line": "onpolicy303_extra_training_control",
+      "at": "2026-09-12T08:49:11.398416+00:00",
+      "source_sha256": "d11de8b7ba587cb7c99315232785ac2a20f8353130ab2db15bba3fa0e1e1d9f4",
+      "source_files": 157,
+      "jobs": 2,
+      "status": "training_complete_evaluation_recovery_pending",
+      "parent_cpu_tests_passed": 32,
+      "collected_execution_states_as_of_close": {
+        "followthrough-20260912-onpolicy303-budget-cached-teacher-kl": "failed",
+        "followthrough-20260912-onpolicy303-budget-cached-teacher-sft": "failed"
+      },
+      "final_audit_status": "independently_verified"
+    },
+    {
+      "line": "onpolicy303_evaluation_recovery",
+      "at": "2026-09-12T09:11:33.044778+00:00",
+      "source_sha256": "78806a1515c8027c1a334694fe45fcb5d74bd50b8649f10b4d47d1d8f8b6a454",
+      "source_files": 163,
+      "jobs": 2,
+      "status": "completed_collected_independent_audit_pending",
+      "new_optimizer_updates": 0,
+      "parent_cpu_tests_passed": 35,
+      "dispatch": "outputs/portfolio/followthrough-20260912/onpolicy303-budget-evaluation-recovery-dispatch.json",
+      "collected_execution_states_as_of_close": {
+        "followthrough-20260912-onpolicy303-budget-kl-evaluate-only": "completed",
+        "followthrough-20260912-onpolicy303-budget-sft-evaluate-only": "completed"
+      },
+      "final_audit_status": "independently_verified"
+    }
+  ],
+  "questions": [
+    {
+      "question": "Transfer the example-trained generator with its learned task vectors",
+      "status": "completed_collected_independently_rescored_no_clear_speed_superiority"
+    },
+    {
+      "question": "Predict recovery and intervention utility beyond output-only and constant-policy controls",
+      "status": "fresh_prospective_prediction_and_matched_history_controls_completed_no_policy_advantage; posthoc_training_eligibility_defect_disclosed"
+    },
+    {
+      "question": "Recovery versus new acquisition under identical repair examples",
+      "status": "completed_collected_independently_audited"
+    },
+    {
+      "question": "Whole-answer independent learner consolidation",
+      "status": "completed_and_independently_audited"
+    },
+    {
+      "question": "Agent-Dice and varied tool workflows",
+      "status": "four_varied_streams_and_faithful_fusion_component_completed; compact_replay_hybrid_did_not_beat_simple_replay"
+    },
+    {
+      "question": "Four-digit teacher primitive and composition curriculum",
+      "status": "teacher_curriculum_chain_qualification_and_internal_learners_completed; extended_training_reached_mastery_but_unseen_composition_remained_weak"
+    },
+    {
+      "question": "Long streams beyond these four tool families, repeated upgrades, and broad skills",
+      "status": "not_established"
+    },
+    {
+      "question": "Jacobian Lens, NLA and causal feature interventions",
+      "status": "not_implemented_in_this_wave"
+    }
+  ],
+  "updated_at": "2026-09-12T09:21:58.262962+00:00",
+  "local_commits": {
+    "compute_immutable_staging": "4b68d69",
+    "portal_results": "1aa5c08",
+    "varied_tools_results": "1ae5a23",
+    "compute_missing_source_preflight": "0c11436",
+    "pushed": false,
+    "39a2c1b": "216 frozen recovery/distillation source, protocol, dataset and test files; no push",
+    "4731879": "Verified recovery and consolidation artifacts, prospective policy audit and figure; no push",
+    "fc99943": "104-run provenance audit and all43externalplus6Gitblobpins; no push",
+    "e63cd20": "Continuous composition training, original device4 audits, final teacher-feedback consolidation audit; no push",
+    "resumable_collection": "2c6b4c2",
+    "recovery_eligibility_sensitivity": "30516d8",
+    "history_complete_audit": "f18d524",
+    "history_figure": "38d8f54",
+    "composition_sufficiency_audit": "20d9612",
+    "native303_initial_implementation": "7188e61",
+    "native303_runtime_pin_fix": "8401065",
+    "onpolicy303_extra_training_controls": "2746c10",
+    "budget_evaluation_recovery": "7bc9046",
+    "native303_independent_audit": "c0701fc",
+    "budget_control_independent_audit": "e64f486",
+    "final_portfolio_provenance_audit": "4a5f034"
+  },
+  "collection_snapshot": {
+    "at": "2026-09-12T09:11:33.044778+00:00",
+    "runs_with_collection_and_execution": 137,
+    "execution_state_counts": {
+      "completed": 130,
+      "interrupted": 1,
+      "blocked": 1,
+      "failed": 5
+    },
+    "scientific_experiment_count": null,
+    "scope": "Counts include qualification, analysis, recovery, failed, blocked and interrupted execution records; they are not independent scientific experiments."
+  },
+  "completed_at": "2026-09-12T09:21:58.262962+00:00",
+  "verification": {
+    "status": "complete",
+    "portfolio_report": "outputs/portfolio/followthrough-20260912/audit_portfolio_provenance.json",
+    "portfolio_report_sha256": "43162b5414143731a036c835eed41845f66611a350349c9cb10ec5b683a04cde",
+    "portfolio_auditor_sha256": "5b256d8f10159c1036abaa4fc5235b767005653b31806ec66826ee30ca8a5714",
+    "collected_runs": 137,
+    "execution_counts": {
+      "blocked": 1,
+      "completed": 130,
+      "failed": 5,
+      "interrupted": 1
+    },
+    "source_archives": 31,
+    "integrity_errors": 0,
+    "provenance_gaps": 0,
+    "external_sha256_pins_verified": 58,
+    "git_blob_pins_verified": 6,
+    "parent_portfolio_cpu_controls_passed": 96,
+    "physical_files_hashed": 10587,
+    "physical_bytes_hashed": 108207522816,
+    "worker_local_pin_boundary": "Both historical temporary paths absent; authorized local implementation copies match pinned source bytes. This does not prove reads from the historical process.",
+    "all_selected_scientific_results_independently_audited": true,
+    "count_boundary": "Run records include gates, audits, qualification, recovery, failures and interruptions;137is not an independent experiment count."
+  },
+  "historical_event_state_note": "Statuses on timestamped decision and dispatch events describe that observation. Resolution and collected_execution_states_as_of_close record subsequent outcomes; immutable scientific run receipts retain their original states.",
+  "remaining_research": [
+    "Prospective recovery prediction with eligibility computed on the actual repair panel and enough supported TRAIN classes across more independently trained model clusters.",
+    "Jacobian Lens, NLA, and causal feature interventions were not implemented in this wave.",
+    "Full Nested Learning and Agent-Dice pipelines remain unreproduced; the Agent-Dice coordinate-fusion component was implemented and compared.",
+    "The fixed-expert own-prefix KL experiment is not a complete SDFT or SDPO reproduction.",
+    "Broader skill families, multiple optimization seeds for the varied tool streams, longer histories and repeated model upgrades remain unestablished.",
+    "Internal composition generalized weakly after training mastery; new experience construction or representations remain untested.",
+    "The separate continue/reset/add-capacity/replay plasticity implementation and most adapter-generation methods in the inventory were not run in this wave."
+  ]
+}

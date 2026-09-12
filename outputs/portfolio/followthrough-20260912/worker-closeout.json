@@ -1,0 +1,56 @@
+{
+  "at": "2026-09-12T09:20:24.998442+00:00",
+  "status": "owned_gpu_worker_closed",
+  "context": "us-mi355x-nambiar-k8s",
+  "namespace": "default",
+  "job": {
+    "name": "cl-portfolio-recovery-mfxws",
+    "uid": "dc7bcbdf-9121-4d46-adc0-0b884939e791",
+    "status": {
+      "active": 1,
+      "conditions": [
+        {
+          "lastProbeTime": "2026-09-12T06:31:21Z",
+          "lastTransitionTime": "2026-09-12T06:31:21Z",
+          "message": "Job resumed",
+          "reason": "JobResumed",
+          "status": "False",
+          "type": "Suspended"
+        }
+      ],
+      "ready": 1,
+      "startTime": "2026-09-12T06:31:21Z",
+      "terminating": 0,
+      "uncountedTerminatedPods": {}
+    }
+  },
+  "pod": {
+    "name": "cl-portfolio-recovery-mfxws-scwl6",
+    "uid": "e2ab7748-4a8d-407e-b472-617e2d61bed1",
+    "phase": "Running",
+    "node": "gilded-ibex"
+  },
+  "remote": {
+    "supervisor_sha256": "875fe0a6adce9883e715c0eacdd9e6377e494fad001574b843f4b892901531d9",
+    "supervisor_observed_at": "2026-09-12T09:20:22.160162+00:00",
+    "pod": "cl-portfolio-recovery-mfxws-scwl6",
+    "active": {},
+    "stopping": false,
+    "queued_execution_counts": {
+      "completed": 221,
+      "blocked": 1,
+      "failed": 27
+    },
+    "nonterminal": []
+  },
+  "external_nfs_artifacts_retained": true,
+  "control_pod_retained": true,
+  "provider_policy_changes": false,
+  "final_independent_audit_sha256": "43162b5414143731a036c835eed41845f66611a350349c9cb10ec5b683a04cde",
+  "worker_local_audit_obligations_complete": true,
+  "cleanup_requested_at": "2026-09-12T09:20:56.783262+00:00",
+  "delete_response": "job.batch \"cl-portfolio-recovery-mfxws\" deleted",
+  "job_absent_verified": true,
+  "pod_absent_verified": true,
+  "verified_at": "2026-09-12T09:20:58.744508+00:00"
+}
