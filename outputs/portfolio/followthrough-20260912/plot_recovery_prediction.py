@@ -13,6 +13,7 @@ def main():
     args = parser.parse_args()
     source = args.wave / "runs/followthrough-20260912-recovery-predict-analyze/study/analysis.json"
     audit_path = args.wave / "recovery-prediction-audit.final.json"
+    sensitivity_path = args.wave / "repair_eligibility_sensitivity.json"
     analysis = json.loads(source.read_text())
     audit = json.loads(audit_path.read_text())
     if audit["status"] != "complete_verified" or audit["missing_stages"]:
@@ -21,7 +22,7 @@ def main():
     labels = ["Fixed 2", "Fixed 4", "Fixed 8", "Fixed 16", "Frozen\nreadout", "Tuned\nreadout"]
     colors = ["#246b88", "#b66a35"]
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 11, "axes.spines.top": False, "axes.spines.right": False})
-    fig, axes = plt.subplots(1, 2, figsize=(13.2, 6), gridspec_kw={"width_ratios": [1.5, 1]})
+    fig, axes = plt.subplots(1, 2, figsize=(13.2, 6.5), gridspec_kw={"width_ratios": [1.5, 1]})
     x = np.arange(len(methods))
     data = {}
     for offset, (stream, count) in enumerate(analysis["source_counts"].items()):
@@ -48,14 +49,16 @@ def main():
         ax.set_axisbelow(True)
     fig.suptitle("Internal readouts did not improve repair allocation", x=0.065, ha="left", fontsize=18, fontweight="bold", y=0.98)
     fig.text(0.065, 0.90, "Forecasts were sealed before held-out repairs. Every fixed budget was specified in advance.", fontsize=11)
-    fig.text(0.065, 0.075, "Two independent held-out models; 16-code intent classification. TRAIN-majority, output and confidence policies equal Fixed 2.", fontsize=9, color="#48545f")
-    fig.text(0.065, 0.035, "All repair budgets were actually run. The right panel estimates policy allocations; it does not report saved study compute.", fontsize=9, color="#48545f")
-    fig.subplots_adjust(left=0.065, right=0.98, top=0.81, bottom=0.29, wspace=0.26)
+    fig.text(0.065, 0.105, "Two independent held-out models; 16-code intent classification. TRAIN-majority, output and confidence policies equal Fixed 2.", fontsize=9, color="#48545f")
+    fig.text(0.065, 0.065, "Original forecasts shown. One TRAIN label required an impossible gain; excluding it post hoc still gave no tuned-policy advantage.", fontsize=9, color="#48545f")
+    fig.text(0.065, 0.025, "All repair budgets were actually run. The right panel estimates policy allocations; it does not report saved study compute.", fontsize=9, color="#48545f")
+    fig.subplots_adjust(left=0.065, right=0.98, top=0.81, bottom=0.32, wspace=0.26)
     for extension in ("png", "pdf", "svg"):
         fig.savefig(args.wave / f"recovery-prediction.{extension}", dpi=180, facecolor="white")
     metadata = {
         "source": str(source), "source_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
         "independent_audit_sha256": hashlib.sha256(audit_path.read_bytes()).hexdigest(),
+        "eligibility_sensitivity_sha256": hashlib.sha256(sensitivity_path.read_bytes()).hexdigest(),
         "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "methods": methods, "source_counts": analysis["source_counts"], "qualification": data,
         "pooled_mean_updates": dict(zip(methods, steps, strict=True)), "independent_model_clusters": 2,

@@ -2,7 +2,8 @@
   "source": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-analyze/study/analysis.json",
   "source_sha256": "fb805149ced8eb796ede9dac5ad27c729fa0c6ce0d247e1f857989c2cc9fa791",
   "independent_audit_sha256": "501d8b813bac35385f500089d9ac5ef4300ead8a10b788f9ac0e4eec20cd57d7",
-  "script_sha256": "0316a44ceeb3afa34fe39f1f261741f81f51711f8b9106fc1f6f87d2404c553e",
+  "eligibility_sensitivity_sha256": "39c846650739515c38c6620e2fc9d55a55c3de99f787b4a192e6956b240b273e",
+  "script_sha256": "4e77d7884450d2e82bbfd098ee1be6dc1954883ce9e54973e4c4bfae5afc6ecd",
   "methods": [
     "always/2",
     "always/4",
