@@ -1,0 +1,377 @@
+{
+  "status": "cpu_verified_ready_for_parent_gpu_dispatch",
+  "ownership": "Only experiments/recoverability changed by this lane. Parent owns staging, GPU jobs, collection, publication and commits. No GPU or Kubernetes actions were performed by this lane.",
+  "entrypoint": "experiments/recoverability/prospective_dispatch.py",
+  "dispatcher_contract": "Accepts only --config PATH --output-dir EXISTING_RUN_DIR; creates a fresh EXISTING_RUN_DIR/study child. Refuses to overwrite it. A successful process exit can contain a failed scientific prerequisite: inspect receipt status/qualified.",
+  "learn_dispatch_configs": [
+    "configs/prospective-learn-test-a.json",
+    "configs/prospective-learn-test-b.json",
+    "configs/prospective-learn-train-a.json",
+    "configs/prospective-learn-train-b.json"
+  ],
+  "minimal_runtime_files": [
+    "prospective_dispatch.py",
+    "prospective.py",
+    "prospective_model.py",
+    "prospective_analysis.py",
+    "prospective_data.py",
+    "prospective_pilot.py",
+    "prospective_reference.py",
+    "tuned_lens.py",
+    "model.py",
+    "protocol.py",
+    "prospective-protocol.json",
+    "prospective-protocol.sha256",
+    "reference-protocol.json",
+    "reference-protocol.sha256",
+    "repair-pilot-protocol.json",
+    "repair-pilot-protocol.sha256",
+    "configs/prospective.json",
+    "inputs/prospective-cohort.json"
+  ],
+  "staging": "Prefer staging all recovery .py files, configs/*.json, protocol JSON and .sha256 files, and inputs/prospective-cohort.json. Ignore outputs and bytecode. Existing historical protocols and results remain unmodified. Runtime does not import datasets; only prepare_prospective.py uses the local datasets package.",
+  "data": {
+    "sha256": "b5b89a67140db92e8f9d281510dcfc873c5e32c46470ef3acb0b4dd3ae861bb8",
+    "streams": {
+      "test-a": {
+        "split": "test",
+        "seed": 307,
+        "old_intents": [
+          "no",
+          "insurance_change",
+          "thank_you",
+          "report_fraud",
+          "what_can_i_ask_you",
+          "jump_start",
+          "todo_list",
+          "direct_deposit"
+        ],
+        "new_intents": [
+          "application_status",
+          "distance",
+          "goodbye",
+          "roll_dice",
+          "nutrition_info",
+          "timer",
+          "exchange_rate",
+          "international_fees"
+        ]
+      },
+      "test-b": {
+        "split": "test",
+        "seed": 401,
+        "old_intents": [
+          "pay_bill",
+          "time",
+          "income",
+          "next_song",
+          "mpg",
+          "whisper_mode",
+          "rewards_balance",
+          "do_you_have_pets"
+        ],
+        "new_intents": [
+          "change_speed",
+          "report_lost_card",
+          "alarm",
+          "shopping_list_update",
+          "w2",
+          "order",
+          "new_card",
+          "share_location"
+        ]
+      },
+      "train-a": {
+        "split": "train",
+        "seed": 101,
+        "old_intents": [
+          "play_music",
+          "change_language",
+          "expiration_date",
+          "reset_settings",
+          "definition",
+          "meal_suggestion",
+          "calendar",
+          "where_are_you_from"
+        ],
+        "new_intents": [
+          "fun_fact",
+          "how_busy",
+          "book_hotel",
+          "meeting_schedule",
+          "sync_device",
+          "restaurant_suggestion",
+          "routing",
+          "order_status"
+        ]
+      },
+      "train-b": {
+        "split": "train",
+        "seed": 211,
+        "old_intents": [
+          "min_payment",
+          "how_old_are_you",
+          "oil_change_when",
+          "vaccines",
+          "restaurant_reservation",
+          "make_call",
+          "schedule_meeting",
+          "lost_luggage"
+        ],
+        "new_intents": [
+          "pto_request",
+          "accept_reservations",
+          "last_maintenance",
+          "account_blocked",
+          "confirm_reservation",
+          "freeze_account",
+          "meaning_of_life",
+          "oil_change_how"
+        ]
+      }
+    },
+    "candidate_skills": 32,
+    "stream_intents": 64,
+    "lens_background_intents": 16,
+    "row_count": 5760
+  },
+  "hard_gates": [
+    "Each old intent needs >=.8 on 10 gate-validation rows AND >=.3 gain from initial validation score; >=6 old intents per source before later-task training.",
+    "Later-task learning requires >=6 new intents at >=.8 with >=.3 gain from the acquired-checkpoint phase-start validation score. Old skills require drop >=.3 and final <=.5, all under identical 16-code classification.",
+    "All four source receipts required; >=4 forgotten per stream, >=12 TRAIN and >=8 TEST across two disjoint source streams each before any pilot/lens/repair.",
+    "Four-intent TRAIN-only repair pilot (two per train stream), no lens, must show >=2 meaningful responses and varied utilities before full lens/action phase.",
+    "Full TRAIN-only outcomes then qualify signal and freeze fitted predictors before any heldout action phase.",
+    "Retain-only model sees no old training rows and learns the exact same newer-task batches. New intents must reach >=.8 AND gain >=.3 from its own initial validation scores. Its old intents intentionally have no acquisition gate. Heldout reference actions require training repair gates."
+  ],
+  "budget": {
+    "learn_per_source": {
+      "old_updates": 128,
+      "new_updates": 128,
+      "batch_size": 8,
+      "old_exposures": 1024,
+      "new_exposures": 1024,
+      "test_rows_evaluated": 0,
+      "lens_updates": 0,
+      "repair_updates": 0
+    },
+    "repair_per_intent": {
+      "updates_per_trainable_action": 16,
+      "total_exposures_per_action": 128,
+      "target_only_old_exposures": 128,
+      "balanced_old_exposures": 64,
+      "balanced_new_exposures": 64,
+      "sham": "same balanced batches and budget, rotated target code"
+    },
+    "pilot": {
+      "candidate_intents": 4,
+      "maximum_total_repair_updates": 192,
+      "maximum_action_panels": 20
+    },
+    "pilot_reuse": "Full TRAIN measurement copies exact successful pilot action artifacts after baseline-identity verification; no repeated learner updates for those intents."
+  },
+  "method_limits": [
+    "Learned intent-to-code bindings, not semantic intent erasure or free generation.",
+    "Tuned-lens affine translator, full-vocabulary forward KL, frozen norm/head/model, identity residual initialization; small CLINC background corpus and training budget adapt the method rather than reproduce published scale.",
+    "Internal readouts never optimize the learner. Report per-intent and per-stream summaries; source streams remain dependency clusters.",
+    "Two heldout source streams are exploratory. No model-level Jacobian or J-Access reproduction is claimed.",
+    "Retain-only comparison matches repair support, updates, codes, base and initialization. Lifetime training exposures and optimizer history intentionally differ."
+  ],
+  "followups": {
+    "acquisition_failure": "configs/prospective-acquisition256.json",
+    "forgetting_failure": "configs/prospective-forgetting256.json",
+    "repair_pilot_failure": "configs/prospective-repair64.json",
+    "binding": "The packaged repair64 config assumes primary 128/128 acquisition/forgetting. If a different learning config succeeds, preserve its exact learning budgets in a separately named repair-only followup config. Changed learning identities are rejected; never mutate an archived protocol/result."
+  },
+  "parent_manifest_templates": {
+    "qualify_all_four": {
+      "study_config": "configs/prospective.json",
+      "stage": "qualify",
+      "sources": [
+        "$LEARN_TRAIN_A/study",
+        "$LEARN_TRAIN_B/study",
+        "$LEARN_TEST_A/study",
+        "$LEARN_TEST_B/study"
+      ]
+    },
+    "small_train_pilot": {
+      "study_config": "configs/prospective.json",
+      "pilot": true,
+      "stage": "measure",
+      "stream": "train-a",
+      "qualification": "$COHORT_RUN/study"
+    },
+    "qualify_small_pilot": {
+      "study_config": "configs/prospective.json",
+      "pilot": true,
+      "stage": "qualify",
+      "qualification": "$COHORT_RUN/study",
+      "sources": [
+        "$PILOT_TRAIN_A/study",
+        "$PILOT_TRAIN_B/study"
+      ]
+    },
+    "measure_training_stream": {
+      "study_config": "configs/prospective.json",
+      "stage": "measure",
+      "stream": "train-a",
+      "qualification": "$COHORT_RUN/study",
+      "pilot_qualification": "$PILOT_GATE_RUN/study"
+    },
+    "qualify_full_training_and_freeze_predictors": {
+      "study_config": "configs/prospective.json",
+      "stage": "qualify-repairs",
+      "qualification": "$COHORT_RUN/study",
+      "sources": [
+        "$MEASURE_TRAIN_A/study",
+        "$MEASURE_TRAIN_B/study"
+      ]
+    },
+    "measure_heldout_stream": {
+      "study_config": "configs/prospective.json",
+      "stage": "measure",
+      "stream": "test-a",
+      "qualification": "$COHORT_RUN/study",
+      "pilot_qualification": "$PILOT_GATE_RUN/study",
+      "repair_qualification": "$REPAIR_GATE_RUN/study"
+    },
+    "analyze_heldout": {
+      "study_config": "configs/prospective.json",
+      "stage": "analyze",
+      "qualification": "$COHORT_RUN/study",
+      "repair_qualification": "$REPAIR_GATE_RUN/study",
+      "sources": [
+        "$MEASURE_TEST_A/study",
+        "$MEASURE_TEST_B/study"
+      ]
+    },
+    "learn_retain_only_reference": {
+      "study_config": "configs/prospective.json",
+      "reference": true,
+      "stage": "learn",
+      "stream": "train-a",
+      "learning_source": "$LEARN_TRAIN_A/study"
+    },
+    "measure_reference_training_stream": {
+      "study_config": "configs/prospective.json",
+      "reference": true,
+      "stage": "measure",
+      "stream": "train-a",
+      "reference_source": "$REFERENCE_TRAIN_A/study",
+      "qualification": "$COHORT_RUN/study",
+      "pilot_qualification": "$PILOT_GATE_RUN/study"
+    },
+    "measure_reference_heldout_stream": {
+      "study_config": "configs/prospective.json",
+      "reference": true,
+      "stage": "measure",
+      "stream": "test-a",
+      "reference_source": "$REFERENCE_TEST_A/study",
+      "qualification": "$COHORT_RUN/study",
+      "pilot_qualification": "$PILOT_GATE_RUN/study",
+      "repair_qualification": "$REPAIR_GATE_RUN/study"
+    },
+    "paired_reference_comparison": {
+      "study_config": "configs/prospective.json",
+      "reference": true,
+      "stage": "compare",
+      "stream": "test-a",
+      "main_source": "$MEASURE_TEST_A/study",
+      "reference_source": "$REFERENCE_MEASURE_TEST_A/study"
+    }
+  },
+  "template_note": "Replace every $... token with an actual parent-controlled absolute output path before writing a new immutable dispatch config. These are templates, not runnable paths. Duplicate train-a/test-a templates for train-b/test-b. All source paths refer to study children, not parent task roots.",
+  "cpu_validation": {
+    "tests_passed": 53,
+    "command": "PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python -m pytest tests -q -p no:cacheprovider --basetemp=outputs/prospective-reviewed-cpu-tests",
+    "working_directory": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability",
+    "ruff": "passed",
+    "nested_import_ast_check": "passed; zero nested imports",
+    "runtime": {
+      "torch": "2.14.0",
+      "transformers": "5.16.1",
+      "peft": "0.20.0",
+      "safetensors": "0.8.0",
+      "numpy": "2.5.3"
+    },
+    "scope": "CPU controls use tiny random hybrid Qwen and deterministic fixtures. No prospective research-model capability result is claimed."
+  },
+  "references": [
+    "https://arxiv.org/html/2303.08112v4",
+    "https://github.com/AlignmentResearch/tuned-lens/blob/main/tuned_lens/nn/lenses.py",
+    "https://github.com/AlignmentResearch/tuned-lens/blob/main/tuned_lens/scripts/train_loop.py",
+    "https://arxiv.org/abs/2608.11408",
+    "https://aclanthology.org/D19-1131/"
+  ],
+  "modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-acquisition256.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-forgetting256.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-learn-test-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-learn-test-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-learn-train-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-learn-train-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-repair64.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/inputs/prospective-cohort.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/prepare_prospective.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/prospective-interface.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/prospective-protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/prospective-protocol.sha256",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/prospective.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/prospective_analysis.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/prospective_data.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/prospective_dispatch.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/prospective_model.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/prospective_pilot.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/prospective_reference.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/reference-protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/reference-protocol.sha256",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/repair-pilot-protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/repair-pilot-protocol.sha256",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/tests/test_prospective.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/tuned_lens.py"
+  ],
+  "file_hashes": {
+    "configs/prospective-acquisition256.json": "7fcb638aa0a8038d73a8da406a159c881d49cf421f54586e123b36096450f306",
+    "configs/prospective-forgetting256.json": "a6fc764975361c6115c2dc9034d6e95eaf844c584dee9ed74f8a1600350ce713",
+    "configs/prospective-learn-test-a.json": "eeff105573a3ac80bd20f7a8717b1dfa72352d3a462a9dea973797388c325956",
+    "configs/prospective-learn-test-b.json": "78ee12cd213da54a7c8568861d979ccc6179c568c5547ef3e5b455ef26fe8298",
+    "configs/prospective-learn-train-a.json": "ae865547f8f4e25cdb206ff4f4be4a7e31862111ba42361afe8520eb7d76c70b",
+    "configs/prospective-learn-train-b.json": "00bcfff6146b0dc657ebd50aad16258a45e3df204bd1c0baf9e7913ab0741320",
+    "configs/prospective-repair64.json": "9e251ed1f846dfdf0969567ca9942a2257ab37ad271cf50158ebbf31b698e51a",
+    "configs/prospective.json": "8a3b4c2b6b7d99644d3054e934936587ec33fe8d8d3f1c1629b6924d2c74e4e3",
+    "inputs/prospective-cohort.json": "b5b89a67140db92e8f9d281510dcfc873c5e32c46470ef3acb0b4dd3ae861bb8",
+    "model.py": "5af6edb1a42d6042a3a38b9d0ab4ce01ea6cadac6728d9e0fea84acd695442b2",
+    "prepare_prospective.py": "e9aab3908503c0b89f3f109bd4b51cef6b3c7f91cfafac30e6455d10bb022ff1",
+    "prospective-protocol.json": "51f2f2771b59e7f4f93090bf8463758032e2c88a41764212849fe4499f0d4719",
+    "prospective-protocol.sha256": "1229d93879693ea94bf5e6d4eb307abfa5438af26ce9e51cbe2a533bb2ccf43a",
+    "prospective.py": "3f2ce28d0c350b26b1e0d8d97a9fc9084e9f75837f20945e82e8c80584f817dc",
+    "prospective_analysis.py": "2eeb9b61a14a58df2cf8f20b5148d73afda3364b4b93424ef408faad6e6ebad6",
+    "prospective_data.py": "8d39002c90359c7c62e65d121ba907d5b6639faa105aad237fc476168dc04048",
+    "prospective_dispatch.py": "8db441e5e65eac3329be2dd15b691d2cac435d0fc84b288282a6aac9a1bfc82a",
+    "prospective_model.py": "46c4c6901e61479759bf38ae2af01a36a1c5282db34639900428aad016447399",
+    "prospective_pilot.py": "ca841259c0262b83ea28bd8d7ed184b6bfa5e9c3ac93f6a544140b55cdd9e92f",
+    "prospective_reference.py": "4737b2a25e04da1c2ba069c83877a1420772cd2f6822193a7617c3dc5c24e4ba",
+    "protocol.py": "a1e54302b007827b9c2982d8c366b68b89f573ddeb4b1c8f2ac50bf440d23776",
+    "reference-protocol.json": "7bd8e1350ceb53262b95564301fe17cce51374c880687ee6ff264f852ad131d5",
+    "reference-protocol.sha256": "20267292462a65ea1c692a1a5237ad5dfefb7b756304c8e4faa44504a24324ed",
+    "repair-pilot-protocol.json": "d796fae992b33ccbd9a837177e49d7671812c7d3868ae6e1a085468f68ab35b1",
+    "repair-pilot-protocol.sha256": "72bb199295c60f445fe0e1b2ea799ca934b0fc08a55511160c2334548fa59a56",
+    "tests/test_prospective.py": "57b656e87383c425a0b51d61c23bd3a49b7b2510cc2e05bce352a42ae059e230",
+    "tuned_lens.py": "c640f82a9e4510287678774625dd6ecebe74063461659b5d763adaf5ddceecc8"
+  },
+  "pre_dispatch_review": {
+    "completed_before_any_recovery_gpu_results": true,
+    "acquisition": "Added phase-start gain floor .3 to old acquisition, new acquisition, source receipt recomputation and reference new acquisition.",
+    "source_binding": "Learning identity now contains the six core implementation hashes below. Global receipt qualification checks both the explicit binding and captured implementation dictionary. Downstream stages recompute this identity. Reference checkpoints additionally bind prospective_reference.py.",
+    "dispatcher_boundary": "Wrapper and per-stream manifest configuration changes do not change the learning identity; actual learning parameters/protocol/data/mechanisms do.",
+    "supersedes_pre_review_protocol_sha256": "37f7d73573706d62897ccd21f3eb15a8459f47317535b3c56a83f09257c74fc7"
+  },
+  "learning_implementation": {
+    "prospective.py": "3f2ce28d0c350b26b1e0d8d97a9fc9084e9f75837f20945e82e8c80584f817dc",
+    "prospective_data.py": "8d39002c90359c7c62e65d121ba907d5b6639faa105aad237fc476168dc04048",
+    "prospective_model.py": "46c4c6901e61479759bf38ae2af01a36a1c5282db34639900428aad016447399",
+    "prospective_analysis.py": "2eeb9b61a14a58df2cf8f20b5148d73afda3364b4b93424ef408faad6e6ebad6",
+    "model.py": "5af6edb1a42d6042a3a38b9d0ab4ce01ea6cadac6728d9e0fea84acd695442b2",
+    "protocol.py": "a1e54302b007827b9c2982d8c366b68b89f573ddeb4b1c8f2ac50bf440d23776"
+  }
+}

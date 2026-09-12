@@ -1,0 +1,8 @@
+{
+  "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+  "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+  "fitted": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-fit/study",
+  "stage": "readout",
+  "stream": "fresh-test-a",
+  "study_config": "configs/budget-prediction.json"
+}

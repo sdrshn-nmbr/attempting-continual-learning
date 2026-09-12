@@ -1,0 +1,99 @@
+{
+  "claim_boundary": "Teacher acquisition and training-order diagnosis on the ORIGINAL synthetic four-digit device task, one seed and reused validation. All learned state is a rank16 adapter on frozen Qwen3.5-4B. No independent learner consolidation, depth3/4 generalization, native-base update, broad continual learning, or named alternative-method reproduction is established by this teacher experiment.",
+  "conditional_followthrough": {
+    "implemented_in_this_entrypoint": false,
+    "learner_comparison": "After depth3/4 teacher qualification, separately declare persistent learner training: qualified-teacher supervision versus matched oracle SFT and untouched learner; teacher privileged prompt, learner prompt alone, nativeEOS unchanged. If studying forwardKL on learner trajectories, call it fixed-teacher context distillation and state departures from SDFT; do not claim SDFT/SDPO reproduction.",
+    "next_prerequisite": "Separately seal depth3/4 TRAIN and validation competence on existing device conventions before trusting deeper teacher outputs. Use distinct TRAIN inputs/program assignments and separate validation; keep original test/composition panels out of training and recipe selection. Qualification at depth1/2 does not establish depth3/4 competence.",
+    "selection": "Carry all eligible teacher arms forward or seal a selection based only on TRAIN/validation before any deeper heldout observations. No selection from TEST.",
+    "trigger": "At least one final384 teacher passes original gates plus primitive/depth2 accuracy check."
+  },
+  "contract": "device4_teacher_budget_and_curriculum_20260912",
+  "curriculum_order_contract": "Take the first64 primitive exposures per family from the flat schedule, retaining their relative order for a192-exposure/48-update primitive-only warmup. Shuffle all remaining1344 exposures with predeclared seed9111705. This remainder contains192primitive and1152depth2 exposures, so primitive practice continues. Exactly matched per-UID and target-token exposure multiset across the two main arms; only order/grouping differs.",
+  "diagnostics_contract": "All288 existing TRAIN rows scored with privileged teacher prompt before training and at24/96/384. Raw baselines and early checkpoints are diagnostic, never selection criteria. Report full generation, format, EOS, literal positions, whole gold-sequence probability includingEOS, teacher-forced positions/EOS, wrong unchanged inputs, and wrong depth2 answers equal to the state after only the first command. Aggregate by family, depth, family x depth, and program. Per-position metrics never qualify or rescue an answer.",
+  "evaluation": {
+    "composition_predictions": false,
+    "minimum_depth_accuracy_for_consolidation": 0.875,
+    "new_process": true,
+    "original_family_gates": true,
+    "test_predictions": false,
+    "validation_split": "fallback_validation"
+  },
+  "failure_contract": "Check historical rejection, exact identities and mathematical feasibility of original gain gates before training. Failed new teacher qualification causes zero downstream learner updates. Preserve all curves and failures. Continue independent campaign lanes; another acquisition intervention requires a separately sealed design, not changed scoring or silent resumption.",
+  "fixed_task_contract": "Unmodified original Qwen3.5-4B revision, BF16 base, rank16/alpha32 LoRA targets q_proj,v_proj,in_proj_qkv,out_proj;8,519,680 trainable parameters. Same raw initial LoRA, six independent fixed demonstrations/family and exact privileged teacher prompts. Same target four ASCII digits with single spaces, no leading/trailing whitespace, natural tokenizer EOS, greedy full-vocabulary decoding capped16. No changes to old decoder, task rules, model, pool generation, learning rate, loss, or old24 protocol/artifacts.",
+  "history": {
+    "fallback24": {
+      "files_sha256": {
+        "pairs.json": "682bca8933f14626fbc2f9953d2493267bcb501c87124979c3d31170995adf13",
+        "qualification.json": "7c26152a5c4917fff4cde25bc850fc5affd4067772309b40ec9431005bd9fd3a",
+        "runtime.json": "466c8d3ad086a3e590f24b276ebe82779cef306d51edaf2f4fdbe2e66c9eeb76",
+        "seal.json": "92a0a24353c406d37a01a932fc2c71ee8c5dd1701b28c7cee4745714ee327d32",
+        "teacher_training.json": "d39ec93de426e4af3f4c3e39c881f606f9e6c2e5953ad54dc37a31c07c8b720f"
+      },
+      "path": "/mnt/shared/cl-portfolio/runs/distillation-generated-teacher-training-20260911"
+    },
+    "initial": {
+      "files_sha256": {
+        "pairs.json": "3bf50fbae1ba6adb74960da190d46ffa3d711687d3631e0b46f37b8180efa7f8",
+        "qualification.json": "0f040e16f59f378d6243c16580ef279b01bd91a4ef67348b45e22dbb0326e2d2",
+        "runtime.json": "466c8d3ad086a3e590f24b276ebe82779cef306d51edaf2f4fdbe2e66c9eeb76",
+        "seal.json": "9d18644b9ce6709c7456db9f9db6ed7a4a86bd00207562dac812a445cf1ea254"
+      },
+      "path": "/mnt/shared/cl-portfolio/runs/distillation-generated-qualification-20260911"
+    }
+  },
+  "hypotheses": [
+    "Repeating the exact old96 TRAIN pool at a larger budget tests whether limited optimization explained the old24-update rejection.",
+    "Full288 TRAIN examples versus the96-example control tests broader coverage at equal total exposures. This contrast also changes per-example multiplicity and within-family depth/program frequencies; it is not a pure coverage-only intervention. Report all counts.",
+    "Primitive-first versus flat-mixed on an identical per-example multiset isolates ordering and resulting optimizer trajectory. It does not add primitive labels, demonstrations, state traces or capacity."
+  ],
+  "legacy96_budget_contract": "Exactly the first32 original TRAIN rows per family,96 total;16 shuffled passes with one persistent RNG seeded9111704. Each unique row16times;512 exposures/family. First24updates match the old fallback row sequence exactly. Match initial tensor/snapshot/tokenizer to old receipts before updates; report saved24 teacher tensor equality with original24 result separately. Preserve old rejection regardless of new observations.",
+  "main_exposure_contract": "Flat multiset equals all288 existing TRAIN rows five times plus the exact old96-row pool once. Thus old96 rows appear6times and the other192 appear5times;512 exposures per family. The384 primitive and1152 depth2 exposures are exactly shared with the curriculum. Shuffle the entire multiset with seed9111704 for flat_mixed. No TRAIN expansion into any heldout partition.",
+  "observed_reason_for_reopening": {
+    "audit": "outputs/portfolio/followthrough-20260912/teacher-error-audit.json",
+    "audit_sha256": "5ba06d4e5820e2843ffd777582d69ca598cb97c9406c8d7748d3dcef8f6c998c",
+    "finding": "Old trained fallback generated all144 qualification responses with valid four-digit format and nativeEOS. Validation primitive12/18; depth2 8/54. Training primitive14/18; depth2 14/54. Incorrect state computation, not format/EOS, motivated more training and curriculum."
+  },
+  "original_protocol": {
+    "path": "configs/generated_protocol.json",
+    "sha256": "aa6024c8a30f3fe0ca027ef2a6f0c099537bc839d109c45508bc694f03bf5724"
+  },
+  "original_source_sha256": {
+    "generated_contract.py": "ab7ff2f2c1d9262d83dd50e66e381359d729735cb0dfb2f06759ca115e5ae525",
+    "objectives.py": "1d88593282dfe4b89b79899e9e28d89be581903e9f20bc6c11ead61e92901621",
+    "qualified.py": "99ccf8aa98cdbd4bc5dfcbaccb245ec332c9f055a2ade550811e441e3ceded7f",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770",
+    "run.py": "a2464aaf35277800bfc8d473bed27555febfc21e543b9a2fe8fd0e9e35a817a5",
+    "tasks.py": "4bab8d018fc7de93fc3830c8a4c7b610876189faa0a25bd033ed5b57955937ce"
+  },
+  "primary_source": {
+    "relation": "Curriculum learning motivates easier-to-harder ordering. This is a bespoke fixed-exposure ordering diagnostic, not a reproduction of that paper or of SDFT/SDPO.",
+    "url": "https://ronan.collobert.com/pub/matos/2009_curriculum_icml.pdf",
+    "verified": "2026-09-12"
+  },
+  "qualification_contract": "New process reloads exact saved final384 tensors only, verifies schedule/target/optimizer/probe receipts and TRAIN generation parity. Fresh raw learner-prompt baseline and teacher privileged outputs on exact old72TRAIN qualification rows and72fallback_validation rows. Call unmodified original qualification_gate: every family in both splits accuracy>=.875,gain>=.25,paired one-sided p<=.05. Additional per-family/depth accuracy>=.875 is required to advance to a separate deeper-composition prerequisite, without changing original gate results. No test/composition predictions or automatic learner updates.",
+  "training": {
+    "arms": [
+      "flat_mixed",
+      "primitive_first",
+      "legacy96_budget"
+    ],
+    "checkpoints": [
+      24,
+      96,
+      384
+    ],
+    "example_exposures_per_arm": 1536,
+    "examples_per_update": 4,
+    "expected_trainable_parameters": 8519680,
+    "learning_rate": 0.0002,
+    "max_grad_norm": 1.0,
+    "order_seed": 9111704,
+    "remainder_order_seed": 9111705,
+    "selection": "fixed_final384",
+    "updates_per_arm": 384,
+    "warmup_primitive_exposures_per_family": 64,
+    "weight_decay": 0.0
+  },
+  "training_contract": "Three independent384-update teachers at batch4, each1536 example exposures. Fresh identical original random-A zero-B initialization and fresh AdamW each arm; one teacher adapter trained across all A/B/C tasks. Frozen base and unchanged raw student reference. No previous trained teacher weights loaded. Cross entropy over full answer and EOS, response-token mean then equal example mean; same as original fallback.",
+  "validation_boundary": "Fallback_validation is the same previously inspected72-row split as the failed24-update fallback. No validation labels or predictions enter optimizer updates. Reusing this validation is disclosed, not treated as untouched campaign-level evidence. All288TRAIN,72validation and18demonstration rows remain input-disjoint under the original partitioning."
+}

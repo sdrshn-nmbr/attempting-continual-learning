@@ -1,0 +1,198 @@
+{
+  "followthrough-20260912-recovery-history-analyze": {
+    "config": "configs/history-control-analyze.json",
+    "cpu_stage": true,
+    "depends_on": [
+      "followthrough-20260912-recovery-history-repair-new-only-train-a",
+      "followthrough-20260912-recovery-history-repair-alternate-binding-train-a",
+      "followthrough-20260912-recovery-history-repair-new-only-train-b",
+      "followthrough-20260912-recovery-history-repair-alternate-binding-train-b",
+      "followthrough-20260912-recovery-history-repair-new-only-test-a",
+      "followthrough-20260912-recovery-history-repair-alternate-binding-test-a",
+      "followthrough-20260912-recovery-history-repair-new-only-test-b",
+      "followthrough-20260912-recovery-history-repair-alternate-binding-test-b"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-gate": {
+    "config": "configs/history-control-gate.json",
+    "cpu_stage": true,
+    "depends_on": [
+      "followthrough-20260912-recovery-history-learn-new-only-train-a",
+      "followthrough-20260912-recovery-history-learn-alternate-binding-train-a",
+      "followthrough-20260912-recovery-history-learn-new-only-train-b",
+      "followthrough-20260912-recovery-history-learn-alternate-binding-train-b",
+      "followthrough-20260912-recovery-history-learn-new-only-test-a",
+      "followthrough-20260912-recovery-history-learn-alternate-binding-test-a",
+      "followthrough-20260912-recovery-history-learn-new-only-test-b",
+      "followthrough-20260912-recovery-history-learn-alternate-binding-test-b"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-learn-alternate-binding-test-a": {
+    "config": "configs/history-control-learn-alternate-binding-test-a.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-predict-cohort",
+      "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-learn-alternate-binding-test-b": {
+    "config": "configs/history-control-learn-alternate-binding-test-b.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-predict-cohort",
+      "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-learn-alternate-binding-train-a": {
+    "config": "configs/history-control-learn-alternate-binding-train-a.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-predict-cohort",
+      "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-learn-alternate-binding-train-b": {
+    "config": "configs/history-control-learn-alternate-binding-train-b.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-predict-cohort",
+      "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-learn-new-only-test-a": {
+    "config": "configs/history-control-learn-new-only-test-a.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-predict-cohort",
+      "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-learn-new-only-test-b": {
+    "config": "configs/history-control-learn-new-only-test-b.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-predict-cohort",
+      "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-learn-new-only-train-a": {
+    "config": "configs/history-control-learn-new-only-train-a.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-predict-cohort",
+      "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-learn-new-only-train-b": {
+    "config": "configs/history-control-learn-new-only-train-b.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-predict-cohort",
+      "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-repair-alternate-binding-test-a": {
+    "config": "configs/history-control-repair-alternate-binding-test-a.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-history-gate",
+      "followthrough-20260912-recovery-predict-repair-test-a",
+      "followthrough-20260912-recovery-predict-forecast"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-repair-alternate-binding-test-b": {
+    "config": "configs/history-control-repair-alternate-binding-test-b.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-history-gate",
+      "followthrough-20260912-recovery-predict-repair-test-b",
+      "followthrough-20260912-recovery-predict-forecast"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-repair-alternate-binding-train-a": {
+    "config": "configs/history-control-repair-alternate-binding-train-a.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-history-gate",
+      "followthrough-20260912-recovery-predict-repair-train-a"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-repair-alternate-binding-train-b": {
+    "config": "configs/history-control-repair-alternate-binding-train-b.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-history-gate",
+      "followthrough-20260912-recovery-predict-repair-train-b"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-repair-new-only-test-a": {
+    "config": "configs/history-control-repair-new-only-test-a.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-history-gate",
+      "followthrough-20260912-recovery-predict-repair-test-a",
+      "followthrough-20260912-recovery-predict-forecast"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-repair-new-only-test-b": {
+    "config": "configs/history-control-repair-new-only-test-b.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-history-gate",
+      "followthrough-20260912-recovery-predict-repair-test-b",
+      "followthrough-20260912-recovery-predict-forecast"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-repair-new-only-train-a": {
+    "config": "configs/history-control-repair-new-only-train-a.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-history-gate",
+      "followthrough-20260912-recovery-predict-repair-train-a"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  },
+  "followthrough-20260912-recovery-history-repair-new-only-train-b": {
+    "config": "configs/history-control-repair-new-only-train-b.json",
+    "cpu_stage": false,
+    "depends_on": [
+      "followthrough-20260912-recovery-history-gate",
+      "followthrough-20260912-recovery-predict-repair-train-b"
+    ],
+    "entrypoint": "history_control.py",
+    "gpus": 1
+  }
+}

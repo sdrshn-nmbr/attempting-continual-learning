@@ -1,0 +1,7 @@
+{
+  "study_config": "configs/prospective.json",
+  "reference": true,
+  "stage": "learn",
+  "stream": "test-b",
+  "learning_source": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-learn-test-b/study"
+}

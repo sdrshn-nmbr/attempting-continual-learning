@@ -1,0 +1,6 @@
+{
+  "stage": "diagnose",
+  "protocol": "configs/generation_teacher_protocol.json",
+  "protocol_sha256": "2fc65b93c677f7da085c67911fc733ace4e12580905d0e2e71af3b042aabd443",
+  "choice_qualification_dir": "/mnt/shared/cl-portfolio/runs/consolidation-choice303-qualify-20260912"
+}

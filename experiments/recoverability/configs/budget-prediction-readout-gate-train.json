@@ -1,0 +1,11 @@
+{
+  "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+  "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+  "sources": {
+    "fresh-train-a": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-train-a/study",
+    "fresh-train-b": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-train-b/study"
+  },
+  "split": "train",
+  "stage": "readout-gate",
+  "study_config": "configs/budget-prediction.json"
+}

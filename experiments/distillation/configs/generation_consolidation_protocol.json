@@ -1,0 +1,77 @@
+{
+  "choice_qualification_dir": "/mnt/shared/cl-portfolio/runs/consolidation-choice303-qualify-20260912",
+  "claim_boundary": "Persistent generated-answer distillation into an independent rank8 learner on one known synthetic Sequence303 mapping fixture. This tests a durable learner producing the full answer and nativeEOS without teacher assistance. Not native-base-weight consolidation, broader skill transfer, internal composition, new task-distribution replication, source-model upgrade transfer, or a named SDFT/SDPO reproduction. Existing holdout input panels were already observed in earlier campaign experiments.",
+  "contract": "sequence303_generated_answer_persistent_consolidation_20260912",
+  "direction_update": {
+    "dispatch_selection": "The ready run configuration explicitly selects the whole_answer_trained qualification path. The original diagnosed-source path is retained only as an explicit alternative receipt type; its current rejected result is ineligible and causes zero learner updates. No automatic teacher fallback/search.",
+    "parent_reported_source_diagnosis": "The original source failed strict generation everywhere and emitted no EOS. Validation correct-prefix-with-extra-text rates: A0.844,B0.094,C0.281. First-digit accuracy A0.875,B0.344,C0.688, with similar teacher-forced first-digit accuracy. Four-choice success did not establish full-vocabulary digit competence.",
+    "teacher_intervention": "The running teacher continuation uses gold whole-answer plus nativeEOS loss. This jointly trains digit prediction and stopping. It is not merely an EOS-format repair. The archived generation_teacher filenames and protocol remain unchanged."
+  },
+  "evaluation": {
+    "require_new_process": true,
+    "splits": [
+      "test",
+      "unused288"
+    ],
+    "teacher_model_loaded": false,
+    "whole_answer_and_native_eos": true
+  },
+  "evaluation_contract": "Teacher absent from inference: evaluator reads only local training receipts/cache and saved learner files, not teacher artifact files. Load one learner adapter at a time into a single adapter slot. Require exact saved tensor identity and exact24TRAIN-probe generation parity across the training/evaluation processes. Then evaluate untouched base and both final learners on192originalTEST and864unused-input rows using unchanged strict wholebody plus nativeEOS. No forced EOS, extraction, constrained decoding, checkpoint selection or teacher calls.",
+  "execution_contract": "Default stage run executes qualification verification, teacher-output caching, both learner training arms, and automatically starts evaluation in a new Python process through uv. The training-only stage exists for explicit recovery/debugging. No learner update or evaluator launch after failed teacher qualification.",
+  "failure_action": "Keep the failed receipt and all completed artifacts. Reject ineligible teachers before learner model loading. A learner acquisition failure is an experimental result; retain its train curves and measured holdout and consider a separately sealed acquisition intervention. Do not alter grading or replace teacher responses with gold.",
+  "learner_contract": "Fresh independent random-A zero-B rank8 q/v LoRA on pinned frozen FP32 Qwen3-8B; alpha16,3,833,856 trainable parameters. No successful source/teacher weights initialize the learner. No teacher model is loaded for learner training. One persistent adapter and one optimizer through all384 updates in each arm; identical initial tensors and shuffled row schedule across arms.",
+  "objectives": {
+    "matching": "384updates and1536row exposures per arm at identical order,initialization,capacity and optimizer settings; response-token exposure can differ and is recorded. If all teacher responses equal oracle targets, record identical supervision and do not claim a distillation advantage from equivalent performance.",
+    "oracle_sft": "The same full-vocabulary response-token cross entropy on oracle gold TRAIN continuation plus nativeEOS. Gold labels are used only for this explicitly labeled control and audits.",
+    "teacher_output_sft": "Full-vocabulary response-token cross entropy on verbatim cached teacher-generated sequences. All emitted tokens supervised, with no EOS invented for teacher responses missing EOS. Hard-target sequence imitation, not logit KL or SDFT/SDPO."
+  },
+  "prerequisite_contract": "Before any learner model loading: reverify the exact selected qualified generation receipt, complete TRAIN/validation records and strict gates, unchanged archived source dependencies, exact teacher checkpoint files, source choice qualification, and (for the trained teacher) original rejected diagnosis, matched training exposure ledger, training-only checkpoint selection, tensor hash and new evaluation PID. A status string alone never qualifies the teacher.",
+  "primary_source": {
+    "relation": "Sequence-level knowledge distillation motivates training on complete teacher hypotheses. Here hypotheses are cached greedy generations on the qualified task, with no beam search or claim to reproduce the original NMT experiment.",
+    "url": "https://arxiv.org/abs/1606.07947",
+    "verified": "2026-09-12"
+  },
+  "qualified_teacher_source_dependencies": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770"
+  },
+  "teacher_cache_contract": "Cache all384 actual teacher-generated TRAIN responses already present in the qualification panel, in fixture order. Use token IDs exactly as emitted, including actual EOS when present and any incorrect or nonterminated outputs. Never substitute oracle answers, add EOS, strip whitespace, reject wrong teacher responses, regenerate targets, or include validation/test outputs. Verify the saved prompt IDs and decoded response strings against the unchanged tokenizer before any update.",
+  "teacher_design": {
+    "path": "configs/generation_teacher_protocol.json",
+    "sha256": "f618e00551fe75ed9117318869426ee81a6d006bfd8bf0d9046401f99a5f0ab0"
+  },
+  "teacher_sources": {
+    "diagnosed_source": {
+      "qualification_dir": "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-diagnose-20260912"
+    },
+    "whole_answer_trained": {
+      "diagnosis_dir": "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-diagnose-20260912",
+      "qualification_dir": "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-evaluate-20260912",
+      "training_dir": "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-train-20260912"
+    }
+  },
+  "training": {
+    "checkpoint_updates": [
+      32,
+      128,
+      384
+    ],
+    "epochs": 4,
+    "example_exposures_per_arm": 1536,
+    "examples_per_update": 4,
+    "initialization_seed": 91230417,
+    "learning_rate": 0.0003,
+    "max_grad_norm": 1.0,
+    "methods": [
+      "teacher_output_sft",
+      "oracle_sft"
+    ],
+    "order_seed": 91230431,
+    "probe_rows_per_task": 8,
+    "selection": "fixed_final384",
+    "updates_per_arm": 384,
+    "weight_decay": 0.0
+  }
+}

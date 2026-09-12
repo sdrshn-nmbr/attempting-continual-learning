@@ -1,0 +1,149 @@
+{
+  "budgets": {
+    "learner_updates": 0,
+    "new_train_generated_rows": 768,
+    "new_validation_generated_rows_if_selected": 96,
+    "reused_original32_train_generated_rows": 384,
+    "teacher_updates": 0,
+    "test_generated_rows": 0
+  },
+  "claim_boundary": "Selection of a more reliable existing teacher on the known synthetic Sequence303 TRAIN fixture, followed by original aggregate validation qualification. Reused campaign validation; no test-based selection, new teacher optimization, learner result, native-base consolidation, broad transfer or SDFT/SDPO reproduction.",
+  "code_source_sha256": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "coverage_teacher.py": "0fdfc95ae89dd8063fbb007633b6c4b0579f747f1c1e77b603e03a6b0aad339a",
+    "generation_consolidation.py": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770"
+  },
+  "compute_requirements": {
+    "base_adapter_dtype": "float32",
+    "offload": false,
+    "runtime": "Reuse qualified Qwen3-8B worker and frozen requirements.txt; uv required for child process.",
+    "visible_rocm_gpus": 1
+  },
+  "contract": "sequence303_complete_train_binding_coverage_20260912",
+  "coverage_interpretation": "For this positionwise synthetic mapping, perfect accuracy in all72cells is equivalent to perfect strict whole-answer accuracy over the fullTRAIN pool. The cell table diagnoses reliability; it is not a new loss or evidence that stratification adds predictive power beyond perfect fullTRAIN accuracy. Only128inputs per task are covered, not all512 possible inputs.",
+  "cpu_validation": {
+    "behavior": [
+      "Actual archived32 TRAIN cell15=7correct8wrong and validation3=2correct1wrong independently verified.",
+      "Earliest complete TRAIN-only selection, invalidEOS and missing cells rejected; validation cannot change selected checkpoint.",
+      "Actual tiny Qwen3 rank8 saved checkpoint reload and swapping, frozen-base greedy screening, zero updates.",
+      "Original32 qualification and source histories remain authoritative; new verifier recomputes its own qualification instead of impersonating a legacy receipt."
+    ],
+    "boundary": "CPU control flow, file provenance and local historical-record audit; GPU candidate coverage/qualification not yet measured.",
+    "errors": 0,
+    "failures": 0,
+    "imports_at_module_top": true,
+    "junit_path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/outputs/coverage-teacher-20260912-cpu/verified-pytest.xml",
+    "junit_sha256": "b0a59989f2e8ca2687f01b9076a1f9d476d23ad56e06ea68a1c6b2a3055bcabb",
+    "ruff": "passed",
+    "skipped": 0,
+    "tests": 9
+  },
+  "frozen_device4_bundle": {
+    "all_handoff_file_hashes_verified_unchanged": true,
+    "bundle_sha256": "d97a779ec0edeadc04d4a012896994368827c1c80a7b8266e9708cee377ba9f5",
+    "device4_entrypoint_sha256": "a5c35814e7fe613ebfa85c46222fd9cdfaaec951a15fb897f14ed03efe9ae884",
+    "parent_run": "distillation-device4-curriculum-20260912"
+  },
+  "manual_stages": {
+    "qualify": "configs/coverage_teacher_qualify.json",
+    "screen": "configs/coverage_teacher_screen.json"
+  },
+  "modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/coverage_teacher.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_coverage_teacher.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/coverage_teacher_protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/coverage_teacher_run.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/coverage_teacher_screen.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/coverage_teacher_qualify.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/coverage_teacher_handoff.json"
+  ],
+  "new_file_sha256": {
+    "configs/coverage_teacher_protocol.json": "1724268c16e6b4586f17e1d547076ab52ac9ba4ff613475963a99c4eb3d72340",
+    "configs/coverage_teacher_qualify.json": "30cc8c57b7a4e8c3309cbfa36faca09e373b73f7720f922389a498861cded53d",
+    "configs/coverage_teacher_run.json": "8d60baf5eadcdb98c43b5fda2b60cbc4cbb4ac4e7c1d1e6fd51ccb94276b8337",
+    "configs/coverage_teacher_screen.json": "0ef7eb6d8c61599f823bd5f21081568c4ece23d23531145c86d5d8f6fbf90460",
+    "coverage_teacher.py": "0fdfc95ae89dd8063fbb007633b6c4b0579f747f1c1e77b603e03a6b0aad339a",
+    "test_coverage_teacher.py": "5c40c7e0b4ba71d18fd7853bfea4909a2570a15343c1283dee31f096b4a72202"
+  },
+  "next_executable_boundary": "coverage_learner.py calls coverage_teacher.verify_qualified before constructing any learner or TRAIN target cache. This teacher SOURCE_FILES excludes that new learner and its configs so learner implementation does not invalidate staged teacher qualification.",
+  "observed_training_defect": {
+    "expected_digit": 3,
+    "incorrect_digit": 2,
+    "input_digit": 5,
+    "interpretation": "All8 teacher TRAIN errors occur in this cell, but7other cases are correct. A partial, context-dependent reliability failure; not a wholly absent primitive. The original aggregate qualification remains valid under its own contract.",
+    "position_1based": 3,
+    "task": "sequence_a",
+    "train_correct": 7,
+    "train_count": 15,
+    "train_wrong": 8
+  },
+  "ownership": {
+    "commit_push": false,
+    "gpu_or_provider_actions": false,
+    "modified_scope": "experiments/distillation/ only",
+    "parent_owns": [
+      "staging",
+      "dispatch",
+      "collection",
+      "compute"
+    ]
+  },
+  "prerequisites": {
+    "artifact_files": "All existing32/128/384 teacher adapter, optimizer and TRAIN probe files required by immutable training history. No newly trained teacher is required.",
+    "choice_qualification_dir": "/mnt/shared/cl-portfolio/runs/consolidation-choice303-qualify-20260912",
+    "original32_qualification_sha256": "e9070bf5996087d378e3e1ce54a09b2ec7d11003234ef1e636d648942821ea3f",
+    "original_teacher": {
+      "diagnosis_dir": "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-diagnose-20260912",
+      "qualification_dir": "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-evaluate-20260912",
+      "training_dir": "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-train-20260912"
+    },
+    "original_training_sha256": "98a31373352081872362d6132296a5284effc33e57feb1a23b28f0c086ca52c0"
+  },
+  "protocol_sha256": "6d292d2a3840cfb8c50dbae5ecb5d6a71e0997f552a5d0df691377b9a0830c37",
+  "qualification": "In a new process load only the selected existing checkpoint. Retain the frozen original generation_gate: each task on TRAIN and validation requires>=.9 strict whole-answer/nativeEOS and original four-choice accuracy. TRAIN generations come from the bound selection panel; score TRAIN choices and validation generations/choices with exact checkpoint tensors. Validation binding cells are reported diagnostically only and do not change selection. Do not evaluate TEST or unused-input panels here.",
+  "ready_run": {
+    "automatic_child": "Fresh uv Python process performs qualification of earliest full-TRAIN-coverage checkpoint; no manual selection or reselection.",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "/opt/venv/bin/python",
+      "python",
+      "coverage_teacher.py",
+      "--config",
+      "configs/coverage_teacher_run.json",
+      "--output-dir",
+      "/mnt/shared/cl-portfolio/runs/consolidation-source303-coverage-20260912"
+    ],
+    "config": "experiments/distillation/configs/coverage_teacher_run.json",
+    "cwd": "experiments/distillation",
+    "entrypoint": "experiments/distillation/coverage_teacher.py",
+    "output_dir": "/mnt/shared/cl-portfolio/runs/consolidation-source303-coverage-20260912",
+    "python_path_note": "Parent supplies its already-qualified worker Python path; no provider or runtime mutation requested.",
+    "qualified_receipt_for_learner": "/mnt/shared/cl-portfolio/runs/consolidation-source303-coverage-20260912/qualification",
+    "task_id": "consolidation-source303-coverage-20260912"
+  },
+  "selection": "Screen all384TRAIN rows at each preexisting checkpoint32,128,384. The32 fullTRAIN generations are reused byte-for-byte from its verified original qualification. Evaluate128/384 with unchanged raw prompt, strict body/nativeEOS, full-vocabulary greedy generation and frozen FP32 base/adapter. Every task x literal position x corresponding inputdigit cell must be nonempty and100%correct with exact format/nativeEOS. Choose earliest passing checkpoint only after all three TRAIN panels; if none pass reject. No new teacher updates, no validation/test predictions during selection, no fallback to another checkpoint after validation failure.",
+  "staging_files_sha256": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "configs/choice_consolidation_protocol.json": "eadd92577ebf0945039ccde7a84f22d1150fd40df31c9c9ee7d14a1bd6f3706e",
+    "configs/coverage_teacher_protocol.json": "1724268c16e6b4586f17e1d547076ab52ac9ba4ff613475963a99c4eb3d72340",
+    "configs/coverage_teacher_qualify.json": "30cc8c57b7a4e8c3309cbfa36faca09e373b73f7720f922389a498861cded53d",
+    "configs/coverage_teacher_run.json": "8d60baf5eadcdb98c43b5fda2b60cbc4cbb4ac4e7c1d1e6fd51ccb94276b8337",
+    "configs/coverage_teacher_screen.json": "0ef7eb6d8c61599f823bd5f21081568c4ece23d23531145c86d5d8f6fbf90460",
+    "configs/generation_consolidation_protocol.json": "5c933efc2fc32d2ae94784056a901d587cd6f5abafe07f87a03f0c78a6d7203e",
+    "configs/generation_teacher_protocol.json": "f618e00551fe75ed9117318869426ee81a6d006bfd8bf0d9046401f99a5f0ab0",
+    "coverage_teacher.py": "0fdfc95ae89dd8063fbb007633b6c4b0579f747f1c1e77b603e03a6b0aad339a",
+    "data/sequence303.json": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2",
+    "data/sequence303_unused_inputs.json": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e",
+    "generation_consolidation.py": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770"
+  },
+  "status": "cpu_verified_gpu_ready_source_frozen"
+}

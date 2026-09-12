@@ -1,0 +1,9 @@
+{
+  "study_config": "configs/prospective.json",
+  "reference": true,
+  "stage": "measure",
+  "stream": "train-b",
+  "reference_source": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-reference-learn-train-b/study",
+  "qualification": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-cohort/study",
+  "pilot_qualification": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-pilot-gate/study"
+}

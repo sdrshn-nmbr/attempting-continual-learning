@@ -1,0 +1,9 @@
+{
+  "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+  "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+  "forecasts": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-forecast/study",
+  "readout_gate": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-gate-test/study",
+  "stage": "repair",
+  "stream": "fresh-test-a",
+  "study_config": "configs/budget-prediction.json"
+}

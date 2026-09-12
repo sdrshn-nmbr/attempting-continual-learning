@@ -1,0 +1,6 @@
+{
+  "stage": "qualify",
+  "protocol": "configs/coverage_teacher_protocol.json",
+  "protocol_sha256": "6d292d2a3840cfb8c50dbae5ecb5d6a71e0997f552a5d0df691377b9a0830c37",
+  "screen_dir": "/mnt/shared/cl-portfolio/runs/consolidation-source303-coverage-20260912"
+}

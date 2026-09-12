@@ -1,0 +1,50 @@
+{
+  "baseline_pass_action": "If the original successful adapter already meets the new whole-generation and choice gates, preserve it as a qualified teacher and skip EOS retraining.",
+  "choice_protocol": {
+    "path": "configs/choice_consolidation_protocol.json",
+    "sha256": "eadd92577ebf0945039ccde7a84f22d1150fd40df31c9c9ee7d14a1bd6f3706e"
+  },
+  "claim_boundary": "A newly qualified three-digit generator would be a teacher candidate for future generated-answer consolidation. EOS continuation updates the existing successful source adapter, not an independent persistent learner; the separate four-option distillation experiment tests that independent learner. Not a cure for the former four-digit primitive/composition failure, not SDFT/SDPO, and not evidence of internal composition or broad continual learning. Validation inputs were observed in the earlier campaign.",
+  "contract": "sequence303_source_teacher_three_digits_native_eos_20260912",
+  "diagnostic_contract": "Use the unchanged raw Sequence303 prompt with no chat template and no answer options. Whole generated body must equal the original gold continuation, including its single leading space, then tokenizer native EOS. No whitespace stripping, prefix acceptance, constrained decoding, or forced EOS. Record literal per-position accuracy, extra-text rate, correct-prefix-with-extra-text, exact-body-without-stop, gold sequence log probability/probability, teacher-forced per-position accuracy, and EOS probability after gold prefix. Per-position/prefix metrics are diagnostic only.",
+  "direction_change": {
+    "audit_path": "outputs/portfolio/followthrough-20260912/teacher-error-audit.json",
+    "audit_sha256": "5ba06d4e5820e2843ffd777582d69ca598cb97c9406c8d7748d3dcef8f6c998c",
+    "independent_source_teacher": "Known strong three-digit Sequence303 adapter learned gold continuations without EOS. Diagnose whether it knows whole outputs but fails to stop before adding EOS supervision. Distinct task and output contract from the failed four-digit teacher.",
+    "observed_old_four_digit_teacher": "Parent audit: all144 trained fallback records have correct strict four-digit format and native EOS. Validation single-command accuracy12/18, double-command8/54. Those failures are incorrect state computation, not lingering formatting errors. No duplicate audit or old four-digit regrading here."
+  },
+  "evaluation_contract": "Different process from training. Verify selected checkpoint by recomputing the training-only selection, reload exact saved tensors, then qualify once on all384TRAIN and96validation rows under both whole-answer native-EOS and original four-choice scoring. Only if all tasks pass both criteria evaluate original192-row test partition. A failed generated-teacher gate produces zero learner updates and no test predictions.",
+  "failure_action": "Preserve every rejected candidate and checkpoint curve. A final rejection ends this fixed teacher recipe, not the research campaign. Use training-only curve and per-position/EOS diagnostics to choose a separately sealed follow-up; do not substitute choice or prefix correctness for whole-generation qualification.",
+  "generation": {
+    "body": "exactly_one_leading_space_then_three_0_to_7_digits_separated_by_single_spaces",
+    "do_sample": false,
+    "eos": "tokenizer_native_eos_token_id",
+    "forced_eos": false,
+    "max_new_tokens": 16
+  },
+  "prerequisite": "Require successful Sequence303 four-option qualification receipt with exactly matching protocol, data and source hashes before loading this teacher. Do not use the old 850/864 score alone as a qualification receipt.",
+  "qualification": {
+    "minimum_choice_accuracy_per_task_and_split": 0.9,
+    "minimum_exact_accuracy_per_task_and_split": 0.9,
+    "require_all_tasks": true,
+    "splits": [
+      "train",
+      "validation"
+    ]
+  },
+  "training": {
+    "checkpoints": [
+      32,
+      128,
+      384
+    ],
+    "examples_per_update": 4,
+    "learning_rate": 0.0002,
+    "max_grad_norm": 1.0,
+    "selection": "earliest_checkpoint_with_train_probe95_all_tasks_else384",
+    "train_probes_per_task": 32,
+    "updates": 384,
+    "weight_decay": 0.0
+  },
+  "training_contract": "Only after a rejected raw-generation baseline, continue the exact successful rank8 source adapter with gold TRAIN continuations plus native EOS; frozen FP32 Qwen3-8B. 384 AdamW updates of4 examples, four passes over384 TRAIN rows, same data schedule as choice consolidation. 3,833,856 trainable parameters, active rank8. Save at32,128,384updates (128,512,1536exposures) and score96fixedTRAIN probes. All updates predeclared. Select earliest saved checkpoint with >=0.95 exact TRAIN-probe accuracy for every task; if none qualify select384. No validation/test checkpoint selection."
+}

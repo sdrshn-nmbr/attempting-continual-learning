@@ -1,0 +1,42 @@
+{
+  "design_input_bound_at": "2026-09-12T07:15:59.176908+00:00",
+  "lane_protocol_at": "2026-09-12T07:13:08.629853+00:00",
+  "parent_decision": {
+    "payload": {
+      "alternate_mapping": "Rotate the eight old code assignments by one position in each stream old-intent order, no fixedpoints; allprompts/text/UIDorder unchanged, newlabelsunchanged.",
+      "at": "2026-09-12T07:12:26.537466+00:00",
+      "conditions": [
+        "existing_true_old128_new128",
+        "alternate_old128_new128",
+        "new_only128"
+      ],
+      "dataset_sha256": "14781a4cd46816767903e43a0a1cd74b5d7d80b096ad7c0eeb92b69fd29ebc93",
+      "decision": "Measure whether specific prior bindings help small-budget repair using matched alternate-binding history and new-only controls.",
+      "eligibility": "Beforecontrolrepairs: historicaleligible intersectionwithalternate-own-binding acquisition; eachcontrolpassesnewacquisition. Atleast4perstream,8persplit,twoindependentmodels. Reportexclusions andfailedgates.",
+      "interpretation_limit": "Behavioral evidencefor specifictraininghistory, notcircuitlocalization or directproof of astoredlatentmemory.",
+      "repair": "Original bindings for allconditions; sameold/new examples,prefixes,freshAdamW. Separate analysis neverfeeds originalpredictor.",
+      "repair_budgets": [
+        2,
+        4,
+        8,
+        16
+      ],
+      "scientific_motivation": "Previous16-update new-only references nearly saturated, leaving stored-binding reuse unresolved. Minimum-budget pilot variation was mostlynew-task guard damage.",
+      "sources": "four fresh cohorts with13historicallyeligibleTRAIN and13TEST skills",
+      "status": "protocol_and_implementation_assigned_not_dispatched",
+      "temporal_boundary": "ParentproposalbeforefreshTESTrepairoutcomesobserved; TESTcontrolrepairs mustdependon original sealedforecast. Existingpredictorpipelineunchanged."
+    },
+    "sha256": "9d7ae6269ba2a5c67a37f2f131dcce66e06cf1b67f2d92c1fb21eaba740ec16d"
+  },
+  "parent_decision_at": "2026-09-12T07:12:26.537466+00:00",
+  "parent_decision_file_sha256": "689365267dd25dfa7d9731184fa9d85bff06a1d3b23b2f9445b68f258ef9fa73",
+  "parent_decision_source_path": "outputs/portfolio/followthrough-20260912/history-control-parent-decision.json",
+  "parent_update": {
+    "original_TEST_actions": "Parent reports original TEST repairs running; no original TEST repair outcomes inspected by lane for design.",
+    "original_forecast_completed_reported_at": "2026-09-12T07:12:03+00:00",
+    "parent_observation": "Parent reports no fresh TEST repair outcomes read when scientific decisions sealed."
+  },
+  "protocol_sha256": "818e6c527a7edbf146bdf8d6aef44f91a0feff530283436d828cbabf4036bfb9",
+  "temporal_interpretation": "Scientific decisions precede parent observation of fresh TEST repair outcomes. Implementation and staging may occur after original TEST execution started; do not claim otherwise. Controller independently checks completed forecast precedes TEST control repairs.",
+  "unchanged_pipeline": "Original predictor sources, actions, cohorts, thresholds, unsupported classes and policies remain immutable. Controls never feed predictors."
+}

@@ -1,0 +1,8 @@
+{
+  "condition": "alternate_binding",
+  "gate": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-gate/study",
+  "historical_repair": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-train-a/study",
+  "run_id": "followthrough-20260912-recovery-history-repair-alternate-binding-train-a",
+  "stage": "repair",
+  "stream": "fresh-train-a"
+}

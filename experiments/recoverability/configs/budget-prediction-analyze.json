@@ -1,0 +1,13 @@
+{
+  "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+  "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+  "fitted": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-fit/study",
+  "forecasts": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-forecast/study",
+  "readout_gate": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-gate-test/study",
+  "sources": {
+    "fresh-test-a": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-test-a/study",
+    "fresh-test-b": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-test-b/study"
+  },
+  "stage": "analyze",
+  "study_config": "configs/budget-prediction.json"
+}

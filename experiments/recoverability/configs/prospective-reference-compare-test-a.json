@@ -1,0 +1,8 @@
+{
+  "study_config": "configs/prospective.json",
+  "reference": true,
+  "stage": "compare",
+  "stream": "test-a",
+  "main_source": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-measure-test-a/study",
+  "reference_source": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-reference-measure-test-a/study"
+}

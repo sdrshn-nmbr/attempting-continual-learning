@@ -1,0 +1,5 @@
+{
+  "protocol": "configs/device4_native_composition_protocol.json",
+  "protocol_sha256": "ecbdf26062ee68c8027e20fea60039d11175cfb7548783d462abd241c192b259",
+  "stage": "run"
+}

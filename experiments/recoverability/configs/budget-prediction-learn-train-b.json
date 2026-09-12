@@ -1,0 +1,6 @@
+{
+  "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+  "stage": "learn",
+  "stream": "fresh-train-b",
+  "study_config": "configs/budget-prediction.json"
+}

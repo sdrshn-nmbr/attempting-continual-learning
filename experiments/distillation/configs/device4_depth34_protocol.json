@@ -1,0 +1,99 @@
+{
+  "context_objective": "Student samples once per TRAIN row from its current policy using only the unchanged learner prompt, temperature1 full vocabulary and native stopping/cap16. Frozen qualified teacher sees unchanged privileged instructions and all six unrelated demonstrations on the same sampled response prefix. Mean token forwardKL D_KL(teacher||student), then equal example mean; no sampled-token filtering, gold substitution, oracle response, injectedEOS, EMA or feedback. Existing objectives.distillation_loss sdft_forward is reused as a mathematical kernel only, not a reproduction claim.",
+  "contract": "device4_unseen_composition_context_distillation_20260912",
+  "data": {
+    "path": "data/device4_depth34.json",
+    "sha256": "f164c8ff65e6b24e859602a12b5923f794dcb4fff25d7d35d0bab5a50163be0c"
+  },
+  "data_boundary": "New input states exclude the union of inputs used anywhere in all six original corpus partitions. New TRAIN/validation/TEST inputs and ordered depth3/4 programs are disjoint. Original18demonstrations unchanged. TRAIN64rows per family/depth covers every assigned program;384TRAIN,144validation,288TEST. Generating heldout task identities for sealing/leak checks is not an observation of model predictions.",
+  "data_spec": {
+    "assignment_seed": 91234005,
+    "exclude_all_historical_inputs": true,
+    "input_seed": 91234001,
+    "program_counts": {
+      "3": {
+        "test": 5,
+        "train": 18,
+        "validation": 4
+      },
+      "4": {
+        "test": 14,
+        "train": 54,
+        "validation": 13
+      }
+    },
+    "program_seed": 91234003,
+    "programs_disjoint_across_new_splits": true,
+    "rows_per_family_depth": {
+      "test": 48,
+      "train": 64,
+      "validation": 24
+    }
+  },
+  "eligibility": "Before GPU model loading reverify original device4 training/qualification hashes, fixedfinal384 selection, original family gates, depth1/2 checks and saved teacher files. Only originally eligible arms receive deeper evaluation. New teacher qualification is independent and stricter: all12family/depth3or4/TRAINorvalidation cells must meet the same numerical accuracy/gain/paired-p cutoffs. Raw learner baseline feasibility checked before teacher interventions. Rejected arms never train learners.",
+  "evaluation": {
+    "require_fresh_pid": true,
+    "splits": [
+      "test"
+    ],
+    "strict_original_four_digits_native_eos": true,
+    "teacher_adapter_removed_before_predictions": true,
+    "teacher_weights_loaded": false
+  },
+  "failure_action": "Preserve failed qualification and exact prerequisites. No model/optimizer continuation after failed eligibility. If deep competence is missing, a separately sealed acquisition intervention can follow; no depth34 teacher optimization or scoring changes are included in this run.",
+  "learner": "Fresh original-seed random-A zero-B rank16 adapter on pinned frozen BF16 Qwen3.5-4B, with8,519,680 trainable parameters. No teacher weights initialize learner. One persistent learner and AdamW per method across the mixed TRAIN stream. Reset to exact initial tensors between methods. Fixed qualified teacher occupies a separate frozen adapter only during context training, with frozen version/hash checks.",
+  "oracle_control": "One fresh oracle SFT learner uses full gold answer plus nativeEOS, identical initialization/capacity/optimizer/384updates/1536TRAIN exposures/order. It is shared across comparisons because oracle targets and schedule do not depend on teacher choice. Response-token, rollout-token and teacher-context-token totals can differ and are recorded.",
+  "persistent_execution": "Default run qualifies deeper teachers then automatically invokes a separate uv Python learning process if any qualify. Learning trains every eligible context arm plus shared oracle and automatically invokes another fresh evaluator. Evaluator reads local saved learner/provenance data, loads no qualified teacher artifact, deletes the unused initial teacher adapter before any predictions, and requires exact saved24TRAIN-probe generation parity before strict heldout scoring.",
+  "primary_source": {
+    "relation": "Paper practical section uses analytic forwardKL on learner trajectories and an EMA teacher. Here teacher is separately trained, qualified and fixed; no target-answer demonstration, EMA or full-parameter updates. Fixed-teacher context distillation, not SDFT/SDPO reproduction.",
+    "url": "https://arxiv.org/html/2601.19897v2",
+    "verified": "2026-09-12"
+  },
+  "qualification": {
+    "maximum_p": 0.05,
+    "minimum_accuracy": 0.875,
+    "minimum_gain": 0.25,
+    "selection": "all_eligible_teachers_pass_every_family_depth_train_validation_cell",
+    "teacher_optimizer_updates": 0
+  },
+  "scope": "Complete answers for previously unseen ordered compositions within three fixed synthetic device conventions. Heldout success tests generalization to untrained command sequences and inputs; it does not identify a latent algorithm, establish new-domain transfer, native-base consolidation or broad continual learning.",
+  "selection": "Carry every original eligible arm that passes the new depth3/4 gate. No choice of best teacher, checkpoint, seed or prompt from validation or TEST. Train all passing context teachers and one shared oracle control. If none pass, zero learner updates and no learner model load.",
+  "training": {
+    "alpha": 32,
+    "checkpoint_updates": [
+      24,
+      96,
+      384
+    ],
+    "example_exposures_per_method": 1536,
+    "examples_per_update": 4,
+    "expected_trainable_parameters": 8519680,
+    "exposures_per_family_depth": 256,
+    "learning_rate": 0.0002,
+    "max_grad_norm": 1.0,
+    "order_seed": 91234101,
+    "probe_rows_per_family_depth": 4,
+    "rank": 16,
+    "rollout_forward_logprob_max_error": 0.25,
+    "sampling_seed": 91234103,
+    "selection": "fixed_final384",
+    "shared_oracle_control": true,
+    "updates_per_method": 384,
+    "weight_decay": 0.0
+  },
+  "upstream_design": {
+    "path": "configs/device4_curriculum_protocol.json",
+    "sha256": "cb7ef7eb7e94f4279c83eec78d6f33189f7a489e3b4ad35570a70e94ac11fd47"
+  },
+  "upstream_qualification_dir": "/mnt/shared/cl-portfolio/runs/distillation-device4-curriculum-20260912/evaluation",
+  "upstream_source_sha256": {
+    "device4_curriculum.py": "a5c35814e7fe613ebfa85c46222fd9cdfaaec951a15fb897f14ed03efe9ae884",
+    "generated_contract.py": "ab7ff2f2c1d9262d83dd50e66e381359d729735cb0dfb2f06759ca115e5ae525",
+    "objectives.py": "1d88593282dfe4b89b79899e9e28d89be581903e9f20bc6c11ead61e92901621",
+    "qualified.py": "99ccf8aa98cdbd4bc5dfcbaccb245ec332c9f055a2ade550811e441e3ceded7f",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770",
+    "run.py": "a2464aaf35277800bfc8d473bed27555febfc21e543b9a2fe8fd0e9e35a817a5",
+    "tasks.py": "4bab8d018fc7de93fc3830c8a4c7b610876189faa0a25bd033ed5b57955937ce"
+  },
+  "upstream_training_dir": "/mnt/shared/cl-portfolio/runs/distillation-device4-curriculum-20260912"
+}

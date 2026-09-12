@@ -1,0 +1,83 @@
+{
+  "at": "2026-09-12T07:26:43.305018+00:00",
+  "clusters": {
+    "test": 2,
+    "train": 2
+  },
+  "counts": {
+    "test": 13,
+    "train": 13
+  },
+  "design_sha256": "f93a0d74f78b01fa4a35004df076ab9b1db5b65ac93ad2e5a678efce6151d908",
+  "history_implementation_identity": "48b0b573fd44551159812ca27c364897d71be5efbf4b216ae6865a93de0b13bd",
+  "kind": "CPU_saved_learning_receipt_and_native16code_recomputation",
+  "new_control_model_training": false,
+  "original_source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+  "protocol_sha256": "818e6c527a7edbf146bdf8d6aef44f91a0feff530283436d828cbabf4036bfb9",
+  "qualified": true,
+  "scope": "Learning/cohort only. No fresh TEST repair outcomes, fit predictions or repair labels read. Local collection paths translated to archived NFS paths only for comparison of source-location fields; saved receipt bytes unchanged.",
+  "streams": {
+    "fresh-test-a": {
+      "eligible": [
+        "calculator",
+        "cancel",
+        "credit_limit_change",
+        "directions",
+        "pto_balance",
+        "timezone",
+        "what_song"
+      ],
+      "new_input_schedule_sha256": "19cabe8e444e3014197b153381da46939edf93da4f8a5c296f3f012c0aa2e412",
+      "new_updates": 128,
+      "old_input_schedule_sha256": "5ab139981c24b01ac7be48d74047e176b71d1a873bf62390026b66e29443aed4",
+      "old_updates": 128,
+      "source_receipt_sha256": "5d17619d8e415b049c6e74000bda8c87b725d8767258cbee861290dd49b9c38f"
+    },
+    "fresh-test-b": {
+      "eligible": [
+        "bill_due",
+        "gas",
+        "international_visa",
+        "measurement_conversion",
+        "plug_type",
+        "tire_change"
+      ],
+      "new_input_schedule_sha256": "da3d9930949b7515e10367a9efd638d9b5ae499bc55d69747b8c6e5a8af75c99",
+      "new_updates": 128,
+      "old_input_schedule_sha256": "0a97cfaa2b16610ed66e882a2054c231a87e16dde249ba0655a52d469f8506bf",
+      "old_updates": 128,
+      "source_receipt_sha256": "3bf53a59a85c61ccd590afed77a242dc80d29a555bc349a83ea6de388cb1d8c2"
+    },
+    "fresh-train-a": {
+      "eligible": [
+        "calories",
+        "insurance",
+        "pto_used",
+        "repeat",
+        "replacement_card_duration",
+        "spending_history",
+        "translate"
+      ],
+      "new_input_schedule_sha256": "d4491fd3c1f49605428584a8b1f2e87aaa4fbdaf4cccdc8906cf1251f933bcb5",
+      "new_updates": 128,
+      "old_input_schedule_sha256": "cb6fd9068f69b2d69b94617d11df9e8647c6d040cab1572d69d3e4ff25f0f4b1",
+      "old_updates": 128,
+      "source_receipt_sha256": "f9397fbb8f1d726acd60fed737a9e6fcc3ffb19ae362c5d2462fa2aefd2c3aee"
+    },
+    "fresh-train-b": {
+      "eligible": [
+        "change_user_name",
+        "credit_limit",
+        "payday",
+        "transfer",
+        "uber",
+        "what_are_your_hobbies"
+      ],
+      "new_input_schedule_sha256": "e24cb39e36690dccabc46c9844041f438b7cf48dc7aa821c8b6d7292b7534797",
+      "new_updates": 128,
+      "old_input_schedule_sha256": "bf6bb92f92240e37d82a19d9ae9d3c3453948aa1b35f12c10822f2e00c98b12e",
+      "old_updates": 128,
+      "source_receipt_sha256": "5f9ea996d5974be2d02770c4d659d146395cac6465caca89a023003717b479f6"
+    }
+  }
+}

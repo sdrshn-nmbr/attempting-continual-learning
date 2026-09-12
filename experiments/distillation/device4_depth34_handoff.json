@@ -1,0 +1,336 @@
+{
+  "budget": {
+    "alpha": 32,
+    "base_updated": false,
+    "eligible_teachers_maximum": 3,
+    "eligible_teachers_minimum_to_train": 1,
+    "exposures_per_learner": 1536,
+    "exposures_per_unique_train_row": 4,
+    "maximum_total_learner_updates": 1536,
+    "methods": "One independent fixed_teacher context learner per qualifying source arm plus one shared oracle learner.",
+    "new_teacher_updates": 0,
+    "rank": 16,
+    "trainable_parameters_per_learner": 8519680,
+    "updates_per_learner": 384
+  },
+  "claim_boundary": "Complete answers for previously unseen ordered compositions within three fixed synthetic device conventions. Heldout success tests generalization to untrained command sequences and inputs; it does not identify a latent algorithm, establish new-domain transfer, native-base consolidation or broad continual learning.",
+  "code_source_sha256": {
+    "device4_curriculum.py": "a5c35814e7fe613ebfa85c46222fd9cdfaaec951a15fb897f14ed03efe9ae884",
+    "device4_depth34.py": "4a7324ccfd791fbd69ed10d79d7db2f11c49e885a063f0952812ad426d2a0907",
+    "device4_depth34_contract.py": "8589c327a8a0edb2abc52dd8bbacba3176b3e521c9bc058e7b469caa7a4ba8f8",
+    "generated_contract.py": "ab7ff2f2c1d9262d83dd50e66e381359d729735cb0dfb2f06759ca115e5ae525",
+    "objectives.py": "1d88593282dfe4b89b79899e9e28d89be581903e9f20bc6c11ead61e92901621",
+    "qualified.py": "99ccf8aa98cdbd4bc5dfcbaccb245ec332c9f055a2ade550811e441e3ceded7f",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770",
+    "run.py": "a2464aaf35277800bfc8d473bed27555febfc21e543b9a2fe8fd0e9e35a817a5",
+    "tasks.py": "4bab8d018fc7de93fc3830c8a4c7b610876189faa0a25bd033ed5b57955937ce"
+  },
+  "compute_requirements": {
+    "offload": false,
+    "requirements": "Same frozen requirements.txt and qualified Qwen3.5 worker environment; uv available for child processes.",
+    "visible_rocm_gpus": 1
+  },
+  "context_objective": "Student samples once per TRAIN row from its current policy using only the unchanged learner prompt, temperature1 full vocabulary and native stopping/cap16. Frozen qualified teacher sees unchanged privileged instructions and all six unrelated demonstrations on the same sampled response prefix. Mean token forwardKL D_KL(teacher||student), then equal example mean; no sampled-token filtering, gold substitution, oracle response, injectedEOS, EMA or feedback. Existing objectives.distillation_loss sdft_forward is reused as a mathematical kernel only, not a reproduction claim.",
+  "contract": "device4_unseen_composition_context_distillation_20260912",
+  "cpu_validation": {
+    "behavior": [
+      "Exact fixture regeneration, independent task oracle, all new split/program/input disjointness and historical input exclusion.",
+      "All12family/depth/split strict gates required; correct prefixes without nativeEOS fail. Infeasible gain gates detected from raw baseline.",
+      "Original device4 gate/checkpoint decisions revalidated; changed eligibility or dropping a passing teacher rejected.",
+      "Rejected upstream/deeper qualification prevents model loading and updates.",
+      "Actual tiny Qwen3.5 CPU training: two steps/six exposures for each of two fixed-teacher full-vocabulary forwardKL arms and one shared oracle, total6learner updates. All student checkpoints change; source teacher files unchanged.",
+      "Actual separate uv Python process reloads and evaluates learners after teacher and qualification artifact directories are unavailable. Exact TRAIN generation parity, single student slot and no teacher access.",
+      "Early learner checkpoint selection rejected; default driver requires completed child learning/evaluation."
+    ],
+    "boundary": "CPU control, optimizer, source/protocol and persistence checks. Positive qualification uses scripted CPU fixtures to exercise the path; no tiny or large model teacher-capability claim. Actual production teacher competence remains a GPU prerequisite.",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python",
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "test_device4_depth34.py",
+      "--junitxml=outputs/device4-depth34-20260912-cpu/pytest.xml"
+    ],
+    "errors": 0,
+    "failures": 0,
+    "imports": "All imports at module top level.",
+    "junit_path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/outputs/device4-depth34-20260912-cpu/pytest.xml",
+    "junit_sha256": "7b63e73eafce2f483f51068d3b51572f9e4c50069e0212914f208256b2afda36",
+    "ruff": "All checks passed from repository root using experiments/distillation/ruff.toml on the two new modules and new test.",
+    "skipped": 0,
+    "tests": 9
+  },
+  "data": {
+    "audit": {
+      "cross_split_input_overlap": 0,
+      "cross_split_program_overlap": 0,
+      "dataset_sha256": "d6c8b4c8680ba7df85252bbe98a49f71a6a9c050ae39418ff98d4737e00893eb",
+      "family_depth_counts": {
+        "demonstration": {
+          "A/depth1": 6,
+          "B/depth1": 6,
+          "C/depth1": 6
+        },
+        "test": {
+          "A/depth3": 48,
+          "A/depth4": 48,
+          "B/depth3": 48,
+          "B/depth4": 48,
+          "C/depth3": 48,
+          "C/depth4": 48
+        },
+        "train": {
+          "A/depth3": 64,
+          "A/depth4": 64,
+          "B/depth3": 64,
+          "B/depth4": 64,
+          "C/depth3": 64,
+          "C/depth4": 64
+        },
+        "validation": {
+          "A/depth3": 24,
+          "A/depth4": 24,
+          "B/depth3": 24,
+          "B/depth4": 24,
+          "C/depth3": 24,
+          "C/depth4": 24
+        }
+      },
+      "historical_input_overlap": 0,
+      "historical_task_manifest_sha256": "2433858457fa5b9b0b4bb764cd1e392902ddd66541b18e94fc302a6ecc652263",
+      "historical_unique_inputs_excluded": 790,
+      "rows_per_split": {
+        "demonstration": 18,
+        "test": 288,
+        "train": 384,
+        "validation": 144
+      }
+    },
+    "boundary": "New input states exclude the union of inputs used anywhere in all six original corpus partitions. New TRAIN/validation/TEST inputs and ordered depth3/4 programs are disjoint. Original18demonstrations unchanged. TRAIN64rows per family/depth covers every assigned program;384TRAIN,144validation,288TEST. Generating heldout task identities for sealing/leak checks is not an observation of model predictions.",
+    "independent_oracle_check": "All834rows including18unchanged demonstrations matched the separate oracle implementation in test_qualified.reference.",
+    "path": "data/device4_depth34.json",
+    "sha256": "f164c8ff65e6b24e859602a12b5923f794dcb4fff25d7d35d0bab5a50163be0c",
+    "spec": {
+      "assignment_seed": 91234005,
+      "exclude_all_historical_inputs": true,
+      "input_seed": 91234001,
+      "program_counts": {
+        "3": {
+          "test": 5,
+          "train": 18,
+          "validation": 4
+        },
+        "4": {
+          "test": 14,
+          "train": 54,
+          "validation": 13
+        }
+      },
+      "program_seed": 91234003,
+      "programs_disjoint_across_new_splits": true,
+      "rows_per_family_depth": {
+        "test": 48,
+        "train": 64,
+        "validation": 24
+      }
+    }
+  },
+  "evaluation": {
+    "external_teacher_artifact_reads": false,
+    "fixed_final384_only": true,
+    "methods": "Untouched raw zero-output adapter plus all trained final learners.",
+    "new_pid": true,
+    "require_exact24_train_probe_reload_parity": true,
+    "resident_adapters": [
+      "student"
+    ],
+    "selection_on_test": false,
+    "teacher_weights_loaded": false,
+    "test_programs": "5unseen depth3 programs and14unseen depth4 programs, each represented within every family, using new inputs.",
+    "test_rows": 288,
+    "unused_initial_teacher_adapter": "Shared loader creates a fresh teacher slot; evaluator deletes it before any predictions. No trained teacher weights are loaded."
+  },
+  "manual_stages": {
+    "evaluate": "configs/device4_depth34_evaluate.json",
+    "learn_then_automatic_evaluate": "configs/device4_depth34_learn.json",
+    "qualify": "configs/device4_depth34_qualify.json",
+    "use": "Explicit recovery/debugging only. Default run already chains all positive stages; output directories are exclusive and never silently resumed."
+  },
+  "model_and_prompt": {
+    "base": "Same pinned Qwen3.5-4B revision851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a, BF16 and same LoRA targets.",
+    "generation": "Unchanged original whole four-digit body plus nativeEOS, greedy full vocabulary, cap16; no extraction, whitespace normalization or forced stop.",
+    "initialization": "Fresh original-seed student adapter equals verified raw source initialization. Qualified teacher weights only enter the separate frozen teacher adapter.",
+    "learner_context": "Original learner prompt only; no demonstrations/rules/retrieval/teacher during evaluation.",
+    "teacher_context": "Original device rules and six separate fixed demonstration inputs per family. Teacher context does not include the current gold answer."
+  },
+  "modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/device4_depth34.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/device4_depth34_contract.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_device4_depth34.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/device4_depth34_protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/device4_depth34_run.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/device4_depth34_qualify.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/device4_depth34_learn.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/device4_depth34_evaluate.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/data/device4_depth34.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/device4_depth34_handoff.json"
+  ],
+  "new_file_sha256": {
+    "configs/device4_depth34_evaluate.json": "6c55c853139d6c5fb89fc6728eac2c40f0ab95d15b78a9557f900d5fbfd344c5",
+    "configs/device4_depth34_learn.json": "1ce78ebf27488581050548b314313d15c0c439c39eb1d9ebd0c9f1cbbe703348",
+    "configs/device4_depth34_protocol.json": "e791d25725eb0866beea205f83ab490999a45604919fac5963ae225f1dd9665f",
+    "configs/device4_depth34_qualify.json": "765afcb1101a3f8130ada8b16bed59cbfad4a8c3d64943f9fd5b8fc5d90b4fe3",
+    "configs/device4_depth34_run.json": "25b5695a50af87d2bddd311621a1111c91d202d350cf0acbdc4b79a31f1325bf",
+    "data/device4_depth34.json": "f164c8ff65e6b24e859602a12b5923f794dcb4fff25d7d35d0bab5a50163be0c",
+    "device4_depth34.py": "4a7324ccfd791fbd69ed10d79d7db2f11c49e885a063f0952812ad426d2a0907",
+    "device4_depth34_contract.py": "8589c327a8a0edb2abc52dd8bbacba3176b3e521c9bc058e7b469caa7a4ba8f8",
+    "test_device4_depth34.py": "8f54b592fef934716fe5c9bdbe8d1d79fec6b705e9a291396798835f102381ab"
+  },
+  "oracle_control": "One fresh oracle SFT learner uses full gold answer plus nativeEOS, identical initialization/capacity/optimizer/384updates/1536TRAIN exposures/order. It is shared across comparisons because oracle targets and schedule do not depend on teacher choice. Response-token, rollout-token and teacher-context-token totals can differ and are recorded.",
+  "outputs": [
+    "qualification.json",
+    "qualification_panels.json",
+    "learning/training.json",
+    "learning/schedule.json",
+    "learning/oracle_sft/rows.json",
+    "learning/oracle_sft/ledger.json",
+    "learning/context_forward_kl_<arm>/rows.json",
+    "learning/context_forward_kl_<arm>/ledger.json",
+    "learning/evaluation/panels.json",
+    "learning/evaluation/result.json",
+    "learning/result.json",
+    "result.json"
+  ],
+  "ownership": {
+    "commit_push_performed": false,
+    "gpu_or_provider_actions_performed": false,
+    "parent_owns": [
+      "staging",
+      "dispatch",
+      "collection",
+      "compute"
+    ],
+    "scope": "experiments/distillation/ only"
+  },
+  "prerequisites": {
+    "historical_artifacts": {
+      "fallback24": {
+        "files_sha256": {
+          "pairs.json": "682bca8933f14626fbc2f9953d2493267bcb501c87124979c3d31170995adf13",
+          "qualification.json": "7c26152a5c4917fff4cde25bc850fc5affd4067772309b40ec9431005bd9fd3a",
+          "runtime.json": "466c8d3ad086a3e590f24b276ebe82779cef306d51edaf2f4fdbe2e66c9eeb76",
+          "seal.json": "92a0a24353c406d37a01a932fc2c71ee8c5dd1701b28c7cee4745714ee327d32",
+          "teacher_training.json": "d39ec93de426e4af3f4c3e39c881f606f9e6c2e5953ad54dc37a31c07c8b720f"
+        },
+        "path": "/mnt/shared/cl-portfolio/runs/distillation-generated-teacher-training-20260911"
+      },
+      "initial": {
+        "files_sha256": {
+          "pairs.json": "3bf50fbae1ba6adb74960da190d46ffa3d711687d3631e0b46f37b8180efa7f8",
+          "qualification.json": "0f040e16f59f378d6243c16580ef279b01bd91a4ef67348b45e22dbb0326e2d2",
+          "runtime.json": "466c8d3ad086a3e590f24b276ebe82779cef306d51edaf2f4fdbe2e66c9eeb76",
+          "seal.json": "9d18644b9ce6709c7456db9f9db6ed7a4a86bd00207562dac812a445cf1ea254"
+        },
+        "path": "/mnt/shared/cl-portfolio/runs/distillation-generated-qualification-20260911"
+      }
+    },
+    "qualification_dir": "/mnt/shared/cl-portfolio/runs/distillation-device4-curriculum-20260912/evaluation",
+    "required_receipt": "Complete original curriculum training.json and evaluation/qualification.json with all three arm receipts. Incomplete/missing upstream artifacts stop before new model loading. Parent currently owns and runs that experiment.",
+    "training_dir": "/mnt/shared/cl-portfolio/runs/distillation-device4-curriculum-20260912",
+    "upstream_design_sha256": "3a701dcb1a1d1c0baed3110cc55feef7ebc5ea115b79cd06844bf467cdd4b1a5",
+    "upstream_source_sha256": {
+      "device4_curriculum.py": "a5c35814e7fe613ebfa85c46222fd9cdfaaec951a15fb897f14ed03efe9ae884",
+      "generated_contract.py": "ab7ff2f2c1d9262d83dd50e66e381359d729735cb0dfb2f06759ca115e5ae525",
+      "objectives.py": "1d88593282dfe4b89b79899e9e28d89be581903e9f20bc6c11ead61e92901621",
+      "qualified.py": "99ccf8aa98cdbd4bc5dfcbaccb245ec332c9f055a2ade550811e441e3ceded7f",
+      "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770",
+      "run.py": "a2464aaf35277800bfc8d473bed27555febfc21e543b9a2fe8fd0e9e35a817a5",
+      "tasks.py": "4bab8d018fc7de93fc3830c8a4c7b610876189faa0a25bd033ed5b57955937ce"
+    },
+    "verification": "Before GPU model loading reverify original device4 training/qualification hashes, fixedfinal384 selection, original family gates, depth1/2 checks and saved teacher files. Only originally eligible arms receive deeper evaluation. New teacher qualification is independent and stricter: all12family/depth3or4/TRAINorvalidation cells must meet the same numerical accuracy/gain/paired-p cutoffs. Raw learner baseline feasibility checked before teacher interventions. Rejected arms never train learners."
+  },
+  "primary_source": {
+    "relation": "Paper practical section uses analytic forwardKL on learner trajectories and an EMA teacher. Here teacher is separately trained, qualified and fixed; no target-answer demonstration, EMA or full-parameter updates. Fixed-teacher context distillation, not SDFT/SDPO reproduction.",
+    "url": "https://arxiv.org/html/2601.19897v2",
+    "verified": "2026-09-12"
+  },
+  "protocol_sha256": "fb70ff48705a3f1a335b12216b190d2ac0af86652c4d7cf0fd379453aa554229",
+  "qualification": {
+    "maximum_p": 0.05,
+    "minimum_accuracy": 0.875,
+    "minimum_gain": 0.25,
+    "selection": "all_eligible_teachers_pass_every_family_depth_train_validation_cell",
+    "teacher_optimizer_updates": 0
+  },
+  "ready_run": {
+    "command_in_staged_lane": [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "/opt/venv/bin/python",
+      "python",
+      "device4_depth34.py",
+      "--config",
+      "configs/device4_depth34_run.json",
+      "--output-dir",
+      "/mnt/shared/cl-portfolio/runs/distillation-device4-depth34-20260912"
+    ],
+    "config": "experiments/distillation/configs/device4_depth34_run.json",
+    "cwd": "experiments/distillation",
+    "entrypoint": "experiments/distillation/device4_depth34.py",
+    "execution": "Qualify eligible source teachers on new depth3/4 TRAIN and validation. If any pass, automatically launch fresh learning process, which executes all qualified context arms plus shared oracle and automatically launches another fresh evaluator. No parent follow-up dispatch between positive prerequisites and learner updates is required.",
+    "output_dir": "/mnt/shared/cl-portfolio/runs/distillation-device4-depth34-20260912",
+    "task_id": "distillation-device4-depth34-20260912"
+  },
+  "selection": "Carry every original eligible arm that passes the new depth3/4 gate. No choice of best teacher, checkpoint, seed or prompt from validation or TEST. Train all passing context teachers and one shared oracle control. If none pass, zero learner updates and no learner model load.",
+  "source_boundary": "Only new depth34 files/configs/data modified. Device4, coverage teacher, coverage learner and prior generated pipelines remain byte-identical to every existing handoff staging manifest. Existing run.py runtime metadata lists all staged Python filenames; qualifying source identity is the explicit nine-file SOURCE_FILES in this new entrypoint, separate from immutable upstream source identities.",
+  "staging_files_sha256": {
+    "configs/device4_curriculum_protocol.json": "cb7ef7eb7e94f4279c83eec78d6f33189f7a489e3b4ad35570a70e94ac11fd47",
+    "configs/device4_depth34_evaluate.json": "6c55c853139d6c5fb89fc6728eac2c40f0ab95d15b78a9557f900d5fbfd344c5",
+    "configs/device4_depth34_learn.json": "1ce78ebf27488581050548b314313d15c0c439c39eb1d9ebd0c9f1cbbe703348",
+    "configs/device4_depth34_protocol.json": "e791d25725eb0866beea205f83ab490999a45604919fac5963ae225f1dd9665f",
+    "configs/device4_depth34_qualify.json": "765afcb1101a3f8130ada8b16bed59cbfad4a8c3d64943f9fd5b8fc5d90b4fe3",
+    "configs/device4_depth34_run.json": "25b5695a50af87d2bddd311621a1111c91d202d350cf0acbdc4b79a31f1325bf",
+    "configs/generated_protocol.json": "aa6024c8a30f3fe0ca027ef2a6f0c099537bc839d109c45508bc694f03bf5724",
+    "data/device4_depth34.json": "f164c8ff65e6b24e859602a12b5923f794dcb4fff25d7d35d0bab5a50163be0c",
+    "device4_curriculum.py": "a5c35814e7fe613ebfa85c46222fd9cdfaaec951a15fb897f14ed03efe9ae884",
+    "device4_depth34.py": "4a7324ccfd791fbd69ed10d79d7db2f11c49e885a063f0952812ad426d2a0907",
+    "device4_depth34_contract.py": "8589c327a8a0edb2abc52dd8bbacba3176b3e521c9bc058e7b469caa7a4ba8f8",
+    "generated_contract.py": "ab7ff2f2c1d9262d83dd50e66e381359d729735cb0dfb2f06759ca115e5ae525",
+    "objectives.py": "1d88593282dfe4b89b79899e9e28d89be581903e9f20bc6c11ead61e92901621",
+    "qualified.py": "99ccf8aa98cdbd4bc5dfcbaccb245ec332c9f055a2ade550811e441e3ceded7f",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770",
+    "run.py": "a2464aaf35277800bfc8d473bed27555febfc21e543b9a2fe8fd0e9e35a817a5",
+    "tasks.py": "4bab8d018fc7de93fc3830c8a4c7b610876189faa0a25bd033ed5b57955937ce"
+  },
+  "status": "cpu_verified_gpu_ready_frozen",
+  "training": {
+    "alpha": 32,
+    "checkpoint_updates": [
+      24,
+      96,
+      384
+    ],
+    "example_exposures_per_method": 1536,
+    "examples_per_update": 4,
+    "expected_trainable_parameters": 8519680,
+    "exposures_per_family_depth": 256,
+    "learning_rate": 0.0002,
+    "max_grad_norm": 1.0,
+    "order_seed": 91234101,
+    "probe_rows_per_family_depth": 4,
+    "rank": 16,
+    "rollout_forward_logprob_max_error": 0.25,
+    "sampling_seed": 91234103,
+    "selection": "fixed_final384",
+    "shared_oracle_control": true,
+    "updates_per_method": 384,
+    "weight_decay": 0.0
+  }
+}

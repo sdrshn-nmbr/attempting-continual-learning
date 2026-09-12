@@ -1,0 +1,10 @@
+{
+  "study_config": "configs/prospective.json",
+  "reference": true,
+  "stage": "measure",
+  "stream": "test-b",
+  "reference_source": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-reference-learn-test-b/study",
+  "qualification": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-cohort/study",
+  "pilot_qualification": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-pilot-gate/study",
+  "repair_qualification": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-repair-gate/study"
+}

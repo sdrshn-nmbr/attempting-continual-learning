@@ -1,0 +1,5 @@
+{
+  "protocol": "configs/device4_recovery_protocol.json",
+  "protocol_sha256": "2c61d7d85e1258e5fe0ecec3554bb1cd7bbb464305db11a873212b99ec8775d3",
+  "stage": "resume"
+}

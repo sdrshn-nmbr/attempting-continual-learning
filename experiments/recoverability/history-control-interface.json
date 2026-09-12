@@ -1,0 +1,464 @@
+{
+  "committed_or_pushed": false,
+  "decisions": [
+    "Control learning reuses the exact original acquisition/forgetting row-index sequence. Code rotation changes only old code/target fields; no rebalancing. Old/new input UID and token schedule hashes asserted.",
+    "alternate_binding uses old128 then new128 with continuous AdamW; new_only uses new128 from identical initial adapter and fresh AdamW. Midpoint observations do not reset optimizer.",
+    "Own alternate acquisition requires accuracy>=.8 and gain>=.3, at least6 old intents; same new-skill gate at least6. Stop alternate before new training if old acquisition fails.",
+    "Shared sample is historical eligible intersect alternate own acquired; require4 per source,8 per split,two sources per split and all8 control source gates. No original-code control baseline filter or control forgetting criterion.",
+    "All repairs target original codes with unchanged accuracy/gain/new-guard qualification. Each 2/4/8/16 arm has a fresh optimizer and exact original support prefixes. Budgets never selected by control outcomes.",
+    "Completed historical grids are verified before control repairs. TEST additionally requires completed original forecast with matching hashes and chronological ordering.",
+    "Paired curves include baseline0, raw guard excess, relative guard damage, utility and qualification. Minimum budget may be never; later qualification loss retained. Report per source plus equal-source means, with pooled intents descriptive only.",
+    "Controls do not enter any original predictor fit, lens calibration, feature selection or forecast. Original frozen prediction pipeline unchanged."
+  ],
+  "design_input": {
+    "design_sha256": "f93a0d74f78b01fa4a35004df076ab9b1db5b65ac93ad2e5a678efce6151d908",
+    "lane_protocol_at": "2026-09-12T07:13:08.629853+00:00",
+    "parent_decision_at": "2026-09-12T07:12:26.537466+00:00",
+    "parent_file_sha256": "689365267dd25dfa7d9731184fa9d85bff06a1d3b23b2f9445b68f258ef9fa73",
+    "parent_path": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/history-control-parent-decision.json",
+    "parent_payload_sha256": "9d7ae6269ba2a5c67a37f2f131dcce66e06cf1b67f2d92c1fb21eaba740ec16d",
+    "protocol_sha256": "818e6c527a7edbf146bdf8d6aef44f91a0feff530283436d828cbabf4036bfb9",
+    "temporal_boundary": "Scientific decisions precede parent observation of fresh TEST repair outcomes. Implementation and staging may occur after original TEST execution started; do not claim otherwise. Controller independently checks completed forecast precedes TEST control repairs."
+  },
+  "dispatch_owner": "parent",
+  "entrypoint": "history_control.py",
+  "entrypoint_sha256": "b3fa67aa5d78439ed16bebc78780b22780ae2239c41b8a8e7fe5cecf018632dd",
+  "file_closure_count": 76,
+  "file_closure_sha256": "8d584c17c450301c0a0441c84382e55503a403640cae2010e51089476cb56688",
+  "file_sha256": {
+    "budget-prediction-learning.json": "e925ad6ab84803964e26e815aa0ebc0dad7d16f8d3b4a0008e1e5e7a2fb2693e",
+    "budget-prediction-learning.sha256": "a83b6cb47244c363418886eb1cc3a7718e47f9fc8ca162b1a83768e6811e7621",
+    "budget-prediction-protocol.json": "a1c8926fa7eed2d82e2dacd3234474ede09b6c9f5273a72c9968bd80e3098708",
+    "budget-prediction-protocol.sha256": "67bcad88a0d083561bdf4bbf23728b0c87693a8fb9eee7f67c40386e7d9f8bc1",
+    "budget_prediction.py": "13c4abefae778e3ac7324add0257d1055406c961d15d155b88eebeb6517cc35a",
+    "budget_prediction_analysis.py": "7392384bc65571636b62ec3b28ffdcc85bcd9d9210f648027c3270dc688b98fa",
+    "budget_prediction_model.py": "d9d736dea7ff678edd6815c878b0d69fad671b09d4cb61920a333295e60f6d72",
+    "configs/budget-prediction-analyze.json": "405a3cb8607f80a0be1083ded6671cd4b6511e3b7c1034e6972255445bcaa965",
+    "configs/budget-prediction-authorize.json": "4e8c57c791d2a4e1bb4c3e78976d32146a516c40d16d548711ab4f52f79d0069",
+    "configs/budget-prediction-cohort.json": "290ab8dac58a3d77ee8ddbabb23c812cfe0f50fc3aa8e2d685589b4eed89e133",
+    "configs/budget-prediction-fit.json": "fe154513b7095643b5ca97c2bd99881beab14f6147f03a8db2f7e27ab168a5f7",
+    "configs/budget-prediction-forecast.json": "3accd2579e6d0fe124c3a6a3134565e8d9ad3dcae63dbbafa537c2bab8daf713",
+    "configs/budget-prediction-learn-test-a.json": "f4c88246249ee5e0d2f17057b277c75f97de4f92b987d43725ab23fda90088a2",
+    "configs/budget-prediction-learn-test-b.json": "71c8c0bfe7a64d078e9b1550d3b43118af0893db264d67d36aac0cbabfabd65f",
+    "configs/budget-prediction-learn-train-a.json": "85cee83b82cb8618532b92a2c64649c5ef7a936caeff228f713bad1718097604",
+    "configs/budget-prediction-learn-train-b.json": "aac98e6b8579f7c9422f243ac210a81f7266f687435f4039e51df03056eb90fd",
+    "configs/budget-prediction-readout-gate-test.json": "b192414016c28cdaf9ecf3bf2706d16933028cc456a7e974d6a26db2106d6104",
+    "configs/budget-prediction-readout-gate-train.json": "001743b6f569ef30d3b1d48b18a5685f10f6d9acd02c098d9d5a4303e6b5c643",
+    "configs/budget-prediction-readout-test-a.json": "f77b04c2916e45f8d49f112cec91dedca23d3969afd33e3fffe202a386451e40",
+    "configs/budget-prediction-readout-test-b.json": "24297897509e0e54aafa1d8deebcc2782d30ed901be8fa2a16fb8d3b46c45a7f",
+    "configs/budget-prediction-readout-train-a.json": "0c656cc9412522b65b43508a6a3cc1f661f6dff42bd252cfc43e051aa6860233",
+    "configs/budget-prediction-readout-train-b.json": "2cd366498cca0563e94e88483b14317064f93caf7eae48df4d6816a613d06b3f",
+    "configs/budget-prediction-repair-test-a.json": "d9d1ad6541da88b418788593cf2a7516ed431ba99a849b56926346ca728f8b02",
+    "configs/budget-prediction-repair-test-b.json": "2e55fdbf32e99c36cc5ff7054c2514a5d08bee06f9d8bf896d4d03315c93d5b8",
+    "configs/budget-prediction-repair-train-a.json": "3cb711fd10fc30216d9feb13c3f372843e9b230628b2269ef7187d24c1349a4e",
+    "configs/budget-prediction-repair-train-b.json": "69e32094b63c205b3b8e82e2c278abeb752de5c511df0a3cd42437c628ea5d34",
+    "configs/budget-prediction.json": "0e1cbcc6fa66a4674c060c631eb911bc0c1703b5a16c4870cce49e3612da90ed",
+    "configs/history-control-analyze.json": "5f4d54a7bfaaba8baf168203dccb06d84d2485f2190829d2c506dcd287a2b4ab",
+    "configs/history-control-gate.json": "f5518416f86d709316cd3c3af6766ff143678c0d9a7eaba59d600d7e3fef3ef7",
+    "configs/history-control-learn-alternate-binding-test-a.json": "944bb5ee912a93db06e53b6b6e4587123a5f9725ab1480bb9d9d2880907beb42",
+    "configs/history-control-learn-alternate-binding-test-b.json": "8e884e79a324db13351130296b239f2e9a94688fcf57c6430d75cf9136acca5b",
+    "configs/history-control-learn-alternate-binding-train-a.json": "72f5d4852d0e91e0c4967881e04cb446d18bd06f254a56d86589a34d42f1e983",
+    "configs/history-control-learn-alternate-binding-train-b.json": "84e39e0dff20a3fd298f1858bee368f1e01b29521e507556d2da87da48fe8235",
+    "configs/history-control-learn-new-only-test-a.json": "1f59167403594301a395c8ed5828bfd9eca571adbcd431892e072b92d2078372",
+    "configs/history-control-learn-new-only-test-b.json": "18085d42e8644320b3cf9a07d6336842ad31c23c254cf44c936e5b5ba2a632a0",
+    "configs/history-control-learn-new-only-train-a.json": "d6da3af44fde0cdb2b5885adc4e9c33bd2bcf5e9c46173381eecf1a9162311c2",
+    "configs/history-control-learn-new-only-train-b.json": "82fcb5a3338ae2a7209065696763bb7fc4614fe164a263bccdc3f29e3cc9915a",
+    "configs/history-control-repair-alternate-binding-test-a.json": "3c460a059980ee1019a1f5031b425594d81aba2d2a6bc85fd609d208ffb55cf3",
+    "configs/history-control-repair-alternate-binding-test-b.json": "a2f2c5e5ff4d1f2a1e131c1484d7fed70b8676e354c63a186d60d4e06d067f9f",
+    "configs/history-control-repair-alternate-binding-train-a.json": "f65c00f83ccbad2a680462e970af79c24cbbbeefba6b64856ef2e3d5ed5391cf",
+    "configs/history-control-repair-alternate-binding-train-b.json": "57a02072fe0933f644972633fd41f2ac756e97d62d663b0530228d2c065740d9",
+    "configs/history-control-repair-new-only-test-a.json": "aa6d86e7dd9e2e06988252ced7a05eab3a5707d9aaacf6448543cebfa87dd613",
+    "configs/history-control-repair-new-only-test-b.json": "7044c27a1bc1070587ca0175d4006380dfa1526196e186970a06273afc377be8",
+    "configs/history-control-repair-new-only-train-a.json": "2f28e711eb92185faf4a7b394e553921b7dfa1559bbde6dbe1309f8a34cd06f0",
+    "configs/history-control-repair-new-only-train-b.json": "5f59852b5191773cdd0fe509b310d265af797c219924929d158b377e4dccf3f9",
+    "configs/minimum-budget-gate.json": "ba648d6410c6dfd25e592e32a36bd175628de5f3039aeec61a921049a9097dd9",
+    "configs/minimum-budget-train-a.json": "e1a5f0f35cff505af7667e6a167f403207b093326c294140feb05ae7e54919cc",
+    "configs/minimum-budget-train-b.json": "07d52ad7b57c184eb6a1fa67546985a2cc66ddb2fcbf777ebab9e4993d56dd90",
+    "configs/prospective.json": "8a3b4c2b6b7d99644d3054e934936587ec33fe8d8d3f1c1629b6924d2c74e4e3",
+    "history-control-dependencies.json": "ae201547b3801f615fcee08ad3aac730f0e9beda7e6267cc057148f4be67d339",
+    "history-control-design.json": "f93a0d74f78b01fa4a35004df076ab9b1db5b65ac93ad2e5a678efce6151d908",
+    "history-control-design.sha256": "736b43e95daa4c0aeb23fb5bad4fbaace9d1797e409e1fb64fd019a7c4f51abf",
+    "history-control-prerequisite-audit.json": "76cd323aeee77355d9e368cf884604b5dc35d05719e7afe75c1d3144fde2709b",
+    "history-control-protocol.json": "818e6c527a7edbf146bdf8d6aef44f91a0feff530283436d828cbabf4036bfb9",
+    "history-control-protocol.sha256": "b0406a137b0d0164af43da929cd05991664dcf5b49515a11a4b7fd35c8b0de4c",
+    "history_control.py": "b3fa67aa5d78439ed16bebc78780b22780ae2239c41b8a8e7fe5cecf018632dd",
+    "history_control_analysis.py": "859d51c9233ed611d3e5e05ce1e313f81e45dda4e57a4b92181b12126b9ea374",
+    "history_control_model.py": "d65852f6107a5ca78d579c57d518a49548353394ab4d160aef60fbb5a12a8dcc",
+    "history_control_sources.py": "7b9d1f920eece55d4d803af65ff7a2d9727bf42457f64260cb06b1932e9a5474",
+    "inputs/budget-prediction-cohort.json": "14781a4cd46816767903e43a0a1cd74b5d7d80b096ad7c0eeb92b69fd29ebc93",
+    "inputs/prospective-cohort.json": "b5b89a67140db92e8f9d281510dcfc873c5e32c46470ef3acb0b4dd3ae861bb8",
+    "minimum-budget-protocol.json": "7b7e01962d72080a4ba5f183713c5dc91746452a08125f221a037afa6ec0116e",
+    "minimum-budget-protocol.sha256": "f20f081f6c18d058f52e4edb81d33868ecfe6a7f2a918ec7d491ce1b4ce6204b",
+    "minimum_budget.py": "ef7230f741e312dfc2d0d5d42678be2af76012989b9ff91d53043843fb346392",
+    "model.py": "5af6edb1a42d6042a3a38b9d0ab4ce01ea6cadac6728d9e0fea84acd695442b2",
+    "prepare_budget_prediction.py": "6bc43f784cc08117ec0fc89d95911185f63f46b805d2afe1dbfcdf3ee6182456",
+    "prospective-protocol.json": "51f2f2771b59e7f4f93090bf8463758032e2c88a41764212849fe4499f0d4719",
+    "prospective-protocol.sha256": "1229d93879693ea94bf5e6d4eb307abfa5438af26ce9e51cbe2a533bb2ccf43a",
+    "prospective.py": "3f2ce28d0c350b26b1e0d8d97a9fc9084e9f75837f20945e82e8c80584f817dc",
+    "prospective_analysis.py": "2eeb9b61a14a58df2cf8f20b5148d73afda3364b4b93424ef408faad6e6ebad6",
+    "prospective_data.py": "8d39002c90359c7c62e65d121ba907d5b6639faa105aad237fc476168dc04048",
+    "prospective_model.py": "46c4c6901e61479759bf38ae2af01a36a1c5282db34639900428aad016447399",
+    "protocol.py": "a1e54302b007827b9c2982d8c366b68b89f573ddeb4b1c8f2ac50bf440d23776",
+    "requirements.txt": "847ae989f281a78cb0fb40f574e23f3baefc20f7bc3ecebf8ebb65857c6c689c",
+    "tests/test_history_control.py": "229b77da23623b39c00783151e5fb66514197d894f051b82f421e9057b8ff872",
+    "tuned_lens.py": "c640f82a9e4510287678774625dd6ecebe74063461659b5d763adaf5ddceecc8"
+  },
+  "historical_prerequisites": {
+    "at": "2026-09-12T07:26:43.305018+00:00",
+    "clusters": {
+      "test": 2,
+      "train": 2
+    },
+    "counts": {
+      "test": 13,
+      "train": 13
+    },
+    "design_sha256": "f93a0d74f78b01fa4a35004df076ab9b1db5b65ac93ad2e5a678efce6151d908",
+    "history_implementation_identity": "48b0b573fd44551159812ca27c364897d71be5efbf4b216ae6865a93de0b13bd",
+    "kind": "CPU_saved_learning_receipt_and_native16code_recomputation",
+    "new_control_model_training": false,
+    "original_source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+    "protocol_sha256": "818e6c527a7edbf146bdf8d6aef44f91a0feff530283436d828cbabf4036bfb9",
+    "qualified": true,
+    "scope": "Learning/cohort only. No fresh TEST repair outcomes, fit predictions or repair labels read. Local collection paths translated to archived NFS paths only for comparison of source-location fields; saved receipt bytes unchanged.",
+    "streams": {
+      "fresh-test-a": {
+        "eligible": [
+          "calculator",
+          "cancel",
+          "credit_limit_change",
+          "directions",
+          "pto_balance",
+          "timezone",
+          "what_song"
+        ],
+        "new_input_schedule_sha256": "19cabe8e444e3014197b153381da46939edf93da4f8a5c296f3f012c0aa2e412",
+        "new_updates": 128,
+        "old_input_schedule_sha256": "5ab139981c24b01ac7be48d74047e176b71d1a873bf62390026b66e29443aed4",
+        "old_updates": 128,
+        "source_receipt_sha256": "5d17619d8e415b049c6e74000bda8c87b725d8767258cbee861290dd49b9c38f"
+      },
+      "fresh-test-b": {
+        "eligible": [
+          "bill_due",
+          "gas",
+          "international_visa",
+          "measurement_conversion",
+          "plug_type",
+          "tire_change"
+        ],
+        "new_input_schedule_sha256": "da3d9930949b7515e10367a9efd638d9b5ae499bc55d69747b8c6e5a8af75c99",
+        "new_updates": 128,
+        "old_input_schedule_sha256": "0a97cfaa2b16610ed66e882a2054c231a87e16dde249ba0655a52d469f8506bf",
+        "old_updates": 128,
+        "source_receipt_sha256": "3bf53a59a85c61ccd590afed77a242dc80d29a555bc349a83ea6de388cb1d8c2"
+      },
+      "fresh-train-a": {
+        "eligible": [
+          "calories",
+          "insurance",
+          "pto_used",
+          "repeat",
+          "replacement_card_duration",
+          "spending_history",
+          "translate"
+        ],
+        "new_input_schedule_sha256": "d4491fd3c1f49605428584a8b1f2e87aaa4fbdaf4cccdc8906cf1251f933bcb5",
+        "new_updates": 128,
+        "old_input_schedule_sha256": "cb6fd9068f69b2d69b94617d11df9e8647c6d040cab1572d69d3e4ff25f0f4b1",
+        "old_updates": 128,
+        "source_receipt_sha256": "f9397fbb8f1d726acd60fed737a9e6fcc3ffb19ae362c5d2462fa2aefd2c3aee"
+      },
+      "fresh-train-b": {
+        "eligible": [
+          "change_user_name",
+          "credit_limit",
+          "payday",
+          "transfer",
+          "uber",
+          "what_are_your_hobbies"
+        ],
+        "new_input_schedule_sha256": "e24cb39e36690dccabc46c9844041f438b7cf48dc7aa821c8b6d7292b7534797",
+        "new_updates": 128,
+        "old_input_schedule_sha256": "bf6bb92f92240e37d82a19d9ae9d3c3453948aa1b35f12c10822f2e00c98b12e",
+        "old_updates": 128,
+        "source_receipt_sha256": "5f9ea996d5974be2d02770c4d659d146395cac6465caca89a023003717b479f6"
+      }
+    }
+  },
+  "history_identity": "48b0b573fd44551159812ca27c364897d71be5efbf4b216ae6865a93de0b13bd",
+  "interpretation_boundary": "Specific-binding advantage over alternate-label history reduces the extra-text-exposure and optimizer-age confound. It can also reflect interference from learned conflicting bindings. Differences remain behavioral training-history effects; they do not prove physical storage, semantic concept deletion, localization or guaranteed causal memory access.",
+  "jobs": {
+    "followthrough-20260912-recovery-history-analyze": {
+      "config": "configs/history-control-analyze.json",
+      "cpu_stage": true,
+      "depends_on": [
+        "followthrough-20260912-recovery-history-repair-new-only-train-a",
+        "followthrough-20260912-recovery-history-repair-alternate-binding-train-a",
+        "followthrough-20260912-recovery-history-repair-new-only-train-b",
+        "followthrough-20260912-recovery-history-repair-alternate-binding-train-b",
+        "followthrough-20260912-recovery-history-repair-new-only-test-a",
+        "followthrough-20260912-recovery-history-repair-alternate-binding-test-a",
+        "followthrough-20260912-recovery-history-repair-new-only-test-b",
+        "followthrough-20260912-recovery-history-repair-alternate-binding-test-b"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-analyze.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-analyze"
+    },
+    "followthrough-20260912-recovery-history-gate": {
+      "config": "configs/history-control-gate.json",
+      "cpu_stage": true,
+      "depends_on": [
+        "followthrough-20260912-recovery-history-learn-new-only-train-a",
+        "followthrough-20260912-recovery-history-learn-alternate-binding-train-a",
+        "followthrough-20260912-recovery-history-learn-new-only-train-b",
+        "followthrough-20260912-recovery-history-learn-alternate-binding-train-b",
+        "followthrough-20260912-recovery-history-learn-new-only-test-a",
+        "followthrough-20260912-recovery-history-learn-alternate-binding-test-a",
+        "followthrough-20260912-recovery-history-learn-new-only-test-b",
+        "followthrough-20260912-recovery-history-learn-alternate-binding-test-b"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-gate.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-gate"
+    },
+    "followthrough-20260912-recovery-history-learn-alternate-binding-test-a": {
+      "config": "configs/history-control-learn-alternate-binding-test-a.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-learn-alternate-binding-test-a.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-learn-alternate-binding-test-a"
+    },
+    "followthrough-20260912-recovery-history-learn-alternate-binding-test-b": {
+      "config": "configs/history-control-learn-alternate-binding-test-b.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-learn-alternate-binding-test-b.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-learn-alternate-binding-test-b"
+    },
+    "followthrough-20260912-recovery-history-learn-alternate-binding-train-a": {
+      "config": "configs/history-control-learn-alternate-binding-train-a.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-learn-alternate-binding-train-a.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-learn-alternate-binding-train-a"
+    },
+    "followthrough-20260912-recovery-history-learn-alternate-binding-train-b": {
+      "config": "configs/history-control-learn-alternate-binding-train-b.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-learn-alternate-binding-train-b.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-learn-alternate-binding-train-b"
+    },
+    "followthrough-20260912-recovery-history-learn-new-only-test-a": {
+      "config": "configs/history-control-learn-new-only-test-a.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-learn-new-only-test-a.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-learn-new-only-test-a"
+    },
+    "followthrough-20260912-recovery-history-learn-new-only-test-b": {
+      "config": "configs/history-control-learn-new-only-test-b.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-learn-new-only-test-b.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-learn-new-only-test-b"
+    },
+    "followthrough-20260912-recovery-history-learn-new-only-train-a": {
+      "config": "configs/history-control-learn-new-only-train-a.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-learn-new-only-train-a.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-learn-new-only-train-a"
+    },
+    "followthrough-20260912-recovery-history-learn-new-only-train-b": {
+      "config": "configs/history-control-learn-new-only-train-b.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-learn-new-only-train-b.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-learn-new-only-train-b"
+    },
+    "followthrough-20260912-recovery-history-repair-alternate-binding-test-a": {
+      "config": "configs/history-control-repair-alternate-binding-test-a.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-test-a",
+        "followthrough-20260912-recovery-predict-forecast"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-repair-alternate-binding-test-a.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-alternate-binding-test-a"
+    },
+    "followthrough-20260912-recovery-history-repair-alternate-binding-test-b": {
+      "config": "configs/history-control-repair-alternate-binding-test-b.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-test-b",
+        "followthrough-20260912-recovery-predict-forecast"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-repair-alternate-binding-test-b.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-alternate-binding-test-b"
+    },
+    "followthrough-20260912-recovery-history-repair-alternate-binding-train-a": {
+      "config": "configs/history-control-repair-alternate-binding-train-a.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-train-a"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-repair-alternate-binding-train-a.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-alternate-binding-train-a"
+    },
+    "followthrough-20260912-recovery-history-repair-alternate-binding-train-b": {
+      "config": "configs/history-control-repair-alternate-binding-train-b.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-train-b"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-repair-alternate-binding-train-b.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-alternate-binding-train-b"
+    },
+    "followthrough-20260912-recovery-history-repair-new-only-test-a": {
+      "config": "configs/history-control-repair-new-only-test-a.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-test-a",
+        "followthrough-20260912-recovery-predict-forecast"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-repair-new-only-test-a.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-new-only-test-a"
+    },
+    "followthrough-20260912-recovery-history-repair-new-only-test-b": {
+      "config": "configs/history-control-repair-new-only-test-b.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-test-b",
+        "followthrough-20260912-recovery-predict-forecast"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-repair-new-only-test-b.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-new-only-test-b"
+    },
+    "followthrough-20260912-recovery-history-repair-new-only-train-a": {
+      "config": "configs/history-control-repair-new-only-train-a.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-train-a"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-repair-new-only-train-a.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-new-only-train-a"
+    },
+    "followthrough-20260912-recovery-history-repair-new-only-train-b": {
+      "config": "configs/history-control-repair-new-only-train-b.json",
+      "cpu_stage": false,
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-train-b"
+      ],
+      "entrypoint": "history_control.py",
+      "gpus": 1,
+      "ready_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python history_control.py --config configs/history-control-repair-new-only-train-b.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-new-only-train-b"
+    }
+  },
+  "modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-analyze.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-gate.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-learn-alternate-binding-test-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-learn-alternate-binding-test-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-learn-alternate-binding-train-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-learn-alternate-binding-train-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-learn-new-only-test-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-learn-new-only-test-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-learn-new-only-train-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-learn-new-only-train-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-repair-alternate-binding-test-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-repair-alternate-binding-test-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-repair-alternate-binding-train-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-repair-alternate-binding-train-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-repair-new-only-test-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-repair-new-only-test-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-repair-new-only-train-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/history-control-repair-new-only-train-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/history-control-dependencies.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/history-control-design.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/history-control-design.sha256",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/history-control-prerequisite-audit.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/history-control-protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/history-control-protocol.sha256",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/history_control.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/history_control_analysis.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/history_control_model.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/history_control_sources.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/tests/test_history_control.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/history-control-interface.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/history-control-interface.sha256"
+  ],
+  "new_staged_provider_source_sha256": null,
+  "original_47_frozen_files_unchanged": true,
+  "original_source_file_count_reported_by_parent": 104,
+  "original_staged_source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+  "run_root": "/mnt/shared/cl-portfolio/runs",
+  "sealed_at": "2026-09-12T07:28:02.401762+00:00",
+  "source_boundary": "The 47 pinned runtime/config/data dependencies identify the relevant subset of original 104-file bundle 99ac3030. New runtime identity binds four new modules plus sealed history protocol and parent-design envelope. File-closure digest is a local content map, not a provider staged-source hash.",
+  "status": "sealed_ready_for_parent_staging_not_dispatched",
+  "tests": {
+    "actual_cpu_model_checks": [
+      "Tiny Qwen alternate/new-only learning, initial adapter parity, exact input schedules and carried AdamW clocks",
+      "Independent 2/4/8/16 repair restarts with exact prefix weights, loss traces and postclip gradient witnesses",
+      "Gradient witness produces exactly the same outcomes, weights and update traces as frozen original grid",
+      "Failed own acquisition and shared gates stop later updates; parser uses existing run directory with immutable study child"
+    ],
+    "boundary": "CPU implementation and saved-source checks only; no new 4B control training or GPU dispatch by lane.",
+    "command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python -m pytest -q",
+    "cwd": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability",
+    "new_history_tests": 31,
+    "prior_frozen_tests": 110,
+    "result": "141 passed in 21.04s",
+    "ruff_command": "uv tool run ruff check history_control.py history_control_sources.py history_control_model.py history_control_analysis.py tests/test_history_control.py",
+    "ruff_result": "All checks passed"
+  }
+}

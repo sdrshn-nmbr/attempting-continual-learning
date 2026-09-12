@@ -1,0 +1,230 @@
+{
+  "choice_protocol_sha256": "03c5bb6bad658055c42bbd9f89f77b22c83c39983d442a0a8ae16417358c40d5",
+  "choice_qualification_source_frozen_at_ready_notice": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770"
+  },
+  "compute_requirements": {
+    "autocast": false,
+    "base_and_adapter_dtype": "float32",
+    "model_offload": false,
+    "requirements": "Existing distillation requirements.txt; do not install or change worker torch.",
+    "source_model": "Qwen/Qwen3-8B@b968826d9c46dd6066d109eabc6255188de91218",
+    "visible_rocm_gpus": 1
+  },
+  "cpu_validation": {
+    "ast_import_audit": [],
+    "errors": 0,
+    "existing_lane_tests": 30,
+    "failures": 0,
+    "gpu_runtime_boundary": "CPU checks use local torch2.14.0; parent owns freshly qualified ROCm GPU runtime. No GPU result claimed.",
+    "junit_path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/outputs/consolidation-20260912-cpu/pytest.xml",
+    "junit_sha256": "5448580397436d21d4d68b54b49fdfbfc9a621c905d67503a670af0e5e5ed822",
+    "new_tests": 14,
+    "packages": {
+      "peft": "0.20.0",
+      "pytest": "9.1.1",
+      "safetensors": "0.8.0",
+      "torch": "2.14.0",
+      "transformers": "5.16.1"
+    },
+    "ruff": "E4,E7,E9,F,I pass on all5new Python files",
+    "skipped": 0,
+    "tests": 44
+  },
+  "dataset_audit": {
+    "cross_split_input_overlap": 0,
+    "prior_campaign_observed_holdout": true,
+    "rows_sha256": {
+      "test": "4cb8c65404c65f47d9a9717346b922eb1d9171de93c4f6636f76bbdc16652ca4",
+      "train": "b53ef5cf9453b99151fb2010eccb94724ceeb898ac18e994b6ef74bd60ee2882",
+      "unused288": "a6e735f04446cf801efa601a60113c40d6fcb5b3a4875b39437395e419f094a9",
+      "validation": "6ffc9d8256c0f3b76617ecff7812ec0b75c326645655773fc90320e50561e491"
+    },
+    "unique_inputs_per_split": {
+      "test": 64,
+      "train": 128,
+      "unused288": 288,
+      "validation": 32
+    }
+  },
+  "decisions": [
+    "Use source adapter already known to succeed on exactly the four-choice contract; qualify anew on TRAIN/validation before any learner updates.",
+    "Independent rank8 zero-output initialization instead of teacher weight copying; teacher_choice_kl versus oracle_sft at exactly matched rows,orders,updates and rank. Distillation support is4sequence scores; not SDFT/SDPO.",
+    "Teacher scores are cached before learner training; neither learner training nor separate-process holdout evaluation loads teacher weights. Persisted adapter is the learned result.",
+    "The new free-generation follow-up starts from the strong3digit source. Exact leading whitespace matches its original continuation; append nativeEOS in training. No decoder rescue or prefix grading.",
+    "Parent already established the old4digit teacher errors were wrongstates despite validformat andEOS. No duplicate oldrecord audit or4digit teacherbudget implementation retained.",
+    "Generation acquisition trains through32,128,384update checkpoints. Choose earliest with >=.95 strictTRAIN-probe accuracy everytask, otherwise384; single untouched validation qualification afterselection. Failure prevents learner work and test evaluation.",
+    "Both experiments reuse existing synthetic Sequence303 mappings; holdout exclusion from these optimizers does not make the campaign-level inputs unseen."
+  ],
+  "dispatch_sequence": [
+    {
+      "command_in_staged_lane": [
+        "uv",
+        "run",
+        "--no-project",
+        "python",
+        "choice_consolidation.py",
+        "--config",
+        "configs/choice_consolidation_qualify.json",
+        "--output-dir",
+        "/mnt/shared/cl-portfolio/runs/consolidation-choice303-qualify-20260912"
+      ],
+      "condition": "No learner updates. Qualify existing source on all TRAIN and validation rows under exact historical four-choice scoring.",
+      "config": "configs/choice_consolidation_qualify.json",
+      "entrypoint": "choice_consolidation.py",
+      "output_dir": "/mnt/shared/cl-portfolio/runs/consolidation-choice303-qualify-20260912",
+      "source_folder": "experiments/distillation",
+      "task_name": "consolidation-choice303-qualify-20260912"
+    },
+    {
+      "command_in_staged_lane": [
+        "uv",
+        "run",
+        "--no-project",
+        "python",
+        "choice_consolidation.py",
+        "--config",
+        "configs/choice_consolidation_train.json",
+        "--output-dir",
+        "/mnt/shared/cl-portfolio/runs/consolidation-choice303-train-20260912"
+      ],
+      "condition": "Require qualified teacher receipt before model loading. Train independent rank8 KL and oracle-SFT arms,384updates each. No teacher loaded.",
+      "config": "configs/choice_consolidation_train.json",
+      "entrypoint": "choice_consolidation.py",
+      "output_dir": "/mnt/shared/cl-portfolio/runs/consolidation-choice303-train-20260912",
+      "source_folder": "experiments/distillation",
+      "task_name": "consolidation-choice303-train-20260912"
+    },
+    {
+      "command_in_staged_lane": [
+        "uv",
+        "run",
+        "--no-project",
+        "python",
+        "choice_consolidation.py",
+        "--config",
+        "configs/choice_consolidation_evaluate.json",
+        "--output-dir",
+        "/mnt/shared/cl-portfolio/runs/consolidation-choice303-evaluate-20260912"
+      ],
+      "condition": "New process after both arms complete. Reload saved learner tensors and evaluate holdout with no teacher.",
+      "config": "configs/choice_consolidation_evaluate.json",
+      "entrypoint": "choice_consolidation.py",
+      "output_dir": "/mnt/shared/cl-portfolio/runs/consolidation-choice303-evaluate-20260912",
+      "source_folder": "experiments/distillation",
+      "task_name": "consolidation-choice303-evaluate-20260912"
+    },
+    {
+      "command_in_staged_lane": [
+        "uv",
+        "run",
+        "--no-project",
+        "python",
+        "generation_teacher.py",
+        "--config",
+        "configs/generation_teacher_diagnose.json",
+        "--output-dir",
+        "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-diagnose-20260912"
+      ],
+      "condition": "Only after source choice qualification. Diagnose exact3digit plus nativeEOS on TRAIN/validation. If already qualified skip EOS training.",
+      "config": "configs/generation_teacher_diagnose.json",
+      "entrypoint": "generation_teacher.py",
+      "output_dir": "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-diagnose-20260912",
+      "source_folder": "experiments/distillation",
+      "task_name": "consolidation-source303-generation-diagnose-20260912"
+    },
+    {
+      "command_in_staged_lane": [
+        "uv",
+        "run",
+        "--no-project",
+        "python",
+        "generation_teacher.py",
+        "--config",
+        "configs/generation_teacher_train_eos.json",
+        "--output-dir",
+        "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-train-20260912"
+      ],
+      "condition": "Only after rejected generation diagnosis. Continue strongsource with gold TRAIN plusEOS,384updates,save32/128/384. Select using TRAIN probes only.",
+      "config": "configs/generation_teacher_train_eos.json",
+      "entrypoint": "generation_teacher.py",
+      "output_dir": "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-train-20260912",
+      "source_folder": "experiments/distillation",
+      "task_name": "consolidation-source303-generation-train-20260912"
+    },
+    {
+      "command_in_staged_lane": [
+        "uv",
+        "run",
+        "--no-project",
+        "python",
+        "generation_teacher.py",
+        "--config",
+        "configs/generation_teacher_evaluate.json",
+        "--output-dir",
+        "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-evaluate-20260912"
+      ],
+      "condition": "Separate process. Verify/reload selected checkpoint; qualify once under unchanged3digit generation and choice gates; test only after qualification.",
+      "config": "configs/generation_teacher_evaluate.json",
+      "entrypoint": "generation_teacher.py",
+      "output_dir": "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-evaluate-20260912",
+      "source_folder": "experiments/distillation",
+      "task_name": "consolidation-source303-generation-evaluate-20260912"
+    }
+  ],
+  "generation_protocol_sha256": "2fc65b93c677f7da085c67911fc733ace4e12580905d0e2e71af3b042aabd443",
+  "generation_source_dependencies_sha256": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770"
+  },
+  "modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/choice_contract.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/choice_consolidation.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/generation_teacher.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_choice_consolidation.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_generation_teacher.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/choice_consolidation_protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/choice_consolidation_qualify.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/choice_consolidation_train.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/choice_consolidation_evaluate.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/generation_teacher_protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/generation_teacher_diagnose.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/generation_teacher_train_eos.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/generation_teacher_evaluate.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/data/sequence303.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/data/sequence303_unused_inputs.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/consolidation_handoff.json"
+  ],
+  "ownership": {
+    "branch": "research/resume-20260911",
+    "commit_or_push_performed": false,
+    "gpu_actions_performed": false,
+    "kubernetes_or_provider_mutations_performed": false,
+    "modified_scope": "experiments/distillation/ only",
+    "repository": "/Users/sudarshan/Code/attempting-continual-learning"
+  },
+  "remaining_after_dispatch": "Observe qualification/training/evaluation results. A successfully qualified3digit generator can support a separately specified generated-answer persistent-learner experiment; this follow-up currently trains/qualifies the teacher. Actual independent learner consolidation is implemented in the four-choice path.",
+  "source_files_sha256": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "configs/choice_consolidation_evaluate.json": "bde7572bcfc94ac55f1113e0c3be7dbfc4cc1615d33963924b8eeb4712f6ff58",
+    "configs/choice_consolidation_protocol.json": "eadd92577ebf0945039ccde7a84f22d1150fd40df31c9c9ee7d14a1bd6f3706e",
+    "configs/choice_consolidation_qualify.json": "3736dbdc44da8a367ae67401d82bb7df44c592c14c4ee8df8fb36753c6450957",
+    "configs/choice_consolidation_train.json": "7c5fedb4698db313cdeeba2ff1b28d03cbc467b07bc86803cd42973d44ece41a",
+    "configs/generation_teacher_diagnose.json": "4c059b986edea84c3bf2db1701f9e8d858859ccdb6d3850cb3d172e400f05c37",
+    "configs/generation_teacher_evaluate.json": "a013c59dd82d585376a4a3cf51958ddab2f834c48bb618fc05ad3db4cc85e299",
+    "configs/generation_teacher_protocol.json": "f618e00551fe75ed9117318869426ee81a6d006bfd8bf0d9046401f99a5f0ab0",
+    "configs/generation_teacher_train_eos.json": "62d106f40bf62ab700414d11685892abe540c96dc32fc706edc09bb08b5f00d4",
+    "data/sequence303.json": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2",
+    "data/sequence303_unused_inputs.json": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "test_choice_consolidation.py": "8ededde1af589f5d8cda7a7aa61b01e33bd32f99215b129e9d16634cc80056e2",
+    "test_generation_teacher.py": "638024bb6d3ffea6e12f650dc716254c492641ed0f61890095a47378e5476479"
+  },
+  "source_transition_contract": "Choice qualification checks only choice_contract.py, choice_consolidation.py, requirements.txt plus exact protocol/data/teacher/base identities. Those source bytes are frozen at readiness. Generation development changes no member of that dependency set. New generation manifests include generation_teacher.py and the unchanged choice dependencies. Any later change to a checked choice dependency requires a new qualification; no stale receipt adaptation is implemented.",
+  "status": "cpu_verified_ready_for_parent_dispatch"
+}

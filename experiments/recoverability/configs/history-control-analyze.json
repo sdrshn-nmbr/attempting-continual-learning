@@ -1,0 +1,30 @@
+{
+  "control_sources": {
+    "fresh-test-a": {
+      "alternate_binding": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-alternate-binding-test-a/study",
+      "new_only": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-new-only-test-a/study"
+    },
+    "fresh-test-b": {
+      "alternate_binding": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-alternate-binding-test-b/study",
+      "new_only": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-new-only-test-b/study"
+    },
+    "fresh-train-a": {
+      "alternate_binding": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-alternate-binding-train-a/study",
+      "new_only": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-new-only-train-a/study"
+    },
+    "fresh-train-b": {
+      "alternate_binding": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-alternate-binding-train-b/study",
+      "new_only": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-repair-new-only-train-b/study"
+    }
+  },
+  "forecasts": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-forecast/study",
+  "gate": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-history-gate/study",
+  "historical_sources": {
+    "fresh-test-a": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-test-a/study",
+    "fresh-test-b": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-test-b/study",
+    "fresh-train-a": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-train-a/study",
+    "fresh-train-b": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-train-b/study"
+  },
+  "run_id": "followthrough-20260912-recovery-history-analyze",
+  "stage": "analyze"
+}

@@ -1,0 +1,6 @@
+{
+  "stage": "evaluate",
+  "protocol": "configs/generation_consolidation_protocol.json",
+  "protocol_sha256": "cf97a11de950f3c222121ebf55c92cd14d982eae7699e9dbd2315650a2718e34",
+  "training_dir": "/mnt/shared/cl-portfolio/runs/consolidation-generated303-20260912"
+}

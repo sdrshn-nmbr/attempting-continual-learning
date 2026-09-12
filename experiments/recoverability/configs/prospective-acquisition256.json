@@ -1,0 +1,12 @@
+{
+  "experiment": "prospective-acquisition256",
+  "protocol": "prospective-protocol.json",
+  "dataset": "inputs/prospective-cohort.json",
+  "model_id": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "acquisition_updates": 256,
+  "forgetting_updates": 128,
+  "repair_updates": 16,
+  "trigger": "Only after acquisition failure, keeping all scoring/data/thresholds unchanged; restart all streams from fresh base."
+}

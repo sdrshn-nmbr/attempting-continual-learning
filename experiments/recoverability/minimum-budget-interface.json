@@ -1,0 +1,271 @@
+{
+  "cli_contract": "Only --config PATH --output-dir EXISTING_RUN_DIR; creates a fresh study child and refuses overwrite. A successful exit may record prerequisite_failed or no_identifiable_prediction_task; inspect the receipt scientific status.",
+  "command_environment": "Commands run from the staged recoverability source root inside the existing qualified recovery environment. compute/run_task.py supplies the uv --python path and expands the manifest JSON as task config. Gate needs the existing Python dependencies even though it uses no GPU. No new package requirements.",
+  "cpu_validation": {
+    "command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python -m pytest tests -q",
+    "guard_controls": "Biased initial codes and absent new-task gains fail eligibility; baseline mismatch blocks updates; minimum-label gate rejects single-class and singleton-class outcomes; actual shared prefixes and source/protocol hashes are checked.",
+    "local_source_preflight": {
+      "eligible_intents_by_source": {
+        "train-a": 7,
+        "train-b": 7
+      },
+      "full_measurement_sources_verified": 2,
+      "new_model_loads": 0,
+      "new_repair_updates": 0,
+      "qualified": true,
+      "train_sources": 2
+    },
+    "nested_imports": 0,
+    "real_model_control": "Tiny hybrid Qwen3.5, actual AdamW, identical prefixes of losses/gradients/rows and saved adapters across 2/4/8/16; exact original 16-update anchor; frozen backbone; save/reload; complete measurement-to-gate receipt recomputation.",
+    "ruff": "passed",
+    "suite": "70 passed: 53 existing controls plus 17 new minimum-budget tests",
+    "working_directory": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability"
+  },
+  "dispatch": {
+    "followthrough-20260912-recovery-budget-pilot-gate": {
+      "config": "configs/minimum-budget-gate.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-budget-pilot-train-a",
+        "followthrough-20260912-recovery-budget-pilot-train-b"
+      ],
+      "entrypoint": "minimum_budget.py",
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-budget-pilot-gate",
+      "resource": "CPU with existing recovery dependencies; no model loading or training"
+    },
+    "followthrough-20260912-recovery-budget-pilot-train-a": {
+      "config": "configs/minimum-budget-train-a.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-learn-train-a",
+        "followthrough-20260912-recovery-learn-train-b",
+        "followthrough-20260912-recovery-measure-train-a"
+      ],
+      "entrypoint": "minimum_budget.py",
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-budget-pilot-train-a",
+      "resource": "existing qualified recovery GPU runtime"
+    },
+    "followthrough-20260912-recovery-budget-pilot-train-b": {
+      "config": "configs/minimum-budget-train-b.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-learn-train-a",
+        "followthrough-20260912-recovery-learn-train-b",
+        "followthrough-20260912-recovery-measure-train-b"
+      ],
+      "entrypoint": "minimum_budget.py",
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-budget-pilot-train-b",
+      "resource": "existing qualified recovery GPU runtime"
+    }
+  },
+  "entrypoint": "experiments/recoverability/minimum_budget.py",
+  "modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/minimum_budget.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/minimum-budget-protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/minimum-budget-protocol.sha256",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/minimum-budget-train-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/minimum-budget-train-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/minimum-budget-gate.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/tests/test_minimum_budget.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/minimum-budget-interface.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/recovery-audit.py"
+  ],
+  "new_audit_artifacts": [
+    "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/recovery-audit.heldout-references.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/recovery-audit.complete.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/recovery-audit.causal.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/recovery-audit.findings.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/recovery-audit.sources/45dcf7f5b147b2cc61eb1a6438b396325671b3991f4025dc7a3ff0876fccc3f5.py"
+  ],
+  "ownership": "No commits, pushes, GPU dispatches or provider mutations. Read-only NFS audits and local CPU execution only.",
+  "pilot_decisions": {
+    "all_eligible_train_skills": true,
+    "budgets": [
+      2,
+      4,
+      8,
+      16
+    ],
+    "features": "Reuse the original acquired-checkpoint tuned lenses trained on disjoint TRAIN background activations, along with frozen lens, output and confidence readouts. Source receipts bind fitting and frozen probes. Copy baseline observations, features and existing TRAIN outcomes before new repair updates. These are diagnostic readouts only, never optimization targets.",
+    "future_holdout": {
+      "already_observed_test_streams": [
+        "test-a",
+        "test-b"
+      ],
+      "excluded_intents": [
+        "accept_reservations",
+        "account_blocked",
+        "alarm",
+        "application_status",
+        "are_you_a_bot",
+        "book_hotel",
+        "calendar",
+        "change_language",
+        "change_speed",
+        "confirm_reservation",
+        "cook_time",
+        "date",
+        "definition",
+        "direct_deposit",
+        "distance",
+        "do_you_have_pets",
+        "exchange_rate",
+        "expiration_date",
+        "food_last",
+        "freeze_account",
+        "fun_fact",
+        "gas_type",
+        "goodbye",
+        "how_busy",
+        "how_old_are_you",
+        "income",
+        "insurance_change",
+        "international_fees",
+        "jump_start",
+        "last_maintenance",
+        "lost_luggage",
+        "make_call",
+        "maybe",
+        "meal_suggestion",
+        "meaning_of_life",
+        "meeting_schedule",
+        "min_payment",
+        "mpg",
+        "new_card",
+        "next_song",
+        "no",
+        "nutrition_info",
+        "oil_change_how",
+        "oil_change_when",
+        "order",
+        "order_checks",
+        "order_status",
+        "pay_bill",
+        "pin_change",
+        "play_music",
+        "pto_request",
+        "recipe",
+        "redeem_rewards",
+        "report_fraud",
+        "report_lost_card",
+        "reset_settings",
+        "restaurant_reservation",
+        "restaurant_reviews",
+        "restaurant_suggestion",
+        "rewards_balance",
+        "roll_dice",
+        "routing",
+        "schedule_maintenance",
+        "schedule_meeting",
+        "share_location",
+        "shopping_list",
+        "shopping_list_update",
+        "sync_device",
+        "text",
+        "thank_you",
+        "time",
+        "timer",
+        "todo_list",
+        "update_playlist",
+        "vaccines",
+        "w2",
+        "what_can_i_ask_you",
+        "where_are_you_from",
+        "whisper_mode",
+        "yes"
+      ],
+      "required": "New intent cohorts, independent stream seeds/orders, original acquisition/forgetting prerequisites, predictor fitting on TRAIN only, all source groups kept clustered in evaluation. Do not reuse observed TEST as fresh. Minimum-budget prediction and continuous utility prediction must be separated from policy gain and compared with constant TRAIN baselines."
+    },
+    "gate": {
+      "failure": "no_identifiable_prediction_task; do not fit predictors or run TEST. Any changed budget, schedule or threshold needs another new TRAIN-only protocol.",
+      "minimum_budget_classes": 2,
+      "minimum_skills_per_class": 2,
+      "minimum_train_skills": 12,
+      "pass": "Prepare newly selected disjoint intent cohorts and a separately sealed prediction protocol. Passing does not authorize heldout dispatch from this runner.",
+      "rule": "Require at least two minimum-budget classes with >=2 TRAIN skills each, counting never if observed, with all eligible units from both preregistered TRAIN streams. Utility range alone cannot pass."
+    },
+    "minimum_budget_rule": "Among 2,4,8,16 choose the smallest budget meeting unchanged native-code accuracy >=.8, gain >=.3 from forgotten TEST-row baseline, and newer-guard drop <=.1. Use never if none qualifies. Do not assume monotonic recovery; retain later losses of qualification. These are TRAIN prediction-cohort units even when their outcome utterances come from CLINC TEST rows.",
+    "permutations": {
+      "fixed_seeds": 20,
+      "inert_draws": "retained with changed-label counts, no redraw",
+      "predictor_fits": 0,
+      "schemes": [
+        "within_source",
+        "pooled_train"
+      ],
+      "total_predeclared_draws": 40
+    },
+    "test_stage_available": false,
+    "updates_per_intent": 30,
+    "updates_per_seven_intent_source": 210
+  },
+  "ready_commands": {
+    "followthrough-20260912-recovery-budget-pilot-gate": "uv run --no-project python minimum_budget.py --config configs/minimum-budget-gate.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-budget-pilot-gate",
+    "followthrough-20260912-recovery-budget-pilot-train-a": "uv run --no-project python minimum_budget.py --config configs/minimum-budget-train-a.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-budget-pilot-train-a",
+    "followthrough-20260912-recovery-budget-pilot-train-b": "uv run --no-project python minimum_budget.py --config configs/minimum-budget-train-b.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-budget-pilot-train-b"
+  },
+  "required_file_sha256": {
+    "configs/minimum-budget-gate.json": "ba648d6410c6dfd25e592e32a36bd175628de5f3039aeec61a921049a9097dd9",
+    "configs/minimum-budget-train-a.json": "e1a5f0f35cff505af7667e6a167f403207b093326c294140feb05ae7e54919cc",
+    "configs/minimum-budget-train-b.json": "07d52ad7b57c184eb6a1fa67546985a2cc66ddb2fcbf777ebab9e4993d56dd90",
+    "configs/prospective.json": "8a3b4c2b6b7d99644d3054e934936587ec33fe8d8d3f1c1629b6924d2c74e4e3",
+    "inputs/prospective-cohort.json": "b5b89a67140db92e8f9d281510dcfc873c5e32c46470ef3acb0b4dd3ae861bb8",
+    "minimum-budget-protocol.json": "7b7e01962d72080a4ba5f183713c5dc91746452a08125f221a037afa6ec0116e",
+    "minimum-budget-protocol.sha256": "f20f081f6c18d058f52e4edb81d33868ecfe6a7f2a918ec7d491ce1b4ce6204b",
+    "minimum_budget.py": "ef7230f741e312dfc2d0d5d42678be2af76012989b9ff91d53043843fb346392",
+    "model.py": "5af6edb1a42d6042a3a38b9d0ab4ce01ea6cadac6728d9e0fea84acd695442b2",
+    "prospective-protocol.json": "51f2f2771b59e7f4f93090bf8463758032e2c88a41764212849fe4499f0d4719",
+    "prospective-protocol.sha256": "1229d93879693ea94bf5e6d4eb307abfa5438af26ce9e51cbe2a533bb2ccf43a",
+    "prospective.py": "3f2ce28d0c350b26b1e0d8d97a9fc9084e9f75837f20945e82e8c80584f817dc",
+    "prospective_analysis.py": "2eeb9b61a14a58df2cf8f20b5148d73afda3364b4b93424ef408faad6e6ebad6",
+    "prospective_data.py": "8d39002c90359c7c62e65d121ba907d5b6639faa105aad237fc476168dc04048",
+    "prospective_model.py": "46c4c6901e61479759bf38ae2af01a36a1c5282db34639900428aad016447399",
+    "protocol.py": "a1e54302b007827b9c2982d8c366b68b89f573ddeb4b1c8f2ac50bf440d23776",
+    "requirements.txt": "847ae989f281a78cb0fb40f574e23f3baefc20f7bc3ecebf8ebb65857c6c689c",
+    "tuned_lens.py": "c640f82a9e4510287678774625dd6ecebe74063461659b5d763adaf5ddceecc8"
+  },
+  "required_runtime_files": [
+    "minimum_budget.py",
+    "prospective.py",
+    "prospective_data.py",
+    "prospective_model.py",
+    "prospective_analysis.py",
+    "tuned_lens.py",
+    "model.py",
+    "protocol.py",
+    "prospective-protocol.json",
+    "prospective-protocol.sha256",
+    "minimum-budget-protocol.json",
+    "minimum-budget-protocol.sha256",
+    "inputs/prospective-cohort.json",
+    "configs/prospective.json",
+    "requirements.txt",
+    "configs/minimum-budget-train-a.json",
+    "configs/minimum-budget-train-b.json",
+    "configs/minimum-budget-gate.json"
+  ],
+  "scientific_audit": {
+    "arithmetic_controls": 23,
+    "artifact": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/recovery-audit.causal.json",
+    "completed_stages": 26,
+    "concise_findings": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/recovery-audit.findings.json",
+    "independently_scored_records": 75328,
+    "policy_gain": 0,
+    "status": "passed; current source/reference outcomes independently recomputed"
+  },
+  "source_boundary": {
+    "new_entrypoint_sha256": "ef7230f741e312dfc2d0d5d42678be2af76012989b9ff91d53043843fb346392",
+    "new_protocol_sha256": "7b7e01962d72080a4ba5f183713c5dc91746452a08125f221a037afa6ec0116e",
+    "prior_frozen_files_changed": [],
+    "prior_frozen_files_checked": 27,
+    "rule": "The same new protocol and relevant implementation hashes must bind both pilot measurements and the gate. Learning sources, source matrices, features and old protocols remain immutable. Parent owns source packaging and dispatch; no source tar or GPU result is claimed here."
+  },
+  "source_receipts": {
+    "train-a": {
+      "learn": "b7a5d7b1be40753f6ff17ebb07744f95acb613ead33562ca9d885395a711b7dd",
+      "measure": "cbde722caffbc3bdf1366b38fae5edf324c425488e200cfc24f12824afc84ead"
+    },
+    "train-b": {
+      "learn": "78115611c223249a26dc74109b1c67d9d8777c98f40dcde06a30dcf74641384f",
+      "measure": "b4b7950c866749a834299fdececa7f376deea48261583317355aaaff2b7ac7a9"
+    }
+  },
+  "status": "cpu_verified_ready_for_parent_staging_and_dispatch"
+}

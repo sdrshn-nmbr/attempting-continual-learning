@@ -1,0 +1,5 @@
+{
+  "study_config": "configs/prospective.json",
+  "stage": "learn",
+  "stream": "test-a"
+}

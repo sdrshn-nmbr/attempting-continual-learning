@@ -1,0 +1,5 @@
+{
+  "stage": "qualify",
+  "protocol": "configs/choice_consolidation_protocol.json",
+  "protocol_sha256": "03c5bb6bad658055c42bbd9f89f77b22c83c39983d442a0a8ae16417358c40d5"
+}

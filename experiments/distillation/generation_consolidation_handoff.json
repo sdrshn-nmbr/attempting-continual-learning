@@ -1,0 +1,222 @@
+{
+  "claim_boundary": "Persistent generated-answer distillation into an independent rank8 learner on one known synthetic Sequence303 mapping fixture. This tests a durable learner producing the full answer and nativeEOS without teacher assistance. Not native-base-weight consolidation, broader skill transfer, internal composition, new task-distribution replication, source-model upgrade transfer, or a named SDFT/SDPO reproduction. Existing holdout input panels were already observed in earlier campaign experiments.",
+  "code_source_files_sha256": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "generation_consolidation.py": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770"
+  },
+  "compute_requirements": {
+    "autocast": false,
+    "base_and_adapter_dtype": "float32",
+    "model_offload": false,
+    "requirements": "Reuse existing distillation requirements.txt and freshly qualified parent worker environment; do not replace vendor torch. uv must be available for automatic child evaluation.",
+    "visible_rocm_gpus": 1
+  },
+  "contract": "sequence303_generated_answer_persistent_consolidation_20260912",
+  "cpu_validation": {
+    "ast": "All imports at module top level in both new Python files.",
+    "behavior_proved": [
+      "Rejected or falsely marked-qualified teacher with failed scores prevents learner loading and updates.",
+      "Exact teacher checkpoint provenance, exposure ledger and training-only selected32; replacing with later384 rejected.",
+      "Wrong/missingEOS teacher targets retained and never replaced with gold; prompt and decode changes rejected.",
+      "Actual tiny Qwen3 rank8 CPU optimization: two updates/six exposures per arm;40 versus42response-token exposures, both models change, matched init, frozen base.",
+      "Actual separate uv Python process reloads saved learner files and evaluates with no available teacher artifacts; same-process evaluation rejected.",
+      "Default driver launches evaluation through uv and only reports completed after fresh child result."
+    ],
+    "boundary": "CPU control-flow, optimizer, persistence and provenance checks; no Qwen3-8B GPU generated-learner result yet. Parent runtime qualification and teacher gate remain authoritative.",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python",
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "test_generation_consolidation.py",
+      "--junitxml=outputs/generated-consolidation-20260912-cpu/verified-pytest.xml"
+    ],
+    "configs": "run/train/evaluate stage and canonical protocol hashes verified; protected dependency hashes verified.",
+    "errors": 0,
+    "failures": 0,
+    "junit_path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/outputs/generated-consolidation-20260912-cpu/verified-pytest.xml",
+    "junit_sha256": "9db37be89aeff41bc9190e941b43962f90577227f209a861784a667a9275bebe",
+    "packages": {
+      "peft": "0.20.0",
+      "pytest": "9.1.1",
+      "safetensors": "0.8.0",
+      "torch": "2.14.0",
+      "transformers": "5.16.1"
+    },
+    "ruff": "All checks passed for generation_consolidation.py and test_generation_consolidation.py.",
+    "skipped": 0,
+    "tests": 12
+  },
+  "created_date": "2026-09-12",
+  "dataset_audit": {
+    "cross_split_input_overlap": 0,
+    "prior_campaign_observed_holdout": true,
+    "rows_sha256": {
+      "test": "4cb8c65404c65f47d9a9717346b922eb1d9171de93c4f6636f76bbdc16652ca4",
+      "train": "b53ef5cf9453b99151fb2010eccb94724ceeb898ac18e994b6ef74bd60ee2882",
+      "unused288": "a6e735f04446cf801efa601a60113c40d6fcb5b3a4875b39437395e419f094a9",
+      "validation": "6ffc9d8256c0f3b76617ecff7812ec0b75c326645655773fc90320e50561e491"
+    },
+    "unique_inputs_per_split": {
+      "test": 64,
+      "train": 128,
+      "unused288": 288,
+      "validation": 32
+    }
+  },
+  "decisions": [
+    "Joint whole-answer teacher continuation trains digit prediction and stopping. The source diagnosis rejected strict generation; this is not merely EOS-format repair.",
+    "Retain predeclared teacher checkpoint32 despite later higher TRAIN scores. A failed32validation gate does not authorize automatic substitution of384.",
+    "Use qualified teacher cached outputs to open actual fresh-learner updates immediately after qualification instead of preparing only another teacher intervention.",
+    "Fresh rank8 persistent learner instead of native-base updates makes capacity explicit and controls equal. No successful source weights copied into learner.",
+    "Hard-target generated sequence imitation, not four-option logit distillation and not SDFT/SDPO reproduction.",
+    "Old four-digit teacher audit was wrong-state computation with valid format/EOS; no duplicate audit or grading changes."
+  ],
+  "evaluation": {
+    "child_process_required": true,
+    "learner_adapter_reload": "One learner adapter slot. Saved tensor identity and exact24TRAIN-probe generation parity required before final learner holdout scoring.",
+    "outputs": [
+      "training.json",
+      "teacher_train_cache.json",
+      "schedule.json",
+      "teacher_output_sft/ledger.json",
+      "oracle_sft/ledger.json",
+      "evaluation/panels.json",
+      "evaluation/result.json",
+      "result.json"
+    ],
+    "score": "Unchanged complete body including leading space and nativeEOS; no forcedEOS, prefix extraction or constrained options.",
+    "teacher_artifact_files_read": false,
+    "teacher_model_loaded": false,
+    "test_rows": 192,
+    "untouched_and_two_learners": true,
+    "unused_input_rows": 864
+  },
+  "learner_comparison": {
+    "alpha": 16,
+    "controls": "Same fresh random-A zero-B learner initialization, example order, optimizer settings and capacity across arms. One persistent learner adapter; reset to exact initial tensors and fresh optimizer for the separate control.",
+    "epochs": 4,
+    "example_exposures_per_trained_arm": 1536,
+    "examples_per_update": 4,
+    "initialization_seed": 91230417,
+    "methods": [
+      "teacher_output_sft",
+      "oracle_sft",
+      "untouched"
+    ],
+    "native_base_weights_updated": false,
+    "objective": "Mean response-token full-vocabulary cross entropy, then equal example mean per update; prompt positions masked. Teacher uses exact generated tokens; oracle uses gold full answer plus nativeEOS.",
+    "order_seed": 91230431,
+    "rank": 8,
+    "source_adapter_initialization": false,
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ],
+    "teacher_model_loaded_during_training": false,
+    "token_accounting": "Save actual response-token exposures and per-update target hashes. Equal examples/updates need not imply equal target tokens. Record whether teacher and oracle targets are entirely identical; do not infer a method advantage from identical supervision.",
+    "trainable_parameters": 3833856,
+    "updates_per_trained_arm": 384
+  },
+  "manual_stage_configs": {
+    "fresh_process_evaluation": "configs/generation_consolidation_evaluate.json",
+    "purpose": "Explicit recovery/debugging only. Default ready_run already executes training and evaluation. Existing outputs are not overwritten or silently resumed.",
+    "training_only": "configs/generation_consolidation_train.json"
+  },
+  "modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/generation_consolidation.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_generation_consolidation.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/generation_consolidation_protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/generation_consolidation_run.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/generation_consolidation_train.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/generation_consolidation_evaluate.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/generation_consolidation_handoff.json"
+  ],
+  "new_file_sha256": {
+    "configs/generation_consolidation_evaluate.json": "63ac00947d3dbb2de20d7607891d756b6aac89a9eca36fef3b76e807ea641ba2",
+    "configs/generation_consolidation_protocol.json": "5c933efc2fc32d2ae94784056a901d587cd6f5abafe07f87a03f0c78a6d7203e",
+    "configs/generation_consolidation_run.json": "4d7a1f357f3cccb2c0cd756dd2cb5c0519a4029728ad5783850870ca71107750",
+    "configs/generation_consolidation_train.json": "eebb5fb4c7705efb250f3be400909921f1ceaf6d9e153029c4b5e26a481deebc",
+    "generation_consolidation.py": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac",
+    "test_generation_consolidation.py": "8b6e2f791f69016007c5666a3d12260fe366c510c38769e17d4451211aa93a15"
+  },
+  "ownership": {
+    "branch": "research/resume-20260911",
+    "commit_or_push_performed": false,
+    "gpu_actions_performed": false,
+    "kubernetes_or_provider_mutations_performed": false,
+    "modified_scope": "experiments/distillation/ only",
+    "parent_owns": [
+      "compute",
+      "staging",
+      "dispatch",
+      "collection"
+    ],
+    "repository": "/Users/sudarshan/Code/attempting-continual-learning",
+    "staging_or_collection_performed": false
+  },
+  "protected_qualification_source_sha256_unchanged": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770"
+  },
+  "protocol_canonical_sha256": "cf97a11de950f3c222121ebf55c92cd14d982eae7699e9dbd2315650a2718e34",
+  "ready_run": {
+    "command_in_staged_lane": [
+      "uv",
+      "run",
+      "--no-project",
+      "python",
+      "generation_consolidation.py",
+      "--config",
+      "configs/generation_consolidation_run.json",
+      "--output-dir",
+      "/mnt/shared/cl-portfolio/runs/consolidation-generated303-20260912"
+    ],
+    "config": "configs/generation_consolidation_run.json",
+    "entrypoint": "generation_consolidation.py",
+    "execution": "Run rechecks teacher qualification before loading a learner, caches actual TRAIN responses, executes both384-update learner arms, saves them, then automatically starts a separate uv Python evaluator. Parent task is complete only after top-level result.json and nested evaluation/result.json report completed.",
+    "learner_checkpoint_selection": "Fixed final384 for both learner arms. No validation/test selection.",
+    "output_dir": "/mnt/shared/cl-portfolio/runs/consolidation-generated303-20260912",
+    "parent_reported_selected_teacher_checkpoint": 32,
+    "prerequisite": "Exact qualified whole-answer teacher receipt, gate recomputation on384TRAIN and96validation under BOTH strict full-answer/nativeEOS and original choice scoring, exact checkpoint files, source dependencies, training ledger, original rejected diagnosis and original successful choice qualification. No learner load/update after failed gate.",
+    "qualification_dir": "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-evaluate-20260912",
+    "source_folder": "experiments/distillation",
+    "task_name": "consolidation-generated303-20260912",
+    "teacher_checkpoint_selection": "Recomputed from archived TRAIN probes using unchanged earliest>=.95-every-task rule. Parent reports selected32. Later128/384 observations never replace32.",
+    "teacher_role": "whole_answer_trained"
+  },
+  "source_transition": "New generated-learner receipt includes only its executable and actual frozen dependencies. No modification to choice_contract.py, choice_consolidation.py, generation_teacher.py, requirements.txt or their existing protocols. No stale source receipt adaptation.",
+  "staging_files_sha256": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "configs/choice_consolidation_protocol.json": "eadd92577ebf0945039ccde7a84f22d1150fd40df31c9c9ee7d14a1bd6f3706e",
+    "configs/generation_consolidation_evaluate.json": "63ac00947d3dbb2de20d7607891d756b6aac89a9eca36fef3b76e807ea641ba2",
+    "configs/generation_consolidation_protocol.json": "5c933efc2fc32d2ae94784056a901d587cd6f5abafe07f87a03f0c78a6d7203e",
+    "configs/generation_consolidation_run.json": "4d7a1f357f3cccb2c0cd756dd2cb5c0519a4029728ad5783850870ca71107750",
+    "configs/generation_consolidation_train.json": "eebb5fb4c7705efb250f3be400909921f1ceaf6d9e153029c4b5e26a481deebc",
+    "configs/generation_teacher_protocol.json": "f618e00551fe75ed9117318869426ee81a6d006bfd8bf0d9046401f99a5f0ab0",
+    "data/sequence303.json": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2",
+    "data/sequence303_unused_inputs.json": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e",
+    "generation_consolidation.py": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770"
+  },
+  "status": "cpu_verified_ready_for_parent_dispatch_after_exact_teacher_qualification",
+  "teacher_cache": {
+    "rows": 384,
+    "source": "Actual raw greedy token sequences already recorded in qualified teacher TRAIN panel.",
+    "split": "train",
+    "target_policy": "Verbatim all responses including wrong-state or missing-EOS responses. No gold substitution, filtering, regeneration, whitespace normalization, truncation or invented EOS. No validation/test targets.",
+    "validation": "Bind original row and generation hashes; verify prompt token IDs, vocabulary range, nativeEOS/special IDs and decoded body/raw response against pinned tokenizer before updates."
+  }
+}

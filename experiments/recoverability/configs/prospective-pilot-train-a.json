@@ -1,0 +1,7 @@
+{
+  "study_config": "configs/prospective.json",
+  "pilot": true,
+  "stage": "measure",
+  "stream": "train-a",
+  "qualification": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-cohort/study"
+}

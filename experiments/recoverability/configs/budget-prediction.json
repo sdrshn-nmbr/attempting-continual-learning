@@ -1,0 +1,12 @@
+{
+  "acquisition_updates": 128,
+  "dataset": "inputs/budget-prediction-cohort.json",
+  "experiment": "fresh-budget-prediction",
+  "forgetting_updates": 128,
+  "model_id": "Qwen/Qwen3.5-4B",
+  "model_path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "protocol": "budget-prediction-learning.json",
+  "repair_updates": 16,
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "trigger": "Separately sealed prospective prediction study, executable only after the original TRAIN-only minimum-budget gate passes."
+}

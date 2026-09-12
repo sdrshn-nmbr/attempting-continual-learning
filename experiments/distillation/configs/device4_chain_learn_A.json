@@ -1,0 +1,7 @@
+{
+  "family": "A",
+  "protocol": "configs/device4_chain_protocol.json",
+  "protocol_sha256": "fc39cb5bdf3c79a08bf21b566baf6004ee3688e9e4a133ebd91a199d1d7c9327",
+  "qualification_dir": "/mnt/shared/cl-portfolio/runs/distillation-device4-chain-qualify-20260912",
+  "stage": "learn"
+}

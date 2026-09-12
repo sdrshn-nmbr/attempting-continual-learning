@@ -1,0 +1,10 @@
+{
+  "study_config": "configs/prospective.json",
+  "pilot": true,
+  "stage": "qualify",
+  "qualification": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-cohort/study",
+  "sources": [
+    "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-pilot-train-a/study",
+    "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-pilot-train-b/study"
+  ]
+}

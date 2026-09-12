@@ -1,0 +1,10 @@
+{
+  "learning_sources": {
+    "train-a": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-learn-train-a/study",
+    "train-b": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-learn-train-b/study"
+  },
+  "measurement_source": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-measure-train-b/study",
+  "stage": "measure",
+  "stream": "train-b",
+  "study_config": "configs/prospective.json"
+}

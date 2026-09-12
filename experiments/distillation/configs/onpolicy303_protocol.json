@@ -1,0 +1,175 @@
+{
+  "budget": {
+    "additional_teacher_base_copies_during_KL": 1,
+    "alpha": 16,
+    "arms": 3,
+    "historical_teacher_selected_update": 384,
+    "learner_rank": 8,
+    "learner_tensor_bytes_fp32": 15335424,
+    "persistent_learner_active_adapters": 1,
+    "persistent_learner_dense_offsets": 0,
+    "retained_cache_rows": 384,
+    "student_base_copies": 1,
+    "student_loss_token_exposures": "measured separately; onpolicy variable lengths vs cached 7 tokens, same row/update budget does not imply token/compute matching",
+    "teacher_rank": 8,
+    "teacher_tensor_bytes_fp32": 15335424,
+    "teacher_train_updates_this_experiment": 0,
+    "total_learner_updates": 1152,
+    "train_row_exposures_per_arm": 1536,
+    "trainable_parameters": 3833856,
+    "unique_train_rows": 384,
+    "updates_per_arm": 384
+  },
+  "claim_boundary": "One predeclared fixed-expert hybrid and two matched controls on known Sequence303 mappings, one learner seed and reused previously observed TEST/unused inputs. Native whole answer plus EOS evaluates persistent task adapters after separate-job reload, not broad continual learning, native-base consolidation, autonomous composition, or SDFT/SDPO reproduction. Generic retention is separate original multiple-choice likelihood scoring. Greedy teacher qualification certifies native answers on TRAIN/VAL only, not arbitrary student prefixes. KL and SFT have different objectives and trajectory lengths. No superiority claim before actual completed training and teacher-absent fresh-process evaluation.",
+  "contract": "sequence303_fixed_expert_onpolicy_forward_kl_20260912",
+  "coverage_control": {
+    "directory": "/mnt/shared/cl-portfolio/runs/consolidation-coverage303-20260912",
+    "files_sha256": {
+      "evaluation/panels.json": "cfd81a219cd8191d53e0edb6955aac204f215148d15c46f7c6abd167632e8602",
+      "evaluation/result.json": "1c3e6670a2a58ad59913aaaf519d17c5104f967231d7a70872ce1cf565759c4f",
+      "schedule.json": "d7eebc1afa74f611bb84baee43b33b571d3a23976dacd6d1c910510064d8cef4",
+      "teacher_train_cache.json": "ceb73e9d49e02f60b8bafc4f504e17a634b44989fa248747b4050bec102e1d8e",
+      "training.json": "38ea46cb02a692a4ad4b5ee47112bf1c6bb56b3e1cce466678f5e74e2a41b893"
+    },
+    "final_tensor_sha256": "5e1d0af63e1549b882552da314e211e6473c8069531a71c0fbd76d95a86cc35b",
+    "initial_tensor_sha256": "f60dc65839a1066c3058d6daf7827577ae4d7c181c263e7e0644597b8391218e",
+    "native_test_correct": 187,
+    "native_unused_correct": 854
+  },
+  "coverage_learner_design": {
+    "path": "configs/coverage_learner_protocol.json",
+    "sha256": "7f8eb9e06f2472fcdd5e62e5d9017ee4cdf4a63a78daadcd32f46968a8a7ecad"
+  },
+  "evaluation": {
+    "require_new_process": true,
+    "splits": [
+      "test",
+      "unused288"
+    ],
+    "teacher_model_loaded": false,
+    "whole_answer_and_native_eos": true
+  },
+  "failure_action": "Reject native teacher prerequisite before learner loading/updates. Abort nonfinite/support loss/changed teacher/base/source/checkpoint/schedule. Preserve partial trajectories and update logs. No fallback to labels, vocabulary filtering, teacher EMA, budget extension or checkpoint selection.",
+  "method_provenance": {
+    "implemented": "Forward full-vocabulary KL on fresh student trajectories as a fixed-expert hybrid; cached-trajectory KL and cached-answer SFT controls. Independent teacher and learner on identical pinned base; same raw task prompt. Teacher parameters frozen and detached; sample identities detached, semi-gradient update, no score-function estimator. Native sampled EOS participates in loss, cap adds no EOS. Token softmax sampling float64 to verify positive numerical support; model/loss FP32. No forced termination, top-k/top-p, special-token suppression, answer-code vocabulary reduction, demonstration-conditioned teacher, teacher EMA or teacher optimization.",
+    "inspected_sections": [
+      "3 (forward KL preferred in practice)",
+      "Algorithm1 (on-policy sampled prefixes, demonstration-conditioned EMA teacher)"
+    ],
+    "inventory_reference": "site/evidence/research.json fixed-expert on-policy hybrid direction",
+    "not_reproduced": [
+      "Full SDFT recipe",
+      "SDPO",
+      "EMA self-distillation",
+      "native base weight consolidation"
+    ],
+    "primary_paper": "https://arxiv.org/html/2601.19897v2",
+    "title": "Self-Distillation Enables Continual Learning"
+  },
+  "objective": {
+    "importance_weights": false,
+    "kl_direction": "teacher_to_student",
+    "mask": "response_predictions_including_sampled_eos_excluding_prompt_padding_and_post_eos",
+    "reduction": "mean_response_tokens_per_row_then_mean_four_rows",
+    "support": "every_model_output_vocabulary_id",
+    "teacher": "fixed_detached_qualified_expert_same_prompt_no_demonstration_no_ema",
+    "trajectory_distribution_gradient": false
+  },
+  "predeclared_prefix_audit": {
+    "retained_rows": "all1536exposure records; no representative-only sampling",
+    "selection_from_diagnostics": false,
+    "summaries": "per checkpoint interval1-32/33-128/129-384 and task: sampled native whole-answer/format/EOS, prefix match rate, teacher next-token agreement only on matched prefixes, divergent-prefix entropy/EOS mass/teacher logp of sampled token, KL and token counts",
+    "teacher_claim": "No correctness label for arbitrary off-answer prefixes; descriptive teacher distributions there do not qualify competent correction."
+  },
+  "prefix_diagnostics": "Store every sampled token and prefix, student/teacher argmax, full-support minima, sampled-token probabilities, teacher entropy/EOS probability, forward KL by token, and matched-correct-prefix next-token agreement. Full generated grade describes student sampling only. After divergence the qualified answer supplies no correctness label for expert next tokens. No claim of off-answer prefix competence; no filtering, repair or recipe selection from these diagnostics.",
+  "retention": {
+    "artifact": {
+      "path": "configs/onpolicy303_retention.json",
+      "sha256": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1"
+    },
+    "checkpoint_selection": false,
+    "choice_cardinalities": {
+      "boolq": 2,
+      "commonsense_qa": 5,
+      "hellaswag": 4,
+      "winogrande": 2
+    },
+    "native_answer_scoring": false,
+    "original_path": "experiments/portability/data/released_task_probes.json",
+    "rows": 128,
+    "scorer": "frozen choice_consolidation encode_choices/candidate_logps with original candidate cardinality; raw prompt/no chat, preserved boundary, no EOS, summed full-vocabulary logp divided by answer characters, argmax first tie, candidate batch8 FP32 maxprompt768",
+    "tasks": [
+      "boolq",
+      "hellaswag",
+      "winogrande",
+      "commonsense_qa"
+    ],
+    "training_exposures": 0
+  },
+  "runtime_dependency": {
+    "directory": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+    "numerical_boundary": "Replacement-worker gate qualifies BF16 vendor-runtime loading only. These experiments preserve the frozen coverage learner FP32 full-base path; each teacher/student/evaluator explicitly verifies FP32, one ROCm GPU, finite tensors, actual all-tensor residency, no offload hooks, pinned model snapshot and full base tensor hash. Gate is not FP32 numerical parity or capability proof.",
+    "task_id": "followthrough-20260912-recovery-worker-runtime-qwen3-8b"
+  },
+  "sampling": {
+    "distribution": "full_vocabulary_student_softmax_float64",
+    "forced_eos": false,
+    "max_new_tokens": 16,
+    "seed": 91230503,
+    "stop": "native_eos_or_cap",
+    "temperature": 1.0,
+    "token_filtering": false,
+    "trajectory_gradient": false
+  },
+  "scientific_files_sha256": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "configs/choice_consolidation_protocol.json": "eadd92577ebf0945039ccde7a84f22d1150fd40df31c9c9ee7d14a1bd6f3706e",
+    "configs/coverage_learner_protocol.json": "7f8eb9e06f2472fcdd5e62e5d9017ee4cdf4a63a78daadcd32f46968a8a7ecad",
+    "configs/coverage_teacher_protocol.json": "1724268c16e6b4586f17e1d547076ab52ac9ba4ff613475963a99c4eb3d72340",
+    "configs/generation_consolidation_protocol.json": "5c933efc2fc32d2ae94784056a901d587cd6f5abafe07f87a03f0c78a6d7203e",
+    "configs/generation_teacher_protocol.json": "f618e00551fe75ed9117318869426ee81a6d006bfd8bf0d9046401f99a5f0ab0",
+    "configs/onpolicy303_retention.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+    "coverage_learner.py": "1493db6ff826f604275fa3a0bce7e31fad3db3f36b22eb891a083468414e7aac",
+    "coverage_teacher.py": "0fdfc95ae89dd8063fbb007633b6c4b0579f747f1c1e77b603e03a6b0aad339a",
+    "data/sequence303.json": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2",
+    "data/sequence303_unused_inputs.json": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e",
+    "generation_consolidation.py": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "onpolicy303.py": "21af665aa3f13f13b5423d9939fda839ff1ab1a85179b299f39da38cb2ed23b4",
+    "onpolicy303_contract.py": "ae7442e01c90062f1988c353d9cd3f310a3d0af32021ffcbdabcd4ab4c2e97b1",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770"
+  },
+  "teacher": {
+    "fresh_native_prelearning_check": "all384TRAIN_and96VAL_exact_saved_native_generations_before_learner_load",
+    "new_optimization_updates": 0,
+    "qualification_sha256": "cf9b1ab01ee71e0e9265d2f73a7795e86b8a9f9e83a806d8fec47f3e3f2af91c",
+    "selected_checkpoint": 384,
+    "tensor_sha256": "fab63ae6d7c27209cde004c1fae57cc7758a9fc360fafd791ea8ad3045884f21",
+    "train_correct": 384,
+    "validation_correct": 96
+  },
+  "training": {
+    "checkpoint_updates": [
+      32,
+      128,
+      384
+    ],
+    "epochs": 4,
+    "example_exposures_per_arm": 1536,
+    "examples_per_update": 4,
+    "initialization_seed": 91230417,
+    "learning_rate": 0.0003,
+    "max_grad_norm": 1.0,
+    "methods": [
+      "onpolicy_kl",
+      "cached_teacher_kl",
+      "cached_teacher_sft"
+    ],
+    "order_seed": 91230431,
+    "probe_rows_per_task": 8,
+    "selection": "fixed_final384",
+    "updates_per_arm": 384,
+    "weight_decay": 0.0
+  }
+}

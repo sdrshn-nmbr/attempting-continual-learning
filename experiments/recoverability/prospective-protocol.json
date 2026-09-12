@@ -1,0 +1,143 @@
+{
+  "name": "prospective-clinc-recovery-20260912",
+  "question": "Can intermediate predictions forecast recovery and select guard-aware repairs of prospectively acquired then forgotten intents?",
+  "scope": "Explicit 16-code CLINC classification, not free generation or general skill recovery. All training, acquisition, forgetting, repair and reporting use the same 16-code logits.",
+  "data_seed": 20260912,
+  "streams": [
+    {
+      "id": "train-a",
+      "split": "train",
+      "seed": 101
+    },
+    {
+      "id": "train-b",
+      "split": "train",
+      "seed": 211
+    },
+    {
+      "id": "test-a",
+      "split": "test",
+      "seed": 307
+    },
+    {
+      "id": "test-b",
+      "split": "test",
+      "seed": 401
+    }
+  ],
+  "selection": "Shuffle canonical non-OOS intent names before outcomes. Four independent optimizer seeds, independently shuffled code mappings and minibatches, 16 unique intents per stream. Predictor train/test streams share no intents, including later tasks. Eight old intents are learned jointly, followed by eight previously absent intents learned jointly. Task sets and their schedules differ across streams.",
+  "rows": {
+    "learn": "32 TRAIN per intent",
+    "repair": "8 separate TRAIN per intent",
+    "gate": "10 validation per intent",
+    "probe": "10 separate validation per intent",
+    "test": "20 TEST per intent"
+  },
+  "deduplication": "Reject normalized-text, tokenized-input and source-row overlap globally across all streams, roles and lens corpus. No truncated prompts. Lens backgrounds are 16 separate intents absent from every stream.",
+  "runtime": {
+    "device": "cuda:0",
+    "dtype": "float32",
+    "attention": "sdpa",
+    "threads": 2,
+    "max_length": 128,
+    "microbatch_size": 2,
+    "eval_batch_size": 8
+  },
+  "adapter": {
+    "rank": 8,
+    "alpha": 16,
+    "targets": "all text MLP gate/up/down projections",
+    "capacity": "one fixed rank-8 adapter, no growth or base weight updates"
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "learning_rate": 0.0003,
+    "batch_size": 8,
+    "max_grad_norm": 1.0,
+    "weight_decay": 0.0,
+    "boundary": "Continuous optimizer from old acquisition through new-intent training. Repairs each reset AdamW at the exact forgotten checkpoint."
+  },
+  "gates": {
+    "acquired_min": 0.8,
+    "drop_min": 0.3,
+    "after_max": 0.5,
+    "minimum_acquired_per_stream": 6,
+    "minimum_new_acquired_per_stream": 6,
+    "minimum_forgotten_per_stream": 4,
+    "minimum_forgotten": {
+      "train": 12,
+      "test": 8
+    },
+    "minimum_streams_per_split": 2,
+    "acquisition_gain_min": 0.3,
+    "acquisition_baseline": "At least .3 improvement from start of the relevant training phase: initial old-gate scores for old acquisition; acquired-checkpoint new-gate scores for later-task acquisition. Never count a pre-existing output-code bias as a newly learned binding."
+  },
+  "eligibility": "Validate old acquisition before starting new-intent updates. Use only gate validation rows. After the new task, require real new-intent acquisition plus old-intent drop >=.3 and final <=.5. Aggregate ALL predeclared streams and check sufficient eligible skills/clusters BEFORE any lens fitting or repair. Failed streams are retained and never replaced silently. Every acquired intent must also improve >=.3 over its phase-start baseline. Acquisition/forgetting recomputation and every downstream receipt enforce the same rule.",
+  "layers": [
+    8,
+    16,
+    24
+  ],
+  "layer_index": "one-based post-block residuals, before final normalization; terminal residual+norm+head must match actual model output",
+  "lens": {
+    "background_intents": 16,
+    "positions_per_prompt": 16,
+    "updates": 256,
+    "token_batch_size": 64,
+    "learning_rate": 0.25,
+    "min_relative_kl_improvement": 0.05,
+    "method": "Per-layer residual affine translator h + W h + b, initialized W=b=0, followed by frozen final norm and unembedding. Forward KL(model full-vocabulary distribution || translated full-vocabulary distribution), same token position, teacher detached. SGD/Nesterov momentum .9, identity-centered weight decay .001, linear decay and norm clipping 1. Base and adapters frozen during training.",
+    "training_scope": "Fit once per stream at its acquired checkpoint on 512 TRAIN prompts from 16 background intents (up to 16 evenly spaced positions each). Validate KL on 128 disjoint TRAIN prompts from the same backgrounds; freeze translator for all before/after probes. No gate/probe/TEST row or prediction-cohort intent fits translators. Restricted corpus and token budget are adaptations, not reproduction of published scale or pretraining distribution.",
+    "references": [
+      "https://arxiv.org/html/2303.08112v4",
+      "https://github.com/AlignmentResearch/tuned-lens/blob/main/tuned_lens/nn/lenses.py",
+      "https://github.com/AlignmentResearch/tuned-lens/blob/main/tuned_lens/scripts/train_loop.py"
+    ],
+    "failure_rule": "Report heldout KL and translator qualification. A failed translator does not cancel valid output/frozen-lens repair comparisons; it cannot establish failure of the published method."
+  },
+  "repair": {
+    "batch_size": 8,
+    "actions": [
+      "none",
+      "replay_target",
+      "replay_balanced",
+      "restore",
+      "sham"
+    ],
+    "deployable": [
+      "none",
+      "replay_target",
+      "replay_balanced"
+    ],
+    "budget": "Two trainable arms have equal optimizer updates and total exposures. Target-only uses 8 old rows per batch; balanced uses 4 old + 4 newer TRAIN repair rows. Their old-example exposure differs and is reported. Sham exactly shares balanced batches but rotates target-intent code by one. Fresh AdamW, common lr/clip, all existing LoRA parameters. None/restore receive zero updates.",
+    "control": "Each action reloads the identical late adapter. None must exactly reproduce baseline; restore must exactly reproduce acquired test and guard records. All adapters are saved and reloaded; persistent model changes are checked by tensor hashes. Restore is a ceiling, never an eligible policy action."
+  },
+  "recovered": {
+    "accuracy_min": 0.8,
+    "gain_min": 0.3,
+    "guard_drop_max": 0.1
+  },
+  "repair_feasibility": {
+    "minimum_responsive_train_skills": 2,
+    "response_gain_min": 0.2,
+    "utility_range_min": 0.1,
+    "paired_action_range_min": 0.05,
+    "rule": "Training actions only. Require measurable target improvement in >=2 skills and variable utility across skills or variable paired action differences. Constant binary recovery labels do not block continuous utility prediction; explicitly suppress unsupported binary discrimination claims. Heldout actions cannot start without this receipt."
+  },
+  "predictor": {
+    "alpha": 10.0,
+    "features": "Mean before/after probe metrics. Confidence: top probability, entropy, top-two probability margin. Output baseline adds gold code log-probability and margin. Frozen/tuned augment output with per-layer mean gold log-probability/margin; both receive equal labels and feature dimension. Frozen features and serialized fitted predictor are sealed before heldout repairs.",
+    "targets": "Per-action recovery and utility = target accuracy gain - max(0,new-intent guard accuracy drop). Train-only standardized ridge with fixed alpha. Prevalence, always-none/target/balanced, and train-label permutation controls.",
+    "analysis": "Report per-skill and per-stream paired Brier/utility differences and oracle regret, exact sample counts. Two independent test streams are exploratory; no causal proof, broad-generalization or significance claim. Do not drop heldout units based on their test performance."
+  },
+  "stages": [
+    "learn: old acquisition then later-task forgetting; no TEST or repairs",
+    "qualify: verify all learn receipts and global eligibility; CPU only",
+    "measure train streams: fit lens, freeze features, run matched repairs",
+    "qualify-repairs: CPU train-only signal check; fit and seal predictors",
+    "measure test streams: require successful repair receipt; freeze features before actions",
+    "analyze: use sealed TRAIN-only predictor on heldout intents"
+  ],
+  "followups": "Separate sealed configs increase acquisition or forgetting training if their prerequisite fails, or increase repair budget after TRAIN-only repair failure. Fresh output directories, no overwriting, no hidden budget extension. Earlier failed receipts remain independent evidence.",
+  "source_binding": "Learning identity binds the protocol, data, learning budgets and SHA256 of prospective.py, prospective_data.py, prospective_model.py, prospective_analysis.py, model.py and protocol.py. Every contributing source and downstream stage must match these mechanism hashes; dispatcher/config wrapper changes are outside this source-code binding."
+}

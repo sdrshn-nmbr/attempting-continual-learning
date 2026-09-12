@@ -1,0 +1,329 @@
+{
+  "arms": {
+    "cached_teacher_kl": "Same forward full-vocabulary KL, optimizer/update schedule, row weighting and independent learner initialization; uses the identical fully qualified384-row cached teacher trajectory collection instead of student samples.",
+    "cached_teacher_sft": "Same384-row cache, exactly frozen response_nll and four micro-backward contributions /4; identical AdamW defaults, clip1, schedule and initialization. No teacher forward during updates. CPU comparison proves bitwise adapter+optimizer equality to frozen SFT loop on a real tiny Qwen model. Full-size equality is measured, not assumed.",
+    "onpolicy_kl": "At each pre-update learner state, four raw TRAIN prompts receive fresh temperature1 student samples. Full-vocabulary FP64 softmax categorical sampling preserves positive numerical support for every output ID; logits are FP32. Native EOS stops, 16-token cap adds no EOS; no top-k/top-p/repetition processors/special-token suppression. Cached KV sampling; teacher/student losses recomputed on identical complete prompt+sample prefix with causal masking. Teacher||student forward KL sums every vocabulary ID, token-mean per response then row-mean of4. Prefix samples and teacher probabilities detached."
+  },
+  "budgets_and_capacity": {
+    "additional_teacher_base_copies_during_KL": 1,
+    "alpha": 16,
+    "arms": 3,
+    "historical_teacher_selected_update": 384,
+    "learner_rank": 8,
+    "learner_tensor_bytes_fp32": 15335424,
+    "persistent_learner_active_adapters": 1,
+    "persistent_learner_dense_offsets": 0,
+    "retained_cache_rows": 384,
+    "student_base_copies": 1,
+    "student_loss_token_exposures": "measured separately; onpolicy variable lengths vs cached 7 tokens, same row/update budget does not imply token/compute matching",
+    "teacher_rank": 8,
+    "teacher_tensor_bytes_fp32": 15335424,
+    "teacher_train_updates_this_experiment": 0,
+    "total_learner_updates": 1152,
+    "train_row_exposures_per_arm": 1536,
+    "trainable_parameters": 3833856,
+    "unique_train_rows": 384,
+    "updates_per_arm": 384
+  },
+  "control": {
+    "directory": "/mnt/shared/cl-portfolio/runs/consolidation-coverage303-20260912",
+    "files_sha256": {
+      "evaluation/panels.json": "cfd81a219cd8191d53e0edb6955aac204f215148d15c46f7c6abd167632e8602",
+      "evaluation/result.json": "1c3e6670a2a58ad59913aaaf519d17c5104f967231d7a70872ce1cf565759c4f",
+      "schedule.json": "d7eebc1afa74f611bb84baee43b33b571d3a23976dacd6d1c910510064d8cef4",
+      "teacher_train_cache.json": "ceb73e9d49e02f60b8bafc4f504e17a634b44989fa248747b4050bec102e1d8e",
+      "training.json": "38ea46cb02a692a4ad4b5ee47112bf1c6bb56b3e1cce466678f5e74e2a41b893"
+    },
+    "final_tensor_sha256": "5e1d0af63e1549b882552da314e211e6473c8069531a71c0fbd76d95a86cc35b",
+    "initial_tensor_sha256": "f60dc65839a1066c3058d6daf7827577ae4d7c181c263e7e0644597b8391218e",
+    "native_test_correct": 187,
+    "native_unused_correct": 854,
+    "use": "Copy and hash original coverage training/schedule/cache/result/panels as descriptive comparator. New SFT final tensor hash and heldout generations compared with this exact completed artifact; mismatch reported without tuning.384teacher targets previously token-identical oracle, so no hard-label novelty claim."
+  },
+  "diagnostics": {
+    "aggregates": "prefix_diagnostics.json recomputed from every trajectory per task and fixed checkpoint interval. Cached target grades explicitly not student generated performance. Reports divergent teacher statistics without treating them as correctness.",
+    "every_exposure": "trajectories.jsonl stores update/microstep/TRAIN ID/hash, prompt and response tokens/raw decode, native grading, actual pre-update clock, full prediction mask, vocabulary size, loss tokens, KL direction by sealed protocol, row loss, student/teacher argmax, sampled-token logp, entropy/EOS probabilities, canonical-prefix agreement and full-support minima.",
+    "update_ledger": "Actual four row IDs, trajectory hashes, loss tokens, mean per-row loss, clipped gradient norm, actual per-parameter AdamW step minima/maxima.384 clocks and1536exposures required; variable sampled length reported rather than claiming token or compute matching.",
+    "weights": "Initial/final/checkpoint adapter files plus exact tensor hashes, optimizer files/clocks and changed learner element counts; no dense offset or teacher-initialized learner."
+  },
+  "evaluation": {
+    "before_heldout": "Loads a fresh pinned base and ONLY learner adapter. Verifies initial and final hashes, exact24TRAIN native generations and original128 generic-probe score vectors against training snapshots. Fails parity before heldout evaluation. Copied teacher certificate/cache allowed; teacher checkpoint/model files never accessed by evaluator.",
+    "fullsize_training_or_heldout_results_now": false,
+    "generic_retention": {
+      "artifact": {
+        "path": "configs/onpolicy303_retention.json",
+        "sha256": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1"
+      },
+      "checkpoint_selection": false,
+      "choice_cardinalities": {
+        "boolq": 2,
+        "commonsense_qa": 5,
+        "hellaswag": 4,
+        "winogrande": 2
+      },
+      "native_answer_scoring": false,
+      "original_path": "experiments/portability/data/released_task_probes.json",
+      "rows": 128,
+      "scorer": "frozen choice_consolidation encode_choices/candidate_logps with original candidate cardinality; raw prompt/no chat, preserved boundary, no EOS, summed full-vocabulary logp divided by answer characters, argmax first tie, candidate batch8 FP32 maxprompt768",
+      "tasks": [
+        "boolq",
+        "hellaswag",
+        "winogrande",
+        "commonsense_qa"
+      ],
+      "training_exposures": 0
+    },
+    "identity": "Checks source execution completed/exit0/timed_outfalse, task/config/embedded supervisor hashes, same source archive and actual bytes. Requires distinct train/eval task IDs and attempt IDs plus standalone CLI. Logs actual child PID/parent PID and supervisor child PID; PID inequality is explicitly not sole proof.",
+    "mandatory_native_panels": {
+      "test": 192,
+      "unused288": 864
+    },
+    "native_scoring": "Frozen raw prompt and strict complete3digit body plus nativeEOS; same max16/free greedy generation and verify_generated_rows. Per-family correct/format/EOS/cap/error summaries and exact row records.",
+    "persistence_complete_now": false,
+    "stages": "Three separate evaluate jobs; each depends on its completed train job and required runtime gate."
+  },
+  "failure_and_claim_boundary": "One predeclared fixed-expert hybrid and two matched controls on known Sequence303 mappings, one learner seed and reused previously observed TEST/unused inputs. Native whole answer plus EOS evaluates persistent task adapters after separate-job reload, not broad continual learning, native-base consolidation, autonomous composition, or SDFT/SDPO reproduction. Generic retention is separate original multiple-choice likelihood scoring. Greedy teacher qualification certifies native answers on TRAIN/VAL only, not arbitrary student prefixes. KL and SFT have different objectives and trajectory lengths. No superiority claim before actual completed training and teacher-absent fresh-process evaluation.",
+  "jobs": [
+    {
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_kl_evaluate.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-cached-teacher-kl-train"
+      ],
+      "dispatch_command_for_parent_only": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation --config /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_kl_evaluate.json --id followthrough-20260912-onpolicy303-cached-teacher-kl-evaluate --entrypoint onpolicy303.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on followthrough-20260912-onpolicy303-cached-teacher-kl-train --control-pod \"${ONPOLICY_CONTROL_POD:?set the current replacement-worker control pod}\" --submit",
+      "entrypoint_command_template": "uv run --no-project --python <qualified-worker-python> python <atomic-staged-code-dir>/onpolicy303.py --config <run-dir>/config.json --output-dir <run-dir>",
+      "method": "cached_teacher_kl",
+      "sha256": "97f5b89640f4c5c1dbc92437ecbf3796c5474fa03208991654ae79c04bda1105",
+      "stage": "evaluate",
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-kl-evaluate"
+    },
+    {
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_kl_train.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "consolidation-source303-coverage-20260912",
+        "consolidation-coverage303-20260912"
+      ],
+      "dispatch_command_for_parent_only": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation --config /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_kl_train.json --id followthrough-20260912-onpolicy303-cached-teacher-kl-train --entrypoint onpolicy303.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on consolidation-source303-coverage-20260912 --depends-on consolidation-coverage303-20260912 --control-pod \"${ONPOLICY_CONTROL_POD:?set the current replacement-worker control pod}\" --submit",
+      "entrypoint_command_template": "uv run --no-project --python <qualified-worker-python> python <atomic-staged-code-dir>/onpolicy303.py --config <run-dir>/config.json --output-dir <run-dir>",
+      "method": "cached_teacher_kl",
+      "sha256": "28bdbd5c3b272b3672f831308a5a6d79b8d2f63a75a5bdd70439c85af19f4119",
+      "stage": "train",
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-kl-train"
+    },
+    {
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_sft_evaluate.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-cached-teacher-sft-train"
+      ],
+      "dispatch_command_for_parent_only": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation --config /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_sft_evaluate.json --id followthrough-20260912-onpolicy303-cached-teacher-sft-evaluate --entrypoint onpolicy303.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on followthrough-20260912-onpolicy303-cached-teacher-sft-train --control-pod \"${ONPOLICY_CONTROL_POD:?set the current replacement-worker control pod}\" --submit",
+      "entrypoint_command_template": "uv run --no-project --python <qualified-worker-python> python <atomic-staged-code-dir>/onpolicy303.py --config <run-dir>/config.json --output-dir <run-dir>",
+      "method": "cached_teacher_sft",
+      "sha256": "ebfe3c2065e93e8fabf2ddc673b88387d88b4a4557819810417c358cf81fc9d6",
+      "stage": "evaluate",
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-sft-evaluate"
+    },
+    {
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_sft_train.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "consolidation-source303-coverage-20260912",
+        "consolidation-coverage303-20260912"
+      ],
+      "dispatch_command_for_parent_only": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation --config /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_sft_train.json --id followthrough-20260912-onpolicy303-cached-teacher-sft-train --entrypoint onpolicy303.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on consolidation-source303-coverage-20260912 --depends-on consolidation-coverage303-20260912 --control-pod \"${ONPOLICY_CONTROL_POD:?set the current replacement-worker control pod}\" --submit",
+      "entrypoint_command_template": "uv run --no-project --python <qualified-worker-python> python <atomic-staged-code-dir>/onpolicy303.py --config <run-dir>/config.json --output-dir <run-dir>",
+      "method": "cached_teacher_sft",
+      "sha256": "14502754f43a1bb3928d3f2f9d2963ff81f30e48350527dacb150cae8d7dfe9a",
+      "stage": "train",
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-sft-train"
+    },
+    {
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_onpolicy_kl_evaluate.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-onpolicy-kl-train"
+      ],
+      "dispatch_command_for_parent_only": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation --config /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_onpolicy_kl_evaluate.json --id followthrough-20260912-onpolicy303-onpolicy-kl-evaluate --entrypoint onpolicy303.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on followthrough-20260912-onpolicy303-onpolicy-kl-train --control-pod \"${ONPOLICY_CONTROL_POD:?set the current replacement-worker control pod}\" --submit",
+      "entrypoint_command_template": "uv run --no-project --python <qualified-worker-python> python <atomic-staged-code-dir>/onpolicy303.py --config <run-dir>/config.json --output-dir <run-dir>",
+      "method": "onpolicy_kl",
+      "sha256": "9aaec3d055133b59830de1dfca6f4586811a789b8dd553afb53bb10285b41d13",
+      "stage": "evaluate",
+      "task_id": "followthrough-20260912-onpolicy303-onpolicy-kl-evaluate"
+    },
+    {
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_onpolicy_kl_train.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "consolidation-source303-coverage-20260912",
+        "consolidation-coverage303-20260912"
+      ],
+      "dispatch_command_for_parent_only": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation --config /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_onpolicy_kl_train.json --id followthrough-20260912-onpolicy303-onpolicy-kl-train --entrypoint onpolicy303.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on consolidation-source303-coverage-20260912 --depends-on consolidation-coverage303-20260912 --control-pod \"${ONPOLICY_CONTROL_POD:?set the current replacement-worker control pod}\" --submit",
+      "entrypoint_command_template": "uv run --no-project --python <qualified-worker-python> python <atomic-staged-code-dir>/onpolicy303.py --config <run-dir>/config.json --output-dir <run-dir>",
+      "method": "onpolicy_kl",
+      "sha256": "04888d5b18ce983d2992f12a1b3430c04dca42c3a2baa3527e730d7dc5559078",
+      "stage": "train",
+      "task_id": "followthrough-20260912-onpolicy303-onpolicy-kl-train"
+    }
+  ],
+  "next_action": "Parent review/hash/stage these configs, then dispatch three independent training jobs plus their separate evaluations. Preserve fixed final384 and existing scoring. No GPU/provider command was executed by this worker.",
+  "optimizer_and_schedule": {
+    "checkpoint_updates": [
+      32,
+      128,
+      384
+    ],
+    "epochs": 4,
+    "example_exposures_per_arm": 1536,
+    "examples_per_update": 4,
+    "initialization_seed": 91230417,
+    "learning_rate": 0.0003,
+    "max_grad_norm": 1.0,
+    "methods": [
+      "onpolicy_kl",
+      "cached_teacher_kl",
+      "cached_teacher_sft"
+    ],
+    "order_seed": 91230431,
+    "probe_rows_per_task": 8,
+    "selection": "fixed_final384",
+    "updates_per_arm": 384,
+    "weight_decay": 0.0
+  },
+  "ownership": {
+    "Gibbs_paths_modified": false,
+    "branch": "research/resume-20260911",
+    "canonical_repository": "/Users/sudarshan/Code/attempting-continual-learning",
+    "commits_or_pushes": [],
+    "existing_shared_files_modified": [],
+    "new_owned_paths": [
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/onpolicy303.py",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/onpolicy303_contract.py",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_onpolicy303.py",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_kl_evaluate.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_kl_train.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_sft_evaluate.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_sft_train.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_onpolicy_kl_evaluate.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_onpolicy_kl_train.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_protocol.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_retention.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/onpolicy303_handoff.json"
+    ],
+    "provider_or_gpu_actions": [],
+    "shared_distillation_tree_frozen": false,
+    "skill_transfer_lane_modified": false,
+    "source_closure_boundary": "Own new code/protocol/config contents are hashed here. Parent requests staging/freeze of its selected shared tree. Do not infer that unused Gibbs files or the entire distillation directory are frozen."
+  },
+  "protocol": {
+    "canonical_digest": "31ec528d68e04062d7be72c3b8d0c8d1c5b915b7670c3be4be5af0a69f13a2be",
+    "file_sha256": "3590d104cb057852a2dda2d71faade59f055ad9e5e3f628abe6efd5751921aed",
+    "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_protocol.json"
+  },
+  "reduction_and_masks": {
+    "importance_weights": false,
+    "kl_direction": "teacher_to_student",
+    "mask": "response_predictions_including_sampled_eos_excluding_prompt_padding_and_post_eos",
+    "reduction": "mean_response_tokens_per_row_then_mean_four_rows",
+    "support": "every_model_output_vocabulary_id",
+    "teacher": "fixed_detached_qualified_expert_same_prompt_no_demonstration_no_ema",
+    "trajectory_distribution_gradient": false
+  },
+  "runtime": {
+    "dtype": "FP32 coverage path retained; external vendor load gate BF16",
+    "guard": "One visible ROCm GPU; every parameter/buffer on cuda:0, floating tensors FP32 and finite, no offload hooks. Optional hf_device_map validated if present, absence accepted. No CUDA/bfloat16 fallback.",
+    "model": "Pinned Qwen3-8B snapshot from frozen choice_consolidation_protocol, actual size and SHA256/git-blob hashes checked by frozen load_base; frozen base tensor SHA256 checked before/after.",
+    "numeric_boundary": "Replacement-worker gate qualifies BF16 vendor-runtime loading only. These experiments preserve the frozen coverage learner FP32 full-base path; each teacher/student/evaluator explicitly verifies FP32, one ROCm GPU, finite tensors, actual all-tensor residency, no offload hooks, pinned model snapshot and full base tensor hash. Gate is not FP32 numerical parity or capability proof.",
+    "required_completed_gate": "followthrough-20260912-recovery-worker-runtime-qwen3-8b"
+  },
+  "scientific_closure_files": 25,
+  "scientific_closure_manifest_digest": "830a0766a1835934c3cf7c213b87d80224fab99213060e9576f4c205e2e35b12",
+  "scientific_closure_sha256": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "configs/choice_consolidation_protocol.json": "eadd92577ebf0945039ccde7a84f22d1150fd40df31c9c9ee7d14a1bd6f3706e",
+    "configs/coverage_learner_protocol.json": "7f8eb9e06f2472fcdd5e62e5d9017ee4cdf4a63a78daadcd32f46968a8a7ecad",
+    "configs/coverage_teacher_protocol.json": "1724268c16e6b4586f17e1d547076ab52ac9ba4ff613475963a99c4eb3d72340",
+    "configs/generation_consolidation_protocol.json": "5c933efc2fc32d2ae94784056a901d587cd6f5abafe07f87a03f0c78a6d7203e",
+    "configs/generation_teacher_protocol.json": "f618e00551fe75ed9117318869426ee81a6d006bfd8bf0d9046401f99a5f0ab0",
+    "configs/onpolicy303_cached_teacher_kl_evaluate.json": "97f5b89640f4c5c1dbc92437ecbf3796c5474fa03208991654ae79c04bda1105",
+    "configs/onpolicy303_cached_teacher_kl_train.json": "28bdbd5c3b272b3672f831308a5a6d79b8d2f63a75a5bdd70439c85af19f4119",
+    "configs/onpolicy303_cached_teacher_sft_evaluate.json": "ebfe3c2065e93e8fabf2ddc673b88387d88b4a4557819810417c358cf81fc9d6",
+    "configs/onpolicy303_cached_teacher_sft_train.json": "14502754f43a1bb3928d3f2f9d2963ff81f30e48350527dacb150cae8d7dfe9a",
+    "configs/onpolicy303_onpolicy_kl_evaluate.json": "9aaec3d055133b59830de1dfca6f4586811a789b8dd553afb53bb10285b41d13",
+    "configs/onpolicy303_onpolicy_kl_train.json": "04888d5b18ce983d2992f12a1b3430c04dca42c3a2baa3527e730d7dc5559078",
+    "configs/onpolicy303_protocol.json": "3590d104cb057852a2dda2d71faade59f055ad9e5e3f628abe6efd5751921aed",
+    "configs/onpolicy303_retention.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+    "coverage_learner.py": "1493db6ff826f604275fa3a0bce7e31fad3db3f36b22eb891a083468414e7aac",
+    "coverage_teacher.py": "0fdfc95ae89dd8063fbb007633b6c4b0579f747f1c1e77b603e03a6b0aad339a",
+    "data/sequence303.json": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2",
+    "data/sequence303_unused_inputs.json": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e",
+    "generation_consolidation.py": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "onpolicy303.py": "21af665aa3f13f13b5423d9939fda839ff1ab1a85179b299f39da38cb2ed23b4",
+    "onpolicy303_contract.py": "ae7442e01c90062f1988c353d9cd3f310a3d0af32021ffcbdabcd4ab4c2e97b1",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770",
+    "test_onpolicy303.py": "44b619ff5e906963f260a12789746e344d9a6298824ed8bfe8784ad2655fdedb"
+  },
+  "source_provenance": {
+    "implemented": "Forward full-vocabulary KL on fresh student trajectories as a fixed-expert hybrid; cached-trajectory KL and cached-answer SFT controls. Independent teacher and learner on identical pinned base; same raw task prompt. Teacher parameters frozen and detached; sample identities detached, semi-gradient update, no score-function estimator. Native sampled EOS participates in loss, cap adds no EOS. Token softmax sampling float64 to verify positive numerical support; model/loss FP32. No forced termination, top-k/top-p, special-token suppression, answer-code vocabulary reduction, demonstration-conditioned teacher, teacher EMA or teacher optimization.",
+    "inspected_sections": [
+      "3 (forward KL preferred in practice)",
+      "Algorithm1 (on-policy sampled prefixes, demonstration-conditioned EMA teacher)"
+    ],
+    "inventory_reference": "site/evidence/research.json fixed-expert on-policy hybrid direction",
+    "not_reproduced": [
+      "Full SDFT recipe",
+      "SDPO",
+      "EMA self-distillation",
+      "native base weight consolidation"
+    ],
+    "primary_paper": "https://arxiv.org/html/2601.19897v2",
+    "title": "Self-Distillation Enables Continual Learning"
+  },
+  "staging_note": "Stage the canonical distillation lane with the parent atomic/idempotent installer. Full shared-tree source hash is assigned by parent at staging; directory basename alone is not proof. CLI recomputes the supervisor source archive digest and compares every archived file to its actual code directory; separately enforces this protocol scientific dependency map. New attempt IDs require explicit new configs, not overwriting previous artifacts.",
+  "status": "cpu_verified_ready_for_parent_review_and_staging",
+  "teacher": {
+    "checkpoint_directory": "/mnt/shared/cl-portfolio/runs/consolidation-source303-generation-train-20260912/checkpoint384/teacher",
+    "during_training": "Separate immutable FP32 teacher model for both KL arms; every teacher parameter/buffer version and gradient checked each update, adapter tensor hashes at checkpoints/end and full base hash before/after. SFT releases teacher after qualification. No EMA, expert optimization or use of teacher tensors as learner initialization.",
+    "fresh_native_prelearning_check": "all384TRAIN_and96VAL_exact_saved_native_generations_before_learner_load",
+    "new_optimization_updates": 0,
+    "prefix_limit": "Greedy native qualification supplies no correctness guarantee after a student prefix diverges. All divergent-prefix distributions and outcomes remain descriptive. No filtering or remediation based on these diagnostics.",
+    "qualification_order": "Pinned archived certificate, full frozen history/source/gates and actual checkpoint file hashes verified; fresh standalone teacher model loads and generates all384TRAIN then96VAL. Both panels must match saved generation dicts exactly and all answers+native EOS be correct. No learner loading or optimization before these checks. Stop at failed TRAIN before VAL or learning.",
+    "qualification_sha256": "cf9b1ab01ee71e0e9265d2f73a7795e86b8a9f9e83a806d8fec47f3e3f2af91c",
+    "qualified_directory": "/mnt/shared/cl-portfolio/runs/consolidation-source303-coverage-20260912/qualification",
+    "selected_checkpoint": 384,
+    "tensor_sha256": "fab63ae6d7c27209cde004c1fae57cc7758a9fc360fafd791ea8ad3045884f21",
+    "train_correct": 384,
+    "validation_correct": 96
+  },
+  "validation": {
+    "CPU_tests_command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python -m pytest /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_onpolicy303.py -q",
+    "SDK_inspection": "uv REPL inspected installed torch.multinomial docs, AdamW signature, PeftModel.from_pretrained and set_peft_model_state_dict; frozen loaders/loss/generation code read. Real tiny Qwen3 cached generation, updates and separate-process Peft reload exercised.",
+    "all6CLI_configs": "Each train/evaluate config --validate-only ran in a separate uv process and produced cpu_contract_only/gpu_qualifiedfalse. Temporary CPU outputs removed after inspection.",
+    "checks": [
+      "exact sealed recipe/source/config/current teacher qualification and completed coverage artifact hashes",
+      "full-vocabulary analytical forward-KL gradient versus reverse-KL; detached teacher; prompt/padding zero gradient; EOS included",
+      "positive full-support sampling including tiny probabilities; KV prefix boundaries; native early EOS; capped output has no inserted EOS",
+      "teacher next-token correctness label absent after divergent prefix",
+      "actual2updates x4exposures in all3arms; changed student and frozen teacher/base; full trajectory/ledger revalidation and optimizer clocks",
+      "independent adapter/optimizer resets; exact native model logits after load",
+      "new SFT bitwise adapter and AdamW tensors equal frozen coverage loop",
+      "failed actual teacher prerequisite stops before learner loader",
+      "supervisor receipt and archive actual byte hashes; completion and distinct task/attempt evidence",
+      "original2/4/5 candidate retention cardinalities and unchanged frozen scoring",
+      "real separate uv-process student checkpoint reload with teacher/expert artifact reads prohibited"
+    ],
+    "not_tested": "No full-size GPU learning, fresh teacher native requalification on replacement worker, sampled-prefix competence or full heldout persistence outcome has run in this subtask.",
+    "result": "12 passed in3.75s",
+    "ruff_command": "uv tool run ruff check /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/onpolicy303.py /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/onpolicy303_contract.py /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_onpolicy303.py",
+    "ruff_result": "All checks passed",
+    "versions": {
+      "peft": "0.20.0",
+      "pytest": "9.1.1",
+      "safetensors": "0.8.0",
+      "torch": "2.14.0",
+      "transformers": "5.16.1"
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "cache_contract": "Qualification and cache are one immutable stage. Require a usable final emitted answer on every one of the128 TRAIN rows in an admitted family; otherwise record incomplete cache and zero teacher-output learner updates for that candidate-family; the independent per-family oracle reference still runs. Copy final response token IDs and nativeEOS exactly. Preserve wrong but valid final answers, including wrong answers of a candidate that passes aggregate accuracy. No gold substitution or dropping failures. Validation outputs never become learner targets.",
+  "candidates": [
+    "raw_privileged",
+    "flat_mixed",
+    "primitive_first",
+    "legacy96_budget"
+  ],
+  "chain_execution": "For each new TRAIN/validation full program, call the frozen candidate greedily on one command with current emitted state. Parse only complete exactly four ASCII digits separated by single spaces and nativeEOS, within unchanged cap16; pass that emitted state to the next command even when numerically wrong. No oracle is called to construct a step prompt or route state. No repair, filtering, prefix rescue, constrained decoder, EOS injection or state replacement. Save all inputs, prompts, token IDs and final emission. Malformed or missingEOS aborts the chain. A propagated input equal to an original fixed demonstration input also aborts before inference to retain the frozen demonstration-separation boundary; no alternate examples are chosen.",
+  "conditional_dispatch": "Parent stages one qualification/cache job after completed new recovered-curriculum qualification; the interrupted original task is never treated as completed. Three independent A/B/C learner jobs depend on its verified terminal qualification receipt and can run in parallel. Each always trains one oracle reference for its family and additionally every qualified teacher-output method, automatically followed by fresh-process evaluation. An empty eligible family runs oracle-only with128updates x4; it opens no teacher-output updates. Both qualified and rejected terminal qualification outcomes are verified; a missing/incomplete/invalid qualification blocks every learner. Parent handles all compute dispatch.",
+  "context_control": "Raw zero-output adapter and trained384 teachers use exactly the same original privileged single-command instructions and six fixed demonstrations. Report trained-versus-raw-privileged accuracy, gain and paired p diagnostically. The primary qualification gain baseline remains the unprivileged raw learner. Admission of raw_privileged is equally permitted; no claim training created competence that was already available from context. No multiplicity-adjusted discovery claim from these original per-panel gates.",
+  "contract": "device4_external_chain_to_persistent_family_learner_20260912",
+  "data_contract": "Reuse unchanged data/device4_depth34.json and generator/protocol hash. New inputs exclude790 unique historical inputs; new TRAIN/validation/TEST inputs and ordered programs are disjoint. Original18demonstrations unchanged. Intermediate emitted states are not guaranteed unseen; record their identities and demonstration collisions. Reused original primitive validation is not untouched campaign-level validation.",
+  "deep_admission": "Only primitive-admitted candidate-family pairs receive external-chain evaluations. For each family measure raw unprivileged full-program TRAIN/validation once; reject unattainable gain/significance before chain calls. Require all four family x depth3/4 x TRAIN/validation panels to meet the unchanged .875/.25/.05 numerical cutoffs. Every candidate is reported, including primitive, feasibility, whole-chain and incomplete-cache rejections. No best-candidate selection; no new depth TEST predictions for admission or design.",
+  "diagnostics": "Saved checkpoints32/96/128; fixedfinal128 selection, never chosen on validation/TEST. Early eightTRAIN probes and all128family TRAIN rows at final128. FullTRAIN diagnostics do not adapt updates. Record target token equivalence to oracle and actual final tensor equivalence; identical teacher/oracle targets are equivalent objectives, not evidence of a superior teacher loss. Preserve every update, UID schedule, response token, loss and actual optimizer checkpoint. Report actual tokens separately; matched examples/updates do not imply equal response-token counts.",
+  "evaluation_contract": "Each family learning job automatically launches a separate uv Python evaluator. Reload saved initial and final128 learners, require exact eightTRAIN-probe generation parity, resident student adapter only, no teacher/chain calls and no external teacher or qualification artifact reads. Local copied qualification and caches verify provenance and token ledgers. Score exactly96new TEST tasks per family,48depth3+48depth4, unseen ordered programs and globally distinct inputs from the existing sealed depth34 corpus. Keep all results per family, depth and program; never pool these128update family experiments with original384update three-family experiments.",
+  "execution": {
+    "carry_all_qualified_candidates": true,
+    "evaluation_split": "test",
+    "fresh_process_evaluation": true,
+    "learner_jobs": "one_independent_job_per_family",
+    "oracle_reference_every_family": true,
+    "qualification_jobs": 1,
+    "teacher_or_chain_loaded_during_learning": false
+  },
+  "frozen_source_sha256": {
+    "device4_curriculum.py": "a5c35814e7fe613ebfa85c46222fd9cdfaaec951a15fb897f14ed03efe9ae884",
+    "device4_depth34.py": "4a7324ccfd791fbd69ed10d79d7db2f11c49e885a063f0952812ad426d2a0907",
+    "device4_depth34_contract.py": "8589c327a8a0edb2abc52dd8bbacba3176b3e521c9bc058e7b469caa7a4ba8f8",
+    "generated_contract.py": "ab7ff2f2c1d9262d83dd50e66e381359d729735cb0dfb2f06759ca115e5ae525",
+    "objectives.py": "1d88593282dfe4b89b79899e9e28d89be581903e9f20bc6c11ead61e92901621",
+    "qualified.py": "99ccf8aa98cdbd4bc5dfcbaccb245ec332c9f055a2ade550811e441e3ceded7f",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770",
+    "run.py": "a2464aaf35277800bfc8d473bed27555febfc21e543b9a2fe8fd0e9e35a817a5",
+    "tasks.py": "4bab8d018fc7de93fc3830c8a4c7b610876189faa0a25bd033ed5b57955937ce"
+  },
+  "learner_contract": "One fresh independent rank16/alpha32 adapter on the original frozen BF16 Qwen3.5-4B,8519680 trainable parameters, per family x qualified candidate. Full-program unprivileged learner prompt and response-only cross entropy on the cached final teacher emission. Shared oracle SFT reference once for EVERY family, including families with no qualified chains, with matched controls for any teacher-output methods, same original initialization, family schedule, optimizer settings and128updates x4=512 exposures. Every128TRAIN task occurs4times,256exposures each depth. Reset both learner tensors and optimizer between methods. Teacher adapters never initialize learners; only the unused initial teacher slot created by shared loader is removed before any predictions. No teacher weights or chain execution during learner training/evaluation.",
+  "native_design": {
+    "path": "configs/device4_depth34_protocol.json",
+    "sha256": "e791d25725eb0866beea205f83ab490999a45604919fac5963ae225f1dd9665f"
+  },
+  "no_teacher_updates": true,
+  "oracle_prerequisite_decision": "Declared before chain dispatch and before any new depth TRAIN/validation/TEST predictions: oracle reference tests composition learnability independently of teacher-chain competence. Every family receives exactly its original128updates x4=512 exposures once. Oracle-only success is not teacher-to-learner consolidation; no failed teacher gains admission or supplies targets. All old teacher gates and budgets remain unchanged.",
+  "primary_source": {
+    "relation": "Sequence-level distillation motivates training a learner on teacher-produced output sequences. This experiment uses emitted final answers from a greedy external chain of qualified single-command calls, rather than the paper neural translation or beam-search setup. Bespoke external-chain output SFT, not paper or SDFT reproduction.",
+    "url": "https://arxiv.org/abs/1606.07947",
+    "verified": "2026-09-12"
+  },
+  "primitive_admission": "Reverify completed immutable recovered curriculum receipt, its interruption evidence and explicit retained/resumed artifact origins and all final384 teacher identities even if native depth2 gate rejects them. Independently admit each candidate x family on all24 original primitive TRAIN rows and six original fallback_validation rows. Both panels must meet unchanged strict whole four-digit/nativeEOS accuracy>=.875, gain>=.25 against raw unprivileged learner, paired one-sided p<=.05. Measure raw unprivileged and raw privileged single-command prompts freshly. Trained final384 predictions are reused from authenticated fullTRAIN diagnostics and new recovery fresh-process validation. Carry all admitted candidates including qualified raw_privileged; deeper performance and other families never determine primitive admission.",
+  "primitive_counts_per_family": {
+    "fallback_validation": 6,
+    "train": 24
+  },
+  "qualification": {
+    "maximum_p": 0.05,
+    "minimum_accuracy": 0.875,
+    "minimum_gain": 0.25
+  },
+  "scope": "External composition of qualified native single-command predictions followed by persistent final-answer imitation within known synthetic device conventions. A teacher-free full-program TEST success is bounded internal-composition behavior on unseen ordered programs, not proof of a latent algorithm, general continual learning, native-base consolidation, unknown-domain transfer or SDFT/SDPO reproduction. An oracle-only result establishes a supervised composition reference, not transfer from a rejected teacher.",
+  "teacher_source": {
+    "design": {
+      "path": "configs/device4_recovery_protocol.json",
+      "sha256": "d503c2a431b317d05c838400b098a901ed808e593c507fcd7e094bd82e6dde30"
+    },
+    "kind": "recovered_curriculum",
+    "qualification_dir": "/mnt/shared/cl-portfolio/runs/distillation-device4-recovery-20260912/evaluation",
+    "source_sha256": {
+      "device4_curriculum.py": "a5c35814e7fe613ebfa85c46222fd9cdfaaec951a15fb897f14ed03efe9ae884",
+      "device4_recovery.py": "d140c601de02c466582ef54465ef621b978e3b85280b9652c66ba19b1f778849",
+      "generated_contract.py": "ab7ff2f2c1d9262d83dd50e66e381359d729735cb0dfb2f06759ca115e5ae525",
+      "objectives.py": "1d88593282dfe4b89b79899e9e28d89be581903e9f20bc6c11ead61e92901621",
+      "qualified.py": "99ccf8aa98cdbd4bc5dfcbaccb245ec332c9f055a2ade550811e441e3ceded7f",
+      "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770",
+      "run.py": "a2464aaf35277800bfc8d473bed27555febfc21e543b9a2fe8fd0e9e35a817a5",
+      "tasks.py": "4bab8d018fc7de93fc3830c8a4c7b610876189faa0a25bd033ed5b57955937ce"
+    },
+    "training_dir": "/mnt/shared/cl-portfolio/runs/distillation-device4-recovery-20260912"
+  },
+  "training": {
+    "alpha": 32,
+    "checkpoint_updates": [
+      32,
+      96,
+      128
+    ],
+    "epochs": 4,
+    "example_exposures_per_method": 512,
+    "examples_per_update": 4,
+    "expected_trainable_parameters": 8519680,
+    "learning_rate": 0.0002,
+    "max_grad_norm": 1.0,
+    "order_seed": 91235001,
+    "probe_rows_per_depth": 4,
+    "rank": 16,
+    "selection": "fixed_final128",
+    "shared_oracle_per_family": true,
+    "updates_per_method": 128,
+    "weight_decay": 0.0
+  }
+}

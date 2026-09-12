@@ -1,0 +1,10 @@
+{
+  "name": "train-only-repair-strength-pilot",
+  "intents_per_train_stream": 2,
+  "selection": "First two alphabetically sorted gate-eligible intents in each TRAIN stream; fixed before repair observations.",
+  "actions": "Same fresh AdamW target-only, balanced-old+new, none, restore and sham actions as main study. No trained lens and no predictor fitting.",
+  "gate": "Same predeclared repair_feasibility criterion. Four TRAIN intents total must produce >=2 meaningful responses plus variation before full lens/repair study. No heldout-intent actions or labels inspected.",
+  "followup": "If the pilot fails, retain the failed receipt and use separately sealed configs/prospective-repair64.json for a new pilot. Do not dispatch the full study with a failed pilot.",
+  "reuse": "After pilot passes, the main measurement may reuse these exact action records while computing its own pre-action features from immutable acquired/forgotten checkpoints. Support/optimizer/schedule/checkpoint identities must match; no extra learner training occurs to tune features.",
+  "scope": "Feasibility of repairing learned CLINC intent-to-code bindings; neither a semantic erasure claim nor a predictive result."
+}

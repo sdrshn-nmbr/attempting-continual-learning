@@ -1,0 +1,247 @@
+{
+  "capacity_and_budget": {
+    "learner_updates_per_arm": 384,
+    "native_base_updated": false,
+    "new_teacher_updates": 0,
+    "resident_learner_rank": 8,
+    "total_learner_updates": 768,
+    "trainable_parameters": 3833856
+  },
+  "claim_boundary": "Follow-through on teacher reliability and persistent complete-answer imitation in one known Sequence303 synthetic fixture. Single matched seed; earlier holdouts reused. Independent rank8 adapter, not native-base consolidation, broad continual learning, internal composition, unknown-task transfer, or SDFT/SDPO reproduction.",
+  "code_source_sha256": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "coverage_learner.py": "1493db6ff826f604275fa3a0bce7e31fad3db3f36b22eb891a083468414e7aac",
+    "coverage_teacher.py": "0fdfc95ae89dd8063fbb007633b6c4b0579f747f1c1e77b603e03a6b0aad339a",
+    "generation_consolidation.py": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770"
+  },
+  "compute_requirements": {
+    "dtype": "float32",
+    "offload": false,
+    "runtime": "Same qualified Qwen3-8B runtime and frozen requirements; uv for separate process.",
+    "visible_rocm_gpus": 1
+  },
+  "contract": "sequence303_coverage_selected_persistent_consolidation_20260912",
+  "cpu_validation": {
+    "ast": "All imports at module top level.",
+    "behavior": [
+      "Archived original initialization/schedule and all frozen teacher/device4/generated dependency hashes verified.",
+      "Failed qualification prevents model loading; altered correct-state certificate cannot rescue a bad TRAIN generation.",
+      "Real tiny Qwen3 rank8 CPU updates,2updates24exposures168response tokens per arm. Correct teacher/oracle targets are token-identical and produce identical changed learner tensors.",
+      "Actual separate uv Python process reloads saved learners after teacher and original reference directories are unavailable. No teacher call or artifact read; strict generation parity required.",
+      "An earlier learner checkpoint is rejected; default run requires completed fresh-process evaluation."
+    ],
+    "boundary": "CPU execution/persistence tests. No GPU action or new Qwen3-8B learner outcome performed by this lane.",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python",
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "test_coverage_learner.py",
+      "--junitxml=outputs/coverage-learner-20260912-cpu/frozen-pytest.xml"
+    ],
+    "errors": 0,
+    "failures": 0,
+    "junit_path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/outputs/coverage-learner-20260912-cpu/frozen-pytest.xml",
+    "junit_sha256": "ad080f28e928dfaab99b6cca509f549e45a1a1424c3082a9dd1173a90a85da4c",
+    "ruff": "Passed from repository root with experiments/distillation/ruff.toml.",
+    "skipped": 0,
+    "tests": 7
+  },
+  "dataset": {
+    "cross_split_input_overlap": 0,
+    "prior_campaign_observed_holdout": true,
+    "rows_sha256": {
+      "test": "4cb8c65404c65f47d9a9717346b922eb1d9171de93c4f6636f76bbdc16652ca4",
+      "train": "b53ef5cf9453b99151fb2010eccb94724ceeb898ac18e994b6ef74bd60ee2882",
+      "unused288": "a6e735f04446cf801efa601a60113c40d6fcb5b3a4875b39437395e419f094a9",
+      "validation": "6ffc9d8256c0f3b76617ecff7812ec0b75c326645655773fc90320e50561e491"
+    },
+    "unique_inputs_per_split": {
+      "test": 64,
+      "train": 128,
+      "unused288": 288,
+      "validation": 32
+    }
+  },
+  "evaluation": {
+    "binding_tables": "Descriptive per-task/per-position/per-input-digit heldout accuracy; never used for selection.",
+    "exact_train_probe_reload_parity": 24,
+    "external_teacher_artifacts_read": false,
+    "fixed_final384_only": true,
+    "local_inputs": "Bound copies of qualification certificate/panels, original TRAIN-only metadata/schedule, all384cached teacher TRAIN token sequences, learner checkpoints and target ledgers.",
+    "new_pid": true,
+    "row_counts": {
+      "test": 192,
+      "unused288": 864
+    },
+    "splits": [
+      "test",
+      "unused288"
+    ],
+    "teacher_model_loaded": false
+  },
+  "frozen_dependencies": {
+    "all_staging_hashes_in_three_prior_handoffs_unchanged": true,
+    "coverage_teacher": "0fdfc95ae89dd8063fbb007633b6c4b0579f747f1c1e77b603e03a6b0aad339a",
+    "device4_curriculum": "a5c35814e7fe613ebfa85c46222fd9cdfaaec951a15fb897f14ed03efe9ae884",
+    "original_generation_learner": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac"
+  },
+  "manual_configs": {
+    "evaluate": "configs/coverage_learner_evaluate.json",
+    "purpose": "Explicit debugging/recovery only; default run already trains and evaluates.",
+    "train": "configs/coverage_learner_train.json"
+  },
+  "modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/coverage_learner.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_coverage_learner.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/coverage_learner_protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/coverage_learner_run.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/coverage_learner_train.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/coverage_learner_evaluate.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/coverage_learner_handoff.json"
+  ],
+  "new_file_sha256": {
+    "configs/coverage_learner_evaluate.json": "b3a2324a720a97e3c7e978b7d203e175b9e563af7006587bc4874239c327011e",
+    "configs/coverage_learner_protocol.json": "7f8eb9e06f2472fcdd5e62e5d9017ee4cdf4a63a78daadcd32f46968a8a7ecad",
+    "configs/coverage_learner_run.json": "f3d733585a98111d9c76101e3cf25a66b76ce52a451297a7faf831978d6c4432",
+    "configs/coverage_learner_train.json": "fc866d7a36cd5d856a45009484f27d7d112fd9caad497fdbdd965792c91c5ccd",
+    "coverage_learner.py": "1493db6ff826f604275fa3a0bce7e31fad3db3f36b22eb891a083468414e7aac",
+    "test_coverage_learner.py": "93476460514b6230522091958def69a1fd97feb55dcfb4a887a4a5ba4d2fb854"
+  },
+  "original_outcomes_preserved": {
+    "oracle_sft": {
+      "test_correct": 187,
+      "test_count": 192,
+      "unused_correct": 854,
+      "unused_count": 864
+    },
+    "source": "Parent independently audited original experiment; immutable training metadata read only for exact initialization/schedule matching, never for target generation or checkpoint selection.",
+    "teacher_output_sft": {
+      "test_correct": 179,
+      "test_count": 192,
+      "unused_correct": 820,
+      "unused_count": 864
+    },
+    "teacher_train_cell": {
+      "correct": 7,
+      "count": 15,
+      "input_digit": 5,
+      "position": 3,
+      "task": "sequence_a",
+      "wrong": 8
+    }
+  },
+  "outputs": [
+    "training.json",
+    "teacher_train_cache.json",
+    "teacher_qualification.json",
+    "teacher_qualification_panels.json",
+    "reference_training.json",
+    "reference_schedule.json",
+    "schedule.json",
+    "teacher_output_sft/ledger.json",
+    "oracle_sft/ledger.json",
+    "evaluation/panels.json",
+    "evaluation/binding_diagnostics.json",
+    "evaluation/result.json",
+    "result.json"
+  ],
+  "ownership": {
+    "commit_push": false,
+    "gpu_provider_actions": false,
+    "modified_scope": "experiments/distillation/ only",
+    "parent_owns": [
+      "staging",
+      "dispatch",
+      "collection",
+      "compute"
+    ]
+  },
+  "prerequisite": {
+    "coverage_source_bundle_parent_dispatched": "20643be28fc30b45cdb847f4381f300b40ae4b548f509e94b1fa72b564689ffa",
+    "qualification_dir": "/mnt/shared/cl-portfolio/runs/consolidation-source303-coverage-20260912/qualification",
+    "source_boundary": "Reuse frozen generation_consolidation cache, target, loss, train_arm, schedule and adapter primitives. Own the new source-receipt, training-receipt and evaluation orchestration in coverage_learner. No replacement of frozen validators, false old source identity, runtime monkeypatch or accepted stale qualification.",
+    "teacher_gate_readiness": "Parent coverage selection/qualification is running. This handoff asserts no new GPU qualification result.",
+    "verification": "Only coverage_teacher.verify_qualified may authorize updates: verify archived32/training history, all32/128/384 TRAIN panels, earliest fullcoverage selection, validation gate and exact selected teacher files/source. Stop before learner model loading if any prerequisite fails. No silent alternative teacher or legacy receipt mutation."
+  },
+  "primary_comparison": "Earlier aggregate-qualified checkpoint32 teacher outputs versus the new complete-TRAIN-correct teacher outputs, distilled into fresh learners with identical initialization, TRAIN order and full384-update schedule. This isolates removal of the earlier teacher-label errors within the known fixture; it does not establish superiority of teacher sophistication or a new optimization objective.",
+  "protocol_sha256": "6b5e4913947dc288459ac92270562bfb2eb57a05126a507d562ff876a0dad495",
+  "ready_run": {
+    "automatic": "Verify qualified teacher, train both fresh arms for full384updates each, then automatically launch separate uv Python process to reload saved learners and evaluate heldouts. Completion requires successful child result.",
+    "command_in_staged_lane": [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "/opt/venv/bin/python",
+      "python",
+      "coverage_learner.py",
+      "--config",
+      "configs/coverage_learner_run.json",
+      "--output-dir",
+      "/mnt/shared/cl-portfolio/runs/consolidation-coverage303-20260912"
+    ],
+    "config": "experiments/distillation/configs/coverage_learner_run.json",
+    "cwd": "experiments/distillation",
+    "entrypoint": "experiments/distillation/coverage_learner.py",
+    "output_dir": "/mnt/shared/cl-portfolio/runs/consolidation-coverage303-20260912",
+    "task_id": "consolidation-coverage303-20260912"
+  },
+  "reference_experiment": {
+    "initial_tensor_sha256": "f60dc65839a1066c3058d6daf7827577ae4d7c181c263e7e0644597b8391218e",
+    "schedule_sha256": "d7eebc1afa74f611bb84baee43b33b571d3a23976dacd6d1c910510064d8cef4",
+    "training_dir": "/mnt/shared/cl-portfolio/runs/consolidation-generated303-20260912",
+    "training_sha256": "14cd4a0476ac9f5b5f22f589f7f1cb641d2c8dd903fea42408492d4dc1b04b04"
+  },
+  "staging_files_sha256": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "configs/choice_consolidation_protocol.json": "eadd92577ebf0945039ccde7a84f22d1150fd40df31c9c9ee7d14a1bd6f3706e",
+    "configs/coverage_learner_evaluate.json": "b3a2324a720a97e3c7e978b7d203e175b9e563af7006587bc4874239c327011e",
+    "configs/coverage_learner_protocol.json": "7f8eb9e06f2472fcdd5e62e5d9017ee4cdf4a63a78daadcd32f46968a8a7ecad",
+    "configs/coverage_learner_run.json": "f3d733585a98111d9c76101e3cf25a66b76ce52a451297a7faf831978d6c4432",
+    "configs/coverage_learner_train.json": "fc866d7a36cd5d856a45009484f27d7d112fd9caad497fdbdd965792c91c5ccd",
+    "configs/coverage_teacher_protocol.json": "1724268c16e6b4586f17e1d547076ab52ac9ba4ff613475963a99c4eb3d72340",
+    "configs/generation_consolidation_protocol.json": "5c933efc2fc32d2ae94784056a901d587cd6f5abafe07f87a03f0c78a6d7203e",
+    "configs/generation_teacher_protocol.json": "f618e00551fe75ed9117318869426ee81a6d006bfd8bf0d9046401f99a5f0ab0",
+    "coverage_learner.py": "1493db6ff826f604275fa3a0bce7e31fad3db3f36b22eb891a083468414e7aac",
+    "coverage_teacher.py": "0fdfc95ae89dd8063fbb007633b6c4b0579f747f1c1e77b603e03a6b0aad339a",
+    "data/sequence303.json": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2",
+    "data/sequence303_unused_inputs.json": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e",
+    "generation_consolidation.py": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770"
+  },
+  "status": "cpu_verified_gpu_ready_frozen",
+  "teacher_oracle_interpretation": "The perfect fullTRAIN output gate implies the same correct answer text and EOS as oracle supervision. Compare emitted token IDs to canonical oracle targets explicitly and record equality. When they are token-identical, teacher_output_sft and oracle_sft are the same training objective and serve as a repetition/consistency control, not distinct scientific methods. Both fresh arms still execute the full declared budget and persistent reload evaluation.",
+  "training": {
+    "checkpoint_updates": [
+      32,
+      128,
+      384
+    ],
+    "epochs": 4,
+    "example_exposures_per_arm": 1536,
+    "examples_per_update": 4,
+    "initialization_seed": 91230417,
+    "learning_rate": 0.0003,
+    "max_grad_norm": 1.0,
+    "methods": [
+      "teacher_output_sft",
+      "oracle_sft"
+    ],
+    "order_seed": 91230431,
+    "probe_rows_per_task": 8,
+    "selection": "fixed_final384",
+    "updates_per_arm": 384,
+    "weight_decay": 0.0
+  }
+}

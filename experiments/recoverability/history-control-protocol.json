@@ -1,0 +1,373 @@
+{
+  "analysis": {
+    "aggregates": "Per intent for paired accounting, per source, pooled and equal-source means separately; two TRAIN and two TEST source clusters, not intents as independent models. No p values or intent bootstrap.",
+    "boundaries": "Specific-binding advantage over alternate-label history reduces the extra-text-exposure and optimizer-age confound. It can also reflect interference from learned conflicting bindings. Differences remain behavioral training-history effects; they do not prove physical storage, semantic concept deletion, localization or guaranteed causal memory access.",
+    "paired_excess": "Original history minus new_only and minus alternate_binding for accuracy/gain/guard/utility/qualification at each budget; also newly/lost qualified pair counts. Compare conditional baseline differences and raw guard excess as well as clipped guard-loss differences.",
+    "primary": "Paired ORIGINAL-code accuracy, baseline-adjusted gain, new-task guard accuracy/drop, guarded target qualification, utility and smallest qualifying budget over 2/4/8/16 (never if none). Report baseline 0; do not assume monotonic recovery. Small-budget curves are primary for speed because 16 may saturate.",
+    "sample": "Same common intents across original_history/new_only/alternate_binding within each source; report full exclusions and count unit IDs. Original historical full-study analysis remains unchanged."
+  },
+  "common_gate": {
+    "exclusions": "Publish every historical eligible intent excluded for failed alternate acquisition and all source gate failures. No selection using control or historical repair outcomes.",
+    "failure": "Stop every new control repair if any source gate or common sample minimum fails. A changed intervention or eligibility rule requires a separately named TRAIN protocol.",
+    "minimum_per_split": 8,
+    "minimum_per_stream": 4,
+    "rule": "Before any control repair, common intents in each source are historical eligible intents intersected with alternate_binding old intents that passed own-mapping acquisition. Both control histories in all four streams must pass their new-task acquisition gates; alternate old stream gate must pass too.",
+    "source_clusters_per_split": 2
+  },
+  "conditions": [
+    "new_only",
+    "alternate_binding"
+  ],
+  "dispatch": "Parent only. CLI accepts --config PATH --output-dir EXISTING_RUN_DIR and writes fresh study child. Every queued task reserves >=1 GPU scheduling slot, even CPU gates. No provider mutation, commit or push by lane.",
+  "implementation": "New history_control*.py files only; frozen helpers reused. Protocol sealed before implementation. Relevant new implementation hashes separately bind every new receipt at dispatch; no old source edits.",
+  "learning_sources": {
+    "fresh-test-a": {
+      "acquisition_trace_sha256": "7ad6783f9bbd6606003210853c816ea2dac5bf5660324dddae1c7b82d21f5c9f",
+      "eligible": [
+        "calculator",
+        "cancel",
+        "credit_limit_change",
+        "directions",
+        "pto_balance",
+        "timezone",
+        "what_song"
+      ],
+      "initial_adapter_sha256": "a012071aa64ebcb26e0ee48e8cf24b6302e0361865c451325e67f08aee1c8630",
+      "new_trace_sha256": "5bf46c2d4a27590fe815c0fd982e9d96b4565fec74da0cb5c8f08b4d0aab7caa",
+      "receipt_sha256": "5d17619d8e415b049c6e74000bda8c87b725d8767258cbee861290dd49b9c38f",
+      "run_id": "followthrough-20260912-recovery-predict-learn-test-a",
+      "source": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-test-a/study"
+    },
+    "fresh-test-b": {
+      "acquisition_trace_sha256": "3e8a9399d52f81537cb17cefb3a102f6978f4f291c2453aa8da01fd4a5ac2361",
+      "eligible": [
+        "bill_due",
+        "gas",
+        "international_visa",
+        "measurement_conversion",
+        "plug_type",
+        "tire_change"
+      ],
+      "initial_adapter_sha256": "c288a443123f2e1380e8328f4dc8b256cb2257e2175f4b98cd675492f4229292",
+      "new_trace_sha256": "2e835a4d47bbaef41eac83c07de007c667b55da1993c632ef9813ac19a421793",
+      "receipt_sha256": "3bf53a59a85c61ccd590afed77a242dc80d29a555bc349a83ea6de388cb1d8c2",
+      "run_id": "followthrough-20260912-recovery-predict-learn-test-b",
+      "source": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-test-b/study"
+    },
+    "fresh-train-a": {
+      "acquisition_trace_sha256": "ea074035f57e0378b2b720a99cfe6ce7b8c011ffbc5a32c4a0c871b6e19f231d",
+      "eligible": [
+        "calories",
+        "insurance",
+        "pto_used",
+        "repeat",
+        "replacement_card_duration",
+        "spending_history",
+        "translate"
+      ],
+      "initial_adapter_sha256": "b16f5339a17d2dbf2d0c604cf1b49ccffe4bf6cf1c853c8e742f03605f23f931",
+      "new_trace_sha256": "dc63263d0ed51efb662d15b138afff0b31d3acce2aefc90dfe8671390359654e",
+      "receipt_sha256": "f9397fbb8f1d726acd60fed737a9e6fcc3ffb19ae362c5d2462fa2aefd2c3aee",
+      "run_id": "followthrough-20260912-recovery-predict-learn-train-a",
+      "source": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-train-a/study"
+    },
+    "fresh-train-b": {
+      "acquisition_trace_sha256": "ce200565f2a4712a82c7e0cdf54b4b9a6eba570d7f320330caba0aff100adce9",
+      "eligible": [
+        "change_user_name",
+        "credit_limit",
+        "payday",
+        "transfer",
+        "uber",
+        "what_are_your_hobbies"
+      ],
+      "initial_adapter_sha256": "d14c0c8f7975dd57432f2460edbd433621db5b2526d30513edff44388c3be9f8",
+      "new_trace_sha256": "d126fcf6420307bdbc88971e1af1142fba29638478f762bdcf716070bb628649",
+      "receipt_sha256": "5f9ea996d5974be2d02770c4d659d146395cac6465caca89a023003717b479f6",
+      "run_id": "followthrough-20260912-recovery-predict-learn-train-b",
+      "source": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-train-b/study"
+    }
+  },
+  "mappings": {
+    "fresh-test-a": {
+      "alternate": {
+        "calculator": 3,
+        "calendar_update": 9,
+        "cancel": 10,
+        "credit_limit_change": 2,
+        "directions": 11,
+        "pto_balance": 5,
+        "timezone": 12,
+        "what_song": 7
+      },
+      "direction": "intent at index i receives ORIGINAL code of old intent (i+1) modulo 8",
+      "old_intent_order": [
+        "cancel",
+        "calendar_update",
+        "pto_balance",
+        "directions",
+        "calculator",
+        "timezone",
+        "what_song",
+        "credit_limit_change"
+      ],
+      "original": {
+        "calculator": 11,
+        "calendar_update": 10,
+        "cancel": 2,
+        "credit_limit_change": 7,
+        "directions": 5,
+        "pto_balance": 9,
+        "timezone": 3,
+        "what_song": 12
+      }
+    },
+    "fresh-test-b": {
+      "alternate": {
+        "bill_due": 2,
+        "gas": 10,
+        "international_visa": 9,
+        "measurement_conversion": 1,
+        "plug_type": 12,
+        "spelling": 14,
+        "tell_joke": 3,
+        "tire_change": 15
+      },
+      "direction": "intent at index i receives ORIGINAL code of old intent (i+1) modulo 8",
+      "old_intent_order": [
+        "tell_joke",
+        "tire_change",
+        "bill_due",
+        "measurement_conversion",
+        "spelling",
+        "plug_type",
+        "gas",
+        "international_visa"
+      ],
+      "original": {
+        "bill_due": 15,
+        "gas": 12,
+        "international_visa": 10,
+        "measurement_conversion": 2,
+        "plug_type": 14,
+        "spelling": 1,
+        "tell_joke": 9,
+        "tire_change": 3
+      }
+    },
+    "fresh-train-a": {
+      "alternate": {
+        "calories": 14,
+        "insurance": 3,
+        "pto_used": 10,
+        "repeat": 0,
+        "replacement_card_duration": 11,
+        "spending_history": 2,
+        "translate": 15,
+        "travel_suggestion": 7
+      },
+      "direction": "intent at index i receives ORIGINAL code of old intent (i+1) modulo 8",
+      "old_intent_order": [
+        "repeat",
+        "pto_used",
+        "travel_suggestion",
+        "replacement_card_duration",
+        "spending_history",
+        "insurance",
+        "calories",
+        "translate"
+      ],
+      "original": {
+        "calories": 3,
+        "insurance": 2,
+        "pto_used": 0,
+        "repeat": 15,
+        "replacement_card_duration": 7,
+        "spending_history": 11,
+        "translate": 14,
+        "travel_suggestion": 10
+      }
+    },
+    "fresh-train-b": {
+      "alternate": {
+        "book_flight": 12,
+        "change_user_name": 0,
+        "credit_limit": 2,
+        "flight_status": 7,
+        "payday": 6,
+        "transfer": 10,
+        "uber": 1,
+        "what_are_your_hobbies": 13
+      },
+      "direction": "intent at index i receives ORIGINAL code of old intent (i+1) modulo 8",
+      "old_intent_order": [
+        "book_flight",
+        "payday",
+        "flight_status",
+        "uber",
+        "credit_limit",
+        "what_are_your_hobbies",
+        "change_user_name",
+        "transfer"
+      ],
+      "original": {
+        "book_flight": 10,
+        "change_user_name": 13,
+        "credit_limit": 1,
+        "flight_status": 6,
+        "payday": 12,
+        "transfer": 0,
+        "uber": 7,
+        "what_are_your_hobbies": 2
+      }
+    }
+  },
+  "name": "fresh-clinc-specific-binding-history-control-20260912",
+  "original_cohort": {
+    "receipt_sha256": "32cfac3865b4171c8abce09180bc3e9ca472332bb5ae7a7258120b6237fec813",
+    "run_id": "followthrough-20260912-recovery-predict-cohort",
+    "source": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study"
+  },
+  "original_config": "configs/budget-prediction.json",
+  "original_file_sha256": {
+    "budget-prediction-learning.json": "e925ad6ab84803964e26e815aa0ebc0dad7d16f8d3b4a0008e1e5e7a2fb2693e",
+    "budget-prediction-learning.sha256": "a83b6cb47244c363418886eb1cc3a7718e47f9fc8ca162b1a83768e6811e7621",
+    "budget-prediction-protocol.json": "a1c8926fa7eed2d82e2dacd3234474ede09b6c9f5273a72c9968bd80e3098708",
+    "budget-prediction-protocol.sha256": "67bcad88a0d083561bdf4bbf23728b0c87693a8fb9eee7f67c40386e7d9f8bc1",
+    "budget_prediction.py": "13c4abefae778e3ac7324add0257d1055406c961d15d155b88eebeb6517cc35a",
+    "budget_prediction_analysis.py": "7392384bc65571636b62ec3b28ffdcc85bcd9d9210f648027c3270dc688b98fa",
+    "budget_prediction_model.py": "d9d736dea7ff678edd6815c878b0d69fad671b09d4cb61920a333295e60f6d72",
+    "configs/budget-prediction-analyze.json": "405a3cb8607f80a0be1083ded6671cd4b6511e3b7c1034e6972255445bcaa965",
+    "configs/budget-prediction-authorize.json": "4e8c57c791d2a4e1bb4c3e78976d32146a516c40d16d548711ab4f52f79d0069",
+    "configs/budget-prediction-cohort.json": "290ab8dac58a3d77ee8ddbabb23c812cfe0f50fc3aa8e2d685589b4eed89e133",
+    "configs/budget-prediction-fit.json": "fe154513b7095643b5ca97c2bd99881beab14f6147f03a8db2f7e27ab168a5f7",
+    "configs/budget-prediction-forecast.json": "3accd2579e6d0fe124c3a6a3134565e8d9ad3dcae63dbbafa537c2bab8daf713",
+    "configs/budget-prediction-learn-test-a.json": "f4c88246249ee5e0d2f17057b277c75f97de4f92b987d43725ab23fda90088a2",
+    "configs/budget-prediction-learn-test-b.json": "71c8c0bfe7a64d078e9b1550d3b43118af0893db264d67d36aac0cbabfabd65f",
+    "configs/budget-prediction-learn-train-a.json": "85cee83b82cb8618532b92a2c64649c5ef7a936caeff228f713bad1718097604",
+    "configs/budget-prediction-learn-train-b.json": "aac98e6b8579f7c9422f243ac210a81f7266f687435f4039e51df03056eb90fd",
+    "configs/budget-prediction-readout-gate-test.json": "b192414016c28cdaf9ecf3bf2706d16933028cc456a7e974d6a26db2106d6104",
+    "configs/budget-prediction-readout-gate-train.json": "001743b6f569ef30d3b1d48b18a5685f10f6d9acd02c098d9d5a4303e6b5c643",
+    "configs/budget-prediction-readout-test-a.json": "f77b04c2916e45f8d49f112cec91dedca23d3969afd33e3fffe202a386451e40",
+    "configs/budget-prediction-readout-test-b.json": "24297897509e0e54aafa1d8deebcc2782d30ed901be8fa2a16fb8d3b46c45a7f",
+    "configs/budget-prediction-readout-train-a.json": "0c656cc9412522b65b43508a6a3cc1f661f6dff42bd252cfc43e051aa6860233",
+    "configs/budget-prediction-readout-train-b.json": "2cd366498cca0563e94e88483b14317064f93caf7eae48df4d6816a613d06b3f",
+    "configs/budget-prediction-repair-test-a.json": "d9d1ad6541da88b418788593cf2a7516ed431ba99a849b56926346ca728f8b02",
+    "configs/budget-prediction-repair-test-b.json": "2e55fdbf32e99c36cc5ff7054c2514a5d08bee06f9d8bf896d4d03315c93d5b8",
+    "configs/budget-prediction-repair-train-a.json": "3cb711fd10fc30216d9feb13c3f372843e9b230628b2269ef7187d24c1349a4e",
+    "configs/budget-prediction-repair-train-b.json": "69e32094b63c205b3b8e82e2c278abeb752de5c511df0a3cd42437c628ea5d34",
+    "configs/budget-prediction.json": "0e1cbcc6fa66a4674c060c631eb911bc0c1703b5a16c4870cce49e3612da90ed",
+    "configs/minimum-budget-gate.json": "ba648d6410c6dfd25e592e32a36bd175628de5f3039aeec61a921049a9097dd9",
+    "configs/minimum-budget-train-a.json": "e1a5f0f35cff505af7667e6a167f403207b093326c294140feb05ae7e54919cc",
+    "configs/minimum-budget-train-b.json": "07d52ad7b57c184eb6a1fa67546985a2cc66ddb2fcbf777ebab9e4993d56dd90",
+    "configs/prospective.json": "8a3b4c2b6b7d99644d3054e934936587ec33fe8d8d3f1c1629b6924d2c74e4e3",
+    "inputs/budget-prediction-cohort.json": "14781a4cd46816767903e43a0a1cd74b5d7d80b096ad7c0eeb92b69fd29ebc93",
+    "inputs/prospective-cohort.json": "b5b89a67140db92e8f9d281510dcfc873c5e32c46470ef3acb0b4dd3ae861bb8",
+    "minimum-budget-protocol.json": "7b7e01962d72080a4ba5f183713c5dc91746452a08125f221a037afa6ec0116e",
+    "minimum-budget-protocol.sha256": "f20f081f6c18d058f52e4edb81d33868ecfe6a7f2a918ec7d491ce1b4ce6204b",
+    "minimum_budget.py": "ef7230f741e312dfc2d0d5d42678be2af76012989b9ff91d53043843fb346392",
+    "model.py": "5af6edb1a42d6042a3a38b9d0ab4ce01ea6cadac6728d9e0fea84acd695442b2",
+    "prepare_budget_prediction.py": "6bc43f784cc08117ec0fc89d95911185f63f46b805d2afe1dbfcdf3ee6182456",
+    "prospective-protocol.json": "51f2f2771b59e7f4f93090bf8463758032e2c88a41764212849fe4499f0d4719",
+    "prospective-protocol.sha256": "1229d93879693ea94bf5e6d4eb307abfa5438af26ce9e51cbe2a533bb2ccf43a",
+    "prospective.py": "3f2ce28d0c350b26b1e0d8d97a9fc9084e9f75837f20945e82e8c80584f817dc",
+    "prospective_analysis.py": "2eeb9b61a14a58df2cf8f20b5148d73afda3364b4b93424ef408faad6e6ebad6",
+    "prospective_data.py": "8d39002c90359c7c62e65d121ba907d5b6639faa105aad237fc476168dc04048",
+    "prospective_model.py": "46c4c6901e61479759bf38ae2af01a36a1c5282db34639900428aad016447399",
+    "protocol.py": "a1e54302b007827b9c2982d8c366b68b89f573ddeb4b1c8f2ac50bf440d23776",
+    "requirements.txt": "847ae989f281a78cb0fb40f574e23f3baefc20f7bc3ecebf8ebb65857c6c689c",
+    "tuned_lens.py": "c640f82a9e4510287678774625dd6ecebe74063461659b5d763adaf5ddceecc8"
+  },
+  "original_prediction_identity": "c0dd05d5dfb9a0f5015bfccd72f8ba436bc1ddf4c50362725fbcc1b855974d39",
+  "original_source_files_reported_by_parent": 104,
+  "original_source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+  "preregistration_boundary": "Only fresh source learning/cohort receipts and input data inspected to define this protocol. No fresh TEST repair outcomes or labels were inspected for these decisions. Parent reports predictive TEST outcomes still unobserved at request.",
+  "prompt": "Classify the intent of this utterance using its learned letter code.\nUtterance: {text}\nIntent code:",
+  "prompt_contract": "Input asks for a learned letter code without revealing the mapping; input tokens and utterance/source UIDs are unchanged by alternate binding. Only old-row code/target fields change. New labels never change.",
+  "repair": {
+    "baseline_budget": 0,
+    "batch_size": 8,
+    "budgets": [
+      2,
+      4,
+      8,
+      16
+    ],
+    "controls": "Freeze original-code baseline test/guard records before any update; reload parity for baseline and each saved prefix, restore post-stream checkpoint after each arm, assert frozen backbone.",
+    "new_per_step": 4,
+    "old_per_step": 4,
+    "original_history_verification": "Require completed original history grid and use frozen verify_grid plus raw native 16-code test/guard scoring to validate all four historical outcomes. Do not train a third historical model or reuse an old campaign TEST stream.",
+    "proof": "Run 16 first with 2/4/8/16 prefixes, then independent 2/4/8 restarts. Save adapter weights, optimizer clocks, actual update rows/losses/preclip gradient norms; record per-step postclip gradient tensor hashes and save postclip gradient tensors at each prefix. Require actual equality of prefix weights/gradient records within each condition. Across distinct histories match schedules and scoring rows, not numerical weights or gradients.",
+    "qualification": {
+      "accuracy_min": 0.8,
+      "gain_min": 0.3,
+      "guard_drop_max": 0.1
+    },
+    "schedule": "Same original old/new repair support text UIDs, original targets, actual 16-step balanced row indices and seed as historical grid. Each 2/4/8/16 arm restarts at its own unchanged post-stream checkpoint with fresh AdamW. 30 total updates per common intent per control.",
+    "target_mapping": "ORIGINAL historical intent-to-code bindings in every condition.",
+    "terminology": "Same accuracy/gain/guard threshold applied to all conditions; call control outcome target qualification or acquisition, not recovery of an unlearned original binding."
+  },
+  "scope": "Behavioral effect of prior specific intent-to-code binding under bounded 16-code CLINC classification. Not semantic intent erasure, localization, or a replication of a model-level access metric.",
+  "sealed_at_utc": "2026-09-12T07:13:08.629853+00:00",
+  "source_qualification": {
+    "acquired_min": 0.8,
+    "acquisition_gain_min": 0.3,
+    "alternate_old_baseline": "Alternate mapping at initial versus alternate mapping after old acquisition; per-intent gate rows identical text UIDs.",
+    "minimum_alternate_old_acquired": 6,
+    "minimum_new_acquired": 6,
+    "new_baseline": "Before the new phase: initial for new_only and acquired alternate-old checkpoint for alternate_binding. Original new labels and original validation rows.",
+    "no_control_forgetting_filter": "Do not require alternate bindings to be forgotten, or filter controls using original-code post-stream accuracy. Report both mapping diagnostics without changing the common sample."
+  },
+  "streams": [
+    {
+      "id": "fresh-train-a",
+      "seed": 503,
+      "split": "train"
+    },
+    {
+      "id": "fresh-train-b",
+      "seed": 607,
+      "split": "train"
+    },
+    {
+      "id": "fresh-test-a",
+      "seed": 709,
+      "split": "test"
+    },
+    {
+      "id": "fresh-test-b",
+      "seed": 811,
+      "split": "test"
+    }
+  ],
+  "test_ordering": {
+    "require_forecast": "followthrough-20260912-recovery-predict-forecast",
+    "rule": "Control learning may run after historical cohort qualification, independent of predictors. TEST control repair requires the ORIGINAL sealed forecast completed before any such repair, plus its original historical TEST grid completed. TRAIN control repair requires only common eligibility and its completed historical TRAIN grid. No control data or labels enter predictor fitting, calibration, selection or any TEST prediction."
+  },
+  "training": {
+    "alternate_binding": {
+      "new_updates": 128,
+      "old_updates": 128,
+      "optimizer": "Fresh empty AdamW at the exact historical initial adapter; carry all moments and step count across old -> new, ending at 256 updates."
+    },
+    "batch_size": 8,
+    "early_gate": "Alternate old acquisition needs >=6 of 8 intents meeting original >=.8 and gain>=.3 under its OWN consistent mapping. If it fails, preserve receipt and stop before new training. No costly repairs after any prerequisite failure.",
+    "initial": "Load historical initial adapter exactly, verify its SHA and baseline outputs under each scoring mapping; require frozen backbone equality and empty optimizer state.",
+    "new_exposures_each": 1024,
+    "new_only": {
+      "new_updates": 128,
+      "old_updates": 0,
+      "optimizer": "Fresh empty AdamW at the exact historical initial adapter; optimizer runs continuously for 128 new updates."
+    },
+    "old_exposures_alternate": 1024,
+    "schedule": "Use the exact historical source old/new trace row indices, after verifying them against original-label balanced_batches with the frozen source seeds and original row ordering. Do NOT regenerate old batches from alternate code labels because balanced_batches sorts by code. Old/new input text UIDs and token sequences at every step must match the historical run. The new-only arm skips the old phase only.",
+    "settings": {
+      "batch_size": 8,
+      "boundary": "Continuous optimizer from old acquisition through new-intent training. Repairs each reset AdamW at the exact forgotten checkpoint.",
+      "learning_rate": 0.0003,
+      "max_grad_norm": 1.0,
+      "name": "AdamW",
+      "weight_decay": 0.0
+    }
+  }
+}

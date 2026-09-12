@@ -1,0 +1,5 @@
+{
+  "protocol": "configs/device4_depth34_protocol.json",
+  "protocol_sha256": "fb70ff48705a3f1a335b12216b190d2ac0af86652c4d7cf0fd379453aa554229",
+  "stage": "qualify"
+}

@@ -1,0 +1,6 @@
+{
+  "condition": "new_only",
+  "run_id": "followthrough-20260912-recovery-history-learn-new-only-train-b",
+  "stage": "learn",
+  "stream": "fresh-train-b"
+}

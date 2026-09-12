@@ -1,0 +1,2121 @@
+{
+  "dataset_repo": "RampPublic/portallib-tasks",
+  "dataset_revision": "ffc3c0e44f529bf64a5ae62ed5db090952db97ea",
+  "seed": 20260907,
+  "excluded_validation_prefix": 1000,
+  "counts": {
+    "boolq": {
+      "validation_total": 3270,
+      "eligible_after_exclusions": 2270,
+      "overlap_or_duplicate_excluded": 0,
+      "selected": 32
+    },
+    "hellaswag": {
+      "validation_total": 10042,
+      "eligible_after_exclusions": 9005,
+      "overlap_or_duplicate_excluded": 37,
+      "selected": 32
+    },
+    "winogrande": {
+      "validation_total": 1267,
+      "eligible_after_exclusions": 219,
+      "overlap_or_duplicate_excluded": 48,
+      "selected": 32
+    },
+    "commonsense_qa": {
+      "validation_total": 1221,
+      "eligible_after_exclusions": 221,
+      "overlap_or_duplicate_excluded": 0,
+      "selected": 32
+    }
+  },
+  "train_prompt_overlap": 0,
+  "checkpoint_selection_prefix_overlap": 0,
+  "duplicate_eval_prompts": 0,
+  "indices": [
+    {
+      "task": "boolq",
+      "validation_index": 3154,
+      "within_task_index": 1775,
+      "prompt_sha256": "6fb96f6fc6be02f1c84fdbe203059db3fdcc0230d784b245f9b015849f359550"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 3577,
+      "within_task_index": 2198,
+      "prompt_sha256": "9f2aafec0a8f81ced6c6f4a6aae95daaeb78f8f2e523523cac38668da65674f1"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 2964,
+      "within_task_index": 1585,
+      "prompt_sha256": "b219a7e0be7416e914902bc3efde0e71d7896e0ae5f9b20d121ad045b98890a8"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 3495,
+      "within_task_index": 2116,
+      "prompt_sha256": "87be82c52a36a39b4f616ca69a877582693d6ccfb47f392f3f2916441d9ac944"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 3864,
+      "within_task_index": 2485,
+      "prompt_sha256": "b102ee36113c200e6da81950c67141cd1feadb1f8f6f41779824642b30cfbdcb"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 4152,
+      "within_task_index": 2773,
+      "prompt_sha256": "a022ba190d29e8bd1ea22a66c409b7df362ce107fbc8e4d9d91e619cb68cc002"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 3712,
+      "within_task_index": 2333,
+      "prompt_sha256": "ee2f8c298ea20fcb3337d7f993c8925150e96d201d96fb95369392e9c2a583b9"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 2726,
+      "within_task_index": 1347,
+      "prompt_sha256": "7e367ed8f805aa12ee447c8196e502cb76b6db8227da457dc5b6ad8067c499f2"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 3039,
+      "within_task_index": 1660,
+      "prompt_sha256": "764b134ffdbe7f00103fb4b3c3d0f0523a6c0faed22d8449bb86ac8a0f734608"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 3423,
+      "within_task_index": 2044,
+      "prompt_sha256": "deeb1eb6c36d9564199ffffdecb10ac0d48432f590f6e3505c86f4d933330460"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 2850,
+      "within_task_index": 1471,
+      "prompt_sha256": "30b6e9658781be7ff3ec6f9d9fcf17af81d82e3cb10c2187e71f844a571ddeb7"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 2867,
+      "within_task_index": 1488,
+      "prompt_sha256": "0d147b276b3c73ea8e3d6615b1697165fa5a887c1250b4e3f19f764498238b9d"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 4000,
+      "within_task_index": 2621,
+      "prompt_sha256": "9deb270d687c0cb412215b27dfaf22470310dc25cde886f1f12464b21e1924ff"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 4458,
+      "within_task_index": 3079,
+      "prompt_sha256": "e06699c60f062d8ddf9cd899b77db41c0c88b84198164ab1f1a790cd5ad1175d"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 2929,
+      "within_task_index": 1550,
+      "prompt_sha256": "f654c7c7179972eb47b55186195b6e2379071bfd9e23627a20329b657c4e7bbc"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 2942,
+      "within_task_index": 1563,
+      "prompt_sha256": "e8592b013d2d3e65b6d3f775c4c695f7cc8c72f6b47ba6aeb9b54b5ab3c71b18"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 3433,
+      "within_task_index": 2054,
+      "prompt_sha256": "b0b12c0d3fc466ac761d7191d06cd7d8b31b1e79b436abedc9dd706e842d448a"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 2632,
+      "within_task_index": 1253,
+      "prompt_sha256": "5020a08d4735da5331142adf7b2c94c9ff8728f2742410779515457a69927499"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 3787,
+      "within_task_index": 2408,
+      "prompt_sha256": "703cd321daf1dccaba29e150457661710d9c01959c45a38380650145c00c701b"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 3278,
+      "within_task_index": 1899,
+      "prompt_sha256": "ec9e15928e761fb2fd89744e434da7b166b0c95066c2bacb0a984db1406c0fd6"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 4068,
+      "within_task_index": 2689,
+      "prompt_sha256": "cb754b1b90c108da9cb830aaf265855df8099b421de3ebb05bd385c99ced9d2a"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 2703,
+      "within_task_index": 1324,
+      "prompt_sha256": "a3ae24bd30d77c0f11a501c80dbed1f48fc4bb535ec31b182da2dc05932bdce9"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 3496,
+      "within_task_index": 2117,
+      "prompt_sha256": "1a65b38f75d8c03881ca412ee0e08b2f0029b25154d8f116cef1aff1983475dc"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 2417,
+      "within_task_index": 1038,
+      "prompt_sha256": "cf0854b021529277698ab8a7603957de227235f93da589a3db75b9598b21ff52"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 3162,
+      "within_task_index": 1783,
+      "prompt_sha256": "a05de362d688a517c0334e49dc1669cdae85ccf71eff0ce62758f4f687a4fe02"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 2891,
+      "within_task_index": 1512,
+      "prompt_sha256": "62bae24bef352b62d9f6d2e20dffae11685b0cc3bc53cd2547f5146eb965f737"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 3285,
+      "within_task_index": 1906,
+      "prompt_sha256": "59c9d1cca15df78ec56cfa4aa49997bbf77dd8034e52c2a8f235a236e63cbc9b"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 4306,
+      "within_task_index": 2927,
+      "prompt_sha256": "bc67ecccea620860c517c1138cbb8f404c8723436590f013200f157e391b0424"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 2411,
+      "within_task_index": 1032,
+      "prompt_sha256": "8dded65a9492168d41f8748f6967920d91d693615cd672dd47fefd892b4f5db8"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 4165,
+      "within_task_index": 2786,
+      "prompt_sha256": "743e1b4531965e858ba3034188638b5dd9fdf7f5a02f6257a4c2950bdc2b9532"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 2868,
+      "within_task_index": 1489,
+      "prompt_sha256": "a05eec21ce5d4224b31c963e96ebb85b550785782e4c9d5323c0956bdaf36b26"
+    },
+    {
+      "task": "boolq",
+      "validation_index": 3046,
+      "within_task_index": 1667,
+      "prompt_sha256": "c09fe72f9fe2955be0e19341d12a1887d46bf972a99fc10e777bc1ae090f6248"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 7625,
+      "within_task_index": 2107,
+      "prompt_sha256": "9d6d0ef22353d5c15bd4fe4dac31b3fa231ee33af77e18bff96a369ad38619fb"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 9640,
+      "within_task_index": 4122,
+      "prompt_sha256": "7a68a9f1e53b31c43f12441c2c7485ff9ac1c891bf26782397c2fa6548de658a"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 13887,
+      "within_task_index": 8369,
+      "prompt_sha256": "2598396316f96963f3d9793981e70feb62aead4b42b84b8fd3407d0f40f0519a"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 7047,
+      "within_task_index": 1529,
+      "prompt_sha256": "36336a4a410db3e1b228da5d3d82e5bbf5df80e8fe5f246e5ed08edc7f35927f"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 13818,
+      "within_task_index": 8300,
+      "prompt_sha256": "4b3f973481dab078b15597becc781f634777b937631425cfe63d3dfc36eb0300"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 8948,
+      "within_task_index": 3430,
+      "prompt_sha256": "f0c830be759b61c1b052e8fdd176722c90585352ae6e7e656eae534d11293d13"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 11024,
+      "within_task_index": 5506,
+      "prompt_sha256": "dcd738d54abbb099ee2234e0ba6f41d2b53c8497e5fb159c9b7d002a53cbffb1"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 8620,
+      "within_task_index": 3102,
+      "prompt_sha256": "2e58d8d6bd0624e2cc433f03e5e300f26b366130548e426f867494aaba847b4d"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 12001,
+      "within_task_index": 6483,
+      "prompt_sha256": "157875da0c5c99e756a3d548f05353726beb37179308e2d956fa70b4cc080263"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 6743,
+      "within_task_index": 1225,
+      "prompt_sha256": "973f44d935229b91b6de84d8a8cf87d2d75255b18d065eff70f476d31499f0c3"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 13419,
+      "within_task_index": 7901,
+      "prompt_sha256": "fece61ba983189f0b6bc79be41f98f4d83f8e963a84695a88e4d80ed9501926a"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 8428,
+      "within_task_index": 2910,
+      "prompt_sha256": "bd477bc0b58f7c2cb040b7637e0c200fcda6dfe479867c9711dd2a351bb1de39"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 8643,
+      "within_task_index": 3125,
+      "prompt_sha256": "378d7153534a14c22f2a108fe4c1d47a7dc7528ddb5f27459062f62aa0ac893c"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 10698,
+      "within_task_index": 5180,
+      "prompt_sha256": "f8e8c9e4401748b4258174242ca99431cc433d36673968e1d322bc3590dd35ac"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 10446,
+      "within_task_index": 4928,
+      "prompt_sha256": "c00b9a5c4ccf2904a2a71cd74888259f771eeb69c83269377e8a65bc049448c9"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 10978,
+      "within_task_index": 5460,
+      "prompt_sha256": "aa56e9ef21f6182459112bde6084a36a03351674470ac4a96ab6ff39ae213062"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 13962,
+      "within_task_index": 8444,
+      "prompt_sha256": "5cd2f9b085a40ce3fa03a45dc7f462fb9c995ecef10a8f9231badc8831dcd82c"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 14003,
+      "within_task_index": 8485,
+      "prompt_sha256": "4bc653ff550817b7f7f36120f768370909532d744cab040a9262fc1c648ba5b0"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 12317,
+      "within_task_index": 6799,
+      "prompt_sha256": "7d5fce61fcc5021162ea40249f4b9448337d0fffab7dec26e49410ac2755dcf1"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 10734,
+      "within_task_index": 5216,
+      "prompt_sha256": "b6015122fde0dfbca05e558033304dac173e00b4e6d1920fd82f8ba69f5e3f3b"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 9788,
+      "within_task_index": 4270,
+      "prompt_sha256": "a48d930b9951738846dd5a4d6c3b771a18ea1dcb30aefe5f2d36b3038a0a5e1f"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 10046,
+      "within_task_index": 4528,
+      "prompt_sha256": "c19835a0397f09fd662ec0fc01501461ca6cee552e88181ba5a7d71860e10c28"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 12571,
+      "within_task_index": 7053,
+      "prompt_sha256": "d4d0f743f11a1ecead0085240b2be315c69cbe5b60cf3c8db66484636e5b3f4c"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 11735,
+      "within_task_index": 6217,
+      "prompt_sha256": "e28998c5f3354311b9b7594be89908ce1286fce94ed5a3c7387778dc4b7e0ae8"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 13237,
+      "within_task_index": 7719,
+      "prompt_sha256": "7675af11a542a771badc08285fac8415e0d8a60aa344a1773563c232b84b8b5e"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 15311,
+      "within_task_index": 9793,
+      "prompt_sha256": "88439dd5bd0c649941d9190b61ae9ef294dc46b76b5e4161077b5bd9c2bfec28"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 7386,
+      "within_task_index": 1868,
+      "prompt_sha256": "ed8727efeac9026c6fa8e8c8569dcf6e915500c8ef0a82c2a8108369db792d17"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 7235,
+      "within_task_index": 1717,
+      "prompt_sha256": "9bd2a55a8990923394dd44016f3722315fc7834731cb6c9b9a0ec10c7aff272a"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 12369,
+      "within_task_index": 6851,
+      "prompt_sha256": "615e1631c289a07d31c67c369c205edea07e226c793ab0e074139c322dad82c1"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 14133,
+      "within_task_index": 8615,
+      "prompt_sha256": "da23e68a3beb62384d22e909e3b421c77de7639684837da2b23465cc6686956d"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 12482,
+      "within_task_index": 6964,
+      "prompt_sha256": "13fc10ff7fe7f85fc924c092a844b4fa80675b9dd3aa11672cec4acef9535278"
+    },
+    {
+      "task": "hellaswag",
+      "validation_index": 6750,
+      "within_task_index": 1232,
+      "prompt_sha256": "f8fb45b90061d9dcc1471ea197d684767de9b41a17ee2375d4c914d733d856a9"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17316,
+      "within_task_index": 1256,
+      "prompt_sha256": "bde1fd0fdad04a67dcc269a6abb53eb184deba3fc1b9b5fcfd7e4c4866271fac"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17235,
+      "within_task_index": 1175,
+      "prompt_sha256": "20b2f41993f72626e7ea0583c6e71221b68f2790beaee6a3192941519cbf216a"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17125,
+      "within_task_index": 1065,
+      "prompt_sha256": "4960f2e648c8bf90b9359182b45c83ed5ca11b5d2cc89cffe6018b07336ef3e3"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17066,
+      "within_task_index": 1006,
+      "prompt_sha256": "242e7e13e095cbe7b613c5b35f5f1c6e1e259775f277d980f09b994f88c0c480"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17224,
+      "within_task_index": 1164,
+      "prompt_sha256": "e292800d8bdd9b86c4c32685fd1dc60a6c3fa02b0afd717992d7c044b7ba4485"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17219,
+      "within_task_index": 1159,
+      "prompt_sha256": "dfd8b0851cb69a95944d931c54862185402f705326372d9af4f2c3307734fffb"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17234,
+      "within_task_index": 1174,
+      "prompt_sha256": "2b4837ff79068d812d09e5ef86034b419206fbf49dc82073eca6c73e0eba2c20"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17089,
+      "within_task_index": 1029,
+      "prompt_sha256": "d282f4a18a47058f41ee9530dec77ccbc44243b914e3a1a3988c3a310936b6b4"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17236,
+      "within_task_index": 1176,
+      "prompt_sha256": "08d13fc5c2a35efbed5c2dd802564975297da487d0257bc7a7f382c199c708dc"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17074,
+      "within_task_index": 1014,
+      "prompt_sha256": "92c0139b16a7eb32cb41a29b5d6cf1ec0f377d8d605b47e52d76b0d8225b9564"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17099,
+      "within_task_index": 1039,
+      "prompt_sha256": "6f0d397f3f47eff05a8d7dfbadb857966b2da1b12371df3d7d7fa2a84d9de65a"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17211,
+      "within_task_index": 1151,
+      "prompt_sha256": "cf84b5211da6dd4e53035eee3845d4a6967a3c113a734f2df2bea32514025b00"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17073,
+      "within_task_index": 1013,
+      "prompt_sha256": "fe1964637d3855e4edc0d58547bc4597bd5a4c09c4b893cb23c98ddd680ff508"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17279,
+      "within_task_index": 1219,
+      "prompt_sha256": "fb0d93aadc2f619f0e59aebe2b6a3f66af8466b268638c5cf667f26fd7049dfa"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17176,
+      "within_task_index": 1116,
+      "prompt_sha256": "8b3d15e24fbe6211003d5050d80fdfd0ece30889d00ccd9cb8058b0ab4108a34"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17171,
+      "within_task_index": 1111,
+      "prompt_sha256": "3bc748efef1203847c0aea6dae5c274c36f68b81e9477f065700ecbb4d2d096d"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17084,
+      "within_task_index": 1024,
+      "prompt_sha256": "8235a4ef903597b19773ab053d85ef1c26bb15933b97a8e6c19aa7a98831e631"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17136,
+      "within_task_index": 1076,
+      "prompt_sha256": "ffbdbdec21317dce42cb61ba46e892eea9b65ca9d3cfc9d1ebc9ed4f38066f13"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17177,
+      "within_task_index": 1117,
+      "prompt_sha256": "e106fb43cef309e5d36eb797318bfe02f43fdf035ea0622b45b3b5ede0dd7b9a"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17307,
+      "within_task_index": 1247,
+      "prompt_sha256": "5482057cbe5aec02c7ee0c3dbf663dadeda75fa85c253c03143f171a3b3d00f9"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17183,
+      "within_task_index": 1123,
+      "prompt_sha256": "37211fef9ab18fec453e778f37ddedc1e56be4dd01a9cd99c2ce423ee1b3ffbf"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17075,
+      "within_task_index": 1015,
+      "prompt_sha256": "21f332c14e47584ba65e0236ca813ee4e755ff058ae72ba022b1362647f69453"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17268,
+      "within_task_index": 1208,
+      "prompt_sha256": "f0977c18d497cc9c3bf16a814e351c27cdf884b67a38f202deac97dbf6767fe4"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17289,
+      "within_task_index": 1229,
+      "prompt_sha256": "c4bd2120f8ae5dfe3d845a2d1c1e51926e8b0300e11d41c99b582563e61fc353"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17133,
+      "within_task_index": 1073,
+      "prompt_sha256": "1ace51b7e06609625b8b7a6def572b9f226a8aaa1df4231c44053b02bef72efb"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17143,
+      "within_task_index": 1083,
+      "prompt_sha256": "fe6254ba9473fbda79991bf6bba748a278dc8ba013d38adabc2177147b790109"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17130,
+      "within_task_index": 1070,
+      "prompt_sha256": "2fe5bc14299c9ed42f7af74863b80f45f7d950e9d43af83256fe225365d3aff6"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17281,
+      "within_task_index": 1221,
+      "prompt_sha256": "a73871580bfe26f7d924c46541278b9cc87491af016b8ca671271ab69d2d7791"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17222,
+      "within_task_index": 1162,
+      "prompt_sha256": "4c745b036cd0f92840085c2059c63e5079122a593800a3f917395ae754288e70"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17186,
+      "within_task_index": 1126,
+      "prompt_sha256": "d843169e5cc8b5372711257f5a9dc9534f3b4a2867ef61598c05eb697a0dc7b7"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17275,
+      "within_task_index": 1215,
+      "prompt_sha256": "230c7f809a0a7d6433b3a24553590e802961188cfae6f404fdfdabdfaba6c3b4"
+    },
+    {
+      "task": "winogrande",
+      "validation_index": 17079,
+      "within_task_index": 1019,
+      "prompt_sha256": "a15a533c071244c2942f8646a3da2effcd4d0f1c0181a104a908cb8ff812ac57"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18453,
+      "within_task_index": 1126,
+      "prompt_sha256": "ff3499d6587b95ab3144805fd049a8b0e0dee3891a687d7062aa7b4f9c69c9c3"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18429,
+      "within_task_index": 1102,
+      "prompt_sha256": "b6e7f023e425c2a79329f9d16a049733b6d4f40a650ab939e4a4bbc3687c8f0c"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18337,
+      "within_task_index": 1010,
+      "prompt_sha256": "235f5e0db3284be0fc639d391b84117655a22c67bedc1b90e3b5c67675ac9aa1"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18459,
+      "within_task_index": 1132,
+      "prompt_sha256": "be60653498e2b0084365192ba7ce39bb50247d89751cb8e137b5f89c6d23f6f6"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18542,
+      "within_task_index": 1215,
+      "prompt_sha256": "c7c98c68333c8fed55206f1fa34828670cd9506c0358e0e6c6b07bcb130779fa"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18433,
+      "within_task_index": 1106,
+      "prompt_sha256": "6ab6e55edffd1944d696f08d7de1d18b2d25aa62f6beabf201cd0051a39bc645"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18365,
+      "within_task_index": 1038,
+      "prompt_sha256": "98a4b31f03ee118b6ac96d80faef7d4e08173e10ca8f76f61bbbc3d3bcabb7ad"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18416,
+      "within_task_index": 1089,
+      "prompt_sha256": "66a868d335d34cfbd0716087c2f9358376dfd8573326b1af5d94c979d8fc141d"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18380,
+      "within_task_index": 1053,
+      "prompt_sha256": "2eddcf41f270bb11b70b25bb1dbc6d940ad1fd8119573fbb5763920dec77c411"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18356,
+      "within_task_index": 1029,
+      "prompt_sha256": "fefd720a1eb05e6817b647a0aed4624fd8eab4864508238fd0dbdd18c826b456"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18496,
+      "within_task_index": 1169,
+      "prompt_sha256": "e053c98f1eacd24a3807e9b9385d8d57a2c26a97141fce82bb2ea89957519b2f"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18438,
+      "within_task_index": 1111,
+      "prompt_sha256": "26e10892378a23dd47920292eb9c7fd6b4025617ee4fa74be9e99600df29b4cc"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18455,
+      "within_task_index": 1128,
+      "prompt_sha256": "7ab93c0ee208cf9fd0432262b1da7d0da68f6bf6b1cd976eb6a0629adcd98b8c"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18360,
+      "within_task_index": 1033,
+      "prompt_sha256": "2dfc60549d257c38257d9e4a5eee16db83f0d7d5ed9c9712cf4dbb2a9d99b4b6"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18491,
+      "within_task_index": 1164,
+      "prompt_sha256": "f707589df033b0a6f1cf9a53043c2444a374fe1edc8257ce1d74a951cdcc7e2c"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18441,
+      "within_task_index": 1114,
+      "prompt_sha256": "23a4e6623bda82c19c7c2681fbe6530674b81cb51ae1d42980a362df6533bc8f"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18525,
+      "within_task_index": 1198,
+      "prompt_sha256": "6a71afb799cd26b765b60c2709dcd9894f2cc89c635e65e64b8aad5717335432"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18528,
+      "within_task_index": 1201,
+      "prompt_sha256": "9b0d451ca5480c30c620a895ca84fa161c95dd855da9c97856a03d0a95210260"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18382,
+      "within_task_index": 1055,
+      "prompt_sha256": "167924e871ee2d9ab1513ed54749005e26c8c5ececfb2ebaea802a64522ccde5"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18503,
+      "within_task_index": 1176,
+      "prompt_sha256": "0b3615aa47ef3d8156df473459c662a0ce255e4624cc8447bae50250aedff961"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18368,
+      "within_task_index": 1041,
+      "prompt_sha256": "1d5ddc911f57a1c64c619c62199b3b4e4ca98b0ed0bc338e2593272fbd2ede80"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18527,
+      "within_task_index": 1200,
+      "prompt_sha256": "06d35b51affd786e28e5174bfef5b847477c3ed235511e3055451dfc8f838237"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18531,
+      "within_task_index": 1204,
+      "prompt_sha256": "48f37b2999dd736d3f2cedc320ddbb1c10c147591a99e3c3473e3d4626798127"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18432,
+      "within_task_index": 1105,
+      "prompt_sha256": "46049bb5739a82ef31024e609b41ff062019f41671298dbbf7aafc46439cb3cc"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18422,
+      "within_task_index": 1095,
+      "prompt_sha256": "0c10f6f831f56ebbb4af8cef1b4a6592210b0ad1acc6805aa18c906023eb1530"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18379,
+      "within_task_index": 1052,
+      "prompt_sha256": "6e03723da9384b21b651b459218fe602a5edae70e5972e20ec82a312602a1b45"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18499,
+      "within_task_index": 1172,
+      "prompt_sha256": "b7ae7ba9c69cbb2d12153eff32a031a2104cd679dea760f2bfefe62f5140fe33"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18509,
+      "within_task_index": 1182,
+      "prompt_sha256": "c79d46bbb592c454e4ca9d2fa327a6d4d10581c4b65a39841ab249568170eb2c"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18427,
+      "within_task_index": 1100,
+      "prompt_sha256": "63b250c440a397bb773a377b933e6c13da079ee1d242ebf46b5c1eb34b660018"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18430,
+      "within_task_index": 1103,
+      "prompt_sha256": "7f40fd765dfce977ac7859bbd28faa1ca10441ca45d96ecd366842579532c9d1"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18483,
+      "within_task_index": 1156,
+      "prompt_sha256": "8ca07e8fe02203ab661d2378e81e8166fc2980009cf27943a5ea4e5fb839e2e7"
+    },
+    {
+      "task": "commonsense_qa",
+      "validation_index": 18421,
+      "within_task_index": 1094,
+      "prompt_sha256": "9360e833473644dabc31df4353854b567c68c6e4163e7e8cdd7ad8b337180722"
+    }
+  ],
+  "validation": [
+    {
+      "task": "boolq",
+      "prompt": "Currently the Form I-765 Employment Authorization Document is issued in the form of a standard credit card-size plastic card enhanced with multiple security features. The card contains some basic information about the alien: name, birth date, sex, immigrant category, country of birth, photo, alien registration number (also called ``A-number''), card number, restrictive terms and conditions, and dates of validity. This document, however, should not be confused with the green card.\nQuestion: is an employment authorization card a green card?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "boolq",
+      "prompt": "The Dark Knight is a 2008 superhero film directed, produced, and co-written by Christopher Nolan. Featuring the DC Comics character Batman, the film is the second part of Nolan's The Dark Knight Trilogy and a sequel to 2005's Batman Begins, starring an ensemble cast including Christian Bale, Michael Caine, Heath Ledger, Gary Oldman, Aaron Eckhart, Maggie Gyllenhaal and Morgan Freeman. In the film, Bruce Wayne / Batman (Bale), Police Lieutenant James Gordon (Oldman) and District Attorney Harvey Dent (Eckhart) form an alliance to dismantle organized crime in Gotham City, but are menaced by an anarchist mastermind known as the Joker (Ledger), who seeks to undermine Batman's influence and create chaos.\nQuestion: is the dark knight a sequel to batman begins?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "Borderline personality disorder (BPD), also known as emotionally unstable personality disorder (EUPD), is a long-term pattern of abnormal behavior characterized by unstable relationships with other people, unstable sense of self, and unstable emotions. There is frequent dangerous behavior and self-harm. People may also struggle with a feeling of emptiness and a fear of abandonment. Symptoms may be brought on by seemingly normal events. The behavior typically begins by early adulthood, and occurs across a variety of situations. Substance abuse, depression, and eating disorders are commonly associated with BPD. Approximately 10% of people affected die by suicide.\nQuestion: is emotionally unstable personality disorder the same as bpd?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "In the Netherlands, Father's Day (Vaderdag) is celebrated on the third Sunday of June and is not a public holiday. Traditionally, as on Mother's Day, fathers get breakfast in bed made by their children and families gather together and have dinner, usually at the grandparents' house. In recent years, families also started having dinner out, and as on Mother's Day, it is one of the busiest days for restaurants. At school, children handcraft their present for their fathers. Consumer goods companies have all sorts of special offers for fathers: socks, ties, electronics, suits, and men's healthcare products.\nQuestion: is father's day celebrated in the netherlands?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "The October Revolution (Russian: \u041e\u043a\u0442\u044f\u0301\u0431\u0440\u044c\u0441\u043a\u0430\u044f \u0440\u0435\u0432\u043e\u043b\u044e\u0301\u0446\u0438\u044f, tr. Oktyabr'skaya revolyutsiya, IPA: (\u0250k\u02c8tjabrjsk\u0259j\u0259 rj\u026av\u0250\u02c8ljuts\u0268j\u0259)), officially known in Soviet literature as the Great October Socialist Revolution (\u0412\u0435\u043b\u0438\u0301\u043a\u0430\u044f \u041e\u043a\u0442\u044f\u0301\u0431\u0440\u044c\u0441\u043a\u0430\u044f \u0441\u043e\u0446\u0438\u0430\u043b\u0438\u0441\u0442\u0438\u0301\u0447\u0435\u0441\u043a\u0430\u044f \u0440\u0435\u0432\u043e\u043b\u044e\u0301\u0446\u0438\u044f, Velikaya Oktyabr'skaya sotsialisti\u010deskaya revolyutsiya), and commonly referred to as Red October, the October Uprising, the Bolshevik Revolution, or the Bolshevik Coup, was a revolution in Russia led by the Bolsheviks and Vladimir Lenin that was instrumental in the larger Russian Revolution of 1917. It took place with an armed insurrection in Petrograd on 7 November (25 October, Old Style) 1917.\nQuestion: is the october revolution the same as the bolshevik revolution?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "Coldwater Creek is an American catalog and online retailer of women's apparel, accessories and home d\u00e9cor with one brick-and-mortar store as of spring 2018.\nQuestion: didn't coldwater creek go out of business?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "boolq",
+      "prompt": "The Book of Jasher (also, Jashar) or the Book of the Upright or the Book of the Just Man (Hebrew: \u05e1\u05b5\u05e4\u05b6\u05e8 \u05d4\u05b7\u05d9\u05c7\u05bc\u05e9\u05c7\u05c1\u05e8\u202c; transliteration: s\u0113fer hayy\u0101\u0161\u0101r) is an unknown book mentioned in the Hebrew Bible. The translation ``Book of the Just Man'' is the traditional Greek and Latin translation, while the transliterated form ``Jasher'' is found in the King James Bible, 1611.\nQuestion: is the book of jasher in the bible?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "boolq",
+      "prompt": "A wisdom tooth or third molar is one of the three molars per quadrant of the human dentition. It is the most posterior of the three. Wisdom teeth generally erupt between the ages of 17 and 25. Most adults have four wisdom teeth, one in each of the four quadrants, but it is possible to have none, fewer, or more, in which case the extras are called supernumerary teeth. Wisdom teeth commonly affect other teeth as they develop, becoming impacted. They are often extracted when or even before this occurs.\nQuestion: is it possible to have a 5th wisdom tooth?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "Marlin and Nemo attempt to rescue Dory. With the help of two California sea lions named Fluke and Rudder and a disfigured common loon named Becky, they manage to get into the institute and find her in the pipe system. Other blue tangs tell them that Dory's parents escaped from the institute a long time ago to search for her and never came back, leaving Dory believing that they have died. Hank retrieves Dory from the tank, accidentally leaving Marlin and Nemo behind. He is then apprehended by one of the employees and unintentionally drops Dory into the drain, flushing her out to the ocean. While wandering aimlessly, she comes across a trail of shells; remembering that when she was young, her parents had set out a similar trail to help her find her way back home, she follows it. At the end of the trail, Dory finds an empty brain coral with multiple shell trails leading to it. As she turns to leave, she sees her parents Jenny and Charlie in the distance. They tell her they spent years laying down the trails for her to follow in the hopes that she would eventually find them.\nQuestion: does dory find her parents in finding dory?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "Charles Evans Hughes Sr. (April 11, 1862 -- August 27, 1948) was an American statesman, Republican politician, and the 11th Chief Justice of the United States. He was also the 36th Governor of New York, the Republican presidential nominee in the 1916 presidential election, and the 44th United States Secretary of State.\nQuestion: can a supreme court justice run for president?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "Danny's ex-wife and mother of Grace. She moves to Hawaii after marrying millionaire Stan Edwards. Early in Season 1, she and Danny are often seen bitterly arguing on the phone to the point where the whole team knew about the feud even before they had met Rachel or Grace in person. She often used Grace as leverage and threatened to further limit his visitation rights when his job prevented him from being punctual to their father-daughter dates but Danny successfully files for joint custody, meaning that Grace cannot leave Hawaii without his consent. They are now on friendly terms, particularly after her marriage with Stan hits a rocky patch and Danny was there to help with Charlie's birth (which he later discovers was actually his, not Stan's). In the seventh season of the series Rachel divorces Stan and takes her maiden name once again.\nQuestion: does rachel die in hawaii 5-0?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "boolq",
+      "prompt": "Mamma Mia! Here We Go Again is a 2018 jukebox musical romantic comedy film written and directed by Ol Parker, from a story by Parker, Catherine Johnson, and Richard Curtis. It is a follow-up to the 2008 film Mamma Mia!, which in turn is based on the musical of the same name using the music of ABBA. The film features an ensemble cast, including Lily James, Amanda Seyfried, Christine Baranski, Julie Walters, Pierce Brosnan, Andy Garc\u00eda, Dominic Cooper, Colin Firth, Stellan Skarsg\u00e5rd, Jessica Keenan Wynn, Alexa Davies, Jeremy Irvine, Josh Dylan, Hugh Skinner, Cher, and Meryl Streep. Both a prequel and a sequel, the plot is set after the events of the first film, and also features flashbacks to 1979, telling the story of Donna Sheridan's arrival on the island of Kalokairi and her first meetings with her daughter Sophie's three possible fathers.\nQuestion: are all the songs in mama mia here we go again by abba?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "Although not identical, the 7.62\u00d751mm NATO and the commercial .308 Winchester cartridges are similar enough that they can be loaded into rifles chambered for the other round, but the Winchester .308 cartridges are typically loaded to higher pressures than 7.62\u00d751mm NATO cartridges. Even though the Sporting Arms and Ammunition Manufacturers' Institute (SAAMI) does not consider it unsafe to fire the commercial round in weapons chambered for the NATO round, there is significant discussion about compatible chamber and muzzle pressures between the two cartridges based on powder loads and wall thicknesses on the military vs. commercial rounds. While the debate goes both ways, the ATF recommends checking the stamping on the barrel; if unsure, one can consult the maker of the firearm.\nQuestion: is 7.62 nato the same as 308 win?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "boolq",
+      "prompt": "Pennsylvania is an alcoholic beverage control state. Spirits are to be sold only in the state owned Fine Wine and Good Spirits stores, which also sell wine, but not beer. Prices are generally the same throughout the state, but state stores may offer special discounts and sales, and county sales tax may cause the price to differ slightly. People under the age of 21 are allowed to enter Fine Wine and Good Spirits stores, contrary to popular belief, but only if accompanied by a parent or guardian. Monday through Saturday, a store may open as early as 9 am and close as late as 10 pm. On Sunday, many stores sell liquor from 11 am until 7 pm.\nQuestion: can you buy liquor on sunday in pennsylvania?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "The Ring of Fire is a direct result of plate tectonics: the movement and collisions of lithospheric plates. The eastern section of the ring is the result of the Nazca Plate and the Cocos Plate being subducted beneath the westward-moving South American Plate. The Cocos Plate is being subducted beneath the Caribbean Plate, in Central America. A portion of the Pacific Plate and the small Juan de Fuca Plate are being subducted beneath the North American Plate. Along the northern portion, the northwestward-moving Pacific plate is being subducted beneath the Aleutian Islands arc. Farther west, the Pacific plate is being subducted along the Kamchatka Peninsula arcs on south past Japan. The southern portion is more complex, with a number of smaller tectonic plates in collision with the Pacific plate from the Mariana Islands, the Philippines, Bougainville, Tonga, and New Zealand; this portion excludes Australia, since it lies in the center of its tectonic plate. Indonesia lies between the Ring of Fire along the northeastern islands adjacent to and including New Guinea and the Alpide belt along the south and west from Sumatra, Java, Bali, Flores, and Timor.\nQuestion: is australia part of the ring of fire?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "boolq",
+      "prompt": "Phencyclidine (PCP), also known as angel dust among other names, is a drug used for its mind-altering effects. PCP may cause hallucinations, distorted perceptions of sounds, and violent behavior. As a recreational drug, it is typically smoked, but may be taken by mouth, snorted, or injected. It may also be mixed with cannabis or tobacco.\nQuestion: are pcp and angel dust the same thing?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "A seventh season was commissioned in April 2018, before the sixth-season premiere, with filming commencing the following week and a premiere set for 2019.\nQuestion: is there going to be a new season of wentworth?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "South Sudan (/su\u02d0\u02c8d\u00e6n, -\u02c8d\u0251\u02d0n/ ( listen)), officially known as the Republic of South Sudan, is a landlocked country in East-Central Africa. The country gained its independence from the Republic of the Sudan in 2011, making it the newest country with widespread recognition. Its capital and largest city is Juba.\nQuestion: is sudan and south sudan the same country?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "boolq",
+      "prompt": "Equipment is generally rated by the power they will deliver, for example, at the shaft of an electric or hydraulic motor. The power input to the equipment will be greater owing to the less than 100% efficiency of the device. Efficiency of a device is often defined as the ratio of output power to the sum of output power and losses. In some types of equipment it is possible to measure or calculate losses directly. This allows efficiency to be calculated with greater precision than the quotient of input power over output power, where relatively small measurement uncertainty will greatly affect the resulting calculated efficiency.\nQuestion: is there a difference in power between the power input and power output?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "In addition to being one of the top six international marathons run over the distance of 26 mi 385 yd (42.195 km), the IAAF standard for the marathon established in 1921 and originally used for the 1908 London Olympics, the London Marathon is also a large, celebratory sporting festival, third in England only to the Great North Run in Newcastle upon Tyne and Great Manchester Run in Manchester in terms of the number of participants . The event has raised over \u00a3450 million for charity since 1981, and holds the Guinness world record as the largest annual fund raising event in the world, with the 2009 participants raising over \u00a347.2 million for charity. In 2007, 78% of all runners raised money. In 2011 the official charity of the London Marathon was Oxfam. In 2014, the official charity was Anthony Nolan, and in 2015, it was Cancer Research UK.\nQuestion: is the london marathon the largest in the world?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "boolq",
+      "prompt": "Royal Mail was separated into three divisions in 1986, and in August 1990, Royal Mail Parcels was rebranded as Parcelforce.\nQuestion: is parcel force the same as royal mail?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "``God Save the Queen'' (alternatively ``God Save the King'', depending on the gender of the reigning monarch) is the national or royal anthem in a number of Commonwealth realms, their territories, and the British Crown dependencies. The author of the tune is unknown, and it may originate in plainchant; but an attribution to the composer John Bull is sometimes made.\nQuestion: does god save the queen change when there is a king?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "A properly executed lock of this type does not apply torque to the wrist itself. In practice, the bones of the forearm and, eventually, the shoulder are the focus of the lock. If performed correctly, this technique will break the opponents wrist, elbow and dislocate the shoulder. In practice, uke will turn over his own arm in order to prevent his wrist from breaking. The goal of almost all throws executed via joint/bone manipulation, at least from the perspective of some classical (koryu) martial arts, is to break or dislocate a limb(s).\nQuestion: can you break someone's wrist by twisting it?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "A fiddle is a bowed string musical instrument, most often a violin. It is a colloquial term for the violin, used by players in all genres including classical music. Fiddle playing, or fiddling, refers to various styles of music. The fiddle is part of many traditional (folk) styles of music which are aural traditions, taught 'by ear' rather than via written music.\nQuestion: are the violin and the fiddle the same thing?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "The John F. Kennedy Space Center (KSC, originally known as the NASA Launch Operations Center) is one of ten National Aeronautics and Space Administration field centers. Since December 1968, Kennedy Space Center has been NASA's primary launch center of human spaceflight. Launch operations for the Apollo, Skylab and Space Shuttle programs were carried out from Kennedy Space Center Launch Complex 39 and managed by KSC. Located on the east coast of Florida, KSC is adjacent to Cape Canaveral Air Force Station (CCAFS). The management of the two entities work very closely together, share resources, and even own facilities on each other's property.\nQuestion: is cape canaveral the same as the kennedy space center?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "boolq",
+      "prompt": "Other international versions of the show have been produced out of Latin America, Europe, Israel, Australia, and Canada.\nQuestion: has the amazing race ever gone to israel?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "The crest of the ilium (or iliac crest) is the superior border of the wing of ilium and the superolateral margin of the greater pelvis.\nQuestion: is the iliac crest part of the hip?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "The following is a list of association footballers who died while playing a game, died directly from injuries sustained while playing, or died after being taken ill on the pitch. Following an increase in deaths, both during matches and training, FIFA (Federation of International Football Associations) considered mandatory cardiac testing, already in place for years in some countries, such as Italy.\nQuestion: has anyone ever died during a football game?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "``I do not choose to run'' is President Calvin Coolidge's statement to the press on his decision not to run for the 1928 presidential election. The statement was ambiguous, and led to considerable debate as to the intentions of its language.\nQuestion: can a president choose not to run for reelection?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "Love Never Dies is a romantic musical composed by Andrew Lloyd Webber with lyrics by Glenn Slater and a book by Lloyd Webber, Ben Elton, Frederick Forsyth and Slater. It is a sequel to the long-running musical The Phantom of the Opera and was loosely adapted from Forsyth's novel The Phantom of Manhattan (1999).\nQuestion: is love never dies a sequel to phantom of the opera?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "boolq",
+      "prompt": "Gerard Marenghi (January 24, 1920 -- May 24, 2018), known as Jerry Maren, was an American actor who played a Munchkin member of the Lollipop Guild in the 1939 Metro-Goldwyn-Mayer film, The Wizard of Oz. He became the last surviving Munchkin following the death of Ruth Duccini on January 16, 2014, and was also the last surviving cast member with a speaking or singing role.\nQuestion: are there any living cast members of the wizard of oz?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "boolq",
+      "prompt": "The movement is the tracing of the shape of a cross in the air or on one's own body, echoing the traditional shape of the cross of the Christian crucifixion narrative. There are two principal forms: one--three fingers, right to left--is exclusively used in the Eastern Orthodox Church, Church of the East and the Eastern Catholic Churches in the Byzantine, Assyrian and Chaldean traditions; the other--left to right to middle, other than three fingers--is the one used in the Latin (Catholic) Church, Anglicanism, Methodism, Presbyterianism, Lutheranism and Oriental Orthodoxy. The ritual is rare within other Christian traditions.\nQuestion: do church of england make the sign of the cross?\nAnswer:",
+      "choices": [
+        " no",
+        " yes"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Grooming dog: A close up of a dog is seen with a person holding a razor. The person",
+      "choices": [
+        " brushes the dogs hair with the razor.",
+        " rubs a box and begins shaving his leg.",
+        " presses the razor some more while looking to the camera.",
+        " then holds up the dogs face and begins trimming around it's eyes."
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Food and Entertaining: How to make cookies without flour. Use nuts or oats instead of flour. Flour acts as a binder to keep your cookies together. To replace flour as a binding agent, replace flour in your recipe with chopped nuts (like pecans, macadamia nuts, or walnuts) or rolled oats.",
+      "choices": [
+        " To save money, skip this portion of the baking process entirely.. Cook in heated oil instead of butter.",
+        " You can also substitute nuts for butter when using butter to help transfer flour from the food to your cookie dough. If you won't be using any real oats in your dough mixture, use them instead of flour.",
+        " These will bind your other ingredients together and help the cookies hold their shape as they bake. Try a no-bake chocolate oatmeal cookie or traditional flourless almond cookies.",
+        " Use bittersweet, unsalted dry flour instead of your favorite dry for a more cost-effective substitute.. Use oven-safe sugar substitute instead of white flour."
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Family Life: How to get children to save money. Start with coupons. Beginning as early as 3-5 years of age, children can start to learn the rudiments of saving money and using coupons is a great way to do that. They can earn coupons for things like helping, for being cooperative, for clearing their plate-the possibilities are endless.",
+      "choices": [
+        " Make sure when they are hungry try to teach them how to save. If they are hungry, offer to help them.",
+        " If you are going to make a habit of saving money every week, try : Introducing coupons or savings accounts at home. Checking your checks for money each month to find out if you have enough.",
+        " They can then save those coupons and exchange them for fun things to do. This is a great first lesson in saving.",
+        " However, it is important that you start with the most affordable means available to give children money. Purchase coupons from your local grocery or supermarket."
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "High jump: A man walks along a bare field while a woman walks around beside him. He walks back and fourth preparing to jump and eventually jumps over a pole. A girl",
+      "choices": [
+        " in a bra follows him around the field.",
+        " walks out of frame and transitions into the man while the woman walks around.",
+        " claps for him and the same move is shown again in slow motion.",
+        " use her hands to assist him as someone else helps."
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Personal Care and Style: How to make a brown sugar scrub. Fill a clean bowl with 1 cup (200 grams) of brown sugar. Like other types of sugar, brown sugar makes an excellent exfoliant. Because the grains are so small, it is much gentler and perfect for sensitive skin types.",
+      "choices": [
+        " Add \u00bd cup (120 milliliters) of a food-grade oil of your choice. Almond, avocado, coconut, or olive oil all work great in sugar scrubs as they are all beneficial to the skin.",
+        " Add 1 teaspoon of the sugar to a small bowl. Stir in enough to make a soft-ish scrub with no added drops of any essential essential oils.",
+        " Make sure you use rich brown sugar for your homemade scrub so you get the right type for your scrub. Brown sugar is a natural exfoliant that you can use to treat your skin as well as covering blemishes.",
+        " Focus on picking brown sugar that is specifically formulated for sensitive skin. Like other types of sugar, brown sugar does not contain any additives."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Health: How to understand qi gong. Learn what qigong is. The word qi (pronounced \" chee \") means \" energy \" and the word gong (pronounced \" gung \") means \" exercise \" or \" practice. \" it is a system that involves static postures, dynamic movements, meditation, and focus on breathing in order to learn to balance the qi flowing through your body.",
+      "choices": [
+        " Not only does qigong cause lung blocks, it's also difficult to move too quickly. You can't activate qi gong with the simple concept of rem (long drawn out breath) breathing.",
+        " Ta'an is a universal balancing of energy between energy and what is called qi gong. It is a council for the three classes of qi gong, lead by mom, nightna, and kali.",
+        " Qigong is a form of physical expression in which qi gong is passed through the body. The chinese word for qi gong is' tambourine'.",
+        " Qigong believes in gathering \" life force \" through these different methods. It also believes that this vital life force is all around us, but that we must learn how to use it effectively."
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Pets and Animals: How to choose a dog leash. Choose a nylon leash if you want variety. Available in nearly every color of the rainbow, nylon leashes are also relatively inexpensive and strong. They are durable and good for rainy or humid environments.",
+      "choices": [
+        " Since they are lightweight and easy to handle, nylon leashes are good to use when training a puppy. Nylon leashes can become slippery when wet, so do not use them while swimming with your dog.",
+        " Nylon leashes are also easy for a novice to tie. Nylon leashes are relatively inexpensive and highly adjustable, giving you the opportunity to roll all the way up the front of the dog's head from the forehead, down the face, and back to its tail.",
+        " Nylon leashes are generally more power-efficient, won't snag on trees and grass and will not actually injure dogs. They are also more stable, as they won't be knocked over or stepped on by a dog that is already larger or bigger.",
+        " Decide what kind of leash you want your dog to wear. Typically, refers to a long leash that attaches to your dog's lead leg."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Playing violin: A large group of people are seen playing instruments with one another. The camera",
+      "choices": [
+        " pans around the audience and shows the audience shaking hands.",
+        " pans around to show many people leading in front and the drummer leading in front.",
+        " follows a bull that ties up a man on the ground.",
+        " zooms in on a man playing a violin."
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Pets and Animals: How to love cats. Don't neglect your pet cat or cats. Cats will usually let you know when the want your attention or just your company. They don't have feelings exactly like us, but a neglected cat is never a happy cat.",
+      "choices": [
+        " Think about why this is and when you know your cat likes you. If you don't know and are unsure about your cat's ego, own it.",
+        " A neglected pet needs your attention as much as a healthy, loving one. Animal shelters provide care to feral or live-in cats.",
+        " Don't be discouraged if you didn't get the cat you really wanted or if it is feeling ignored or neglected. Don't nag unless necessary.",
+        " Don't be afraid of cats, cats are unique creatures. Pet and stroke cats to them feel secure."
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Washing face: A young lady shows soap in a box and in a bottle. Then",
+      "choices": [
+        " , the young lady puts soap from the bottle and put on her upper face.",
+        " , the girl puts soap on her legs and attempts to put soap on her feet.",
+        " , the young lady clean the shower seat of a car near the window.",
+        " , the young woman explains how to wash a window with soap."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Computers and Electronics: How to write a while loop. Get into the coding environment. Open up the program and get to the portion of code where the while loop is needed.. Identify your variables.",
+      "choices": [
+        " Once you've reached the main coding zone (dij), you need to understand what you are looking for in the code. Your variables will be present in the time loop.",
+        " The construct of the code you are writing is essentially a short set of variables. Create a code for when you enter a variable.",
+        " Many times, a while loop uses a variable for definition. For instance, if your variable \" x \" will be the value that determines how long the loop lasts, it's important that you define \" x \" as a whole number or similar data type.",
+        " The default length code usually summarizes the much of the work that you are doing and enables you to enter the terms into the code, as well as the variables you are putting in. The correct length code in this case would be' type point'."
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Sharpening knives: We see a knife and sharpener and a man holding them. We see the man cut a tomato and paper. The person",
+      "choices": [
+        " paints an eye shadow on the window.",
+        " puts the knife in a bowl of a clear liquid.",
+        " uses a sharpens and then cuts the tomato, and paper easily.",
+        " places tomato sauce on the tomato."
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Hand car wash: A crew of men clean a red car with clothes. Two women",
+      "choices": [
+        " wash two tires with a cleaning solution in a sink.",
+        " wash a white car using a hose.",
+        " are on the ground in an smoking area playing table tennis.",
+        " talks inside a car washing shop where there are people waiting."
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Family Life: How to practice nudity in your family. Explore family nudity without feeling it's abnormal. Young children have not yet acquired a sophisticated understanding of modesty, and really don't care who sees them naked. This is the time when the parent can teach children not to be self-conscious of their bodies or of their nakedness.",
+      "choices": [
+        " Just as on any occasion, it is wise to familiarize the children and adults with underwear and articles of clothing. This will help to limit this potential embarrassment and for them to explore their bodies openly without worrying about embarrassment.",
+        " It can also teach children that they do not have to bring one piece of clothing to a laundry trick. For instance, instead of wearing a flat, classic scoop-neck shirt and underneath a tank top, wear it with two shirts and a bra.",
+        " This, in turn, will help children associate nakedness to routine activity instead of exclusively sexual activity. As a result, the more prurient forms of nakedness lose their \" forbidden fruit \" appeal.",
+        " Teach children not to wear diapers. Perhaps the greatest precaution for parental nudity in children at a young age is to not allow their child to wear diapers."
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Family Life: How to leave home for the first time. Secure a place to live. Perhaps the first step you should take when making preparations to leave home is to secure a place to live. Ultimately, without a place to live, you'll have a tough time managing a job, school, or anything else in your life.",
+      "choices": [
+        " As a result, make this search a priority. Talk to friends or family in the area where you plan on living.",
+        " You can change the location of your residence by removing items from it or buying new items from someone who can find you there. If you do not have a place to live, you may find others.",
+        " A friend or family member can help you pick an apartment. Have a list of possible accommodations for both you and your employer (if available).",
+        " Before you go anywhere, talk to your friends and family to see what's out there for you in your new housing situation. Some suggestions are : The library, if you can afford it."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Family Life: How to give a father of the bride speech. Don't be cheesy or have dad-jokes. We have all been to that wedding with the disastrous father of the bride speech where the whole room is dying with embarrassment along with the bride. This is an opportunity to show your daughter your pride in her and the woman she has become.",
+      "choices": [
+        " Mark it appropriately and don't distract from it with cheesy one liners.. Start by introducing yourself and why you are here to speak.",
+        " It's true your parents love her and see her as the best bride ever, but overdressing is a sure way to gain her confidence and make her happy. This is why you should avoid this many mannerisms and poses.",
+        " That includes telling her to be proud of her great hair, or her smiles, etc. This isn't suitable for a wedding where less attention is directed at her, so start with a non-cheesy speech about how much you love her.",
+        " Everyone-both mother and groom-get excited and enthusiastically about her father's upcoming speech.. Dress in your child's favorite clothing."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Personal Care and Style: How to look beautiful in 10 minutes. Fake a shower. If you've only got ten minutes, you don't have time to shower, but you do have time to fake it. Quickly wash your face, then wipe your body down with baby wipes to remove any odors.",
+      "choices": [
+        " Splash some water onto your face, then mix 3 parts antiperspirant and 1 part lotion, and apply your new, healthy smelling \" self-tanner \" to your skin. Let it sit for a couple of minutes, then remove any tight or overly-revealing clothing.",
+        " Dab a few drops of some baby powder on your fingertips to create a messy feel. ( if you're ever feeling up to it, there are lather and soap or sponge-grain-based facial powders available online.",
+        " Cover your body with lotion to hide any smells and also to moisturize your skin. If you're still concerned that you smell, spray a spritz of your favorite perfume into the air, then walk through the spray to allow the scent to settle on your skin.",
+        " Wipe your skin with a gentle cleanser or soft washcloth, then pat it dry with a towel. Warm up by letting your body warm up to a temperature you like, then put on some moisturizer or lotion."
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Family Life: How to burp a sleeping baby. Hold your baby and burp them. This technique is good for babies who sleep on their stomach or who like to cuddle when they sleep. Slowly move your baby next to your body so you do not wake them up.",
+      "choices": [
+        " Allow your baby's head or chin to rest on your shoulder and cup their bottom to support them so they don't slip as you hold them. Place your other hand on their back and gently pat it to help them burp.",
+        " You can also lower your baby's head and neck down into a deep belly position, which will help you burp your baby more easily. Gently nudge your baby at first and again until they are used to this position and begin to adjust to the feel of their neck and pillow.",
+        " Hold your baby close with your hand and record the amount of air they intake and how much you burp each time before you burp them. This way, you can do it for several days to see how comfortable they will be with your hand.",
+        " Then gently roll them over so they are lying on their back. Hold and burp your baby together until they become comfortable."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Personal Care and Style: How to wear denim to work. Go for darker shades of denim. In general, the darker the better for work appropriate denim. Go for darker shades, like blacks or dark blues, over light blue shades of denim.",
+      "choices": [
+        " The contrast makes it easier to use denim to go to work and also result in a slimmer job. If you can see dark blue denim in a room filled with other shades of grey, you will look dressier.",
+        " Your work clothing palette will be packed with colors that will work well together. It can be helpful to buy denim that has metallic undertones.",
+        " However, be extra sure that there aren't any special colors or patterns in your darker jeans when you wear them to work. Wearing black denim shades can be alluring to work colleagues and clients.",
+        " Darker colors can often pass for work pants or suits, keeping your look comfortable but professional.. Choose denim outfits that are otherwise work appropriate."
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Personal Care and Style: How to do an indian head massage. Make preparations. Find a quiet place away from any distractions. Make sure the room is a comfortable temperature.",
+      "choices": [
+        " Light candles or hot incense make it enjoyable, if you cannot do it outside, in the heat of the room.. Begin the massage by massaging the back of the head with your thumbs.",
+        " Put on some soft music light some candles to prepare the room.. Have the recipient take a seat and get comfortable.",
+        " Don't get cold and place a long towel in an unused bathroom. Instead, set the temperature to 200 to 170 degrees fahrenheit (75 to 85 degrees celsius), according to protocol.",
+        " Turn off any windows, put out some fans or put on some classical music. You should also make sure the room is free of light sources."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Computers and Electronics: How to plan your bachelorette party drinking games. Don't hold back with this on. The key of this drinking game is to get as personal as possible. This bachelorette game is really fun to play when everyone is tipsy!. Each of the players take a turn asking a specific chosen player a personal question.",
+      "choices": [
+        " You can create the game completely on facebook and in one very simple by asking the player who asked the guest to \" have fun! \", and do how the guests respond.. Have a couple of gals help you.",
+        " Do this for two rounds rotating clockwise.. The player being questioned, answers \" not in my pants \" to every question asked and must not laugh, smile, or grin until their turn is over.",
+        " They can ask several of the same questions, or they can gauge each person's sobriety. You may find yourself cheering along with the others, or listening to your reflection in the mirror.",
+        " If a player doesn't know an answer or a dish of strippers you will attract stronger loser-girls and girls around this stage.. Decide on a date for the bachelorette party."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Family Life: How to help a grieving spouse. Listen to your spouse. Part of the grieving process is being able to talk about the deceased person and work through memories and feelings about that person. Be there for your spouse by listening to him or her talk about the deceased person.",
+      "choices": [
+        " Asking questions prompts you to clarify what was said, rather than arguing back. Nod and make eye contact as your spouse hears you talk.",
+        " Answer as openly and honestly as you can. You don't have to take on all of the talking and listening if you don't want to.",
+        " You may hear a story, a memory, a thought, or both. Listening to the person may also help to help cheer him up.",
+        " Don't discourage your spouse not to talk about the person. Your spouse should focus on the good memories and the things he or she loved about the person."
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Pets and Animals: How to raise zebras. Ask your family, relatives, neighbors, your community, and others if they are okay with having a zebra. If something bad happens to the zebra, all the responsibility is yours. Make sure you read all the rules of your country/state for owning a zebra before applying one.",
+      "choices": [
+        " Make sure you don't apply an endangered or rare species of zebras.. Applying for a zebra is usually very hard.",
+        " You can usually find this information in most international law books.. Ask before getting too close to the zebra.",
+        " Make sure you make sure your parents are pretty lenient with your behavior. Don't break rules just because you feel tempted.",
+        " Otherwise, you will waste your time designing and installing huge-scale zebra guards.. Take your zebra to a reputable breeder."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Computers and Electronics: How to make your pavers level. Excavate. Before you can install pavers you need to excavate the area 6 to 8 inches (15. 2 to 20. 3 cm).. Use a level.",
+      "choices": [
+        " A level means that you start at the center point in the soil. When you excavate the site, you dig around the desired level.",
+        " Use a level to drill at the center of the raised paver. Drill slowly to prevent the paver from tipping over.",
+        " Take a large square rod and run it over the excavated area to ensure that it is flat and level. If you feel it rising and falling you will need to readjust the soil surface to make it even.",
+        " You can do this using a straightedge on the side of the tool bar, as long as it is big enough to hold the grit of your work and flush against the sharpened wood. Screw the level onto the top, or use a drawer, or use a vise, instead."
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Home and Garden: How to plan a kitchen renovation. Decide how much you can spend on your kitchen renovation. The amount of your budget will often dictate the rest of the planning process. Establish a range instead of a fixed budget number.",
+      "choices": [
+        " A fixed budget allows you to control how much you spend on your renovation and what types of renovations you can do at a time. Factor in the cost of construction, ongoing construction costs, remodeling, and your expected renovation.",
+        " Decide which rooms will be rectangular and which will be partitioned into sections. Calculate portion sizes by multiplying the total number of sections into two x two.",
+        " For example, budgeting $7 , 500 to $8 , 500 is more reasonable than deciding to spend exactly $8 , 000.. Include all of the elements of a kitchen renovation when estimating your budget.",
+        " For example, a fixed budget of $100 , 000 or less is a good starting place. Find common resources in this range at the better business bureau (bbb) or online."
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Education and Communications: How to free write a book. Realize that you don't necessarily need a topic. All you need is a solid character and a setting.. Discard the temptation to write following the \" rules \".",
+      "choices": [
+        " Know that published books from major publishing companies (fcrs) do not represent every single writer and they report. Content does not embodies every reader's opinion.",
+        " For example, the rules would suggest writing a plan along these lines: \" plot: a, who lives in south carolina, has a strong desire to be the next american idol. If you write something using a topic so obvious and real as this one, it will be harder to write.",
+        " Remember that many humans overstay their boundaries, and in this cycle we give up to the \" rules \" to allow something to turn out better. In the end, the one for a believable story will be your fictional entity.",
+        " That is nonsense as they can be too broad. Just find the main main idea behind the book and make an action plan that works for you."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Removing curlers: A girl is standing in the bathroom wearing a robe. She holds up a pink hair curler. She then demonstrates how to place the rollers in her hair. She",
+      "choices": [
+        " examines her hair one last time before putting a ponytail.",
+        " then style and twists her hair into the style it was previously in.",
+        " shows how she does the rollers and how they go onto her hair.",
+        " continues talking with two rollers in her hair."
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Surfing: A man is riding a surf board in the ocean water. He",
+      "choices": [
+        " does some stunts to stay afloat.",
+        " almost capsizes on the waves knocking him over.",
+        " is being pulled by a line down by a large wave.",
+        " stays balanced as he goes sideways over a wave."
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Relationships: How to deal with dumb people. Lower your standards. This one is tough, but very important. Part of the reason that you may find yourself constantly frustrated by the stupidity in the world is because you have unrealistic expectations.",
+      "choices": [
+        " Different people may have different backgrounds, different opinions or different priorities in their life. Remind yourself that the \" average \" person isn't going to meet your high expectations of how a person should think and act, and lower your standards accordingly.",
+        " If you got mad and you find out a new coworker or student is acting stupid, keep your lower standards going. \" stupid \" people are just that, stupid people.",
+        " In some situations, their arrogance stems from a lack of empathy for how they behave. Rank them on a pedestal of \" classy \" and' cool' (or just be indifferent), so that their behavior is inconsequential.",
+        " That is why it's important to understand why dumb people will not succeed at their career. When a person's intelligence falls far below what he/she is supposed to be able to do, it makes him/her far too immature for his/her field or field."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Personal Care and Style: How to stop a bra from riding up. Get a professional fitting. The best way to get a good fit is to have a professional take your measurements. Most lingerie stores will do a fitting for free.",
+      "choices": [
+        " Look through your clothes for any apparel that relates to the condition of your garment. Typically, the garment you choose should be a quality article or piece made from natural fibers.",
+        " To get a good fit, you'll need a fitted bra with adjustable cups. A professional will also be able to give you both of the necessary measurements as well as be honest about any other measurements that your friends are having.",
+        " Be aware that a good bra fitting takes time (at least 15 minutes) and a bit of trial and error. Tell the fitter that you are looking for a bra that won't ride up in the back.",
+        " This can save you a significant amount of money in the long run. However, many professional pieces can be found at retail stores or ikea, as well as some teen lingerie shops, used undergarments makers, and lingerie stores."
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Youth: How to act like starfire from teen titans. Be very outgoing and friendly. Starfire is bubbly, sweet, and always willing to befriend new people. Since she came to earth and adopted it as her new home, she has been trying to learn what she can about the planet and the people on it.",
+      "choices": [
+        " She is notorious for just being bubbly, but a lot of that is fake. Additionally, starfire is known for her charm, her attitude, and her humor.",
+        " Shy, outgoing, and unmotivated are all her characteristics. You shouldn't be judging her because she's a screw-up or because of her past! Silence a bad monologue when you see her.",
+        " To act like her, be friendly and outgoing, and introduce yourself to lots of new people. If there is anyone in your school classes you don't know, for example, introduce yourself.",
+        " Talk to people and find out as much as you can about them. If you have questions, write them down and learn what you can about them, including if you can exchange contact information."
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "hellaswag",
+      "prompt": "Doing crunches: A man is standing in a room talking. He lays down on his back and does crunches. He",
+      "choices": [
+        " backs up when he is done and laughs at the camera.",
+        " is then seen riding a bike in several clips.",
+        " finishes crunches and lies down again.",
+        " stands back up and continues talking."
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "winogrande",
+      "prompt": "The cashier was trained that real $100 bills had sharp lines and counterfeit ones might be blurry, so she accepted the",
+      "choices": [
+        " sharp bill.",
+        " blurry bill."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Logan checked Samuel's garage to see if the car was there. It was missing so",
+      "choices": [
+        " Logan was gone.",
+        " Samuel was gone."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Elena liked lizards more than Rachel did, so",
+      "choices": [
+        " Elena was appalled to receive a pet gecko for her birthday.",
+        " Rachel was appalled to receive a pet gecko for her birthday."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "James wanted to wear the corsage but it wouldn't fit around his wrist because the",
+      "choices": [
+        " wrist was too big.",
+        " corsage was too big."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Donald was chosen to be a model while Dennis was passed over, because",
+      "choices": [
+        " Donald was exceptionally tall.",
+        " Dennis was exceptionally tall."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Logan kept a store of ammo in their house but Brian did not as",
+      "choices": [
+        " Logan approved of hunting.",
+        " Brian approved of hunting."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Patricia is a great nurse and Cynthia is a famous doctor, blood is normal to them,",
+      "choices": [
+        " Patricia get assisted in operations.",
+        " Cynthia get assisted in operations."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "The crops in the facility grew better than in the greenhouse since the",
+      "choices": [
+        " facility was bright inside.",
+        " greenhouse was bright inside."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Jessica was arrested for growing hemp by the police but not Sarah because",
+      "choices": [
+        " Jessica fled during the field raid.",
+        " Sarah fled during the field raid."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Mary felt a great deal of guilt for stealing various items from Rachel so",
+      "choices": [
+        " Mary forgave her.",
+        " Rachel forgave her."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Felicia wanted to be pampered by Emily, so",
+      "choices": [
+        " Felicia went to the jewelry store and bought an expensive ring.",
+        " Emily went to the jewelry store and bought an expensive ring."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "The laws of the government are a lot worse than the rules of schools, because the",
+      "choices": [
+        " laws are strict.",
+        " rules are strict."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "winogrande",
+      "prompt": "The man chose medication for his infection rather than the ointment, because the",
+      "choices": [
+        " ointment was ineffective.",
+        " medication was ineffective."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "winogrande",
+      "prompt": "The salesman would only feature nice things in the house like the pool but not the wiring because the",
+      "choices": [
+        " pool was fine.",
+        " wiring was fine."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Justin brought a a saw and hammer to prepare making a cupboard for Benjamin because",
+      "choices": [
+        " Justin is his employer.",
+        " Benjamin is his employer."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Hank was eating cereal and spilt milk on his hot pants and decided to get his pleated pants. He needed to change into new leggings because the",
+      "choices": [
+        " hot pants are clean.",
+        " pleated pants are clean."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Christine was tired of Maria being a pain in the neck after",
+      "choices": [
+        " Christine laid down the prank trap.",
+        " Maria laid down the prank trap."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Kayla was always thinner than Rachel because",
+      "choices": [
+        " Kayla enjoyed eating brioche and butter every morning.",
+        " Rachel enjoyed eating brioche and butter every morning."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Patricia was on a diet and did not eat the cookies Rebecca baked for her.",
+      "choices": [
+        " Patricia was jealous.",
+        " Rebecca was jealous."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "winogrande",
+      "prompt": "The sound of the foot was clearly audible from the street because the",
+      "choices": [
+        " street is quiet.",
+        " sound is quiet."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "winogrande",
+      "prompt": "The stores used posters instead of flyers, but the overall cost of distribution for the",
+      "choices": [
+        " posters was cheaper.",
+        " flyers was cheaper."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Dennis warned Craig if they were late to work agian they would suffer termination,",
+      "choices": [
+        " Dennis works for the boss at the local factory.",
+        " Craig works for the boss at the local factory."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Cynthia was happy to give Patricia the politics section of the newspaper, because",
+      "choices": [
+        " Cynthia had little interest in the election results.",
+        " Patricia had little interest in the election results."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "winogrande",
+      "prompt": "James always feel weak whenever he walked the length of his street so he decided walking just the length of the lawn. The",
+      "choices": [
+        " street is long.",
+        " lawn is long."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "winogrande",
+      "prompt": "The class was going on a bus on a field trip to a local museum. The",
+      "choices": [
+        " bus had to close at 4.",
+        " museum had to close at 4."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "I started a program for youth that worked better than the old system, because the",
+      "choices": [
+        " program is new.",
+        " system is new."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "winogrande",
+      "prompt": "The ingredients that I use are tastier than the available toppings because the",
+      "choices": [
+        " ingredients are old.",
+        " toppings are old."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Jasmine wanted to put the emerald on the ring but it would not fit. The",
+      "choices": [
+        " emerald was minuscule.",
+        " ring was minuscule."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Craig made sure to stretch before working out but Christopher never did, so",
+      "choices": [
+        " Craig frequently got injuries.",
+        " Christopher frequently got injuries."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "Maria wasn't aware that Erin was coming up behind them, because",
+      "choices": [
+        " Maria was generally sneaky.",
+        " Erin was generally sneaky."
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "winogrande",
+      "prompt": "They disagreed over what dog to adopt as Mary wanted a yorkie while Maria wanted a labrador.",
+      "choices": [
+        " Mary loved small dogs.",
+        " Maria loved small dogs."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "winogrande",
+      "prompt": "After visiting their tenth college, Kevin asked Donald to just make up his mind, because",
+      "choices": [
+        " Kevin just didn't have time for more.",
+        " Donald just didn't have time for more."
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: During the winter hunt he could hear every motion in the woods, this was because of the what of everything?\nAnswer:",
+      "choices": [
+        " being still",
+        " silence",
+        " stationary",
+        " stillness",
+        " standing still"
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: When are people buying products more?\nAnswer:",
+      "choices": [
+        " debt",
+        " economic boom",
+        " being able to use",
+        " disagreements",
+        " trading"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: If a small flying animal picks up a string, where are they taking it?\nAnswer:",
+      "choices": [
+        " bird's nest",
+        " park",
+        " guitar",
+        " kite",
+        " quark"
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: What do you do when you're going to market?\nAnswer:",
+      "choices": [
+        " buy food",
+        " see other people",
+        " buying vegetables",
+        " buy a fat pig",
+        " traveling"
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: If you really wanted a grape, where would you go to get it?\nAnswer:",
+      "choices": [
+        " winery",
+        " fruit stand",
+        " field",
+        " kitchen",
+        " food"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: Where is a lake likely to be glacial?\nAnswer:",
+      "choices": [
+        " michigan",
+        " new york",
+        " new york",
+        " mountains",
+        " countryside"
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: If a person isn't able to pay their bills what must they do?\nAnswer:",
+      "choices": [
+        " know everything",
+        " acknowledgment",
+        " make more money",
+        " throw a party",
+        " spare time"
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: What is the purpose of playing games for children?\nAnswer:",
+      "choices": [
+        " winning",
+        " learning",
+        " losing",
+        " fatigue",
+        " skill"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: The hostess greeted the employees to the program, she then led them to their what?\nAnswer:",
+      "choices": [
+        " group people",
+        " welcome guests",
+        " occupations",
+        " work room",
+        " seat customer"
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: If you spend a long time shopping in uncomfortable shoes, you might develop what?\nAnswer:",
+      "choices": [
+        " tiredness",
+        " calluses",
+        " bankruptcy",
+        " standing in line",
+        " sleepyness"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: Where would you find a ticket booth and see a concert?\nAnswer:",
+      "choices": [
+        " clerk",
+        " indoors",
+        " movie theater",
+        " venue",
+        " auditorium"
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: What can machines do that humans cannot?\nAnswer:",
+      "choices": [
+        " fail to work",
+        " perform work",
+        " answering questions",
+        " see work",
+        " fly"
+      ],
+      "gold_idx": 4
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: Billy was an astronaut.  When he looked at the world from space, how did it look?\nAnswer:",
+      "choices": [
+        " diverse",
+        " round",
+        " square",
+        " orange",
+        " complicated"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: John was traveling to a new city and took time to check out a business.  He noticed that its carpet was stained with sauces and ketchup. What type of business might that be?\nAnswer:",
+      "choices": [
+        " bedroom",
+        " chair",
+        " bowling alley",
+        " at hotel",
+        " restaurant"
+      ],
+      "gold_idx": 4
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: Hoping for a beautiful day, what did the clouds do that disappointed everyone?\nAnswer:",
+      "choices": [
+        " homely",
+        " overcast",
+        " hideous",
+        " overrated",
+        " misshapen"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: Punk rock music is an important part of what action sport?\nAnswer:",
+      "choices": [
+        " skate",
+        " listen",
+        " opera",
+        " opera",
+        " relax"
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: You have to a lot of thinking while studying a new subject, but it is how you gain what?\nAnswer:",
+      "choices": [
+        " fatigue",
+        " depression",
+        " best way",
+        " weight",
+        " knowledge"
+      ],
+      "gold_idx": 4
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: He came from old money and had a fortune, but he made new money making shrewd trades where?\nAnswer:",
+      "choices": [
+        " eat cake",
+        " cookie",
+        " stock market",
+        " real estate",
+        " treasure chest"
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: Loss of someone you love can cause what kind of feeling in your heart?\nAnswer:",
+      "choices": [
+        " painful",
+        " happy",
+        " blind",
+        " contagious",
+        " bring joy"
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: She had an interest in the man, what did she want to do with him?\nAnswer:",
+      "choices": [
+        " see particular program",
+        " see exhibits",
+        " see people play game",
+        " have conversation",
+        " watch film"
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: What region of a west coast U.S. city would you find a Japanese restaurant?\nAnswer:",
+      "choices": [
+        " california",
+        " tokio",
+        " downtown",
+        " narnia",
+        " large town"
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: Why would you not trust your friends after chatting with friends?\nAnswer:",
+      "choices": [
+        " fever",
+        " smoke",
+        " laughing",
+        " coughing",
+        " lie"
+      ],
+      "gold_idx": 4
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: A person with digestion issues eats a meat-filled breakfast, what does he feel?\nAnswer:",
+      "choices": [
+        " heartburn",
+        " overeating",
+        " happiness",
+        " being satisfied",
+        " gain energy"
+      ],
+      "gold_idx": 0
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: The child felt like it was all pretend, he didn't understand what?\nAnswer:",
+      "choices": [
+        " people believe",
+        " daydreams",
+        " transcendentalism",
+        " laughter",
+        " religion"
+      ],
+      "gold_idx": 4
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: She wanted to get in shape, but she couldn't stay focused on the hour long what?\nAnswer:",
+      "choices": [
+        " sweating",
+        " excercise",
+        " work out",
+        " video",
+        " swim"
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: If you want to kill someone you can do what to them with a gun?\nAnswer:",
+      "choices": [
+        " sip through",
+        " damnation",
+        " shoot",
+        " commit crime",
+        " eat breakfast"
+      ],
+      "gold_idx": 2
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: Where is the closest place from where you could borrow salt?\nAnswer:",
+      "choices": [
+        " ocean water",
+        " table",
+        " shaker",
+        " neighbor's house",
+        " lake"
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: Computers have allowed everybody to answer questions they have quickly, but still we seem to be getting duller despite access to this what?\nAnswer:",
+      "choices": [
+        " economic boom",
+        " advance knowledge",
+        " produce sound",
+        " teach",
+        " follow instructions"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: If you are committing perjury you have done what while under oath?\nAnswer:",
+      "choices": [
+        " crime",
+        " disrespect judge",
+        " embarrassment",
+        " lie",
+        " indictment"
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: The buildings were intended to not have residential kitchens in them, what were they designed for?\nAnswer:",
+      "choices": [
+        " large city",
+        " small",
+        " eat cake",
+        " university",
+        " town"
+      ],
+      "gold_idx": 3
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: Where is the sky most beautiful?\nAnswer:",
+      "choices": [
+        " planetarium",
+        " outdoors",
+        " atmosphere",
+        " night",
+        " photo"
+      ],
+      "gold_idx": 1
+    },
+    {
+      "task": "commonsense_qa",
+      "prompt": "Question: When someone has little knowledge and is judging someone they are considered what?\nAnswer:",
+      "choices": [
+        " objectivity",
+        " knowing yourself",
+        " experience",
+        " ignorance",
+        " introduction"
+      ],
+      "gold_idx": 3
+    }
+  ],
+  "scope": "disjoint from released training rows and documented checkpoint selection prefix; unknown pretraining and unpublished selection exposure are not ruled out",
+  "selection_sha256": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b"
+}

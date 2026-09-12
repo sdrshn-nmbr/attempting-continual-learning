@@ -1,0 +1,113 @@
+{
+  "budgets": [
+    2,
+    4,
+    8,
+    16
+  ],
+  "class_rule": "Minimum budget is the smallest tested budget passing unchanged accuracy/gain/guard gates; never if none. Do not assume monotonic recovery. Normalize clipped one-hot ridge scores for multiclass Brier; these are forecasts to test, not assumed calibrated probabilities.",
+  "class_support": "Keep 2/4/8/16/never classes fixed regardless of observed support. Report zero counts, unsupported classes and constant scalar labels explicitly; never hide under-repair behind majority class accuracy.",
+  "constants": "TRAIN class frequencies and per-budget TRAIN recovery prevalence/utility mean. Also evaluate fixed 2/4/8/16 and no-action policies.",
+  "dataset_sha256": "14781a4cd46816767903e43a0a1cd74b5d7d80b096ad7c0eeb92b69fd29ebc93",
+  "evaluation": "Report minimum-class accuracy/multiclass Brier and each budget recovery Brier plus utility MSE/MAE, against constants, confidence/output/frozen/tuned and all predeclared label shuffles. Always report pooled and equal-source means and per-source results; no intent bootstrap, significance tests or treating permutation draws as independent models. Separate policy differences from forecast error reduction.",
+  "failure_rule": "No model or prediction work before original gate authorization. Failed fresh learning, lens qualification or fresh TRAIN class gate blocks downstream work. Preserve receipts; any changed protocol requires a new named TRAIN study. No old TEST reuse.",
+  "feature_rule": "Unchanged before/after mean probe metrics and layer choices. Labels are never learner-training targets. Fit scalers on TRAIN only; all lenses use background TRAIN activations rather than predictor-cohort utterances.",
+  "features": [
+    "confidence",
+    "output",
+    "frozen",
+    "tuned"
+  ],
+  "fresh_train_gate": "Even if the original pilot passes, require the same informative minimum-budget class distribution on fresh TRAIN outcomes before fitting any predictor or starting TEST readout/repair. Never fit a scalar binary discrimination claim from a constant label.",
+  "history_boundary": "A minimum-budget response curve does not by itself identify stored-binding reuse. Matched retain-only curves at smaller budgets would be required for a recovery-speed advantage claim; the earlier 16-update references nearly saturate.",
+  "label_permutations": {
+    "rule": "Seal indices using all eligible fresh TRAIN units at the fresh cohort gate before repair. Fit 40 tuned-feature nulls using TRAIN-label permutations only, shared across all outcome targets. Report actual changed labels and active/inert draw counts by scheme for the minimum class, every one-hot class, per-budget binary recovery and utility. Retain inert scalar draws; no redraw.",
+    "schemes": [
+      "within_source",
+      "pooled_train"
+    ],
+    "seeds": [
+      2026091301,
+      2026091302,
+      2026091303,
+      2026091304,
+      2026091305,
+      2026091306,
+      2026091307,
+      2026091308,
+      2026091309,
+      2026091310,
+      2026091311,
+      2026091312,
+      2026091313,
+      2026091314,
+      2026091315,
+      2026091316,
+      2026091317,
+      2026091318,
+      2026091319,
+      2026091320
+    ]
+  },
+  "learning": {
+    "config": "configs/budget-prediction.json",
+    "gates": {
+      "acquired_min": 0.8,
+      "acquisition_baseline": "At least .3 improvement from start of the relevant training phase: initial old-gate scores for old acquisition; acquired-checkpoint new-gate scores for later-task acquisition. Never count a pre-existing output-code bias as a newly learned binding.",
+      "acquisition_gain_min": 0.3,
+      "after_max": 0.5,
+      "drop_min": 0.3,
+      "minimum_acquired_per_stream": 6,
+      "minimum_forgotten": {
+        "test": 8,
+        "train": 12
+      },
+      "minimum_forgotten_per_stream": 4,
+      "minimum_new_acquired_per_stream": 6,
+      "minimum_streams_per_split": 2
+    },
+    "mechanisms": "Unmodified source AdamW, rank-8 adapter, acquired and forgotten checkpoints, 128 old then 128 new updates with continuous optimizer. Old and new phase gains remain required. No silent retry or relaxed threshold.",
+    "spec_sha256": "e925ad6ab84803964e26e815aa0ebc0dad7d16f8d3b4a0008e1e5e7a2fb2693e"
+  },
+  "lens": {
+    "method": "Reuse frozen tuned_lens.py implementation: residual affine translators, full-vocabulary forward KL, frozen norm/head/model, trained only on 512 disjoint TRAIN background prompts; validate on 128 separate TRAIN background prompts. Fit new translators at each fresh acquired checkpoint and freeze through forgetting.",
+    "qualification": "The original >=5% aggregate heldout KL improvement over frozen lens must pass at acquisition and also at the forgotten checkpoint before repairs. No adaptive lens training based on repair outcomes. A failed lens stops that source and its dependent study; a separate new TRAIN protocol is needed to change calibration.",
+    "references": [
+      "https://arxiv.org/html/2303.08112v4",
+      "https://github.com/AlignmentResearch/tuned-lens/blob/main/tuned_lens/scripts/train_loop.py"
+    ]
+  },
+  "minimum_budget_gate": {
+    "entrypoint_sha256": "ef7230f741e312dfc2d0d5d42678be2af76012989b9ff91d53043843fb346392",
+    "protocol_sha256": "7b7e01962d72080a4ba5f183713c5dc91746452a08125f221a037afa6ec0116e",
+    "requirement": "Completed execution and passing scientific receipt; recompute the original gate from its completed TRAIN sources before authorization. A failed or incomplete gate permits no fresh learning, lens updates, predictors or TEST actions.",
+    "run_id": "followthrough-20260912-recovery-budget-pilot-gate-slot",
+    "source_sha256": "674800836fba82539ed5e8eff984b367888afa0ec592b3a7e02b6f1192464711"
+  },
+  "model_id": "Qwen/Qwen3.5-4B",
+  "name": "fresh-clinc-minimum-budget-prediction-20260912",
+  "policy_rule": "Choose the most probable minimum class, breaking ties toward the smaller numeric budget; never maps to no action. Save choices before TEST repair. The main policy report pairs qualification fraction, updates and utility for each source, pooled and equal-source. Compare every policy with always-2, always-16 and TRAIN-majority (constant_train); retain fixed 4/8/no-action too. Any descriptive savings claim requires positive baseline qualification and no qualification loss on each heldout source. Class accuracy alone is not a policy win. Exhaustive paired-grid evaluation estimates policy behavior, not actual savings in study total updates.",
+  "predictor": "Per-scalar ridge with fixed alpha 10 and TRAIN-only centering/scaling, equal intent weights. Fit 5 one-hot minimum classes (2/4/8/16/never), and per-budget recovery and continuous utility. No hyperparameter or feature selection from TEST.",
+  "recovered": {
+    "accuracy_min": 0.8,
+    "gain_min": 0.3,
+    "guard_drop_max": 0.1
+  },
+  "repairs": "Independent fresh AdamW starts at the same forgotten adapter. Same 16-step balanced schedule; evaluate 16 first while saving 2/4/8/16 checkpoints, then independently reproduce 2/4/8 prefixes exactly. 30 updates per intent. Reload checks, same 16-code test/guard rows and frozen backbone. All readouts and TEST forecasts are sealed before actions.",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "ridge_alpha": 10.0,
+  "scope": "Prospective recovery-budget prediction for bounded 16-code intent-to-code bindings. Four fresh learning streams; only two independent heldout source models. No semantic erasure, model-level J-Access replication or stored-binding reuse claim.",
+  "test_streams": [
+    "fresh-test-a",
+    "fresh-test-b"
+  ],
+  "train_gate": {
+    "minimum_budget_classes": 2,
+    "minimum_skills_per_class": 2,
+    "minimum_train_skills": 12
+  },
+  "train_streams": [
+    "fresh-train-a",
+    "fresh-train-b"
+  ]
+}

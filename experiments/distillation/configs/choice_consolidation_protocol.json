@@ -1,0 +1,175 @@
+{
+  "claim_boundary": "Persistent same-backbone adapter-to-independent-adapter behavioral distillation on one existing synthetic mapping fixture. Four-option classification only, not exact free generation, native-base-weight consolidation, compression below rank8, named SDFT/SDPO, internal composition, independent task-distribution replication, or broad continual learning. All test panels were already seen in the earlier research campaign.",
+  "contract": "sequence303_qualified_choice_consolidation_20260912",
+  "decision_rules": {
+    "if_both_fail": "Separate optimization/acquisition experiment with unchanged scoring, not an inference of representational impossibility.",
+    "if_oracle_learns_but_kl_does_not": "Inspect stored train losses and teacher entropy in a separate training-only analysis before selecting a subsequent loss or temperature.",
+    "report": "KL and oracle SFT gains against untouched and their paired difference on both fixed panels. A positive KL gain alone demonstrates bounded imitation, not superiority to oracle SFT. No claim of acquired skill if absolute accuracy remains below 0.9 for any task."
+  },
+  "evaluation_contract": "Separate process with a different PID from training. Load only fresh base and saved learner adapters, no teacher. Assert exact saved tensor identity and exact untouched/zero-adapter score parity. Evaluate original test64 per task and the previously observed unused288 per task. Neither panel enters student optimization or selection. Preserve full per-choice scores and input identities.",
+  "evaluation_splits": [
+    "test",
+    "unused288"
+  ],
+  "fixtures": {
+    "original": {
+      "path": "data/sequence303.json",
+      "sha256": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2"
+    },
+    "unused": {
+      "path": "data/sequence303_unused_inputs.json",
+      "sha256": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e"
+    }
+  },
+  "learner": {
+    "alpha": 16,
+    "dropout": 0.0,
+    "expected_trainable_parameters": 3833856,
+    "initialization": "independent_random_A_zero_B",
+    "rank": 8,
+    "targets": [
+      "q_proj",
+      "v_proj"
+    ]
+  },
+  "qualification": {
+    "minimum_accuracy_per_task_and_split": 0.9,
+    "require_all_tasks": true,
+    "splits": [
+      "train",
+      "validation"
+    ]
+  },
+  "qualification_failure_action": "Write a rejected receipt and stop this experiment before any learner optimization or held-out scoring. Diagnose teacher/data/scoring provenance as a separate experiment; do not loosen qualification or substitute another score.",
+  "scoring": {
+    "autocast": false,
+    "candidate_batch_size": 8,
+    "continuation": "original_boundary_whitespace_separate_tokenization_no_eos",
+    "decision": "argmax_of_four_scores_first_index_breaks_ties",
+    "dtype": "float32",
+    "max_prompt": 768,
+    "prompt": "raw_original_no_chat_template_no_choices",
+    "score": "sum_full_vocabulary_token_log_probability_divided_by_characters"
+  },
+  "source_base": {
+    "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+    "files": [
+      {
+        "bytes": 728,
+        "git_blob_sha1": "d46195ac87f837ad233d02b2f80f148bf7c005e0",
+        "path": "config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 239,
+        "git_blob_sha1": "20a8a9156fc8c3f25295ca067f61fdf120d517c5",
+        "path": "generation_config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 1671853,
+        "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+        "path": "merges.txt",
+        "sha256": null
+      },
+      {
+        "bytes": 3996250744,
+        "git_blob_sha1": null,
+        "path": "model-00001-of-00005.safetensors",
+        "sha256": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f"
+      },
+      {
+        "bytes": 3993160032,
+        "git_blob_sha1": null,
+        "path": "model-00002-of-00005.safetensors",
+        "sha256": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282"
+      },
+      {
+        "bytes": 3959604768,
+        "git_blob_sha1": null,
+        "path": "model-00003-of-00005.safetensors",
+        "sha256": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836"
+      },
+      {
+        "bytes": 3187841392,
+        "git_blob_sha1": null,
+        "path": "model-00004-of-00005.safetensors",
+        "sha256": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a"
+      },
+      {
+        "bytes": 1244659840,
+        "git_blob_sha1": null,
+        "path": "model-00005-of-00005.safetensors",
+        "sha256": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff"
+      },
+      {
+        "bytes": 32878,
+        "git_blob_sha1": "2b85c00f1b118961cd7a477e2bba0fe197a4ce1a",
+        "path": "model.safetensors.index.json",
+        "sha256": null
+      },
+      {
+        "bytes": 11422654,
+        "git_blob_sha1": null,
+        "path": "tokenizer.json",
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+      },
+      {
+        "bytes": 9732,
+        "git_blob_sha1": "417d038a63fa3de29cfde265caedae14d1a58d92",
+        "path": "tokenizer_config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 2776833,
+        "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+        "path": "vocab.json",
+        "sha256": null
+      }
+    ],
+    "local_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+    "repo_id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+  },
+  "source_base_tensor_sha256": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31",
+  "source_provenance": {
+    "data": "Byte-identical copies of the historical original and unused-input fixtures, with SHA256 and independently checked oracle/split identities.",
+    "method": {
+      "relation": "Soft-target distillation with temperature and T-squared scaling; here support is four char-normalized sequence scores, not a full-vocabulary generation objective.",
+      "url": "https://arxiv.org/html/1503.02531v1",
+      "verified": "2026-09-12"
+    },
+    "scoring_primitive": "Copied narrowly from archived portallib evaluation.py _encode_prompt/_encode_continuation/_score_rows; CPU parity test compares the copy with the installed original. No portability-lane runtime imports."
+  },
+  "teacher": {
+    "files": {
+      "adapter_config.json": "92e516f4dd1e47231c9b31925eb67085c0969107eb1489fd66ea7fb166d28feb",
+      "adapter_model.safetensors": "87a418f2098bee5471259d3f400895aee270228e0152c2d33abbc1d9279f2895"
+    },
+    "path": "/mnt/shared/cl-portfolio/artifacts/meta-20260909-rank8/final/adapter",
+    "tensor_sha256": "ce68ecd6c67d0218c03a626fe84870a54ac5502056fdabe7b64b98a522cc1669"
+  },
+  "teacher_source_evidence": {
+    "already_observed": true,
+    "correct": 850,
+    "count": 864,
+    "not_used_for_teacher_qualification": true
+  },
+  "training": {
+    "epochs": 4,
+    "example_exposures_per_arm": 1536,
+    "examples_per_update": 4,
+    "initialization_seed": 91230317,
+    "learning_rate": 0.0003,
+    "max_grad_norm": 1.0,
+    "methods": [
+      "teacher_choice_kl",
+      "oracle_sft"
+    ],
+    "order_seed": 91230331,
+    "temperature": 1.0,
+    "updates_per_arm": 384,
+    "weight_decay": 0.0
+  },
+  "training_contract": "One fresh random-A zero-B rank8 learner at a time on frozen Qwen3-8B; exact same initial tensors and fresh AdamW state for both arms. 384 updates of four rows, four shuffled passes over 384 original TRAIN examples. Forward KL matches a cached four-choice distribution; oracle SFT minimizes response-only full-vocabulary NLL on the gold continuation without EOS. No teacher is loaded for training; no teacher weights initialize the learner. Equal rows and updates, not equal numbers of continuation tokens or forward passes. No checkpoint selection or held-out predictions during training."
+}

@@ -1,0 +1,48 @@
+{
+  "claim_boundary": "Selection of a more reliable existing teacher on the known synthetic Sequence303 TRAIN fixture, followed by original aggregate validation qualification. Reused campaign validation; no test-based selection, new teacher optimization, learner result, native-base consolidation, broad transfer or SDFT/SDPO reproduction.",
+  "contract": "sequence303_complete_train_binding_coverage_20260912",
+  "coverage": {
+    "candidates": [
+      32,
+      128,
+      384
+    ],
+    "minimum_position_accuracy": 1.0,
+    "require_native_eos_and_exact_format": true,
+    "required_cells": 72,
+    "selection": "earliest_all_nonempty_cells_perfect_else_reject",
+    "split": "train",
+    "teacher_optimizer_updates": 0
+  },
+  "coverage_interpretation": "For this positionwise synthetic mapping, perfect accuracy in all72cells is equivalent to perfect strict whole-answer accuracy over the fullTRAIN pool. The cell table diagnoses reliability; it is not a new loss or evidence that stratification adds predictive power beyond perfect fullTRAIN accuracy. Only128inputs per task are covered, not all512 possible inputs.",
+  "failure_action": "On missing cell, any TRAIN binding error, broken provenance or failed selected validation qualification, preserve evidence and perform zero learner updates. A new teacher training intervention would require a separate protocol; none is included initially.",
+  "history_contract": "Reverify the valid original32aggregate qualification, original384-update training receipt, original95%-probe selection32, all saved checkpoint/probe/optimizer hashes and the original rejected raw-generation diagnosis. Their files and selection decisions are unchanged. Newcoverage receipts have their own source/protocol identity.",
+  "learner_boundary": "A separate coverage_learner entrypoint must call coverage_teacher.verify_qualified before constructing learner targets or loading a learner. It can reuse frozen cache/target/loss/train_arm primitives from generation_consolidation, but must own its new receipt validation and source manifest. No replacement of old validators, forged legacy receipt, runtime monkeypatch or prior qualification mutation.",
+  "observed_training_defect": {
+    "expected_digit": 3,
+    "incorrect_digit": 2,
+    "input_digit": 5,
+    "interpretation": "All8 teacher TRAIN errors occur in this cell, but7other cases are correct. A partial, context-dependent reliability failure; not a wholly absent primitive. The original aggregate qualification remains valid under its own contract.",
+    "position_1based": 3,
+    "task": "sequence_a",
+    "train_correct": 7,
+    "train_count": 15,
+    "train_wrong": 8
+  },
+  "original32_qualification_sha256": "e9070bf5996087d378e3e1ce54a09b2ec7d11003234ef1e636d648942821ea3f",
+  "previous_design": {
+    "path": "configs/generation_consolidation_protocol.json",
+    "sha256": "5c933efc2fc32d2ae94784056a901d587cd6f5abafe07f87a03f0c78a6d7203e"
+  },
+  "previous_source_sha256": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "generation_consolidation.py": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770"
+  },
+  "qualification_contract": "In a new process load only the selected existing checkpoint. Retain the frozen original generation_gate: each task on TRAIN and validation requires>=.9 strict whole-answer/nativeEOS and original four-choice accuracy. TRAIN generations come from the bound selection panel; score TRAIN choices and validation generations/choices with exact checkpoint tensors. Validation binding cells are reported diagnostically only and do not change selection. Do not evaluate TEST or unused-input panels here.",
+  "selection_contract": "Screen all384TRAIN rows at each preexisting checkpoint32,128,384. The32 fullTRAIN generations are reused byte-for-byte from its verified original qualification. Evaluate128/384 with unchanged raw prompt, strict body/nativeEOS, full-vocabulary greedy generation and frozen FP32 base/adapter. Every task x literal position x corresponding inputdigit cell must be nonempty and100%correct with exact format/nativeEOS. Choose earliest passing checkpoint only after all three TRAIN panels; if none pass reject. No new teacher updates, no validation/test predictions during selection, no fallback to another checkpoint after validation failure.",
+  "teacher_training_sha256": "98a31373352081872362d6132296a5284effc33e57feb1a23b28f0c086ca52c0",
+  "update_accounting": "Existing source training completed384updates. New selection/qualification performs0teacher updates; the selected adapter still contains32,128or384historical updates, recorded by selected_checkpoint. No fresh learner updates in this teacher entrypoint."
+}

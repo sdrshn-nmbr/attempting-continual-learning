@@ -1,0 +1,255 @@
+{
+  "accounting": {
+    "confirmed_executed_example_exposures_lower_bound": 5116,
+    "confirmed_executed_updates_lower_bound": 1279,
+    "discarded_observed_legacy_example_exposures": 508,
+    "discarded_observed_legacy_updates": 127,
+    "interpretation": "Original97..223 remain historical executed work, excluded from the recovered optimizer trajectory. They are recomputed from checkpoint96 with the same exposure order. Unknown in-flight work is not invented or counted as zero.",
+    "new_legacy_example_exposures": 1152,
+    "new_legacy_updates": 288,
+    "retained_legacy_prefix_updates": 96,
+    "reused_completed_arm_updates": 768,
+    "scientific_retained_example_exposures": 4608,
+    "scientific_retained_updates": 1152,
+    "unlogged_inflight_update_count": null
+  },
+  "code_source_sha256": {
+    "device4_curriculum.py": "a5c35814e7fe613ebfa85c46222fd9cdfaaec951a15fb897f14ed03efe9ae884",
+    "device4_recovery.py": "d140c601de02c466582ef54465ef621b978e3b85280b9652c66ba19b1f778849",
+    "generated_contract.py": "ab7ff2f2c1d9262d83dd50e66e381359d729735cb0dfb2f06759ca115e5ae525",
+    "objectives.py": "1d88593282dfe4b89b79899e9e28d89be581903e9f20bc6c11ead61e92901621",
+    "qualified.py": "99ccf8aa98cdbd4bc5dfcbaccb245ec332c9f055a2ade550811e441e3ceded7f",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770",
+    "run.py": "a2464aaf35277800bfc8d473bed27555febfc21e543b9a2fe8fd0e9e35a817a5",
+    "tasks.py": "4bab8d018fc7de93fc3830c8a4c7b610876189faa0a25bd033ed5b57955937ce"
+  },
+  "contract": "device4_interrupted_curriculum_recovery_20260912",
+  "cpu_validation": {
+    "boundary": "CPU execution and provenance proof; actual resumed GPU trajectory and teacher qualification remain pending parent dispatch. The fresh-process fixture injects a tiny model and fixture receipts; production paths retain full artifact verification.",
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python",
+      "python",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "test_device4_recovery.py",
+      "--junitxml=outputs/device4-recovery-20260912-cpu/pytest.xml"
+    ],
+    "errors": 0,
+    "failures": 0,
+    "imports": "AST verifies all imports at module top level.",
+    "junit_path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/outputs/device4-recovery-20260912-cpu/pytest.xml",
+    "junit_sha256": "854b292b39623683bf5f0106adfe0dc966c00372e3aa74aed2e0c2fda885cd9a",
+    "packages": {
+      "peft": "0.20.0",
+      "pytest": "9.1.1",
+      "safetensors": "0.8.0",
+      "torch": "2.14.0",
+      "transformers": "5.16.1"
+    },
+    "proved": [
+      "Actual59-file interrupted collection, all8 optimizer checkpoints and frozen handoff sources checked",
+      "Real tiny Qwen3.5 adapter+AdamW resume exactly matches uninterrupted final tensors and ledger",
+      "Wrong optimizer step and nonfinite moments rejected",
+      "Replay mismatch fails before the next weight update",
+      "Incomplete/reordered event prefix rejected",
+      "Real separate uv PID reloads saved teachers and applies unchanged original accuracy/gain/significance gate on CPU fixtures; all rejected",
+      "Driver requires distinct PID and completed qualification",
+      "Validate-only performs no GPU/provider actions"
+    ],
+    "ruff": "Root invocation passed using experiments/distillation/ruff.toml on both new Python files.",
+    "skipped": 0,
+    "tests": 8
+  },
+  "failure_action": "Any missing/corrupt optimizer state, source change, replay mismatch or generation reload mismatch stops this recovery with its own failure record. No silent reset or fallback in this sealed resume96 execution. A full legacy-only restart remains a distinct authorized fallback if recovery proof fails; retained complete arms do not need retraining.",
+  "modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/device4_recovery.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_device4_recovery.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/device4_recovery_protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/device4_recovery_run.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/device4_recovery_resume.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/device4_recovery_evaluate.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/data/device4_curriculum_interrupt.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/data/device4_worker_failure.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/device4_recovery_handoff.json"
+  ],
+  "new_files_sha256": {
+    "configs/device4_recovery_evaluate.json": "d171cb640b7d46838a28449371f9e48050e9f1b7fd8a35ef67cf4b0ec7ff9727",
+    "configs/device4_recovery_protocol.json": "d503c2a431b317d05c838400b098a901ed808e593c507fcd7e094bd82e6dde30",
+    "configs/device4_recovery_resume.json": "dc392a226c6ef226eaa1aa4a721c515e7c17a8c0a35c08d0f97468df375c2ecf",
+    "configs/device4_recovery_run.json": "5f3da1184c23d80f438b3064f304c6f218101f0ed50a67fddcf667862ad8b139",
+    "data/device4_curriculum_interrupt.json": "3466f141eafc994e21b06e7535c468d404368ae7598b51b78bf57084b3a00bf3",
+    "data/device4_worker_failure.json": "a012d251a413cb600331bd502aed7ed0b14a90677cb57cb39b1b912fa9aa58e5",
+    "device4_recovery.py": "d140c601de02c466582ef54465ef621b978e3b85280b9652c66ba19b1f778849",
+    "test_device4_recovery.py": "98a857e84767d71db0a8f06404fdb1513a45f2f400f91d194868ef944de3890a"
+  },
+  "ownership": {
+    "branch": "research/resume-20260911",
+    "commit_or_push_performed": false,
+    "gpu_dispatch_performed": false,
+    "modified_scope": "experiments/distillation only",
+    "parent_owns": [
+      "staging",
+      "compute",
+      "dispatch",
+      "collection"
+    ],
+    "provider_mutations_performed": false,
+    "repository": "/Users/sudarshan/Code/attempting-continual-learning",
+    "source_observation": "Read-only control-pod NFS inspection followed by parent-collected local artifact verification."
+  },
+  "paused_work": "External-chain implementation remains unsealed and is not part of this dispatch. Its future prerequisite must bind the new recovered qualification instead of the withdrawn original task.",
+  "protocol_canonical_sha256": "2c61d7d85e1258e5fe0ecec3554bb1cd7bbb464305db11a873212b99ec8775d3",
+  "ready_run": {
+    "command_in_staged_lane": [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "/opt/venv/bin/python",
+      "python",
+      "-B",
+      "device4_recovery.py",
+      "--config",
+      "configs/device4_recovery_run.json",
+      "--output-dir",
+      "/mnt/shared/cl-portfolio/runs/distillation-device4-recovery-20260912"
+    ],
+    "config": "configs/device4_recovery_run.json",
+    "entrypoint": "device4_recovery.py",
+    "execution": "Verify interruption and source files; reload three saved checkpoints and reproduce all288 TRAIN generations; restore legacy96 adapter and AdamW; perform original updates97 through384; require numerical replay agreement for old97 through223; launch fresh uv PID final qualification for allthree384 teachers. Completion requires result.json and evaluation/qualification.json under this new task.",
+    "gpus": 1,
+    "interrupted_source_run": "/mnt/shared/cl-portfolio/runs/distillation-device4-curriculum-20260912",
+    "output_dir": "/mnt/shared/cl-portfolio/runs/distillation-device4-recovery-20260912",
+    "required_dependency": "followthrough-20260912-recovery-worker-qualify-qwen35-4b",
+    "required_history": {
+      "fallback24": {
+        "files_sha256": {
+          "pairs.json": "682bca8933f14626fbc2f9953d2493267bcb501c87124979c3d31170995adf13",
+          "qualification.json": "7c26152a5c4917fff4cde25bc850fc5affd4067772309b40ec9431005bd9fd3a",
+          "runtime.json": "466c8d3ad086a3e590f24b276ebe82779cef306d51edaf2f4fdbe2e66c9eeb76",
+          "seal.json": "92a0a24353c406d37a01a932fc2c71ee8c5dd1701b28c7cee4745714ee327d32",
+          "teacher_training.json": "d39ec93de426e4af3f4c3e39c881f606f9e6c2e5953ad54dc37a31c07c8b720f"
+        },
+        "path": "/mnt/shared/cl-portfolio/runs/distillation-generated-teacher-training-20260911"
+      },
+      "initial": {
+        "files_sha256": {
+          "pairs.json": "3bf50fbae1ba6adb74960da190d46ffa3d711687d3631e0b46f37b8180efa7f8",
+          "qualification.json": "0f040e16f59f378d6243c16580ef279b01bd91a4ef67348b45e22dbb0326e2d2",
+          "runtime.json": "466c8d3ad086a3e590f24b276ebe82779cef306d51edaf2f4fdbe2e66c9eeb76",
+          "seal.json": "9d18644b9ce6709c7456db9f9db6ed7a4a86bd00207562dac812a445cf1ea254"
+        },
+        "path": "/mnt/shared/cl-portfolio/runs/distillation-generated-qualification-20260911"
+      }
+    },
+    "runtime": "Same pinned Qwen3.5-4B, vendor ROCm torch and original dependency versions; BF16 base, FP32 rank16/alpha32 adapters,8519680 trainable parameters. Current runtime identity and original initialization must match the interrupted run.",
+    "source_folder": "experiments/distillation",
+    "task_name": "distillation-device4-recovery-20260912"
+  },
+  "resume_evidence": {
+    "checkpoint_proof": "All eight real saved optimizer files decoded locally:128 parameter states with finite same-shape FP32 moments and exact24/96/384 steps; original parameter order, AdamW configuration and all59 file hashes verified. Full completed-arm ledgers match events; legacy latest complete checkpoint96 despite223 logged updates.",
+    "child_exit_code": null,
+    "interrupted_run_execution_sha256": "23fc738d06d07947ac497b8287e4e6da1e5e354a4600814d52b2775ab487b0b7",
+    "no_rng_checkpoint": "Original training is model.eval with dropout0, fixed schedules, full gold response loss and greedy diagnostics. Recovery does not claim a saved RNG state. Reload generations and historical update replay must pass before accepting the recovered trajectory.",
+    "observed_updates": {
+      "flat_mixed": 384,
+      "legacy96_budget": 223,
+      "primitive_first": 384
+    },
+    "selected_checkpoints": {
+      "flat_mixed": {
+        "adapter_model_sha256": "cd373d5c6c4876d48c2571dae01dbf9afe48a569caff34454711873da18317b5",
+        "adapter_path": "/mnt/shared/cl-portfolio/runs/distillation-device4-curriculum-20260912/flat_mixed/checkpoint384/teacher",
+        "checkpoint": 384,
+        "optimizer_path": "/mnt/shared/cl-portfolio/runs/distillation-device4-curriculum-20260912/flat_mixed/checkpoint384/optimizer.pt",
+        "optimizer_sha256": "91825f1b0e5e8727d55ce4b57be6a3f6545504f5203a3fd1173535e49b0c4977"
+      },
+      "legacy96_budget": {
+        "adapter_model_sha256": "e5c47bb1d9ade55bf7fc5b59982910672cfd88ce26b45f017a47de7df9bb9f4b",
+        "adapter_path": "/mnt/shared/cl-portfolio/runs/distillation-device4-curriculum-20260912/legacy96_budget/checkpoint96/teacher",
+        "checkpoint": 96,
+        "optimizer_path": "/mnt/shared/cl-portfolio/runs/distillation-device4-curriculum-20260912/legacy96_budget/checkpoint96/optimizer.pt",
+        "optimizer_sha256": "4da36bcc0e0571f1de3b4f00a35d4c756b1ec10dfa2892b34a9d8fef47b40be7"
+      },
+      "primitive_first": {
+        "adapter_model_sha256": "5288ebdd8870f39ba569be78885acc481b99475e1ec9eca68e820cb69c481168",
+        "adapter_path": "/mnt/shared/cl-portfolio/runs/distillation-device4-curriculum-20260912/primitive_first/checkpoint384/teacher",
+        "checkpoint": 384,
+        "optimizer_path": "/mnt/shared/cl-portfolio/runs/distillation-device4-curriculum-20260912/primitive_first/checkpoint384/optimizer.pt",
+        "optimizer_sha256": "93b03641412f877f1dd4bb6be85f402ddbb7a5f54099a9f8704bf0ded061e5f3"
+      }
+    },
+    "source_bytes": 873751723,
+    "source_files_count": 59,
+    "terminated_at": "2026-09-12T06:22:27Z",
+    "terminated_pod_uid": "2d8a1b9d-5d12-4c27-add2-8f311691b329",
+    "worker_failure_sha256": "a012d251a413cb600331bd502aed7ed0b14a90677cb57cb39b1b912fa9aa58e5"
+  },
+  "scientific_contract": {
+    "new_receipt_boundary": "Own verify_recovered_training validates new source/design identity and explicit original artifact paths. No compatibility adapter or fabricated original training.json; original interrupted outputs and original queued-depth34 protocol stay immutable. Downstream consumers require separate new source/config/task identities.",
+    "selection": "Every arm evaluated only at fixed final384. TRAIN and original fallback-validation, no TEST or newdepth predictions.",
+    "unchanged_depth_gate": {
+      "composition_predictions": false,
+      "minimum_depth_accuracy_for_consolidation": 0.875,
+      "new_process": true,
+      "original_family_gates": true,
+      "test_predictions": false,
+      "validation_split": "fallback_validation"
+    },
+    "unchanged_original_qualification": {
+      "maximum_p": 0.05,
+      "minimum_accuracy": 0.875,
+      "minimum_gain": 0.25,
+      "train_per_family": 24,
+      "validation_per_family": 24
+    },
+    "unchanged_recipe": {
+      "arms": [
+        "flat_mixed",
+        "primitive_first",
+        "legacy96_budget"
+      ],
+      "checkpoints": [
+        24,
+        96,
+        384
+      ],
+      "example_exposures_per_arm": 1536,
+      "examples_per_update": 4,
+      "expected_trainable_parameters": 8519680,
+      "learning_rate": 0.0002,
+      "max_grad_norm": 1.0,
+      "order_seed": 9111704,
+      "remainder_order_seed": 9111705,
+      "selection": "fixed_final384",
+      "updates_per_arm": 384,
+      "warmup_primitive_exposures_per_family": 64,
+      "weight_decay": 0.0
+    }
+  },
+  "staging_files_sha256": {
+    "configs/device4_curriculum_protocol.json": "cb7ef7eb7e94f4279c83eec78d6f33189f7a489e3b4ad35570a70e94ac11fd47",
+    "configs/device4_recovery_evaluate.json": "d171cb640b7d46838a28449371f9e48050e9f1b7fd8a35ef67cf4b0ec7ff9727",
+    "configs/device4_recovery_protocol.json": "d503c2a431b317d05c838400b098a901ed808e593c507fcd7e094bd82e6dde30",
+    "configs/device4_recovery_resume.json": "dc392a226c6ef226eaa1aa4a721c515e7c17a8c0a35c08d0f97468df375c2ecf",
+    "configs/device4_recovery_run.json": "5f3da1184c23d80f438b3064f304c6f218101f0ed50a67fddcf667862ad8b139",
+    "configs/generated_protocol.json": "aa6024c8a30f3fe0ca027ef2a6f0c099537bc839d109c45508bc694f03bf5724",
+    "data/device4_curriculum_interrupt.json": "3466f141eafc994e21b06e7535c468d404368ae7598b51b78bf57084b3a00bf3",
+    "data/device4_worker_failure.json": "a012d251a413cb600331bd502aed7ed0b14a90677cb57cb39b1b912fa9aa58e5",
+    "device4_curriculum.py": "a5c35814e7fe613ebfa85c46222fd9cdfaaec951a15fb897f14ed03efe9ae884",
+    "device4_recovery.py": "d140c601de02c466582ef54465ef621b978e3b85280b9652c66ba19b1f778849",
+    "generated_contract.py": "ab7ff2f2c1d9262d83dd50e66e381359d729735cb0dfb2f06759ca115e5ae525",
+    "objectives.py": "1d88593282dfe4b89b79899e9e28d89be581903e9f20bc6c11ead61e92901621",
+    "qualified.py": "99ccf8aa98cdbd4bc5dfcbaccb245ec332c9f055a2ade550811e441e3ceded7f",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770",
+    "run.py": "a2464aaf35277800bfc8d473bed27555febfc21e543b9a2fe8fd0e9e35a817a5",
+    "tasks.py": "4bab8d018fc7de93fc3830c8a4c7b610876189faa0a25bd033ed5b57955937ce"
+  },
+  "status": "cpu_verified_sealed_ready_for_parent_dispatch"
+}

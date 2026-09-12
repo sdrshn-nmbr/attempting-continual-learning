@@ -1,0 +1,13 @@
+{
+  "name": "retain-only-matched-relearning-reference",
+  "purpose": "Distinguish faster recovery of learned intent-to-code bindings from learning those bindings anew. Does not claim erasure or rediscovery of semantic intent concepts.",
+  "source": "Exact initial adapter and same frozen base, per-stream seed and code mapping as successful prospective learning source.",
+  "training": "Never train on any old intent before repairs. Train on the new eight intents with exactly the main source forgetting-stage examples, minibatches and number of AdamW updates, checked against the saved main schedule. Optimizer starts fresh. Require six new intents at >=.8 gate-validation accuracy before reference repairs. Each newly acquired new intent must gain >=.3 from its own initial validation score. Old intents are intentionally untrained and never subjected to an acquisition requirement in this reference.",
+  "repair": "Use same eligible old intents as prospective study, same TRAIN-only support rows, deterministic sample schedules, fresh AdamW, learning rate, update count and adapter capacity. Target-only, balanced-old+new, none and matched wrong-code sham use the same action implementation. Save and reload adapters and hash complete frozen backbone.",
+  "gates": "Do not require old acquisition in the reference: omission is intentional. Main global acquisition/forgetting eligibility still gates reference actions, and main TRAIN-only repair variability gates heldout reference actions. Only TRAIN outcomes can select a stronger repair configuration.",
+  "reporting": "Paired per-intent and aggregated stream-level accuracy/gain/guard differences. Treat each source stream as a dependency cluster. Constant binary outcomes are descriptive; preserve continuous gains. Internal readouts are diagnostics only and never optimize the learner.",
+  "limits": "Reference omits old-task updates, so total lifetime optimizer steps/history differ. Matched relearning support and updates do not prove which particular weight directions store a binding. The four-stream study is exploratory.",
+  "motivation": "https://arxiv.org/abs/2608.11408",
+  "reference_boundary": "J-Access reports model-level recovery prediction, not reliable individual-fact prediction. This experiment uses a trained affine lens and harder intent-level forecasts; it is not a Jacobian/J-Access reproduction.",
+  "source_binding": "Require primary learning implementation hashes plus the reference-learning module hash to match the reference receipt before measuring it."
+}

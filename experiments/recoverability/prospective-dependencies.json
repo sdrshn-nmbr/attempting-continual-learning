@@ -1,0 +1,164 @@
+{
+  "followthrough-20260912-recovery-cohort": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-cohort.json",
+    "depends": [
+      "followthrough-20260912-recovery-learn-train-a",
+      "followthrough-20260912-recovery-learn-train-b",
+      "followthrough-20260912-recovery-learn-test-a",
+      "followthrough-20260912-recovery-learn-test-b"
+    ]
+  },
+  "followthrough-20260912-recovery-pilot-train-a": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-pilot-train-a.json",
+    "depends": [
+      "followthrough-20260912-recovery-cohort"
+    ]
+  },
+  "followthrough-20260912-recovery-pilot-train-b": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-pilot-train-b.json",
+    "depends": [
+      "followthrough-20260912-recovery-cohort"
+    ]
+  },
+  "followthrough-20260912-recovery-pilot-gate": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-pilot-gate.json",
+    "depends": [
+      "followthrough-20260912-recovery-pilot-train-a",
+      "followthrough-20260912-recovery-pilot-train-b",
+      "followthrough-20260912-recovery-cohort"
+    ]
+  },
+  "followthrough-20260912-recovery-measure-train-a": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-measure-train-a.json",
+    "depends": [
+      "followthrough-20260912-recovery-cohort",
+      "followthrough-20260912-recovery-pilot-gate"
+    ]
+  },
+  "followthrough-20260912-recovery-measure-train-b": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-measure-train-b.json",
+    "depends": [
+      "followthrough-20260912-recovery-cohort",
+      "followthrough-20260912-recovery-pilot-gate"
+    ]
+  },
+  "followthrough-20260912-recovery-repair-gate": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-repair-gate.json",
+    "depends": [
+      "followthrough-20260912-recovery-measure-train-a",
+      "followthrough-20260912-recovery-measure-train-b",
+      "followthrough-20260912-recovery-cohort"
+    ]
+  },
+  "followthrough-20260912-recovery-measure-test-a": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-measure-test-a.json",
+    "depends": [
+      "followthrough-20260912-recovery-cohort",
+      "followthrough-20260912-recovery-pilot-gate",
+      "followthrough-20260912-recovery-repair-gate"
+    ]
+  },
+  "followthrough-20260912-recovery-measure-test-b": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-measure-test-b.json",
+    "depends": [
+      "followthrough-20260912-recovery-cohort",
+      "followthrough-20260912-recovery-pilot-gate",
+      "followthrough-20260912-recovery-repair-gate"
+    ]
+  },
+  "followthrough-20260912-recovery-analyze": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-analyze.json",
+    "depends": [
+      "followthrough-20260912-recovery-measure-test-a",
+      "followthrough-20260912-recovery-measure-test-b",
+      "followthrough-20260912-recovery-cohort",
+      "followthrough-20260912-recovery-repair-gate"
+    ]
+  },
+  "followthrough-20260912-recovery-reference-learn-train-a": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-reference-learn-train-a.json",
+    "depends": [
+      "followthrough-20260912-recovery-learn-train-a"
+    ]
+  },
+  "followthrough-20260912-recovery-reference-measure-train-a": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-reference-measure-train-a.json",
+    "depends": [
+      "followthrough-20260912-recovery-cohort",
+      "followthrough-20260912-recovery-pilot-gate",
+      "followthrough-20260912-recovery-reference-learn-train-a"
+    ]
+  },
+  "followthrough-20260912-recovery-reference-compare-train-a": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-reference-compare-train-a.json",
+    "depends": [
+      "followthrough-20260912-recovery-reference-measure-train-a",
+      "followthrough-20260912-recovery-measure-train-a"
+    ]
+  },
+  "followthrough-20260912-recovery-reference-learn-train-b": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-reference-learn-train-b.json",
+    "depends": [
+      "followthrough-20260912-recovery-learn-train-b"
+    ]
+  },
+  "followthrough-20260912-recovery-reference-measure-train-b": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-reference-measure-train-b.json",
+    "depends": [
+      "followthrough-20260912-recovery-cohort",
+      "followthrough-20260912-recovery-pilot-gate",
+      "followthrough-20260912-recovery-reference-learn-train-b"
+    ]
+  },
+  "followthrough-20260912-recovery-reference-compare-train-b": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-reference-compare-train-b.json",
+    "depends": [
+      "followthrough-20260912-recovery-reference-measure-train-b",
+      "followthrough-20260912-recovery-measure-train-b"
+    ]
+  },
+  "followthrough-20260912-recovery-reference-learn-test-a": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-reference-learn-test-a.json",
+    "depends": [
+      "followthrough-20260912-recovery-learn-test-a"
+    ]
+  },
+  "followthrough-20260912-recovery-reference-measure-test-a": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-reference-measure-test-a.json",
+    "depends": [
+      "followthrough-20260912-recovery-cohort",
+      "followthrough-20260912-recovery-pilot-gate",
+      "followthrough-20260912-recovery-repair-gate",
+      "followthrough-20260912-recovery-reference-learn-test-a"
+    ]
+  },
+  "followthrough-20260912-recovery-reference-compare-test-a": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-reference-compare-test-a.json",
+    "depends": [
+      "followthrough-20260912-recovery-reference-measure-test-a",
+      "followthrough-20260912-recovery-measure-test-a"
+    ]
+  },
+  "followthrough-20260912-recovery-reference-learn-test-b": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-reference-learn-test-b.json",
+    "depends": [
+      "followthrough-20260912-recovery-learn-test-b"
+    ]
+  },
+  "followthrough-20260912-recovery-reference-measure-test-b": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-reference-measure-test-b.json",
+    "depends": [
+      "followthrough-20260912-recovery-cohort",
+      "followthrough-20260912-recovery-pilot-gate",
+      "followthrough-20260912-recovery-repair-gate",
+      "followthrough-20260912-recovery-reference-learn-test-b"
+    ]
+  },
+  "followthrough-20260912-recovery-reference-compare-test-b": {
+    "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/prospective-reference-compare-test-b.json",
+    "depends": [
+      "followthrough-20260912-recovery-reference-measure-test-b",
+      "followthrough-20260912-recovery-measure-test-b"
+    ]
+  }
+}

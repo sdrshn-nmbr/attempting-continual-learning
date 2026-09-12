@@ -1,0 +1,8 @@
+{
+  "method": "onpolicy_kl",
+  "protocol": "configs/onpolicy303_protocol.json",
+  "protocol_sha256": "31ec528d68e04062d7be72c3b8d0c8d1c5b915b7670c3be4be5af0a69f13a2be",
+  "stage": "evaluate",
+  "task_id": "followthrough-20260912-onpolicy303-onpolicy-kl-evaluate",
+  "training_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-onpolicy-kl-train"
+}

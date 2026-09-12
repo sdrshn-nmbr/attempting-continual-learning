@@ -1,0 +1,6 @@
+{
+  "stage": "evaluate",
+  "protocol": "configs/device4_curriculum_protocol.json",
+  "protocol_sha256": "3a701dcb1a1d1c0baed3110cc55feef7ebc5ea115b79cd06844bf467cdd4b1a5",
+  "training_dir": "/mnt/shared/cl-portfolio/runs/distillation-device4-curriculum-20260912"
+}

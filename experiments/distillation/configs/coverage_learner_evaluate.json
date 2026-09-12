@@ -1,0 +1,6 @@
+{
+  "protocol": "configs/coverage_learner_protocol.json",
+  "protocol_sha256": "6b5e4913947dc288459ac92270562bfb2eb57a05126a507d562ff876a0dad495",
+  "stage": "evaluate",
+  "training_dir": "/mnt/shared/cl-portfolio/runs/consolidation-coverage303-20260912"
+}

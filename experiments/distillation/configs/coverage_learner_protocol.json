@@ -1,0 +1,77 @@
+{
+  "claim_boundary": "Follow-through on teacher reliability and persistent complete-answer imitation in one known Sequence303 synthetic fixture. Single matched seed; earlier holdouts reused. Independent rank8 adapter, not native-base consolidation, broad continual learning, internal composition, unknown-task transfer, or SDFT/SDPO reproduction.",
+  "contract": "sequence303_coverage_selected_persistent_consolidation_20260912",
+  "coverage_design": {
+    "path": "configs/coverage_teacher_protocol.json",
+    "sha256": "1724268c16e6b4586f17e1d547076ab52ac9ba4ff613475963a99c4eb3d72340"
+  },
+  "coverage_source_sha256": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "coverage_teacher.py": "0fdfc95ae89dd8063fbb007633b6c4b0579f747f1c1e77b603e03a6b0aad339a",
+    "generation_consolidation.py": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770"
+  },
+  "direction": "Resolve partial context-dependent teacher reliability before a fresh learner repetition. Original32teacher satisfied its aggregate contract, but sequence_a position3/input5 had7correct8wrong among15TRAIN rows. Preserve its qualification and learner results. New teacher must pass the separately declared fullTRAIN coverage gate and then unchanged aggregate validation qualification.",
+  "evaluation": {
+    "require_new_process": true,
+    "splits": [
+      "test",
+      "unused288"
+    ],
+    "teacher_model_loaded": false,
+    "whole_answer_and_native_eos": true
+  },
+  "evaluation_contract": "Default run automatically launches a fresh uv Python evaluator after both arms finish. Evaluate only saved fixedfinal384 learners and untouched base on192TEST and864unused-input rows, teacher model and artifact files absent. Bind copied qualification/cache, source, data, actual target ledger, checkpoint files and exact24TRAIN-probe reload parity. Original holdouts have been observed in the campaign; no recipe/checkpoint selection from their answers.",
+  "failure_action": "Rejected coverage/qualification means zero learner loading or updates. Keep complete artifacts on training or persistence failure. Do not change grading, substitute gold for teacher outputs, choose another checkpoint using validation/test, or silently extend the budget.",
+  "fixed_budget": {
+    "learner_updates_per_arm": 384,
+    "native_base_updated": false,
+    "new_teacher_updates": 0,
+    "resident_learner_rank": 8,
+    "total_learner_updates": 768,
+    "trainable_parameters": 3833856
+  },
+  "learner": "Fresh independent random-A zero-B rank8 q/v LoRA on pinned frozen FP32 Qwen3-8B; alpha16,3,833,856 trainable parameters. No successful source/teacher weights initialize the learner. No teacher model is loaded for learner training. One persistent adapter and one optimizer through all384 updates in each arm; identical initial tensors and shuffled row schedule across arms.",
+  "matching": "Both arms execute384updates,1536TRAIN exposures at the exact original generated-learner initialization tensor hash, row order, rank8/alpha16 capacity and optimizer settings. Verify the immutable original training.json and schedule.json before any update. No old trained learner weights are loaded. Gold targets used only by the labeled oracle arm. Save actual token exposure/equality counts; if teacher and oracle token targets match, disclose identical supervision and do not claim a distillation advantage.",
+  "method_boundary": "Reuse frozen generation_consolidation cache, target, loss, train_arm, schedule and adapter primitives. Own the new source-receipt, training-receipt and evaluation orchestration in coverage_learner. No replacement of frozen validators, false old source identity, runtime monkeypatch or accepted stale qualification.",
+  "prerequisite": "Only coverage_teacher.verify_qualified may authorize updates: verify archived32/training history, all32/128/384 TRAIN panels, earliest fullcoverage selection, validation gate and exact selected teacher files/source. Stop before learner model loading if any prerequisite fails. No silent alternative teacher or legacy receipt mutation.",
+  "primary_comparison": "Earlier aggregate-qualified checkpoint32 teacher outputs versus the new complete-TRAIN-correct teacher outputs, distilled into fresh learners with identical initialization, TRAIN order and full384-update schedule. This isolates removal of the earlier teacher-label errors within the known fixture; it does not establish superiority of teacher sophistication or a new optimization objective.",
+  "primary_source": {
+    "relation": "Sequence-level knowledge distillation motivates training on complete teacher hypotheses. Here hypotheses are cached greedy generations on the qualified task, with no beam search or claim to reproduce the original NMT experiment.",
+    "url": "https://arxiv.org/abs/1606.07947",
+    "verified": "2026-09-12"
+  },
+  "qualified_teacher_dir": "/mnt/shared/cl-portfolio/runs/consolidation-source303-coverage-20260912/qualification",
+  "reference_experiment": {
+    "initial_tensor_sha256": "f60dc65839a1066c3058d6daf7827577ae4d7c181c263e7e0644597b8391218e",
+    "schedule_sha256": "d7eebc1afa74f611bb84baee43b33b571d3a23976dacd6d1c910510064d8cef4",
+    "training_dir": "/mnt/shared/cl-portfolio/runs/consolidation-generated303-20260912",
+    "training_sha256": "14cd4a0476ac9f5b5f22f589f7f1cb641d2c8dd903fea42408492d4dc1b04b04"
+  },
+  "teacher_cache": "Cache all384 actual teacher-generated TRAIN responses already present in the qualification panel, in fixture order. Use token IDs exactly as emitted, including actual EOS when present and any incorrect or nonterminated outputs. Never substitute oracle answers, add EOS, strip whitespace, reject wrong teacher responses, regenerate targets, or include validation/test outputs. Verify the saved prompt IDs and decoded response strings against the unchanged tokenizer before any update.",
+  "teacher_oracle_control": "The perfect fullTRAIN output gate implies the same correct answer text and EOS as oracle supervision. Compare emitted token IDs to canonical oracle targets explicitly and record equality. When they are token-identical, teacher_output_sft and oracle_sft are the same training objective and serve as a repetition/consistency control, not distinct scientific methods. Both fresh arms still execute the full declared budget and persistent reload evaluation.",
+  "training": {
+    "checkpoint_updates": [
+      32,
+      128,
+      384
+    ],
+    "epochs": 4,
+    "example_exposures_per_arm": 1536,
+    "examples_per_update": 4,
+    "initialization_seed": 91230417,
+    "learning_rate": 0.0003,
+    "max_grad_norm": 1.0,
+    "methods": [
+      "teacher_output_sft",
+      "oracle_sft"
+    ],
+    "order_seed": 91230431,
+    "probe_rows_per_task": 8,
+    "selection": "fixed_final384",
+    "updates_per_arm": 384,
+    "weight_decay": 0.0
+  }
+}

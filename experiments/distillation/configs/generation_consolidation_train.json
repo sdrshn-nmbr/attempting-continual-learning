@@ -1,0 +1,6 @@
+{
+  "stage": "train",
+  "protocol": "configs/generation_consolidation_protocol.json",
+  "protocol_sha256": "cf97a11de950f3c222121ebf55c92cd14d982eae7699e9dbd2315650a2718e34",
+  "teacher_role": "whole_answer_trained"
+}

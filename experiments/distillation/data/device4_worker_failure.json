@@ -1,0 +1,444 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "annotations": {
+      "autoscaling.x-k8s.io/consume-provisioning-request": "job-cl-portfolio-kzjmt-86ea1-market-1",
+      "autoscaling.x-k8s.io/provisioning-class-name": "market.nationalcompute.com",
+      "cni.projectcalico.org/containerID": "9d7eff672e13cb63ee0ac43644b9b038245197ef37a96fa2766b94897db80156",
+      "cni.projectcalico.org/podIP": "",
+      "cni.projectcalico.org/podIPs": "",
+      "kueue.x-k8s.io/workload": "job-cl-portfolio-kzjmt-86ea1"
+    },
+    "creationTimestamp": "2026-09-12T04:24:45Z",
+    "generateName": "cl-portfolio-kzjmt-",
+    "generation": 1,
+    "labels": {
+      "app": "cl-portfolio",
+      "batch.kubernetes.io/controller-uid": "58fee6ca-ac72-4795-8c35-8eb117961211",
+      "batch.kubernetes.io/job-name": "cl-portfolio-kzjmt",
+      "controller-uid": "58fee6ca-ac72-4795-8c35-8eb117961211",
+      "job-name": "cl-portfolio-kzjmt",
+      "kueue.x-k8s.io/cluster-queue-name": "market",
+      "kueue.x-k8s.io/local-queue-name": "default",
+      "kueue.x-k8s.io/podset": "main",
+      "research-wave": "followthrough-20260912"
+    },
+    "name": "cl-portfolio-kzjmt-x4cvd",
+    "namespace": "default",
+    "ownerReferences": [
+      {
+        "apiVersion": "batch/v1",
+        "blockOwnerDeletion": true,
+        "controller": true,
+        "kind": "Job",
+        "name": "cl-portfolio-kzjmt",
+        "uid": "58fee6ca-ac72-4795-8c35-8eb117961211"
+      }
+    ],
+    "resourceVersion": "3481789",
+    "uid": "2d8a1b9d-5d12-4c27-add2-8f311691b329"
+  },
+  "spec": {
+    "automountServiceAccountToken": false,
+    "containers": [
+      {
+        "args": [
+          "set -Eeuo pipefail\nexport PATH=\"/tools:$PATH\"\nexec uv run --no-project --python \"$(command -v python)\" python \\\n  /bootstrap/supervisor.py --root /mnt/shared/cl-portfolio --gpus 8\n"
+        ],
+        "command": [
+          "bash",
+          "-c"
+        ],
+        "env": [
+          {
+            "name": "POD_NAME",
+            "valueFrom": {
+              "fieldRef": {
+                "apiVersion": "v1",
+                "fieldPath": "metadata.name"
+              }
+            }
+          },
+          {
+            "name": "POD_UID",
+            "valueFrom": {
+              "fieldRef": {
+                "apiVersion": "v1",
+                "fieldPath": "metadata.uid"
+              }
+            }
+          },
+          {
+            "name": "HF_HOME",
+            "value": "/mnt/shared/cl-portfolio/huggingface"
+          },
+          {
+            "name": "HF_HUB_DISABLE_TELEMETRY",
+            "value": "1"
+          },
+          {
+            "name": "UV_CACHE_DIR",
+            "value": "/mnt/shared/cl-smoke/uv-cache"
+          },
+          {
+            "name": "OMP_NUM_THREADS",
+            "value": "4"
+          },
+          {
+            "name": "TOKENIZERS_PARALLELISM",
+            "value": "false"
+          },
+          {
+            "name": "HF_DEACTIVATE_ASYNC_LOAD",
+            "value": "1"
+          },
+          {
+            "name": "NCCL_CROSS_NIC",
+            "value": "0"
+          },
+          {
+            "name": "NCCL_IB_GID_INDEX",
+            "value": "1"
+          },
+          {
+            "name": "NCCL_IB_HCA",
+            "value": "ionic"
+          }
+        ],
+        "image": "rocm/pytorch:rocm7.2.4_ubuntu24.04_py3.12_pytorch_release_2.10.0@sha256:4449f856653602317e4101a76fce599c7fcd58ccec2e539951fce5f73083179e",
+        "imagePullPolicy": "IfNotPresent",
+        "name": "portfolio",
+        "resources": {
+          "limits": {
+            "amd.com/gpu": "8",
+            "memory": "768Gi"
+          },
+          "requests": {
+            "amd.com/gpu": "8",
+            "cpu": "64",
+            "memory": "256Gi"
+          }
+        },
+        "terminationMessagePath": "/dev/termination-log",
+        "terminationMessagePolicy": "File",
+        "volumeMounts": [
+          {
+            "mountPath": "/mnt/shared",
+            "name": "shared"
+          },
+          {
+            "mountPath": "/bootstrap",
+            "name": "bootstrap",
+            "readOnly": true
+          },
+          {
+            "mountPath": "/tools",
+            "name": "tools"
+          },
+          {
+            "mountPath": "/dev/shm",
+            "name": "shm"
+          }
+        ]
+      }
+    ],
+    "dnsPolicy": "ClusterFirst",
+    "enableServiceLinks": true,
+    "initContainers": [
+      {
+        "command": [
+          "sh",
+          "-c",
+          "cp \"$(command -v uv)\" /tools/uv"
+        ],
+        "image": "ghcr.io/astral-sh/uv:0.12.10-python3.12-trixie-slim@sha256:4bf11151c225e2a4d60e2a576b67d925660055199389d9a64fbdc02b6f3d43d5",
+        "imagePullPolicy": "IfNotPresent",
+        "name": "uv",
+        "resources": {},
+        "terminationMessagePath": "/dev/termination-log",
+        "terminationMessagePolicy": "File",
+        "volumeMounts": [
+          {
+            "mountPath": "/tools",
+            "name": "tools"
+          }
+        ]
+      }
+    ],
+    "nodeName": "gilded-ibex",
+    "nodeSelector": {
+      "marketplace.nationalcompute.com/request": "47f40177-f60f-4144-9c85-0b078c7c9e78",
+      "node-role.kubernetes.io/gpu-worker": ""
+    },
+    "preemptionPolicy": "PreemptLowerPriority",
+    "priority": 0,
+    "restartPolicy": "Never",
+    "schedulerName": "default-scheduler",
+    "securityContext": {},
+    "serviceAccount": "default",
+    "serviceAccountName": "default",
+    "terminationGracePeriodSeconds": 60,
+    "tolerations": [
+      {
+        "effect": "NoSchedule",
+        "key": "amd.com/gpu",
+        "operator": "Exists"
+      },
+      {
+        "effect": "NoSchedule",
+        "key": "amd.com/gpu",
+        "operator": "Equal",
+        "value": "present"
+      },
+      {
+        "effect": "NoExecute",
+        "key": "node.kubernetes.io/not-ready",
+        "operator": "Exists",
+        "tolerationSeconds": 300
+      },
+      {
+        "effect": "NoExecute",
+        "key": "node.kubernetes.io/unreachable",
+        "operator": "Exists",
+        "tolerationSeconds": 300
+      }
+    ],
+    "volumes": [
+      {
+        "hostPath": {
+          "path": "/mnt/shared",
+          "type": "Directory"
+        },
+        "name": "shared"
+      },
+      {
+        "configMap": {
+          "defaultMode": 420,
+          "name": "cl-portfolio-runtime-2b9aa79c0138"
+        },
+        "name": "bootstrap"
+      },
+      {
+        "emptyDir": {},
+        "name": "tools"
+      },
+      {
+        "emptyDir": {
+          "medium": "Memory",
+          "sizeLimit": "32Gi"
+        },
+        "name": "shm"
+      }
+    ]
+  },
+  "status": {
+    "allocatedResources": {
+      "amd.com/gpu": "8",
+      "cpu": "64",
+      "memory": "256Gi"
+    },
+    "conditions": [
+      {
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-12T06:22:29Z",
+        "observedGeneration": 1,
+        "status": "False",
+        "type": "PodReadyToStartContainers"
+      },
+      {
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-12T04:25:09Z",
+        "observedGeneration": 1,
+        "status": "True",
+        "type": "Initialized"
+      },
+      {
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-12T06:22:28Z",
+        "observedGeneration": 1,
+        "reason": "PodFailed",
+        "status": "False",
+        "type": "Ready"
+      },
+      {
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-12T06:22:28Z",
+        "observedGeneration": 1,
+        "reason": "PodFailed",
+        "status": "False",
+        "type": "ContainersReady"
+      },
+      {
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-09-12T04:25:06Z",
+        "observedGeneration": 1,
+        "status": "True",
+        "type": "PodScheduled"
+      }
+    ],
+    "containerStatuses": [
+      {
+        "allocatedResources": {
+          "amd.com/gpu": "8",
+          "cpu": "64",
+          "memory": "256Gi"
+        },
+        "allocatedResourcesStatus": [
+          {
+            "name": "amd.com/gpu",
+            "resources": [
+              {
+                "health": "Healthy",
+                "resourceID": "0002:00:02.0"
+              },
+              {
+                "health": "Healthy",
+                "resourceID": "0002:00:03.0"
+              },
+              {
+                "health": "Healthy",
+                "resourceID": "0002:00:04.0"
+              },
+              {
+                "health": "Healthy",
+                "resourceID": "0003:00:02.0"
+              },
+              {
+                "health": "Healthy",
+                "resourceID": "0003:00:03.0"
+              },
+              {
+                "health": "Healthy",
+                "resourceID": "0003:00:04.0"
+              },
+              {
+                "health": "Healthy",
+                "resourceID": "0003:00:01.0"
+              },
+              {
+                "health": "Healthy",
+                "resourceID": "0002:00:01.0"
+              }
+            ]
+          }
+        ],
+        "containerID": "containerd://2d9cf99befac2a381fc4c1e169e85f6a88bd0dead11f3ec0597e93afd8288314",
+        "image": "sha256:2eff32b27136f588d210dcee439719cc9b568b0470bdd6df4c139cfb8a19ad36",
+        "imageID": "docker.io/rocm/pytorch@sha256:4449f856653602317e4101a76fce599c7fcd58ccec2e539951fce5f73083179e",
+        "lastState": {},
+        "name": "portfolio",
+        "ready": false,
+        "resources": {
+          "limits": {
+            "amd.com/gpu": "8",
+            "memory": "768Gi"
+          },
+          "requests": {
+            "amd.com/gpu": "8",
+            "cpu": "64",
+            "memory": "256Gi"
+          }
+        },
+        "restartCount": 0,
+        "started": false,
+        "state": {
+          "terminated": {
+            "containerID": "containerd://2d9cf99befac2a381fc4c1e169e85f6a88bd0dead11f3ec0597e93afd8288314",
+            "exitCode": 1,
+            "finishedAt": "2026-09-12T06:22:27Z",
+            "reason": "Error",
+            "startedAt": "2026-09-12T04:26:51Z"
+          }
+        },
+        "user": {
+          "linux": {
+            "gid": 0,
+            "supplementalGroups": [
+              0
+            ],
+            "uid": 0
+          }
+        },
+        "volumeMounts": [
+          {
+            "mountPath": "/mnt/shared",
+            "name": "shared"
+          },
+          {
+            "mountPath": "/bootstrap",
+            "name": "bootstrap",
+            "readOnly": true,
+            "recursiveReadOnly": "Disabled"
+          },
+          {
+            "mountPath": "/tools",
+            "name": "tools"
+          },
+          {
+            "mountPath": "/dev/shm",
+            "name": "shm"
+          }
+        ]
+      }
+    ],
+    "hostIP": "10.102.5.34",
+    "hostIPs": [
+      {
+        "ip": "10.102.5.34"
+      }
+    ],
+    "initContainerStatuses": [
+      {
+        "containerID": "containerd://366a0663539bbda7d60aa74c5f0576aea33f92f4d2bb018272dcfae78b9f90cd",
+        "image": "sha256:53401c543167c4d0f900c648478c99230e02a13f195610de1582fc937cb629ae",
+        "imageID": "ghcr.io/astral-sh/uv@sha256:4bf11151c225e2a4d60e2a576b67d925660055199389d9a64fbdc02b6f3d43d5",
+        "lastState": {},
+        "name": "uv",
+        "ready": true,
+        "resources": {},
+        "restartCount": 0,
+        "started": false,
+        "state": {
+          "terminated": {
+            "containerID": "containerd://366a0663539bbda7d60aa74c5f0576aea33f92f4d2bb018272dcfae78b9f90cd",
+            "exitCode": 0,
+            "finishedAt": "2026-09-12T04:25:09Z",
+            "reason": "Completed",
+            "startedAt": "2026-09-12T04:25:08Z"
+          }
+        },
+        "user": {
+          "linux": {
+            "gid": 0,
+            "supplementalGroups": [
+              0
+            ],
+            "uid": 0
+          }
+        },
+        "volumeMounts": [
+          {
+            "mountPath": "/tools",
+            "name": "tools"
+          }
+        ]
+      }
+    ],
+    "observedGeneration": 1,
+    "phase": "Failed",
+    "podIP": "10.42.12.4",
+    "podIPs": [
+      {
+        "ip": "10.42.12.4"
+      }
+    ],
+    "qosClass": "Burstable",
+    "resources": {
+      "requests": {
+        "memory": "256Gi"
+      }
+    },
+    "startTime": "2026-09-12T04:25:06Z"
+  }
+}

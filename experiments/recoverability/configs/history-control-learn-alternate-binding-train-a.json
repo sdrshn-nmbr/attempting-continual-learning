@@ -1,0 +1,6 @@
+{
+  "condition": "alternate_binding",
+  "run_id": "followthrough-20260912-recovery-history-learn-alternate-binding-train-a",
+  "stage": "learn",
+  "stream": "fresh-train-a"
+}

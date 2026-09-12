@@ -1,0 +1,12 @@
+{
+  "learning_sources": {
+    "train-a": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-learn-train-a/study",
+    "train-b": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-learn-train-b/study"
+  },
+  "sources": {
+    "train-a": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-budget-pilot-train-a/study",
+    "train-b": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-budget-pilot-train-b/study"
+  },
+  "stage": "qualify",
+  "study_config": "configs/prospective.json"
+}

@@ -1,0 +1,896 @@
+{
+  "cli_contract": "Only --config PATH --output-dir EXISTING_RUN_DIR; creates a fresh study child, exclusive artifacts and refuses overwrite. Check scientific qualified flag in addition to completed execution.",
+  "cohorts": {
+    "background": "Only the original disjoint 512/128 TRAIN lens fit/check texts reused; translators are newly fitted at each fresh acquired checkpoint and frozen through forgetting.",
+    "excluded_prior_intents": [
+      "accept_reservations",
+      "account_blocked",
+      "alarm",
+      "application_status",
+      "are_you_a_bot",
+      "book_hotel",
+      "calendar",
+      "change_language",
+      "change_speed",
+      "confirm_reservation",
+      "cook_time",
+      "date",
+      "definition",
+      "direct_deposit",
+      "distance",
+      "do_you_have_pets",
+      "exchange_rate",
+      "expiration_date",
+      "food_last",
+      "freeze_account",
+      "fun_fact",
+      "gas_type",
+      "goodbye",
+      "how_busy",
+      "how_old_are_you",
+      "income",
+      "insurance_change",
+      "international_fees",
+      "jump_start",
+      "last_maintenance",
+      "lost_luggage",
+      "make_call",
+      "maybe",
+      "meal_suggestion",
+      "meaning_of_life",
+      "meeting_schedule",
+      "min_payment",
+      "mpg",
+      "new_card",
+      "next_song",
+      "no",
+      "nutrition_info",
+      "oil_change_how",
+      "oil_change_when",
+      "order",
+      "order_checks",
+      "order_status",
+      "pay_bill",
+      "pin_change",
+      "play_music",
+      "pto_request",
+      "recipe",
+      "redeem_rewards",
+      "report_fraud",
+      "report_lost_card",
+      "reset_settings",
+      "restaurant_reservation",
+      "restaurant_reviews",
+      "restaurant_suggestion",
+      "rewards_balance",
+      "roll_dice",
+      "routing",
+      "schedule_maintenance",
+      "schedule_meeting",
+      "share_location",
+      "shopping_list",
+      "shopping_list_update",
+      "sync_device",
+      "text",
+      "thank_you",
+      "time",
+      "timer",
+      "todo_list",
+      "update_playlist",
+      "vaccines",
+      "w2",
+      "what_can_i_ask_you",
+      "where_are_you_from",
+      "whisper_mode",
+      "yes"
+    ],
+    "fresh_candidates": 67,
+    "fresh_intents": 64,
+    "inference": "Two TRAIN and two TEST independently trained source streams with disjoint intents and separate seeds/orders. Only two heldout model clusters; exploratory. Intents, layers, tokens, budget prefixes and label shuffles are not independent models.",
+    "insufficient_unique_rows": {
+      "change_volume": {
+        "test": 30,
+        "train": 50,
+        "validation": 19
+      },
+      "greeting": {
+        "test": 30,
+        "train": 50,
+        "validation": 19
+      },
+      "reminder": {
+        "test": 30,
+        "train": 50,
+        "validation": 19
+      }
+    },
+    "new_intents_per_stream": 8,
+    "old_intents_per_stream": 8,
+    "selection_seed": 202609121,
+    "streams": {
+      "fresh-test-a": {
+        "id": "fresh-test-a",
+        "new": [
+          "who_made_you",
+          "tire_pressure",
+          "current_location",
+          "carry_on",
+          "travel_alert",
+          "taxes",
+          "balance",
+          "improve_credit_score"
+        ],
+        "old": [
+          "cancel",
+          "calendar_update",
+          "pto_balance",
+          "directions",
+          "calculator",
+          "timezone",
+          "what_song",
+          "credit_limit_change"
+        ],
+        "seed": 709,
+        "split": "test"
+      },
+      "fresh-test-b": {
+        "id": "fresh-test-b",
+        "new": [
+          "traffic",
+          "change_accent",
+          "next_holiday",
+          "what_is_your_name",
+          "weather",
+          "card_declined",
+          "todo_list_update",
+          "car_rental"
+        ],
+        "old": [
+          "tell_joke",
+          "tire_change",
+          "bill_due",
+          "measurement_conversion",
+          "spelling",
+          "plug_type",
+          "gas",
+          "international_visa"
+        ],
+        "seed": 811,
+        "split": "test"
+      },
+      "fresh-train-a": {
+        "id": "fresh-train-a",
+        "new": [
+          "reminder_update",
+          "user_name",
+          "pto_request_status",
+          "who_do_you_work_for",
+          "apr",
+          "bill_balance",
+          "smart_home",
+          "ingredient_substitution"
+        ],
+        "old": [
+          "repeat",
+          "pto_used",
+          "travel_suggestion",
+          "replacement_card_duration",
+          "spending_history",
+          "insurance",
+          "calories",
+          "translate"
+        ],
+        "seed": 503,
+        "split": "train"
+      },
+      "fresh-train-b": {
+        "id": "fresh-train-b",
+        "new": [
+          "interest_rate",
+          "credit_score",
+          "cancel_reservation",
+          "rollover_401k",
+          "change_ai_name",
+          "transactions",
+          "damaged_card",
+          "flip_coin"
+        ],
+        "old": [
+          "book_flight",
+          "payday",
+          "flight_status",
+          "uber",
+          "credit_limit",
+          "what_are_your_hobbies",
+          "change_user_name",
+          "transfer"
+        ],
+        "seed": 607,
+        "split": "train"
+      }
+    },
+    "unused_candidates": [
+      "travel_notification",
+      "find_phone",
+      "ingredients_list"
+    ]
+  },
+  "command_environment": "Ready commands are for the staged recoverability source directory under the parent qualified environment. compute/run_task.py resolves the interpreter, injects --python and supplies the two entrypoint arguments. Existing requirements; no new runtime package requirements.",
+  "cpu_validation": {
+    "command": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python -m pytest tests -q",
+    "controls": [
+      "Completed official source and exact positive-gate recomputation required; failed gate blocks model/lens/repair/predictor work",
+      "Four fresh datasets disjoint from all 80 historical intents; unchanged bounded score and gain/forgetting gates",
+      "Real tiny hybrid Qwen3.5 AdamW: 30 updates, identical losses/gradients/rows and saved weights at shared 2/4/8/16 prefixes, baseline parity, frozen backbone and reload controls",
+      "Fresh TRAIN class failure serializes a blocking receipt before any predictor fitting",
+      "TRAIN-only label plans/scalers; 40 fixed permutations retain scalar inactive draws including zero-support one-hot labels",
+      "TEST forecasts independent of action outcomes; coefficient, heldout identity and cohort source checks",
+      "Joint qualification/updates/utility against always-2, always-16 and TRAIN-majority; high class accuracy cannot hide under-repair",
+      "Lens gates enforce same disjoint TRAIN background positions, full declared update budget, both acquired and forgotten KL improvement, frozen model and reload proof"
+    ],
+    "nested_imports": 0,
+    "ruff_check": "passed",
+    "ruff_format_check": "passed: all 5 new Python files formatted",
+    "scope": "CPU controls validate implementation and arithmetic. Fresh full-size acquisition, forgetting, translator qualification and policy effectiveness remain unmeasured.",
+    "suite": "110 passed: 70 frozen existing controls and 40 new prediction controls",
+    "working_directory": "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability"
+  },
+  "dispatch": {
+    "followthrough-20260912-recovery-predict-analyze": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-analyze.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-analyze",
+      "config": "configs/budget-prediction-analyze.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-fit",
+        "followthrough-20260912-recovery-predict-forecast",
+        "followthrough-20260912-recovery-predict-readout-gate-test",
+        "followthrough-20260912-recovery-predict-repair-test-a",
+        "followthrough-20260912-recovery-predict-repair-test-b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": false,
+      "gpus": 1,
+      "operational_depends_on": [],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-analyze",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-fit",
+        "followthrough-20260912-recovery-predict-forecast",
+        "followthrough-20260912-recovery-predict-readout-gate-test",
+        "followthrough-20260912-recovery-predict-repair-test-a",
+        "followthrough-20260912-recovery-predict-repair-test-b"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-authorize": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-authorize.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize",
+      "config": "configs/budget-prediction-authorize.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-budget-pilot-gate-slot"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": false,
+      "gpus": 1,
+      "operational_depends_on": [],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-budget-pilot-gate-slot"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-cohort": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-cohort.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort",
+      "config": "configs/budget-prediction-cohort.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-learn-test-a",
+        "followthrough-20260912-recovery-predict-learn-test-b",
+        "followthrough-20260912-recovery-predict-learn-train-a",
+        "followthrough-20260912-recovery-predict-learn-train-b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": false,
+      "gpus": 1,
+      "operational_depends_on": [],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-learn-test-a",
+        "followthrough-20260912-recovery-predict-learn-test-b",
+        "followthrough-20260912-recovery-predict-learn-train-a",
+        "followthrough-20260912-recovery-predict-learn-train-b"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-fit": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-fit.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-fit",
+      "config": "configs/budget-prediction-fit.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-readout-gate-train",
+        "followthrough-20260912-recovery-predict-repair-train-a",
+        "followthrough-20260912-recovery-predict-repair-train-b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": false,
+      "gpus": 1,
+      "operational_depends_on": [],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-fit",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-readout-gate-train",
+        "followthrough-20260912-recovery-predict-repair-train-a",
+        "followthrough-20260912-recovery-predict-repair-train-b"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-forecast": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-forecast.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-forecast",
+      "config": "configs/budget-prediction-forecast.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-fit",
+        "followthrough-20260912-recovery-predict-readout-gate-test"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": false,
+      "gpus": 1,
+      "operational_depends_on": [],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-forecast",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-fit",
+        "followthrough-20260912-recovery-predict-readout-gate-test"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-learn-test-a": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-learn-test-a.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-test-a",
+      "config": "configs/budget-prediction-learn-test-a.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": true,
+      "gpus": 1,
+      "operational_depends_on": [
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-test-a",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-learn-test-b": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-learn-test-b.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-test-b",
+      "config": "configs/budget-prediction-learn-test-b.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": true,
+      "gpus": 1,
+      "operational_depends_on": [
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-test-b",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-learn-train-a": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-learn-train-a.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-train-a",
+      "config": "configs/budget-prediction-learn-train-a.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": true,
+      "gpus": 1,
+      "operational_depends_on": [
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-train-a",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-learn-train-b": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-learn-train-b.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-train-b",
+      "config": "configs/budget-prediction-learn-train-b.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": true,
+      "gpus": 1,
+      "operational_depends_on": [
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-train-b",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-readout-gate-test": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-readout-gate-test.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-gate-test",
+      "config": "configs/budget-prediction-readout-gate-test.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-fit",
+        "followthrough-20260912-recovery-predict-readout-test-a",
+        "followthrough-20260912-recovery-predict-readout-test-b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": false,
+      "gpus": 1,
+      "operational_depends_on": [],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-gate-test",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-fit",
+        "followthrough-20260912-recovery-predict-readout-test-a",
+        "followthrough-20260912-recovery-predict-readout-test-b"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-readout-gate-train": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-readout-gate-train.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-gate-train",
+      "config": "configs/budget-prediction-readout-gate-train.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-readout-train-a",
+        "followthrough-20260912-recovery-predict-readout-train-b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": false,
+      "gpus": 1,
+      "operational_depends_on": [],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-gate-train",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-readout-train-a",
+        "followthrough-20260912-recovery-predict-readout-train-b"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-readout-test-a": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-readout-test-a.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-test-a",
+      "config": "configs/budget-prediction-readout-test-a.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-fit",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": true,
+      "gpus": 1,
+      "operational_depends_on": [
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-test-a",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-fit"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-readout-test-b": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-readout-test-b.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-test-b",
+      "config": "configs/budget-prediction-readout-test-b.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-fit",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": true,
+      "gpus": 1,
+      "operational_depends_on": [
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-test-b",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-fit"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-readout-train-a": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-readout-train-a.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-train-a",
+      "config": "configs/budget-prediction-readout-train-a.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": true,
+      "gpus": 1,
+      "operational_depends_on": [
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-train-a",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-readout-train-b": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-readout-train-b.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-train-b",
+      "config": "configs/budget-prediction-readout-train-b.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": true,
+      "gpus": 1,
+      "operational_depends_on": [
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-train-b",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-repair-test-a": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-repair-test-a.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-test-a",
+      "config": "configs/budget-prediction-repair-test-a.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-forecast",
+        "followthrough-20260912-recovery-predict-readout-gate-test",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": true,
+      "gpus": 1,
+      "operational_depends_on": [
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-test-a",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-forecast",
+        "followthrough-20260912-recovery-predict-readout-gate-test"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-repair-test-b": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-repair-test-b.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-test-b",
+      "config": "configs/budget-prediction-repair-test-b.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-forecast",
+        "followthrough-20260912-recovery-predict-readout-gate-test",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": true,
+      "gpus": 1,
+      "operational_depends_on": [
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-test-b",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-forecast",
+        "followthrough-20260912-recovery-predict-readout-gate-test"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-repair-train-a": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-repair-train-a.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-train-a",
+      "config": "configs/budget-prediction-repair-train-a.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-readout-gate-train",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": true,
+      "gpus": 1,
+      "operational_depends_on": [
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-train-a",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-readout-gate-train"
+      ]
+    },
+    "followthrough-20260912-recovery-predict-repair-train-b": {
+      "command": "uv run --no-project python budget_prediction.py --config configs/budget-prediction-repair-train-b.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-train-b",
+      "config": "configs/budget-prediction-repair-train-b.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-readout-gate-train",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "entrypoint": "budget_prediction.py",
+      "gpu_computation": true,
+      "gpus": 1,
+      "operational_depends_on": [
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "output_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-train-b",
+      "scientific_depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-readout-gate-train"
+      ]
+    }
+  },
+  "entrypoint": "experiments/recoverability/budget_prediction.py",
+  "new_files": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/budget_prediction.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/budget_prediction_analysis.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/budget_prediction_model.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/prepare_budget_prediction.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/budget-prediction-learning.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/budget-prediction-learning.sha256",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/budget-prediction-protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/budget-prediction-protocol.sha256",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/inputs/budget-prediction-cohort.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-analyze.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-authorize.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-cohort.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-fit.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-forecast.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-learn-test-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-learn-test-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-learn-train-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-learn-train-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-readout-gate-test.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-readout-gate-train.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-readout-test-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-readout-test-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-readout-train-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-readout-train-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-repair-test-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-repair-test-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-repair-train-a.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/configs/budget-prediction-repair-train-b.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/tests/test_budget_prediction.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/budget-prediction-interface.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/recoverability/budget-prediction-interface.sha256"
+  ],
+  "ownership": "Only new independent recoverability files created/edited. Original protocols, code, data, pilots and results frozen. No commits, pushes, provider mutation, dispatch or old audit changes.",
+  "required_file_sha256": {
+    "budget-prediction-learning.json": "e925ad6ab84803964e26e815aa0ebc0dad7d16f8d3b4a0008e1e5e7a2fb2693e",
+    "budget-prediction-learning.sha256": "a83b6cb47244c363418886eb1cc3a7718e47f9fc8ca162b1a83768e6811e7621",
+    "budget-prediction-protocol.json": "a1c8926fa7eed2d82e2dacd3234474ede09b6c9f5273a72c9968bd80e3098708",
+    "budget-prediction-protocol.sha256": "67bcad88a0d083561bdf4bbf23728b0c87693a8fb9eee7f67c40386e7d9f8bc1",
+    "budget_prediction.py": "13c4abefae778e3ac7324add0257d1055406c961d15d155b88eebeb6517cc35a",
+    "budget_prediction_analysis.py": "7392384bc65571636b62ec3b28ffdcc85bcd9d9210f648027c3270dc688b98fa",
+    "budget_prediction_model.py": "d9d736dea7ff678edd6815c878b0d69fad671b09d4cb61920a333295e60f6d72",
+    "configs/budget-prediction-analyze.json": "405a3cb8607f80a0be1083ded6671cd4b6511e3b7c1034e6972255445bcaa965",
+    "configs/budget-prediction-authorize.json": "4e8c57c791d2a4e1bb4c3e78976d32146a516c40d16d548711ab4f52f79d0069",
+    "configs/budget-prediction-cohort.json": "290ab8dac58a3d77ee8ddbabb23c812cfe0f50fc3aa8e2d685589b4eed89e133",
+    "configs/budget-prediction-fit.json": "fe154513b7095643b5ca97c2bd99881beab14f6147f03a8db2f7e27ab168a5f7",
+    "configs/budget-prediction-forecast.json": "3accd2579e6d0fe124c3a6a3134565e8d9ad3dcae63dbbafa537c2bab8daf713",
+    "configs/budget-prediction-learn-test-a.json": "f4c88246249ee5e0d2f17057b277c75f97de4f92b987d43725ab23fda90088a2",
+    "configs/budget-prediction-learn-test-b.json": "71c8c0bfe7a64d078e9b1550d3b43118af0893db264d67d36aac0cbabfabd65f",
+    "configs/budget-prediction-learn-train-a.json": "85cee83b82cb8618532b92a2c64649c5ef7a936caeff228f713bad1718097604",
+    "configs/budget-prediction-learn-train-b.json": "aac98e6b8579f7c9422f243ac210a81f7266f687435f4039e51df03056eb90fd",
+    "configs/budget-prediction-readout-gate-test.json": "b192414016c28cdaf9ecf3bf2706d16933028cc456a7e974d6a26db2106d6104",
+    "configs/budget-prediction-readout-gate-train.json": "001743b6f569ef30d3b1d48b18a5685f10f6d9acd02c098d9d5a4303e6b5c643",
+    "configs/budget-prediction-readout-test-a.json": "f77b04c2916e45f8d49f112cec91dedca23d3969afd33e3fffe202a386451e40",
+    "configs/budget-prediction-readout-test-b.json": "24297897509e0e54aafa1d8deebcc2782d30ed901be8fa2a16fb8d3b46c45a7f",
+    "configs/budget-prediction-readout-train-a.json": "0c656cc9412522b65b43508a6a3cc1f661f6dff42bd252cfc43e051aa6860233",
+    "configs/budget-prediction-readout-train-b.json": "2cd366498cca0563e94e88483b14317064f93caf7eae48df4d6816a613d06b3f",
+    "configs/budget-prediction-repair-test-a.json": "d9d1ad6541da88b418788593cf2a7516ed431ba99a849b56926346ca728f8b02",
+    "configs/budget-prediction-repair-test-b.json": "2e55fdbf32e99c36cc5ff7054c2514a5d08bee06f9d8bf896d4d03315c93d5b8",
+    "configs/budget-prediction-repair-train-a.json": "3cb711fd10fc30216d9feb13c3f372843e9b230628b2269ef7187d24c1349a4e",
+    "configs/budget-prediction-repair-train-b.json": "69e32094b63c205b3b8e82e2c278abeb752de5c511df0a3cd42437c628ea5d34",
+    "configs/budget-prediction.json": "0e1cbcc6fa66a4674c060c631eb911bc0c1703b5a16c4870cce49e3612da90ed",
+    "configs/minimum-budget-gate.json": "ba648d6410c6dfd25e592e32a36bd175628de5f3039aeec61a921049a9097dd9",
+    "configs/minimum-budget-train-a.json": "e1a5f0f35cff505af7667e6a167f403207b093326c294140feb05ae7e54919cc",
+    "configs/minimum-budget-train-b.json": "07d52ad7b57c184eb6a1fa67546985a2cc66ddb2fcbf777ebab9e4993d56dd90",
+    "configs/prospective.json": "8a3b4c2b6b7d99644d3054e934936587ec33fe8d8d3f1c1629b6924d2c74e4e3",
+    "inputs/budget-prediction-cohort.json": "14781a4cd46816767903e43a0a1cd74b5d7d80b096ad7c0eeb92b69fd29ebc93",
+    "inputs/prospective-cohort.json": "b5b89a67140db92e8f9d281510dcfc873c5e32c46470ef3acb0b4dd3ae861bb8",
+    "minimum-budget-protocol.json": "7b7e01962d72080a4ba5f183713c5dc91746452a08125f221a037afa6ec0116e",
+    "minimum-budget-protocol.sha256": "f20f081f6c18d058f52e4edb81d33868ecfe6a7f2a918ec7d491ce1b4ce6204b",
+    "minimum_budget.py": "ef7230f741e312dfc2d0d5d42678be2af76012989b9ff91d53043843fb346392",
+    "model.py": "5af6edb1a42d6042a3a38b9d0ab4ce01ea6cadac6728d9e0fea84acd695442b2",
+    "prepare_budget_prediction.py": "6bc43f784cc08117ec0fc89d95911185f63f46b805d2afe1dbfcdf3ee6182456",
+    "prospective-protocol.json": "51f2f2771b59e7f4f93090bf8463758032e2c88a41764212849fe4499f0d4719",
+    "prospective-protocol.sha256": "1229d93879693ea94bf5e6d4eb307abfa5438af26ce9e51cbe2a533bb2ccf43a",
+    "prospective.py": "3f2ce28d0c350b26b1e0d8d97a9fc9084e9f75837f20945e82e8c80584f817dc",
+    "prospective_analysis.py": "2eeb9b61a14a58df2cf8f20b5148d73afda3364b4b93424ef408faad6e6ebad6",
+    "prospective_data.py": "8d39002c90359c7c62e65d121ba907d5b6639faa105aad237fc476168dc04048",
+    "prospective_model.py": "46c4c6901e61479759bf38ae2af01a36a1c5282db34639900428aad016447399",
+    "protocol.py": "a1e54302b007827b9c2982d8c366b68b89f573ddeb4b1c8f2ac50bf440d23776",
+    "requirements.txt": "847ae989f281a78cb0fb40f574e23f3baefc20f7bc3ecebf8ebb65857c6c689c",
+    "tuned_lens.py": "c640f82a9e4510287678774625dd6ecebe74063461659b5d763adaf5ddceecc8"
+  },
+  "required_runtime_files": [
+    "budget-prediction-learning.json",
+    "budget-prediction-learning.sha256",
+    "budget-prediction-protocol.json",
+    "budget-prediction-protocol.sha256",
+    "budget_prediction.py",
+    "budget_prediction_analysis.py",
+    "budget_prediction_model.py",
+    "configs/budget-prediction-analyze.json",
+    "configs/budget-prediction-authorize.json",
+    "configs/budget-prediction-cohort.json",
+    "configs/budget-prediction-fit.json",
+    "configs/budget-prediction-forecast.json",
+    "configs/budget-prediction-learn-test-a.json",
+    "configs/budget-prediction-learn-test-b.json",
+    "configs/budget-prediction-learn-train-a.json",
+    "configs/budget-prediction-learn-train-b.json",
+    "configs/budget-prediction-readout-gate-test.json",
+    "configs/budget-prediction-readout-gate-train.json",
+    "configs/budget-prediction-readout-test-a.json",
+    "configs/budget-prediction-readout-test-b.json",
+    "configs/budget-prediction-readout-train-a.json",
+    "configs/budget-prediction-readout-train-b.json",
+    "configs/budget-prediction-repair-test-a.json",
+    "configs/budget-prediction-repair-test-b.json",
+    "configs/budget-prediction-repair-train-a.json",
+    "configs/budget-prediction-repair-train-b.json",
+    "configs/budget-prediction.json",
+    "configs/minimum-budget-gate.json",
+    "configs/minimum-budget-train-a.json",
+    "configs/minimum-budget-train-b.json",
+    "configs/prospective.json",
+    "inputs/budget-prediction-cohort.json",
+    "inputs/prospective-cohort.json",
+    "minimum-budget-protocol.json",
+    "minimum-budget-protocol.sha256",
+    "minimum_budget.py",
+    "model.py",
+    "prepare_budget_prediction.py",
+    "prospective-protocol.json",
+    "prospective-protocol.sha256",
+    "prospective.py",
+    "prospective_analysis.py",
+    "prospective_data.py",
+    "prospective_model.py",
+    "protocol.py",
+    "requirements.txt",
+    "tuned_lens.py"
+  ],
+  "scheduling": {
+    "cpu_computation_stages": [
+      "authorize",
+      "cohort",
+      "readout-gate",
+      "fit",
+      "forecast",
+      "analyze"
+    ],
+    "gpus_for_every_job": 1,
+    "parent_owns_dispatch": true,
+    "reason": "Current supervisor requires gpus >= 1, including CPU computation stages.",
+    "worker_qualification_dependency": "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+  },
+  "scientific_decisions": {
+    "acquisition_and_forgetting_gates": {
+      "acquired_min": 0.8,
+      "acquisition_baseline": "At least .3 improvement from start of the relevant training phase: initial old-gate scores for old acquisition; acquired-checkpoint new-gate scores for later-task acquisition. Never count a pre-existing output-code bias as a newly learned binding.",
+      "acquisition_gain_min": 0.3,
+      "after_max": 0.5,
+      "drop_min": 0.3,
+      "minimum_acquired_per_stream": 6,
+      "minimum_forgotten": {
+        "test": 8,
+        "train": 12
+      },
+      "minimum_forgotten_per_stream": 4,
+      "minimum_new_acquired_per_stream": 6,
+      "minimum_streams_per_split": 2
+    },
+    "class_support": "Keep 2/4/8/16/never classes fixed regardless of observed support. Report zero counts, unsupported classes and constant scalar labels explicitly; never hide under-repair behind majority class accuracy.",
+    "failure_rule": "No model or prediction work before original gate authorization. Failed fresh learning, lens qualification or fresh TRAIN class gate blocks downstream work. Preserve receipts; any changed protocol requires a new named TRAIN study. No old TEST reuse.",
+    "fresh_train_class_gate": {
+      "minimum_budget_classes": 2,
+      "minimum_skills_per_class": 2,
+      "minimum_train_skills": 12
+    },
+    "history_boundary": "A minimum-budget response curve does not by itself identify stored-binding reuse. Matched retain-only curves at smaller budgets would be required for a recovery-speed advantage claim; the earlier 16-update references nearly saturate.",
+    "label_permutations": {
+      "rule": "Seal indices using all eligible fresh TRAIN units at the fresh cohort gate before repair. Fit 40 tuned-feature nulls using TRAIN-label permutations only, shared across all outcome targets. Report actual changed labels and active/inert draw counts by scheme for the minimum class, every one-hot class, per-budget binary recovery and utility. Retain inert scalar draws; no redraw.",
+      "schemes": [
+        "within_source",
+        "pooled_train"
+      ],
+      "seeds": [
+        2026091301,
+        2026091302,
+        2026091303,
+        2026091304,
+        2026091305,
+        2026091306,
+        2026091307,
+        2026091308,
+        2026091309,
+        2026091310,
+        2026091311,
+        2026091312,
+        2026091313,
+        2026091314,
+        2026091315,
+        2026091316,
+        2026091317,
+        2026091318,
+        2026091319,
+        2026091320
+      ]
+    },
+    "lenses": {
+      "method": "Reuse frozen tuned_lens.py implementation: residual affine translators, full-vocabulary forward KL, frozen norm/head/model, trained only on 512 disjoint TRAIN background prompts; validate on 128 separate TRAIN background prompts. Fit new translators at each fresh acquired checkpoint and freeze through forgetting.",
+      "qualification": "The original >=5% aggregate heldout KL improvement over frozen lens must pass at acquisition and also at the forgotten checkpoint before repairs. No adaptive lens training based on repair outcomes. A failed lens stops that source and its dependent study; a separate new TRAIN protocol is needed to change calibration.",
+      "references": [
+        "https://arxiv.org/html/2303.08112v4",
+        "https://github.com/AlignmentResearch/tuned-lens/blob/main/tuned_lens/scripts/train_loop.py"
+      ]
+    },
+    "meaning": "Budget response for learned intent-to-code bindings under 16-code classification, not erasure of semantic intent concepts. Readouts are diagnostics, never training targets. Forecast calibration and causal policy improvements are reported separately.",
+    "minimum_budget_gate": {
+      "entrypoint_sha256": "ef7230f741e312dfc2d0d5d42678be2af76012989b9ff91d53043843fb346392",
+      "protocol_sha256": "7b7e01962d72080a4ba5f183713c5dc91746452a08125f221a037afa6ec0116e",
+      "requirement": "Completed execution and passing scientific receipt; recompute the original gate from its completed TRAIN sources before authorization. A failed or incomplete gate permits no fresh learning, lens updates, predictors or TEST actions.",
+      "run_id": "followthrough-20260912-recovery-budget-pilot-gate-slot",
+      "source_sha256": "674800836fba82539ed5e8eff984b367888afa0ec592b3a7e02b6f1192464711"
+    },
+    "policy_rule": "Choose the most probable minimum class, breaking ties toward the smaller numeric budget; never maps to no action. Save choices before TEST repair. The main policy report pairs qualification fraction, updates and utility for each source, pooled and equal-source. Compare every policy with always-2, always-16 and TRAIN-majority (constant_train); retain fixed 4/8/no-action too. Any descriptive savings claim requires positive baseline qualification and no qualification loss on each heldout source. Class accuracy alone is not a policy win. Exhaustive paired-grid evaluation estimates policy behavior, not actual savings in study total updates.",
+    "recovery_qualification": {
+      "accuracy_min": 0.8,
+      "gain_min": 0.3,
+      "guard_drop_max": 0.1
+    },
+    "stages": "original gate-slot authorization -> acquire/forget all 4 fresh sources -> cohort gate and permutation plan -> TRAIN lens/readouts and gate -> TRAIN budget grid -> fresh TRAIN class gate and predictors -> TEST lens/readouts and gate -> sealed forecasts -> TEST budget grid -> analysis"
+  },
+  "source_boundary": {
+    "binding": "Authorization requires completed passing gate-slot receipt and exact original gate recomputation. Every fresh stage binds this protocol, dataset and relevant source implementation. Learning keeps all six original source files frozen. Later dispatcher configs are sealed per stage, not part of learning identity.",
+    "dataset_sha256": "14781a4cd46816767903e43a0a1cd74b5d7d80b096ad7c0eeb92b69fd29ebc93",
+    "distinct_frozen_files_checked": 34,
+    "entrypoint_sha256": "13c4abefae778e3ac7324add0257d1055406c961d15d155b88eebeb6517cc35a",
+    "frozen_files_changed": [],
+    "learning_spec_sha256": "e925ad6ab84803964e26e815aa0ebc0dad7d16f8d3b4a0008e1e5e7a2fb2693e",
+    "minimum_pilot_frozen_runtime_files_checked": 18,
+    "minimum_pilot_source_sha256": "674800836fba82539ed5e8eff984b367888afa0ec592b3a7e02b6f1192464711",
+    "prediction_identity": "c0dd05d5dfb9a0f5015bfccd72f8ba436bc1ddf4c50362725fbcc1b855974d39",
+    "prior_frozen_files_checked": 27,
+    "protocol_sha256": "a1c8926fa7eed2d82e2dacd3234474ede09b6c9f5273a72c9968bd80e3098708",
+    "relevant_implementation_sha256": {
+      "budget_prediction.py": "13c4abefae778e3ac7324add0257d1055406c961d15d155b88eebeb6517cc35a",
+      "budget_prediction_analysis.py": "7392384bc65571636b62ec3b28ffdcc85bcd9d9210f648027c3270dc688b98fa",
+      "budget_prediction_model.py": "d9d736dea7ff678edd6815c878b0d69fad671b09d4cb61920a333295e60f6d72",
+      "minimum_budget.py": "ef7230f741e312dfc2d0d5d42678be2af76012989b9ff91d53043843fb346392",
+      "model.py": "5af6edb1a42d6042a3a38b9d0ab4ce01ea6cadac6728d9e0fea84acd695442b2",
+      "prepare_budget_prediction.py": "6bc43f784cc08117ec0fc89d95911185f63f46b805d2afe1dbfcdf3ee6182456",
+      "prospective.py": "3f2ce28d0c350b26b1e0d8d97a9fc9084e9f75837f20945e82e8c80584f817dc",
+      "prospective_analysis.py": "2eeb9b61a14a58df2cf8f20b5148d73afda3364b4b93424ef408faad6e6ebad6",
+      "prospective_data.py": "8d39002c90359c7c62e65d121ba907d5b6639faa105aad237fc476168dc04048",
+      "prospective_model.py": "46c4c6901e61479759bf38ae2af01a36a1c5282db34639900428aad016447399",
+      "protocol.py": "a1e54302b007827b9c2982d8c366b68b89f573ddeb4b1c8f2ac50bf440d23776",
+      "tuned_lens.py": "c640f82a9e4510287678774625dd6ecebe74063461659b5d763adaf5ddceecc8"
+    },
+    "runtime_dependency_sha256": "5f4faab5afa2b077ef571ee047225020598e9165b14e72b448b5b5bb13e20881",
+    "source_bundle": "Parent owns packing and source tar SHA; runtime_dependency_sha256 is the file map digest, not a dispatched source tar hash."
+  },
+  "status": "sealed_for_parent_staging; fresh study not dispatched by this lane and no fresh GPU result claimed"
+}

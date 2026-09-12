@@ -1,0 +1,5 @@
+{
+  "budget_gate": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-budget-pilot-gate-slot/study",
+  "stage": "authorize",
+  "study_config": "configs/budget-prediction.json"
+}
