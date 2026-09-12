@@ -1,0 +1,1159 @@
+{
+  "at": "2026-09-12T09:03:45.763547+00:00",
+  "auditor": {
+    "bytes": 78612,
+    "file": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/audit_native303.py",
+    "sha256": "ad1c141f36e62f322b194645bbb76a98aeec8e71d05364299dc834a0317ed3b6"
+  },
+  "collections": {
+    "evaluate": {
+      "bytes": 104733053,
+      "collection": {
+        "bytes": 2478,
+        "sha256": "20ee53408935fd830591447763da00973e15c6bec589760875490a954e75a114"
+      },
+      "directory": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-native303-evaluate-runtime",
+      "files": 15,
+      "files_sha256": "d7fb64433476dfc5e77a0ace7679e3336d431b300ad7007fc9314c1ff25e8c5e",
+      "remote": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-evaluate-runtime"
+    },
+    "export": {
+      "bytes": 1125201,
+      "collection": {
+        "bytes": 2461,
+        "sha256": "b450e2a816ce96bf9a3a7b513ebef193dce646adc75c581a973577be062d225e"
+      },
+      "directory": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-native303-export-runtime",
+      "files": 15,
+      "files_sha256": "f2e667f3fd89f8330cbfc4fbb880fe69e3db9687bf433bb6183d9e9955b57ade",
+      "remote": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-export-runtime"
+    }
+  },
+  "execution": {
+    "evaluate": {
+      "attempt_id": "7769c100aefb46b0bc6c496660df96b5",
+      "execution": {
+        "bytes": 2190,
+        "sha256": "56e5cc4c1be96a382357b5e61d33f19830c502045e65d4f7192c12bc72456627"
+      },
+      "finished_at": "2026-09-12T08:53:54.562000+00:00",
+      "model_process_pid": 8061,
+      "pod": "cl-portfolio-recovery-mfxws-scwl6",
+      "started_at": "2026-09-12T08:49:33.506263+00:00",
+      "supervisor_child_pid": 8052,
+      "task_id": "followthrough-20260912-native303-evaluate-runtime"
+    },
+    "export": {
+      "attempt_id": "7968af09980641cfa473fcbde8a7732d",
+      "execution": {
+        "bytes": 2089,
+        "sha256": "d5bf6521165f7989d23401d25b2827f2139d3683c6686bda167e815d70b31639"
+      },
+      "finished_at": "2026-09-12T08:49:33.411233+00:00",
+      "model_process_pid": 7990,
+      "pod": "cl-portfolio-recovery-mfxws-scwl6",
+      "started_at": "2026-09-12T08:44:56.568408+00:00",
+      "supervisor_child_pid": 7981,
+      "task_id": "followthrough-20260912-native303-export-runtime"
+    }
+  },
+  "external_artifact": {
+    "files": {
+      "evidence/inputs.json": {
+        "bytes": 1830121,
+        "sha256": "2ec9014de4728f4bf014babce9fabfc4128946fa28345410e305b38bd0083fd5"
+      },
+      "evidence/merge_parity.json": {
+        "bytes": 465361,
+        "sha256": "63edb45d4eb1e41675c1303795f74540660de6c5934a7a74dfc69e07a3fc9b3a"
+      },
+      "evidence/merged_prefix_logits.safetensors": {
+        "bytes": 102102936,
+        "sha256": "026a5599263e04576367cbce7cb5b60e0fb0b18306b60734945bfe5787b4f62e"
+      },
+      "evidence/merged_probes.json": {
+        "bytes": 69722,
+        "sha256": "832f32521fc4f0908f850d60912c5943c7cfb7239b66fdf3734cda1c3e55cadc"
+      },
+      "evidence/source_prefix_logits.safetensors": {
+        "bytes": 102102936,
+        "sha256": "100073cf06181137ee0b02a45703349b5515d7a0e6a20aa132908bc8dac86801"
+      },
+      "evidence/weight_audit.json": {
+        "bytes": 295341,
+        "sha256": "120eef9e217396c3ef2d154906a319832f96e78c450ed89edde09e3abb116184"
+      },
+      "model/chat_template.jinja": {
+        "bytes": 4168,
+        "sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8"
+      },
+      "model/config.json": {
+        "bytes": 1595,
+        "sha256": "c2b7a3552fda95cfa83d8aa0b49bf5026a79f43d9faf0d38799d16fb747a6618"
+      },
+      "model/generation_config.json": {
+        "bytes": 234,
+        "sha256": "ccc760929d0ad235334fa0d34a7c31c385ae67e21d534f870fcd3a1f1347c1c1"
+      },
+      "model/model-00001-of-00009.safetensors": {
+        "bytes": 2489319552,
+        "sha256": "9108ac78362e4b2f53ec98ed190a2f03d618e11ec60257528131c0a5df5be465"
+      },
+      "model/model-00002-of-00009.safetensors": {
+        "bytes": 3949007216,
+        "sha256": "a5bf8375eaefe9e2fdc8bbff9a6f475033a916b79c7e2a21eb594f9079c9a724"
+      },
+      "model/model-00003-of-00009.safetensors": {
+        "bytes": 3942837712,
+        "sha256": "bd31331681bf2309524cff1b20bd5a412fedeb1465828b2130e48d30c2c09008"
+      },
+      "model/model-00004-of-00009.safetensors": {
+        "bytes": 3858934928,
+        "sha256": "b73f1a3941790c41657f3564c145044206dd4d11ed1422ab0cba7a0c579aa512"
+      },
+      "model/model-00005-of-00009.safetensors": {
+        "bytes": 3858934968,
+        "sha256": "7b5625a441d473e97fadba6784e1e19274abd5bb23ee4d1c1098c166b19a042f"
+      },
+      "model/model-00006-of-00009.safetensors": {
+        "bytes": 3858934968,
+        "sha256": "711ba9bc21824dd2c17f3bdf09f62561487ed77d691b8d90910afadcc0bd15d1"
+      },
+      "model/model-00007-of-00009.safetensors": {
+        "bytes": 3858934968,
+        "sha256": "05946b23ad2f519392776e4ab7f6913168160f9726f56bb4b173268efb38642e"
+      },
+      "model/model-00008-of-00009.safetensors": {
+        "bytes": 3858934968,
+        "sha256": "016b9bc5475f81f79ad2a7e58d70c19922bafe5b0bd2cfc0ba3e7e560f24d76f"
+      },
+      "model/model-00009-of-00009.safetensors": {
+        "bytes": 3087147960,
+        "sha256": "8190c44bca8272d26a7bb8f70e9f93b3d1850dbde56ef8b41fb353f73e385691"
+      },
+      "model/model.safetensors.index.json": {
+        "bytes": 32914,
+        "sha256": "080fdd0260b197693d8fdd5f040c85f578cd431c25133f1b741dd12c51ba385a"
+      },
+      "model/tokenizer.json": {
+        "bytes": 11422650,
+        "sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506"
+      },
+      "model/tokenizer_config.json": {
+        "bytes": 692,
+        "sha256": "1cc816812993bff176eb4f7495433b736f06fba9b6e7b05cac7b4a1780650c95"
+      }
+    },
+    "full_model_shards_copied_locally": false,
+    "generated_staged_source_bytecode_caches": {
+      "audit_program_sha256": "680b50358dfa2c614370fd38391afbd7260c4e6b467d7ddf9e42476ac02b5c3f",
+      "boundary": "Code objects compared using the exact runtime Python patch version; frozen experiment source was compiled but never executed by the auditor.",
+      "caches": {
+        "__pycache__/native303_contract.cpython-312.pyc": {
+          "code_object_equal_to_frozen_source_compilation": true,
+          "executed_by_auditor": false,
+          "file": {
+            "bytes": 42137,
+            "sha256": "bd93b38e98e3103e79e8bc8619ed510af004dddab01faef9492a43adf8e02bc0"
+          },
+          "source": "native303_contract.py",
+          "source_sha256": "904e323e26e3a02071c18c64d230138fb3be859a1c853b4453042a14800192aa"
+        }
+      },
+      "compiler_executable": "/tmp/cl-environments/0d1c35275b5e0598/bin/python",
+      "compiler_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+    },
+    "independent_audit_program_sha256": "8f7d2e7dd7c4ea706277a6d8f046f2d9a038cc76b25840a43e35de5f9f2de3cc",
+    "manifest": {
+      "bytes": 162763,
+      "sha256": "ea6dfc0d29347c32fab4f91ba87df0f3a3c2cb3ac628eb731c07a76d3b132454"
+    },
+    "observed_at": "2026-09-12T09:03:44.222528+00:00",
+    "prefix_witnesses": {
+      "fresh": {
+        "bytes": 102102936,
+        "sha256": "026a5599263e04576367cbce7cb5b60e0fb0b18306b60734945bfe5787b4f62e"
+      },
+      "merged": {
+        "bytes": 102102936,
+        "sha256": "026a5599263e04576367cbce7cb5b60e0fb0b18306b60734945bfe5787b4f62e"
+      },
+      "source": {
+        "bytes": 102102936,
+        "sha256": "100073cf06181137ee0b02a45703349b5515d7a0e6a20aa132908bc8dac86801"
+      }
+    },
+    "root": "/mnt/shared/cl-portfolio/artifacts/followthrough-20260912-native-consolidated303/export",
+    "source_files_independently_verified_on_nfs": 134,
+    "source_files_sha256": "4bf88ed60d12d6b2325ef3afb7309d753adb0e78e700b8f13d923c0a4f9e7927",
+    "tensor_inventory_sha256": "c5e3cef4b5c258edc61f52c0f454cf163ca4fb52d6246b0aa042a33861f4fe31"
+  },
+  "full_vocabulary_prefix_comparisons": {
+    "fresh_merged": {
+      "all_prefix_rows_sha256": "defdee5dce8ef8950339e50edbf1dd34df286f06105bc4dbf432f19ca4fd993d",
+      "argmax_changes": 0,
+      "changed_elements": 0,
+      "full_vocabulary_elements": 25525248,
+      "maximum_absolute_difference": 0.0,
+      "outside_tolerance": 0,
+      "passed": true,
+      "prefixes": 168,
+      "recorded_next_token_mismatches": 0,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 1e-05
+      }
+    },
+    "fresh_source": {
+      "all_prefix_rows_sha256": "400693aeedda0b0ee2ace083ec40faca9870275b148dc52ab278b4f3f38900fa",
+      "argmax_changes": 0,
+      "changed_elements": 25294195,
+      "full_vocabulary_elements": 25525248,
+      "maximum_absolute_difference": 0.0001544952392578125,
+      "outside_tolerance": 0,
+      "passed": true,
+      "prefixes": 168,
+      "recorded_next_token_mismatches": 0,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 1e-05
+      }
+    },
+    "merged_source": {
+      "all_prefix_rows_sha256": "400693aeedda0b0ee2ace083ec40faca9870275b148dc52ab278b4f3f38900fa",
+      "argmax_changes": 0,
+      "changed_elements": 25294195,
+      "full_vocabulary_elements": 25525248,
+      "maximum_absolute_difference": 0.0001544952392578125,
+      "outside_tolerance": 0,
+      "passed": true,
+      "prefixes": 168,
+      "recorded_next_token_mismatches": 0,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 1e-05
+      }
+    }
+  },
+  "interpretation": {
+    "evaluation_reuse": "24 TRAIN probes and the previously observed 192 TEST plus 864 unused source panels; no new confirmatory test or checkpoint selection.",
+    "generic_contract": "128 original multiple-choice decisions, not native generation.",
+    "learning_claim": "Export/persistence engineering evidence. No new learning, direct base-weight optimization, new consolidation objective, SDFT/SDPO reproduction or general continual-learning claim.",
+    "native_contract": "Exactly three space-separated digits in 0..7 with the original leading space and native EOS, cap16, full-vocabulary greedy decoding.",
+    "outcome": "The fixed trained rank8 learner is represented by ordinary FP32 Qwen3 weights and independently reloaded in a separate job with zero additional updates. Numerical parity uses sealed tolerances; fusion is not assumed bitwise identical."
+  },
+  "native_reloaded_panels": {
+    "test": {
+      "by_task": {
+        "sequence_a": {
+          "cap_without_eos": 0,
+          "correct": 64,
+          "correct_prefix_with_extra_text": 0,
+          "count": 64,
+          "digit_position_correct": [
+            64,
+            64,
+            64
+          ],
+          "exact_body_without_valid_stop": 0,
+          "format_valid": 64,
+          "terminated": 64
+        },
+        "sequence_b": {
+          "cap_without_eos": 0,
+          "correct": 64,
+          "correct_prefix_with_extra_text": 0,
+          "count": 64,
+          "digit_position_correct": [
+            64,
+            64,
+            64
+          ],
+          "exact_body_without_valid_stop": 0,
+          "format_valid": 64,
+          "terminated": 64
+        },
+        "sequence_c": {
+          "cap_without_eos": 0,
+          "correct": 64,
+          "correct_prefix_with_extra_text": 0,
+          "count": 64,
+          "digit_position_correct": [
+            64,
+            64,
+            64
+          ],
+          "exact_body_without_valid_stop": 0,
+          "format_valid": 64,
+          "terminated": 64
+        }
+      },
+      "cap_without_eos": 0,
+      "correct": 192,
+      "correct_prefix_with_extra_text": 0,
+      "count": 192,
+      "digit_position_correct": [
+        192,
+        192,
+        192
+      ],
+      "exact_body_without_valid_stop": 0,
+      "format_valid": 192,
+      "records_sha256": "ca076ff0ed5141ecb5b6296db4cace8647e6837bc76f7a0601b36e8834b83b2b",
+      "source_record_changes": [],
+      "terminated": 192
+    },
+    "unused288": {
+      "by_task": {
+        "sequence_a": {
+          "cap_without_eos": 0,
+          "correct": 288,
+          "correct_prefix_with_extra_text": 0,
+          "count": 288,
+          "digit_position_correct": [
+            288,
+            288,
+            288
+          ],
+          "exact_body_without_valid_stop": 0,
+          "format_valid": 288,
+          "terminated": 288
+        },
+        "sequence_b": {
+          "cap_without_eos": 0,
+          "correct": 288,
+          "correct_prefix_with_extra_text": 0,
+          "count": 288,
+          "digit_position_correct": [
+            288,
+            288,
+            288
+          ],
+          "exact_body_without_valid_stop": 0,
+          "format_valid": 288,
+          "terminated": 288
+        },
+        "sequence_c": {
+          "cap_without_eos": 0,
+          "correct": 288,
+          "correct_prefix_with_extra_text": 0,
+          "count": 288,
+          "digit_position_correct": [
+            288,
+            288,
+            288
+          ],
+          "exact_body_without_valid_stop": 0,
+          "format_valid": 288,
+          "terminated": 288
+        }
+      },
+      "cap_without_eos": 0,
+      "correct": 864,
+      "correct_prefix_with_extra_text": 0,
+      "count": 864,
+      "digit_position_correct": [
+        864,
+        864,
+        864
+      ],
+      "exact_body_without_valid_stop": 0,
+      "format_valid": 864,
+      "records_sha256": "cb4511cbaa5d3ae5b37928f9dcb86eb07688e845ae501c7623891480ba384d6c",
+      "source_record_changes": [],
+      "terminated": 864
+    }
+  },
+  "optimizer_updates": 0,
+  "original_attempts": {
+    "evaluate": {
+      "boundary": "Source identity belongs to the separately verified submitted dispatch, not to a nonexistent runtime execution. The parent captured NFS queue bytes equal to the local manifest; this auditor verifies that saved binding.",
+      "classification": "never_executed_dependency_blocked",
+      "collection": {
+        "bytes": 886,
+        "collection": {
+          "bytes": 543,
+          "sha256": "ae833911b26b1c9f57d2a0f4e99f6f15729bd8436fd12138f05386904b11b747"
+        },
+        "directory": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-native303-evaluate",
+        "files": 2,
+        "files_sha256": "6c5d2b653ef0683320f061ac6b160f37c18ce9cd3f8954212515775b7553f869",
+        "remote": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-evaluate"
+      },
+      "embedded_execution_source_or_pid": false,
+      "execution": {
+        "bytes": 443,
+        "sha256": "841e5166b44bc3842c4010d09f9485704519dde6a3acdd526246823266b4d91c"
+      },
+      "separate_dispatch_evidence": {
+        "bytes": 1935,
+        "sha256": "ae0b45d27e0313176492b0bbddfe9e41d980a7d7d5555a6e264129cbedb4e641"
+      },
+      "submitted_manifest": {
+        "bytes": 842,
+        "sha256": "ec77ab66a6b8954e4105a60d171b6f19f4d41ca3eee556083b20bf49f91c9840"
+      }
+    },
+    "export": {
+      "absent_model_stage_artifacts": [
+        "input_manifest.json",
+        "premerge.json",
+        "merge_parity.json",
+        "weight_audit.json",
+        "export_receipt.json",
+        "result.json"
+      ],
+      "attempt_id": "64efa580c0d84e6f8c3457d969b18150",
+      "classification": "infrastructure_runtime_identity_check_failed_before_model_load_or_merge",
+      "collection": {
+        "bytes": 14503,
+        "collection": {
+          "bytes": 1885,
+          "sha256": "e5c920d16c7412157d2becffefa7c6f5ca0c87baecd4303779584b2d8cb01acb"
+        },
+        "directory": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-native303-export",
+        "files": 11,
+        "files_sha256": "2cff02ed55a9c9b10620c11f6fd1ab796e7494253faf11dc97f106245153ebdb",
+        "remote": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-export"
+      },
+      "execution": {
+        "bytes": 2062,
+        "sha256": "5f04bfaf11b233dfc7c9590fdf75b36de6bf8bd5fd34a6b6d3ae0ba2d5b166aa"
+      },
+      "failure": {
+        "at": "2026-09-12T08:38:17.945280+00:00",
+        "exception": "ValueError",
+        "message": "NATIVE303_PINNED_WORKER_TORCH: None",
+        "optimizer_updates": 0,
+        "pid": 7932,
+        "status": "failed_no_success_claim"
+      },
+      "process_pid": 7932,
+      "source_archive": {
+        "bytes": 2344960,
+        "sha256": "30926328bc4dbfd58507a638920591aa44a274132368f54b0233afa793f44401"
+      },
+      "source_sha256": "0498be8531bfd0cd9dea2dab4e74946345963ac4a7bf4f40aba867207f6b8bef",
+      "torch_version_namespaces": {
+        "installed_distribution_from_packages_txt": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+        "module": "2.10.0+rocm7.2.4.git3d3aa833"
+      }
+    },
+    "retry_protocol_changes": [
+      "code_sha256",
+      "evaluate_task_id",
+      "export_task_id",
+      "worker_torch"
+    ],
+    "scientific_contract_unchanged": true,
+    "unchanged_export_and_evaluation_functions": [
+      "Publication",
+      "base_values",
+      "current_execution",
+      "evaluate_stage",
+      "event",
+      "export_dependency",
+      "export_stage",
+      "generation_config",
+      "generic_panel",
+      "load_standard",
+      "model_guard",
+      "native_panel",
+      "ordinary_inventory",
+      "prefix_logits",
+      "probe_comparison",
+      "probe_panel",
+      "reload_verified",
+      "safe_merge_student",
+      "save_standard"
+    ]
+  },
+  "passed": true,
+  "probe_comparisons": {
+    "fresh_merged": {
+      "generic_decision_changes": 0,
+      "generic_score_elements": 416,
+      "generic_scores_changed": 0,
+      "generic_scores_outside_tolerance": 0,
+      "maximum_generic_score_difference": 0.0,
+      "native_record_changes": [],
+      "passed": true,
+      "tolerance": {
+        "atol": 1e-05,
+        "rtol": 1e-06
+      }
+    },
+    "fresh_original": {
+      "generic_decision_changes": 0,
+      "generic_score_elements": 416,
+      "generic_scores_changed": 402,
+      "generic_scores_outside_tolerance": 0,
+      "maximum_generic_score_difference": 4.227956136082511e-05,
+      "native_record_changes": [],
+      "passed": true,
+      "tolerance": {
+        "atol": 0.0001,
+        "rtol": 1e-05
+      }
+    },
+    "merged_original": {
+      "generic_decision_changes": 0,
+      "generic_score_elements": 416,
+      "generic_scores_changed": 402,
+      "generic_scores_outside_tolerance": 0,
+      "maximum_generic_score_difference": 4.227956136082511e-05,
+      "native_record_changes": [],
+      "passed": true,
+      "tolerance": {
+        "atol": 0.0001,
+        "rtol": 1e-05
+      }
+    },
+    "premerge_original": {
+      "generic_decision_changes": 0,
+      "generic_score_elements": 416,
+      "generic_scores_changed": 0,
+      "generic_scores_outside_tolerance": 0,
+      "maximum_generic_score_difference": 0.0,
+      "native_record_changes": [],
+      "passed": true,
+      "tolerance": {
+        "atol": 1e-05,
+        "rtol": 1e-06
+      }
+    }
+  },
+  "probe_panel_grades": {
+    "merged": {
+      "generic": {
+        "argmax_ties": 0,
+        "boundary": "Decisions independently recomputed from all saved choice scores; tokenizer boundaries verified. Per-choice model likelihoods were not independently rerun.",
+        "by_task": {
+          "boolq": {
+            "correct": 29,
+            "count": 32
+          },
+          "commonsense_qa": {
+            "correct": 23,
+            "count": 32
+          },
+          "hellaswag": {
+            "correct": 24,
+            "count": 32
+          },
+          "winogrande": {
+            "correct": 20,
+            "count": 32
+          }
+        },
+        "correct": 96,
+        "count": 128,
+        "encoded_scoring_inputs_sha256": "e50b3d057402524177a67256d11946fd503d69cd377fe83e4bc2ef1e6503c632"
+      },
+      "train": {
+        "by_task": {
+          "sequence_a": {
+            "cap_without_eos": 0,
+            "correct": 8,
+            "correct_prefix_with_extra_text": 0,
+            "count": 8,
+            "digit_position_correct": [
+              8,
+              8,
+              8
+            ],
+            "exact_body_without_valid_stop": 0,
+            "format_valid": 8,
+            "terminated": 8
+          },
+          "sequence_b": {
+            "cap_without_eos": 0,
+            "correct": 8,
+            "correct_prefix_with_extra_text": 0,
+            "count": 8,
+            "digit_position_correct": [
+              8,
+              8,
+              8
+            ],
+            "exact_body_without_valid_stop": 0,
+            "format_valid": 8,
+            "terminated": 8
+          },
+          "sequence_c": {
+            "cap_without_eos": 0,
+            "correct": 8,
+            "correct_prefix_with_extra_text": 0,
+            "count": 8,
+            "digit_position_correct": [
+              8,
+              8,
+              8
+            ],
+            "exact_body_without_valid_stop": 0,
+            "format_valid": 8,
+            "terminated": 8
+          }
+        },
+        "cap_without_eos": 0,
+        "correct": 24,
+        "correct_prefix_with_extra_text": 0,
+        "count": 24,
+        "digit_position_correct": [
+          24,
+          24,
+          24
+        ],
+        "exact_body_without_valid_stop": 0,
+        "format_valid": 24,
+        "records_sha256": "eb39fb9d4aff0a20c2a8f4ca78634b3d1433e6065511916f48874f5a6d65cd22",
+        "terminated": 24
+      }
+    },
+    "premerge": {
+      "generic": {
+        "argmax_ties": 0,
+        "boundary": "Decisions independently recomputed from all saved choice scores; tokenizer boundaries verified. Per-choice model likelihoods were not independently rerun.",
+        "by_task": {
+          "boolq": {
+            "correct": 29,
+            "count": 32
+          },
+          "commonsense_qa": {
+            "correct": 23,
+            "count": 32
+          },
+          "hellaswag": {
+            "correct": 24,
+            "count": 32
+          },
+          "winogrande": {
+            "correct": 20,
+            "count": 32
+          }
+        },
+        "correct": 96,
+        "count": 128,
+        "encoded_scoring_inputs_sha256": "e50b3d057402524177a67256d11946fd503d69cd377fe83e4bc2ef1e6503c632"
+      },
+      "train": {
+        "by_task": {
+          "sequence_a": {
+            "cap_without_eos": 0,
+            "correct": 8,
+            "correct_prefix_with_extra_text": 0,
+            "count": 8,
+            "digit_position_correct": [
+              8,
+              8,
+              8
+            ],
+            "exact_body_without_valid_stop": 0,
+            "format_valid": 8,
+            "terminated": 8
+          },
+          "sequence_b": {
+            "cap_without_eos": 0,
+            "correct": 8,
+            "correct_prefix_with_extra_text": 0,
+            "count": 8,
+            "digit_position_correct": [
+              8,
+              8,
+              8
+            ],
+            "exact_body_without_valid_stop": 0,
+            "format_valid": 8,
+            "terminated": 8
+          },
+          "sequence_c": {
+            "cap_without_eos": 0,
+            "correct": 8,
+            "correct_prefix_with_extra_text": 0,
+            "count": 8,
+            "digit_position_correct": [
+              8,
+              8,
+              8
+            ],
+            "exact_body_without_valid_stop": 0,
+            "format_valid": 8,
+            "terminated": 8
+          }
+        },
+        "cap_without_eos": 0,
+        "correct": 24,
+        "correct_prefix_with_extra_text": 0,
+        "count": 24,
+        "digit_position_correct": [
+          24,
+          24,
+          24
+        ],
+        "exact_body_without_valid_stop": 0,
+        "format_valid": 24,
+        "records_sha256": "eb39fb9d4aff0a20c2a8f4ca78634b3d1433e6065511916f48874f5a6d65cd22",
+        "terminated": 24
+      }
+    },
+    "reloaded": {
+      "generic": {
+        "argmax_ties": 0,
+        "boundary": "Decisions independently recomputed from all saved choice scores; tokenizer boundaries verified. Per-choice model likelihoods were not independently rerun.",
+        "by_task": {
+          "boolq": {
+            "correct": 29,
+            "count": 32
+          },
+          "commonsense_qa": {
+            "correct": 23,
+            "count": 32
+          },
+          "hellaswag": {
+            "correct": 24,
+            "count": 32
+          },
+          "winogrande": {
+            "correct": 20,
+            "count": 32
+          }
+        },
+        "correct": 96,
+        "count": 128,
+        "encoded_scoring_inputs_sha256": "e50b3d057402524177a67256d11946fd503d69cd377fe83e4bc2ef1e6503c632"
+      },
+      "train": {
+        "by_task": {
+          "sequence_a": {
+            "cap_without_eos": 0,
+            "correct": 8,
+            "correct_prefix_with_extra_text": 0,
+            "count": 8,
+            "digit_position_correct": [
+              8,
+              8,
+              8
+            ],
+            "exact_body_without_valid_stop": 0,
+            "format_valid": 8,
+            "terminated": 8
+          },
+          "sequence_b": {
+            "cap_without_eos": 0,
+            "correct": 8,
+            "correct_prefix_with_extra_text": 0,
+            "count": 8,
+            "digit_position_correct": [
+              8,
+              8,
+              8
+            ],
+            "exact_body_without_valid_stop": 0,
+            "format_valid": 8,
+            "terminated": 8
+          },
+          "sequence_c": {
+            "cap_without_eos": 0,
+            "correct": 8,
+            "correct_prefix_with_extra_text": 0,
+            "count": 8,
+            "digit_position_correct": [
+              8,
+              8,
+              8
+            ],
+            "exact_body_without_valid_stop": 0,
+            "format_valid": 8,
+            "terminated": 8
+          }
+        },
+        "cap_without_eos": 0,
+        "correct": 24,
+        "correct_prefix_with_extra_text": 0,
+        "count": 24,
+        "digit_position_correct": [
+          24,
+          24,
+          24
+        ],
+        "exact_body_without_valid_stop": 0,
+        "format_valid": 24,
+        "records_sha256": "eb39fb9d4aff0a20c2a8f4ca78634b3d1433e6065511916f48874f5a6d65cd22",
+        "terminated": 24
+      }
+    },
+    "source": {
+      "generic": {
+        "argmax_ties": 0,
+        "boundary": "Decisions independently recomputed from all saved choice scores; tokenizer boundaries verified. Per-choice model likelihoods were not independently rerun.",
+        "by_task": {
+          "boolq": {
+            "correct": 29,
+            "count": 32
+          },
+          "commonsense_qa": {
+            "correct": 23,
+            "count": 32
+          },
+          "hellaswag": {
+            "correct": 24,
+            "count": 32
+          },
+          "winogrande": {
+            "correct": 20,
+            "count": 32
+          }
+        },
+        "correct": 96,
+        "count": 128,
+        "encoded_scoring_inputs_sha256": "e50b3d057402524177a67256d11946fd503d69cd377fe83e4bc2ef1e6503c632"
+      },
+      "train": {
+        "by_task": {
+          "sequence_a": {
+            "cap_without_eos": 0,
+            "correct": 8,
+            "correct_prefix_with_extra_text": 0,
+            "count": 8,
+            "digit_position_correct": [
+              8,
+              8,
+              8
+            ],
+            "exact_body_without_valid_stop": 0,
+            "format_valid": 8,
+            "terminated": 8
+          },
+          "sequence_b": {
+            "cap_without_eos": 0,
+            "correct": 8,
+            "correct_prefix_with_extra_text": 0,
+            "count": 8,
+            "digit_position_correct": [
+              8,
+              8,
+              8
+            ],
+            "exact_body_without_valid_stop": 0,
+            "format_valid": 8,
+            "terminated": 8
+          },
+          "sequence_c": {
+            "cap_without_eos": 0,
+            "correct": 8,
+            "correct_prefix_with_extra_text": 0,
+            "count": 8,
+            "digit_position_correct": [
+              8,
+              8,
+              8
+            ],
+            "exact_body_without_valid_stop": 0,
+            "format_valid": 8,
+            "terminated": 8
+          }
+        },
+        "cap_without_eos": 0,
+        "correct": 24,
+        "correct_prefix_with_extra_text": 0,
+        "count": 24,
+        "digit_position_correct": [
+          24,
+          24,
+          24
+        ],
+        "exact_body_without_valid_stop": 0,
+        "format_valid": 24,
+        "records_sha256": "eb39fb9d4aff0a20c2a8f4ca78634b3d1433e6065511916f48874f5a6d65cd22",
+        "terminated": 24
+      }
+    }
+  },
+  "read_boundary": {
+    "allowed_shared_roots": [
+      "/mnt/shared/cl-portfolio/artifacts/followthrough-20260912-native-consolidated303/export",
+      "/mnt/shared/cl-portfolio/code/0dfad5e45ba37d6077163f56f8158ba1d39502d87f97fdf63f569756cdbadf50",
+      "/mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-evaluate-runtime"
+    ],
+    "boundary": "The sealed evaluation path loads only the ordinary export; the captured Python open audit reports no teacher, original base or adapter reads. Python audit hooks do not intercept every native-library read and are not an OS sandbox. No adversarial native-code isolation is claimed.",
+    "denied_reads": [],
+    "forbidden_roots": [
+      "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+      "/mnt/shared/cl-portfolio/runs/consolidation-coverage303-20260912",
+      "/mnt/shared/cl-portfolio/runs/consolidation-source303-coverage-20260912",
+      "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-onpolicy-kl-evaluate",
+      "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-onpolicy-kl-train"
+    ],
+    "python_open_events": 59,
+    "python_open_paths": 34,
+    "read_paths_sha256": "812c74dcfcc956da6fa3da54a016c004af165aa28f7c4e29f0750b615859c40b",
+    "teacher_or_adapter_artifact_read_observed": false
+  },
+  "source": {
+    "archive": {
+      "bytes": 2355200,
+      "sha256": "92969ad97cb3ab21d7e22afef49b274ac580c59fdabbaf4f8a2e8dec1f1da270"
+    },
+    "files": 134,
+    "handoff_sha256": "94741e23b27e88a07153b5ea8d8ba3d3beca7aadcb1239ac28e03bdff5a0dab9",
+    "original_student": {
+      "alpha": 16,
+      "checkpoint": 384,
+      "files": {
+        "adapter_config.json": {
+          "bytes": 1140,
+          "sha256": "45581ddb9ac51de6c50c876e1febb804dc84c2c4e367df123234c6dfe40723c6"
+        },
+        "adapter_model.safetensors": {
+          "bytes": 15354512,
+          "sha256": "3d70144d8faba4ffdcea7d0a558bffdbb99c3705fdeeed19dc6d5d6753d09f21"
+        }
+      },
+      "parameters": 3833856,
+      "rank": 8,
+      "tensor_count": 144,
+      "tensor_sha256": "ce1441892f01f7a6fabb005892b5ca845c1c92e340f45f411ccef659ed4008f1"
+    },
+    "protocol_sha256": "bb39ddb5dd8585eaee0561f5c6b4742ce8ea6bc45ecb509d7efb12affcb02184",
+    "sha256": "0dfad5e45ba37d6077163f56f8158ba1d39502d87f97fdf63f569756cdbadf50",
+    "staging": {
+      "bytes": 22316,
+      "sha256": "3748aff6abce7a26d524885156310385c5add3646b33ba9e6805d88bdb4fa7e4"
+    }
+  },
+  "source_panel_grades": {
+    "generic": {
+      "argmax_ties": 0,
+      "boundary": "Decisions independently recomputed from all saved choice scores; tokenizer boundaries verified. Per-choice model likelihoods were not independently rerun.",
+      "by_task": {
+        "boolq": {
+          "correct": 29,
+          "count": 32
+        },
+        "commonsense_qa": {
+          "correct": 23,
+          "count": 32
+        },
+        "hellaswag": {
+          "correct": 24,
+          "count": 32
+        },
+        "winogrande": {
+          "correct": 20,
+          "count": 32
+        }
+      },
+      "correct": 96,
+      "count": 128,
+      "encoded_scoring_inputs_sha256": "e50b3d057402524177a67256d11946fd503d69cd377fe83e4bc2ef1e6503c632"
+    },
+    "test": {
+      "by_task": {
+        "sequence_a": {
+          "cap_without_eos": 0,
+          "correct": 64,
+          "correct_prefix_with_extra_text": 0,
+          "count": 64,
+          "digit_position_correct": [
+            64,
+            64,
+            64
+          ],
+          "exact_body_without_valid_stop": 0,
+          "format_valid": 64,
+          "terminated": 64
+        },
+        "sequence_b": {
+          "cap_without_eos": 0,
+          "correct": 64,
+          "correct_prefix_with_extra_text": 0,
+          "count": 64,
+          "digit_position_correct": [
+            64,
+            64,
+            64
+          ],
+          "exact_body_without_valid_stop": 0,
+          "format_valid": 64,
+          "terminated": 64
+        },
+        "sequence_c": {
+          "cap_without_eos": 0,
+          "correct": 64,
+          "correct_prefix_with_extra_text": 0,
+          "count": 64,
+          "digit_position_correct": [
+            64,
+            64,
+            64
+          ],
+          "exact_body_without_valid_stop": 0,
+          "format_valid": 64,
+          "terminated": 64
+        }
+      },
+      "cap_without_eos": 0,
+      "correct": 192,
+      "correct_prefix_with_extra_text": 0,
+      "count": 192,
+      "digit_position_correct": [
+        192,
+        192,
+        192
+      ],
+      "exact_body_without_valid_stop": 0,
+      "format_valid": 192,
+      "records_sha256": "ca076ff0ed5141ecb5b6296db4cace8647e6837bc76f7a0601b36e8834b83b2b",
+      "terminated": 192
+    },
+    "train": {
+      "by_task": {
+        "sequence_a": {
+          "cap_without_eos": 0,
+          "correct": 8,
+          "correct_prefix_with_extra_text": 0,
+          "count": 8,
+          "digit_position_correct": [
+            8,
+            8,
+            8
+          ],
+          "exact_body_without_valid_stop": 0,
+          "format_valid": 8,
+          "terminated": 8
+        },
+        "sequence_b": {
+          "cap_without_eos": 0,
+          "correct": 8,
+          "correct_prefix_with_extra_text": 0,
+          "count": 8,
+          "digit_position_correct": [
+            8,
+            8,
+            8
+          ],
+          "exact_body_without_valid_stop": 0,
+          "format_valid": 8,
+          "terminated": 8
+        },
+        "sequence_c": {
+          "cap_without_eos": 0,
+          "correct": 8,
+          "correct_prefix_with_extra_text": 0,
+          "count": 8,
+          "digit_position_correct": [
+            8,
+            8,
+            8
+          ],
+          "exact_body_without_valid_stop": 0,
+          "format_valid": 8,
+          "terminated": 8
+        }
+      },
+      "cap_without_eos": 0,
+      "correct": 24,
+      "correct_prefix_with_extra_text": 0,
+      "count": 24,
+      "digit_position_correct": [
+        24,
+        24,
+        24
+      ],
+      "exact_body_without_valid_stop": 0,
+      "format_valid": 24,
+      "records_sha256": "eb39fb9d4aff0a20c2a8f4ca78634b3d1433e6065511916f48874f5a6d65cd22",
+      "terminated": 24
+    },
+    "unused288": {
+      "by_task": {
+        "sequence_a": {
+          "cap_without_eos": 0,
+          "correct": 288,
+          "correct_prefix_with_extra_text": 0,
+          "count": 288,
+          "digit_position_correct": [
+            288,
+            288,
+            288
+          ],
+          "exact_body_without_valid_stop": 0,
+          "format_valid": 288,
+          "terminated": 288
+        },
+        "sequence_b": {
+          "cap_without_eos": 0,
+          "correct": 288,
+          "correct_prefix_with_extra_text": 0,
+          "count": 288,
+          "digit_position_correct": [
+            288,
+            288,
+            288
+          ],
+          "exact_body_without_valid_stop": 0,
+          "format_valid": 288,
+          "terminated": 288
+        },
+        "sequence_c": {
+          "cap_without_eos": 0,
+          "correct": 288,
+          "correct_prefix_with_extra_text": 0,
+          "count": 288,
+          "digit_position_correct": [
+            288,
+            288,
+            288
+          ],
+          "exact_body_without_valid_stop": 0,
+          "format_valid": 288,
+          "terminated": 288
+        }
+      },
+      "cap_without_eos": 0,
+      "correct": 864,
+      "correct_prefix_with_extra_text": 0,
+      "count": 864,
+      "digit_position_correct": [
+        864,
+        864,
+        864
+      ],
+      "exact_body_without_valid_stop": 0,
+      "format_valid": 864,
+      "records_sha256": "cb4511cbaa5d3ae5b37928f9dcb86eb07688e845ae501c7623891480ba384d6c",
+      "terminated": 864
+    }
+  },
+  "standard_weights": {
+    "changed_targeted_matrices": 72,
+    "maximum_reported_weight_equation_difference": 0.0,
+    "nonserialized_buffers": {
+      "buffer:model.rotary_emb.inv_freq": {
+        "dtype": "torch.float32",
+        "elements": 64,
+        "sha256": "138c99b109d7affbfba059e435670918fe4531bce4709b6e86f3f22f7ef80f6e",
+        "shape": [
+          64
+        ]
+      },
+      "buffer:model.rotary_emb.original_inv_freq": {
+        "dtype": "torch.float32",
+        "elements": 64,
+        "sha256": "138c99b109d7affbfba059e435670918fe4531bce4709b6e86f3f22f7ef80f6e",
+        "shape": [
+          64
+        ]
+      }
+    },
+    "ordinary_modules": 547,
+    "ordinary_weight_tensor_sha256": "9a3ad8ad175636d15d2d95eb84fa105aebdc93dc1b564c766c10396af2308f40",
+    "proof_boundary": "Every serialized parameter is independently hashed and matched to the in-process after-merge tensor inventory. The 72 FP32 W+2*(B@A) arithmetic comparisons, finite full-model values, ordinary runtime module construction and nonpersistent buffers are verified from pinned runtime witnesses; this audit does not recompute those matrix products or instantiate a second CPU model.",
+    "serialized_fp32_payload_bytes": 32762941440,
+    "serialized_parameter_elements": 8190735360,
+    "serialized_parameters_independently_hashed": 399,
+    "targeted_qv_matrices": 72,
+    "untargeted_tensors_exact": 329
+  },
+  "status": "independently_verified"
+}

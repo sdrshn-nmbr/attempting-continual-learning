@@ -1,0 +1,179 @@
+{
+  "at": "2026-09-12T08:38:10.487651+00:00",
+  "source_sha256": "0498be8531bfd0cd9dea2dab4e74946345963ac4a7bf4f40aba867207f6b8bef",
+  "source_files": 134,
+  "worker_pod": "cl-portfolio-recovery-mfxws-scwl6",
+  "parent_cpu_tests_passed": 12,
+  "handoff_sha256": "d687c0f5ecddf547effbe463b22979662c3d86cf6a3ebd25b94d1e72c7b46a20",
+  "preflight": {
+    "exit_code": 0,
+    "python": "/tmp/cl-environments/0d1c35275b5e0598/bin/python",
+    "result": {
+      "status": "prepared_without_model_load_or_writes",
+      "optimizer_updates": 0,
+      "protocol_sha256": "732e9539d2f178896478afda386d9297ca363b2a1c70daf6f6cb5593102bebc9",
+      "proof": {
+        "source_pins": {
+          "evaluate": {
+            "config.json": {
+              "sha256": "9aaec3d055133b59830de1dfca6f4586811a789b8dd553afb53bb10285b41d13",
+              "bytes": 369
+            },
+            "execution.json": {
+              "sha256": "1939324001de460c09b2e5c0941f5a06d0d4228f92e037338c7837d86bec04a8",
+              "bytes": 2248
+            },
+            "final_retention.json": {
+              "sha256": "49bb1fdbc2f368c1b335fb93e92c2b810f6d35edd0bfde9ec0e314044536df1d",
+              "bytes": 39521
+            },
+            "final_train_probes.json": {
+              "sha256": "89220f2b1c97a04e1a2b5165b1aadd2f71b621d47a58497678be1d59ed08685c",
+              "bytes": 24371
+            },
+            "panels.json": {
+              "sha256": "bbbe0beb1a62f2c349a936be6a2c02c08152c65ee5ab35d88d495e04371da622",
+              "bytes": 1263721
+            },
+            "result.json": {
+              "sha256": "1f9e86719cf0269738878d475123225c3b259f0ab07af48dc79f16e67b355472",
+              "bytes": 39655
+            },
+            "runtime.json": {
+              "sha256": "7581110a7c076c604ec9a65481911b352eaf51e803aafeb66ac477c92b749d76",
+              "bytes": 1652
+            },
+            "seal.json": {
+              "sha256": "22677c42e33f23e5df46536dd706f4cf667dde676ea39750721eaedda44ae0c8",
+              "bytes": 13627
+            },
+            "task.json": {
+              "sha256": "28eacd4ecb6a30d229d58f729b3510d914f332f9b16d4d4c3d90d0db64fe778a",
+              "bytes": 924
+            }
+          },
+          "train": {
+            "config.json": {
+              "sha256": "04888d5b18ce983d2992f12a1b3430c04dca42c3a2baa3527e730d7dc5559078",
+              "bytes": 259
+            },
+            "execution.json": {
+              "sha256": "4130cc5325b867086f804e2df65d3424b4ad04f7b05c1d8d3963e3bc33c2476c",
+              "bytes": 2161
+            },
+            "final_retention.json": {
+              "sha256": "49bb1fdbc2f368c1b335fb93e92c2b810f6d35edd0bfde9ec0e314044536df1d",
+              "bytes": 39521
+            },
+            "onpolicy_kl/checkpoint384/learner/adapter_config.json": {
+              "sha256": "45581ddb9ac51de6c50c876e1febb804dc84c2c4e367df123234c6dfe40723c6",
+              "bytes": 1140
+            },
+            "onpolicy_kl/checkpoint384/learner/adapter_model.safetensors": {
+              "sha256": "3d70144d8faba4ffdcea7d0a558bffdbb99c3705fdeeed19dc6d5d6753d09f21",
+              "bytes": 15354512
+            },
+            "onpolicy_kl/checkpoint384/train_probes.json": {
+              "sha256": "89220f2b1c97a04e1a2b5165b1aadd2f71b621d47a58497678be1d59ed08685c",
+              "bytes": 24371
+            },
+            "runtime.json": {
+              "sha256": "7581110a7c076c604ec9a65481911b352eaf51e803aafeb66ac477c92b749d76",
+              "bytes": 1652
+            },
+            "seal.json": {
+              "sha256": "f1945f2fd0296e07e1c19cfbecccfa96bf3e1168f8848cce967a80c85b9ac573",
+              "bytes": 13515
+            },
+            "task.json": {
+              "sha256": "5198249fce3d0e94efe8c62854e5b3941a8df58d74118297a1835b2c3e17d372",
+              "bytes": 840
+            },
+            "training.json": {
+              "sha256": "2ec82629cf95e6e1bb2d27d01bf1fbd75b515dd99fa185b2f7f1753dd6b257a8",
+              "bytes": 42362
+            }
+          }
+        },
+        "base": {
+          "config.json": {
+            "sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+            "bytes": 728,
+            "git_blob_sha1": "d46195ac87f837ad233d02b2f80f148bf7c005e0"
+          },
+          "generation_config.json": {
+            "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+            "bytes": 239,
+            "git_blob_sha1": "20a8a9156fc8c3f25295ca067f61fdf120d517c5"
+          },
+          "merges.txt": {
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "bytes": 1671853,
+            "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7"
+          },
+          "model-00001-of-00005.safetensors": {
+            "sha256": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f",
+            "bytes": 3996250744
+          },
+          "model-00002-of-00005.safetensors": {
+            "sha256": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282",
+            "bytes": 3993160032
+          },
+          "model-00003-of-00005.safetensors": {
+            "sha256": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836",
+            "bytes": 3959604768
+          },
+          "model-00004-of-00005.safetensors": {
+            "sha256": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a",
+            "bytes": 3187841392
+          },
+          "model-00005-of-00005.safetensors": {
+            "sha256": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff",
+            "bytes": 1244659840
+          },
+          "model.safetensors.index.json": {
+            "sha256": "f9fdbcb91c23971c13ec5d5f2573d2349e8f61f2f049371ec699281748fdb1bc",
+            "bytes": 32878,
+            "git_blob_sha1": "2b85c00f1b118961cd7a477e2bba0fe197a4ce1a"
+          },
+          "tokenizer.json": {
+            "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+            "bytes": 11422654
+          },
+          "tokenizer_config.json": {
+            "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+            "bytes": 9732,
+            "git_blob_sha1": "417d038a63fa3de29cfde265caedae14d1a58d92"
+          },
+          "vocab.json": {
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "bytes": 2776833,
+            "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569"
+          }
+        }
+      }
+    },
+    "stdout_sha256": "08d4bff4d7cf067e666bc1bbda5be3e3ef36d0d447be41465a8419e663e14cb6",
+    "earlier_manual_invocation_failure": "Vendor /opt/venv/bin/python lacks experiment dependencies; failed at import before model loading; corrected to existing qualified per-lane runtime. No source or dependency installation changes."
+  },
+  "jobs": [
+    {
+      "id": "followthrough-20260912-native303-export",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-onpolicy-kl-evaluate"
+      ],
+      "manifest_path": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/manifests/followthrough-20260912-native303-export.json",
+      "manifest_sha256": "2caea8b795326ab291ab555cdd9cf617e05573cafb5cda05fdaaf6bffb01616b"
+    },
+    {
+      "id": "followthrough-20260912-native303-evaluate",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-native303-export"
+      ],
+      "manifest_path": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/manifests/followthrough-20260912-native303-evaluate.json",
+      "manifest_sha256": "ec77ab66a6b8954e4105a60d171b6f19f4d41ca3eee556083b20bf49f91c9840"
+    }
+  ]
+}

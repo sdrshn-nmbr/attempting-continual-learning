@@ -1,0 +1,6 @@
+Defaulted container "portfolio" out of: portfolio, uv (init)
+Traceback (most recent call last):
+  File "/mnt/shared/cl-portfolio/code/0498be8531bfd0cd9dea2dab4e74946345963ac4a7bf4f40aba867207f6b8bef/native303_export.py", line 13, in <module>
+    from peft import PeftModel, get_peft_model_state_dict
+ModuleNotFoundError: No module named 'peft'
+command terminated with exit code 1

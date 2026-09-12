@@ -1,0 +1,33 @@
+{
+  "observed_at": "2026-09-12T08:42:35.589879+00:00",
+  "task_id": "followthrough-20260912-native303-evaluate",
+  "execution_record": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-native303-evaluate/execution.json",
+  "execution_sha256": "841e5166b44bc3842c4010d09f9485704519dde6a3acdd526246823266b4d91c",
+  "remote_dispatch_path": "/mnt/shared/cl-portfolio/queue/followthrough-20260912-native303-evaluate.json",
+  "local_submitted_manifest_path": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/manifests/followthrough-20260912-native303-evaluate.json",
+  "dispatch_bytes": 842,
+  "dispatch_sha256": "ec77ab66a6b8954e4105a60d171b6f19f4d41ca3eee556083b20bf49f91c9840",
+  "remote_bytes_equal_local_submitted_manifest": true,
+  "task": {
+    "id": "followthrough-20260912-native303-evaluate",
+    "lane": "distillation",
+    "code_dir": "/mnt/shared/cl-portfolio/code/0498be8531bfd0cd9dea2dab4e74946345963ac4a7bf4f40aba867207f6b8bef",
+    "source_sha256": "0498be8531bfd0cd9dea2dab4e74946345963ac4a7bf4f40aba867207f6b8bef",
+    "config": {
+      "export_run": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-export",
+      "protocol": "configs/native303_protocol.json",
+      "protocol_sha256": "732e9539d2f178896478afda386d9297ca363b2a1c70daf6f6cb5593102bebc9",
+      "stage": "evaluate",
+      "task_id": "followthrough-20260912-native303-evaluate"
+    },
+    "gpus": 1,
+    "entrypoint": "native303_export.py",
+    "depends_on": [
+      "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+      "followthrough-20260912-native303-export"
+    ],
+    "priority": 8,
+    "max_seconds": 14400
+  },
+  "interpretation": "Separately verified submitted dispatch. The blocked execution record does not embed task/config/source identity, and this job never launched; no model execution or runtime identity is asserted."
+}
