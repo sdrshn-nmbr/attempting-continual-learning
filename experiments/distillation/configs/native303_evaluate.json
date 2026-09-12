@@ -1,0 +1,7 @@
+{
+  "export_run": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-export",
+  "protocol": "configs/native303_protocol.json",
+  "protocol_sha256": "732e9539d2f178896478afda386d9297ca363b2a1c70daf6f6cb5593102bebc9",
+  "stage": "evaluate",
+  "task_id": "followthrough-20260912-native303-evaluate"
+}

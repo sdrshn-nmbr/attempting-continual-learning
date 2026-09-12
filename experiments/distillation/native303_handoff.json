@@ -1,0 +1,207 @@
+{
+  "artifact_contract": {
+    "model_shards_in_run": false,
+    "numerical_witness": "Full source and merged TRAIN-prefix logit matrices external under export/evidence. Fresh-process full prefix matrix in new evaluation run (about102MB), not model shards. All 168 original TRAIN prefixes retained, including EOS predictions; all generic scores and differences logged.",
+    "ordinary_model": "/mnt/shared/cl-portfolio/artifacts/followthrough-20260912-native-consolidated303/export/model",
+    "promoted": "/mnt/shared/cl-portfolio/artifacts/followthrough-20260912-native-consolidated303/export",
+    "promotion": "Hash every file, full model index/header closure verification and fsync before atomic directory rename; refuse existing export",
+    "root": "/mnt/shared/cl-portfolio/artifacts/followthrough-20260912-native-consolidated303",
+    "run_receipt": "export_receipt.json pins manifest and every external file/shard SHA256+bytes; evaluation records them again",
+    "serialization": "standard FP32 safetensors shards max4GB plus Transformers config, explicit generation config, tokenizer; index exact closed weight map",
+    "source_base_dtype": "Pinned source disk snapshot is originally BF16; load full model FP32 exactly as original student, check original FP32 tensor digest. Original files never written; ordinary export weights FP32.",
+    "temporary": "unique .stage-* under artifact root, exclusive .publication.lock; failed temporary remains unpromoted"
+  },
+  "at": "2026-09-12T08:32:14.063567+00:00",
+  "claim_boundary": "Zero-update FP32 export of the fixed own-prefix onpolicy303 checkpoint384 rank8 q/v adapter into standard full Qwen3 weights. Engineering representation/persistence and numerical parity check, not additional learning, direct base-weight optimization, a new consolidation objective, broad continual learning or SDFT/SDPO reproduction. TEST/unused288 are previously observed fixed source panels; generic probes use original multiple-choice scoring, not native generation. Fixed independently of later 384-to405 token-budget controls.",
+  "contract": "onpolicy303_fp32_native_weight_export_20260912",
+  "cpu_validation": {
+    "coverage": [
+      "Actual nonzero rank8 q/v FP32 Qwen3 safe_merge and exact untargeted weight conservation",
+      "Full standard safetensors multi-shard save and distinct uv child PID AutoModel reload; exact generations, generic choices and bounded scores/logits",
+      "Corrupted shard fails in actual child before loader and before any successful output; mocked loader ordering check",
+      "Rehashed modified weights rejected by original exact tensor digest",
+      "Wrong manifest hash and unmanifested adapter config rejected",
+      "Actual Transformers loader blocked on forbidden original base; teacher/adapter files and symlink read ban",
+      "NaN adapter safe_merge rejection and no promoted export",
+      "Exclusive publisher and existing export cannot be overwritten",
+      "Ordinary module tree rejects resident PEFT wrapper and custom dense module",
+      "Independent fixed source UID/fixture/grading arithmetic, full exact collected source/archive/receipt/adapter file pins",
+      "Header-aware Git blob hashes and immutable JSON writes",
+      "Every changed native record returned; numerical tolerance bounds exercised"
+    ],
+    "cpu_runtime": {
+      "peft": "0.20.0",
+      "safetensors": "0.8.0",
+      "torch": "2.14.0",
+      "transformers": "5.16.1"
+    },
+    "passed": 12,
+    "pytest_command": "PYTHONDONTWRITEBYTECODE=1 uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python -m pytest -q -p no:cacheprovider /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_native303_export.py",
+    "pytest_report": "12 passed in 4.97s",
+    "qualification_boundary": "Tiny random fixture is engineering evidence only. No full Qwen3-8B model loading, merge or fresh-process parity has run in this assignment. NFS source base pins remain a required parent prepare-only check.",
+    "ruff_command": "PYTHONDONTWRITEBYTECODE=1 uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python -m ruff check --no-cache /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/native303_export.py /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/native303_contract.py /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_native303_export.py",
+    "ruff_report": "All checks passed!",
+    "tests": 12
+  },
+  "expected_fixed_panels": {
+    "TEST_native": 192,
+    "TRAIN_native": 24,
+    "generic_original_choice_scoring": 128,
+    "unused288_native": 864
+  },
+  "failure_policy": "Any failed source/hash/finite/acquisition/parity prerequisite fails closed with preserved new-run diagnostics. No fallback checkpoint, repair, updates, selection or tolerance relaxation. If final TEST/unused predictions differ, every difference is written and the result is not parity-qualified.",
+  "freeze_boundary": {
+    "frozen_existing_files_modified": false,
+    "history_auditor_modified": false,
+    "new_runtime_imports": [
+      "native303_export.py",
+      "native303_contract.py"
+    ],
+    "old_experiment_modules_imported": false,
+    "owned_files": [
+      "native303_export.py",
+      "native303_contract.py",
+      "test_native303_export.py",
+      "configs/native303_protocol.json",
+      "configs/native303_export.json",
+      "configs/native303_evaluate.json",
+      "native303_handoff.json"
+    ],
+    "parent_staging": "Wait for both native303 and disjoint onpolicy303_budget file owners to freeze before one immutable lane archive. Runtime binds exact code archive and both executable file hashes; no precomputed whole-lane archive digest while another owner is writing.",
+    "runtime_input_fixtures": {
+      "generic": {
+        "bytes": 98318,
+        "path": "configs/onpolicy303_retention.json",
+        "sha256": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1"
+      },
+      "original": {
+        "bytes": 255069,
+        "path": "data/sequence303.json",
+        "sha256": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2"
+      },
+      "unused": {
+        "bytes": 300921,
+        "path": "data/sequence303_unused_inputs.json",
+        "sha256": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e"
+      }
+    }
+  },
+  "gates": {
+    "merged": "untargeted weights exact; every q/v matrix independent FP32 addition comparison; native24 and generic128 choices exact; per-score and all-vocabulary fixed-prefix tolerances",
+    "premerge": "24 TRAIN native records exact and generic128 choices exact with source score tolerance; reject before merging if failed",
+    "reload": "full external file/hash/index verification before direct ordinary loader, exact serialized tensor digest; native24/generic128 then192TEST+864unused; record every prediction difference, no selection"
+  },
+  "installed_sdk_inspection": "Before implementation: real tiny PEFT Qwen model bound merge_and_unload signature and installed safe_merge, get_delta_weight, unload source inspected via uv Python REPL. Returned ordinary model retained; exact rank8 learner adapter explicitly selected.",
+  "jobs": [
+    {
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/native303_export.json",
+      "config_pin": {
+        "bytes": 218,
+        "sha256": "2a84b7b8f836f3736eb0f4f518769a9ed33c19b5f1dd9b3843e27d76751457d6"
+      },
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-onpolicy-kl-evaluate"
+      ],
+      "dispatch_command_for_parent_only": "PYTHONDONTWRITEBYTECODE=1 uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation --config /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/native303_export.json --id followthrough-20260912-native303-export --entrypoint native303_export.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on followthrough-20260912-onpolicy303-onpolicy-kl-evaluate --control-pod \"${NATIVE303_CONTROL_POD:?set current control pod}\" --submit",
+      "entrypoint": "native303_export.py",
+      "gpus": 1,
+      "max_seconds": 14400,
+      "prepare_only_command_template": "PYTHONDONTWRITEBYTECODE=1 /tools/uv run --no-project --python /opt/venv/bin/python python <staged-code-dir>/native303_export.py --config <staged-code-dir>/configs/native303_export.json --prepare-only",
+      "runtime_command_template": "PYTHONDONTWRITEBYTECODE=1 /tools/uv run --no-project --python /opt/venv/bin/python python <staged-code-dir>/native303_export.py --config /mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-export/config.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-export",
+      "stage": "export",
+      "task_id": "followthrough-20260912-native303-export"
+    },
+    {
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/native303_evaluate.json",
+      "config_pin": {
+        "bytes": 311,
+        "sha256": "c3e1d7377e2a74d7eac9ba3ced33740ae621bbefef274f654a1ea2f1e61ae8e7"
+      },
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-native303-export"
+      ],
+      "dispatch_command_for_parent_only": "PYTHONDONTWRITEBYTECODE=1 uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation --config /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/native303_evaluate.json --id followthrough-20260912-native303-evaluate --entrypoint native303_export.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on followthrough-20260912-native303-export --control-pod \"${NATIVE303_CONTROL_POD:?set current control pod}\" --submit",
+      "entrypoint": "native303_export.py",
+      "gpus": 1,
+      "max_seconds": 14400,
+      "prepare_only_command_template": "PYTHONDONTWRITEBYTECODE=1 /tools/uv run --no-project --python /opt/venv/bin/python python <staged-code-dir>/native303_export.py --config <staged-code-dir>/configs/native303_evaluate.json --prepare-only",
+      "runtime_command_template": "PYTHONDONTWRITEBYTECODE=1 /tools/uv run --no-project --python /opt/venv/bin/python python <staged-code-dir>/native303_export.py --config /mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-evaluate/config.json --output-dir /mnt/shared/cl-portfolio/runs/followthrough-20260912-native303-evaluate",
+      "stage": "evaluate",
+      "task_id": "followthrough-20260912-native303-evaluate"
+    }
+  ],
+  "optimizer_updates": 0,
+  "primary_implementation_references": [
+    "https://huggingface.co/docs/peft/developer_guides/lora",
+    "https://huggingface.co/docs/transformers/main_classes/model#transformers.PreTrainedModel.save_pretrained"
+  ],
+  "protocol_canonical_sha256": "732e9539d2f178896478afda386d9297ca363b2a1c70daf6f6cb5593102bebc9",
+  "reload_read_boundary": "No teacher/base/adapter artifact is read by reload code. Second job consumes its own sealed code/config, completed export metadata, and closed hash-verified export with all rows/references/tokenizer. Python read audit plus standard local-only loader is checked; explicitly not a hostile-native-code OS sandbox.",
+  "source_adapter": {
+    "files": {
+      "adapter_config.json": "45581ddb9ac51de6c50c876e1febb804dc84c2c4e367df123234c6dfe40723c6",
+      "adapter_model.safetensors": "3d70144d8faba4ffdcea7d0a558bffdbb99c3705fdeeed19dc6d5d6753d09f21"
+    },
+    "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-onpolicy-kl-train/onpolicy_kl/checkpoint384/learner",
+    "tensor_sha256": "ce1441892f01f7a6fabb005892b5ca845c1c92e340f45f411ccef659ed4008f1"
+  },
+  "source_archive": {
+    "archive": {
+      "bytes": 3031040,
+      "sha256": "9a9d1955c2664e9c9dede7b3015f2ba95bb2d57898e613b3c2258431232d0a71"
+    },
+    "files": 130,
+    "path": "/mnt/shared/cl-portfolio/code/85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b.tar",
+    "source_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b"
+  },
+  "source_base_tensor_sha256": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31",
+  "source_checkpoint": 384,
+  "source_method": "ownprefix onpolicy_kl; source held fixed independently of subsequent token-budget controls",
+  "source_pins": {
+    "configs/native303_evaluate.json": {
+      "bytes": 311,
+      "sha256": "c3e1d7377e2a74d7eac9ba3ced33740ae621bbefef274f654a1ea2f1e61ae8e7"
+    },
+    "configs/native303_export.json": {
+      "bytes": 218,
+      "sha256": "2a84b7b8f836f3736eb0f4f518769a9ed33c19b5f1dd9b3843e27d76751457d6"
+    },
+    "configs/native303_protocol.json": {
+      "bytes": 10442,
+      "sha256": "b5a4c21bce643a4db2a6149d134087449c118daf181104c3f4aee1784f5dc665"
+    },
+    "native303_contract.py": {
+      "bytes": 27668,
+      "sha256": "904e323e26e3a02071c18c64d230138fb3be859a1c853b4453042a14800192aa"
+    },
+    "native303_export.py": {
+      "bytes": 34930,
+      "sha256": "59435f32c6ddc89f08895cc39e066affcef7d7d90eeaf610f143f0a8268580cf"
+    },
+    "test_native303_export.py": {
+      "bytes": 14382,
+      "sha256": "c261c4e7b6a433e70c76525a35393fdd7dfc4112bea684cfc3b70fde64839824"
+    }
+  },
+  "status": "cpu_verified_ready_for_parent_staging_full_size_execution_pending",
+  "tolerances": {
+    "merged_scores": {
+      "atol": 0.0001,
+      "rtol": 1e-05
+    },
+    "merged_weights": {
+      "atol": 1e-06,
+      "rtol": 1e-06
+    },
+    "prefix_logits": {
+      "atol": 0.001,
+      "rtol": 1e-05
+    },
+    "source_scores": {
+      "atol": 1e-05,
+      "rtol": 1e-06
+    }
+  }
+}

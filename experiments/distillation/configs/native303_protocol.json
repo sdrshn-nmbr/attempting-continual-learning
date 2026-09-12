@@ -1,0 +1,278 @@
+{
+  "adapter": {
+    "files": {
+      "adapter_config.json": "45581ddb9ac51de6c50c876e1febb804dc84c2c4e367df123234c6dfe40723c6",
+      "adapter_model.safetensors": "3d70144d8faba4ffdcea7d0a558bffdbb99c3705fdeeed19dc6d5d6753d09f21"
+    },
+    "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-onpolicy-kl-train/onpolicy_kl/checkpoint384/learner",
+    "tensor_sha256": "ce1441892f01f7a6fabb005892b5ca845c1c92e340f45f411ccef659ed4008f1"
+  },
+  "artifact_root": "/mnt/shared/cl-portfolio/artifacts/followthrough-20260912-native-consolidated303",
+  "base_tensor_sha256": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31",
+  "checkpoint": 384,
+  "claim_boundary": "Zero-update FP32 export of the fixed own-prefix onpolicy303 checkpoint384 rank8 q/v adapter into standard full Qwen3 weights. Engineering representation/persistence and numerical parity check, not additional learning, direct base-weight optimization, a new consolidation objective, broad continual learning or SDFT/SDPO reproduction. TEST/unused288 are previously observed fixed source panels; generic probes use original multiple-choice scoring, not native generation. Fixed independently of later 384-to405 token-budget controls.",
+  "code_sha256": {
+    "native303_contract.py": "904e323e26e3a02071c18c64d230138fb3be859a1c853b4453042a14800192aa",
+    "native303_export.py": "59435f32c6ddc89f08895cc39e066affcef7d7d90eeaf610f143f0a8268580cf"
+  },
+  "contract": "onpolicy303_fp32_native_weight_export_20260912",
+  "evaluate_task_id": "followthrough-20260912-native303-evaluate",
+  "export_task_id": "followthrough-20260912-native303-export",
+  "fixtures": {
+    "generic": {
+      "bytes": 98318,
+      "path": "configs/onpolicy303_retention.json",
+      "sha256": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1"
+    },
+    "original": {
+      "bytes": 255069,
+      "path": "data/sequence303.json",
+      "sha256": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2"
+    },
+    "unused": {
+      "bytes": 300921,
+      "path": "data/sequence303_unused_inputs.json",
+      "sha256": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e"
+    }
+  },
+  "gates": {
+    "merged": "untargeted weights exact; every q/v matrix independent FP32 addition comparison; native24 and generic128 choices exact; per-score and all-vocabulary fixed-prefix tolerances",
+    "premerge": "24 TRAIN native records exact and generic128 choices exact with source score tolerance; reject before merging if failed",
+    "reload": "full external file/hash/index verification before direct ordinary loader, exact serialized tensor digest; native24/generic128 then192TEST+864unused; record every prediction difference, no selection"
+  },
+  "generic_tasks": [
+    "boolq",
+    "hellaswag",
+    "winogrande",
+    "commonsense_qa"
+  ],
+  "max_shard_size": "4GB",
+  "numeric_rule": "abs(actual-reference) <= atol + rtol*abs(reference); full-vocabulary logits at all 168 original TRAIN generation prefixes including EOS; no posthoc tolerance relaxation.",
+  "optimizer_updates": 0,
+  "packages": {
+    "peft": "0.20.0",
+    "safetensors": "0.8.0",
+    "transformers": "5.16.1"
+  },
+  "source_archive": {
+    "archive": {
+      "bytes": 3031040,
+      "sha256": "9a9d1955c2664e9c9dede7b3015f2ba95bb2d57898e613b3c2258431232d0a71"
+    },
+    "files": 130,
+    "path": "/mnt/shared/cl-portfolio/code/85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b.tar",
+    "source_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b"
+  },
+  "source_base": {
+    "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+    "files": [
+      {
+        "bytes": 728,
+        "git_blob_sha1": "d46195ac87f837ad233d02b2f80f148bf7c005e0",
+        "path": "config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 239,
+        "git_blob_sha1": "20a8a9156fc8c3f25295ca067f61fdf120d517c5",
+        "path": "generation_config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 1671853,
+        "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+        "path": "merges.txt",
+        "sha256": null
+      },
+      {
+        "bytes": 3996250744,
+        "git_blob_sha1": null,
+        "path": "model-00001-of-00005.safetensors",
+        "sha256": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f"
+      },
+      {
+        "bytes": 3993160032,
+        "git_blob_sha1": null,
+        "path": "model-00002-of-00005.safetensors",
+        "sha256": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282"
+      },
+      {
+        "bytes": 3959604768,
+        "git_blob_sha1": null,
+        "path": "model-00003-of-00005.safetensors",
+        "sha256": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836"
+      },
+      {
+        "bytes": 3187841392,
+        "git_blob_sha1": null,
+        "path": "model-00004-of-00005.safetensors",
+        "sha256": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a"
+      },
+      {
+        "bytes": 1244659840,
+        "git_blob_sha1": null,
+        "path": "model-00005-of-00005.safetensors",
+        "sha256": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff"
+      },
+      {
+        "bytes": 32878,
+        "git_blob_sha1": "2b85c00f1b118961cd7a477e2bba0fe197a4ce1a",
+        "path": "model.safetensors.index.json",
+        "sha256": null
+      },
+      {
+        "bytes": 11422654,
+        "git_blob_sha1": null,
+        "path": "tokenizer.json",
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+      },
+      {
+        "bytes": 9732,
+        "git_blob_sha1": "417d038a63fa3de29cfde265caedae14d1a58d92",
+        "path": "tokenizer_config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 2776833,
+        "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+        "path": "vocab.json",
+        "sha256": null
+      }
+    ],
+    "local_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+    "repo_id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+  },
+  "source_runs": {
+    "evaluate": {
+      "directory": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-onpolicy-kl-evaluate",
+      "files": {
+        "config.json": {
+          "bytes": 369,
+          "sha256": "9aaec3d055133b59830de1dfca6f4586811a789b8dd553afb53bb10285b41d13"
+        },
+        "execution.json": {
+          "bytes": 2248,
+          "sha256": "1939324001de460c09b2e5c0941f5a06d0d4228f92e037338c7837d86bec04a8"
+        },
+        "final_retention.json": {
+          "bytes": 39521,
+          "sha256": "49bb1fdbc2f368c1b335fb93e92c2b810f6d35edd0bfde9ec0e314044536df1d"
+        },
+        "final_train_probes.json": {
+          "bytes": 24371,
+          "sha256": "89220f2b1c97a04e1a2b5165b1aadd2f71b621d47a58497678be1d59ed08685c"
+        },
+        "panels.json": {
+          "bytes": 1263721,
+          "sha256": "bbbe0beb1a62f2c349a936be6a2c02c08152c65ee5ab35d88d495e04371da622"
+        },
+        "result.json": {
+          "bytes": 39655,
+          "sha256": "1f9e86719cf0269738878d475123225c3b259f0ab07af48dc79f16e67b355472"
+        },
+        "runtime.json": {
+          "bytes": 1652,
+          "sha256": "7581110a7c076c604ec9a65481911b352eaf51e803aafeb66ac477c92b749d76"
+        },
+        "seal.json": {
+          "bytes": 13627,
+          "sha256": "22677c42e33f23e5df46536dd706f4cf667dde676ea39750721eaedda44ae0c8"
+        },
+        "task.json": {
+          "bytes": 924,
+          "sha256": "28eacd4ecb6a30d229d58f729b3510d914f332f9b16d4d4c3d90d0db64fe778a"
+        }
+      },
+      "task_id": "followthrough-20260912-onpolicy303-onpolicy-kl-evaluate"
+    },
+    "train": {
+      "directory": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-onpolicy-kl-train",
+      "files": {
+        "config.json": {
+          "bytes": 259,
+          "sha256": "04888d5b18ce983d2992f12a1b3430c04dca42c3a2baa3527e730d7dc5559078"
+        },
+        "execution.json": {
+          "bytes": 2161,
+          "sha256": "4130cc5325b867086f804e2df65d3424b4ad04f7b05c1d8d3963e3bc33c2476c"
+        },
+        "final_retention.json": {
+          "bytes": 39521,
+          "sha256": "49bb1fdbc2f368c1b335fb93e92c2b810f6d35edd0bfde9ec0e314044536df1d"
+        },
+        "onpolicy_kl/checkpoint384/learner/adapter_config.json": {
+          "bytes": 1140,
+          "sha256": "45581ddb9ac51de6c50c876e1febb804dc84c2c4e367df123234c6dfe40723c6"
+        },
+        "onpolicy_kl/checkpoint384/learner/adapter_model.safetensors": {
+          "bytes": 15354512,
+          "sha256": "3d70144d8faba4ffdcea7d0a558bffdbb99c3705fdeeed19dc6d5d6753d09f21"
+        },
+        "onpolicy_kl/checkpoint384/train_probes.json": {
+          "bytes": 24371,
+          "sha256": "89220f2b1c97a04e1a2b5165b1aadd2f71b621d47a58497678be1d59ed08685c"
+        },
+        "runtime.json": {
+          "bytes": 1652,
+          "sha256": "7581110a7c076c604ec9a65481911b352eaf51e803aafeb66ac477c92b749d76"
+        },
+        "seal.json": {
+          "bytes": 13515,
+          "sha256": "f1945f2fd0296e07e1c19cfbecccfa96bf3e1168f8848cce967a80c85b9ac573"
+        },
+        "task.json": {
+          "bytes": 840,
+          "sha256": "5198249fce3d0e94efe8c62854e5b3941a8df58d74118297a1835b2c3e17d372"
+        },
+        "training.json": {
+          "bytes": 42362,
+          "sha256": "2ec82629cf95e6e1bb2d27d01bf1fbd75b515dd99fa185b2f7f1753dd6b257a8"
+        }
+      },
+      "task_id": "followthrough-20260912-onpolicy303-onpolicy-kl-train"
+    }
+  },
+  "teacher_forbidden_roots": [
+    "/mnt/shared/cl-portfolio/runs/consolidation-source303-coverage-20260912",
+    "/mnt/shared/cl-portfolio/runs/consolidation-coverage303-20260912"
+  ],
+  "tokens": {
+    "eos_token_id": 151645,
+    "special_token_ids": [
+      151645,
+      151643,
+      151644,
+      151646,
+      151647,
+      151648,
+      151649,
+      151650,
+      151651,
+      151652,
+      151653,
+      151654,
+      151655,
+      151656
+    ]
+  },
+  "tolerances": {
+    "merged_scores": {
+      "atol": 0.0001,
+      "rtol": 1e-05
+    },
+    "merged_weights": {
+      "atol": 1e-06,
+      "rtol": 1e-06
+    },
+    "prefix_logits": {
+      "atol": 0.001,
+      "rtol": 1e-05
+    },
+    "source_scores": {
+      "atol": 1e-05,
+      "rtol": 1e-06
+    }
+  },
+  "worker_torch": "2.10.0+rocm7.2.4.lw.git3d3aa833"
+}
