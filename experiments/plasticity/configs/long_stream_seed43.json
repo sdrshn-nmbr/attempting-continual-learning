@@ -1,0 +1,55 @@
+{
+  "experiment": "bounded-generated-long-stream",
+  "mode": "study",
+  "model_id": "Qwen/Qwen3.5-4B",
+  "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "seed": 43,
+  "predeclared_seeds": [
+    17,
+    29,
+    43
+  ],
+  "data_seed": 20260911,
+  "task_order": [
+    "VELA",
+    "SORI",
+    "KEMU",
+    "PAVI",
+    "RULO",
+    "ZEDI",
+    "FENO",
+    "HUKA"
+  ],
+  "arms": [
+    "continue",
+    "replay"
+  ],
+  "rank": 8,
+  "lora_alpha": 16,
+  "target_suffixes": [
+    "q_proj",
+    "v_proj"
+  ],
+  "learning_rate": 0.0003,
+  "weight_decay": 0.0,
+  "grad_clip": 1.0,
+  "batch_size": 8,
+  "eval_batch_size": 16,
+  "updates_per_stage": 128,
+  "buffer_capacity": 64,
+  "replay_per_batch": 4,
+  "exposure_matching": "match_total_and_log_new_exposure_difference",
+  "train_examples": 512,
+  "validation_examples": 64,
+  "test_examples": 128,
+  "max_length": 192,
+  "max_new_tokens": 4,
+  "gate_metric": "whole_answer_native_eos_accuracy",
+  "gate_min_accuracy": 0.6,
+  "gate_headroom_fraction": 0.5,
+  "min_baseline_headroom": 0.1,
+  "gradient_checkpointing": false,
+  "attention": "sdpa",
+  "device": "cuda:0"
+}

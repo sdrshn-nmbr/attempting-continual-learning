@@ -1,0 +1,2836 @@
+{
+  "wave": "resume-20260911",
+  "recorded_at": "2026-09-12T02:53:27.355228+00:00",
+  "status": "completed_bounded_wave",
+  "repository": "https://github.com/sdrshn-nmbr/attempting-continual-learning",
+  "branch": "research/resume-20260911",
+  "scope": "Bounded continuation of PorTAL mechanisms, longer generated-answer learning, independent plasticity, teacher qualification, and a recoverability lens pilot.",
+  "results": {
+    "portal_representability": {
+      "fixed_alignment_geometry": {
+        "path": "outputs/representability/source303-20260911/result.json",
+        "sha256": "cdaa812d7f7794d537a2d79e33e592ac81013db227c0a55ec7a67bf243fe7ea0",
+        "bytes": 3910
+      },
+      "constructive_geometry": {
+        "path": "outputs/representability/learned-alignment303-20260911/result.json",
+        "sha256": "d93a55239b174349704c3471f8fca7f7ef3c992c9ecb2f96d75c2a3cb1420a90",
+        "bytes": 32332
+      },
+      "projection_correct": 580,
+      "rank8_source_correct": 850,
+      "constructed_native_correct": 850,
+      "evaluation_rows": 864,
+      "fp64_relative_weight_error": 6.571562866054022e-15,
+      "fp32_relative_weight_error": 1.4919532233133453e-06,
+      "claim": "The native architecture can represent this successful adapter when alignments and four shared affine heads are fitted to its known matrices. Existing fixed spans exclude part of the learned change.",
+      "limits": "Privileged known-adapter construction, unchanged architecture, one fixed RTE latent. Not learning from examples, old-task retention, or portability. Same previously evaluated 864-row synthetic fixture."
+    },
+    "target_calibration": {
+      "input": {
+        "path": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/resume-20260911/runs/resume-20260911-portal-target-calibration-snapshot/result.json",
+        "sha256": "cfc9456dd4439924be8463ffbd6e4e5c71637cae0dcd713f81c97877030ba0f5"
+      },
+      "panels": {
+        "fresh_initial": {
+          "fresh288": {
+            "correct": 246,
+            "n": 864,
+            "per_task": {
+              "sequence_a": 71,
+              "sequence_b": 73,
+              "sequence_c": 102
+            }
+          },
+          "old_validation_test": {
+            "correct": 92,
+            "n": 288,
+            "per_task": {
+              "sequence_a": 26,
+              "sequence_b": 24,
+              "sequence_c": 42
+            }
+          }
+        },
+        "fresh_learned": {
+          "fresh288": {
+            "correct": 246,
+            "n": 864,
+            "per_task": {
+              "sequence_a": 71,
+              "sequence_b": 73,
+              "sequence_c": 102
+            }
+          },
+          "old_validation_test": {
+            "correct": 92,
+            "n": 288,
+            "per_task": {
+              "sequence_a": 26,
+              "sequence_b": 24,
+              "sequence_c": 42
+            }
+          }
+        },
+        "initial_calibrated": {
+          "fresh288": {
+            "correct": 661,
+            "n": 864,
+            "per_task": {
+              "sequence_a": 212,
+              "sequence_b": 222,
+              "sequence_c": 227
+            }
+          },
+          "old_validation_test": {
+            "correct": 236,
+            "n": 288,
+            "per_task": {
+              "sequence_a": 80,
+              "sequence_b": 76,
+              "sequence_c": 80
+            }
+          }
+        },
+        "learned_calibrated": {
+          "fresh288": {
+            "correct": 591,
+            "n": 864,
+            "per_task": {
+              "sequence_a": 179,
+              "sequence_b": 174,
+              "sequence_c": 238
+            }
+          },
+          "old_validation_test": {
+            "correct": 208,
+            "n": 288,
+            "per_task": {
+              "sequence_a": 70,
+              "sequence_b": 55,
+              "sequence_c": 83
+            }
+          }
+        },
+        "lora_from_zero": {
+          "fresh288": {
+            "correct": 757,
+            "n": 864,
+            "per_task": {
+              "sequence_a": 251,
+              "sequence_b": 253,
+              "sequence_c": 253
+            }
+          },
+          "old_validation_test": {
+            "correct": 249,
+            "n": 288,
+            "per_task": {
+              "sequence_a": 89,
+              "sequence_b": 75,
+              "sequence_c": 85
+            }
+          }
+        },
+        "old_alignment_initial": {
+          "fresh288": {
+            "correct": 257,
+            "n": 864,
+            "per_task": {
+              "sequence_a": 72,
+              "sequence_b": 62,
+              "sequence_c": 123
+            }
+          },
+          "old_validation_test": {
+            "correct": 90,
+            "n": 288,
+            "per_task": {
+              "sequence_a": 20,
+              "sequence_b": 23,
+              "sequence_c": 47
+            }
+          }
+        },
+        "old_alignment_learned": {
+          "fresh288": {
+            "correct": 258,
+            "n": 864,
+            "per_task": {
+              "sequence_a": 77,
+              "sequence_b": 71,
+              "sequence_c": 110
+            }
+          },
+          "old_validation_test": {
+            "correct": 81,
+            "n": 288,
+            "per_task": {
+              "sequence_a": 26,
+              "sequence_b": 20,
+              "sequence_c": 35
+            }
+          }
+        },
+        "raw": {
+          "fresh288": {
+            "correct": 246,
+            "n": 864,
+            "per_task": {
+              "sequence_a": 71,
+              "sequence_b": 73,
+              "sequence_c": 102
+            }
+          },
+          "old_validation_test": {
+            "correct": 92,
+            "n": 288,
+            "per_task": {
+              "sequence_a": 26,
+              "sequence_b": 24,
+              "sequence_c": 42
+            }
+          }
+        }
+      },
+      "equal_training_schedule": true,
+      "new_pid_reload": true,
+      "frozen_base_core_and_latents_verified": true,
+      "trainable_parameters": {
+        "initial_calibrated": 10486912,
+        "learned_calibrated": 10486912,
+        "lora_from_zero": 2949120
+      },
+      "scope": "16 calibration examples per task; five passes; 20 updates; exploratory previously seen evaluation fixture",
+      "source_pair": "The earlier native PorTAL initial/learned checkpoints were calibrated. This experiment did not transfer the newly constructed rank-8 representation witness."
+    },
+    "long_stream": {
+      "audit": {
+        "path": "outputs/portfolio/resume-20260911/long-stream-audit.json",
+        "sha256": "e2177834ec95deaa56dd2799a186cc08c0b70efa3f68c199c35c61773b43d4d9",
+        "bytes": 31043
+      },
+      "aggregate_final_test_accuracy": {
+        "continue": {
+          "per_seed": [
+            0.34375,
+            0.34375,
+            0.34375
+          ],
+          "mean": 0.34375,
+          "seed_standard_deviation": 0.0
+        },
+        "replay": {
+          "per_seed": [
+            0.8154296875,
+            0.8583984375,
+            0.833984375
+          ],
+          "mean": 0.8359375,
+          "seed_standard_deviation": 0.021550855947962803
+        }
+      },
+      "all_three_seeds_qualified": true,
+      "fixed_buffer_examples": 64,
+      "tasks": 8,
+      "updates_per_task": 128,
+      "scope": "Three optimization seeds on one fixed eight-task synthetic mapping and shared heldout input split. No independent task-distribution replication or real-world skill-transfer claim. Total updates/examples matched; current-task exposure differs.",
+      "figure": {
+        "path": "outputs/portfolio/resume-20260911/long-stream-results.png",
+        "sha256": "1cec0d1f3bc5fd578b82e4274115bc26291fdd1a5ba4774c289d41a49787db58",
+        "bytes": 201839
+      }
+    },
+    "plasticity": [
+      {
+        "seed": 17,
+        "selection_ledger": [
+          {
+            "arm": "continue",
+            "auc_gain": 0.0,
+            "decision": "baseline",
+            "fresh_references_learnable": true,
+            "locked_test_delta": 0.0,
+            "locked_test_score": 0.4619140625,
+            "new_task_auc": 0.7861328125,
+            "retention": 0.203125,
+            "retention_delta": 0.0
+          },
+          {
+            "arm": "optimizer_reset",
+            "auc_gain": 0.05224609375,
+            "decision": "keep_for_replication",
+            "fresh_references_learnable": true,
+            "locked_test_delta": 0.064453125,
+            "locked_test_score": 0.5263671875,
+            "new_task_auc": 0.83837890625,
+            "retention": 0.265625,
+            "retention_delta": 0.0625
+          },
+          {
+            "arm": "capacity_refresh",
+            "auc_gain": -0.0068359375,
+            "decision": "discard_at_this_budget",
+            "fresh_references_learnable": true,
+            "locked_test_delta": -0.0166015625,
+            "locked_test_score": 0.4453125,
+            "new_task_auc": 0.779296875,
+            "retention": 0.18359375,
+            "retention_delta": -0.01953125
+          },
+          {
+            "arm": "replay",
+            "auc_gain": -0.0517578125,
+            "decision": "discard_at_this_budget",
+            "fresh_references_learnable": true,
+            "locked_test_delta": 0.15234375,
+            "locked_test_score": 0.6142578125,
+            "new_task_auc": 0.734375,
+            "retention": 0.4921875,
+            "retention_delta": 0.2890625
+          }
+        ],
+        "scope": "Full-vocabulary next-token coded choice; validation AUC selection; fixed synthetic fixture; frozen backbone probes only, not full-backbone tensor hashing",
+        "capacity": {
+          "capacity_refresh": {
+            "B": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 1835008,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 16
+            },
+            "C": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 2752512,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 24
+            }
+          },
+          "continue": {
+            "B": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            },
+            "C": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            }
+          },
+          "fresh_B": {
+            "B": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            }
+          },
+          "fresh_C": {
+            "C": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            }
+          },
+          "optimizer_reset": {
+            "B": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            },
+            "C": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            }
+          },
+          "replay": {
+            "B": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            },
+            "C": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            }
+          }
+        }
+      },
+      {
+        "seed": 29,
+        "selection_ledger": [
+          {
+            "arm": "continue",
+            "auc_gain": 0.0,
+            "decision": "baseline",
+            "fresh_references_learnable": true,
+            "locked_test_delta": 0.0,
+            "locked_test_score": 0.533203125,
+            "new_task_auc": 0.8173828125,
+            "retention": 0.32421875,
+            "retention_delta": 0.0
+          },
+          {
+            "arm": "optimizer_reset",
+            "auc_gain": 0.01611328125,
+            "decision": "discard_at_this_budget",
+            "fresh_references_learnable": true,
+            "locked_test_delta": 0.005859375,
+            "locked_test_score": 0.5390625,
+            "new_task_auc": 0.83349609375,
+            "retention": 0.234375,
+            "retention_delta": -0.08984375
+          },
+          {
+            "arm": "capacity_refresh",
+            "auc_gain": -0.0068359375,
+            "decision": "discard_at_this_budget",
+            "fresh_references_learnable": true,
+            "locked_test_delta": -0.0146484375,
+            "locked_test_score": 0.5185546875,
+            "new_task_auc": 0.810546875,
+            "retention": 0.25390625,
+            "retention_delta": -0.0703125
+          },
+          {
+            "arm": "replay",
+            "auc_gain": -0.0166015625,
+            "decision": "discard_at_this_budget",
+            "fresh_references_learnable": true,
+            "locked_test_delta": 0.10546875,
+            "locked_test_score": 0.638671875,
+            "new_task_auc": 0.80078125,
+            "retention": 0.640625,
+            "retention_delta": 0.31640625
+          }
+        ],
+        "scope": "Full-vocabulary next-token coded choice; validation AUC selection; fixed synthetic fixture; frozen backbone probes only, not full-backbone tensor hashing",
+        "capacity": {
+          "capacity_refresh": {
+            "B": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 1835008,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 16
+            },
+            "C": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 2752512,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 24
+            }
+          },
+          "continue": {
+            "B": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            },
+            "C": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            }
+          },
+          "fresh_B": {
+            "B": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            }
+          },
+          "fresh_C": {
+            "C": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            }
+          },
+          "optimizer_reset": {
+            "B": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            },
+            "C": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            }
+          },
+          "replay": {
+            "B": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            },
+            "C": {
+              "trainable_parameters": 917504,
+              "total_adapter_parameters": 917504,
+              "trainable_rank": 8,
+              "cumulative_rank_upper_bound": 8
+            }
+          }
+        }
+      }
+    ],
+    "plasticity_replication": {
+      "selected_candidate": "optimizer_reset",
+      "seeds": {
+        "17": {
+          "optimizer_reset": {
+            "arm": "optimizer_reset",
+            "auc_gain": 0.05224609375,
+            "decision": "keep_for_replication",
+            "fresh_references_learnable": true,
+            "locked_test_delta": 0.064453125,
+            "locked_test_score": 0.5263671875,
+            "new_task_auc": 0.83837890625,
+            "retention": 0.265625,
+            "retention_delta": 0.0625
+          },
+          "final_old_task_test_accuracy": {
+            "capacity_refresh": 0.171875,
+            "continue": 0.216796875,
+            "optimizer_reset": 0.263671875,
+            "replay": 0.521484375
+          }
+        },
+        "29": {
+          "optimizer_reset": {
+            "arm": "optimizer_reset",
+            "auc_gain": 0.01611328125,
+            "decision": "discard_at_this_budget",
+            "fresh_references_learnable": true,
+            "locked_test_delta": 0.005859375,
+            "locked_test_score": 0.5390625,
+            "new_task_auc": 0.83349609375,
+            "retention": 0.234375,
+            "retention_delta": -0.08984375
+          },
+          "final_old_task_test_accuracy": {
+            "capacity_refresh": 0.294921875,
+            "continue": 0.326171875,
+            "optimizer_reset": 0.263671875,
+            "replay": 0.640625
+          }
+        }
+      },
+      "replication_passed": false,
+      "conclusion": "The seed-17 optimizer-reset candidate did not meet the unchanged learning-curve and retention criteria on seed 29. Replay improved retention but lowered new-task AUC. Capacity growth improved neither screen, despite cumulative adapter rank 8 to 16 to 24."
+    },
+    "teacher": {
+      "audit": {
+        "path": "outputs/portfolio/resume-20260911/teacher-audit.json",
+        "sha256": "3b911f13d1f5bfd982362650c8d4684a13ce58dcfd690a8b137f9aa8dbcd43d2",
+        "bytes": 4144
+      },
+      "candidates": {
+        "distillation-generated-qualification-20260911": {
+          "status": "rejected",
+          "candidate": "instruction_demo",
+          "receipt_sha256": "0f040e16f59f378d6243c16580ef279b01bd91a4ef67348b45e22dbb0326e2d2",
+          "recomputed_gate": {
+            "passed": false,
+            "panels": {
+              "A/train": {
+                "n": 24,
+                "student_accuracy": 0.25,
+                "teacher_accuracy": 0.125,
+                "gain": -0.125,
+                "wins": 2,
+                "losses": 5,
+                "paired_one_sided_p": 0.9375,
+                "passed": false
+              },
+              "B/train": {
+                "n": 24,
+                "student_accuracy": 0.08333333333333333,
+                "teacher_accuracy": 0.041666666666666664,
+                "gain": -0.041666666666666664,
+                "wins": 1,
+                "losses": 2,
+                "paired_one_sided_p": 0.875,
+                "passed": false
+              },
+              "C/train": {
+                "n": 24,
+                "student_accuracy": 0.16666666666666666,
+                "teacher_accuracy": 0.041666666666666664,
+                "gain": -0.125,
+                "wins": 1,
+                "losses": 4,
+                "paired_one_sided_p": 0.96875,
+                "passed": false
+              },
+              "A/validation": {
+                "n": 24,
+                "student_accuracy": 0.16666666666666666,
+                "teacher_accuracy": 0.125,
+                "gain": -0.041666666666666664,
+                "wins": 3,
+                "losses": 4,
+                "paired_one_sided_p": 0.7734375,
+                "passed": false
+              },
+              "B/validation": {
+                "n": 24,
+                "student_accuracy": 0.08333333333333333,
+                "teacher_accuracy": 0.0,
+                "gain": -0.08333333333333333,
+                "wins": 0,
+                "losses": 2,
+                "paired_one_sided_p": 1.0,
+                "passed": false
+              },
+              "C/validation": {
+                "n": 24,
+                "student_accuracy": 0.08333333333333333,
+                "teacher_accuracy": 0.041666666666666664,
+                "gain": -0.041666666666666664,
+                "wins": 1,
+                "losses": 2,
+                "paired_one_sided_p": 0.875,
+                "passed": false
+              }
+            }
+          },
+          "learner_updates": 0
+        },
+        "distillation-generated-teacher-training-20260911": {
+          "status": "rejected",
+          "candidate": "trained_teacher",
+          "receipt_sha256": "7c26152a5c4917fff4cde25bc850fc5affd4067772309b40ec9431005bd9fd3a",
+          "recomputed_gate": {
+            "passed": false,
+            "panels": {
+              "A/train": {
+                "n": 24,
+                "student_accuracy": 0.25,
+                "teacher_accuracy": 0.5,
+                "gain": 0.25,
+                "wins": 7,
+                "losses": 1,
+                "paired_one_sided_p": 0.03515625,
+                "passed": false
+              },
+              "B/train": {
+                "n": 24,
+                "student_accuracy": 0.08333333333333333,
+                "teacher_accuracy": 0.3333333333333333,
+                "gain": 0.25,
+                "wins": 6,
+                "losses": 0,
+                "paired_one_sided_p": 0.015625,
+                "passed": false
+              },
+              "C/train": {
+                "n": 24,
+                "student_accuracy": 0.16666666666666666,
+                "teacher_accuracy": 0.3333333333333333,
+                "gain": 0.16666666666666666,
+                "wins": 5,
+                "losses": 1,
+                "paired_one_sided_p": 0.109375,
+                "passed": false
+              },
+              "A/fallback_validation": {
+                "n": 24,
+                "student_accuracy": 0.16666666666666666,
+                "teacher_accuracy": 0.375,
+                "gain": 0.20833333333333334,
+                "wins": 5,
+                "losses": 0,
+                "paired_one_sided_p": 0.03125,
+                "passed": false
+              },
+              "B/fallback_validation": {
+                "n": 24,
+                "student_accuracy": 0.08333333333333333,
+                "teacher_accuracy": 0.25,
+                "gain": 0.16666666666666666,
+                "wins": 4,
+                "losses": 0,
+                "paired_one_sided_p": 0.0625,
+                "passed": false
+              },
+              "C/fallback_validation": {
+                "n": 24,
+                "student_accuracy": 0.08333333333333333,
+                "teacher_accuracy": 0.20833333333333334,
+                "gain": 0.125,
+                "wins": 3,
+                "losses": 0,
+                "paired_one_sided_p": 0.125,
+                "passed": false
+              }
+            }
+          },
+          "learner_updates": 0
+        }
+      },
+      "consolidation_updates": 0,
+      "conclusion": "Both predefined candidates failed whole-answer plus native-EOS qualification. Conditional learner distillation and internal composition were not started."
+    },
+    "recoverability": {
+      "status": "passed",
+      "execution_status": "completed",
+      "result": {
+        "status": "descriptive_pilot",
+        "feasibility": "insufficient_independent_runs",
+        "predictor_feasibility": "insufficient_eligible_skills",
+        "single_class_actions": [],
+        "claim": "Pilot estimates only. No general prediction or causal claim about internal readouts.",
+        "units": [
+          {
+            "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/income",
+            "skill": "income",
+            "run": "plasticity-clinc-replay-screen-seed23-6a27d9c4",
+            "split": "train",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/are_you_a_bot",
+            "skill": "are_you_a_bot",
+            "run": "plasticity-clinc-replay-screen-seed23-6a27d9c4",
+            "split": "train",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/text",
+            "skill": "text",
+            "run": "plasticity-clinc-replay-screen-seed23-6a27d9c4",
+            "split": "train",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/card_declined",
+            "skill": "card_declined",
+            "run": "plasticity-clinc-replay-screen-seed23-6a27d9c4",
+            "split": "train",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/reset_settings",
+            "skill": "reset_settings",
+            "run": "plasticity-clinc-replay-screen-seed23-6a27d9c4",
+            "split": "train",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.55,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.55,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.6,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.55,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/confirm_reservation",
+            "skill": "confirm_reservation",
+            "run": "plasticity-clinc-replay-screen-seed23-6a27d9c4",
+            "split": "train",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/international_visa",
+            "skill": "international_visa",
+            "run": "plasticity-clinc-replay-screen-seed23-6a27d9c4",
+            "split": "train",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/schedule_meeting",
+            "skill": "schedule_meeting",
+            "run": "plasticity-clinc-replay-screen-seed23-6a27d9c4",
+            "split": "train",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/bill_balance",
+            "skill": "bill_balance",
+            "run": "plasticity-clinc-replay-screen-seed23-6a27d9c4",
+            "split": "train",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.85,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.85,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.85,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 1.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.85,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/rewards_balance",
+            "skill": "rewards_balance",
+            "run": "plasticity-clinc-replay-screen-seed23-6a27d9c4",
+            "split": "train",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 1.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/change_speed",
+            "skill": "change_speed",
+            "run": "plasticity-clinc-replay-screen-seed23-6a27d9c4",
+            "split": "train",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.05,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.1,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.15,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 1.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.05,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/definition",
+            "skill": "definition",
+            "run": "plasticity-clinc-replay-screen-seed23-6a27d9c4",
+            "split": "train",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 1.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/whisper_mode",
+            "skill": "whisper_mode",
+            "run": "plasticity-clinc-replay-confirmation-seed47-c31f860b",
+            "split": "test",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": -0.6375
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/order",
+            "skill": "order",
+            "run": "plasticity-clinc-replay-confirmation-seed47-c31f860b",
+            "split": "test",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.55,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.55,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.55,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": -0.6375
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.55,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/todo_list",
+            "skill": "todo_list",
+            "run": "plasticity-clinc-replay-confirmation-seed47-c31f860b",
+            "split": "test",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": -0.6375
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/recipe",
+            "skill": "recipe",
+            "run": "plasticity-clinc-replay-confirmation-seed47-c31f860b",
+            "split": "test",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": -0.6375
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/next_holiday",
+            "skill": "next_holiday",
+            "run": "plasticity-clinc-replay-confirmation-seed47-c31f860b",
+            "split": "test",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": -0.6375
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/what_is_your_name",
+            "skill": "what_is_your_name",
+            "run": "plasticity-clinc-replay-confirmation-seed47-c31f860b",
+            "split": "test",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": -0.6375
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/goodbye",
+            "skill": "goodbye",
+            "run": "plasticity-clinc-replay-confirmation-seed47-c31f860b",
+            "split": "test",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": -0.6375
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/yes",
+            "skill": "yes",
+            "run": "plasticity-clinc-replay-confirmation-seed47-c31f860b",
+            "split": "test",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 1.0,
+                "recovered": false,
+                "utility": -0.6375
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          },
+          {
+            "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/vaccines",
+            "skill": "vaccines",
+            "run": "plasticity-clinc-replay-confirmation-seed47-c31f860b",
+            "split": "test",
+            "before": 0.0,
+            "after": 0.0,
+            "forgotten": false,
+            "actions": {
+              "none": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_short": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6375,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "replay_long": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              },
+              "restore": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.0,
+                "code_accuracy": 1.0,
+                "recovered": false,
+                "utility": -0.6375
+              },
+              "sham": {
+                "accuracy": 0.0,
+                "guard_accuracy": 0.6625,
+                "code_accuracy": 0.0,
+                "recovered": false,
+                "utility": 0.0
+              }
+            }
+          }
+        ],
+        "counts": {
+          "all_skills": 21,
+          "forgotten_train": 0,
+          "forgotten_test": 0,
+          "independent_test_clusters": 0,
+          "raw_skills_by_split": {
+            "train": 12,
+            "test": 9
+          },
+          "raw_clusters_by_split": {
+            "train": 1,
+            "test": 1
+          },
+          "source_clusters": {
+            "plasticity-clinc-replay-screen-seed23-6a27d9c4": 12,
+            "plasticity-clinc-replay-confirmation-seed47-c31f860b": 9
+          }
+        },
+        "control_observations": {
+          "train": {
+            "none": 0.0,
+            "restore": 0.0,
+            "sham": 0.0
+          },
+          "test": {
+            "none": 0.0,
+            "restore": 0.0,
+            "sham": 0.0
+          }
+        },
+        "predictor_estimate": null,
+        "seal_sha256": "df2c4d919ff426a252435af0e5a941f105d61bb50074520699e3a0c5cb240767"
+      },
+      "input": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-lens-recoverability-sealed/study",
+        "receipt_sha256": "bac9638035f2bd245a5fb7122cf2ac50a193f9d797ccfe32f1cc48370adb76d9"
+      },
+      "all_artifact_hashes_verified": true,
+      "features_recomputed_exactly": true,
+      "none_and_restore_records_exact": true,
+      "actions": 105,
+      "optimizer_updates": 588,
+      "terminal_readouts": 420,
+      "maximum_terminal_error": 7.62939453125e-06,
+      "before_checkpoints_qualified_for_full_vocabulary_behavior": 0,
+      "secondary_code_observations": [
+        {
+          "skill": "income",
+          "split": "train",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 0.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "are_you_a_bot",
+          "split": "train",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 0.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "text",
+          "split": "train",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 0.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "card_declined",
+          "split": "train",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 0.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "reset_settings",
+          "split": "train",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 0.0,
+          "secondary_code_after_accuracy": 0.55
+        },
+        {
+          "skill": "confirm_reservation",
+          "split": "train",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 0.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "international_visa",
+          "split": "train",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 0.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "schedule_meeting",
+          "split": "train",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 0.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "bill_balance",
+          "split": "train",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 1.0,
+          "secondary_code_after_accuracy": 0.85
+        },
+        {
+          "skill": "rewards_balance",
+          "split": "train",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 1.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "change_speed",
+          "split": "train",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 1.0,
+          "secondary_code_after_accuracy": 0.05
+        },
+        {
+          "skill": "definition",
+          "split": "train",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 1.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "whisper_mode",
+          "split": "test",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 0.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "order",
+          "split": "test",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 0.0,
+          "secondary_code_after_accuracy": 0.55
+        },
+        {
+          "skill": "todo_list",
+          "split": "test",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 0.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "recipe",
+          "split": "test",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 0.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "next_holiday",
+          "split": "test",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 0.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "what_is_your_name",
+          "split": "test",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 0.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "goodbye",
+          "split": "test",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 0.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "yes",
+          "split": "test",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 1.0,
+          "secondary_code_after_accuracy": 0.0
+        },
+        {
+          "skill": "vaccines",
+          "split": "test",
+          "full_vocabulary_before_accuracy": 0.0,
+          "full_vocabulary_after_accuracy": 0.0,
+          "secondary_code_before_accuracy": 1.0,
+          "secondary_code_after_accuracy": 0.0
+        }
+      ],
+      "conclusion": "No eligible forgotten skills under the declared full-vocabulary behavior; predictor was not fitted. The original source trained and evaluated among 16 codes, which is a different acquisition contract. This run does not establish that a lens can or cannot predict recoverability.",
+      "scope": "Frozen logit lens, not a tuned lens or Jacobian lens; two source runs; coded intent classification; no general predictive or causal conclusion. Secondary code scores are descriptive and were not substituted into the primary gate.",
+      "audit": {
+        "path": "outputs/portfolio/resume-20260911/lens-audit.json",
+        "sha256": "0144878a2e8c888768b2cc7c1b008ae48ba091866223b1b9c5e303714a92d140",
+        "bytes": 34722
+      }
+    }
+  },
+  "verification": {
+    "prediction_and_checkpoint_audit": {
+      "path": "outputs/portfolio/resume-20260911/completed-results-audit.json",
+      "sha256": "81c7738bc6b500b158dc4144bf7a7ad7f93a7d00fb8a0544c75ec916e8218d64",
+      "bytes": 31807
+    },
+    "dense_weight_audit": {
+      "path": "outputs/portfolio/resume-20260911/dense-geometry-audit.json",
+      "sha256": "22492b91f9dbc40408c5876d9037d64b38bbd27e89452b9bc003c7e0de4715c8",
+      "bytes": 19425
+    },
+    "portal_fixture_audit": {
+      "path": "outputs/portfolio/resume-20260911/portal-fixture-audit.json",
+      "sha256": "c2bc15ed38c4fa85ccdcaac027abfdd3406d0d132fe3c5c11c9f9658cbb3e899",
+      "bytes": 244
+    },
+    "cpu_tests": {
+      "experiments/portability/outputs/resume-cpu/pytest.xml": {
+        "path": "experiments/portability/outputs/resume-cpu/pytest.xml",
+        "sha256": "43e882cf0864713ba1538e1e09683f683d15c378bb07d1b4987eb3777e5fd926",
+        "bytes": 5425,
+        "cases": 36,
+        "failures": 0
+      },
+      "experiments/portability/outputs/resume-cpu/deployment-pytest.xml": {
+        "path": "experiments/portability/outputs/resume-cpu/deployment-pytest.xml",
+        "sha256": "3c58609f9191205a462bec39ef5dd0b7eb66007acdd8f2d0777b8d3880cde1ef",
+        "bytes": 2178,
+        "cases": 13,
+        "failures": 0
+      },
+      "experiments/portability/outputs/resume-cpu/construct-pytest.xml": {
+        "path": "experiments/portability/outputs/resume-cpu/construct-pytest.xml",
+        "sha256": "34ad8f261b94dd4dd63eb706d3cb01a985ebd97ddf8f97d61bb4ad500e82fb2b",
+        "bytes": 712,
+        "cases": 3,
+        "failures": 0
+      },
+      "experiments/portability/outputs/resume-cpu/constructed-behavior-pytest.xml": {
+        "path": "experiments/portability/outputs/resume-cpu/constructed-behavior-pytest.xml",
+        "sha256": "63546f8299bf0663b7692b3d7a5c18ba3e04ffe1235463ddac5ab8707326ac2e",
+        "bytes": 391,
+        "cases": 1,
+        "failures": 0
+      },
+      "experiments/portability/outputs/resume-cpu/representation-behavior-pytest.xml": {
+        "path": "experiments/portability/outputs/resume-cpu/representation-behavior-pytest.xml",
+        "sha256": "543970cfab98b9766e54628eb661bdca4c44aa548e6f637754b22bce9fe8231d",
+        "bytes": 885,
+        "cases": 5,
+        "failures": 0
+      },
+      "experiments/plasticity/local-checks/long-stream/chat-eos-pytest.xml": {
+        "path": "experiments/plasticity/local-checks/long-stream/chat-eos-pytest.xml",
+        "sha256": "c9a1bb781d1edf5069b1de5a256f846ca6542ecbdaaa6f9dbe4f3b2fa870a673",
+        "bytes": 1660,
+        "cases": 12,
+        "failures": 0
+      },
+      "experiments/distillation/outputs/resume-cpu/validated-pytest.xml": {
+        "path": "experiments/distillation/outputs/resume-cpu/validated-pytest.xml",
+        "sha256": "29b1252914cf4f7b00df2a681ecb8027a913fefa7e7bc93d341276efc4512609",
+        "bytes": 2475,
+        "cases": 20,
+        "failures": 0
+      },
+      "experiments/recoverability/outputs/parent-pytest.xml": {
+        "path": "experiments/recoverability/outputs/parent-pytest.xml",
+        "sha256": "ed7ca87775e668a32881a83709e293f1063b33c4aa6e65973976bb8af611c523",
+        "bytes": 2550,
+        "cases": 20,
+        "failures": 0
+      }
+    },
+    "distinct_test_cases": 98,
+    "lint": {
+      "path": "outputs/portfolio/resume-20260911/final-lint.txt",
+      "sha256": "4f672d88c6715a42ad120cc7f11aba96046f544b09e8f4f6e00980d87fca714f",
+      "bytes": 78
+    }
+  },
+  "executions": {
+    "distillation-generated-qualification-20260911": {
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "source_sha256": "ea0ad46ee6fc60a54853aa90cffb378e64c4d3b5dcd218d3129f8b399c77a6a5",
+      "config_sha256": "feea9468bafe437d60d87ddca4b535ed4ea8cba218f3dadbe9313efcfe858ef4",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:07:56.656192+00:00",
+      "finished_at": "2026-09-12T02:09:49.691440+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/distillation-generated-qualification-20260911/collection.json",
+        "sha256": "23f92c3ca8bc3f479edfe562a543c5b789e8a696280da55640a7370953a125fe",
+        "bytes": 2312
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/distillation-generated-qualification-20260911",
+      "files": 14,
+      "bytes": 1812575,
+      "results": [
+        {
+          "path": "outputs/portfolio/resume-20260911/runs/distillation-generated-qualification-20260911/qualification.json",
+          "sha256": "0f040e16f59f378d6243c16580ef279b01bd91a4ef67348b45e22dbb0326e2d2",
+          "bytes": 4715
+        }
+      ]
+    },
+    "distillation-generated-teacher-training-20260911": {
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "source_sha256": "ea0ad46ee6fc60a54853aa90cffb378e64c4d3b5dcd218d3129f8b399c77a6a5",
+      "config_sha256": "858b2be3e9a468f3ac098a7c64b75087435615dfddcede87c669db7348af6c23",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:11:25.592186+00:00",
+      "finished_at": "2026-09-12T02:13:59.616095+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/distillation-generated-teacher-training-20260911/collection.json",
+        "sha256": "eb00d06aa0c4e453d610d1ab06c78981f795e46bf556eb7db2cffcae8a917375",
+        "bytes": 3100
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/distillation-generated-teacher-training-20260911",
+      "files": 19,
+      "bytes": 36043201,
+      "results": [
+        {
+          "path": "outputs/portfolio/resume-20260911/runs/distillation-generated-teacher-training-20260911/qualification.json",
+          "sha256": "7c26152a5c4917fff4cde25bc850fc5affd4067772309b40ec9431005bd9fd3a",
+          "bytes": 5229
+        }
+      ]
+    },
+    "resume-20260911-lens-recoverability": {
+      "status": "failed",
+      "exit_code": 1,
+      "timed_out": false,
+      "source_sha256": "f6d1ebdc85aeed8fd81af333ab8ddfe302e6797e447bf3847c7ed1b0cfb951d1",
+      "config_sha256": "9e86c8193bd5b64c1e35edbc7cd12f96f3ddc7eedbf39d6bf6d9ff6d0dde6d8c",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:07:56.942358+00:00",
+      "finished_at": "2026-09-12T02:08:05.229329+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-lens-recoverability/collection.json",
+        "sha256": "1ad4f503a61aceff049c5d43f458c9a15cd2b27cd5bd301e9abdff71c727b04c",
+        "bytes": 1617
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-lens-recoverability",
+      "files": 9,
+      "bytes": 13687,
+      "results": []
+    },
+    "resume-20260911-lens-recoverability-sealed": {
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "source_sha256": "1dc5a85b48e1f608226b3e470a73bdba47e8e87cc194b8520fee2b16fa09240c",
+      "config_sha256": "9e86c8193bd5b64c1e35edbc7cd12f96f3ddc7eedbf39d6bf6d9ff6d0dde6d8c",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:08:17.657155+00:00",
+      "finished_at": "2026-09-12T02:48:23.508645+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-lens-recoverability-sealed/collection.json",
+        "sha256": "9ffc0f014970be124ffed30cf99204aee83d67c45a596df0670fa17cf80824f5",
+        "bytes": 15883
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-lens-recoverability-sealed",
+      "files": 100,
+      "bytes": 2291935385,
+      "results": [
+        {
+          "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-lens-recoverability-sealed/study/analysis.json",
+          "sha256": "fde587ad75e6d5d96dfb3a925b9c5103bc08a6ebf1271032eb72d54dc0cde268",
+          "bytes": 26377
+        }
+      ]
+    },
+    "resume-20260911-long-stream-chat-eos-s17": {
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "source_sha256": "f809ef445f735c4e50f42c4b42317c199c3de9e368c81ef6433ba10f4c01e174",
+      "config_sha256": "3ae543952a0564caf622abdd5b1e4b62c068c9eb3d9e5f9f819857b87406fc45",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:12:06.442762+00:00",
+      "finished_at": "2026-09-12T02:33:25.343166+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-long-stream-chat-eos-s17/collection.json",
+        "sha256": "223f0a0af0ceffd5fd3cd90f5858c11d91b9d48624564cf4d2afc0bcee6b2b60",
+        "bytes": 58652
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-long-stream-chat-eos-s17",
+      "files": 359,
+      "bytes": 60026953,
+      "results": [
+        {
+          "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-long-stream-chat-eos-s17/results.json",
+          "sha256": "af967d47663c15a4bc216c39c5c10e08f3c4aafca8f807fa3258f02ebd9b39b6",
+          "bytes": 487871
+        }
+      ]
+    },
+    "resume-20260911-long-stream-chat-eos-s29": {
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "source_sha256": "f809ef445f735c4e50f42c4b42317c199c3de9e368c81ef6433ba10f4c01e174",
+      "config_sha256": "b04ecd16d6f2561471e30aadc53fd9e4deefec3c171b4b60de803be4d3887e30",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:12:08.589293+00:00",
+      "finished_at": "2026-09-12T02:34:31.139282+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-long-stream-chat-eos-s29/collection.json",
+        "sha256": "6ce09b7ff77c763b015e442ef713415d61ad679abe63ec91558caea2864707a2",
+        "bytes": 58653
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-long-stream-chat-eos-s29",
+      "files": 359,
+      "bytes": 60026541,
+      "results": [
+        {
+          "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-long-stream-chat-eos-s29/results.json",
+          "sha256": "ea3032e9845af98801eeb4cc984d12abbb3e2d5efff7cd7d0d6bcc218d3c2b72",
+          "bytes": 488004
+        }
+      ]
+    },
+    "resume-20260911-long-stream-chat-eos-s43": {
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "source_sha256": "f809ef445f735c4e50f42c4b42317c199c3de9e368c81ef6433ba10f4c01e174",
+      "config_sha256": "754b7ee97236babc6fdff17f1f55dae3e2a030b72d03dc1968856eb5d41eb9bf",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:12:10.706619+00:00",
+      "finished_at": "2026-09-12T02:34:39.329903+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-long-stream-chat-eos-s43/collection.json",
+        "sha256": "2c7a90f367aa54694290b2c5bf41c5f6f71d4b62e71b4ef8ff67f243fd578882",
+        "bytes": 58651
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-long-stream-chat-eos-s43",
+      "files": 359,
+      "bytes": 60027947,
+      "results": [
+        {
+          "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-long-stream-chat-eos-s43/results.json",
+          "sha256": "4a56739aac398a46e648c226067055ea0ae826235e16ff867737c9dcc79af0a5",
+          "bytes": 488842
+        }
+      ]
+    },
+    "resume-20260911-long-stream-s17": {
+      "status": "failed",
+      "exit_code": 1,
+      "timed_out": false,
+      "source_sha256": "b7004e72cf4a6b14ee6b683d954134471d5f8ab6b70dadbac390da90ad3e883c",
+      "config_sha256": "3ae543952a0564caf622abdd5b1e4b62c068c9eb3d9e5f9f819857b87406fc45",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:07:56.723024+00:00",
+      "finished_at": "2026-09-12T02:08:19.743645+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-long-stream-s17/collection.json",
+        "sha256": "50b18a52170c0b8a2074c387763f8c8d4ff60611e8e28ee86b95b50a9cef9245",
+        "bytes": 6309
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-long-stream-s17",
+      "files": 42,
+      "bytes": 1418805,
+      "results": []
+    },
+    "resume-20260911-long-stream-s29": {
+      "status": "failed",
+      "exit_code": 1,
+      "timed_out": false,
+      "source_sha256": "b7004e72cf4a6b14ee6b683d954134471d5f8ab6b70dadbac390da90ad3e883c",
+      "config_sha256": "b04ecd16d6f2561471e30aadc53fd9e4deefec3c171b4b60de803be4d3887e30",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:07:56.793292+00:00",
+      "finished_at": "2026-09-12T02:08:19.777872+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-long-stream-s29/collection.json",
+        "sha256": "0d73b8b5d384152173a85581df1192cfe0c789d8433b89f55bdd47be57bad87d",
+        "bytes": 6309
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-long-stream-s29",
+      "files": 42,
+      "bytes": 1418960,
+      "results": []
+    },
+    "resume-20260911-long-stream-s43": {
+      "status": "failed",
+      "exit_code": 1,
+      "timed_out": false,
+      "source_sha256": "b7004e72cf4a6b14ee6b683d954134471d5f8ab6b70dadbac390da90ad3e883c",
+      "config_sha256": "754b7ee97236babc6fdff17f1f55dae3e2a030b72d03dc1968856eb5d41eb9bf",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:07:56.872314+00:00",
+      "finished_at": "2026-09-12T02:08:19.810009+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-long-stream-s43/collection.json",
+        "sha256": "8f2144c90ba9c27cb0638eeedd81c28deb3f90a42e131ae8bfdc3837437a8840",
+        "bytes": 6309
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-long-stream-s43",
+      "files": 42,
+      "bytes": 1418890,
+      "results": []
+    },
+    "resume-20260911-plasticity-acquisition128-s17": {
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "source_sha256": "b7004e72cf4a6b14ee6b683d954134471d5f8ab6b70dadbac390da90ad3e883c",
+      "config_sha256": "688c363c50e7578a13708369645dcf008fd6bdcb16db9585112d85f6e69c8e5f",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:07:56.589521+00:00",
+      "finished_at": "2026-09-12T02:22:51.269054+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-plasticity-acquisition128-s17/collection.json",
+        "sha256": "1a9a4accbbaeaed9b858ca934dcf54e24c83cde2f8987a75da2bf80f61ab60ad",
+        "bytes": 52057
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-plasticity-acquisition128-s17",
+      "files": 305,
+      "bytes": 140456198,
+      "results": [
+        {
+          "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-plasticity-acquisition128-s17/results.json",
+          "sha256": "a9a527696dbe97e9d43ee912c36bec8d8c2373d82675de5e3555345e2c42b198",
+          "bytes": 217634
+        }
+      ]
+    },
+    "resume-20260911-plasticity-acquisition128-s29": {
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "source_sha256": "b7004e72cf4a6b14ee6b683d954134471d5f8ab6b70dadbac390da90ad3e883c",
+      "config_sha256": "78241b0bd2af78a50bf39d5f4a124145de1de98fa2eb13bca5c06346346c6c08",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:29:31.885356+00:00",
+      "finished_at": "2026-09-12T02:42:42.283451+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-plasticity-acquisition128-s29/collection.json",
+        "sha256": "1b35791d15537e13e990ee67e504f3328c61b4944d855c45b5610283d69aea0e",
+        "bytes": 52057
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-plasticity-acquisition128-s29",
+      "files": 305,
+      "bytes": 140442679,
+      "results": [
+        {
+          "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-plasticity-acquisition128-s29/results.json",
+          "sha256": "6b860b61b426c262c75f22b462b0f7eb18393caa485ac29a569c8c867e96486a",
+          "bytes": 216657
+        }
+      ]
+    },
+    "resume-20260911-plasticity-screen-s17": {
+      "status": "failed",
+      "exit_code": 1,
+      "timed_out": false,
+      "source_sha256": "da6d14cfc2cacb13f07559b728b9402f71342e157a09e31d06b4dde742a163a0",
+      "config_sha256": "d63dbecb8962ca6bb9a12c610d900ca7d919b80be0ad84724c203bd01d4a1413",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-jqm98-2jzhw",
+      "started_at": "2026-09-12T01:16:20.577701+00:00",
+      "finished_at": "2026-09-12T01:17:21.592699+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-plasticity-screen-s17/collection.json",
+        "sha256": "838c89653072c63f2deae54c963a1ad035e50fabd735f190acc3b0657a513cb2",
+        "bytes": 10103
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-plasticity-screen-s17",
+      "files": 64,
+      "bytes": 12933817,
+      "results": [
+        {
+          "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-plasticity-screen-s17/results.json",
+          "sha256": "227c74e41267ff71e637493dfd263f59504968a8c301d6fe781e535eccd861fc",
+          "bytes": 13583
+        }
+      ]
+    },
+    "resume-20260911-portal-native-construction-behavior": {
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "source_sha256": "edae6785fdf87f34aedd33daf46382b52ca28ee1cf641a413ab8e0f9bfdd953b",
+      "config_sha256": "b272c54ee7229cbf09c16816f2a542b279208bee19250e0cdbb5cacef5a80aeb",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:20:23.748847+00:00",
+      "finished_at": "2026-09-12T02:24:52.081399+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-portal-native-construction-behavior/collection.json",
+        "sha256": "4cea5383a702378717fc59cc0d1de49b6a849c1895384839e89b3cc174af8faf",
+        "bytes": 2361
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-portal-native-construction-behavior",
+      "files": 14,
+      "bytes": 2563604,
+      "results": [
+        {
+          "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-portal-native-construction-behavior/result.json",
+          "sha256": "46d6fd1bcf29adc65247b3c4445eb51178215b904ce73355b41be34c912662be",
+          "bytes": 1292975
+        }
+      ]
+    },
+    "resume-20260911-portal-projection-behavior": {
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "source_sha256": "abb49ba0ca513f8c306e729dce1cc23e057dd1fa4f3f4a70f09a0df1bcc31039",
+      "config_sha256": "d8d37b14057e48b9e2dadfbfce8871bd5dff05fcae77272d6dba47806f9f00fd",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:14:16.085762+00:00",
+      "finished_at": "2026-09-12T02:19:04.042015+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-portal-projection-behavior/collection.json",
+        "sha256": "62cec3485e0e3892b53dc9116de564dc01a5de556b257c852456b2f778ec20ff",
+        "bytes": 2487
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-portal-projection-behavior",
+      "files": 15,
+      "bytes": 3404144,
+      "results": [
+        {
+          "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-portal-projection-behavior/result.json",
+          "sha256": "b42d8308b275bca483e0dc4a319c41e8e87909955d58bce4aeb6864e7e3786c7",
+          "bytes": 1723441
+        }
+      ]
+    },
+    "resume-20260911-portal-target-calibration-qwen4": {
+      "status": "failed",
+      "exit_code": 1,
+      "timed_out": false,
+      "source_sha256": "34fbc0530d46139ff93dae3c83093b8d7192b5d70cab08ae06d4c1e911c8f1af",
+      "config_sha256": "3b4dc676fe94ad3cc4f7101d5af9c4fa8ce73f9ad5daab09afbd4ffe582f7293",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:07:57.011958+00:00",
+      "finished_at": "2026-09-12T02:08:07.366337+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-portal-target-calibration-qwen4/collection.json",
+        "sha256": "368bc15d00259d78eb65b6afc49c8a13504ba38141e837388e0beda1faca7d24",
+        "bytes": 1637
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-portal-target-calibration-qwen4",
+      "files": 9,
+      "bytes": 185540,
+      "results": []
+    },
+    "resume-20260911-portal-target-calibration-snapshot": {
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "source_sha256": "adfab644eacebba14cc7105ba001a55bd9c09cacb463d8c5c6605c1a36f9daea",
+      "config_sha256": "3b4dc676fe94ad3cc4f7101d5af9c4fa8ce73f9ad5daab09afbd4ffe582f7293",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:12:12.830966+00:00",
+      "finished_at": "2026-09-12T02:18:33.412937+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-portal-target-calibration-snapshot/collection.json",
+        "sha256": "3b355bad648387f6d33ef20b0aea2f85431b47482b058256ef6d31bb79ccbc6b",
+        "bytes": 5443
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-portal-target-calibration-snapshot",
+      "files": 33,
+      "bytes": 730671849,
+      "results": [
+        {
+          "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-portal-target-calibration-snapshot/result.json",
+          "sha256": "cfc9456dd4439924be8463ffbd6e4e5c71637cae0dcd713f81c97877030ba0f5",
+          "bytes": 4865432
+        }
+      ]
+    },
+    "resume-20260911-qualify-qwen3-8b": {
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "source_sha256": "a50d8e4ecd2812c11a891643d0988e76bfdf9e2bde22cb7d91b023e3bb0396e7",
+      "config_sha256": "0fa114184c046006fe3f7eafe88825fb230e5fad1230683b1983d0117aca5aab",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-jqm98-2jzhw",
+      "started_at": "2026-09-12T01:14:50.581223+00:00",
+      "finished_at": "2026-09-12T01:16:20.516565+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-qualify-qwen3-8b/collection.json",
+        "sha256": "330f5e673084bb1938284f713a610f460bc69042256beac54b21ecbbad57961e",
+        "bytes": 1618
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-qualify-qwen3-8b",
+      "files": 9,
+      "bytes": 24273,
+      "results": []
+    },
+    "resume-20260911-runtime-qwen35-4b": {
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "source_sha256": "94c50adb4a72c6ebc53ec1e0d334763fbcdc6aafa81c04386712c74eb04ef921",
+      "config_sha256": "051666c23da4b024858983ed1905c0eda149dc6ee5b3d0c3da4d2e444f8e43ec",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-jqm98-2jzhw",
+      "started_at": "2026-09-12T01:14:50.649486+00:00",
+      "finished_at": "2026-09-12T01:16:02.153888+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-runtime-qwen35-4b/collection.json",
+        "sha256": "d846b29c26a2adf71fc20f7ffb4287c859f330d93525bfd0f5d4568fb7993928",
+        "bytes": 2508
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-runtime-qwen35-4b",
+      "files": 15,
+      "bytes": 23705446,
+      "results": []
+    },
+    "resume-20260911-successor-qualify-qwen3-8b": {
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "source_sha256": "a50d8e4ecd2812c11a891643d0988e76bfdf9e2bde22cb7d91b023e3bb0396e7",
+      "config_sha256": "0fa114184c046006fe3f7eafe88825fb230e5fad1230683b1983d0117aca5aab",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:07:23.513654+00:00",
+      "finished_at": "2026-09-12T02:07:46.245568+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-successor-qualify-qwen3-8b/collection.json",
+        "sha256": "a88a07a0c2e506520c7e179a05ef47f2f7f034fa6f07541de2dbda5d5590ccb5",
+        "bytes": 1627
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-successor-qualify-qwen3-8b",
+      "files": 9,
+      "bytes": 15684,
+      "results": []
+    },
+    "resume-20260911-successor-runtime-qwen35-4b": {
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "source_sha256": "94c50adb4a72c6ebc53ec1e0d334763fbcdc6aafa81c04386712c74eb04ef921",
+      "config_sha256": "051666c23da4b024858983ed1905c0eda149dc6ee5b3d0c3da4d2e444f8e43ec",
+      "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+      "pod": "cl-portfolio-9px8d-cp5m4",
+      "started_at": "2026-09-12T02:07:23.580338+00:00",
+      "finished_at": "2026-09-12T02:07:56.511855+00:00",
+      "collection": {
+        "path": "outputs/portfolio/resume-20260911/runs/resume-20260911-successor-runtime-qwen35-4b/collection.json",
+        "sha256": "43580b117aabd1fbdf4632de10b582a128d74add04a91e66657189248998bd96",
+        "bytes": 2517
+      },
+      "remote": "/mnt/shared/cl-portfolio/runs/resume-20260911-successor-runtime-qwen35-4b",
+      "files": 15,
+      "bytes": 23698271,
+      "results": []
+    }
+  },
+  "preserved_initial_attempts": {
+    "resume-20260911-plasticity-screen-s17": "The 64-update acquisition gate failed (40/64 IID, 38/64 composition). Arm comparisons were not started. A subsequent logging exception made the execution status failed; the acquisition measurement is retained. The 128-update followup was chosen after that result, with unchanged gates.",
+    "resume-20260911-portal-target-calibration-qwen4": "Preflight rejected Hugging Face download metadata as extra model files. The corrected verifier excludes only download metadata and README while still rejecting unpinned model/tokenizer files. No training result from this attempt.",
+    "resume-20260911-long-stream-s17/s29/s43": "Pre-evaluation native-EOS validation incorrectly equated model end-of-text with tokenizer end-of-turn. The retry validates the assistant chat-template terminator. The predeclared tokenizer EOS and whole-answer criteria stayed unchanged.",
+    "resume-20260911-lens-recoverability": "Pre-model-load failure because the source bundle omitted protocol.sha256. The dispatcher now includes SHA sidecars; the sealed retry preserved the protocol."
+  },
+  "source_archives": [
+    {
+      "path": "outputs/portfolio/resume-20260911/code/1dc5a85b48e1f608226b3e470a73bdba47e8e87cc194b8520fee2b16fa09240c.json",
+      "sha256": "f79fbaa91080d4a6af59bcfe7841d6c6ae8c5518cc345e391947b32c428f205e",
+      "bytes": 409
+    },
+    {
+      "path": "outputs/portfolio/resume-20260911/code/34fbc0530d46139ff93dae3c83093b8d7192b5d70cab08ae06d4c1e911c8f1af.json",
+      "sha256": "2124187cfd9735ed2bac8bf8ecfb438bc7cc01ce5b5252933149c80ecb0eaae1",
+      "bytes": 412
+    },
+    {
+      "path": "outputs/portfolio/resume-20260911/code/94c50adb4a72c6ebc53ec1e0d334763fbcdc6aafa81c04386712c74eb04ef921.json",
+      "sha256": "9b1cdbd6bd0e90884b64958273eaf7e663d4b72fb4d48a2731fb6755c1385683",
+      "bytes": 448
+    },
+    {
+      "path": "outputs/portfolio/resume-20260911/code/a50d8e4ecd2812c11a891643d0988e76bfdf9e2bde22cb7d91b023e3bb0396e7.json",
+      "sha256": "003f01241d9867d3ec5e84dedd34a973c9d6ad650d8e9b483735a46365f57ece",
+      "bytes": 446
+    },
+    {
+      "path": "outputs/portfolio/resume-20260911/code/abb49ba0ca513f8c306e729dce1cc23e057dd1fa4f3f4a70f09a0df1bcc31039.json",
+      "sha256": "a703b3cc2bab3d54b43c60cafca8d207b2329eec9f8d1543dc7947dc50479e29",
+      "bytes": 408
+    },
+    {
+      "path": "outputs/portfolio/resume-20260911/code/adfab644eacebba14cc7105ba001a55bd9c09cacb463d8c5c6605c1a36f9daea.json",
+      "sha256": "96943e16f7d838a070a44f4fbb43d52606d302ffa57d525c034079e89a94c3d7",
+      "bytes": 415
+    },
+    {
+      "path": "outputs/portfolio/resume-20260911/code/b7004e72cf4a6b14ee6b683d954134471d5f8ab6b70dadbac390da90ad3e883c.json",
+      "sha256": "dc16da3718fb1b2b0f734ad32c5cb8050fb277e4f8e8dec63d5a116199e66173",
+      "bytes": 581
+    },
+    {
+      "path": "outputs/portfolio/resume-20260911/code/da6d14cfc2cacb13f07559b728b9402f71342e157a09e31d06b4dde742a163a0.json",
+      "sha256": "046b9f41afffcb26443047a9023114233a378548730b8e6b83622a61b6cb3bb0",
+      "bytes": 401
+    },
+    {
+      "path": "outputs/portfolio/resume-20260911/code/ea0ad46ee6fc60a54853aa90cffb378e64c4d3b5dcd218d3129f8b399c77a6a5.json",
+      "sha256": "2d191c1cf296ced0d101c4446f8130e7a95bd7771d44baa1859278c430df25f8",
+      "bytes": 467
+    },
+    {
+      "path": "outputs/portfolio/resume-20260911/code/edae6785fdf87f34aedd33daf46382b52ca28ee1cf641a413ab8e0f9bfdd953b.json",
+      "sha256": "f22562b238725471bbfb0fd3043c0fd0d59d1b688358b61fbeb52b400c3aafbd",
+      "bytes": 417
+    },
+    {
+      "path": "outputs/portfolio/resume-20260911/code/f6d1ebdc85aeed8fd81af333ab8ddfe302e6797e447bf3847c7ed1b0cfb951d1.json",
+      "sha256": "0584b0f228a4d93a7708de86a106ef18db2e932ab513b00fb034aa3a7e65e7f5",
+      "bytes": 402
+    },
+    {
+      "path": "outputs/portfolio/resume-20260911/code/f809ef445f735c4e50f42c4b42317c199c3de9e368c81ef6433ba10f4c01e174.json",
+      "sha256": "427a5c342c0bd29170b92464ececd1a03f2ebbb7a380fc45ef0538976100386e",
+      "bytes": 502
+    }
+  ],
+  "changed_sources": [
+    {
+      "path": "compute/dispatch.py",
+      "sha256": "560f484de638def6670df07868d74e4085511df703e2e3bf11da5495cd08c848",
+      "bytes": 4176
+    },
+    {
+      "path": "compute/runtime-gates.json",
+      "sha256": "deebe5fe02f37a04fbe97abe652860460a67bfe418425e30c5b9f0ebd06d9aa0",
+      "bytes": 100
+    },
+    {
+      "path": "experiments/distillation/configs/generated_protocol.json",
+      "sha256": "aa6024c8a30f3fe0ca027ef2a6f0c099537bc839d109c45508bc694f03bf5724",
+      "bytes": 5495
+    },
+    {
+      "path": "experiments/distillation/configs/qwen35_4b_qualification.json",
+      "sha256": "feea9468bafe437d60d87ddca4b535ed4ea8cba218f3dadbe9313efcfe858ef4",
+      "bytes": 169
+    },
+    {
+      "path": "experiments/distillation/configs/qwen35_4b_qualified_training.json",
+      "sha256": "ebc99477bfd8d5b8a831fa86b247650971466ec79fbc0b05a7fb69322a18d537",
+      "bytes": 266
+    },
+    {
+      "path": "experiments/distillation/configs/qwen35_4b_teacher_qualified_training.json",
+      "sha256": "a11133a6ffeb56f0b19f95937b2716742db9e51a477802c3dcfe4b67a87d9d91",
+      "bytes": 269
+    },
+    {
+      "path": "experiments/distillation/configs/qwen35_4b_teacher_training.json",
+      "sha256": "858b2be3e9a468f3ac098a7c64b75087435615dfddcede87c669db7348af6c23",
+      "bytes": 274
+    },
+    {
+      "path": "experiments/distillation/generated_contract.py",
+      "sha256": "ab7ff2f2c1d9262d83dd50e66e381359d729735cb0dfb2f06759ca115e5ae525",
+      "bytes": 11339
+    },
+    {
+      "path": "experiments/distillation/qualified.py",
+      "sha256": "99ccf8aa98cdbd4bc5dfcbaccb245ec332c9f055a2ade550811e441e3ceded7f",
+      "bytes": 33290
+    },
+    {
+      "path": "experiments/distillation/test_qualified.py",
+      "sha256": "0be530e2132dd8feee3b780997a86cfdd39823c63cc18d3ace7aae778839045c",
+      "bytes": 22778
+    },
+    {
+      "path": "experiments/plasticity/configs/acquisition128.json",
+      "sha256": "688c363c50e7578a13708369645dcf008fd6bdcb16db9585112d85f6e69c8e5f",
+      "bytes": 1351
+    },
+    {
+      "path": "experiments/plasticity/configs/acquisition128_seed29.json",
+      "sha256": "78241b0bd2af78a50bf39d5f4a124145de1de98fa2eb13bca5c06346346c6c08",
+      "bytes": 1613
+    },
+    {
+      "path": "experiments/plasticity/configs/long_stream_seed17.json",
+      "sha256": "eeeb714af2fb743a4327e4996bc359cdf235f6104755a1cc10edcab7ab4e13a7",
+      "bytes": 1150
+    },
+    {
+      "path": "experiments/plasticity/configs/long_stream_seed29.json",
+      "sha256": "b04ecd16d6f2561471e30aadc53fd9e4deefec3c171b4b60de803be4d3887e30",
+      "bytes": 1226
+    },
+    {
+      "path": "experiments/plasticity/configs/long_stream_seed43.json",
+      "sha256": "754b7ee97236babc6fdff17f1f55dae3e2a030b72d03dc1968856eb5d41eb9bf",
+      "bytes": 1226
+    },
+    {
+      "path": "experiments/plasticity/long_stream.py",
+      "sha256": "0c30b1396143154e8744b526d53c2123410f95d080e9331f8373ecaa43beec5e",
+      "bytes": 42505
+    },
+    {
+      "path": "experiments/plasticity/run.py",
+      "sha256": "7200abe2fa4c989f00500bbc3bcbd38e1844d3441b3636e4e94784cc34069eea",
+      "bytes": 38911
+    },
+    {
+      "path": "experiments/plasticity/stream_tasks.py",
+      "sha256": "20efc83bc0319a3fbf85dc8b31cfd6c88355fbf65b86acdfdf4e81625faad599",
+      "bytes": 9679
+    },
+    {
+      "path": "experiments/plasticity/test_long_stream.py",
+      "sha256": "8effc74bdac0a4f797cdb3552eee59a7e5c156b76eb610682fabc8fe8272f973",
+      "bytes": 25258
+    },
+    {
+      "path": "experiments/portability/calibrate_target.py",
+      "sha256": "abc7c18c13fe996b8299a39742e984616aca069d2d22cf1035f774d193da6a2b",
+      "bytes": 35522
+    },
+    {
+      "path": "experiments/portability/configs/representability/behavior303.json",
+      "sha256": "d8d37b14057e48b9e2dadfbfce8871bd5dff05fcae77272d6dba47806f9f00fd",
+      "bytes": 6661
+    },
+    {
+      "path": "experiments/portability/configs/representability/constructed_behavior303.json",
+      "sha256": "b272c54ee7229cbf09c16816f2a542b279208bee19250e0cdbb5cacef5a80aeb",
+      "bytes": 5163
+    },
+    {
+      "path": "experiments/portability/configs/representability/learned_alignment303.json",
+      "sha256": "64e7035cbbc2ad131c8c3635736e40ba47601e721ea387b54475ca7a839ce7dc",
+      "bytes": 1292
+    },
+    {
+      "path": "experiments/portability/configs/representability/source_rank8_303.json",
+      "sha256": "6a0b34da932d9edb2720b64657b8cb026743fe85dbaaf8f243664699690cd694",
+      "bytes": 6526
+    },
+    {
+      "path": "experiments/portability/configs/target_calibration/qwen4_sequence303.json",
+      "sha256": "3b4dc676fe94ad3cc4f7101d5af9c4fa8ce73f9ad5daab09afbd4ffe582f7293",
+      "bytes": 25350
+    },
+    {
+      "path": "experiments/portability/construct_representation.py",
+      "sha256": "480624330e8e014ba5d0db7dd768ceb627557cc10fa5ad1aafb370420fd25539",
+      "bytes": 7411
+    },
+    {
+      "path": "experiments/portability/evaluate_constructed.py",
+      "sha256": "bedbd3d696fb3d7565ee2c33acd065e4f025beaa5d989918f5f157b13a15f533",
+      "bytes": 5845
+    },
+    {
+      "path": "experiments/portability/evaluate_rank.py",
+      "sha256": "a4e8a3ae9ccf2a981680ce544dcc343cac88d8e1cdb0fc787b146960b304cd18",
+      "bytes": 10228
+    },
+    {
+      "path": "experiments/portability/evaluate_representation.py",
+      "sha256": "4fcf251172ae36c9fad97db70d7a7040ea0a04504e937e6befd6a25bbcc333eb",
+      "bytes": 5031
+    },
+    {
+      "path": "experiments/portability/representability.py",
+      "sha256": "880cb1ee2a7391179c5ab35478d5ef06d69a639d1f408df05684e7f435c46f31",
+      "bytes": 42857
+    },
+    {
+      "path": "experiments/portability/tests/test_construct_representation.py",
+      "sha256": "2dcdb565f3c097c352fa25772957a4ddc3127cafa2089a33579d8e2f10a95ac2",
+      "bytes": 2590
+    },
+    {
+      "path": "experiments/portability/tests/test_constructed_behavior.py",
+      "sha256": "a2a194f2bb7b576b42ab319e9848e60881dc3d8d916d6e629899cfe3fedf0ca9",
+      "bytes": 3044
+    },
+    {
+      "path": "experiments/portability/tests/test_representability.py",
+      "sha256": "4cd3c107510a6a619ce98f56d137a37c5fe1aedf1542ad8a8d47e9424867dee5",
+      "bytes": 18264
+    },
+    {
+      "path": "experiments/portability/tests/test_representation_behavior.py",
+      "sha256": "9e238c5d003965c1dc4cb892101e6637feb432035c307c31ebea6ea08a344fe1",
+      "bytes": 2574
+    },
+    {
+      "path": "experiments/portability/tests/test_target_calibration.py",
+      "sha256": "db6a6e9ae4240713cb1bb0b326f2f54220497c02b70590043ab5bbf9e9028b33",
+      "bytes": 23038
+    },
+    {
+      "path": "experiments/recoverability/analysis.py",
+      "sha256": "6732da62ba758f5f605cef395352b8947d5d61fed15f7e1d97cd15016021fe98",
+      "bytes": 8469
+    },
+    {
+      "path": "experiments/recoverability/availability.json",
+      "sha256": "81aa537e3b07e962226c82fd1d7d4c03a024b6feb7c3b762aa725c28b87654b1",
+      "bytes": 3677
+    },
+    {
+      "path": "experiments/recoverability/configs/pilot.json",
+      "sha256": "9e86c8193bd5b64c1e35edbc7cd12f96f3ddc7eedbf39d6bf6d9ff6d0dde6d8c",
+      "bytes": 233
+    },
+    {
+      "path": "experiments/recoverability/dispatch.py",
+      "sha256": "0171dbcce78c28ab555bd274b70470a770f7de9edc607b8a7ee54169e32bac4f",
+      "bytes": 1177
+    },
+    {
+      "path": "experiments/recoverability/inputs/cohort.json",
+      "sha256": "cef67da6b485efa7dc2029bebe0ef21d937ded2983afbe0e35f1bcda9ba83e36",
+      "bytes": 811133
+    },
+    {
+      "path": "experiments/recoverability/inputs/sources/plasticity-clinc-replay-confirmation-seed47-c31f860b/collection.json",
+      "sha256": "876a312bccb433a1628312f285df590d70f401eb8f72025529a902574b600d05",
+      "bytes": 24072
+    },
+    {
+      "path": "experiments/recoverability/inputs/sources/plasticity-clinc-replay-confirmation-seed47-c31f860b/config.json",
+      "sha256": "7b7bc76cea1d88f40c0c173c436c09ef9a6930b8608b86f6791112d82a7b4416",
+      "bytes": 1000
+    },
+    {
+      "path": "experiments/recoverability/inputs/sources/plasticity-clinc-replay-confirmation-seed47-c31f860b/provenance.json",
+      "sha256": "3c91976ee337781f23e08bd4a45cedaedb4b0e1cf2b81f8dd8f3b0d153aff3f3",
+      "bytes": 1123811
+    },
+    {
+      "path": "experiments/recoverability/inputs/sources/plasticity-clinc-replay-screen-seed23-6a27d9c4/collection.json",
+      "sha256": "7969da317d8002951f22fe1c407c224c8e378fe678064096118f0f0f6eb5150b",
+      "bytes": 23775
+    },
+    {
+      "path": "experiments/recoverability/inputs/sources/plasticity-clinc-replay-screen-seed23-6a27d9c4/config.json",
+      "sha256": "6f5b4bb31f4a813309df1e09ac32385327b7fc65bac1ff67a6843893ee9a81e3",
+      "bytes": 1000
+    },
+    {
+      "path": "experiments/recoverability/inputs/sources/plasticity-clinc-replay-screen-seed23-6a27d9c4/provenance.json",
+      "sha256": "43f1f68b8fe42be9464c01579f9bf59c979d1d95df3e27093c4382c2eaa131f1",
+      "bytes": 1167053
+    },
+    {
+      "path": "experiments/recoverability/interface.json",
+      "sha256": "e2ca29b4b7344e9c1ccedebf24db7a73e5f800c79ea6f3ee514780d7f043b3a3",
+      "bytes": 7325
+    },
+    {
+      "path": "experiments/recoverability/model.py",
+      "sha256": "5af6edb1a42d6042a3a38b9d0ab4ce01ea6cadac6728d9e0fea84acd695442b2",
+      "bytes": 8734
+    },
+    {
+      "path": "experiments/recoverability/protocol.json",
+      "sha256": "6379f20054dd762949dc75dd86c991265ba5876c9027691ef34a8e8a13555242",
+      "bytes": 6095
+    },
+    {
+      "path": "experiments/recoverability/protocol.py",
+      "sha256": "a1e54302b007827b9c2982d8c366b68b89f573ddeb4b1c8f2ac50bf440d23776",
+      "bytes": 10724
+    },
+    {
+      "path": "experiments/recoverability/protocol.sha256",
+      "sha256": "5b205bc64704136bd2def1829c6f9edc6187b144a8718664ccbbe11bb6c38a2f",
+      "bytes": 65
+    },
+    {
+      "path": "experiments/recoverability/pyproject.toml",
+      "sha256": "1c26476af5ca2488b01bbf8499abd79208a8be74b4f3644e8a1696bd3311a45e",
+      "bytes": 216
+    },
+    {
+      "path": "experiments/recoverability/requirements.txt",
+      "sha256": "847ae989f281a78cb0fb40f574e23f3baefc20f7bc3ecebf8ebb65857c6c689c",
+      "bytes": 66
+    },
+    {
+      "path": "experiments/recoverability/run.py",
+      "sha256": "fb61b1359d7b0e0d47c977842e1e49fae76feaf8d8a9cafc6a4ec713eaa805ec",
+      "bytes": 8020
+    },
+    {
+      "path": "experiments/recoverability/tests/test_controls.py",
+      "sha256": "194043f8c2ab18d7179a89adfbdf6f5d7843bdb0330cbf67e127e61413890260",
+      "bytes": 14770
+    }
+  ],
+  "remaining": [
+    "Training PorTAL to reach the constructed solution from examples and preserving other tasks.",
+    "Target calibration of the newly reconstructed native generator; the completed transfer comparison used the earlier learned PorTAL source.",
+    "Real-world related skill transfer, repeated upgrades, and independently reproduced alternative update mechanisms such as Agent-Dice or Nested Learning.",
+    "A competent whole-answer teacher and actual persistent consolidation/internal composition.",
+    "A recoverability cohort qualified under its original output contract, followed by enough independent runs for predictive claims.",
+    "The broader inventory remains reading coverage; this wave does not reproduce all 26 research families."
+  ],
+  "cleanup": {
+    "status": "verified",
+    "completed_at": "2026-09-12T02:52:50.264401+00:00",
+    "deleted_resources": {
+      "cl-portfolio-9px8d": "c9d82e88-18ce-48d2-a652-41d3679f8ae8",
+      "cl-portfolio-9px8d-cp5m4": "4f567add-c15e-4727-8063-0a6736f86698",
+      "cl-portfolio-control-20260911": "ee75672d-fbda-46f6-9805-f362f6c37623"
+    },
+    "kubectl_receipts": "job.batch \"cl-portfolio-9px8d\" deleted\npod \"cl-portfolio-control-20260911\" deleted\n",
+    "all_21_execution_receipts_terminal_and_collected": true,
+    "remaining_active_wave_pods": [],
+    "worker_and_control_absence_verified": true,
+    "shared_artifacts_retained": "/mnt/shared/cl-portfolio",
+    "node_and_provider_configuration_changed": false
+  }
+}

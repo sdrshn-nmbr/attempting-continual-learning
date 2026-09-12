@@ -1,0 +1,131 @@
+{
+  "alpha": 16,
+  "claim_boundary": [
+    "Known exploratory rank8 source behavior (850/864) precedes this geometry protocol; no new behavioral evaluation or training replication.",
+    "The exact span/rank minimum is over independent canonical factors. A shared-generator solution is a separate constructive test.",
+    "A nonzero lower bound beyond numerical tolerance excludes exact reproduction of these particular weight updates with these fixed alignment spans.",
+    "Neither small weight error nor a low lower bound proves behavior or optimization convergence. A failed fit cannot establish impossibility.",
+    "A successful one-task affine-head fit does not preserve other task outputs or demonstrate continual learning or transfer."
+  ],
+  "expected_matrix_count": 72,
+  "fit": {
+    "configurations": 1,
+    "frozen": "All input/output alignments, layer embeddings, hidden network and task latents.",
+    "maximum_linear_solves": 4,
+    "optimizer_steps": 0,
+    "rank_deficient_or_ill_conditioned_hidden_action": "Record inconclusive shared-head fit; no retry, search or impossibility claim.",
+    "selection": "Only solution, no outcome-based checkpoint selection.",
+    "solver": "single_affine_head_minimum_change_svd",
+    "target": "Projected canonical factors for all 36 layers; same affine head shared over layers.",
+    "task": "rte",
+    "trainable": [
+      "core.A.q.weight",
+      "core.A.q.bias",
+      "core.A.v.weight",
+      "core.A.v.bias",
+      "core.B.q.weight",
+      "core.B.q.bias",
+      "core.B.v.weight",
+      "core.B.v.bias"
+    ]
+  },
+  "gates": {
+    "fit_aggregate_relative_frobenius_max": 0.01,
+    "fit_every_matrix_relative_frobenius_max": 0.05,
+    "fp32_injection_max_abs": 0.0001,
+    "fp32_injection_relative_l2_max": 1e-06,
+    "gauge_relative_energy_difference_max": 1e-09,
+    "historical_initial_relative_frobenius_max": 1e-05,
+    "initial_exact_relative_frobenius_max": 1e-10,
+    "numerical_relative_energy_tolerance": 1e-09,
+    "projection_witness_relative_frobenius_max": 1e-08,
+    "serialization_relative_frobenius_max": 1e-06,
+    "shared_head_fit_condition_max": 100000000.0,
+    "shared_head_fit_relative_factor_max": 1e-08
+  },
+  "historical": {
+    "behavior_audit": {
+      "bytes": 1134,
+      "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/rank-eval-gpu/independent-audit.json",
+      "sha256": "13e55f6e7e874b3b4d9e16e66e6b948dfa44fdef0725461edf345a8920cdda38"
+    },
+    "behavior_config": {
+      "bytes": 5829,
+      "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/rank-eval-gpu/config.json",
+      "sha256": "59c8968fcc24a34cd5de5c95152779ec0aef279acd130d77476c3bd2b31a6615"
+    },
+    "behavior_result": {
+      "bytes": 1725834,
+      "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/rank-eval-gpu/result.json",
+      "sha256": "ab270e7c8772926fb9b2a6cb0569b7a60032707566051f1b9c1b5884d1ed0f2f"
+    },
+    "rank_receipt": {
+      "bytes": 5593,
+      "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/rank-control-cpu/actual303/receipt.json",
+      "sha256": "94b401431aa17436b3dc2efc3faabbf8da3ee88af5e5aa11690aa500899ac389"
+    }
+  },
+  "initial_task": "rte",
+  "kind": "portal_fixed_alignment_representability",
+  "name": "source_rank8_303",
+  "native_initial": {
+    "files": {
+      "config.json": {
+        "bytes": 15930,
+        "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/repair-alignment-inputs/source_initial/config.json",
+        "sha256": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb"
+      },
+      "model.safetensors": {
+        "bytes": 124484888,
+        "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/repair-alignment-inputs/source_initial/model.safetensors",
+        "sha256": "0dbbd18eacfb9dd870019f68b78188d5c0ed15beb8cfc400f4a48b79d84fb3db"
+      }
+    },
+    "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/repair-alignment-inputs/source_initial"
+  },
+  "numerics": {
+    "cpu_threads": 4,
+    "device": "cpu",
+    "injection_dtype": "float32",
+    "math_dtype": "float64",
+    "probe_rows": 8,
+    "require_full_alignment_rank": true,
+    "seed": 911303,
+    "svd_rank_tolerance": "max(shape) * eps(float64) * largest_singular_value"
+  },
+  "rank": 8,
+  "rank8_final": {
+    "files": {
+      "adapter_config.json": {
+        "bytes": 7368,
+        "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/rank-control-cpu/actual303/final/adapter/adapter_config.json",
+        "sha256": "92e516f4dd1e47231c9b31925eb67085c0969107eb1489fd66ea7fb166d28feb"
+      },
+      "adapter_model.safetensors": {
+        "bytes": 15354512,
+        "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/rank-control-cpu/actual303/final/adapter/adapter_model.safetensors",
+        "sha256": "87a418f2098bee5471259d3f400895aee270228e0152c2d33abbc1d9279f2895"
+      }
+    },
+    "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/rank-control-cpu/actual303/final/adapter"
+  },
+  "rank8_initial": {
+    "files": {
+      "adapter_config.json": {
+        "bytes": 7368,
+        "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/rank-control-cpu/actual303/initial/adapter/adapter_config.json",
+        "sha256": "92e516f4dd1e47231c9b31925eb67085c0969107eb1489fd66ea7fb166d28feb"
+      },
+      "adapter_model.safetensors": {
+        "bytes": 15354512,
+        "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/rank-control-cpu/actual303/initial/adapter/adapter_model.safetensors",
+        "sha256": "18023a05fc3d4eff035929c450efe8f2479c40d52b12ca870b21afa552ccee3e"
+      }
+    },
+    "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/rank-control-cpu/actual303/initial/adapter"
+  },
+  "source_base": {
+    "repo_id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+  }
+}

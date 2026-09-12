@@ -9,7 +9,6 @@ import tempfile
 from pathlib import Path
 
 CONTEXT = "us-mi355x-nambiar-k8s"
-CONTROL = "cl-portfolio-control"
 REMOTE = "/mnt/shared/cl-portfolio"
 
 
@@ -31,7 +30,7 @@ def sources(directory):
             for part in path.relative_to(directory).parts
         )
         and (
-            path.suffix in {".py", ".json", ".txt", ".yaml", ".yml"}
+            path.suffix in {".py", ".json", ".txt", ".yaml", ".yml", ".sha256"}
             or path.name.startswith(("LICENSE", "NOTICE"))
         )
     )
@@ -47,6 +46,7 @@ def main():
     parser.add_argument("--depends-on", action="append", default=[])
     parser.add_argument("--priority", type=int, default=100)
     parser.add_argument("--max-seconds", type=int, default=7200)
+    parser.add_argument("--control-pod", required=True)
     parser.add_argument("--submit", action="store_true")
     args = parser.parse_args()
     if not re.fullmatch(r"[a-z0-9][a-z0-9_.-]*", args.id):
@@ -92,13 +92,24 @@ def main():
                 entry.size = len(content)
                 entry.mode = 0o644
                 tar.addfile(entry, io.BytesIO(content))
-        kubectl("exec", CONTROL, "--", "mkdir", "-p", remote_code)
+        kubectl("exec", args.control_pod, "--", "mkdir", "-p", remote_code)
         remote_archive = f"{REMOTE}/code/{code_hash}.tar"
-        kubectl("cp", archive, f"{CONTROL}:{remote_archive}")
-        kubectl("exec", CONTROL, "--", "tar", "-xf", remote_archive, "-C", remote_code)
+        kubectl("cp", archive, f"{args.control_pod}:{remote_archive}")
+        kubectl(
+            "exec",
+            args.control_pod,
+            "--",
+            "tar",
+            "-xf",
+            remote_archive,
+            "-C",
+            remote_code,
+        )
     staged = f"{REMOTE}/queue/{args.id}.staged"
-    kubectl("cp", manifest, f"{CONTROL}:{staged}")
-    kubectl("exec", CONTROL, "--", "mv", staged, f"{REMOTE}/queue/{args.id}.json")
+    kubectl("cp", manifest, f"{args.control_pod}:{staged}")
+    kubectl(
+        "exec", args.control_pod, "--", "mv", staged, f"{REMOTE}/queue/{args.id}.json"
+    )
     print(
         json.dumps(
             {

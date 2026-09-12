@@ -1,0 +1,53 @@
+{
+  "observed_at": "2026-09-12T01:12:21.896436+00:00",
+  "local_interpreter": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python",
+  "local_lens_packages": {
+    "tuned_lens": false,
+    "jlens": false,
+    "jacobian_lens": false,
+    "transformer_lens": false
+  },
+  "local_logit_lens": "Implemented with native post-block hooks, frozen final norm and unembedding. Terminal parity verified on tiny hybrid Qwen3.5.",
+  "local_backbone_weights": "Not present in the inspected historical workspace and Hugging Face cache; real 4B model was not loaded.",
+  "parent_reported_live_cache": [
+    "Qwen3-8B",
+    "Qwen3-4B-Instruct",
+    "Qwen2.5-7B-Instruct",
+    "matching kitft AV/AR",
+    "Qwen3.5-4B under /mnt/shared/cl-smoke/models"
+  ],
+  "decision": "Use the historical Qwen3.5-4B persistent no-replay checkpoints. Matching Qwen2.5 NLA assets are a different backbone and not used. No NLA/lens/model downloads.",
+  "primary_sources": [
+    {
+      "url": "https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens",
+      "use": "Original direct residual-stream logit lens"
+    },
+    {
+      "url": "https://github.com/AlignmentResearch/tuned-lens",
+      "use": "Tuned lenses train affine translators; this experiment does not"
+    },
+    {
+      "url": "https://arxiv.org/abs/2303.08112",
+      "use": "Original tuned-lens paper"
+    },
+    {
+      "url": "https://github.com/anthropics/jacobian-lens",
+      "use": "Official Jacobian estimator and readout; no fitted lens weights bundled"
+    },
+    {
+      "url": "https://huggingface.co/docs/transformers/model_doc/qwen3_5",
+      "use": "Native hybrid Qwen3.5 model class"
+    },
+    {
+      "url": "https://huggingface.co/docs/peft/package_reference/peft_model",
+      "use": "Adapter load/reset API"
+    }
+  ],
+  "sdk_signatures": {
+    "Qwen3_5ForConditionalGeneration.forward": "(self, input_ids: torch.LongTensor = None, attention_mask: torch.Tensor | None = None, position_ids: torch.LongTensor | None = None, past_key_values: transformers.cache_utils.Cache | None = None, inputs_embeds: torch.FloatTensor | None = None, labels: torch.LongTensor | None = None, pixel_values: torch.Tensor | None = None, pixel_values_videos: torch.FloatTensor | None = None, image_grid_thw: torch.LongTensor | None = None, video_grid_thw: torch.LongTensor | None = None, mm_token_type_ids: torch.IntTensor | None = None, logits_to_keep: int | torch.Tensor = 0, **kwargs: Unpack[transformers.utils.generic.TransformersKwargs]) -> tuple | transformers.models.qwen3_5.modeling_qwen3_5.Qwen3_5CausalLMOutputWithPast",
+    "PeftModel.from_pretrained": "(model: 'torch.nn.Module', model_id: 'Union[str, os.PathLike]', adapter_name: 'str' = 'default', is_trainable: 'bool' = False, config: 'Optional[PeftConfig]' = None, autocast_adapter_dtype: 'bool' = True, ephemeral_gpu_offload: 'bool' = False, low_cpu_mem_usage: 'bool' = False, key_mapping: 'Optional[dict[str, str]]' = None, **kwargs: 'Any') -> 'PeftModel'",
+    "PeftModel.load_adapter": "(self, model_id: 'Union[str, os.PathLike]', adapter_name: 'str', is_trainable: 'bool' = False, torch_device: 'Optional[str]' = None, autocast_adapter_dtype: 'bool' = True, ephemeral_gpu_offload: 'bool' = False, low_cpu_mem_usage: 'bool' = False, key_mapping: 'Optional[dict[str, str]]' = None, **kwargs: 'Any')",
+    "PeftModel.set_adapter": "(self, adapter_name: 'str', inference_mode: 'bool' = False) -> 'None'",
+    "set_peft_model_state_dict": "(model, peft_model_state_dict, adapter_name='default', ignore_mismatched_sizes: 'bool' = False, low_cpu_mem_usage: 'bool' = False) -> 'namedtuple'"
+  }
+}

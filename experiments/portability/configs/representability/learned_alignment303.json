@@ -1,0 +1,16 @@
+{
+  "kind": "learned_alignment_constructive_representability",
+  "prior_protocol": {
+    "path": "/Users/sudarshan/Code/attempting-continual-learning/outputs/representability/source303-20260911/protocol.json",
+    "sha256": "73d45c3f8e0248a6d15cf6afdc73ba5b2e90ef1fb641bf71a48a02790c557195"
+  },
+  "seed": 911304,
+  "method": "One QR span construction per input/output group from the known rank8 factors, Gaussian completion to the existing d_core, followed by one shared affine-head minimum-change solve. Freeze all task latents, layer embeddings and hidden-network weights. No architecture growth or optimizer sweep.",
+  "claim_boundary": [
+    "Proposed after the fixed-alignment geometry result, before any outcome of this construction.",
+    "Privileged adapter-weight reconstruction is a representability witness, not learning from examples or a new continual-learning method.",
+    "The original architecture is unchanged; input/output alignments and four shared output heads change. Old tasks are not protected or evaluated.",
+    "A single fixed RTE latent must drive the native generator for all sequence ABC examples.",
+    "FP64 weight reproduction and FP32 serialized native behavior are distinct checks; behavioral scores are required before claiming skill reproduction."
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "adapters": {
+    "initial_exact": {
+      "files": {
+        "adapter_config.json": "92e516f4dd1e47231c9b31925eb67085c0969107eb1489fd66ea7fb166d28feb",
+        "adapter_model.safetensors": "1472d524dff5b6004fa998eb0ca565627f2c06c77e5043b526856cf6babcb101"
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-representability/initial_exact",
+      "tensor_sha256": "1b886eccc409338012b5845f63655546c48213e15577e4d8b4ae4f2613618a0d"
+    },
+    "projection": {
+      "files": {
+        "adapter_config.json": "92e516f4dd1e47231c9b31925eb67085c0969107eb1489fd66ea7fb166d28feb",
+        "adapter_model.safetensors": "4197380b72fbbe8418bbea089fa0e119c1a8d2b19e485c6a6978b1e2e4451c5e"
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-representability/projection",
+      "tensor_sha256": "0354149b9f222e36b36ff8bb34ae0e7f720343f702cb17255c7cea936f5836f2"
+    },
+    "rank8_final": {
+      "files": {
+        "adapter_config.json": "92e516f4dd1e47231c9b31925eb67085c0969107eb1489fd66ea7fb166d28feb",
+        "adapter_model.safetensors": "87a418f2098bee5471259d3f400895aee270228e0152c2d33abbc1d9279f2895"
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/meta-20260909-rank8/final/adapter",
+      "tensor_sha256": "ce68ecd6c67d0218c03a626fe84870a54ac5502056fdabe7b64b98a522cc1669"
+    },
+    "rank8_initial": {
+      "files": {
+        "adapter_config.json": "92e516f4dd1e47231c9b31925eb67085c0969107eb1489fd66ea7fb166d28feb",
+        "adapter_model.safetensors": "18023a05fc3d4eff035929c450efe8f2479c40d52b12ca870b21afa552ccee3e"
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/meta-20260909-rank8/initial/adapter",
+      "tensor_sha256": "5b7f34c31f08cb0c9f07201dd468937208d179272213d934fd7ce6997d2a8c15"
+    }
+  },
+  "claim_boundary": [
+    "The geometry result was known before this behavioral protocol; every specified condition is evaluated once without fitting or selection.",
+    "The projection is the closest rank8 weight update inside the original fixed alignment spans, with independent factors across layers. It is not a trained shared-generator checkpoint or a behavioral upper bound.",
+    "Same previously evaluated 303 mapping and 864-input panel; this is a mechanism test, not independent task generalization or free-form generation.",
+    "The frozen initial control and the known successful rank8 adapter must be reported alongside projection behavior."
+  ],
+  "conditions": [
+    "rank8_initial",
+    "initial_exact",
+    "rank8_final",
+    "projection"
+  ],
+  "evaluation": {
+    "autocast": false,
+    "batch_size": 8,
+    "dtype": "float32",
+    "max_prompt": 768
+  },
+  "fresh_inputs": {
+    "path": "data/sequence303_unused_inputs.json",
+    "sha256": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e"
+  },
+  "geometry": {
+    "fit-gate.json": {
+      "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-representability/fit-gate.json",
+      "sha256": "16ece565b148107a0d429b2442c950be3cfa6ec2b1070eb56d906657d6c8bd4b"
+    },
+    "learned-change.json": {
+      "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-representability/learned-change.json",
+      "sha256": "175a3d27988b4db8da9f86739c4edda021efe6b68d230b35c5abd2107dd2df16"
+    },
+    "projection.json": {
+      "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-representability/projection.json",
+      "sha256": "7bee0d99dea4fd5b79fa463fc5ea8937ed2bbaac834061a0a9b852acfb30a86b"
+    },
+    "protocol.json": {
+      "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-representability/protocol.json",
+      "sha256": "73d45c3f8e0248a6d15cf6afdc73ba5b2e90ef1fb641bf71a48a02790c557195"
+    },
+    "result.json": {
+      "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-representability/result.json",
+      "sha256": "cdaa812d7f7794d537a2d79e33e592ac81013db227c0a55ec7a67bf243fe7ea0"
+    }
+  },
+  "kind": "fixed_alignment_projection_behavior",
+  "seed": 911303,
+  "source_base": {
+    "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+    "files": [
+      {
+        "bytes": 728,
+        "git_blob_sha1": "d46195ac87f837ad233d02b2f80f148bf7c005e0",
+        "path": "config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 239,
+        "git_blob_sha1": "20a8a9156fc8c3f25295ca067f61fdf120d517c5",
+        "path": "generation_config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 1671853,
+        "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+        "path": "merges.txt",
+        "sha256": null
+      },
+      {
+        "bytes": 3996250744,
+        "git_blob_sha1": null,
+        "path": "model-00001-of-00005.safetensors",
+        "sha256": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f"
+      },
+      {
+        "bytes": 3993160032,
+        "git_blob_sha1": null,
+        "path": "model-00002-of-00005.safetensors",
+        "sha256": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282"
+      },
+      {
+        "bytes": 3959604768,
+        "git_blob_sha1": null,
+        "path": "model-00003-of-00005.safetensors",
+        "sha256": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836"
+      },
+      {
+        "bytes": 3187841392,
+        "git_blob_sha1": null,
+        "path": "model-00004-of-00005.safetensors",
+        "sha256": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a"
+      },
+      {
+        "bytes": 1244659840,
+        "git_blob_sha1": null,
+        "path": "model-00005-of-00005.safetensors",
+        "sha256": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff"
+      },
+      {
+        "bytes": 32878,
+        "git_blob_sha1": "2b85c00f1b118961cd7a477e2bba0fe197a4ce1a",
+        "path": "model.safetensors.index.json",
+        "sha256": null
+      },
+      {
+        "bytes": 11422654,
+        "git_blob_sha1": null,
+        "path": "tokenizer.json",
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+      },
+      {
+        "bytes": 9732,
+        "git_blob_sha1": "417d038a63fa3de29cfde265caedae14d1a58d92",
+        "path": "tokenizer_config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 2776833,
+        "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+        "path": "vocab.json",
+        "sha256": null
+      }
+    ],
+    "local_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+    "repo_id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+  },
+  "source_base_tensor_sha256": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31"
+}

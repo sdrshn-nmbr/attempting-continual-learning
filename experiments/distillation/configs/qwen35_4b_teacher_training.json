@@ -1,0 +1,6 @@
+{
+  "stage": "teacher_training",
+  "protocol": "configs/generated_protocol.json",
+  "protocol_sha256": "95b541415a293af0bb2b666921a79a3dd0d029e008771a9fb0401184db669d91",
+  "qualification_dir": "/mnt/shared/cl-portfolio/runs/distillation-generated-qualification-20260911"
+}

@@ -49,9 +49,9 @@ def write_json(path, value):
     temporary.replace(path)
 
 
-def event(output, kind, **values):
+def event(directory, kind, **values):
     record = {"event": kind, "time": datetime.now(timezone.utc).isoformat(), **values}
-    with (Path(output) / "events.jsonl").open("a") as handle:
+    with (Path(directory) / "events.jsonl").open("a") as handle:
         handle.write(json.dumps(record, sort_keys=True, allow_nan=False) + "\n")
     LOGGER.info("%s %s", kind, json.dumps(values, sort_keys=True, allow_nan=False))
 

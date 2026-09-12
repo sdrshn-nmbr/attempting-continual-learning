@@ -1,0 +1,467 @@
+{
+  "summary": {
+    "observed_at_utc": "2026-09-08T23:04:14.055339+00:00",
+    "execution_status": "completed",
+    "execution_sha256": "099bf200461a9cafd3e9bc02b9125e32148c3845204177a4ecc428b117fc99e8",
+    "exit_code": 0,
+    "finished_at": "2026-09-08T23:02:47.212017+00:00",
+    "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+    "progress": {
+      "status": "completed",
+      "updated_at": "2026-09-08T23:02:43.865905+00:00",
+      "attempt_id": "9cefd6ced2b44ea18c77ea7116fe19a3",
+      "signature": "ceae2738f27bb08ae4c87f91de791a969deef44a47103cec1ce842c2bb39a52e",
+      "method_index": 2,
+      "method": null,
+      "task_index": 0,
+      "updates_in_task": 0,
+      "total_updates": 256,
+      "task_started": false,
+      "wall_seconds": 352.02830697599995
+    },
+    "metrics_status": "completed",
+    "metrics_sha256": "373827bed9668cb2596309b88258a5c219565789f25d3e80ad4851d50ad96dc5",
+    "total_updates": 256,
+    "endpoints": {
+      "persistent": [
+        {
+          "task": 0,
+          "updates": 32,
+          "completed": true,
+          "test_global": [
+            0.975
+          ]
+        },
+        {
+          "task": 1,
+          "updates": 32,
+          "completed": true,
+          "test_global": [
+            0.0125,
+            1.0
+          ]
+        },
+        {
+          "task": 2,
+          "updates": 32,
+          "completed": true,
+          "test_global": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "task": 3,
+          "updates": 32,
+          "completed": true,
+          "test_global": [
+            0.0,
+            0.1375,
+            0.225,
+            0.9625
+          ]
+        }
+      ],
+      "balanced_replay": [
+        {
+          "task": 0,
+          "updates": 32,
+          "completed": true,
+          "test_global": [
+            0.975
+          ]
+        },
+        {
+          "task": 1,
+          "updates": 32,
+          "completed": true,
+          "test_global": [
+            0.9875,
+            1.0
+          ]
+        },
+        {
+          "task": 2,
+          "updates": 32,
+          "completed": true,
+          "test_global": [
+            0.9375,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "task": 3,
+          "updates": 32,
+          "completed": true,
+          "test_global": [
+            0.9875,
+            0.9625,
+            0.9875,
+            0.9875
+          ]
+        }
+      ]
+    }
+  },
+  "terminal": true,
+  "binary_file_hashes": {
+    "checkpoint.pt": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/checkpoint.pt",
+      "bytes": 145157115,
+      "sha256": "ee622d46917fe223baea36747e17dfbad4417e3e1a7348ed6d4f4577c1623396"
+    },
+    "adapters/balanced_replay/task-0/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-0/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/balanced_replay/task-0/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-0/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    },
+    "adapters/balanced_replay/task-0/adapter_model.safetensors": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-0/adapter_model.safetensors",
+      "bytes": 36203640,
+      "sha256": "eda0fe928895067dac205626bf1b59defbe2767a1e976b32fb17a839b6fd5086"
+    },
+    "adapters/balanced_replay/task-1/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-1/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/balanced_replay/task-1/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-1/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    },
+    "adapters/balanced_replay/task-1/adapter_model.safetensors": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-1/adapter_model.safetensors",
+      "bytes": 36203640,
+      "sha256": "57119ddbe9393016e5bb39ad45c249001c4d994a7fbd767d7c6b3f3f301a2965"
+    },
+    "adapters/balanced_replay/task-2/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-2/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/balanced_replay/task-2/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-2/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    },
+    "adapters/balanced_replay/task-2/adapter_model.safetensors": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-2/adapter_model.safetensors",
+      "bytes": 36203640,
+      "sha256": "03bf606f7eebc8ec54d5b50db8018c492b702efdef6dd8323b57fa3774bf5856"
+    },
+    "adapters/balanced_replay/task-3/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-3/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/balanced_replay/task-3/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-3/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    },
+    "adapters/balanced_replay/task-3/adapter_model.safetensors": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-3/adapter_model.safetensors",
+      "bytes": 36203640,
+      "sha256": "2b4430d13760579f4a260f4e7b2d01c463f3718da70cefd6742409e88ef4844a"
+    },
+    "adapters/persistent/task-0/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-0/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/persistent/task-0/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-0/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    },
+    "adapters/persistent/task-0/adapter_model.safetensors": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-0/adapter_model.safetensors",
+      "bytes": 36203640,
+      "sha256": "eda0fe928895067dac205626bf1b59defbe2767a1e976b32fb17a839b6fd5086"
+    },
+    "adapters/persistent/task-1/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-1/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/persistent/task-1/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-1/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    },
+    "adapters/persistent/task-1/adapter_model.safetensors": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-1/adapter_model.safetensors",
+      "bytes": 36203640,
+      "sha256": "7d6bb47e10ac06623db5f19519a73a3df712f78e9b20b0f8435cf25045771c5b"
+    },
+    "adapters/persistent/task-2/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-2/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/persistent/task-2/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-2/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    },
+    "adapters/persistent/task-2/adapter_model.safetensors": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-2/adapter_model.safetensors",
+      "bytes": 36203640,
+      "sha256": "a0424e47333cf9886c0dfdf81ef3806615abe8667f1fff8cef7a76f7d321b14d"
+    },
+    "adapters/persistent/task-3/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-3/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/persistent/task-3/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-3/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    },
+    "adapters/persistent/task-3/adapter_model.safetensors": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-3/adapter_model.safetensors",
+      "bytes": 36203640,
+      "sha256": "f10e7f5cbda302144a1135b22c406296cdd0ab995e9c8e9b5c27cb48c36b2b5a"
+    }
+  },
+  "transferred_bytes": 4238391,
+  "remote_binary_bytes_hashed": 434838083,
+  "terminal_receipt_stable": true,
+  "files": {
+    "execution.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/execution.json",
+      "bytes": 2863,
+      "sha256": "099bf200461a9cafd3e9bc02b9125e32148c3845204177a4ecc428b117fc99e8"
+    },
+    "progress.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/progress.json",
+      "bytes": 384,
+      "sha256": "2f727d3cf94d2ab620920a53380a972e745159e8e6ac2a0ccb96281f16bc0f22"
+    },
+    "metrics.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/metrics.json",
+      "bytes": 1973381,
+      "sha256": "373827bed9668cb2596309b88258a5c219565789f25d3e80ad4851d50ad96dc5"
+    },
+    "provenance.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/provenance.json",
+      "bytes": 1167053,
+      "sha256": "43f1f68b8fe42be9464c01579f9bf59c979d1d95df3e27093c4382c2eaa131f1"
+    },
+    "events.jsonl": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/events.jsonl",
+      "bytes": 862869,
+      "sha256": "b74126099abec1ce415c7521f38f7815b72c1c868875e9bbe30ecb233eed1349"
+    },
+    "config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/config.json",
+      "bytes": 1000,
+      "sha256": "6f5b4bb31f4a813309df1e09ac32385327b7fc65bac1ff67a6843893ee9a81e3"
+    },
+    "task.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/task.json",
+      "bytes": 1516,
+      "sha256": "d34d9b8fcd6d90c14240f580956077f612919b5e666468fbeebbbc6c81978494"
+    },
+    "packages.txt": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/packages.txt",
+      "bytes": 1441,
+      "sha256": "7ec21afb506f2b9283e19048e8fb69b30da4599fa2b30531a64d5270e0aeee0c"
+    },
+    "run.log": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/run.log",
+      "bytes": 41569,
+      "sha256": "5da95e6c73ce9e6b85cf41beed42cb6727fbfc157786225238e218bff5111c69"
+    },
+    "attempts/2ab4cbfebc84429f85ddfec3610c735a/099bf200461a9cafd3e9bc02b9125e32148c3845204177a4ecc428b117fc99e8.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/attempts/2ab4cbfebc84429f85ddfec3610c735a/099bf200461a9cafd3e9bc02b9125e32148c3845204177a4ecc428b117fc99e8.json",
+      "bytes": 2863,
+      "sha256": "099bf200461a9cafd3e9bc02b9125e32148c3845204177a4ecc428b117fc99e8"
+    },
+    "attempts/2ab4cbfebc84429f85ddfec3610c735a/87a2a9fe5752cdf309889c17d7ffa82e5bd386878090a3bf4d71c9c89f2e7555.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/attempts/2ab4cbfebc84429f85ddfec3610c735a/87a2a9fe5752cdf309889c17d7ffa82e5bd386878090a3bf4d71c9c89f2e7555.json",
+      "bytes": 2660,
+      "sha256": "87a2a9fe5752cdf309889c17d7ffa82e5bd386878090a3bf4d71c9c89f2e7555"
+    },
+    "attempts/2ab4cbfebc84429f85ddfec3610c735a/b3553b82b18bd91ddee32c43f5f68715d21efc1e8b05eef06a32cadac9f7305a.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/attempts/2ab4cbfebc84429f85ddfec3610c735a/b3553b82b18bd91ddee32c43f5f68715d21efc1e8b05eef06a32cadac9f7305a.json",
+      "bytes": 2768,
+      "sha256": "b3553b82b18bd91ddee32c43f5f68715d21efc1e8b05eef06a32cadac9f7305a"
+    },
+    "source/config.py": {
+      "remote_path": "/mnt/shared/cl-portfolio/code/ab5d85d3b8a145255d715423df216433fc3510ccb55525235b8e568f4b0211f4/config.py",
+      "bytes": 5628,
+      "sha256": "790ebead05e9cd9337ec6dde511477afe94694e60b4cf5583d27fbbbaeb75451"
+    },
+    "source/data.py": {
+      "remote_path": "/mnt/shared/cl-portfolio/code/ab5d85d3b8a145255d715423df216433fc3510ccb55525235b8e568f4b0211f4/data.py",
+      "bytes": 13328,
+      "sha256": "22b6b7e31b6b29c526da52f240c50a534dd6321777e483445bf1f16fff4a8635"
+    },
+    "source/engine.py": {
+      "remote_path": "/mnt/shared/cl-portfolio/code/ab5d85d3b8a145255d715423df216433fc3510ccb55525235b8e568f4b0211f4/engine.py",
+      "bytes": 29023,
+      "sha256": "499f5ac033f37e24db728bc94005e7975c2ff6c9c0624957b3d335f7cd5e5a29"
+    },
+    "source/gate.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/code/ab5d85d3b8a145255d715423df216433fc3510ccb55525235b8e568f4b0211f4/gate.json",
+      "bytes": 667,
+      "sha256": "cedafca11764009ae48838235ba8dc5037c0ae6ceab2e14369d4b375b795230f"
+    },
+    "source/learning.py": {
+      "remote_path": "/mnt/shared/cl-portfolio/code/ab5d85d3b8a145255d715423df216433fc3510ccb55525235b8e568f4b0211f4/learning.py",
+      "bytes": 13308,
+      "sha256": "98a3bd2ada74ec2e32c2642ea9741735b5206fd7638fa30ab67af448def3dd4c"
+    },
+    "source/pilot.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/code/ab5d85d3b8a145255d715423df216433fc3510ccb55525235b8e568f4b0211f4/pilot.json",
+      "bytes": 689,
+      "sha256": "59eacfdf8634f646a0e1b7528af3306dd7bf91d53b20820ba8aed54cccab91e0"
+    },
+    "source/protocol.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/code/ab5d85d3b8a145255d715423df216433fc3510ccb55525235b8e568f4b0211f4/protocol.json",
+      "bytes": 14377,
+      "sha256": "29b64bbbba7f955bfde0296e1482250224aaa0ffff3a1018ef39102b8d13af0b"
+    },
+    "source/replay-confirmation.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/code/ab5d85d3b8a145255d715423df216433fc3510ccb55525235b8e568f4b0211f4/replay-confirmation.json",
+      "bytes": 1000,
+      "sha256": "7b7bc76cea1d88f40c0c173c436c09ef9a6930b8608b86f6791112d82a7b4416"
+    },
+    "source/replay-screen.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/code/ab5d85d3b8a145255d715423df216433fc3510ccb55525235b8e568f4b0211f4/replay-screen.json",
+      "bytes": 1000,
+      "sha256": "6f5b4bb31f4a813309df1e09ac32385327b7fc65bac1ff67a6843893ee9a81e3"
+    },
+    "source/requirements.txt": {
+      "remote_path": "/mnt/shared/cl-portfolio/code/ab5d85d3b8a145255d715423df216433fc3510ccb55525235b8e568f4b0211f4/requirements.txt",
+      "bytes": 29,
+      "sha256": "196c47df5e8069342f141907bb96139a81c25a10a1ed31660933daa0162ae844"
+    },
+    "source/run.py": {
+      "remote_path": "/mnt/shared/cl-portfolio/code/ab5d85d3b8a145255d715423df216433fc3510ccb55525235b8e568f4b0211f4/run.py",
+      "bytes": 12628,
+      "sha256": "c96a64ae234239b05e128f51c902075678e0bd1b043bc48cea7fdbac4485170e"
+    },
+    "source/test_plasticity.py": {
+      "remote_path": "/mnt/shared/cl-portfolio/code/ab5d85d3b8a145255d715423df216433fc3510ccb55525235b8e568f4b0211f4/test_plasticity.py",
+      "bytes": 29074,
+      "sha256": "423e16b7ec0f174a2d03a84fdc6f64fd5da781ff324a1486c678ca4a2d9b14f6"
+    },
+    "runtime-gate/execution.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/resume-20260908-runtime-qwen35-4b/execution.json",
+      "bytes": 1748,
+      "sha256": "192fb6750f5f93f115c02a1693f2ce6bb6bed9f86c0e37d3b737caea30628d54"
+    },
+    "runtime-gate/receipt.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/resume-20260908-runtime-qwen35-4b/receipt.json",
+      "bytes": 1912,
+      "sha256": "d77b61487dd1344b8538374ba9282449c46999e2e161814588e20efafbd2df8e"
+    },
+    "runtime-gate/config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/resume-20260908-runtime-qwen35-4b/config.json",
+      "bytes": 107,
+      "sha256": "051666c23da4b024858983ed1905c0eda149dc6ee5b3d0c3da4d2e444f8e43ec"
+    },
+    "runtime-gate/task.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/resume-20260908-runtime-qwen35-4b/task.json",
+      "bytes": 491,
+      "sha256": "ec7180b18871e38f2228ac7e82f56f45f2f5341681d5df6802369fdd067008a7"
+    },
+    "runtime-gate/packages.txt": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/resume-20260908-runtime-qwen35-4b/packages.txt",
+      "bytes": 1167,
+      "sha256": "240e008a706c856666dc562481c6446601b8a3734e05b4aa876a1b0cb3f05137"
+    },
+    "adapters/balanced_replay/task-0/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-0/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/balanced_replay/task-0/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-0/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    },
+    "adapters/balanced_replay/task-1/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-1/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/balanced_replay/task-1/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-1/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    },
+    "adapters/balanced_replay/task-2/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-2/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/balanced_replay/task-2/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-2/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    },
+    "adapters/balanced_replay/task-3/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-3/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/balanced_replay/task-3/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/balanced_replay/task-3/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    },
+    "adapters/persistent/task-0/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-0/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/persistent/task-0/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-0/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    },
+    "adapters/persistent/task-1/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-1/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/persistent/task-1/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-1/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    },
+    "adapters/persistent/task-2/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-2/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/persistent/task-2/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-2/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    },
+    "adapters/persistent/task-3/README.md": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-3/README.md",
+      "bytes": 5322,
+      "sha256": "4dcbb7dbfb4be0d5a72ad763ea5f97a71a2bcd3098b137c9db9225c0dcaea1c2"
+    },
+    "adapters/persistent/task-3/adapter_config.json": {
+      "remote_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/adapters/persistent/task-3/adapter_config.json",
+      "bytes": 1159,
+      "sha256": "eeaa891015bd49430d26f5eb7a81709594a6370ef66874b604dce51505e089a9"
+    }
+  },
+  "collection_method": "Read-only kubectl exec through CPU control; bounded text transfer and terminal binary SHA256 reads; no binary downloads or GPU calls"
+}

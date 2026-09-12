@@ -6,14 +6,13 @@ import sys
 from dataclasses import replace
 from pathlib import Path
 
-from peft import PeftModel, get_peft_model_state_dict
-
 from data import SEQUENCE_TASKS, digest, write_json
 from evaluate_repair import measure_panel
 from evaluate_targets import file_sha256, validate_bootstrap, verify_snapshot
 from fresh_inputs import load_fresh_rows
 from learner import frozen_base_tensors, load_base, tensor_hash
 from metrics import paired_group_interval, task_rows
+from peft import PeftModel, get_peft_model_state_dict
 from run import emit, require_gpu
 
 CONDITIONS = ("full_initial", "full_final", "rank8_initial", "rank8_final")
@@ -135,21 +134,7 @@ def compare(panels, seed):
     }
 
 
-def evaluate_prepared(config, output, prepared_sha256, device="cuda:0"):
-    validate(config)
-    path = output / "prepared.json"
-    if file_sha256(path) != prepared_sha256:
-        raise ValueError("RANK_EVAL_PREPARED_FILE_CHANGED")
-    prepared = json.loads(path.read_text())
-    if prepared["parent_pid"] == os.getpid() or prepared["config_sha256"] != digest(
-        config
-    ):
-        raise ValueError("RANK_EVAL_FRESH_PROCESS_REQUIRED")
-    checked, rows, fixture = verify_inputs(config)
-    if checked != prepared["input_files"]:
-        raise ValueError("RANK_EVAL_INPUT_IDENTITY_CHANGED")
-    if device != "cpu":
-        require_gpu(output, config["seed"])
+def evaluate_adapter_panels(config, rows, output, conditions, device):
     base_files = verify_snapshot(config["source_base"])
     base = load_base(config["source_base"], device)
     if (
@@ -159,12 +144,12 @@ def evaluate_prepared(config, output, prepared_sha256, device="cuda:0"):
         raise ValueError("RANK_EVAL_BASE_TENSOR_IDENTITY_MISMATCH")
     model = PeftModel.from_pretrained(
         base.model,
-        config["adapters"][CONDITIONS[0]]["path"],
-        adapter_name=CONDITIONS[0],
+        config["adapters"][conditions[0]]["path"],
+        adapter_name=conditions[0],
         is_trainable=False,
         local_files_only=True,
     )
-    for name in CONDITIONS[1:]:
+    for name in conditions[1:]:
         model.load_adapter(
             config["adapters"][name]["path"],
             name,
@@ -181,16 +166,16 @@ def evaluate_prepared(config, output, prepared_sha256, device="cuda:0"):
                     model, adapter_name=name, save_embedding_layers=False
                 )
             )
-            for name in CONDITIONS
+            for name in conditions
         }
 
     before = adapter_hashes()
     if before != {
-        name: config["adapters"][name]["tensor_sha256"] for name in CONDITIONS
+        name: config["adapters"][name]["tensor_sha256"] for name in conditions
     }:
         raise ValueError("RANK_EVAL_RELOADED_ADAPTER_IDENTITY_MISMATCH")
     panels, checks = {}, {}
-    for name in CONDITIONS:
+    for name in conditions:
         model.set_adapter(name, inference_mode=True)
         model.requires_grad_(False).eval()
         if model.active_adapters != [name]:
@@ -200,6 +185,27 @@ def evaluate_prepared(config, output, prepared_sha256, device="cuda:0"):
         )
         if adapter_hashes() != before:
             raise ValueError(f"RANK_EVAL_ADAPTER_MUTATION: {name}")
+    return base_files, before, panels, checks
+
+
+def evaluate_prepared(config, output, prepared_sha256, device="cuda:0"):
+    validate(config)
+    path = output / "prepared.json"
+    if file_sha256(path) != prepared_sha256:
+        raise ValueError("RANK_EVAL_PREPARED_FILE_CHANGED")
+    prepared = json.loads(path.read_text())
+    if prepared["parent_pid"] == os.getpid() or prepared["config_sha256"] != digest(
+        config
+    ):
+        raise ValueError("RANK_EVAL_FRESH_PROCESS_REQUIRED")
+    checked, rows, fixture = verify_inputs(config)
+    if checked != prepared["input_files"]:
+        raise ValueError("RANK_EVAL_INPUT_IDENTITY_CHANGED")
+    if device != "cpu":
+        require_gpu(output, config["seed"])
+    base_files, before, panels, checks = evaluate_adapter_panels(
+        config, rows, output, CONDITIONS, device
+    )
     verify_inputs(config)
     result = {
         "status": "completed",

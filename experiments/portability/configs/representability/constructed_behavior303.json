@@ -1,0 +1,132 @@
+{
+  "adapters": {
+    "constructed_export": {
+      "files": {
+        "adapter_config.json": "92e516f4dd1e47231c9b31925eb67085c0969107eb1489fd66ea7fb166d28feb",
+        "adapter_model.safetensors": "eb13c85a2247b2c1df51e2f2075bd329e787be14dd4dae7ac2f332e8fe689e6d"
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-constructed-representation/adapter",
+      "tensor_sha256": "18e56cadad9dedaef3493cca6daa7e8829ab6efce042c4b1547e39a200e9a455"
+    },
+    "rank8_final": {
+      "files": {
+        "adapter_config.json": "92e516f4dd1e47231c9b31925eb67085c0969107eb1489fd66ea7fb166d28feb",
+        "adapter_model.safetensors": "87a418f2098bee5471259d3f400895aee270228e0152c2d33abbc1d9279f2895"
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/meta-20260909-rank8/final/adapter",
+      "tensor_sha256": "ce68ecd6c67d0218c03a626fe84870a54ac5502056fdabe7b64b98a522cc1669"
+    }
+  },
+  "claim_boundary": [
+    "Constructed from privileged saved adapter weights; no learning-from-examples, retention of old tasks, or portability claim.",
+    "Same architecture and one original RTE latent for all ABC prompts. Only input/output alignments and shared affine output heads changed.",
+    "All panels evaluated once after the FP64 construction and FP32 serialization check; no behavioral feedback or selection.",
+    "The 864 rows and mappings were evaluated in earlier work. This is a mechanistic behavioral replication, not independent generalization."
+  ],
+  "construction_result": {
+    "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-constructed-representation/result.json",
+    "sha256": "d93a55239b174349704c3471f8fca7f7ef3c992c9ecb2f96d75c2a3cb1420a90"
+  },
+  "evaluation": {
+    "autocast": false,
+    "batch_size": 8,
+    "dtype": "float32",
+    "max_prompt": 768
+  },
+  "fixed_task": "rte",
+  "fresh_inputs": {
+    "path": "data/sequence303_unused_inputs.json",
+    "sha256": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e"
+  },
+  "kind": "constructed_native_generator_behavior",
+  "native": {
+    "files": {
+      "config.json": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb",
+      "model.safetensors": "e69e16ed9b0fd02e709dda37d99eba93e861567053af4cd145aced3190e84500"
+    },
+    "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-constructed-representation/native",
+    "tensor_sha256": "529e0fa922245ec16457ff7b057f4668a4b123c045c75c11490cd5abf736a619"
+  },
+  "seed": 911304,
+  "source_base": {
+    "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+    "files": [
+      {
+        "bytes": 728,
+        "git_blob_sha1": "d46195ac87f837ad233d02b2f80f148bf7c005e0",
+        "path": "config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 239,
+        "git_blob_sha1": "20a8a9156fc8c3f25295ca067f61fdf120d517c5",
+        "path": "generation_config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 1671853,
+        "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+        "path": "merges.txt",
+        "sha256": null
+      },
+      {
+        "bytes": 3996250744,
+        "git_blob_sha1": null,
+        "path": "model-00001-of-00005.safetensors",
+        "sha256": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f"
+      },
+      {
+        "bytes": 3993160032,
+        "git_blob_sha1": null,
+        "path": "model-00002-of-00005.safetensors",
+        "sha256": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282"
+      },
+      {
+        "bytes": 3959604768,
+        "git_blob_sha1": null,
+        "path": "model-00003-of-00005.safetensors",
+        "sha256": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836"
+      },
+      {
+        "bytes": 3187841392,
+        "git_blob_sha1": null,
+        "path": "model-00004-of-00005.safetensors",
+        "sha256": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a"
+      },
+      {
+        "bytes": 1244659840,
+        "git_blob_sha1": null,
+        "path": "model-00005-of-00005.safetensors",
+        "sha256": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff"
+      },
+      {
+        "bytes": 32878,
+        "git_blob_sha1": "2b85c00f1b118961cd7a477e2bba0fe197a4ce1a",
+        "path": "model.safetensors.index.json",
+        "sha256": null
+      },
+      {
+        "bytes": 11422654,
+        "git_blob_sha1": null,
+        "path": "tokenizer.json",
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+      },
+      {
+        "bytes": 9732,
+        "git_blob_sha1": "417d038a63fa3de29cfde265caedae14d1a58d92",
+        "path": "tokenizer_config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 2776833,
+        "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+        "path": "vocab.json",
+        "sha256": null
+      }
+    ],
+    "local_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+    "repo_id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+  },
+  "source_base_tensor_sha256": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31"
+}

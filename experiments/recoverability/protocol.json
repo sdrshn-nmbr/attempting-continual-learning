@@ -1,0 +1,90 @@
+{
+  "name": "frozen-logit-lens-recoverability",
+  "question": "Do frozen internal readouts improve prediction of held-out skill recovery and guard-aware replay choice beyond output confidence?",
+  "backbone": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "method": "Frozen final normalization plus unembedding of post-block residuals; not a released tuned-lens or Jacobian-lens reproduction.",
+  "layers": [
+    8,
+    16,
+    24
+  ],
+  "layer_index": "one-based post-block; final post-block is normalized exactly once and must reproduce output logits",
+  "source_selection": "Persistent adapters after task 2 (before) and task 3 (after), seed23 screen for predictor training and seed47 confirmation for predictor test. Exclude test intent identities appearing anywhere in the training run. No selection using historical prediction files.",
+  "rows": {
+    "repair": 8,
+    "probe": 10,
+    "label": 20
+  },
+  "row_selection": "First source_index-sorted selected training rows per old intent for repair; selected validation rows for probes; selected test rows for recovery labels and task-3 guards. Reject normalized-text overlap. Cached input IDs and original single-token codes are retained.",
+  "unit": "One canonical CLINC intent per source checkpoint pair. Predictor train/test have disjoint intent identities and source runs. Tokens, rows, layers and repair steps are not replicates. Source runs are dependency clusters.",
+  "actions": {
+    "none": 0,
+    "restore": 0,
+    "replay_short": 4,
+    "replay_long": 12,
+    "sham": 12
+  },
+  "actions_detail": "Every action starts from an exact reload of the late adapter. Restore reloads the early adapter as a measured positive ceiling. Replay uses only that skill's repair rows. Sham rotates answer-code targets by one position; same rows, updates and optimizer as replay_long. Restore and sham are excluded from learned deployable action choice.",
+  "optimizer": {
+    "name": "SGD",
+    "learning_rate": 0.0003,
+    "batch_size": 4,
+    "max_grad_norm": 1.0
+  },
+  "behavior": "Greedy full-vocabulary next-token exact code accuracy on unseen prompts; constrained-code accuracy is secondary. No teacher-forced answers in prompts. This is coded intent classification, not free-form skill generation.",
+  "forgotten": {
+    "before_min": 0.75,
+    "after_max": 0.5,
+    "drop_min": 0.25
+  },
+  "recovered": {
+    "accuracy_min": 0.75,
+    "gain_min": 0.25,
+    "guard_drop_max": 0.1
+  },
+  "features": "Probe cohort only, before any repair. Plain confidence baseline: full-vocabulary top1 probability, entropy and top1-top2 margin at before/after. Stronger output baseline adds target log-probability and target code margin. Lens augmentation of the stronger baseline adds mean/max target log-probability and target margin across the three frozen layers at before/after. Probe labels are available equally to stronger output and lens predictors. No post-action or label-cohort features enter predictors.",
+  "predictor": {
+    "name": "standardized ridge",
+    "alpha": 10.0,
+    "probability_clip": [
+      0.0,
+      1.0
+    ],
+    "train_only_scaler": true
+  },
+  "prediction_targets": "Per-action binary recovery and guard-aware utility = target accuracy gain - max(0, guard accuracy loss). No-action utility is zero. Predictors fit only on forgotten training units; evaluation forgetting is verified independently from label-cohort before/after behavior.",
+  "metrics": "Equal weight per skill: per-action Brier score versus train-only prevalence and output confidence; paired Brier difference, deployable action policy utility and oracle regret, versus always-none/short/long. No accuracy over tokens is a predictor sample count.",
+  "controls": "Terminal-lens/output parity, reset/no-action identity, restore/before identity, wrong-code replay, deterministic permutation of training labels only, skill identity split checks, source/implementation/runtime hash checks, and behavioral forgetting/recovery gates.",
+  "minimum_forgotten_per_split": 6,
+  "decision": "Always report descriptive pilot evidence. Report feasibility=insufficient_independent_runs and actual source cluster counts. If either predictor split has fewer than six eligible forgotten skills, report predictor_feasibility=insufficient_eligible_skills; no algorithm or predictor failure verdict. Fit only when both splits are nonempty, and flag single-class labels without treating them as algorithm failure. Report quantitative paired Brier differences, action utility, oracle regret and controls regardless of improvement direction when estimable. No confirmation, significance or causal claim.",
+  "runtime": {
+    "device": "cuda:0",
+    "dtype": "float32",
+    "attention": "sdpa",
+    "threads": 2,
+    "max_length": 128,
+    "seed": 20260911
+  },
+  "limits": [
+    "Only two historical source runs are identified, one per predictor split. This is explicitly a descriptive pilot, insufficient for general predictive claims.",
+    "Historical CLINC selections and checkpoints were previously evaluated. New recovery outcomes remain unobserved until this protocol and all runtime inputs are sealed.",
+    "A restored adapter can lose newer skills; restoration is a measured ceiling, not a deployable memory-repair claim.",
+    "No new model or lens downloads or provider-account changes. GPU execution uses the existing parent-owned worker. No publication."
+  ],
+  "study_type": "descriptive_pilot",
+  "cpu_tests": "Tiny randomly initialized Qwen3.5 architecture fixtures only, cpu/float32/eager; not research model outcomes. Production base is loaded once on parent-owned GPU.",
+  "budget": {
+    "max_intents": 21,
+    "actions_per_intent": 5,
+    "optimizer_steps_per_intent": 28,
+    "max_optimizer_steps": 588,
+    "max_repair_example_exposures": 2352,
+    "max_guard_rows_per_run": 80
+  },
+  "generalization_requirement": {
+    "minimum_independent_test_clusters": 5,
+    "status": "insufficient_independent_runs",
+    "meaning": "Requirement for a future confirmatory study only; not a pass/fail gate in this pilot."
+  }
+}

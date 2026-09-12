@@ -1,0 +1,1187 @@
+{
+  "base": {
+    "cache_dir": "/mnt/shared/cl-smoke/huggingface/hub",
+    "local_path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c",
+    "repo_id": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+  },
+  "calibration_ids": {
+    "sequence_a": [
+      "52d2725c334f2deb8c84754c034b3036e5b8ebdff696787ddd400496a7aa9a4e",
+      "aac771c542cb9bdfc43689d30095ec183619a20ff1cf32c9d3012805713bfbd7",
+      "f5354889ea05f282d82063d5c0bbb92da8924901936e6381a906e528b7763a22",
+      "5aa505999e9e71649342306e3ed04816844ba1424a8f18010273212ed680f090",
+      "7861b4fee08730d4df6424f96d81ea0acab9e31d557240686598c0d3c32d14b9",
+      "91d132b8c630d47abfbbb0b88e38daf5281d729a3856d9a16af5551b775cef0f",
+      "237ca67aec2c1bc681cb7be3b4d8f7d8ab7df78f821e69ea17579b0c6cdad063",
+      "78162d1689a5f4140b429e788157df5387c7306981fa11632b64ff3685e478c0",
+      "d2f7c95e2e734d6d3b2734b4be6ef8c051d346fa39fce3471e3fb89b3cfe1992",
+      "349ab4dc28824eae0d8c544eab92810729c4c3e33b56624d35117444cdaf4925",
+      "83bdeb1861639acb680369595f1205e0e23ae79b6b45f615c6b2f446b2cf65b1",
+      "43b58b1c9ef62345f6cc9a6620e59b48315f4a720c72d12f9a2e26c74f2da65a",
+      "84cff6e7f3821966237cbdd6f6038dda4cdc2d4082de1e7f2c3e617d33b78eb0",
+      "581b56c699fe20a699b8bfc9f83269c14acb7cedf42c1303931db57f4e338a1a",
+      "b5a3ff585428d4471118f0680721947b49244e31abc863894d39984cd3bd7ea8",
+      "e9fe274f434e22d4ac941fbc2fd8c0389d3a0c9cd27e867fd5c4d5eb282cd20e"
+    ],
+    "sequence_b": [
+      "5d48375fae0a53aa311776fac82d650a1f0bb9aaac582868ae8cab086b5437dc",
+      "6a9af770ceb70bf480ae0cc6c1bf01517e7877326c4a245dee4e1ac3d50f9c3d",
+      "14f54b72fb961f7cc9e3c3a423fab11e63fd277d9f188dcaa093de642a7d5a32",
+      "fde1c8cf94f1fc364357995ce548ef436e35712f37c12f1dca1fbdeb355ce06b",
+      "6dfbb699043b0fa5746ae358d5103f4a00db8e9231a1a01f83c4cd8344898352",
+      "9bfb962c63e71d2f599ebc6c77bc701aa715b35b3c77a28bcf4a8aca32483476",
+      "56a1a339fcec096de6cb75706d5ee88dc3ae0ef0de39b8e1e764d6cf6b8bd53a",
+      "66bbe877457538ac9d0989a167fb1da1ab5757864a5d32e27e23e91e4479e02a",
+      "17021ed299d04fc22cf1698e89388ba93da7ba910b9c3d24c37ff0f6935b989f",
+      "bb6ce39423c2b0c9ed177114ade688ed505f827af3b17fa0ec6baeabe7e667d2",
+      "cdac5b26de3449fb366e66d9d8ee22f90293afcf70ed970f089a2999e821b90f",
+      "3c581fa6c3f7c629b0426dc57bb7b2c8816075af6093a69ad98be8d94b668044",
+      "62a2e536d3d74ec217050373e3ecccd2d1f7a6b9693584a47679064bbe4e8bd9",
+      "c96efc74cfcdffe42a16ceba0f7c94a7e1c8c4a06ba2bec95051e8785e30e7fb",
+      "c35bd2c5856ec3f467edb5f35dfef5aa716b65de2e977a979c5b3b65b951e15c",
+      "712c5605a163cccb0da1f54a6f5fc5519d754ad7f1fa7927926d35add08d74a6"
+    ],
+    "sequence_c": [
+      "28b687ec044084498356b4c6ca59cdb1e45208b5386cfe8827d599d2fa8ad20d",
+      "83efb2b50ff0d73bac9960c529717dc22a511d37ef3d8132b91c8d5d639f6985",
+      "6efaf14cd0d0eda7fcd1006d98a98c535370c39d07348a24ab7dc90f0d205a02",
+      "b54dbd0c800590b7cde7ee834d6d2652d5f92f34953faa4324d6e75d80202b4a",
+      "4cede29a915057f6ac53d6625d5003c0c74c61f5605a3429a774738e056fa56e",
+      "9193ef3f3fe6ed2d6c585ac655804cba8bb7ee91077d2d402752f59569e738c1",
+      "68e2b3b8ed2e796aa06180fb89302d69e38b41cdcc08ca72d6ba34a81a036c54",
+      "5d3720c15873bb73f877582bfb9e73d5ec7b02a7437b0e8d9fe2feab3e9d2843",
+      "d753a0588df30397380957d21aaefb11357199e96e9890ac9b57e42f81a7e7e7",
+      "91b86f9514eccf08f6e627aaecc5ed89f3df339fe4a2047e8b8510aaed7157a8",
+      "24f21dfd54736226d3866e43f0b4ef29b953dfa3ac8e1eea5b1c5627e3fc2bd5",
+      "2e58859740b49a82b65c0f7db28b4b0957dab2357940fefe24ae8ccf1f9f13c5",
+      "eed12d32e4b849c29adcd0ac6c29267cf2e12c48ac13e2d9081505fe9a6a8e30",
+      "55506c86878b55a049aa234f0cd8c6c73d99d59def79838aa31353c810774288",
+      "f1a2566c05dc107fa5085e0162fd97470313ff961f8e92be6694f7f65bfc39a7",
+      "fb6a2d7843b5d3c013c048e13b7eed035c8f5db7fabcb46f43bced87a3ab690c"
+    ]
+  },
+  "claim_boundary": [
+    "One bounded mechanistic exploratory Sequence-303 ABC task-calibration experiment, not a literal reproduction of the 14-task paper.",
+    "Uses 16 gold-labelled source TRAIN examples per task on the target; not target-free transfer.",
+    "Learned versus initial core and vectors with identical fresh target alignment and identical supervision isolates incremental source sequence knowledge from learning on target examples.",
+    "The initial core is the published core and initial ABC vectors copied from rte; it is not a random core.",
+    "Qwen3-4B is a published PorTAL base seen by the original core. This tests reuse of Qwen3-8B sequence learning on 4B, not unseen-base generalization of the original core.",
+    "Original validation/test and all original fresh288 inputs were previously exposed; all outcomes are descriptive exploratory evidence, not new confirmation.",
+    "Persistent rank8 q/v alpha16 LoRA uses the same batches, AdamW updates, EMA objective and final checkpoint rule. It is not the paper per-task rank16 full-module baseline.",
+    "No grid, heldout selection, model downloads, GPU/provider/queue provisioning, NFS copies or publication. Parent owns staging and execution."
+  ],
+  "data_exposure": {
+    "fresh288": "previously_exposed_exploratory_288_inputs_per_task",
+    "heldout_access": "after_all_final_checkpoints_only",
+    "old_validation_test": "previously_exposed_exploratory",
+    "training": "source_train_only"
+  },
+  "expected_source_hooks": 72,
+  "expected_target_hooks": 72,
+  "inputs": {
+    "fixture": {
+      "bytes": 255069,
+      "path": "data/sequence303.json",
+      "sha256": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2"
+    },
+    "fresh_fixture": {
+      "bytes": 300921,
+      "path": "data/sequence303_unused_inputs.json",
+      "sha256": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e"
+    },
+    "source_initial": {
+      "files": {
+        "config.json": {
+          "bytes": 15930,
+          "sha256": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb"
+        },
+        "model.safetensors": {
+          "bytes": 124484888,
+          "sha256": "0dbbd18eacfb9dd870019f68b78188d5c0ed15beb8cfc400f4a48b79d84fb3db"
+        }
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_initial"
+    },
+    "source_learned": {
+      "files": {
+        "config.json": {
+          "bytes": 15930,
+          "sha256": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb"
+        },
+        "model.safetensors": {
+          "bytes": 124484888,
+          "sha256": "9ff74e79492d629d0949dcdcdc41d73d33c89dd3703e05bc56e06613376c1ea5"
+        }
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/source_learned"
+    },
+    "target_base": {
+      "files": {
+        "config.json": {
+          "bytes": 726,
+          "git_blob_sha1": "e49eccdc32f36da9c09cfa0e737084f9e0105e5e"
+        },
+        "generation_config.json": {
+          "bytes": 239,
+          "git_blob_sha1": "20a8a9156fc8c3f25295ca067f61fdf120d517c5"
+        },
+        "merges.txt": {
+          "bytes": 1671853,
+          "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7"
+        },
+        "model-00001-of-00003.safetensors": {
+          "bytes": 3957900840,
+          "sha256": "328a91d3122359d5547f9d79521205bc0a46e1f79a792dfe650e99fc2d651223"
+        },
+        "model-00002-of-00003.safetensors": {
+          "bytes": 3987450520,
+          "sha256": "6cd087b316306a68c562436b5492edbcf6e16c6dba3a1308279caa5a58e21ca5"
+        },
+        "model-00003-of-00003.safetensors": {
+          "bytes": 99630640,
+          "sha256": "e4bf436957184f4eeb86a80e9db394503f1f56446b2e6b7edeac5b81470f4ca1"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 32819,
+          "git_blob_sha1": "95c0a0059df040d75dc6c396b174382cf61d2f91"
+        },
+        "tokenizer.json": {
+          "bytes": 11422654,
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        },
+        "tokenizer_config.json": {
+          "bytes": 9732,
+          "git_blob_sha1": "417d038a63fa3de29cfde265caedae14d1a58d92"
+        },
+        "vocab.json": {
+          "bytes": 2776833,
+          "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569"
+        }
+      },
+      "path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c"
+    },
+    "target_portal": {
+      "files": {
+        "config.json": {
+          "bytes": 15876,
+          "sha256": "3848aec36900aa1f890aaa629e3b67b2cdf2b2e48e81ea423971e32cf15420f5"
+        },
+        "model.safetensors": {
+          "bytes": 111898904,
+          "sha256": "bdbc778aef719df2397b2267967d1a64a7b2c0a84cb3fb5203c3d846740725fa"
+        }
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/resume-20260911-calibration-inputs/target_portal"
+    }
+  },
+  "kind": "portal_target_task_calibration",
+  "method_source": {
+    "algorithm": "Fresh target alignment including layer embeddings; frozen shared core and all task latents; five balanced epochs of gold-answer NLL.",
+    "section": "3",
+    "url": "https://labs.ramp.com/research/portal-portable-task-adaptation/",
+    "verified": "2026-09-11"
+  },
+  "protocol": {
+    "alignment_seed": 73303,
+    "architecture_choice": "published_target_config_no_search",
+    "data_seed": 83303,
+    "evaluation": {
+      "batch_size": 8,
+      "selection": "all_conditions_final_only"
+    },
+    "fresh_alignment": "sdk_zero_output_including_fresh_layer_embeddings",
+    "gates": {
+      "insufficient_headroom": "inconclusive_not_failure",
+      "maximum_accuracy": 1.0,
+      "minimum_learned_gain_over_initial_calibrated": 0.05,
+      "minimum_lora_gain_over_raw": 0.05,
+      "use_for_training_or_selection": false
+    },
+    "lora": "one_persistent_rank8_qv_alpha16_adapter_for_ABC",
+    "lora_seed": 93303,
+    "source_training_seed": 30301,
+    "tasks": [
+      "sequence_a",
+      "sequence_b",
+      "sequence_c"
+    ],
+    "training": {
+      "batch_size_per_task": 4,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "ema_decay": 0.9,
+      "ema_floor": 1e-06,
+      "epochs": 5,
+      "epsilon": 1e-08,
+      "examples_per_task": 16,
+      "gradient_clip": 1.0,
+      "learning_rate": 0.001,
+      "loss": "equal_task_mean_ema_normalized_gold_answer_token_nll",
+      "max_prompt": 768,
+      "optimizer": "AdamW",
+      "optimizer_updates": 20,
+      "selection": "fixed_final_epoch",
+      "task_microbatches": 60,
+      "weight_decay": 0.0
+    }
+  },
+  "protocol_sha256": "a8f56087545d2fff92370e353e5015c1cf126715a87df5765149cbcb1b0005ec",
+  "role": "mechanistic_exploratory",
+  "runtime": {
+    "autocast": false,
+    "cpu_threads": 4,
+    "device": "cuda:0",
+    "dtype": "float32"
+  },
+  "source_provenance": {
+    "boundary": "after_c",
+    "initial_tensor_sha256": "8cd350e9e7b2953db4ddb53fb7942ab7c78598bad0326909f8b1d57fc1b2d96f",
+    "learned_tensor_sha256": "5277006543b64b3d2103dccd40051c3646760cbdb654f51183359ed3e220c493",
+    "original_source_paths": {
+      "initial": "/mnt/shared/cl-portfolio/runs/portability-sequence-native-replay-s30301-fp32/initial/native/checkpoint",
+      "learned": "/mnt/shared/cl-portfolio/runs/portability-sequence-native-replay-s30301-fp32/stages/after_c/checkpoint"
+    },
+    "run": "portability-sequence-native-replay-s30301-fp32"
+  },
+  "target_hooks": [
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 0,
+      "module": "q",
+      "path": "model.layers.0.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 0,
+      "module": "v",
+      "path": "model.layers.0.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 1,
+      "module": "q",
+      "path": "model.layers.1.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 1,
+      "module": "v",
+      "path": "model.layers.1.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 2,
+      "module": "q",
+      "path": "model.layers.2.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 2,
+      "module": "v",
+      "path": "model.layers.2.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 3,
+      "module": "q",
+      "path": "model.layers.3.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 3,
+      "module": "v",
+      "path": "model.layers.3.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 4,
+      "module": "q",
+      "path": "model.layers.4.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 4,
+      "module": "v",
+      "path": "model.layers.4.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 5,
+      "module": "q",
+      "path": "model.layers.5.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 5,
+      "module": "v",
+      "path": "model.layers.5.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 6,
+      "module": "q",
+      "path": "model.layers.6.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 6,
+      "module": "v",
+      "path": "model.layers.6.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 7,
+      "module": "q",
+      "path": "model.layers.7.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 7,
+      "module": "v",
+      "path": "model.layers.7.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 8,
+      "module": "q",
+      "path": "model.layers.8.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 8,
+      "module": "v",
+      "path": "model.layers.8.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 9,
+      "module": "q",
+      "path": "model.layers.9.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 9,
+      "module": "v",
+      "path": "model.layers.9.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 10,
+      "module": "q",
+      "path": "model.layers.10.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 10,
+      "module": "v",
+      "path": "model.layers.10.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 11,
+      "module": "q",
+      "path": "model.layers.11.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 11,
+      "module": "v",
+      "path": "model.layers.11.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 12,
+      "module": "q",
+      "path": "model.layers.12.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 12,
+      "module": "v",
+      "path": "model.layers.12.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 13,
+      "module": "q",
+      "path": "model.layers.13.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 13,
+      "module": "v",
+      "path": "model.layers.13.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 14,
+      "module": "q",
+      "path": "model.layers.14.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 14,
+      "module": "v",
+      "path": "model.layers.14.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 15,
+      "module": "q",
+      "path": "model.layers.15.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 15,
+      "module": "v",
+      "path": "model.layers.15.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 16,
+      "module": "q",
+      "path": "model.layers.16.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 16,
+      "module": "v",
+      "path": "model.layers.16.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 17,
+      "module": "q",
+      "path": "model.layers.17.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 17,
+      "module": "v",
+      "path": "model.layers.17.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 18,
+      "module": "q",
+      "path": "model.layers.18.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 18,
+      "module": "v",
+      "path": "model.layers.18.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 19,
+      "module": "q",
+      "path": "model.layers.19.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 19,
+      "module": "v",
+      "path": "model.layers.19.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 20,
+      "module": "q",
+      "path": "model.layers.20.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 20,
+      "module": "v",
+      "path": "model.layers.20.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 21,
+      "module": "q",
+      "path": "model.layers.21.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 21,
+      "module": "v",
+      "path": "model.layers.21.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 22,
+      "module": "q",
+      "path": "model.layers.22.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 22,
+      "module": "v",
+      "path": "model.layers.22.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 23,
+      "module": "q",
+      "path": "model.layers.23.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 23,
+      "module": "v",
+      "path": "model.layers.23.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 24,
+      "module": "q",
+      "path": "model.layers.24.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 24,
+      "module": "v",
+      "path": "model.layers.24.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 25,
+      "module": "q",
+      "path": "model.layers.25.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 25,
+      "module": "v",
+      "path": "model.layers.25.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 26,
+      "module": "q",
+      "path": "model.layers.26.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 26,
+      "module": "v",
+      "path": "model.layers.26.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 27,
+      "module": "q",
+      "path": "model.layers.27.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 27,
+      "module": "v",
+      "path": "model.layers.27.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 28,
+      "module": "q",
+      "path": "model.layers.28.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 28,
+      "module": "v",
+      "path": "model.layers.28.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 29,
+      "module": "q",
+      "path": "model.layers.29.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 29,
+      "module": "v",
+      "path": "model.layers.29.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 30,
+      "module": "q",
+      "path": "model.layers.30.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 30,
+      "module": "v",
+      "path": "model.layers.30.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 31,
+      "module": "q",
+      "path": "model.layers.31.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 31,
+      "module": "v",
+      "path": "model.layers.31.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 32,
+      "module": "q",
+      "path": "model.layers.32.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 32,
+      "module": "v",
+      "path": "model.layers.32.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 33,
+      "module": "q",
+      "path": "model.layers.33.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 33,
+      "module": "v",
+      "path": "model.layers.33.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 34,
+      "module": "q",
+      "path": "model.layers.34.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 34,
+      "module": "v",
+      "path": "model.layers.34.self_attn.v_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        4096,
+        8
+      ],
+      "layer": 35,
+      "module": "q",
+      "path": "model.layers.35.self_attn.q_proj"
+    },
+    {
+      "A": [
+        8,
+        2560
+      ],
+      "B": [
+        1024,
+        8
+      ],
+      "layer": 35,
+      "module": "v",
+      "path": "model.layers.35.self_attn.v_proj"
+    }
+  ]
+}
