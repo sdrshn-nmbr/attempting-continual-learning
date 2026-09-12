@@ -1,10 +1,15 @@
 import argparse
+import fcntl
 import hashlib
 import json
+import os
 import shutil
+import stat
 import subprocess
 import tarfile
 import tempfile
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from contextlib import contextmanager
 from pathlib import Path
 
 KUBE = ["kubectl", "--context", "us-mi355x-nambiar-k8s"]
@@ -62,13 +67,114 @@ def stream(code, handle, control):
             raise RuntimeError(f"COLLECTION_STREAM_FAILED: {result.stderr.decode()}")
 
 
+def file_info(path):
+    with path.open("rb") as handle:
+        return {
+            "bytes": os.fstat(handle.fileno()).st_size,
+            "sha256": hashlib.file_digest(handle, "sha256").hexdigest(),
+        }
+
+
+def directory(path):
+    if path.is_symlink():
+        raise ValueError(f"COLLECTION_DIRECTORY_SYMLINK: {path}")
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+@contextmanager
+def exclusive_lock(path, blocking=False):
+    directory(path.parent)
+    descriptor = os.open(path, os.O_CREAT | os.O_RDWR | os.O_NOFOLLOW, 0o600)
+    with os.fdopen(descriptor, "r+b") as handle:
+        try:
+            fcntl.flock(
+                handle, fcntl.LOCK_EX | (0 if blocking else fcntl.LOCK_NB)
+            )
+        except BlockingIOError as error:
+            raise RuntimeError(f"COLLECTION_ALREADY_CLAIMED: {path.name}") from error
+        try:
+            yield
+        finally:
+            fcntl.flock(handle, fcntl.LOCK_UN)
+
+
+def validate_manifest(files):
+    for name, info in files.items():
+        path = Path(name)
+        if (
+            not name
+            or path.is_absolute()
+            or str(path) != name
+            or ".." in path.parts
+            or name in {".", "collection.json"}
+            or not isinstance(info["bytes"], int)
+            or info["bytes"] < 0
+            or len(info["sha256"]) != 64
+            or any(c not in "0123456789abcdef" for c in info["sha256"])
+        ):
+            raise ValueError(f"COLLECTION_MANIFEST_INVALID: {name}")
+
+
+def reusable(path, expected):
+    if not path.exists() or path.is_symlink():
+        return False
+    metadata = path.stat()
+    return (
+        stat.S_ISREG(metadata.st_mode)
+        and metadata.st_nlink == 1
+        and metadata.st_size == expected["bytes"]
+        and file_info(path) == expected
+    )
+
+
+def prepare_file(temporary, name):
+    parent = temporary
+    for part in Path(name).parts[:-1]:
+        parent = directory(parent / part)
+    destination = temporary / name
+    destination.unlink(missing_ok=True)
+    return destination
+
+
+def verify_file(path, expected):
+    if not reusable(path, expected):
+        raise ValueError(f"COLLECTION_FILE_HASH_MISMATCH: {path}")
+
+
 def copy_files(identity, temporary, files, control):
-    temporary.mkdir()
+    directory(temporary)
+    validate_manifest(files)
+    verified, payloads = set(), {}
+    for name, info in files.items():
+        parent = temporary
+        for part in Path(name).parts[:-1]:
+            parent = directory(parent / part)
+        path = temporary / name
+        if reusable(path, info):
+            verified.add(name)
+            if info["bytes"] >= CHUNK:
+                payloads[(info["sha256"], info["bytes"])] = path
+    counts = {
+        "resumed_files": len(verified),
+        "downloaded_files": 0,
+        "downloaded_payload_bytes": 0,
+        "local_duplicate_copies": 0,
+        "local_duplicate_bytes": 0,
+    }
     groups, group, total = [], [], 0
     for name, info in files.items():
+        if name in verified:
+            continue
         if info["bytes"] >= CHUNK:
-            destination = temporary / name
-            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination = prepare_file(temporary, name)
+            key = (info["sha256"], info["bytes"])
+            if key in payloads:
+                shutil.copyfile(payloads[key], destination)
+                verify_file(destination, info)
+                counts["local_duplicate_copies"] += 1
+                counts["local_duplicate_bytes"] += info["bytes"]
+                continue
             with destination.open("wb") as handle:
                 for offset in range(0, info["bytes"], CHUNK):
                     size = min(CHUNK, info["bytes"] - offset)
@@ -80,6 +186,10 @@ def copy_files(identity, temporary, files, control):
                     stream(code, handle, control)
                     if handle.tell() != offset + size:
                         raise ValueError(f"COLLECTION_SHORT_SEGMENT: {identity}/{name}")
+            verify_file(destination, info)
+            payloads[key] = destination
+            counts["downloaded_files"] += 1
+            counts["downloaded_payload_bytes"] += info["bytes"]
             continue
         if group and total + info["bytes"] > CHUNK:
             groups.append(group)
@@ -89,18 +199,91 @@ def copy_files(identity, temporary, files, control):
     if group:
         groups.append(group)
     for group in groups:
-        archive = temporary.parent / "transfer.tar"
         code = (
             "import sys,tarfile; from pathlib import Path; "
             f"p=Path({REMOTE!r})/{identity!r}; "
-            "t=tarfile.open(fileobj=sys.stdout.buffer,mode='w|'); "
+            "t=tarfile.open(fileobj=sys.stdout.buffer,mode='w|',dereference=True); "
             f"[t.add(p/name,arcname=name,recursive=False) for name in {group!r}]; t.close()"
         )
-        with archive.open("wb") as handle:
+        with tempfile.TemporaryFile() as handle:
             stream(code, handle, control)
-        with tarfile.open(archive) as tar:
-            tar.extractall(temporary, filter="data")
-        archive.unlink()
+            handle.seek(0)
+            with tarfile.open(fileobj=handle) as tar:
+                members = tar.getmembers()
+                if (
+                    len(members) != len(group)
+                    or {member.name for member in members} != set(group)
+                    or any(
+                        not member.isfile()
+                        or member.size != files[member.name]["bytes"]
+                        for member in members
+                    )
+                ):
+                    raise ValueError(f"COLLECTION_TAR_MEMBERS_INVALID: {identity}")
+                for name in group:
+                    prepare_file(temporary, name)
+                tar.extractall(temporary, filter="data")
+        for name in group:
+            verify_file(temporary / name, files[name])
+            counts["downloaded_files"] += 1
+            counts["downloaded_payload_bytes"] += files[name]["bytes"]
+    return counts
+
+
+def local_manifest(temporary):
+    files = {}
+    for path in sorted(temporary.rglob("*")):
+        metadata = path.lstat()
+        if stat.S_ISDIR(metadata.st_mode):
+            continue
+        if not stat.S_ISREG(metadata.st_mode) or metadata.st_nlink != 1:
+            raise ValueError(f"COLLECTION_LOCAL_FILE_INVALID: {path}")
+        files[str(path.relative_to(temporary))] = file_info(path)
+    return files
+
+
+def collect_run(identity, state, destination, control):
+    if (
+        not identity
+        or not identity[0].isalnum()
+        or any(not (c.isalnum() or c in "_.-") for c in identity)
+    ):
+        raise ValueError(f"COLLECTION_ID_INVALID: {identity}")
+    staging = directory(destination / ".collecting")
+    locks = directory(staging / ".locks")
+    with exclusive_lock(locks / "runs" / identity):
+        target = directory(destination / "runs") / identity
+        if target.exists():
+            return
+        before = manifest(identity, control)
+        validate_manifest(before)
+        temporary = directory(staging / identity)
+        (temporary / "collection.json").unlink(missing_ok=True)
+        counts = copy_files(identity, temporary, before, control)
+        local = local_manifest(temporary)
+        after = manifest(identity, control)
+        if local != before or before != after:
+            raise ValueError(f"COLLECTION_HASH_MISMATCH: {identity}")
+        receipt = {
+            "remote": f"{REMOTE}/{identity}",
+            "execution_status": state,
+            "files": local,
+        }
+        (temporary / "collection.json").write_text(
+            json.dumps(receipt, indent=2) + "\n"
+        )
+        if target.exists():
+            raise FileExistsError(f"COLLECTION_TARGET_APPEARED: {identity}")
+        temporary.rename(target)
+        result = {
+            "collected": identity,
+            "status": state,
+            "files": len(before),
+            "bytes": sum(x["bytes"] for x in before.values()),
+            **counts,
+        }
+        print(json.dumps(result), flush=True)
+        return result
 
 
 def collect_sources(states, destination, control):
@@ -180,6 +363,7 @@ def main():
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--control-pod", required=True)
     parser.add_argument("--prefix", action="append", required=True)
+    parser.add_argument("--workers", type=int, choices=range(1, 5), default=1)
     args = parser.parse_args()
     destination = args.output_dir.resolve()
     destination.mkdir(parents=True, exist_ok=True)
@@ -191,56 +375,37 @@ def main():
         "and (p/'execution.json').is_file()}))",
         args.control_pod,
     )
-    (destination / "runs").mkdir(exist_ok=True)
-    for identity, state in states.items():
-        target = destination / "runs" / identity
-        if state not in {"failed", "completed", "blocked", "interrupted"} or target.exists():
-            continue
-        before = manifest(identity, args.control_pod)
-        with tempfile.TemporaryDirectory(
-            prefix="cl-collect-", dir=destination
-        ) as directory:
-            temporary = Path(directory) / identity
-            copy_files(identity, temporary, before, args.control_pod)
-            local = {
-                str(path.relative_to(temporary)): {
-                    "bytes": path.stat().st_size,
-                    "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
-                }
-                for path in sorted(temporary.rglob("*"))
-                if path.is_file()
-            }
-            if local != before or before != manifest(identity, args.control_pod):
-                raise ValueError(f"COLLECTION_HASH_MISMATCH: {identity}")
-            receipt = {
-                "remote": f"{REMOTE}/{identity}",
-                "execution_status": state,
-                "files": local,
-            }
-            (temporary / "collection.json").write_text(
-                json.dumps(receipt, indent=2) + "\n"
-            )
-            shutil.move(temporary, target)
-        print(
-            json.dumps(
-                {
-                    "collected": identity,
-                    "status": state,
-                    "files": len(before),
-                    "bytes": sum(x["bytes"] for x in before.values()),
-                }
-            ),
-            flush=True,
+    failures = {}
+    with ThreadPoolExecutor(max_workers=args.workers) as pool:
+        futures = {
+            pool.submit(
+                collect_run, identity, state, destination, args.control_pod
+            ): identity
+            for identity, state in states.items()
+            if state in {"failed", "completed", "blocked", "interrupted"}
+        }
+        for future in as_completed(futures):
+            error = future.exception()
+            if error is not None:
+                identity = futures[future]
+                failures[identity] = f"{type(error).__name__}: {error}"
+                print(
+                    json.dumps({"collection_failed": identity, "error": str(error)}),
+                    flush=True,
+                )
+    staging = directory(destination / ".collecting")
+    with exclusive_lock(directory(staging / ".locks") / "sources", blocking=True):
+        collect_sources(
+            {
+                name: state
+                for name, state in states.items()
+                if state in {"completed", "failed", "interrupted"}
+            },
+            destination,
+            args.control_pod,
         )
-    collect_sources(
-        {
-            name: state
-            for name, state in states.items()
-            if state in {"completed", "failed", "interrupted"}
-        },
-        destination,
-        args.control_pod,
-    )
+    if failures:
+        raise RuntimeError(f"COLLECTION_RUNS_FAILED: {json.dumps(failures, sort_keys=True)}")
 
 
 if __name__ == "__main__":
