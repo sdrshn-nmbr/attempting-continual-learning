@@ -7,6 +7,9 @@ import subprocess
 import tarfile
 import tempfile
 from pathlib import Path
+from uuid import uuid4
+
+from stage_sources import deployable_paths
 
 CONTEXT = "us-mi355x-nambiar-k8s"
 REMOTE = "/mnt/shared/cl-portfolio"
@@ -16,23 +19,6 @@ def kubectl(*args):
     subprocess.run(
         ["kubectl", "--context", CONTEXT, "-n", "default", *map(str, args)],
         check=True,
-    )
-
-
-def sources(directory):
-    excluded = {"__pycache__", "tests", "outputs", "runs"}
-    return sorted(
-        path
-        for path in directory.rglob("*")
-        if path.is_file()
-        and not any(
-            part.startswith(".") or part in excluded
-            for part in path.relative_to(directory).parts
-        )
-        and (
-            path.suffix in {".py", ".json", ".txt", ".yaml", ".yml", ".sha256"}
-            or path.name.startswith(("LICENSE", "NOTICE"))
-        )
     )
 
 
@@ -47,13 +33,17 @@ def main():
     parser.add_argument("--priority", type=int, default=100)
     parser.add_argument("--max-seconds", type=int, default=7200)
     parser.add_argument("--control-pod", required=True)
-    parser.add_argument("--submit", action="store_true")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--submit", action="store_true")
+    mode.add_argument("--stage-only", action="store_true")
     args = parser.parse_args()
+    if not 1 <= args.gpus <= 8:
+        parser.error("INVALID_GPU_COUNT: --gpus must be between 1 and 8")
     if not re.fullmatch(r"[a-z0-9][a-z0-9_.-]*", args.id):
         raise ValueError("Task ID must be one path component")
     config = json.loads(args.config.read_text())
     digest = hashlib.sha256()
-    files = sources(args.lane_dir)
+    files = deployable_paths(args.lane_dir)
     captured = [(path.relative_to(args.lane_dir), path.read_bytes()) for path in files]
     for name, content in captured:
         digest.update(str(name).encode() + b"\0" + content)
@@ -77,7 +67,7 @@ def main():
     if manifest.exists() and json.loads(manifest.read_text()) != task:
         raise ValueError(f"Task ID already records a different experiment: {args.id}")
     manifest.write_text(json.dumps(task, indent=2) + "\n")
-    if not args.submit:
+    if not args.submit and not args.stage_only:
         print(
             json.dumps(
                 {"manifest": str(manifest.resolve()), "source_files": len(files)}
@@ -92,19 +82,41 @@ def main():
                 entry.size = len(content)
                 entry.mode = 0o644
                 tar.addfile(entry, io.BytesIO(content))
-        kubectl("exec", args.control_pod, "--", "mkdir", "-p", remote_code)
-        remote_archive = f"{REMOTE}/code/{code_hash}.tar"
+        kubectl("exec", args.control_pod, "--", "mkdir", "-p", f"{REMOTE}/code")
+        remote_archive = f"{REMOTE}/code/.incoming-{uuid4().hex}.tar"
         kubectl("cp", archive, f"{args.control_pod}:{remote_archive}")
         kubectl(
             "exec",
             args.control_pod,
             "--",
-            "tar",
-            "-xf",
+            "uv",
+            "run",
+            "--no-project",
+            "python",
+            "-c",
+            Path(__file__).with_name("stage_sources.py").read_text(),
+            "--incoming",
             remote_archive,
-            "-C",
-            remote_code,
+            "--root",
+            f"{REMOTE}/code",
+            "--source-sha256",
+            code_hash,
+            "--archive-sha256",
+            hashlib.sha256(archive.read_bytes()).hexdigest(),
         )
+    if args.stage_only:
+        print(
+            json.dumps(
+                {
+                    "staged": args.id,
+                    "source_sha256": code_hash,
+                    "source_files": len(files),
+                    "remote_code": remote_code,
+                    "queued": False,
+                }
+            )
+        )
+        return
     staged = f"{REMOTE}/queue/{args.id}.staged"
     kubectl("cp", manifest, f"{args.control_pod}:{staged}")
     kubectl(

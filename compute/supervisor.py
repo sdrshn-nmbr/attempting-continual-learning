@@ -211,6 +211,8 @@ def main():
     parser.add_argument("--gpus", type=int, default=8)
     parser.add_argument("--idle-timeout", type=int, default=900)
     args = parser.parse_args()
+    if not 1 <= args.gpus <= 8:
+        parser.error("INVALID_GPU_COUNT: --gpus must be between 1 and 8")
     logging.basicConfig(
         level=logging.INFO, format="%(asctime)s [portfolio] %(message)s"
     )
@@ -320,6 +322,39 @@ def main():
                     }:
                         seen.add(task_id)
                         continue
+                    needed = task.get("gpus", 1)
+                    if type(needed) is not int or not 1 <= needed <= args.gpus:
+                        output.mkdir(parents=True, exist_ok=True)
+                        publish_receipt(
+                            existing,
+                            {
+                                "task_id": task_id,
+                                "attempt_id": uuid4().hex,
+                                "task": task,
+                                "task_sha256": hashlib.sha256(
+                                    json_bytes(task)
+                                ).hexdigest(),
+                                "config_sha256": hashlib.sha256(
+                                    json_bytes(task.get("config"))
+                                ).hexdigest(),
+                                "source_sha256": task.get("source_sha256"),
+                                "status": "blocked",
+                                "blocked_reason": "INVALID_GPU_COUNT",
+                                "requested_gpus": needed,
+                                "available_gpus": args.gpus,
+                                "observed_at": now(),
+                                "supervisor": supervisor,
+                                "runtime_sha256": runtime_hash,
+                            },
+                        )
+                        logger.error(
+                            "INVALID_GPU_COUNT: %s requested=%r allowed=1..%s; task blocked",
+                            task_id,
+                            needed,
+                            args.gpus,
+                        )
+                        seen.add(task_id)
+                        continue
                     dependency_states = {}
                     prerequisites = (
                         []
@@ -357,9 +392,6 @@ def main():
                         state != "completed" for state in dependency_states.values()
                     ):
                         continue
-                    needed = task.get("gpus", 1)
-                    if needed < 1 or needed > args.gpus:
-                        raise ValueError(f"Invalid GPU count for {task_id}: {needed}")
                     if needed > len(free):
                         break
                     gpus, free = free[:needed], free[needed:]

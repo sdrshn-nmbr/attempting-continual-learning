@@ -44,9 +44,14 @@ class SupervisorIntegrationTests(unittest.TestCase):
             with (args.output_dir.parent.parent / "worker-launches").open("a") as launches:
                 launches.write(task["id"] + "\\n")
             (args.output_dir / "ready").write_text(str(os.getpid()))
-            while task.get("hold"):
+            while task.get("hold") and not (args.output_dir / "release").exists():
                 (args.output_dir / "heartbeat").write_text(str(time.monotonic()))
                 time.sleep(0.05)
+            (args.output_dir / "work.json").write_text(json.dumps({
+                "sum_squares": sum(value * value for value in range(10000)),
+                "gpus": os.environ["ROCR_VISIBLE_DEVICES"],
+                "pid": os.getpid(),
+            }))
         """)
         )
         return [
@@ -65,6 +70,172 @@ class SupervisorIntegrationTests(unittest.TestCase):
             path.relative_to(output): path.read_bytes()
             for path in (output / "attempts").glob("*/*.json")
         }
+
+    def test_invalid_supervisor_capacity_creates_no_queue_state(self):
+        for count in (0, 9):
+            with self.subTest(count=count), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary) / "unused-root"
+                result = subprocess.run(
+                    [
+                        sys.executable,
+                        str(Path(__file__).with_name("supervisor.py")),
+                        "--root",
+                        str(root),
+                        "--gpus",
+                        str(count),
+                    ],
+                    capture_output=True,
+                    check=False,
+                    timeout=10,
+                )
+                self.assertEqual(result.returncode, 2, result.stderr.decode())
+                self.assertIn(b"INVALID_GPU_COUNT", result.stderr)
+                self.assertFalse(root.exists())
+
+    def test_invalid_gpu_count_does_not_bypass_receipt_integrity(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            command = self.prepare_probe(root)
+            for task in ({"id": "healthy"}, {"id": "invalid", "gpus": 0}):
+                (root / "queue" / f"{task['id']}.json").write_text(json.dumps(task))
+            output = root / "runs/invalid"
+            output.mkdir(parents=True)
+            receipt = output / "execution.json"
+            receipt.write_bytes(b"{")
+            result = subprocess.run(
+                command, capture_output=True, check=False, timeout=10
+            )
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn(b"RECEIPT_INTEGRITY", result.stderr)
+            self.assertEqual(receipt.read_bytes(), b"{")
+            self.assertFalse((root / "worker-launches").exists())
+            self.assertFalse((root / "runs/healthy").exists())
+            self.assertEqual(self.history(output), {})
+
+    def test_invalid_gpu_tasks_leave_active_worker_and_healthy_queue_running(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            command = self.prepare_probe(root)
+            (root / "queue/active.json").write_text(
+                json.dumps({"id": "active", "gpus": 1, "hold": True})
+            )
+            owner = subprocess.Popen(
+                command, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE
+            )
+            active = root / "runs/active"
+            invalid = {}
+            try:
+                deadline = time.monotonic() + 20
+                while not (active / "ready").exists():
+                    if owner.poll() is not None or time.monotonic() > deadline:
+                        self.fail("Resource isolation probe did not start its worker")
+                    time.sleep(0.05)
+                running = (active / "execution.json").read_bytes()
+                for index, count in enumerate((0, -1, 9, 2, True, 1.0, "1", None)):
+                    task_id = f"invalid-{index}"
+                    task = {
+                        "id": task_id,
+                        "gpus": count,
+                        "priority": 0,
+                        "depends_on": [] if index == 0 else ["missing-prerequisite"],
+                        "config": {"probe": index},
+                    }
+                    invalid[task_id] = task
+                    staged = root / "queue" / f"{task_id}.staged"
+                    staged.write_text(json.dumps(task))
+                    staged.rename(staged.with_suffix(".json"))
+                for task in (
+                    {"id": "dependent", "depends_on": ["invalid-0"]},
+                    {"id": "healthy", "gpus": 1},
+                ):
+                    staged = root / "queue" / f"{task['id']}.staged"
+                    staged.write_text(json.dumps(task))
+                    staged.rename(staged.with_suffix(".json"))
+                deadline = time.monotonic() + 10
+                while not all(
+                    (root / "runs" / name / "execution.json").exists()
+                    for name in invalid
+                ):
+                    if owner.poll() is not None or time.monotonic() > deadline:
+                        self.fail("Invalid resources aborted or stalled the supervisor")
+                    time.sleep(0.05)
+                self.assertIsNone(owner.poll())
+                self.assertEqual((active / "execution.json").read_bytes(), running)
+                for task_id, task in invalid.items():
+                    output = root / "runs" / task_id
+                    receipt = (output / "execution.json").read_bytes()
+                    record = json.loads(receipt)
+                    self.assertEqual(record["status"], "blocked")
+                    self.assertEqual(record["blocked_reason"], "INVALID_GPU_COUNT")
+                    self.assertEqual(record["task"], task)
+                    self.assertEqual(record["requested_gpus"], task["gpus"])
+                    self.assertEqual(record["available_gpus"], 1)
+                    self.assertEqual(record["supervisor"]["pid"], owner.pid)
+                    self.assertEqual(
+                        record["task_sha256"],
+                        hashlib.sha256(
+                            (json.dumps(task, indent=2) + "\n").encode()
+                        ).hexdigest(),
+                    )
+                    self.assertNotIn("started_at", record)
+                    self.assertNotIn("exit_code", record)
+                    self.assertNotIn("pid", record)
+                    self.assertFalse((output / "ready").exists())
+                    self.assertIn(receipt, self.history(output).values())
+                    for path, content in self.history(output).items():
+                        self.assertEqual(path.stem, hashlib.sha256(content).hexdigest())
+                        self.assertEqual((output / path).stat().st_mode & 0o222, 0)
+                (active / "release").write_text("finish the computation")
+                _, stderr = owner.communicate(timeout=15)
+                self.assertEqual(owner.returncode, 0, stderr.decode())
+                self.assertIn(b"INVALID_GPU_COUNT", stderr)
+                self.assertNotIn(b"SUPERVISOR_ABORT", stderr)
+                for task_id in ("active", "healthy"):
+                    output = root / "runs" / task_id
+                    record = json.loads((output / "execution.json").read_bytes())
+                    observed = json.loads((output / "work.json").read_bytes())
+                    self.assertEqual(record["status"], "completed")
+                    self.assertEqual(record["exit_code"], 0)
+                    self.assertEqual(observed["sum_squares"], 333283335000)
+                    self.assertEqual(observed["gpus"], "0")
+                    self.assertEqual(
+                        observed["pid"], int((output / "ready").read_text())
+                    )
+                    if task_id == "active":
+                        self.assertEqual(
+                            record["attempt_id"], json.loads(running)["attempt_id"]
+                        )
+                self.assertIn(running, self.history(active).values())
+                dependent = json.loads(
+                    (root / "runs/dependent/execution.json").read_bytes()
+                )
+                self.assertEqual(dependent["status"], "blocked")
+                self.assertEqual(dependent["dependencies"], {"invalid-0": "blocked"})
+                self.assertEqual(
+                    (root / "worker-launches").read_text(), "active\nhealthy\n"
+                )
+                before = {
+                    path.relative_to(root): path.read_bytes()
+                    for path in (root / "runs").rglob("*.json")
+                }
+                (root / "queue/invalid-0.json").write_text(
+                    json.dumps({**invalid["invalid-0"], "gpus": 1, "depends_on": []})
+                )
+                subprocess.run(command, capture_output=True, check=True, timeout=10)
+                self.assertEqual(
+                    before,
+                    {
+                        path.relative_to(root): path.read_bytes()
+                        for path in (root / "runs").rglob("*.json")
+                    },
+                )
+                self.assertEqual(
+                    (root / "worker-launches").read_text(), "active\nhealthy\n"
+                )
+            finally:
+                if owner.poll() is None:
+                    owner.send_signal(signal.SIGTERM)
+                owner.communicate(timeout=10)
 
     def test_sigterm_during_process_launch_stops_new_child_and_dispatch(self):
         with tempfile.TemporaryDirectory() as temporary:
