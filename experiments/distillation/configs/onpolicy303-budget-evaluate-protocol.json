@@ -1,0 +1,128 @@
+{
+  "budget_protocol": {
+    "file_sha256": "8b9118e0d6ec4b73d6c54b3bca90e12aca3d422711bea72faa74da3031fb474d",
+    "path": "configs/onpolicy303-budget-protocol.json",
+    "payload_sha256": "97300f7fd7fda6f209f829708995accaea34381faef29f603ac25e028416dc92"
+  },
+  "contract": "onpolicy303_budget405_zero_update_evaluation_recovery",
+  "copy_rule": "Copy byte-identical original receipt as original_training.json and the five necessary mapping/probe/retention/adapter files to new study. Derived training.json changes only checkpoint405.path and adds evaluation_only_origin_sha256; exact dictionary diff is asserted. Original optimizer remains unmodified at source and is CPU-verified before loading any model, then banned from evaluator reads.",
+  "data_gate": "Require exact terminal cleanup-failure execution/task/config and archived d11 source;21actual updates/84TRAIN rows/588masked loss tokens; original384 parameter order/moments/clock receipt; actual saved405adapter and AdamW tensors/files; all parity and KLteacher gates. Original process ended before new supervisor task began. Reject any original final evaluation already present.",
+  "dependencies": "Queue only behind completed runtime and original384train. Failed405 continuation is a strict terminal-data prerequisite inside the entrypoint, never a success-only queue dependency.",
+  "evaluation_rule": "CPU-only wrapper launches a fresh uv child interpreter, invoking frozen onpolicy303_budget.evaluate_child directly. Same FP32 base/405adapter/native24TRAIN+128generic reload parity/192TEST+864unused scoring. The original failed source roots are additionally banned, alongside the frozen teacher/cache/optimizer bans. No tolerance changes, teacher loads or optimizer construction.",
+  "files_sha256": {
+    "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+    "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+    "configs/choice_consolidation_protocol.json": "eadd92577ebf0945039ccde7a84f22d1150fd40df31c9c9ee7d14a1bd6f3706e",
+    "configs/coverage_learner_protocol.json": "7f8eb9e06f2472fcdd5e62e5d9017ee4cdf4a63a78daadcd32f46968a8a7ecad",
+    "configs/coverage_teacher_protocol.json": "1724268c16e6b4586f17e1d547076ab52ac9ba4ff613475963a99c4eb3d72340",
+    "configs/generation_consolidation_protocol.json": "5c933efc2fc32d2ae94784056a901d587cd6f5abafe07f87a03f0c78a6d7203e",
+    "configs/generation_teacher_protocol.json": "f618e00551fe75ed9117318869426ee81a6d006bfd8bf0d9046401f99a5f0ab0",
+    "configs/onpolicy303-budget-protocol.json": "8b9118e0d6ec4b73d6c54b3bca90e12aca3d422711bea72faa74da3031fb474d",
+    "configs/onpolicy303_protocol.json": "3590d104cb057852a2dda2d71faade59f055ad9e5e3f628abe6efd5751921aed",
+    "configs/onpolicy303_retention.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+    "coverage_learner.py": "1493db6ff826f604275fa3a0bce7e31fad3db3f36b22eb891a083468414e7aac",
+    "coverage_teacher.py": "0fdfc95ae89dd8063fbb007633b6c4b0579f747f1c1e77b603e03a6b0aad339a",
+    "data/sequence303.json": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2",
+    "data/sequence303_unused_inputs.json": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e",
+    "generation_consolidation.py": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac",
+    "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+    "onpolicy303.py": "21af665aa3f13f13b5423d9939fda839ff1ab1a85179b299f39da38cb2ed23b4",
+    "onpolicy303_budget.py": "e6805cae932a936ce2ab4a7b698409614e2f7f174d99bbf5fff02615391dae0e",
+    "onpolicy303_budget_contract.py": "69297aeec5a3a26f1caa519fcfcc5058af9b7a34a26c38c87eaa5a13d83dbc1b",
+    "onpolicy303_budget_evaluate.py": "eefe117d706f79d2b4f3465cb48013280d3d9e22500780ba465c72d91283ef68",
+    "onpolicy303_contract.py": "ae7442e01c90062f1988c353d9cd3f310a3d0af32021ffcbdabcd4ab4c2e97b1",
+    "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770"
+  },
+  "native_export": {
+    "checkpoint": 384,
+    "method": "onpolicy_kl",
+    "selection_changed_by_control": false
+  },
+  "new_updates": 0,
+  "recovery_reason": "Both complete405 continuation runs ended at the zero allocated CUDA-memory assertion before evaluator launch. Cause is unknown residual GPU allocations; teacher residency is not established. No optimization is rerun.",
+  "scientific_boundary": "Post-observation conservative extra-training control for total loss-token exposure. Cached controls get11340 tokens and405 updates versus fixed ownprefix384 at11314 tokens and384 updates. This is not an exact token, update, or FLOP match and cannot isolate all objective or trajectory differences. One seed, same384TRAIN rows, previously observed192TEST/864unused and128generic. Native export remains ownprefix384 regardless of these outcomes.",
+  "sealed_before_evaluation_utc": "2026-09-12T08:56:51.333820+00:00",
+  "sources": {
+    "cached_teacher_kl": {
+      "checkpoint405": {
+        "files": {
+          "adapter_config.json": "45581ddb9ac51de6c50c876e1febb804dc84c2c4e367df123234c6dfe40723c6",
+          "adapter_model.safetensors": "d00c422a9edb510af122c3bfb9889246fa2cf3c47857379574843763dcfe6621"
+        },
+        "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-budget-cached-teacher-kl/study/checkpoint405/learner",
+        "tensor_sha256": "95bf025713fee48056f112bf1c8338ab40345702db01055f4c8709a625fbcf87"
+      },
+      "failed_source_sha256": "d11de8b7ba587cb7c99315232785ac2a20f8353130ab2db15bba3fa0e1e1d9f4",
+      "files_sha256": {
+        "config.json": "eec30ea9dfb84e07700bab6eac0767cf6e5d9b08714a5b23b7f0104c4b9c7095",
+        "execution.json": "810516d2059b3fd0d07676d320501b7b056d0913475668b59f8ffee8da6868a1",
+        "study/checkpoint405/learner/adapter_config.json": "45581ddb9ac51de6c50c876e1febb804dc84c2c4e367df123234c6dfe40723c6",
+        "study/checkpoint405/learner/adapter_model.safetensors": "d00c422a9edb510af122c3bfb9889246fa2cf3c47857379574843763dcfe6621",
+        "study/checkpoint405/optimizer.pt": "2574218de7d204adaf170896d811e4e3112be1cf008012c3d00d6316817112fd",
+        "study/checkpoint405/retention.json": "a86e75a122285322c3bff1f8cc0df538ec0d90498664358ed4f5aa0ef744d79a",
+        "study/checkpoint405/train_probes.json": "89220f2b1c97a04e1a2b5165b1aadd2f71b621d47a58497678be1d59ed08685c",
+        "study/failure.json": "2344a1a11bec9d23c20be55cce9a79a4ae2486034f9d1ff21c19908dcac3c12e",
+        "study/ledger.json": "a0af5ca5fb6a5b1bc5938bd385e1c6fad4b0397c12567a3c83901639f93cfd8a",
+        "study/optimizer_restore.json": "13444058959be153f751822deeae85e3aa52a2215285b046c9f667800c874473",
+        "study/parameter_mapping.json": "9115206e01fc4f9fd202bde1756315f8d667715b04240324225a7373ada92efd",
+        "study/prerequisites.json": "afdaa65ef5889665b902344f41b338ba75e362cae89d0378dda24d28c03ac9b9",
+        "study/restored384_retention.json": "9d552f47d353a32793238c7f6d60078256af37d560adc326098d33debac5581d",
+        "study/restored384_train_probes.json": "89220f2b1c97a04e1a2b5165b1aadd2f71b621d47a58497678be1d59ed08685c",
+        "study/runtime_versions.json": "cdcc144a8bd91084484cb31eed7a75505a08de26f22f9297372403438e83101e",
+        "study/schedule.json": "19a8c4ac458d77a377af50c7306319a44a21b3e5bb86373610493ae8b8a7bafa",
+        "study/teacher_fresh_qualification.json": "f931259ad661ed441df77a0504983c551905a8372dfa42fdfa3b2b8ef152c56a",
+        "study/teacher_fresh_train.json": "c68e6afac2af21805a1232ee433a749695cbf1b61c50c08fbc71177c357bbd8b",
+        "study/teacher_fresh_validation.json": "04025a629d96badbc53f4db87fa865ef6dac0550c6a1df1d689c2cfa3bfa9cdc",
+        "study/teacher_qualification.json": "cf9b1ab01ee71e0e9265d2f73a7795e86b8a9f9e83a806d8fec47f3e3f2af91c",
+        "study/teacher_qualification_panels.json": "cd2a4f49e637aeae0774793f73b660e516baebac43638d2309ef106a23fe6dff",
+        "study/teacher_train_cache.json": "ceb73e9d49e02f60b8bafc4f504e17a634b44989fa248747b4050bec102e1d8e",
+        "study/training.json": "6398906f3b7e432a0da5997275c0d3b221c9eaa5efc17577c399e2b1b49e9318",
+        "study/trajectories.jsonl": "3cf2dd6be395dae55ba744bb9a3fe916c8afdc87387762d078c89971b3db6ba7",
+        "task.json": "23f4e0d48c718de97662b3fc55d9fbd5917f150206356e1fedc5e49dfd6f0c92"
+      },
+      "finished_at": "2026-09-12T08:51:39.949146+00:00",
+      "method": "cached_teacher_kl",
+      "run_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-budget-cached-teacher-kl",
+      "task_id": "followthrough-20260912-onpolicy303-budget-cached-teacher-kl",
+      "training_pid": 8030
+    },
+    "cached_teacher_sft": {
+      "checkpoint405": {
+        "files": {
+          "adapter_config.json": "e742ca1f882a2deb7def5d3dde057f6b5d7fc9c8386067434d647e4b626803f7",
+          "adapter_model.safetensors": "3efcef86a0712dc6209b0230f7cc538451e2b9de3e3f2469a4b58fa375585588"
+        },
+        "path": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-budget-cached-teacher-sft/study/checkpoint405/learner",
+        "tensor_sha256": "5d58d78e48368d217f1a222ea699c6e70646eee87f33ceb81588b3d462ccfebb"
+      },
+      "failed_source_sha256": "d11de8b7ba587cb7c99315232785ac2a20f8353130ab2db15bba3fa0e1e1d9f4",
+      "files_sha256": {
+        "config.json": "d24ce61cb264da593e6b3588e3d3a195a9c77f995b95dd4da3629531964c4e3a",
+        "execution.json": "4f32ba7a6330f5c57038ef8f9dbbdbe8c3a989ddb1d87e6c8ce8b04481344e07",
+        "study/checkpoint405/learner/adapter_config.json": "e742ca1f882a2deb7def5d3dde057f6b5d7fc9c8386067434d647e4b626803f7",
+        "study/checkpoint405/learner/adapter_model.safetensors": "3efcef86a0712dc6209b0230f7cc538451e2b9de3e3f2469a4b58fa375585588",
+        "study/checkpoint405/optimizer.pt": "4448ee5825219cc0a924b8f58c5dbfc78fc5a259031fc5f1283878c3ab236b80",
+        "study/checkpoint405/retention.json": "8dd5e19bd4631d8fb2acae68d205c7973043a75d88357acc29785247f5424eb5",
+        "study/checkpoint405/train_probes.json": "89220f2b1c97a04e1a2b5165b1aadd2f71b621d47a58497678be1d59ed08685c",
+        "study/failure.json": "c766801d66fc20228609e4059dc12d64bb99723a4ff3f4712080879feef3dbab",
+        "study/ledger.json": "f0267e6139f35c32639fb59c1aee4d482c47f8035095cf951fc020b192f186ce",
+        "study/optimizer_restore.json": "aa6dff3868db4369ca1dce60c57fefc543d9fbc22d28699393adb9f8eb2c013c",
+        "study/parameter_mapping.json": "9115206e01fc4f9fd202bde1756315f8d667715b04240324225a7373ada92efd",
+        "study/prerequisites.json": "988613c917f2cb37abab3772154311dff67756d4058442e74901a692b46699f8",
+        "study/restored384_retention.json": "74a8c60f7e8761a558dc096fbb64333aed67a9a31e651dc7a3f02bc098bce601",
+        "study/restored384_train_probes.json": "89220f2b1c97a04e1a2b5165b1aadd2f71b621d47a58497678be1d59ed08685c",
+        "study/runtime_versions.json": "cdcc144a8bd91084484cb31eed7a75505a08de26f22f9297372403438e83101e",
+        "study/schedule.json": "19a8c4ac458d77a377af50c7306319a44a21b3e5bb86373610493ae8b8a7bafa",
+        "study/teacher_train_cache.json": "ceb73e9d49e02f60b8bafc4f504e17a634b44989fa248747b4050bec102e1d8e",
+        "study/training.json": "bf3896eae154d5332768a10dbd51b3dfc0e2585ff87fe616987a7ff11030a6c0",
+        "study/trajectories.jsonl": "93340fc576cc03d527d96e780385ddcb85bb7803b255d25cb911c48808976bb8",
+        "task.json": "3863cd631d75c9ee300c02ea401b0fcb7d7d9dc3be0f2e6aaa878a0102252eb7"
+      },
+      "finished_at": "2026-09-12T08:48:51.640066+00:00",
+      "method": "cached_teacher_sft",
+      "run_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-budget-cached-teacher-sft",
+      "task_id": "followthrough-20260912-onpolicy303-budget-cached-teacher-sft",
+      "training_pid": 8014
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "method": "cached_teacher_kl",
+  "protocol": "configs/onpolicy303-budget-evaluate-protocol.json",
+  "protocol_sha256": "1f4da4cfdb3332e9a3383210e33b4a0f12505ef10dd78928005a3615e2959d6d",
+  "stage": "evaluate_only",
+  "task_id": "followthrough-20260912-onpolicy303-budget-kl-evaluate-only"
+}

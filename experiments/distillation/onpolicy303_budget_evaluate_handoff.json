@@ -1,0 +1,201 @@
+{
+  "artifacts": [
+    "study/source_gate.json",
+    "study/original_training.json",
+    "study/training.json",
+    "study/copy.json",
+    "study/evaluation_launch.json",
+    "study/evaluation_process.json",
+    "study/evaluation/panels.json",
+    "study/evaluation/retention.json",
+    "study/evaluation/result.json",
+    "study/evaluation/origin_read_ban.json",
+    "study/result.json"
+  ],
+  "bound_source_evidence": {
+    "cached_teacher_kl": {
+      "checkpoint405_file_sha256": "d00c422a9edb510af122c3bfb9889246fa2cf3c47857379574843763dcfe6621",
+      "checkpoint405_tensor_sha256": "95bf025713fee48056f112bf1c8338ab40345702db01055f4c8709a625fbcf87",
+      "final_clock": 405,
+      "finished_at": "2026-09-12T08:51:39.949146+00:00",
+      "loss_tokens": 588,
+      "optimizer405_file_sha256": "2574218de7d204adaf170896d811e4e3112be1cf008012c3d00d6316817112fd",
+      "optimizer405_tensor_sha256": "2acc5b0ca77207bd603585397ed0afce5b9e32d77f52b24b4d0443997384b37a",
+      "optimizer_parameter_states": 144,
+      "original_training_sha256": "6398906f3b7e432a0da5997275c0d3b221c9eaa5efc17577c399e2b1b49e9318",
+      "restored_clock": 384,
+      "source_archive_files_in_measured_receipt": 157,
+      "source_archive_sha256": "d11de8b7ba587cb7c99315232785ac2a20f8353130ab2db15bba3fa0e1e1d9f4",
+      "task_id": "followthrough-20260912-onpolicy303-budget-cached-teacher-kl",
+      "terminal_execution_sha256": "810516d2059b3fd0d07676d320501b7b056d0913475668b59f8ffee8da6868a1",
+      "training_pid": 8030,
+      "updates": 21,
+      "verified_original_file_pins": 25
+    },
+    "cached_teacher_sft": {
+      "checkpoint405_file_sha256": "3efcef86a0712dc6209b0230f7cc538451e2b9de3e3f2469a4b58fa375585588",
+      "checkpoint405_tensor_sha256": "5d58d78e48368d217f1a222ea699c6e70646eee87f33ceb81588b3d462ccfebb",
+      "final_clock": 405,
+      "finished_at": "2026-09-12T08:48:51.640066+00:00",
+      "loss_tokens": 588,
+      "optimizer405_file_sha256": "4448ee5825219cc0a924b8f58c5dbfc78fc5a259031fc5f1283878c3ab236b80",
+      "optimizer405_tensor_sha256": "636b0dca4a34a33f750b235404476228e31d054d8ffa7498a231a28b284b16f4",
+      "optimizer_parameter_states": 144,
+      "original_training_sha256": "bf3896eae154d5332768a10dbd51b3dfc0e2585ff87fe616987a7ff11030a6c0",
+      "restored_clock": 384,
+      "source_archive_files_in_measured_receipt": 157,
+      "source_archive_sha256": "d11de8b7ba587cb7c99315232785ac2a20f8353130ab2db15bba3fa0e1e1d9f4",
+      "task_id": "followthrough-20260912-onpolicy303-budget-cached-teacher-sft",
+      "terminal_execution_sha256": "4f32ba7a6330f5c57038ef8f9dbbdbe8c3a989ddb1d87e6c8ce8b04481344e07",
+      "training_pid": 8014,
+      "updates": 21,
+      "verified_original_file_pins": 20
+    }
+  },
+  "branch": "research/resume-20260911",
+  "claim_boundary": "Post-observation conservative extra-training control for total loss-token exposure. Cached controls get11340 tokens and405 updates versus fixed ownprefix384 at11314 tokens and384 updates. This is not an exact token, update, or FLOP match and cannot isolate all objective or trajectory differences. One seed, same384TRAIN rows, previously observed192TEST/864unused and128generic. Native export remains ownprefix384 regardless of these outcomes.",
+  "cleanup_cause": "Unknown residual GPU allocations. No evidence establishing that a teacher remained resident.",
+  "copy_contract": {
+    "all_original_source_file_hashes_reverified_after_evaluation": true,
+    "copy_manifest": "study/copy.json contains source gate, every copied-file hash, original/projected training hashes and exact allowed JSON pointers.",
+    "derived_receipt": "training.json retains every original value and the original training PID; only /checkpoint405/path changes and /evaluation_only_origin_sha256 is added. Exact dictionary comparison and both raw file hashes are checked before evaluation.",
+    "optimizer": "Original405 optimizer is CPU-loaded and fully validated, never instantiated as an optimizer, never mutated, not copied into the evaluation study and not accessible to its child.",
+    "original_receipt": "Byte-identical original_training.json copy retained in new study.",
+    "other_copies": [
+      "parameter_mapping.json",
+      "checkpoint405/train_probes.json",
+      "checkpoint405/retention.json",
+      "checkpoint405/learner/adapter_config.json",
+      "checkpoint405/learner/adapter_model.safetensors"
+    ]
+  },
+  "cpu_validation": {
+    "boundary": "Actual source-material and fresh CPU-copy-process checks only. New405 GPU heldout evaluation has not run; the frozen evaluator supplies runtime strict native parity and teacher absence gates.",
+    "coverage": [
+      "Both real saved405 studies:45 bound source files, actual21ledger/84rows/588masked tokens, exact saved144Adam states and405adapter tensors.",
+      "Corrupt copied adapter, original receipt, projected PID/token accounting and origin identity reject before model loading.",
+      "Running/timed-out/wrong-source/wrong-failure/same-PID source attempts rejected.",
+      "Changed ledger clocks, response masks and savedAdam clock rejected even with deliberately recomputed corrupt test-fixture file hashes.",
+      "Exact allowed receipt relocation and origin hash; exclusive copies cannot overwrite original or existing destination.",
+      "Fresh uv subprocess validates copied inputs while original-source file reads are blocked; no CUDA initialization or optimizer updates.",
+      "Both supervisor CLI configs accept existing run roots and refuse reused study directories."
+    ],
+    "lint_command": "uv tool run ruff check /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/onpolicy303_budget_evaluate.py /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_onpolicy303_budget_evaluate.py",
+    "lint_result": "All checks passed!",
+    "result": "35 passed in 12.61s",
+    "test_command": "PYTHONPATH=/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python -B -m pytest -q /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_onpolicy303_budget_evaluate.py",
+    "tests_passed": 35
+  },
+  "dispatch_performed": false,
+  "entrypoint": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/onpolicy303_budget_evaluate.py",
+  "hash_closure": {
+    "files": 26,
+    "files_mapping_sha256": "6e852da54e364c55c28f5108a454e1ad175e3d6ae2e242a1485ee79994436f69",
+    "files_sha256": {
+      "choice_consolidation.py": "3797321d0bad1a6acf5c1998ed09b42d3b25529cf51d6872f17781f5b7321a7d",
+      "choice_contract.py": "6a8786638fbe46730e3af83d64d67ece04460d2048777a8c2dca60c6e0237c87",
+      "configs/choice_consolidation_protocol.json": "eadd92577ebf0945039ccde7a84f22d1150fd40df31c9c9ee7d14a1bd6f3706e",
+      "configs/coverage_learner_protocol.json": "7f8eb9e06f2472fcdd5e62e5d9017ee4cdf4a63a78daadcd32f46968a8a7ecad",
+      "configs/coverage_teacher_protocol.json": "1724268c16e6b4586f17e1d547076ab52ac9ba4ff613475963a99c4eb3d72340",
+      "configs/generation_consolidation_protocol.json": "5c933efc2fc32d2ae94784056a901d587cd6f5abafe07f87a03f0c78a6d7203e",
+      "configs/generation_teacher_protocol.json": "f618e00551fe75ed9117318869426ee81a6d006bfd8bf0d9046401f99a5f0ab0",
+      "configs/onpolicy303-budget-evaluate-protocol.json": "b0f2f0578f8ade33ecac88dd2352a74c58337950f5a9debf179c470f2fd3b3a5",
+      "configs/onpolicy303-budget-kl-evaluate-only.json": "1e8f54a1779b04ea6fac4b43dbeb7b5441213f9298c1a147053f51e5db4f83cc",
+      "configs/onpolicy303-budget-protocol.json": "8b9118e0d6ec4b73d6c54b3bca90e12aca3d422711bea72faa74da3031fb474d",
+      "configs/onpolicy303-budget-sft-evaluate-only.json": "c8203e1a1a2b3612069a9d4d6c38fe7e3a4c31209f90865f165e3d1397d641ff",
+      "configs/onpolicy303_protocol.json": "3590d104cb057852a2dda2d71faade59f055ad9e5e3f628abe6efd5751921aed",
+      "configs/onpolicy303_retention.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+      "coverage_learner.py": "1493db6ff826f604275fa3a0bce7e31fad3db3f36b22eb891a083468414e7aac",
+      "coverage_teacher.py": "0fdfc95ae89dd8063fbb007633b6c4b0579f747f1c1e77b603e03a6b0aad339a",
+      "data/sequence303.json": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2",
+      "data/sequence303_unused_inputs.json": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e",
+      "generation_consolidation.py": "e7ee35ce8bdfcf7953aa4534f2f1b86db9393a64a66bb17ecf4ea34bb6a014ac",
+      "generation_teacher.py": "a0ec754aca33831efcf6520805f1563e0ad9f9b6f09b267c3dc084597499ef43",
+      "onpolicy303.py": "21af665aa3f13f13b5423d9939fda839ff1ab1a85179b299f39da38cb2ed23b4",
+      "onpolicy303_budget.py": "e6805cae932a936ce2ab4a7b698409614e2f7f174d99bbf5fff02615391dae0e",
+      "onpolicy303_budget_contract.py": "69297aeec5a3a26f1caa519fcfcc5058af9b7a34a26c38c87eaa5a13d83dbc1b",
+      "onpolicy303_budget_evaluate.py": "eefe117d706f79d2b4f3465cb48013280d3d9e22500780ba465c72d91283ef68",
+      "onpolicy303_contract.py": "ae7442e01c90062f1988c353d9cd3f310a3d0af32021ffcbdabcd4ab4c2e97b1",
+      "requirements.txt": "528f63f0ac9d43f715d3d85f8287eed139ae016623fe707d561d2ac892f7c770",
+      "test_onpolicy303_budget_evaluate.py": "510c887562ca4d4e11d0a0cd0d05c056af2301848eb6c005797a26e270c35740"
+    },
+    "root": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation",
+    "scope": "26 explicit runtime/test/config files. Parent computes the full staged lane archive hash. Handoff itself is not self-hashed."
+  },
+  "jobs": [
+    {
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-sft-evaluate-only.json",
+      "config_sha256": "c8203e1a1a2b3612069a9d4d6c38fe7e3a4c31209f90865f165e3d1397d641ff",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-cached-teacher-sft-train"
+      ],
+      "dispatch_command_for_parent_only": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation --config /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-sft-evaluate-only.json --id followthrough-20260912-onpolicy303-budget-sft-evaluate-only --entrypoint onpolicy303_budget_evaluate.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on followthrough-20260912-onpolicy303-cached-teacher-sft-train --control-pod \"${ONPOLICY_BUDGET_EVAL_CONTROL_POD:?set the qualified control pod}\" --submit",
+      "entrypoint": "onpolicy303_budget_evaluate.py",
+      "gpus": 1,
+      "method": "cached_teacher_sft",
+      "run_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-budget-sft-evaluate-only",
+      "stage": "evaluate_only",
+      "strict_failed_source_data_gate": "followthrough-20260912-onpolicy303-budget-cached-teacher-sft",
+      "task_id": "followthrough-20260912-onpolicy303-budget-sft-evaluate-only"
+    },
+    {
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-kl-evaluate-only.json",
+      "config_sha256": "1e8f54a1779b04ea6fac4b43dbeb7b5441213f9298c1a147053f51e5db4f83cc",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-cached-teacher-kl-train"
+      ],
+      "dispatch_command_for_parent_only": "uv run --no-project --python /Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python python /Users/sudarshan/Code/attempting-continual-learning/compute/dispatch.py --lane-dir /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation --config /Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-kl-evaluate-only.json --id followthrough-20260912-onpolicy303-budget-kl-evaluate-only --entrypoint onpolicy303_budget_evaluate.py --gpus 1 --priority 8 --max-seconds 14400 --depends-on followthrough-20260912-recovery-worker-runtime-qwen3-8b --depends-on followthrough-20260912-onpolicy303-cached-teacher-kl-train --control-pod \"${ONPOLICY_BUDGET_EVAL_CONTROL_POD:?set the qualified control pod}\" --submit",
+      "entrypoint": "onpolicy303_budget_evaluate.py",
+      "gpus": 1,
+      "method": "cached_teacher_kl",
+      "run_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-onpolicy303-budget-kl-evaluate-only",
+      "stage": "evaluate_only",
+      "strict_failed_source_data_gate": "followthrough-20260912-onpolicy303-budget-cached-teacher-kl",
+      "task_id": "followthrough-20260912-onpolicy303-budget-kl-evaluate-only"
+    }
+  ],
+  "modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/onpolicy303_budget_evaluate.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/test_onpolicy303_budget_evaluate.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-evaluate-protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-sft-evaluate-only.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-kl-evaluate-only.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/onpolicy303_budget_evaluate_handoff.json"
+  ],
+  "native_export": {
+    "checkpoint": 384,
+    "method": "onpolicy_kl",
+    "selection_changed_by_control": false
+  },
+  "new_optimizer_updates": 0,
+  "new_training": false,
+  "original_405_run_writes": false,
+  "original_budget_source_preserved": {
+    "handoff_sha256": "1fbde94e44d4ff99fd4b81cef1e53d614095ab94a9735f1bfbf1df858232c333",
+    "original_scientific_files_edited": false,
+    "original_source_archive_sha256": "d11de8b7ba587cb7c99315232785ac2a20f8353130ab2db15bba3fa0e1e1d9f4",
+    "verified_original_closure_files": 24
+  },
+  "process_contract": {
+    "evaluation": "Unchanged full native24TRAIN plus128generic reload parity before192TEST+864unused. Full FP32 frozen base/adapter hashes and exact runtime module/distribution fields remain enforced.",
+    "failed_source_is_data_prerequisite_not_queue_success_dependency": true,
+    "fresh_child": "New uv-launched interpreter directly invokes frozen onpolicy303_budget.evaluate_child. Original training PID is retained as provenance; new parent, uv and child PIDs, token and projected/origin hashes are bound.",
+    "not_a_guard_relaxation": "Original d11 cleanup assertion and all frozen files remain unchanged. The ended training process is replaced by an independent evaluation-only supervisor task.",
+    "original_termination": "Pinned failed execution with exact cleanup cause, exit1, timed_out=false; original supervisor finished_at precedes new supervisor started_at; task/attempt IDs and original training PID are distinct.",
+    "queue_success_dependencies_only": true,
+    "read_bans": "Additional Python open audit forbids both original405 run roots. Frozen evaluator separately blocks original teacher/control/cache/optimizer paths and permits only pinned base plus copied405 learner. Explicit model path approval, including resolved pinned base files; not an OS syscall sandbox.",
+    "wrapper": "CPU-only data gate and byte copies; assert CUDA was never initialized. No GPU model or optimizer construction in wrapper."
+  },
+  "protocol": {
+    "file_sha256": "b0f2f0578f8ade33ecac88dd2352a74c58337950f5a9debf179c470f2fd3b3a5",
+    "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303-budget-evaluate-protocol.json",
+    "payload_sha256": "1f4da4cfdb3332e9a3383210e33b4a0f12505ef10dd78928005a3615e2959d6d"
+  },
+  "provider_mutations": false,
+  "repository": "/Users/sudarshan/Code/attempting-continual-learning",
+  "sealed_utc": "2026-09-12T09:01:57.020146+00:00",
+  "source_gate": "Require exact terminal cleanup-failure execution/task/config and archived d11 source;21actual updates/84TRAIN rows/588masked loss tokens; original384 parameter order/moments/clock receipt; actual saved405adapter and AdamW tensors/files; all parity and KLteacher gates. Original process ended before new supervisor task began. Reject any original final evaluation already present.",
+  "status": "frozen_cpu_tested_ready_for_parent_zero_update_dispatch"
+}
