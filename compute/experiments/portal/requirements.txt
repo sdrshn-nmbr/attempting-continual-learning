@@ -1,0 +1,2 @@
+portallib==0.2.1
+peft==0.20.0

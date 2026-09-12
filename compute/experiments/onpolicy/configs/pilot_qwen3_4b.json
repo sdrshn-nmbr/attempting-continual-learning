@@ -1,0 +1,13 @@
+{
+  "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "model_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-4B-Instruct-2507/cdbee75f17c01a7cc42f958dc650907174af0554",
+  "seed": 37,
+  "experiment_kind": "pilot",
+  "arms": ["off_policy_dense", "on_policy_dense", "oracle_sft"],
+  "steps_per_task": 16,
+  "tokens_per_update": 32,
+  "eval_examples": 8,
+  "gate_examples": 4,
+  "teacher_min_accuracy": 0.75
+}

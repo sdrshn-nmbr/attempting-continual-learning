@@ -1,0 +1,4 @@
+transformers==5.16.1
+accelerate==1.14.0
+huggingface-hub==1.30.0
+peft==0.20.0

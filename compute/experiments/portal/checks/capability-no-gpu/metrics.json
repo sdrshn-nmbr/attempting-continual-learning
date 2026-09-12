@@ -1,0 +1,58 @@
+{
+  "status": "blocked",
+  "config": {
+    "mode": "smoke",
+    "model_id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "model_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+    "seed": 17,
+    "device": "cuda:0",
+    "registry_path": "registry.json"
+  },
+  "config_sha256": "b49bd21672051c9f52e3fd4c684bcfb3b642211eca56bba6c023705fadfcb4a7",
+  "measurements": {
+    "artifact_load": {
+      "status": "passed",
+      "projections": 72
+    }
+  },
+  "provenance": {
+    "implementation": {
+      "engine.py": "8961b6d9710155476a3a5dc8d3b789eaa708b5b8dea5e51055c982815d4b1981",
+      "inventory.py": "9b21bd9e582f6d59bee6fe922620516197e1f08ad8c40bd1b7e19691594cff0a",
+      "run.py": "dd03938e2c935176e992a33877c892181d972512d231827b1682294c1550d4e7",
+      "runtime.py": "37428ead87ee3ea7837d8bc63d7b4301c39ba77821dab4559c5f73259597e7f1",
+      "tasks.py": "5b04712724b3e8230f5d416e9020e8b613f8afb6e123c97cc160aad5e8c3daa3"
+    },
+    "RampPublic/portal-qwen3-8b": {
+      "revision": "6593b49ae790ec6d601db5a081c81463cb8b3a5f",
+      "weights_sha256": "b1e94342fe777770f14147d2cacee1f568159a7c39788c661cdf46ff8e1284c4",
+      "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/.artifacts/qwen3-8b",
+      "core_sha256": "465814411378973f68d4888281f39208cb1c636e030b331a9d791c8114042c29"
+    }
+  },
+  "timing_seconds": {
+    "last_invocation": 0.3213137499988079
+  },
+  "runtime": {
+    "python": "3.12.11",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "torch": "2.10.0",
+    "hip": null,
+    "transformers": "5.16.1",
+    "accelerate": "1.14.0",
+    "portallib": "0.2.1",
+    "peft": "0.20.0",
+    "huggingface_hub": "1.30.0",
+    "safetensors": "0.8.0",
+    "ROCR_VISIBLE_DEVICES": null,
+    "cuda_available": false,
+    "gpu_execution": false
+  },
+  "blockers": [
+    {
+      "code": "capability_blocked",
+      "detail": "gpu_unavailable: native ROCm forward/backward has not run"
+    }
+  ]
+}

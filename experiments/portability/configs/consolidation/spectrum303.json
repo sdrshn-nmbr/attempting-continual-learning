@@ -1,0 +1,32 @@
+{
+  "name": "frozen303_lora_replay_compression_spectrum",
+  "native_rank": 8,
+  "expected_projection_count": 72,
+  "cpu_threads": 4,
+  "checkpoints": {
+    "initial": {
+      "origin": {
+        "context": "us-mi355x-nambiar-k8s",
+        "pod": "cl-portfolio-control",
+        "path": "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/initial/lora/checkpoint"
+      },
+      "local_path": "../../outputs/compression-spectrum-cpu/inputs/initial",
+      "sha256": {
+        "adapter_config.json": "88aeeaa34d6de94e14722699a9ef172f877783144e804539785602233c32da83",
+        "adapter_model.safetensors": "0af95c2348eb699211bd87a905031349aaab3bb566daba9fb78e3acc9d92c72a"
+      }
+    },
+    "final": {
+      "origin": {
+        "context": "us-mi355x-nambiar-k8s",
+        "pod": "cl-portfolio-control",
+        "path": "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/stages/after_c/checkpoint"
+      },
+      "local_path": "../../outputs/compression-spectrum-cpu/inputs/final",
+      "sha256": {
+        "adapter_config.json": "88aeeaa34d6de94e14722699a9ef172f877783144e804539785602233c32da83",
+        "adapter_model.safetensors": "761115de00055eaa9a72fb66aa75bddaff9e954a77a7b7b9318347333d19efff"
+      }
+    }
+  }
+}

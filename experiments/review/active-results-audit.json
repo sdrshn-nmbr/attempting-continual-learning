@@ -1,0 +1,957 @@
+{
+  "status": "verified_no_result_integrity_errors",
+  "scope": "Independent bounded audit of the four completed seed29 GPU conditions from the synced local artifacts. Only experiments/review/active-results-audit.json is written. Extended with bounded seed43 observed-only confirmation closure; the prior four-condition audit was not rerun.",
+  "source_bundle_sha256": "9e9449df61927208fb73aa5091e7a180f15b9473f7e3ee5a8c4f3e4e3465518f",
+  "errors": [],
+  "blocking_findings": [],
+  "conclusion": {
+    "raw_artifacts_support_reported_results": true,
+    "observed_candidate_passes_prespecified_point_gates": true,
+    "observed_active_effect_interval_includes_zero": true,
+    "posterior_candidate_passes_prespecified_point_gates": false,
+    "qualified_positive_consolidation_claim": false,
+    "confirmation_scope": "Seed43 observed-query random/oracle confirmation is complete and independently checked from local receipts. It failed qualification; no promotion and the recipe is closed.",
+    "prior_seed17_negative_preserved": true,
+    "confirmed_positive_acquisition_claim": false,
+    "recipe_closed_without_promotion": true
+  },
+  "execution_and_budget": {
+    "completed_conditions": 4,
+    "completed_updates_from_raw_logs": 640,
+    "updates_per_condition": 160,
+    "queries_per_condition": 96,
+    "examples_per_condition": 1280,
+    "input_tokens_per_condition": 166400,
+    "supervised_tokens_per_condition": 1280,
+    "old_replay_examples_per_condition": 160,
+    "updates_per_stage": 80,
+    "examples_per_update": 8,
+    "input_tokens_per_update": 1040,
+    "old_replay_examples_per_stage1_update": 2,
+    "all_raw_losses_finite_and_gradient_norms_positive_finite": true,
+    "source_config_and_checkpoint_hash_chains_consistent": true,
+    "same_initial_adapter_sha256_all_conditions": "1ec295f65e26c311d781015a0ca2de31d9d770e37afc77df32615424d691011a",
+    "initialization_scope": "Full trainable-adapter tensor hashes in the runtime receipts, not a hash of all base-model tensors.",
+    "stage_records": {
+      "observed/random/stage0": {
+        "raw_updates": 80,
+        "raw_examples": 640,
+        "raw_input_tokens": 83200,
+        "supervised_tokens": 640,
+        "old_replay_examples": 0,
+        "examples_by_device": {
+          "0": 160,
+          "1": 160,
+          "2": 160,
+          "3": 160
+        },
+        "final_adapter_sha256": "76f7a6d98a9288d49a2e8b27283650d02705d7b7194eec2ffc28274549be66e9",
+        "initial_adapter_sha256": "1ec295f65e26c311d781015a0ca2de31d9d770e37afc77df32615424d691011a",
+        "posterior_labels_independently_checked": 0,
+        "exact_ties_zero": 0
+      },
+      "observed/random/stage1": {
+        "raw_updates": 80,
+        "raw_examples": 640,
+        "raw_input_tokens": 83200,
+        "supervised_tokens": 640,
+        "old_replay_examples": 160,
+        "examples_by_device": {
+          "0": 160,
+          "1": 120,
+          "2": 120,
+          "3": 120,
+          "4": 120
+        },
+        "final_adapter_sha256": "e5aa12f94dbe05e31f2ebc32218fe34d3ef94a02e42f1dab75aa46e234277bf4",
+        "initial_adapter_sha256": "76f7a6d98a9288d49a2e8b27283650d02705d7b7194eec2ffc28274549be66e9",
+        "posterior_labels_independently_checked": 0,
+        "exact_ties_zero": 0
+      },
+      "observed/hypothesis_elimination_oracle/stage0": {
+        "raw_updates": 80,
+        "raw_examples": 640,
+        "raw_input_tokens": 83200,
+        "supervised_tokens": 640,
+        "old_replay_examples": 0,
+        "examples_by_device": {
+          "0": 160,
+          "1": 160,
+          "2": 160,
+          "3": 160
+        },
+        "final_adapter_sha256": "d7eeb4b8b3e364148b5c04fbaa92a3bd81ca0daa3e4d1aee2306a05259413e99",
+        "initial_adapter_sha256": "1ec295f65e26c311d781015a0ca2de31d9d770e37afc77df32615424d691011a",
+        "posterior_labels_independently_checked": 0,
+        "exact_ties_zero": 0
+      },
+      "observed/hypothesis_elimination_oracle/stage1": {
+        "raw_updates": 80,
+        "raw_examples": 640,
+        "raw_input_tokens": 83200,
+        "supervised_tokens": 640,
+        "old_replay_examples": 160,
+        "examples_by_device": {
+          "0": 160,
+          "1": 120,
+          "2": 120,
+          "3": 120,
+          "4": 120
+        },
+        "final_adapter_sha256": "7945fa2a39bacbaad92feee33a6b408ee02f2da9b64c13625bc209376e9e81f2",
+        "initial_adapter_sha256": "d7eeb4b8b3e364148b5c04fbaa92a3bd81ca0daa3e4d1aee2306a05259413e99",
+        "posterior_labels_independently_checked": 0,
+        "exact_ties_zero": 0
+      },
+      "posterior/random/stage0": {
+        "raw_updates": 80,
+        "raw_examples": 640,
+        "raw_input_tokens": 83200,
+        "supervised_tokens": 640,
+        "old_replay_examples": 0,
+        "examples_by_device": {
+          "0": 160,
+          "1": 160,
+          "2": 160,
+          "3": 160
+        },
+        "final_adapter_sha256": "a55ac261cf8bc6823f90aefb857b72640e55b468b0fb904f3e2259bc95a3045d",
+        "initial_adapter_sha256": "1ec295f65e26c311d781015a0ca2de31d9d770e37afc77df32615424d691011a",
+        "posterior_labels_independently_checked": 640,
+        "exact_ties_zero": 93
+      },
+      "posterior/random/stage1": {
+        "raw_updates": 80,
+        "raw_examples": 640,
+        "raw_input_tokens": 83200,
+        "supervised_tokens": 640,
+        "old_replay_examples": 160,
+        "examples_by_device": {
+          "0": 160,
+          "1": 120,
+          "2": 120,
+          "3": 120,
+          "4": 120
+        },
+        "final_adapter_sha256": "5870a07af60f47e8762524ab38a3185ab268324af8b7a63ec97883c1db5f8537",
+        "initial_adapter_sha256": "a55ac261cf8bc6823f90aefb857b72640e55b468b0fb904f3e2259bc95a3045d",
+        "posterior_labels_independently_checked": 480,
+        "exact_ties_zero": 10
+      },
+      "posterior/hypothesis_elimination_oracle/stage0": {
+        "raw_updates": 80,
+        "raw_examples": 640,
+        "raw_input_tokens": 83200,
+        "supervised_tokens": 640,
+        "old_replay_examples": 0,
+        "examples_by_device": {
+          "0": 160,
+          "1": 160,
+          "2": 160,
+          "3": 160
+        },
+        "final_adapter_sha256": "861bf74f40a2114708d6d57bb3d1a10356de755b4a36b5cf71296c7fb7178ab9",
+        "initial_adapter_sha256": "1ec295f65e26c311d781015a0ca2de31d9d770e37afc77df32615424d691011a",
+        "posterior_labels_independently_checked": 640,
+        "exact_ties_zero": 0
+      },
+      "posterior/hypothesis_elimination_oracle/stage1": {
+        "raw_updates": 80,
+        "raw_examples": 640,
+        "raw_input_tokens": 83200,
+        "supervised_tokens": 640,
+        "old_replay_examples": 160,
+        "examples_by_device": {
+          "0": 160,
+          "1": 120,
+          "2": 120,
+          "3": 120,
+          "4": 120
+        },
+        "final_adapter_sha256": "00f0d5dc9132617d17164332ba5e7fc94424f1e375125fcdc097f6df2b125bb6",
+        "initial_adapter_sha256": "861bf74f40a2114708d6d57bb3d1a10356de755b4a36b5cf71296c7fb7178ab9",
+        "posterior_labels_independently_checked": 480,
+        "exact_ties_zero": 0
+      }
+    }
+  },
+  "data_and_evaluation": {
+    "query_logs_project_exactly_to_strict_observation_ledgers": true,
+    "observed_bits_match_declared_query_index_noise": true,
+    "common_first_four_queries_match_acquisition_arms": true,
+    "no_acquisition_or_training_input_in_heldout_split": true,
+    "identical_query_ledgers_across_consolidation_modes": true,
+    "identical_device_at_each_training_position_across_modes": true,
+    "identical_old_replay_rows_and_batch_positions_across_modes": true,
+    "posterior_labels_independently_recomputed_from_observed_ledger": 2240,
+    "posterior_exact_ties_selecting_zero": 103,
+    "posterior_check": "Evaluated the declared 88 rule specifications independently and used exact integer likelihood weights 9**matching_observations. No hidden label was used in posterior calculation.",
+    "clean_prompt_hashes_reconstructed_from_grammar_device_and_input": 24,
+    "primary_evaluation_rows_per_condition": 320,
+    "primary_rows_per_device": 64,
+    "all_primary_ids_inputs_devices_and_targets_paired": true,
+    "all_evaluator_labels_recomputed_from_manifest_rule_specs": true,
+    "all_reported_metrics_recomputed_from_prediction_rows": true,
+    "forced_choices_match_probability_one_greater_than_half": true,
+    "unrestricted_accuracy_equals_forced_choice_for_all_four_final_conditions": true,
+    "all_four_final_single_device_valid_output_rates": 1,
+    "fit_scope": "Fit is measured on the 48 queried observations per stage, including repeats and observed noise; it is not fit to all posterior-generated training rows."
+  },
+  "conditions": {
+    "observed/random": {
+      "stage0_accuracy": 0.71875,
+      "stage0_learning_gain": 0.21875,
+      "stage1_accuracy": 0.55,
+      "stage0_queried_ledger_fit": 1,
+      "stage1_queried_ledger_fit": 0.75,
+      "new_skill_before": 0.421875,
+      "new_skill_after": 0.5,
+      "new_skill_gain": 0.078125,
+      "stable_after_stage0": 0.59375,
+      "stable_before_stage1": 0.59375,
+      "stable_after_stage1": 0.53125,
+      "stable_retention_change": -0.0625,
+      "stage1_composition_accuracy": 0.5,
+      "stage1_unrestricted_accuracy": 0.55,
+      "stage1_valid_output_rate": 1,
+      "stage1_answer_probability_mass": 0.9992236575111747,
+      "reported_decision": "baseline"
+    },
+    "observed/hypothesis_elimination_oracle": {
+      "stage0_accuracy": 0.6015625,
+      "stage0_learning_gain": 0.1015625,
+      "stage1_accuracy": 0.603125,
+      "stage0_queried_ledger_fit": 0.9583333333333334,
+      "stage1_queried_ledger_fit": 0.9583333333333334,
+      "new_skill_before": 0.296875,
+      "new_skill_after": 0.5,
+      "new_skill_gain": 0.203125,
+      "stable_after_stage0": 0.609375,
+      "stable_before_stage1": 0.609375,
+      "stable_after_stage1": 0.5625,
+      "stable_retention_change": -0.046875,
+      "stage1_composition_accuracy": 0.5375,
+      "stage1_unrestricted_accuracy": 0.603125,
+      "stage1_valid_output_rate": 1,
+      "stage1_answer_probability_mass": 0.9999801145866514,
+      "reported_decision": "keep_for_independent_replication"
+    },
+    "posterior/random": {
+      "stage0_accuracy": 0.53515625,
+      "stage0_learning_gain": 0.03515625,
+      "stage1_accuracy": 0.546875,
+      "stage0_queried_ledger_fit": 0.5416666666666666,
+      "stage1_queried_ledger_fit": 0.5625,
+      "new_skill_before": 0.5,
+      "new_skill_after": 0.578125,
+      "new_skill_gain": 0.078125,
+      "stable_after_stage0": 0.5,
+      "stable_before_stage1": 0.5,
+      "stable_after_stage1": 0.640625,
+      "stable_retention_change": 0.140625,
+      "stage1_composition_accuracy": 0.4875,
+      "stage1_unrestricted_accuracy": 0.546875,
+      "stage1_valid_output_rate": 1,
+      "stage1_answer_probability_mass": 0.999791726283729,
+      "reported_decision": "baseline"
+    },
+    "posterior/hypothesis_elimination_oracle": {
+      "stage0_accuracy": 0.85546875,
+      "stage0_learning_gain": 0.35546875,
+      "stage1_accuracy": 0.659375,
+      "stage0_queried_ledger_fit": 0.7708333333333334,
+      "stage1_queried_ledger_fit": 0.5625,
+      "new_skill_before": 0.453125,
+      "new_skill_after": 0.5,
+      "new_skill_gain": 0.046875,
+      "stable_after_stage0": 1,
+      "stable_before_stage1": 1,
+      "stable_after_stage1": 0.8125,
+      "stable_retention_change": -0.1875,
+      "stage1_composition_accuracy": 0.5,
+      "stage1_unrestricted_accuracy": 0.659375,
+      "stage1_valid_output_rate": 1,
+      "stage1_answer_probability_mass": 0.998646492883563,
+      "reported_decision": "inconclusive_learner_not_qualified"
+    }
+  },
+  "contrasts": {
+    "active_effect_observed": {
+      "effect": 0.053125,
+      "interval_95": [
+        -0.04690216234990492,
+        0.1649677805005167
+      ],
+      "paired_examples": 320,
+      "causal_groups_by_device": {
+        "0": 25,
+        "1": 30,
+        "2": 29,
+        "3": 31,
+        "4": 27
+      },
+      "replicates": 2000,
+      "bootstrap_seed": 29
+    },
+    "active_effect_posterior": {
+      "effect": 0.1125,
+      "interval_95": [
+        0.02818700785823671,
+        0.20338985376271218
+      ],
+      "paired_examples": 320,
+      "causal_groups_by_device": {
+        "0": 25,
+        "1": 30,
+        "2": 29,
+        "3": 31,
+        "4": 27
+      },
+      "replicates": 2000,
+      "bootstrap_seed": 29
+    },
+    "consolidation_effect_random": {
+      "effect": -0.003125,
+      "interval_95": [
+        -0.13528643734973256,
+        0.12593942252633158
+      ],
+      "paired_examples": 320,
+      "causal_groups_by_device": {
+        "0": 25,
+        "1": 30,
+        "2": 29,
+        "3": 31,
+        "4": 27
+      },
+      "replicates": 2000,
+      "bootstrap_seed": 29
+    },
+    "consolidation_effect_oracle": {
+      "effect": 0.05625,
+      "interval_95": [
+        -0.06505914273322573,
+        0.1748749778791177
+      ],
+      "paired_examples": 320,
+      "causal_groups_by_device": {
+        "0": 25,
+        "1": 30,
+        "2": 29,
+        "3": 31,
+        "4": 27
+      },
+      "replicates": 2000,
+      "bootstrap_seed": 29
+    },
+    "interaction": {
+      "effect": 0.059375,
+      "interval_95": [
+        -0.07689975113497297,
+        0.1937491387241563
+      ],
+      "paired_examples": 320,
+      "causal_groups_by_device": {
+        "0": 25,
+        "1": 30,
+        "2": 29,
+        "3": 31,
+        "4": 27
+      },
+      "replicates": 2000,
+      "bootstrap_seed": 29
+    }
+  },
+  "independent_bootstrap": {
+    "imported_parent_analysis_function": false,
+    "imported_experiment_metric_or_bootstrap_function": false,
+    "method": "Built a four-column correctness matrix from paired raw rows. Grouped row indices by device and input modulo 32 in first-occurrence order. With random.Random(29), drew each device's original number of causal groups with replacement using independent randrange calls. Retained every nuisance row in each selected group, computed the four accuracies within each device, averaged the five device values equally, and applied each contrast. Used statistics.quantiles with n=40 and method=inclusive for the 2.5th and 97.5th percentiles.",
+    "replicates": 2000,
+    "causal_groups": 142,
+    "causal_groups_by_device": {
+      "0": 25,
+      "1": 30,
+      "2": 29,
+      "3": 31,
+      "4": 27
+    },
+    "parent_analysis_matches_within_absolute_tolerance": 1e-12,
+    "scope": "Descriptive paired causal-group sampling uncertainty for these five fixed devices and one training seed; intervals are unadjusted for the five contrasts and do not establish training-seed robustness."
+  },
+  "point_gates": {
+    "observed": {
+      "gates": {
+        "both_stage0_ledger_fit_at_least_0_75": true,
+        "candidate_stage0_gain_at_least_0_05": true,
+        "candidate_new_skill_gain_at_least_0_05": true,
+        "active_effect_at_least_0_05": true,
+        "relative_retention_at_least_minus_0_05": true,
+        "absolute_stable_change_at_least_minus_0_05": true,
+        "relative_new_skill_gain_at_least_minus_0_05": true
+      },
+      "all_point_gates_pass": true,
+      "descriptive_interval_excludes_zero": false
+    },
+    "posterior": {
+      "gates": {
+        "both_stage0_ledger_fit_at_least_0_75": false,
+        "candidate_stage0_gain_at_least_0_05": true,
+        "candidate_new_skill_gain_at_least_0_05": false,
+        "active_effect_at_least_0_05": true,
+        "relative_retention_at_least_minus_0_05": false,
+        "absolute_stable_change_at_least_minus_0_05": false,
+        "relative_new_skill_gain_at_least_minus_0_05": true
+      },
+      "all_point_gates_pass": false,
+      "descriptive_interval_excludes_zero": true
+    }
+  },
+  "interpretations": [
+    {
+      "observation": "Observed replay: oracle accuracy 60.3125% versus random 55%, effect +5.3125 percentage points, interval [-4.6902, 16.4968].",
+      "implication": "The prescribed point gates pass, so the observed-only seed43 confirmation is consistent with the frozen protocol. The seed29 interval includes both harm and benefit, so this is not an established positive effect."
+    },
+    {
+      "observation": "Posterior replay: oracle accuracy 65.9375% versus random 54.6875%, effect +11.25 points, interval [2.8187, 20.3390].",
+      "implication": "This descriptive acquisition contrast cannot qualify posterior consolidation: random stage0 ledger fit is 54.1667% below 75%; oracle new-skill gain is 4.6875 points below 5; oracle stable accuracy drops from 100% to 81.25%, violating the 5-point absolute limit; its retention change is also 32.8125 points worse than random."
+    },
+    {
+      "observation": "Posterior-minus-observed effect is -0.3125 points for random and +5.625 points for oracle; the interaction is +5.9375 points. All three corresponding intervals include zero.",
+      "implication": "The four-condition results do not establish a beneficial consolidation effect or an acquisition-by-consolidation interaction."
+    },
+    {
+      "observation": "Observed oracle new-skill accuracy rises from 29.6875% immediately before stage1 to 50% after stage1; observed random and posterior oracle also finish at 50%. The unadapted base new-skill accuracy is 46.875%.",
+      "implication": "The observed oracle's 20.3125-point new-skill gain partly reflects recovery from the stage0-adapted baseline. It passes the declared relative gain gate, but final accuracy is at balanced binary chance and does not establish new-skill proficiency."
+    }
+  ],
+  "baseline_and_frozen_base_evidence": {
+    "comparisons": {
+      "observed/random": {
+        "examples": 304,
+        "prompt_hash_equal": true,
+        "prediction_mismatches": 0,
+        "probability_mismatches": 0,
+        "max_probability_difference": 0,
+        "all_prediction_fields_equal": true
+      },
+      "observed/hypothesis_elimination_oracle": {
+        "examples": 304,
+        "prompt_hash_equal": true,
+        "prediction_mismatches": 0,
+        "probability_mismatches": 0,
+        "max_probability_difference": 0,
+        "all_prediction_fields_equal": true
+      },
+      "posterior/random": {
+        "examples": 304,
+        "prompt_hash_equal": true,
+        "prediction_mismatches": 0,
+        "probability_mismatches": 0,
+        "max_probability_difference": 0,
+        "all_prediction_fields_equal": true
+      },
+      "posterior/hypothesis_elimination_oracle": {
+        "examples": 304,
+        "prompt_hash_equal": true,
+        "prediction_mismatches": 0,
+        "probability_mismatches": 0,
+        "max_probability_difference": 0,
+        "all_prediction_fields_equal": true
+      },
+      "base-across-runs-stage0": {
+        "examples": 304,
+        "prompt_hash_equal": true,
+        "prediction_mismatches": 0,
+        "probability_mismatches": 0,
+        "max_probability_difference": 0,
+        "all_prediction_fields_equal": true
+      },
+      "base-across-runs-stage1": {
+        "examples": 400,
+        "prompt_hash_equal": true,
+        "prediction_mismatches": 0,
+        "probability_mismatches": 0,
+        "max_probability_difference": 0,
+        "all_prediction_fields_equal": true
+      }
+    },
+    "matching_context_only_artifacts_across_modes_for_same_acquisition_arm": true,
+    "all_64_stable_device_probabilities_identical_after_stage0_and_before_stage1": true,
+    "unadapted_base_single_accuracy": {
+      "stage0": 0.5,
+      "stage1": 0.503125
+    },
+    "unadapted_base_new_skill_accuracy": 0.46875,
+    "frozen_probe_implementation": "run.py:70-82 hashes each parameter name, shape, first two values and last two values. It samples base tensors; it is not a full base-tensor hash.",
+    "runtime_evidence": "Both executions finish successfully with the recorded run.py hash. That path freezes the base, rejects frozen-parameter gradients, and checks the sampled base probe after fresh loads and adapter unload. The initial base and all four eval-before-stage0 prediction artifacts are exactly equal across all 304 rows; base-stage1 artifacts match across runs on 400 rows.",
+    "limits": "These are sampled weight checks plus equality of recorded baseline outputs. No full frozen-base tensor equality proof is saved, and none is inferred. Random and known-family oracle acquisition use zero model-scoring input tokens in these runs; a general learned active selector is not tested."
+  },
+  "checkpoint_reload_evidence": {
+    "reload_receipts": [
+      {
+        "condition": "observed/random",
+        "stage": 0,
+        "adapter_sha256": "76f7a6d98a9288d49a2e8b27283650d02705d7b7194eec2ffc28274549be66e9",
+        "adapter_file_sha256": "f30ba0a50b88a26cb1ff94b4ea8ae01f0cf076987166bfb3300f3e5066cdc3ba",
+        "reload_tensor_equality": true,
+        "reload_logit_equality": true,
+        "reload_max_logit_difference": 0,
+        "fresh_base_model_object": true,
+        "probe_count": 4,
+        "evidence_in_probe_prompt": false,
+        "use_cache": false,
+        "checkpoint_tensor_file_present_locally": false,
+        "optimizer_file_present_locally": false
+      },
+      {
+        "condition": "observed/random",
+        "stage": 1,
+        "adapter_sha256": "e5aa12f94dbe05e31f2ebc32218fe34d3ef94a02e42f1dab75aa46e234277bf4",
+        "adapter_file_sha256": "452a48fd2d89f9903c0b0ef3096d1ec3e7f10d5770be7aa0f9c84c8e95bf0464",
+        "reload_tensor_equality": true,
+        "reload_logit_equality": true,
+        "reload_max_logit_difference": 0,
+        "fresh_base_model_object": true,
+        "probe_count": 4,
+        "evidence_in_probe_prompt": false,
+        "use_cache": false,
+        "checkpoint_tensor_file_present_locally": false,
+        "optimizer_file_present_locally": false
+      },
+      {
+        "condition": "observed/hypothesis_elimination_oracle",
+        "stage": 0,
+        "adapter_sha256": "d7eeb4b8b3e364148b5c04fbaa92a3bd81ca0daa3e4d1aee2306a05259413e99",
+        "adapter_file_sha256": "4da83f02f30d9e2d9fd5e75d426f257793bfd567a2a06263614fb33055e45633",
+        "reload_tensor_equality": true,
+        "reload_logit_equality": true,
+        "reload_max_logit_difference": 0,
+        "fresh_base_model_object": true,
+        "probe_count": 4,
+        "evidence_in_probe_prompt": false,
+        "use_cache": false,
+        "checkpoint_tensor_file_present_locally": false,
+        "optimizer_file_present_locally": false
+      },
+      {
+        "condition": "observed/hypothesis_elimination_oracle",
+        "stage": 1,
+        "adapter_sha256": "7945fa2a39bacbaad92feee33a6b408ee02f2da9b64c13625bc209376e9e81f2",
+        "adapter_file_sha256": "5a553b660bb6c7cdaa1e026f0c099bc129ed047103558b119da55e2ea324940d",
+        "reload_tensor_equality": true,
+        "reload_logit_equality": true,
+        "reload_max_logit_difference": 0,
+        "fresh_base_model_object": true,
+        "probe_count": 4,
+        "evidence_in_probe_prompt": false,
+        "use_cache": false,
+        "checkpoint_tensor_file_present_locally": false,
+        "optimizer_file_present_locally": false
+      },
+      {
+        "condition": "posterior/random",
+        "stage": 0,
+        "adapter_sha256": "a55ac261cf8bc6823f90aefb857b72640e55b468b0fb904f3e2259bc95a3045d",
+        "adapter_file_sha256": "d936d3303584cbc808d60643a8f389d8ef8ad69fe61fdfa202c6989e47cabd4f",
+        "reload_tensor_equality": true,
+        "reload_logit_equality": true,
+        "reload_max_logit_difference": 0,
+        "fresh_base_model_object": true,
+        "probe_count": 4,
+        "evidence_in_probe_prompt": false,
+        "use_cache": false,
+        "checkpoint_tensor_file_present_locally": false,
+        "optimizer_file_present_locally": false
+      },
+      {
+        "condition": "posterior/random",
+        "stage": 1,
+        "adapter_sha256": "5870a07af60f47e8762524ab38a3185ab268324af8b7a63ec97883c1db5f8537",
+        "adapter_file_sha256": "d39b7af4d22fd21a52db463b8c0629a77c8f95a24b7eac239b566b8abdc9dbdc",
+        "reload_tensor_equality": true,
+        "reload_logit_equality": true,
+        "reload_max_logit_difference": 0,
+        "fresh_base_model_object": true,
+        "probe_count": 4,
+        "evidence_in_probe_prompt": false,
+        "use_cache": false,
+        "checkpoint_tensor_file_present_locally": false,
+        "optimizer_file_present_locally": false
+      },
+      {
+        "condition": "posterior/hypothesis_elimination_oracle",
+        "stage": 0,
+        "adapter_sha256": "861bf74f40a2114708d6d57bb3d1a10356de755b4a36b5cf71296c7fb7178ab9",
+        "adapter_file_sha256": "a3a25f0ccbcc5e054120028b61d8701076d05afef52fe368173b5094abac4492",
+        "reload_tensor_equality": true,
+        "reload_logit_equality": true,
+        "reload_max_logit_difference": 0,
+        "fresh_base_model_object": true,
+        "probe_count": 4,
+        "evidence_in_probe_prompt": false,
+        "use_cache": false,
+        "checkpoint_tensor_file_present_locally": false,
+        "optimizer_file_present_locally": false
+      },
+      {
+        "condition": "posterior/hypothesis_elimination_oracle",
+        "stage": 1,
+        "adapter_sha256": "00f0d5dc9132617d17164332ba5e7fc94424f1e375125fcdc097f6df2b125bb6",
+        "adapter_file_sha256": "757f4bd33fa6d1ca789df2519f15ec0d0317d1b3a11e758859b026ed83d42861",
+        "reload_tensor_equality": true,
+        "reload_logit_equality": true,
+        "reload_max_logit_difference": 0,
+        "fresh_base_model_object": true,
+        "probe_count": 4,
+        "evidence_in_probe_prompt": false,
+        "use_cache": false,
+        "checkpoint_tensor_file_present_locally": false,
+        "optimizer_file_present_locally": false
+      }
+    ],
+    "receipts_with_exact_trainable_tensor_and_probe_logit_equality": 8,
+    "logits_checked_per_reload": 4,
+    "distinct_probe_inputs": [
+      385,
+      224,
+      801,
+      773
+    ],
+    "probe_scope": "All four probes are stable device0, context0, target0; the same four inputs are used at both stages. Exact logit equality is scoped to these probes.",
+    "fresh_base_model_object": true,
+    "separate_process_reload_test": false,
+    "limits": "Adapter tensors and optimizer files were not part of the bounded local sync. The saved hashes and successful GPU reload receipts are internally consistent, but this audit did not independently rehash those remote tensor files or reload a model. Optimizer loading succeeds in the source path; an exact optimizer-state equality assertion is not recorded."
+  },
+  "prior_seed17": {
+    "stage1_accuracy_from_raw_predictions": {
+      "random": 0.659375,
+      "model_uncertainty": 0.571875,
+      "hypothesis_elimination_oracle": 0.64375
+    },
+    "active_effects_from_raw_predictions": {
+      "model_uncertainty": -0.08750000000000002,
+      "hypothesis_elimination_oracle": -0.015625
+    },
+    "interpretation": "The earlier screen remains negative: model uncertainty -8.75 points and known-family oracle -1.5625 points against random. This follow-up does not replace that result."
+  },
+  "artifact_sha256": {
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/config.json": "67978d872d6136a7c48698dcd673ffb995bc439685c385c4e29546546726e7cd",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/result.json": "c803331f5b918b3ee45b737371cf7fdddd84e29809d894a84688a66a0a9f23fa",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/task.json": "2ffc77c5533b29a2f10d864654fd2bc7c0b9f2892c790fa381d1d925e3e66c26",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/runtime.json": "c1a4374ddeb5409b3ca139d6c5c5728e3f887227847d217d40d9b507f1380210",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/execution.json": "8d3f48eb23bfbceb909a4fba147749ad4cd98dd0b5729e37197ccb0796ef1ed7",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/data-manifest.json": "e77f5aac23d03a26d9af5d59d99c7f6b305dc89fbdf9a9c569f118ff34bc5451",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/run.log": "2100f9f36541371f7cad24dc50132c1a10aa789ef0f9b3184b60a9bb9acde929",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/base-stage0.json": "0425e1f74e299f62e6e414e5490cc76f1e7693c53443d1f6149f1068f3799b3d",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/base-stage1.json": "8061ee5af31d174a66b266b609e508b65ace686f4ee9d5a5860ab534bd22db4b",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/specification-ceiling-stage0.json": "cf77ed6a4a19bb75af5e669b394b3d53093b4514d6ec63b18d9ed2da47c26d6d",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/specification-ceiling-stage1.json": "5200d093365efe4db2b604259246b02ec9defaafc3571fce951a8c36d0392c9c",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/result.json": "7ee27766be27224a202b145518ead659d2b23f4862d4820a8cfc7156f14be410",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/queries.jsonl": "f5e5433d4a47ad216dee6cd86e9463a7f9d44fc43d481f48874e20dbd2390521",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/training.jsonl": "120f35a330ec4c107e577e85f3fa3d383379c33d59804f3170c4d3e0ccaace67",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/observations-stage0.json": "a575b90228e810a9df33a1d3c3adf89c2dde2d77430962e9e40a201e105f936f",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/observations-stage1.json": "60a609405e89cf5ac6e415e373db508cece14caa05f244167eddcbb00d98c2f7",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/training-rows-stage0.json": "6a72f1590fe656f74012413aac1baf4b14ab5a91f38d500049bc22887da35d46",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/consolidation-stage0.json": "ad6742976568bd8ca48c587646b577d77f2c07a9a11f323459b955c5045c8169",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/adapter-stage0/reload-proof.json": "4430dcaa0f0aa1801b4584729f3c9e9517d29daa8f6e61aca41e4466513dd795",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/eval-before-stage0.json": "0425e1f74e299f62e6e414e5490cc76f1e7693c53443d1f6149f1068f3799b3d",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/eval-stage0.json": "24792df21ced0d92eb3f10cf1d7b2f02ed27630f775f557c100a709384fde86e",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/training-fit-stage0.json": "9be0a8111d07b51abc7fdde92fe4924f9b5217c00baaa5a9d001b10af0c9541a",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/context-only-stage0.json": "a16a455aea6c29e014a1283781bbbda0cd0206fb56ff4cad1d6003cab019cdc2",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/training-rows-stage1.json": "49eab5b9c7a0b5fc50e6c83e289f81f81de98f1973e6cd2f4a06c5dbe2916fdc",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/consolidation-stage1.json": "39fe705a5eee58ba1cbcf728faeffadf5a293831fcdedb0e4a9a59cba14f2047",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/adapter-stage1/reload-proof.json": "e606174b9728f4a35e343e1a5f03bfcec1f0235319537a9993185fda2571e05a",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/eval-before-stage1.json": "a0a3906e85222a7a0e6cc10ea85fefa7eece18219491cf765e3c4ab03b081353",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/eval-stage1.json": "f2cd7e4a81cafc65c59a9cf91e1970d6a019ba4f4c31e7c51d3ddecc5811ad83",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/training-fit-stage1.json": "3454d6c51d578c90df7549cd4cb5ad57f47499ccc6f05faf8779bb5875c15dc6",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/random/context-only-stage1.json": "6fdddd0fdd303c182ec1103d907b3610ea8981d9f84bf543eaf0dbb5f8e2a8c7",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/result.json": "87c67a9304586f9c829a580114a793024ee503588ebc1107b82c0561d7037c00",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/queries.jsonl": "d3c99eb149c92752d478ea284001f978f4bee763f5ae89a91bdd44b38bb55471",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/training.jsonl": "58ca7fd1b21161afd694ee699e3b13f476397a59ef99824463c68f104ba06f58",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/observations-stage0.json": "5f3dbf7c6cd6183b8e1696703e56bfd5daeab6482a3964cd8654fea93eb3243b",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/observations-stage1.json": "7f7f8712d7cb6d04af9d7abc7fefc2f00c227b71a17e7bb5eb9fa9f254f4e431",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/training-rows-stage0.json": "b1784c4e5ad9141d71ef5a640d43a27cd8468995089309023d9a0903e2ccc76e",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/consolidation-stage0.json": "f4ad124ee9b093c8be784d243ba01bd35504114d58046eb132d15cd01dddb4b6",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/adapter-stage0/reload-proof.json": "5aa4b06bd52b3a03adece204a8490861aa40c7d08b0d9431c4f17430da9aceb4",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/eval-before-stage0.json": "0425e1f74e299f62e6e414e5490cc76f1e7693c53443d1f6149f1068f3799b3d",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/eval-stage0.json": "e8434d98875ed74ebe96f23d9b6ba741f8ae82e399b177554d2a26e646246406",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/training-fit-stage0.json": "f2b58749e2df7b1968f5ed262b88520e9ff3e38ef600314fc2c14430cb95a4d1",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/context-only-stage0.json": "75b34d2c771867de799107dd4fb636f25a9639961bb47d94059cdf0a5d93535e",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/training-rows-stage1.json": "fd2eedbc81b7ff2ea7893806463a7f27b678e5090b01650c7746f424036baf93",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/consolidation-stage1.json": "24cc5ded6c01c1106198d5afd3ac33fc5d58cd937ea504d9177d1498f12582ea",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/adapter-stage1/reload-proof.json": "4c145669e7faf0afec8be1864971091a40d821596db012a0e925cd1b8ffe8755",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/eval-before-stage1.json": "695f5a1e651d72c89674f7129b71ced87feef3e2e122fa4ef91c21ca2727e159",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/eval-stage1.json": "a1fa3d630b1aa2f312d1c9f19f9463a9b33721c3ee551f49434697f24cdb03dc",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/training-fit-stage1.json": "764056ab315e0e36ee866540859bd7f62cd15d2158bc45aa14768cda80f0a464",
+    "outputs/portfolio/runs/active-evidence-observed-replay-seed29/hypothesis_elimination_oracle/context-only-stage1.json": "a21a87608f9420aaa84981087195859045215d6c4a8aa6057ee24b166d8c5b81",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/config.json": "4df84e53a05ec331652562b9b352f6ed6f1747e8f961c4a038db101f6454260f",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/result.json": "d2ccc60f38d32da733b1d1336e1406bcd11f397701e1927ea1bb9d939a72ccdf",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/task.json": "e32695468fd2f31b14eb8b77f7a4cf887e76d344f93eb678a3eff0845079ad12",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/runtime.json": "ebd0a567254da02e4d8453f44824119dcd0402bdc3ffd87dace5a64300eb9a0a",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/execution.json": "8b4eaa471be470c6cf8df5789b806ee717e9b837c1d3737188e61e5a4550c4f1",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/data-manifest.json": "e77f5aac23d03a26d9af5d59d99c7f6b305dc89fbdf9a9c569f118ff34bc5451",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/run.log": "eb6347e52d19937e3b5efed36f07477cf7c98c208d20a2a4aa919d3c5c97a615",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/base-stage0.json": "0425e1f74e299f62e6e414e5490cc76f1e7693c53443d1f6149f1068f3799b3d",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/base-stage1.json": "8061ee5af31d174a66b266b609e508b65ace686f4ee9d5a5860ab534bd22db4b",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/specification-ceiling-stage0.json": "cf77ed6a4a19bb75af5e669b394b3d53093b4514d6ec63b18d9ed2da47c26d6d",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/specification-ceiling-stage1.json": "5200d093365efe4db2b604259246b02ec9defaafc3571fce951a8c36d0392c9c",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/result.json": "62aeedbe4cb954e33137e4093cda1d3a1e8f910c36bbfac7f14d43e897895110",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/queries.jsonl": "f5e5433d4a47ad216dee6cd86e9463a7f9d44fc43d481f48874e20dbd2390521",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/training.jsonl": "c6ea90864c7c1c787f516e027d95811f3f69f43df30c495e4ac2696200f99f08",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/observations-stage0.json": "a575b90228e810a9df33a1d3c3adf89c2dde2d77430962e9e40a201e105f936f",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/observations-stage1.json": "60a609405e89cf5ac6e415e373db508cece14caa05f244167eddcbb00d98c2f7",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/training-rows-stage0.json": "fddf2c2b397c641e6d780d3ef6f86845933378860859eaeda38357f545d16bb5",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/consolidation-stage0.json": "8a7f78ee611d85f871710b235bc4b387a3766918f6ee19591f02406956097f50",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/adapter-stage0/reload-proof.json": "3d86b14a57a6d77cdbadffab550268310357d31ff7d04edf65c197b8e386f9cd",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/eval-before-stage0.json": "0425e1f74e299f62e6e414e5490cc76f1e7693c53443d1f6149f1068f3799b3d",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/eval-stage0.json": "6ba354a91f323a45f276d00e26740d321089bee63aa8ea0bedf2c1bc06bf369c",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/training-fit-stage0.json": "e945c4a749af2c9643c3320b26e4aa87385f027a21c1a6210236b1d1fedf53f5",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/context-only-stage0.json": "a16a455aea6c29e014a1283781bbbda0cd0206fb56ff4cad1d6003cab019cdc2",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/training-rows-stage1.json": "0c57ef4ccc473da8a0c50689855550a70bb23247ec6ee0eafca3324720f0ca62",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/consolidation-stage1.json": "49d6c57b4b030d7d58a0181b160465a149dd11d2a36dd5084efe8ea2a3180208",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/adapter-stage1/reload-proof.json": "1c10deb61281370f79a8e65f4ffb5463cf7877333002947c6e8c4c828cf3a56c",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/eval-before-stage1.json": "4bdf5e165ae0f559deea063335b303a5466538d10ad167eb656cc6aaa7a6f346",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/eval-stage1.json": "19cc694390943fbcecc1baa585aff998478db3dabced8ad58dd76e81abd0293d",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/training-fit-stage1.json": "955febc04ba2d93a3eccb7c3704c0c48c55236e80f0cdbce683319144a5d7109",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/random/context-only-stage1.json": "6fdddd0fdd303c182ec1103d907b3610ea8981d9f84bf543eaf0dbb5f8e2a8c7",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/result.json": "b21cd9fc7d4fdb3016d65ddbbd40ac070135a48a8f7af10bff5b7db60180f563",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/queries.jsonl": "d3c99eb149c92752d478ea284001f978f4bee763f5ae89a91bdd44b38bb55471",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/training.jsonl": "548b66d538153a663e193ee027385c8e01d79990b4ea1501c450f944f6d5bbf3",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/observations-stage0.json": "5f3dbf7c6cd6183b8e1696703e56bfd5daeab6482a3964cd8654fea93eb3243b",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/observations-stage1.json": "7f7f8712d7cb6d04af9d7abc7fefc2f00c227b71a17e7bb5eb9fa9f254f4e431",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/training-rows-stage0.json": "63ef596384e07b107ec2d3103be193f67b8360a48a554913071a6b8ddc1c643a",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/consolidation-stage0.json": "d7cf52a6dc427f1867c0db1fb443f656ecdbeeef44274c96fa1baf05e3f396fa",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/adapter-stage0/reload-proof.json": "18c76f976f186c4a725014d00d35092e1337844cdb67cc71fdd22328cc5d1ccf",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/eval-before-stage0.json": "0425e1f74e299f62e6e414e5490cc76f1e7693c53443d1f6149f1068f3799b3d",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/eval-stage0.json": "04881f6019bc2b9d7f375ecc766de7a87fb50ead98315061c64c859b4d4d8972",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/training-fit-stage0.json": "89f2b68c5faf766d888023a5650c29316fdfd0c4c69f9e1d7af1705feb6e8c0b",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/context-only-stage0.json": "75b34d2c771867de799107dd4fb636f25a9639961bb47d94059cdf0a5d93535e",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/training-rows-stage1.json": "469d9b262a3d1b70102df15815e8f961e539c3d0ca974d857cf6127d48f1e99b",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/consolidation-stage1.json": "644efcadf430dea1818ad69f43a4d628b11872185b43187f48e2ad26c9bbf810",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/adapter-stage1/reload-proof.json": "9ccd9b8bd1657999544bc9f8293944d46820c5f26c030ab75dfadc8b499bf56b",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/eval-before-stage1.json": "54d12e455a87074eb70fd34f4c503372273210bc419a87825cf66c5fa27533d4",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/eval-stage1.json": "27a9b792da0581239ede8511f1e979426364a6cf4407e11e7a4b825bcbbdcce6",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/training-fit-stage1.json": "898cdeb367d5b6ac4b8a2f3270fad519977a7e0984d42544837168bb32a31378",
+    "outputs/portfolio/runs/active-evidence-posterior-replay-seed29/hypothesis_elimination_oracle/context-only-stage1.json": "a21a87608f9420aaa84981087195859045215d6c4a8aa6057ee24b166d8c5b81",
+    "outputs/portfolio/analyses/active-evidence-factorial-seed29.json": "d03aab62f983377bdec859e9f67133632e841a6ae40baf65a73a36f32157bcc5",
+    "outputs/portfolio/manifests/active-evidence-observed-replay-seed43.json": "d9f1f4315c560cf179bbaa4631f5087dea60e9ed2f3a1064b4bde58514a87e97",
+    "outputs/portfolio/runs/active-evidence-screen-seed17/result.json": "db1a63e3cbd8e095dcca0b18858c49dbeb9fc7eb1cdd4763f7af9035532bcd41",
+    "outputs/portfolio/runs/active-evidence-screen-seed17/random/eval-stage1.json": "099b218f684505d9f851786151e66cccb5bc978a80bc6c447d858c9290005ea7",
+    "outputs/portfolio/runs/active-evidence-screen-seed17/model_uncertainty/eval-stage1.json": "a4d04bab50791ff81d47a76c8dc4f36eefbe6346bd61a2e2b0cb8d52d54538b2",
+    "outputs/portfolio/runs/active-evidence-screen-seed17/hypothesis_elimination_oracle/eval-stage1.json": "890211b826c25d382bdfe3777378b8c5ca391e3438219b7c26581a75194daac8"
+  },
+  "reviewed_at": "2026-09-07T23:06:29.819577+00:00",
+  "confirmation_closure": {
+    "status": "confirmation_failed_recipe_closed",
+    "reviewed_at": "2026-09-07T23:17:00.614086+00:00",
+    "source_sha256": "9e9449df61927208fb73aa5091e7a180f15b9473f7e3ee5a8c4f3e4e3465518f",
+    "errors": [],
+    "configs_exactly_equal_except_seed": true,
+    "same_recorded_source_bundle_and_python_source_hashes": true,
+    "execution_completed_with_exit_code_zero": true,
+    "same_budgets_as_seed29_observed": true,
+    "within_run_initial_adapter_hashes_equal": true,
+    "initial_adapter_sha256": "82373562104cd2dcf3582e4e6cbeeb23623d0845d358cddec623e6e702bf203a",
+    "actual_updates_from_raw_logs": 320,
+    "conditions": {
+      "random": {
+        "stage0_accuracy": 0.703125,
+        "stage0_gain": 0.21484375,
+        "stage0_ledger_fit": 1.0,
+        "stage1_accuracy": 0.64375,
+        "stage1_correct": 206,
+        "new_skill_before": 0.5625,
+        "new_skill_after": 0.5,
+        "new_skill_gain": -0.0625,
+        "stable_after_stage0": 1.0,
+        "stable_after_stage1": 1.0,
+        "stable_retention_change": 0.0
+      },
+      "hypothesis_elimination_oracle": {
+        "stage0_accuracy": 0.74609375,
+        "stage0_gain": 0.2578125,
+        "stage0_ledger_fit": 1.0,
+        "stage1_accuracy": 0.6625,
+        "stage1_correct": 212,
+        "new_skill_before": 0.515625,
+        "new_skill_after": 0.5,
+        "new_skill_gain": -0.015625,
+        "stable_after_stage0": 1.0,
+        "stable_after_stage1": 1.0,
+        "stable_retention_change": 0.0
+      }
+    },
+    "primary_contrast": {
+      "effect": 0.01875,
+      "interval_95": [
+        -0.050576536965395755,
+        0.08545647136709698
+      ],
+      "paired_examples": 320,
+      "causal_groups_by_device": {
+        "0": 32,
+        "1": 30,
+        "2": 29,
+        "3": 29,
+        "4": 28
+      },
+      "bootstrap_seed": 43,
+      "replicates": 2000
+    },
+    "independent_calculation": "Computed forced-choice accuracy, new-skill gain and stable change directly from prediction rows. Rebuilt paired correctness columns, sampled causal input groups within each device using random.Random(43), and obtained percentile bounds with statistics.quantiles(n=40, method=inclusive). No parent analysis function was imported.",
+    "bootstrap_scope": "Descriptive causal-group sampling uncertainty within one confirmation seed; not a joint estimate of training-seed uncertainty and not pooled with seed29.",
+    "stage_execution_receipts": [
+      {
+        "arm": "random",
+        "stage": 0,
+        "updates": 80,
+        "examples": 640,
+        "input_tokens": 83200,
+        "supervised_tokens": 640,
+        "old_replay_examples": 0,
+        "initial_adapter_sha256": "82373562104cd2dcf3582e4e6cbeeb23623d0845d358cddec623e6e702bf203a",
+        "final_adapter_sha256": "bc38aa0ab5e87cdef625d8ac8f35b452d416b6d9162a61d48e152f7841ddeb13",
+        "reload": {
+          "adapter_sha256": "bc38aa0ab5e87cdef625d8ac8f35b452d416b6d9162a61d48e152f7841ddeb13",
+          "adapter_file_sha256": "b35c61d9b1c64c42e38d7aa6bf9a58bd6ae177c2b1e17ca9608d6fb3a64d45c2",
+          "reload_tensor_equality": true,
+          "reload_logit_equality": true,
+          "reload_max_logit_difference": 0.0,
+          "fresh_base_model_object": true,
+          "probe_count": 4,
+          "evidence_in_probe_prompt": false,
+          "use_cache": false
+        },
+        "checkpoint_tensor_file_present_locally": false,
+        "optimizer_file_present_locally": false
+      },
+      {
+        "arm": "random",
+        "stage": 1,
+        "updates": 80,
+        "examples": 640,
+        "input_tokens": 83200,
+        "supervised_tokens": 640,
+        "old_replay_examples": 160,
+        "initial_adapter_sha256": "bc38aa0ab5e87cdef625d8ac8f35b452d416b6d9162a61d48e152f7841ddeb13",
+        "final_adapter_sha256": "bb26fa1f3cd849c1ffa3cc16ec10117bc61a76f1df41cb7f3cd83d897b928854",
+        "reload": {
+          "adapter_sha256": "bb26fa1f3cd849c1ffa3cc16ec10117bc61a76f1df41cb7f3cd83d897b928854",
+          "adapter_file_sha256": "bddb58c358d609519eb1d722f602606c2ecd6a219b6c5a5852d5834f00cff127",
+          "reload_tensor_equality": true,
+          "reload_logit_equality": true,
+          "reload_max_logit_difference": 0.0,
+          "fresh_base_model_object": true,
+          "probe_count": 4,
+          "evidence_in_probe_prompt": false,
+          "use_cache": false
+        },
+        "checkpoint_tensor_file_present_locally": false,
+        "optimizer_file_present_locally": false
+      },
+      {
+        "arm": "hypothesis_elimination_oracle",
+        "stage": 0,
+        "updates": 80,
+        "examples": 640,
+        "input_tokens": 83200,
+        "supervised_tokens": 640,
+        "old_replay_examples": 0,
+        "initial_adapter_sha256": "82373562104cd2dcf3582e4e6cbeeb23623d0845d358cddec623e6e702bf203a",
+        "final_adapter_sha256": "ef3c106372d2d233de8b4074c1df38b2bc0e59e4576445b23b329ede17232924",
+        "reload": {
+          "adapter_sha256": "ef3c106372d2d233de8b4074c1df38b2bc0e59e4576445b23b329ede17232924",
+          "adapter_file_sha256": "44746a47e955504f52c8a9b3dea8f43032a202202affbfb5715a915d797d5743",
+          "reload_tensor_equality": true,
+          "reload_logit_equality": true,
+          "reload_max_logit_difference": 0.0,
+          "fresh_base_model_object": true,
+          "probe_count": 4,
+          "evidence_in_probe_prompt": false,
+          "use_cache": false
+        },
+        "checkpoint_tensor_file_present_locally": false,
+        "optimizer_file_present_locally": false
+      },
+      {
+        "arm": "hypothesis_elimination_oracle",
+        "stage": 1,
+        "updates": 80,
+        "examples": 640,
+        "input_tokens": 83200,
+        "supervised_tokens": 640,
+        "old_replay_examples": 160,
+        "initial_adapter_sha256": "ef3c106372d2d233de8b4074c1df38b2bc0e59e4576445b23b329ede17232924",
+        "final_adapter_sha256": "14040e249187205ef46cc983ec6716a307116444f5456f6595fe746836a42407",
+        "reload": {
+          "adapter_sha256": "14040e249187205ef46cc983ec6716a307116444f5456f6595fe746836a42407",
+          "adapter_file_sha256": "f85492d8175586649183a715e2f689460fd3a01ea8a3ddcbf43d523a8808545f",
+          "reload_tensor_equality": true,
+          "reload_logit_equality": true,
+          "reload_max_logit_difference": 0.0,
+          "fresh_base_model_object": true,
+          "probe_count": 4,
+          "evidence_in_probe_prompt": false,
+          "use_cache": false
+        },
+        "checkpoint_tensor_file_present_locally": false,
+        "optimizer_file_present_locally": false
+      }
+    ],
+    "baseline_and_reload_limits": {
+      "all_recorded_stage0_initial_predictions_equal_unadapted_base": true,
+      "stable_predictions_unchanged_between_stage0_end_and_stage1_start": true,
+      "full_base_tensor_equality_established": false,
+      "same_process_fresh_base_object_reload_receipts": 4,
+      "logit_probes_per_reload": 4,
+      "limit": "Existing sampled frozen-base, narrow logit-probe and local checkpoint-file limits remain in force. Completion and consistent receipts establish successful runtime assertions, not an independent full-base tensor comparison or a new model reload by this reviewer."
+    },
+    "decision": {
+      "recorded": "inconclusive_durable_learning_not_qualified",
+      "minimum_effect_gate_pass": false,
+      "random_new_skill_gain_gate_pass": false,
+      "oracle_new_skill_gain_gate_pass": false,
+      "promote": false,
+      "stop_recipe": true,
+      "conclusion": "The observed-label acquisition effect does not clear the 5-point minimum effect or new-skill learning gates at seed43. Zero stable forgetting in this failed acquisition regime is not evidence of successful continual learning. No confirmed active-acquisition benefit under this recipe; preserve the seed17 negative and seed29 factorial results and close the recipe without further AE runs."
+    },
+    "artifact_sha256": {
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/config.json": "199cfa9559b3aed25407ca661ace3887d9b162d86c23ff4eae8d4abb8eda9c0c",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed29/config.json": "67978d872d6136a7c48698dcd673ffb995bc439685c385c4e29546546726e7cd",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/result.json": "a439c0e52d816487cd5b513a25eba6a7c48b43273c20c30087f82ce5035fc8c7",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/task.json": "d9f1f4315c560cf179bbaa4631f5087dea60e9ed2f3a1064b4bde58514a87e97",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/runtime.json": "f655472684afdf1aaf4e0e719a500989ca2c51adb7ad15620898eff06c7082c4",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/execution.json": "a1b607746f19c77102faa33e870c4b87d70b2aa24a4eb34046d7c30eaa2d97b5",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed29/runtime.json": "c1a4374ddeb5409b3ca139d6c5c5728e3f887227847d217d40d9b507f1380210",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed29/task.json": "2ffc77c5533b29a2f10d864654fd2bc7c0b9f2892c790fa381d1d925e3e66c26",
+      "outputs/portfolio/analyses/active-evidence-confirmation-seed43.json": "034d429e27e79215af1726654f3d62aad0a45c9e09f79cd283a2b402c6cc0421",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/base-stage0.json": "a80ac3ba9ae76ec8ef41ae71bf31ebbb30784958c78e754465dafbecccdb3a85",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/random/result.json": "bd1b6546b3023aa1f100693e3dc84317c6f580d1eee580c945b62fed79ecf081",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/random/training.jsonl": "8a047b032ca759d5aae99a05f11ac91219f2e38d785eae49bb755fdca048a5b7",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/random/queries.jsonl": "f4f348baadea6fda6cdaf6cbe489b09aefafe4eb6dc680cab55dc452c0a2b047",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/random/training-rows-stage0.json": "ad5baa672c63931922e1fa62a99f79e4605321a6ff79d6f7520779aaaf79d938",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/random/adapter-stage0/reload-proof.json": "906565106a59a701195ff3789a62ae45c82c0b5284f9ec813f68da61a08ba026",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/random/eval-before-stage0.json": "a80ac3ba9ae76ec8ef41ae71bf31ebbb30784958c78e754465dafbecccdb3a85",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/random/eval-stage0.json": "0e82d22ed65cdbbed0f6b5309443517ea54a2e3aa199d01fb9cd66caae5f4aa0",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/random/training-fit-stage0.json": "8210f217d3f67ff8d5464a761cc8b507cc44713384253d442c6ceace20dfc3c9",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/random/training-rows-stage1.json": "e336fc01f5830e23791088e0834eb7c85c796a79ed76f87e622e9ba71688b8b6",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/random/adapter-stage1/reload-proof.json": "2fb15194feb3e1a08d250ee2ea6296141e65ee70dbff82e363c10f0e1a36b0bf",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/random/eval-before-stage1.json": "868eef5f00e0bd7ea749002d7bb6082c053dcffd84ee3c7ae2d9089ab56c6bb5",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/random/eval-stage1.json": "b7bac294673b657777d916593ce855e9b78aa37067370cb55e29fbc1ccba9793",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/random/training-fit-stage1.json": "60c2d4b6c7861405c642e3d5e00116c301e3ad2be8bcb109ac3561987c8071a0",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/hypothesis_elimination_oracle/result.json": "693db96c96cbb55c5289f4505f9ed9669c5143e02af4b28ab97319de26731e69",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/hypothesis_elimination_oracle/training.jsonl": "5595bd075c3735f8444abbdc958e4189785843ec4c25498de22e185db23ccb91",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/hypothesis_elimination_oracle/queries.jsonl": "99047e26f7bf51fdb711bb363488465c5d5659749db395d435f6487587cb2b78",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/hypothesis_elimination_oracle/training-rows-stage0.json": "6322096841ceb8f72d897922dc83bba6743acb2bdeaa98919ec4e97776585836",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/hypothesis_elimination_oracle/adapter-stage0/reload-proof.json": "5e294e8dda77fa853c05437c9e3cf718b55dcfe07781c931bb376a68ad5131dc",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/hypothesis_elimination_oracle/eval-before-stage0.json": "a80ac3ba9ae76ec8ef41ae71bf31ebbb30784958c78e754465dafbecccdb3a85",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/hypothesis_elimination_oracle/eval-stage0.json": "acbf04053007114d2c69d40f5a11eb0e356bb1f8339791ea3c377b0cd1de92f9",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/hypothesis_elimination_oracle/training-fit-stage0.json": "e8fabc4550bdcbee1883e421e4eb29cd19e1cc579e520cf1f1ad365c53d55d3e",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/hypothesis_elimination_oracle/training-rows-stage1.json": "7450f9ba720311772e98c0affd007632971e72fdf852c1032575bdf947b74440",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/hypothesis_elimination_oracle/adapter-stage1/reload-proof.json": "cbf9a1eae6187f1ef843be1d162666ee8c63d1a6499c85eee21844492ce583c9",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/hypothesis_elimination_oracle/eval-before-stage1.json": "85574ba31783a916d81e24b642614ea4d367c2d405b1e7096dbac32eef93fc7a",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/hypothesis_elimination_oracle/eval-stage1.json": "845ec332040016cf706fa5160c6b115eff715091639d79135c7c094759d1225e",
+      "outputs/portfolio/runs/active-evidence-observed-replay-seed43/hypothesis_elimination_oracle/training-fit-stage1.json": "27525a28fd1e516c90b55e2ea398d59239197f118e3ef645eab4b0871f8c98a9"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "model_id": "Qwen/Qwen3-8B",
+  "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "model_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+  "manifest_path": "/mnt/shared/cl-portfolio/code/29f9a65aa2f601a7a567eed4b48e1ab3f76b271c25a0e0af3f56c00b24c8f3ed/manifest.json",
+  "manifest_sha256": "f7cf070b03b2fe89cadba0421e4e8bd5402684f38040d8c275cec369da1ca6f7",
+  "manifest_asset_key": "model:Qwen/Qwen3-8B@b968826d9c46dd6066d109eabc6255188de91218",
+  "expected_runtime": {
+    "torch_version": "2.10.0+rocm7.2.4.git3d3aa833",
+    "hip_version": "7.2.53211",
+    "gpu_arch": "gfx950",
+    "packages": {
+      "transformers": "5.16.1",
+      "accelerate": "1.14.0",
+      "huggingface-hub": "1.30.0",
+      "safetensors": "0.8.0",
+      "peft": "0.20.0",
+      "portallib": "0.2.1"
+    }
+  },
+  "transformers_source_sha256": {
+    "core_model_loading.py": "c26b65e7d89081fda1c60577b53a913f76cf5b7435a916fa1fdc09db4625053a",
+    "modeling_utils.py": "f103dc66dd3f08e7842c3624c586b281250349e1c0707f394f98db992ec3cd8f",
+    "conversion_mapping.py": "319e24abfac50cd2464dfc25c336c0f71dc08b6273fef65dfdf9feb414608577"
+  },
+  "hash_chunk_bytes": 67108864,
+  "cpu_threads": 4,
+  "cpu_interop_threads": 1,
+  "channel_timeout_seconds": 1800,
+  "expected_vocab_size": 151936,
+  "seed": 17,
+  "probe_token_ids": [
+    [100, 101, 102, 103, 104],
+    [314, 1592, 653, 589, 793, 238, 462],
+    [2048, 4096, 8192, 16384, 32768, 65536, 131072]
+  ]
+}

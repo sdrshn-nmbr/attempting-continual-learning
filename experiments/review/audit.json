@@ -1,0 +1,177 @@
+{
+  "checks": {
+    "active_evidence": {
+      "budgets": "Environment calls, updates, training input/padded/supervised tokens, examples and initial adapter hashes are checked across arms. Acquisition-model inference tokens are separately logged and are not equalized; no equal-total-compute interpretation is warranted.",
+      "durable_updates": "Training checks finite nonzero gradients and changed adapter hashes. Post-stage evaluation reloads adapter tensors onto a newly loaded base, verifies exact probe logits, and restores optimizer state. This is a new model object in the same process, not a fresh evaluator process.",
+      "freeze": "Base parameters are excluded from optimization and frozen gradients are rejected. Base equality on the 4B path uses parameter probes rather than a full-state hash.",
+      "generalization_boundary": "The raw-input split changes nuisance-bit combinations. Because b5-b9 are explicitly irrelevant, raw-input disjointness alone must not be described as a disjoint causal truth-table split. Device-composition prompts are separately scored.",
+      "hypothesis_privilege": "The family is public in every prompt; the exact-family selector is explicitly named an oracle. Selection receives queried observations and candidates, not the hidden rule or held-out labels. True-specification evaluations are separate frozen-base anchors.",
+      "primary_metric": "Forced choice over binary answer tokens; unrestricted token accuracy and answer-token mass are also present. No LLM judge is used.",
+      "training_evaluation_overlap": "Exact 10-bit acquisition and held-out values are separated by partition; collect_arm asserts no held-out acquisition value. Stable device 0 has no stage-1 training."
+    },
+    "portability": {
+      "budgets": "B minibatch order and example count are independent of replay. Replay intentionally adds A exposure/computation, and native versus LoRA capacity differs; both are explicitly disclosed feasibility controls.",
+      "checkpoint_and_context": "Training exits before a uv-launched evaluation process. Checkpoint tensor hashes, process identity and deterministic probe logits are checked. Held-out files are not opened by the training reader.",
+      "frozen_state": "Base, old task vectors and alignment are frozen and hashed. The new latent-only config sets train_core=false and excludes core parameters from the optimizer; replay with frozen core is rejected.",
+      "gradient_path": "Training calls portal(new_z), not inference-only portal.generate. Installed portallib 0.2.1 PortalInjector preserves autograd during factor placement. The independent one-backward probe below confirms nonzero core and new-vector gradients.",
+      "prepared_data_check": {
+        "artifact": "experiments/portability/outputs/qualification/prepared/data_manifest.json",
+        "boundary": "This checks the existing prepared artifact. Current parquet-loading code additionally verifies file hashes; the GPU-side files were not reopened by this audit.",
+        "counts": {
+          "a_eval": 192,
+          "a_train": 384,
+          "b_composition": 256,
+          "b_development": 52,
+          "b_length": 128,
+          "b_train": 364
+        },
+        "cross_split_duplicate_ids": 0,
+        "data_sha256": "21f554823515a92901a095317c71a06669ec0081a931a7705ad1869647876d05"
+      },
+      "published_a_boundary": "The protocol explicitly calls published A validation a release/regression measure, not novel unseen A acquisition.",
+      "retention_control": "The current LoRA branch unloads the B adapter and actually reevaluates routed published A behavior; it no longer substitutes the initialization score.",
+      "source_provenance": "Source and target shared core/task tensors must hash equally before extension. The final target original shared state is checked again before transport. Config revisions are pinned; local snapshots are checked and current parquet inputs have declared hashes.",
+      "transport": "Updated core and all task vectors are copied onto original target alignment with no B target calibration. Evaluation compares target raw, original-artifact initialization and transported state."
+    }
+  },
+  "cpu_evidence": {
+    "native_portal_backward": {
+      "alignment_unchanged": true,
+      "core_gradient_norm_max": 0.0007986717973835766,
+      "core_gradient_norm_min": 8.308176802529488e-06,
+      "finite_loss": true,
+      "fixture": "existing tests/test_contract.py tiny fixture; one backward, no test files saved",
+      "frozen_base_parameters_with_gradients": 0,
+      "frozen_base_unchanged": true,
+      "new_vector_gradient_norm": 1.9302303826407297e-06,
+      "nonzero_core_gradient_tensors": 14,
+      "old_latents_unchanged": true,
+      "portallib_version": "0.2.1",
+      "proof_limit": "Tiny CPU graph qualification only. Does not establish published-artifact learnability, GPU correctness, retention, or transport quality.",
+      "supervised_tokens": 4
+    }
+  },
+  "findings": [
+    {
+      "blocks_qualification_run": false,
+      "cpu_counterexample": {
+        "actual_candidate_decision": "keep_for_independent_replication",
+        "both_arms_new_skill_learning_gain": 0.25,
+        "both_arms_stable_accuracy_after": 0.0,
+        "both_arms_stable_accuracy_before": 1.0,
+        "both_arms_stable_retention_change": -1.0,
+        "both_arms_stage0_accuracy": 0.8,
+        "both_arms_stage0_accuracy_before_learning": 0.5,
+        "both_arms_training_fit": 1.0,
+        "budgets_and_initialization": "identical",
+        "candidate_retention_difference_vs_random": 0.0,
+        "candidate_stage1_accuracy": 0.7,
+        "config": "experiments/active_evidence/screen.json",
+        "executed_against": "experiments/active_evidence/run.py:summarize",
+        "random_stage1_accuracy": 0.6
+      },
+      "id": "AE-001",
+      "impact": "A kept acquisition contrast does not establish retained old-task ability. This is narrower than the handoff claim of no material retention regression and the campaign durable-learning criterion. The mini config is unaffected because it always reports qualification_only.",
+      "kind": "scientific_promotion_gate",
+      "lane": "active_evidence",
+      "locations": [
+        {
+          "end": 687,
+          "file": "experiments/active_evidence/run.py",
+          "start": 685
+        },
+        {
+          "end": 719,
+          "file": "experiments/active_evidence/run.py",
+          "start": 716
+        }
+      ],
+      "observed_behavior": "summarize subtracts the random arm retention change from the candidate retention change. It never bounds the candidate own stable_retention_change before returning keep_for_independent_replication.",
+      "priority": 2,
+      "requested_change": "Before calling a keep decision retention-preserving, require the candidate stable_retention_change to be at least minus an explicit absolute forgetting threshold, and include that value in the decision row. If the desired endpoint is only a relative acquisition effect, retain the contrast but label it separately from a retained-skill success.",
+      "title": "The relative retention gate can keep a candidate that forgets the entire retained task",
+      "verification": "The counterexample must cease being a retention-qualified positive, while a candidate within the absolute forgetting threshold can still qualify."
+    },
+    {
+      "blocks_qualification_run": false,
+      "id": "PORT-001",
+      "impact": "The main portable-new-skill signal is reported only as a point difference despite the registered program-block reporting requirement. The 256 composition rows contain 32 programs with eight correlated start states each; the program-level information count matters when reviewing a small transport gain.",
+      "kind": "missing_preregistered_uncertainty",
+      "lane": "portability",
+      "locations": [
+        {
+          "end": 511,
+          "file": "experiments/portability/run.py",
+          "start": 511
+        },
+        {
+          "end": 545,
+          "file": "experiments/portability/run.py",
+          "start": 540
+        },
+        {
+          "end": 45,
+          "file": "experiments/portability/protocol.json",
+          "start": 45
+        }
+      ],
+      "observed_behavior": "The keep rule uses new_b_transport_gain >= 0.05, but paired_program_interval is called only for results.learned versus results.raw/initial on the training backbone. No paired interval is emitted for results.transport.learned versus either transport floor.",
+      "priority": 2,
+      "requested_change": "Reuse paired_program_interval for transported B versus both target raw and target initial predictions and emit those descriptive intervals beside new_b_transport_gain. This can be computed from saved predictions without another GPU run; keep the declared boundary that intervals do not cover training-seed uncertainty.",
+      "title": "The transported-skill promotion signal has no program-block uncertainty report",
+      "verification": "A completed native arm includes paired program counts and intervals for both transport baselines, using matched prediction IDs and labels."
+    }
+  ],
+  "parent_handoff": {
+    "active_evidence_mini": "No blocker found for its explicitly qualification-only purpose; this is not authorization or hardware qualification.",
+    "before_interpreting_full_screen_positive": [
+      "AE-001",
+      "PORT-001"
+    ],
+    "immediate_gpu_dispatch_blockers_found": [],
+    "plasticity_gpu_status": "deferred; this review does not change dispatch priority",
+    "portability": "No detached-core gradient or checkpoint-carry blocker found in the current source. Real ROCm qualification remains required by its runner."
+  },
+  "reviewed_at": "2026-09-07T22:25:57.420661+00:00",
+  "reviewer": "independent plasticity lane author; authored neither reviewed lane",
+  "schema_version": 1,
+  "scope": {
+    "cpu_probes": [
+      "active summarize retention counterexample",
+      "one native PorTAL backward using the existing tiny fixture"
+    ],
+    "full_test_suites_rerun": 0,
+    "gpu_runs_started": 0,
+    "kubernetes_mutations": 0,
+    "only_written_file": "experiments/review/audit.json",
+    "queued_source_bundle_inspected": false,
+    "read_only_lanes": [
+      "experiments/active_evidence",
+      "experiments/portability"
+    ],
+    "source_boundary": "Findings apply to the source hashes below. Portability was being edited by its owner during review; current relevant changes were reread. Parent must match content-addressed queued sources to these hashes."
+  },
+  "source_sha256": {
+    "experiments/active_evidence/environment.py": "6a4475565b9dc924e1c5027b88452218ae39fc88acefb86509ef845a61c74b9b",
+    "experiments/active_evidence/handoff.json": "0aef91882757a3f16b33899f7eaa0cdd9e4d123c5ecb8c9dabbae7d6b105e824",
+    "experiments/active_evidence/mini.json": "c32cfd24c97d4c2a57fedcefbdfc44709d17da77bc09a4ad287b74e7249e5f6f",
+    "experiments/active_evidence/requirements.txt": "afc13824786ca3e6fac88822c1de43290514c81d3fb3d7be389597358a19ca0e",
+    "experiments/active_evidence/run.py": "8a772317e1c46d0c424a0dabcd362d9a42f3ea2a8728c37c4b07ae2ef0d01abb",
+    "experiments/active_evidence/screen.json": "f6c4f911910b57525f8f3c799d140b9fb15ac89e39a634549f7257ff9746c492",
+    "experiments/active_evidence/verify.py": "e3add8d75ec20d077f6c32a89e17bcd103bc4c5fd20dde8b29bea1f55a067cf1",
+    "experiments/portability/configs/fresh_qwen8_task_lora.json": "b1585cae59d8b85eec5d62224cdc95b3b6d2a128bc34da9b956234e125d58d03",
+    "experiments/portability/configs/ported_qwen8_core_no_replay.json": "10ad2616719fb186e78a6ad618f24a6dfbfeb48ce6bbd1714c6f339b873188e4",
+    "experiments/portability/configs/ported_qwen8_core_replay.json": "30543bb9bd97d2e1dbb4ee5a17d938cf301606ae8664f0b1870dfc191f4714e0",
+    "experiments/portability/configs/ported_qwen8_latent_only.json": "5f2cd7172c7a863aea9a42c85aed072cdc5100001e16f9f0135295806604e601",
+    "experiments/portability/configs/same_qwen4_core_replay.json": "e6774dddc8854ad5f5454542e6239b4545c4ac5d5e2026bfbaa0b1e78c71852d",
+    "experiments/portability/data.py": "a572b90fc177df5a8b8867d8e66edad146c33b9b73c7c3ecb39e9eeb8035723c",
+    "experiments/portability/handoff.json": "330b154b971b6b30d618dfe3bb2c1985e06cff15c8144cea86b258c22466195e",
+    "experiments/portability/learner.py": "25b6c4c6204a1bb5d5726b4c668d5d46ad5a4eb1a91b11ec6267f5c52e011629",
+    "experiments/portability/metrics.py": "d4948da47883a0d9461c1a42102167123a0aef07e44787b50bbf0db610eed14b",
+    "experiments/portability/protocol.json": "e9f03e3d20d3315e5f30e45e999b7cd78435d6ba0fb217e5560df1b3e07a698b",
+    "experiments/portability/qualify.py": "1dfee9f6d282b10198b40faa27a23c3af6f6bdd5a37d64684f0de3592483a4b7",
+    "experiments/portability/requirements.txt": "bf772f66dcae41ae30727fb41845ffe708a01e27f30ef0f46b0e944fbdfb822c",
+    "experiments/portability/run.py": "0b68763a0ef08ab4ace16a671697766b43b368107a6f493ba45e06030fbbec44"
+  },
+  "status": "complete_with_nonblocking_findings"
+}

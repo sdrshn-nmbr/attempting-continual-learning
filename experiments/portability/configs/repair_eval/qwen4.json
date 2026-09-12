@@ -1,0 +1,65 @@
+{
+  "carriers": {
+    "mismatch": {
+      "files": {
+        "config.json": "3848aec36900aa1f890aaa629e3b67b2cdf2b2e48e81ea423971e32cf15420f5",
+        "model.safetensors": "f3768686a4d96c59a61e2f71304bafb0fc4ffdbbd0f37f6fd7ed3a540494900f"
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/meta-20260909-alignment-repair/qwen4/mismatch/checkpoint"
+    },
+    "repair": {
+      "files": {
+        "config.json": "3848aec36900aa1f890aaa629e3b67b2cdf2b2e48e81ea423971e32cf15420f5",
+        "model.safetensors": "63cd71418b0b63405f2726e106bfa2a3a10ba20aa390b4725dd83cadd4ee9df4"
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/meta-20260909-alignment-repair/qwen4/repair/checkpoint"
+    }
+  },
+  "conditions": [
+    "raw",
+    "initial",
+    "unchanged",
+    "repair",
+    "mismatch"
+  ],
+  "evaluation": {
+    "autocast": false,
+    "batch_size": 8,
+    "dtype": "float32",
+    "max_prompt": 768
+  },
+  "fresh_inputs": {
+    "path": "data/sequence303_unused_inputs.json",
+    "sha256": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e"
+  },
+  "geometry_audit": {
+    "path": "/mnt/shared/cl-portfolio/artifacts/meta-20260909-alignment-repair/independent-reload-audit.json",
+    "sha256": "087b20f27a0fec88cf4deb50e231748fdd888f945abd9bcec78f168a35408c43"
+  },
+  "kind": "sequence303_alignment_repair_unused_input_behavior",
+  "primary_config": {
+    "path": "configs/sequence_target_qwen4_s30301.json",
+    "sha256": "b23ad150db6751a9f554f651728b01ec20c728e4cae0d165bfca02dc14527f7a"
+  },
+  "protocol": {
+    "behavior": "Five fixed target panels at FP32 with autocast off and zero gradients, four-choice continuation scoring; no rules, demonstrations, choices or gold labels in the prompt. Same batch8/maxprompt768 in every panel. This is not free-generation accuracy.",
+    "checks": "Allsource/core/vector/carrier files hashpinned. Eachgrafted nativecheckpoint saves to disk and is loaded by a separate evaluatorPID. Exactsharedcore/all17vectors identity across learnedtargetconditions; only alignment fromcarrier. Base,portal andLoRAidentities rehashed after eachpanel.",
+    "controls": "Raw target and untouched initialcore/initialnewvectors establish floors. Learned+untouched localizes effect of refitting. Learned+mismatched anchors checks correspondence specificity. Savedsourceinitial/nativefinal/LoRAfinal measure competence on exactlysameunusedinputs separately.",
+    "data": "All288 original unused input triples per task,864 paired rows shared by every source/target condition. No prior train/validation/test input triple reused. Existing303mappings; not a new mapping or training-seed replication.",
+    "geometry_supervision": "Eachcorrect/mismatch alignment was fitted100CPUupdates using released old-task generatedBAproducts,10oldtrain tasks;4oldholdout tasks determine frozen gate. No sequenceA/B/C inputs, labels or added task vectors were read during fitting. This is privileged old-task adapter supervision.",
+    "graft": "Initial uses original source core and original source17task vectors plus original target alignment. Otherthree use the same learned source core and same learned17task vectors. Only target alignment differs: untouched, correct old-task fit, or cyclic mismatched old-task fit.",
+    "new_learning": "No optimizerupdates in behavior evaluator; no feedback from these outcomes may alter frozenprospectiveanchor0/1training protocol. Alllaterexperimentsneed separateprotocol.",
+    "reporting": "Per-taskrepair-minusraw,initial,unchanged,mismatch with paired input-group bootstrap intervals. Originalsource acquired-and-retained requires fixedold acquisitiongain.10 and laterforgetting<=.05. Targetgainflag requires retainedsource and repair>=max(raw,initial)+.05; repairspecificflag requiresrepair>=max(unchanged,mismatch)+.05. Allpanelsreported, noselectedtarget/checkpoint.",
+    "scope": "Fixed learned sequence303 native-replay core and task vectors; repair only existing target alignment using released old-task adapter products, then measure new-task choice-scoring behavior.",
+    "target_conditions": [
+      "raw",
+      "initial",
+      "unchanged",
+      "repair",
+      "mismatch"
+    ]
+  },
+  "role": "target",
+  "seed": 90301,
+  "target": "qwen4"
+}

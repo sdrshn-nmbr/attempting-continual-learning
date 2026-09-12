@@ -1,0 +1,21 @@
+{
+  "model_id": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "seed": 37,
+  "experiment_kind": "pilot",
+  "mode": "oracle_sft_control",
+  "arms": ["oracle_sft"],
+  "steps_per_task": 32,
+  "tokens_per_update": 40,
+  "train_examples": 16,
+  "eval_examples": 32,
+  "gate_examples": 0,
+  "teacher_min_accuracy": 1.0,
+  "max_new_tokens": 32,
+  "learning_rate": 0.0002,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "gradient_checkpointing": true,
+  "checkpoint_every": 1
+}

@@ -1,0 +1,23 @@
+{
+  "model_id": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "seed": 17,
+  "pilot": true,
+  "methods": ["persistent", "optimizer_reset", "selective_reset", "fresh_base"],
+  "tasks": 2,
+  "classes_per_task": 2,
+  "train_per_class": 8,
+  "validation_per_class": 4,
+  "test_per_class": 4,
+  "updates_per_task": 2,
+  "batch_size": 2,
+  "gradient_accumulation_steps": 1,
+  "eval_batch_size": 4,
+  "eval_every": 1,
+  "checkpoint_every": 1,
+  "lora_rank": 4,
+  "lora_alpha": 8,
+  "diagnostic_examples": 4,
+  "diagnostic_features": 32
+}

@@ -1,0 +1,188 @@
+{
+  "status": "six_smaller_ports_dispatched_inkling_download_active",
+  "observed_at": "2026-09-07T22:05:13.430791+00:00",
+  "owner": "catalog",
+  "requirements": [
+    "portallib[training]==0.2.1",
+    "peft==0.20.0",
+    "datasets==4.8.5",
+    "pydantic==2.13.5",
+    "safetensors==0.8.0",
+    "pyarrow==25.0.1",
+    "transformers==5.16.1",
+    "huggingface-hub==1.30.0",
+    "accelerate==1.14.0",
+    "scipy==1.18.1"
+  ],
+  "preserve_torch": "Use existing ROCm torch, constrain exact importlib.metadata.version(torch), never resolve plain torch==2.10.0 into GPU runtime",
+  "source": {
+    "repo": "https://github.com/ramp-public/portallib",
+    "sha": "1a7b8c5b0200c301060bfbceca12653f86d2fa31",
+    "package": "portallib==0.2.1"
+  },
+  "bases": [
+    {
+      "repo": "Qwen/Qwen3-1.7B",
+      "sha": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "access": "weight_readable",
+      "weight_bytes_unfiltered": 4063515592
+    },
+    {
+      "repo": "Qwen/Qwen3-4B",
+      "sha": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "access": "weight_readable",
+      "weight_bytes_unfiltered": 8044982000
+    },
+    {
+      "repo": "Qwen/Qwen3-8B",
+      "sha": "b968826d9c46dd6066d109eabc6255188de91218",
+      "access": "weight_readable",
+      "weight_bytes_unfiltered": 16381516776
+    },
+    {
+      "repo": "google/gemma-3-4b-pt",
+      "sha": "cc012e0a6d0787b4adcc0fa2c4da74402494554d",
+      "access": "weight_readable",
+      "weight_bytes_unfiltered": 8600277880
+    },
+    {
+      "repo": "google/gemma-4-E2B",
+      "sha": "d29ff6b45f081a49ee2733a859c9c9c2d95d1a6f",
+      "access": "weight_readable",
+      "weight_bytes_unfiltered": 10246621918
+    },
+    {
+      "repo": "thinkingmachines/Inkling",
+      "sha": "828496eeae4c243ff1a22f7f28ff83694f2f7bc9",
+      "access": "weight_readable",
+      "weight_bytes_unfiltered": 1904755463940
+    },
+    {
+      "repo": "mistralai/Mistral-7B-v0.3",
+      "sha": "caa1feb0e54d415e2df31207e5f4e273e33509b1",
+      "access": "weight_readable",
+      "weight_bytes_unfiltered": 28992159440
+    }
+  ],
+  "dataset": {
+    "repo": "RampPublic/portallib-tasks",
+    "sha": "ffc3c0e44f529bf64a5ae62ed5db090952db97ea",
+    "bytes": 48650035
+  },
+  "gpu_launch": "uv run python experiments/catalog/run.py --config experiments/catalog/configs/portal-qwen3-4b.json --output-dir /mnt/shared/cl-portfolio/runs/catalog-qwen3-4b-screen",
+  "download_launch": "uv run python experiments/catalog/download.py --manifest experiments/catalog/manifest.json --root /mnt/shared --output /mnt/shared/experiments/catalog/download",
+  "limitations": [
+    "Published pretrained adapter evaluation only; optimizer steps zero; no training, retention or next-skill learning claim.",
+    "Inkling full-node BF16 qualification requires parent-confirmed node-local storage.",
+    "Public validation tail is excluded from documented training and selection recipe; unknown pretraining or unpublished selection exposure is not excluded."
+  ],
+  "coordination": "No callable parent/multi-agent send tool present in this runtime. This machine-readable handoff and commentary expose requirements to parent; awaiting numbered GPU slot.",
+  "manifest": "experiments/catalog/manifest.json",
+  "runner": "experiments/catalog/run.py",
+  "dispatcher_launch": "uv run python compute/dispatch.py --lane-dir experiments/catalog --config experiments/catalog/configs/portal-qwen3-4b.json --id catalog-qwen3-4b-screen --gpus 1 --submit",
+  "first_configs": [
+    "experiments/catalog/configs/portal-qwen3-1.7b.json",
+    "experiments/catalog/configs/portal-qwen3-4b.json"
+  ],
+  "runtime_contract": {
+    "cli": [
+      "--config",
+      "--output-dir"
+    ],
+    "requirements": "requirements.txt",
+    "manifest_resolves_relative_to_runner": true
+  },
+  "canonical_cache": "/mnt/shared/cl-portfolio/portal-cache/models/<repo>/<revision>",
+  "completed_cache": "/mnt/shared/cl-smoke/models/<repo>/<revision>",
+  "cache_resolution": "Use complete canonical snapshot when present, otherwise existing checksum-audited completed cache. No checkpoint revision or format substitution.",
+  "download_status": {
+    "all_seven_artifacts": "verified",
+    "dataset": "verified",
+    "qwen_1.7_4_8": "verified",
+    "gemma4": "verified",
+    "mistral": "verified_single_checkpoint_only",
+    "gemma3": "verified_authenticated_retry_finished",
+    "inkling": "parent_to_confirm_new_gpu_node_local_storage_before_download"
+  },
+  "split_validity": {
+    "tasks": [
+      "boolq",
+      "hellaswag",
+      "winogrande",
+      "commonsense_qa"
+    ],
+    "per_task": 32,
+    "excluded_validation_prefix_per_task": 1000,
+    "train_overlap_removed": "normalized prompt identity over entire released training split",
+    "prefix_overlap_removed": "normalized prompt identity over first1000 validation rows of all tasks",
+    "pretraining_exposure_unknown": true
+  },
+  "inkling": {
+    "unique_index_shards": 109,
+    "single_checkpoint_bytes": 1904755463940,
+    "weight_payload_bytes_from_index": 1904604285204,
+    "config": "experiments/catalog/configs/portal-inkling.json",
+    "visible_gpus": 8,
+    "load": "device_map balanced, 270GiB per GPU, BF16",
+    "base_override_arg": "--base-path /node-local/catalog/cl-portfolio/portal-cache/models/thinkingmachines/Inkling/828496eeae4c243ff1a22f7f28ff83694f2f7bc9",
+    "download_command": "uv run python experiments/catalog/download.py --manifest experiments/catalog/manifest.json --root /node-local/catalog --output /mnt/shared/cl-portfolio/runs/catalog-inkling-download --kinds base --models portal-inkling --max-asset-gib 2000",
+    "feasibility": "Historical node 14TB local storage and 2.7TB host memory plus 8x288GiB GPUs make BF16 checkpoint plausible; new node capacity and runtime still unverified. Do not skip.",
+    "download_watch_id": "catalog-inkling-download-watch",
+    "base_path": "/tmp/inkling-cache/cl-portfolio/portal-cache/models/thinkingmachines/Inkling/828496eeae4c243ff1a22f7f28ff83694f2f7bc9"
+  },
+  "cpu_verification": {
+    "path": "experiments/catalog/outputs/cpu-verification/verification.json",
+    "all7_passed": true,
+    "exports": 98,
+    "shared_state_sha256": "7109f53f3b710a86232620638315383c6e9e278107612aea3c950265b99a2279",
+    "all7_shared_state_identical": true,
+    "selection_sha256": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b",
+    "projection_checks": "all exact declared projection paths and dimensions checked on real Transformers meta models; weights not loaded in this topology test",
+    "integration_test": "PASS: real tiny Qwen3 forward, nonzero generated adapter effect, native/PEFT parity, exact PEFT checkpoint reload, paired-key reorder invariance, duplicate rejection",
+    "evidence_scope": "CPU structural and serialization tests only; full pretrained base inference is pending on parent-dispatched GPUs"
+  },
+  "api_caveats": [
+    "PortalConfig.from_model(model, tasks=..., base_model_name_or_path=...), not from_base_model.",
+    "PortalModel.generate(task) uses torch.inference_mode; use portal(portal.task_latents[index]) for differentiable training in portability lane.",
+    "Catalog load_portal returns frozen float32 CPU artifact; catalog load_base freezes BF16 base. This is an evaluation factory.",
+    "Official PortalEvaluator._score_rows is called unchanged; source file hashes guard this private hook.",
+    "load_base supports CLI --base-path or config base_path for Inkling node-local weights; dataset and native adapter remain in shared cache.",
+    "CPU topology initialization of Inkling requires scipy==1.18.1.",
+    "Actual BF16 GPU native/PEFT parity is a hard runtime check; CPU model fixtures are not GPU evidence."
+  ],
+  "download_receipts": [
+    "/mnt/shared/cl-campaign/runs/catalog-download/download.json",
+    "/mnt/shared/cl-campaign/runs/catalog-download-gemma3/download.json"
+  ],
+  "changed_code_paths": [
+    "experiments/catalog/common.py",
+    "experiments/catalog/inventory.py",
+    "experiments/catalog/download.py",
+    "experiments/catalog/data.py",
+    "experiments/catalog/factory.py",
+    "experiments/catalog/run.py",
+    "experiments/catalog/verify.py",
+    "experiments/catalog/manifest.json",
+    "experiments/catalog/requirements.txt",
+    "experiments/catalog/tests/test_catalog.py",
+    "experiments/catalog/configs/portal-qwen3-1.7b.json",
+    "experiments/catalog/configs/portal-qwen3-4b.json",
+    "experiments/catalog/configs/portal-qwen3-8b.json",
+    "experiments/catalog/configs/portal-gemma-3-4b.json",
+    "experiments/catalog/configs/portal-gemma-4-e2b.json",
+    "experiments/catalog/configs/portal-inkling.json",
+    "experiments/catalog/configs/portal-mistral-7b.json"
+  ],
+  "independent_review": {
+    "CAT-001": "Resolved: every selected snapshot file is content checked at the load boundary, including adapter config, base shards, tokenizer files, reuse paths, and explicit base_path. Same-length config and shard corruption rejection tests pass."
+  },
+  "source_boundary": "Existing six smaller GPU jobs retain their original immutable source bundles; a companion full cache-content audit validates their concrete snapshots. New Inkling task uses the enforced content verification.",
+  "gpu_small_run_ids": [
+    "catalog-qwen3-17b-screen",
+    "catalog-qwen3-4b-screen",
+    "catalog-qwen3-8b-screen",
+    "catalog-mistral7-screen",
+    "catalog-gemma3-screen",
+    "catalog-gemma4-screen"
+  ]
+}

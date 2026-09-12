@@ -1,0 +1,134 @@
+{
+  "conditions": [
+    "raw",
+    "initial",
+    "native_replay",
+    "lora_replay"
+  ],
+  "evaluation": {
+    "autocast": false,
+    "batch_size": 8,
+    "dtype": "float32",
+    "max_prompt": 768
+  },
+  "fresh_inputs": {
+    "path": "data/sequence303_unused_inputs.json",
+    "sha256": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e"
+  },
+  "kind": "sequence303_unused_input_source_confirmation",
+  "lora": {
+    "files": {
+      "adapter_config.json": "88aeeaa34d6de94e14722699a9ef172f877783144e804539785602233c32da83",
+      "adapter_model.safetensors": "761115de00055eaa9a72fb66aa75bddaff9e954a77a7b7b9318347333d19efff"
+    },
+    "path": "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/stages/after_c/checkpoint",
+    "tensor_sha256": "f3a7a74323bd85634f23faad504daff548f2e59d6d6c88b4ef8112218cbd3678"
+  },
+  "primary_config": {
+    "path": "configs/sequence_target_qwen4_s30301.json",
+    "sha256": "b23ad150db6751a9f554f651728b01ec20c728e4cae0d165bfca02dc14527f7a"
+  },
+  "protocol": {
+    "behavior": "Five fixed target panels at FP32 with autocast off and zero gradients, four-choice continuation scoring; no rules, demonstrations, choices or gold labels in the prompt. Same batch8/maxprompt768 in every panel. This is not free-generation accuracy.",
+    "checks": "Allsource/core/vector/carrier files hashpinned. Eachgrafted nativecheckpoint saves to disk and is loaded by a separate evaluatorPID. Exactsharedcore/all17vectors identity across learnedtargetconditions; only alignment fromcarrier. Base,portal andLoRAidentities rehashed after eachpanel.",
+    "controls": "Raw target and untouched initialcore/initialnewvectors establish floors. Learned+untouched localizes effect of refitting. Learned+mismatched anchors checks correspondence specificity. Savedsourceinitial/nativefinal/LoRAfinal measure competence on exactlysameunusedinputs separately.",
+    "data": "All288 original unused input triples per task,864 paired rows shared by every source/target condition. No prior train/validation/test input triple reused. Existing303mappings; not a new mapping or training-seed replication.",
+    "geometry_supervision": "Eachcorrect/mismatch alignment was fitted100CPUupdates using released old-task generatedBAproducts,10oldtrain tasks;4oldholdout tasks determine frozen gate. No sequenceA/B/C inputs, labels or added task vectors were read during fitting. This is privileged old-task adapter supervision.",
+    "graft": "Initial uses original source core and original source17task vectors plus original target alignment. Otherthree use the same learned source core and same learned17task vectors. Only target alignment differs: untouched, correct old-task fit, or cyclic mismatched old-task fit.",
+    "new_learning": "No optimizerupdates in behavior evaluator; no feedback from these outcomes may alter frozenprospectiveanchor0/1training protocol. Alllaterexperimentsneed separateprotocol.",
+    "reporting": "Per-taskrepair-minusraw,initial,unchanged,mismatch with paired input-group bootstrap intervals. Originalsource acquired-and-retained requires fixedold acquisitiongain.10 and laterforgetting<=.05. Targetgainflag requires retainedsource and repair>=max(raw,initial)+.05; repairspecificflag requiresrepair>=max(unchanged,mismatch)+.05. Allpanelsreported, noselectedtarget/checkpoint.",
+    "scope": "Evaluate frozen original source controls on allunusedfixture303inputs. No source or target updates.",
+    "source_fresh_competence": "For eachtask eachlearnedmethod, reportaccuracy>=.90 andgain>=.50 overmax(raw,initial). This thresholddoesnotretroactivelychangeoriginalacquisitionorretentionreceipt.",
+    "target_conditions": [
+      "raw",
+      "initial",
+      "unchanged",
+      "repair",
+      "mismatch"
+    ]
+  },
+  "role": "source",
+  "seed": 90301,
+  "source_base": {
+    "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+    "files": [
+      {
+        "bytes": 728,
+        "git_blob_sha1": "d46195ac87f837ad233d02b2f80f148bf7c005e0",
+        "path": "config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 239,
+        "git_blob_sha1": "20a8a9156fc8c3f25295ca067f61fdf120d517c5",
+        "path": "generation_config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 1671853,
+        "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+        "path": "merges.txt",
+        "sha256": null
+      },
+      {
+        "bytes": 3996250744,
+        "git_blob_sha1": null,
+        "path": "model-00001-of-00005.safetensors",
+        "sha256": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f"
+      },
+      {
+        "bytes": 3993160032,
+        "git_blob_sha1": null,
+        "path": "model-00002-of-00005.safetensors",
+        "sha256": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282"
+      },
+      {
+        "bytes": 3959604768,
+        "git_blob_sha1": null,
+        "path": "model-00003-of-00005.safetensors",
+        "sha256": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836"
+      },
+      {
+        "bytes": 3187841392,
+        "git_blob_sha1": null,
+        "path": "model-00004-of-00005.safetensors",
+        "sha256": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a"
+      },
+      {
+        "bytes": 1244659840,
+        "git_blob_sha1": null,
+        "path": "model-00005-of-00005.safetensors",
+        "sha256": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff"
+      },
+      {
+        "bytes": 32878,
+        "git_blob_sha1": "2b85c00f1b118961cd7a477e2bba0fe197a4ce1a",
+        "path": "model.safetensors.index.json",
+        "sha256": null
+      },
+      {
+        "bytes": 11422654,
+        "git_blob_sha1": null,
+        "path": "tokenizer.json",
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+      },
+      {
+        "bytes": 9732,
+        "git_blob_sha1": "417d038a63fa3de29cfde265caedae14d1a58d92",
+        "path": "tokenizer_config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 2776833,
+        "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+        "path": "vocab.json",
+        "sha256": null
+      }
+    ],
+    "local_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+    "repo_id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+  },
+  "source_base_tensor_sha256": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31",
+  "target": "qwen8"
+}

@@ -1,0 +1,69 @@
+{
+  "status": "fixed_before_followup_execution",
+  "screen_seed": 29,
+  "confirmation_seed": 43,
+  "question": "Does consolidating queried evidence through known-family posterior prediction improve durable acquisition, and does it expose an advantage from informative query selection?",
+  "factors": {
+    "acquisition": [
+      "random",
+      "hypothesis_elimination_oracle"
+    ],
+    "consolidation": [
+      "observed_query",
+      "posterior_predictive"
+    ]
+  },
+  "prior_negative": "active-evidence-screen-seed17",
+  "updates_per_stage": 80,
+  "batch_size": 8,
+  "total_queries": 96,
+  "stage0_examples_by_device": {
+    "0": 160,
+    "1": 160,
+    "2": 160,
+    "3": 160
+  },
+  "stage1_examples_by_device": {
+    "0": 160,
+    "1": 120,
+    "2": 120,
+    "3": 120,
+    "4": 120
+  },
+  "old_replay": "Stage1 exactly two of eight examples per batch resampled from stage0 queried device0 observations in every condition. No additional queries.",
+  "posterior": "Uniform prior over the declared 88-rule family; Bernoulli observation noise 0.1; hard posterior predictive majority labels using only the queried input/observed-bit ledger. Ties select zero.",
+  "training_inputs": "Observed condition cycles over its own query ledger; posterior condition uniformly shuffles the acquisition split without replacement. Equal device exposures and token counts. Unqueried hidden labels are unavailable to the builder.",
+  "primary_endpoint": "Clean-context forced-choice single-device accuracy after stage1, final checkpoint only.",
+  "contrasts": [
+    "oracle minus random within each consolidation condition",
+    "posterior minus observed within each acquisition condition",
+    "difference of those acquisition effects"
+  ],
+  "minimum_screen_effect": 0.05,
+  "screen_qualification": {
+    "qualification_only": false,
+    "iterations": 1,
+    "minimum_train_accuracy": 0.75,
+    "minimum_effect": 0.05,
+    "minimum_durable_gain": 0.05,
+    "minimum_new_skill_gain": 0.05,
+    "maximum_next_skill_regression": 0.05,
+    "maximum_retention_regression": 0.05,
+    "maximum_stable_forgetting": 0.05,
+    "claim": "Prespecified seed29 factorial screen: known-family acquisition and inference-consolidation upper bounds, not a learned general active agent. Positive effects need fresh-seed confirmation."
+  },
+  "uncertainty": "Paired bootstrap by device and causal input bits0..4; describes example sampling only, not training-seed uncertainty.",
+  "secondary": [
+    "stage0 acquisition gain",
+    "stage1 new-skill gain",
+    "stable retention change",
+    "composition accuracy",
+    "unrestricted next-token accuracy",
+    "queried-ledger fit"
+  ],
+  "limits": [
+    "Known-family oracle privileges apply to selection and posterior inference separately.",
+    "Heldout single-device examples introduce new nuisance-bit combinations, not new causal truth-table states.",
+    "No test-driven checkpoint or hyperparameter selection."
+  ]
+}

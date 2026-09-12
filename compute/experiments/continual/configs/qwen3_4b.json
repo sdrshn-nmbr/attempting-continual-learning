@@ -1,0 +1,64 @@
+{
+  "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "model_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-4B-Instruct-2507/cdbee75f17c01a7cc42f958dc650907174af0554",
+  "seed": 1729,
+  "purpose": "pilot",
+  "model_source": "huggingface",
+  "methods": [
+    "sequential",
+    "replay",
+    "agem"
+  ],
+  "data": {
+    "num_tasks": 3,
+    "alphabet_size": 8,
+    "train_examples": 128,
+    "reference_examples": 32,
+    "calibration_examples": 8,
+    "id_examples": 16,
+    "longer_examples": 8,
+    "composed_examples": 8,
+    "min_length": 3,
+    "max_length": 5,
+    "longer_min_length": 7,
+    "longer_max_length": 9,
+    "include_reversal": true
+  },
+  "pilot": {
+    "steps_per_task": 32,
+    "current_batch_size": 2,
+    "reference_batch_size": 2,
+    "eval_batch_size": 4,
+    "max_sequence_length": 256,
+    "max_new_tokens": 48,
+    "checkpoint_every_steps": 4,
+    "base_accuracy_ceiling": 0.5
+  },
+  "lora": {
+    "rank": 8,
+    "alpha": 16,
+    "last_n_layers": 8,
+    "modules": [
+      "q_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "optimization": {
+    "learning_rate": 0.1,
+    "max_grad_norm": 1.0,
+    "replay_weight": 0.5
+  },
+  "runtime": {
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "gradient_checkpointing": false,
+    "deterministic_algorithms": false,
+    "cpu_threads": 4
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "model_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen2.5-7B-Instruct/a09a35458c702b33eeacc393d103063234e8bc28",
+  "av_model_id": "kitft/nla-qwen2.5-7b-L20-av",
+  "av_revision": "b88469162777ae6553bc14208eb0cb579336f8f4",
+  "av_model_path": "/mnt/shared/cl-portfolio/models/kitft/nla-qwen2.5-7b-L20-av/b88469162777ae6553bc14208eb0cb579336f8f4",
+  "ar_model_id": "kitft/nla-qwen2.5-7b-L20-ar",
+  "ar_revision": "e2c9e57eac213d37a31612087f645ab6332c1bb6",
+  "ar_model_path": "/mnt/shared/cl-portfolio/models/kitft/nla-qwen2.5-7b-L20-ar/e2c9e57eac213d37a31612087f645ab6332c1bb6",
+  "seed": 42,
+  "mode": "continual",
+  "device": "cuda:0",
+  "dtype": "bfloat16",
+  "pilot": {
+    "entities_per_stage": 16,
+    "retention_facts": 32,
+    "calibration_topics": 8,
+    "binding_pairs": 2
+  },
+  "updates": [
+    {
+      "name": "a",
+      "steps": 32,
+      "batch_size": 2,
+      "learning_rate": 0.0002
+    },
+    {
+      "name": "b",
+      "steps": 32,
+      "batch_size": 2,
+      "learning_rate": 0.0002
+    }
+  ],
+  "lora": {
+    "r": 8,
+    "lora_alpha": 16,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ]
+  },
+  "verify_weight_hashes": true,
+  "resume": true,
+  "max_sequence_length": 256,
+  "max_new_tokens": 192,
+  "checkpoint_every_steps": 2,
+  "gate": {
+    "min_cosine": 0.5,
+    "min_shuffled_gap": 0.02,
+    "min_empty_gap": 0.02,
+    "min_topic_hit_rate": 0.5,
+    "min_retrieval_accuracy": 0.5,
+    "min_binding_win_rate": 0.5
+  },
+  "prediction": {
+    "min_development": 8,
+    "min_heldout": 8,
+    "projection_dim": 8,
+    "ridge_alphas": [
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "bootstrap_samples": 1000,
+    "min_target_std": 0.001
+  }
+}

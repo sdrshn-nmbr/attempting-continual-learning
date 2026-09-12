@@ -1,0 +1,19 @@
+{
+  "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "model_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-4B-Instruct-2507/cdbee75f17c01a7cc42f958dc650907174af0554",
+  "seed": 37,
+  "experiment_kind": "preflight",
+  "mode": "teacher_calibration",
+  "arms": [],
+  "steps_per_task": 0,
+  "tokens_per_update": 0,
+  "train_examples": 16,
+  "eval_examples": 0,
+  "gate_examples": 16,
+  "teacher_min_accuracy": 1.0,
+  "max_new_tokens": 32,
+  "lora_rank": 4,
+  "lora_alpha": 8,
+  "gradient_checkpointing": false
+}

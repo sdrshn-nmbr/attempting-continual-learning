@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "entrypoint": "run.py",
+  "command": "python <portal>/run.py --config <portal>/configs/smoke-qwen3-8b.json --output-dir <output>",
+  "install_command": "uv pip install --python <lane-venv>/bin/python -r <portal>/requirements.txt",
+  "requirements": [
+    "portallib==0.2.1",
+    "peft==0.20.0"
+  ],
+  "preserve_image_runtime": [
+    "ROCm torch 2.10",
+    "transformers 5.16.1",
+    "accelerate 1.14.0"
+  ],
+  "training_extra_required": false,
+  "registry": "registry.json (resolved relative to run.py, independent of cwd)",
+  "external_artifact_cache": "/mnt/shared/cl-portfolio/portal-cache/models/<artifact_id>/<artifact_revision>",
+  "external_base_cache": "/mnt/shared/cl-portfolio/portal-cache/models/<model_id>/<revision>",
+  "qwen3_8b_base_cache_exception": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+  "configured_shared_caches_are_read_only": true,
+  "gpu_contract": "One visible GPU selected by the parent with ROCR_VISIBLE_DEVICES. The process uses cuda:0 and verifies bf16.",
+  "first_smoke": "configs/smoke-qwen3-8b.json",
+  "first_transfer_pilot": "configs/pilot-qwen3-8b.json",
+  "source_base_for_first_pilot": "Qwen/Qwen3-1.7B@70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "methods": [
+    "source learned latent",
+    "source native LoRA",
+    "target no adapter",
+    "target transferred source latent with zero new-task target training",
+    "target native latent",
+    "target native LoRA"
+  ],
+  "output_contract": [
+    "metrics.json",
+    "progress.json",
+    "events.jsonl",
+    "config.json",
+    "data.json",
+    "<arm>/<task>/checkpoint.pt",
+    "<arm>/{initial,after_a,after_b}.safetensors"
+  ],
+  "resume": "Reuse the same config and output directory. Exact config and implementation hashes are required. Optimizer and RNG state resume from the last atomic checkpoint.",
+  "signals": "SIGTERM and SIGINT checkpoint after the current optimizer step and exit 143. Abrupt loss may replay steps since the last checkpoint.",
+  "exit_codes": {
+    "0": "completed measurement",
+    "1": "runtime failure",
+    "2": "capability/cache/identity blocked",
+    "143": "interrupted"
+  },
+  "validation": {
+    "cpu_tests_passed": 14,
+    "receipt": "checks/validation.json",
+    "gpu_learning_or_transfer_run_by_this_worker": false
+  },
+  "non_runnable_in_this_lane": [
+    {
+      "port": "inkling",
+      "reason": "1.90 TB published base; this lane permits one 288 GiB GPU. Separate worker owns its eight-GPU published-task sweep."
+    },
+    {
+      "port": "gemma-3-4b",
+      "reason": "Conditional on an authorized cached gated base."
+    }
+  ],
+  "scope": "New learned-latent transfer and native-target fitting; the other worker owns the all-seven published-task baseline sweep.",
+  "bundle_files": [
+    {
+      "path": "configs/pilot-gemma-3-4b.json",
+      "sha256": "055f33c376928fa819795687b642817aab393c16fccd25b4e3b7dfa0d9bbb532",
+      "bytes": 895
+    },
+    {
+      "path": "configs/pilot-gemma-4-e2b.json",
+      "sha256": "2bd96c063a58b1b7da0dbbffb752cd6dfb803e2484b28440e0a4d440299de7f5",
+      "bytes": 891
+    },
+    {
+      "path": "configs/pilot-mistral-7b.json",
+      "sha256": "aebc5b90dbcbf6c9cad960f6c3fa527b7e4c9eb6070da653fe39c0f93a8653a4",
+      "bytes": 905
+    },
+    {
+      "path": "configs/pilot-qwen3-1.7b.json",
+      "sha256": "362f8f271a8bbfe975cdf1c6041af204033a9ce1a4e57bd7d1a91d2897b13908",
+      "bytes": 881
+    },
+    {
+      "path": "configs/pilot-qwen3-4b.json",
+      "sha256": "184fd2bda45c1c755cfb8d6236c8b4d0e6b083970d61fa59adb7f3b9591a3b66",
+      "bytes": 881
+    },
+    {
+      "path": "configs/pilot-qwen3-8b.json",
+      "sha256": "887b9df721783e35f06a0ea59de8117820434ffbe9eb4467d7f0fe14d7f2563b",
+      "bytes": 868
+    },
+    {
+      "path": "configs/smoke-gemma-3-4b.json",
+      "sha256": "6f832cab582ca8f4a1778908ee5b8a8b174c8ff090f1067bb26018d78fd3dda6",
+      "bytes": 388
+    },
+    {
+      "path": "configs/smoke-gemma-4-e2b.json",
+      "sha256": "ea6659f0ff5098f0e2d0c594f1f6c90f398fbbc430ed5dc1e6f9a62f4bb7438b",
+      "bytes": 384
+    },
+    {
+      "path": "configs/smoke-inkling.json",
+      "sha256": "8b4bd887d78bc681ba1e01aea9210763718d12d727ca59c002cdedd81b39251f",
+      "bytes": 396
+    },
+    {
+      "path": "configs/smoke-mistral-7b.json",
+      "sha256": "febd68380c6c159378e666f274d5e0c14862142d7d2d6cbca4e384c5d6866796",
+      "bytes": 398
+    },
+    {
+      "path": "configs/smoke-qwen3-1.7b.json",
+      "sha256": "77bd6da6955e7711a815775f1821aa2826e1b7e76fddf2862c55abef6037e72f",
+      "bytes": 378
+    },
+    {
+      "path": "configs/smoke-qwen3-4b.json",
+      "sha256": "215727aa2e542869392447b4aca5978efb794ab521dfd5144d78cf70f3cc0936",
+      "bytes": 374
+    },
+    {
+      "path": "configs/smoke-qwen3-8b.json",
+      "sha256": "f42af100b94d86352712aa4fc28a5b63fcb939f4e1c4bc1e400ffbf473c0a3f4",
+      "bytes": 361
+    },
+    {
+      "path": "engine.py",
+      "sha256": "8961b6d9710155476a3a5dc8d3b789eaa708b5b8dea5e51055c982815d4b1981",
+      "bytes": 24684
+    },
+    {
+      "path": "inventory.py",
+      "sha256": "9b21bd9e582f6d59bee6fe922620516197e1f08ad8c40bd1b7e19691594cff0a",
+      "bytes": 14283
+    },
+    {
+      "path": "pytest.ini",
+      "sha256": "b160d82f7811555051f8966d8e02750a985227c1d022208c784e606946f2eada",
+      "bytes": 42
+    },
+    {
+      "path": "registry.json",
+      "sha256": "75c7adfa381c3e2804c0bbbd2f8b5150e03ad470a9793f9013d015cc1c9eec66",
+      "bytes": 189870
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "8b72388baee79d5ea355049763019a154313792e8b0f68b07781858c75284469",
+      "bytes": 30
+    },
+    {
+      "path": "run.py",
+      "sha256": "b82bff2138a381490e202b2c0c883f1201f9e8d2c4cc0540192b303d3670ae25",
+      "bytes": 5192
+    },
+    {
+      "path": "runtime.py",
+      "sha256": "63930296e2b933c3ee49daf3fd0b1c80f8b89f4caf94b01ee97dfe0b15a0def2",
+      "bytes": 12715
+    },
+    {
+      "path": "tasks.py",
+      "sha256": "5b04712724b3e8230f5d416e9020e8b613f8afb6e123c97cc160aad5e8c3daa3",
+      "bytes": 4370
+    },
+    {
+      "path": "tests/test_portal.py",
+      "sha256": "4f43a20ad4580534d7e26a9473bcfe7658d79209f9fb8c42abc3a7c20402d3ce",
+      "bytes": 18304
+    }
+  ],
+  "bundle_exclude": [
+    ".venv/",
+    ".artifacts/",
+    ".pytest_cache/",
+    "__pycache__/",
+    "checks/"
+  ],
+  "changed_files": [
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/configs/pilot-gemma-3-4b.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/configs/pilot-gemma-4-e2b.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/configs/pilot-mistral-7b.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/configs/pilot-qwen3-1.7b.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/configs/pilot-qwen3-4b.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/configs/pilot-qwen3-8b.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/configs/smoke-gemma-3-4b.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/configs/smoke-gemma-4-e2b.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/configs/smoke-inkling.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/configs/smoke-mistral-7b.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/configs/smoke-qwen3-1.7b.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/configs/smoke-qwen3-4b.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/configs/smoke-qwen3-8b.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/engine.py",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/inventory.py",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/pytest.ini",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/registry.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/requirements.txt",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/run.py",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/runtime.py",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/tasks.py",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/tests/test_portal.py",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/interface.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/checks/validation.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/checks/pytest.xml",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/portal-models.json"
+  ],
+  "output_directory_lock": {
+    "file": ".portal-run.lock",
+    "mechanism": "fcntl.flock LOCK_EX | LOCK_NB",
+    "lifetime": "Acquired before RunLog reads or writes output files; held until main finally closes it. Constructor failures also close it.",
+    "contention": "Exit code 2 and output_directory_lock_rejected JSON on stderr; no mutation of the current owner outputs.",
+    "cleanup": "Idempotent close releases the lock; the lock file is retained to preserve one stable inode.",
+    "cpu_validation": "Duplicate process rejection, unchanged owner files, reacquisition after CLI exit, constructor-error cleanup, context-error cleanup, repeated close, and rejection of writes after close."
+  },
+  "last_change_files": [
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/run.py",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/runtime.py",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/tests/test_portal.py",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/interface.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/checks/validation.json",
+    "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/checks/pytest.xml"
+  ]
+}

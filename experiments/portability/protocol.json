@@ -1,0 +1,169 @@
+{
+  "arms": {
+    "sequence_lora_no_replay": {
+      "method": "lora",
+      "replay_weight": 0.0,
+      "train_core": false
+    },
+    "sequence_lora_replay": {
+      "method": "lora",
+      "replay_weight": 0.25,
+      "train_core": false
+    },
+    "sequence_native_no_replay": {
+      "method": "native",
+      "replay_weight": 0.0,
+      "train_core": true
+    },
+    "sequence_native_replay": {
+      "method": "native",
+      "replay_weight": 0.25,
+      "train_core": true
+    }
+  },
+  "data": {
+    "audit": "Assert file/content/source hashes, per-task hashes, exact split sizes, permutations and mapping freshness, choice validity, balanced gold positions, task-input alignment, and normalized prompt, ID, task/input-pair and task-agnostic input-triple exclusions across splits.",
+    "chance_accuracy": 0.25,
+    "chance_boundary": "0.25 is uniform random-choice accuracy. Structural properties of the candidate outputs can permit a stronger untouched-model baseline, which must be measured.",
+    "choices": "Four unique equal-length three-digit continuations, including their leading space. Exactly balanced gold positions in every task/split. Three random non-gold distractors retain the earlier Amber construction; gold-position schedules are sampled independently for each task and split.",
+    "family": "Each of three tasks has its own fixed hidden permutation of digits 0 through 7. Apply that permutation independently to each position in a three-digit input tuple.",
+    "global_partition": {
+      "test": 64,
+      "train": 128,
+      "unique_input_triples": 224,
+      "validation": 32
+    },
+    "heldout_exclusion": "No held-out test input triple occurs in any task training or validation split. No validation input triple occurs in any training split. The fixed 64 test groups per task are never selected by validation outcomes.",
+    "label_boundary": "Every example gold continuation is verified against only its own task mapping. No mapping, demonstration, previous episode, future-task evidence, or KV state is supplied in a student prompt.",
+    "partition_reuse": "The identical ordered 128/32/64 partition is reused for A, B, and C and every checkpoint. This produces 672 task/input examples but only 224 unique input triples; task identity and mapping differ.",
+    "primary_retention": "Newly learned A/B/C only. Published task scores, if collected, are a separate diagnostic and are not replay data for the primary comparison.",
+    "prompt": "Apply the sequence_a code.\nInput: <three digits>\nOutput: (with the equally supplied task name changed to sequence_b or sequence_c as appropriate)"
+  },
+  "data_api": {
+    "example": [
+      "id",
+      "task",
+      "prompt",
+      "choices",
+      "gold_idx",
+      "group"
+    ],
+    "prepare_data": "prepare_data(config, output) validates the frozen config.sequence fixture and writes data_manifest.json plus nine sequence_<a|b|c>_<train|validation|test>.json files under output/data.",
+    "read_data": "read_data(output, splits) requires explicit split names and verifies only requested files. Training requests train/validation only. Held-out evaluation occurs through explicit test reads."
+  },
+  "evaluation": {
+    "boundary_matrix": "Only after the complete A/B/C training sequence finishes, a separate evaluator may read held-out test payloads. Evaluate the raw backbone, the original saved native and LoRA initial checkpoints including original vector state, and each saved A/B/C boundary checkpoint on all three tasks using the same fixed 64 test input groups per task. These are checkpoint-state comparisons performed after training, including future-task forward-transfer measurements. The trainer must not deserialize held-out gold labels, predictions, or scores. An actual held-out-payload mutation test must demonstrate identical final model and optimizer states. Held-out measurements cannot influence training, data schedules, checkpoint choice, or parameter selection.",
+    "clean_context": "Use one task prompt and its candidate continuations, without examples, hidden mapping, prior episodes, or a persistent KV cache. Checkpoint/reload and train/evaluation process separation are enforced by the learner runner.",
+    "learned_skill_retention": "Report acquisition gains against raw and each method's own initialized floor, backward transfer, and absolute forgetting from each task's acquisition boundary. Only acquired tasks support retention claims; pre-acquisition measurements report forward transfer separately.",
+    "primary_metric": "Four-choice continuation accuracy under the pinned portallib choice scorer; not free-generation accuracy.",
+    "task_identity": "Both methods receive the identical external task name in the same prompt. Native evaluation additionally selects that task's vector explicitly; this is known-task routing and supplies no evidence of unknown-task retrieval. Evaluate one persistent LoRA adapter on all task names.",
+    "uncertainty": "Report paired uncertainty over the 64 matched input-triple groups with the existing 2000-replicate bootstrap. These intervals do not represent training-seed uncertainty; the separately frozen confirmation fixture addresses a different seeded repeat."
+  },
+  "experiment": "post_upgrade_three_stage_digit_permutation_sequence",
+  "fixture_freeze": {
+    "content_hash_encoding": "SHA-256 of UTF-8 json.dumps(value, sort_keys=True, separators=(\",\", \":\")). File SHA-256 uses exact saved bytes.",
+    "freshness": "All six new permutations are distinct and differ from the earlier Amber seed-17 and seed-29 permutations. The finite eight-digit domain and procedural family are unchanged. Input triples can overlap between independent fixtures; within each fixture the split exclusions below are strict.",
+    "generator_path": "outputs/sequence-data-cpu/generator.py",
+    "generator_source_sha256": "f3b75979e4f92e1bfd207a62411249cf275ebe0c1c368d05c105e8103882d87e",
+    "primary": "Fixture 303 with training seed 30301. The four primary arms use identical frozen data and input ordering.",
+    "prior_family_generator_sha256": "5b04712724b3e8230f5d416e9020e8b613f8afb6e123c97cc160aad5e8c3daa3",
+    "reserved_confirmation": "Fixture 419 with training seed 41901 is frozen before any sequence GPU result. Confirmation repeats the same four arms from their original pinned initialization; it is not launched by this data change.",
+    "runtime_dependency": "Frozen sequence JSON files only. The preserved generator source is a reproducibility artifact and is not a runtime import."
+  },
+  "fixtures": {
+    "primary": {
+      "fixture_seed": 303,
+      "generator_sha256": "cf43c6e484b991fda6c3365cf99730b2de59acb0ce968fb18d62fc4c65219406",
+      "input_sha256": "9ba0c7d84ee54c5701b6acbd4c0401941894c8ec0dee15b3f27e09a4b49f9476",
+      "path": "data/sequence303.json",
+      "role": "primary",
+      "sha256": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2",
+      "source_generator_sha256": "f3b75979e4f92e1bfd207a62411249cf275ebe0c1c368d05c105e8103882d87e",
+      "task_sha256": {
+        "sequence_a": "bd66c2409eb745051fbb97c786daf22db4a48582b24a90732ebf67477a578492",
+        "sequence_b": "72c824bf3d0127e0ecb03974be722094b71d23ebc0b3da110e91c64b7f69d982",
+        "sequence_c": "c00128d0fb6e7619f64fecde1b70acf50e451ca15b9597f74aa3907d4229f5ee"
+      },
+      "training_seed": 30301
+    },
+    "reserved_confirmation": {
+      "fixture_seed": 419,
+      "generator_sha256": "678cbce1a8e9ca914bc8ff9cc7713e86ff55639a7b97bdce8c3e1cc610793fb6",
+      "input_sha256": "b6f2f00461f74754bfe538e988ebcf41f16c44cd546345e4c0cca925b067ae76",
+      "path": "data/sequence419.json",
+      "role": "reserved_confirmation",
+      "sha256": "cbc34593af7909a1f11a232c41f1538f20fc2dabd34852646cf5f959db25efd1",
+      "source_generator_sha256": "f3b75979e4f92e1bfd207a62411249cf275ebe0c1c368d05c105e8103882d87e",
+      "task_sha256": {
+        "sequence_a": "6899001a0ec5b31c4d8d43d8a96f316973a7672c5a1bf035a2f34c57d9000f4a",
+        "sequence_b": "d21cd7c9f7d9768ba27150568e520071a5f5b58ed2f3890e302213441274b101",
+        "sequence_c": "48978c2336860eb52e76f4ef52ab11846091bec2e13be17e0d49130651378d1d"
+      },
+      "training_seed": 41901
+    }
+  },
+  "initialization": {
+    "checkpoint_policy": "Each fixture/arm starts from its original public initialization. No weights trained on Amber or another sequence fixture are resumed.",
+    "effective_delta": "Initialize all three fresh native sequence vectors as exact RTE clones. Initialize the one persistent LoRA adapter to the same effective RTE delta in every adapted projection, with rank-dependent scaling accounted for. Added rank directions must be live trainable capacity while preserving the starting delta; never pad with dead parameters.",
+    "numerical_gate": "Before training, verify effective-delta equality and measure actual native-versus-LoRA initial probe/logit and choice-score differences using validation data only under the runtime dtype/cast semantics. Record each method's own initialized validation scores. No held-out test payload may be read anywhere before the complete A/B/C training sequence finishes. Require the learner's prespecified numerical parity gate to pass; fix a material initial discrepancy before training rather than loosening the gate. Do not claim bitwise arithmetic equality without observing it.",
+    "parameter_budget": "Before training, count actual parameters participating in each method's updates and reject a LoRA/native relative mismatch above 0.005. Separately report total retained task-vector and checkpoint state; active capacity matching does not imply equal total persistent storage.",
+    "persistent_state": "One shared core plus sequence vectors for native, or one persistent LoRA state for the LoRA comparison, continues across A/B/C. Do not allocate isolated per-task LoRA adapters to protect retention.",
+    "source": "Original pinned Qwen3-4B PorTAL shared core and published vectors.",
+    "training_backbone": "Install that shared state in the original pinned Qwen3-8B alignment. Freeze base weights, alignment, and published task vectors. Initialize three fresh sequence vectors from RTE."
+  },
+  "interpretation": {
+    "claim_boundary": "This is a controlled three-skill digit-permutation study after one specified backbone upgrade. It cannot establish open-ended continual learning, broad agent skills, or universal backbone portability.",
+    "mechanical_gates": "Hash and split audits, actual matched exposure/token/update receipts, finite gradients and losses, unchanged frozen state, declared capacity match, and checkpoint reload equality must pass before comparing efficacy.",
+    "parent_decisions": "Root owns the four-arm comparison and any promotion rule. Do not infer a retained-skill success from relative retention alone or from high training fit."
+  },
+  "question": "After installing the published 4B shared state on the pinned 8B alignment, can a persistent adaptation state learn A, then B, then C while retaining its earlier newly learned skills?",
+  "selection": {
+    "acquisition": "A task is acquired if its accuracy immediately after its own stage is at least max(raw-backbone accuracy, own-method initial-before-A accuracy) + 0.10.",
+    "comparison": "Paired grouped contrasts across methods and replay settings remain descriptive within a fixture and do not independently establish superiority.",
+    "confirmation": "Review all four primary arms together. Any selected finding is assessed with the complete four-arm fixture-419 confirmation from original initialization; no confirmation is queued by this selection rule.",
+    "decision_boundary": "Parent-selected before any sequence GPU training or test outcome. Frozen fixtures and optimization budgets are unchanged.",
+    "frozen_at": "2026-09-08T22:53:48.363999+00:00",
+    "own_stage_increment": "Report post-own-stage minus immediate pre-stage accuracy separately. It is not an acquisition requirement: positive forward transfer may cross the acquisition threshold before task arrival.",
+    "retention": "Conditional on acquisition, every later boundary must retain that task within 0.05 accuracy of its post-own-stage score. Check A after B, A after C, and B after C separately; a macro mean does not replace these checks.",
+    "sequence_signal": "All three tasks must pass acquisition, every applicable later-boundary retention check must pass, and all mechanical qualification checks must pass.",
+    "threshold_timing": "For each acquired task, label whether the acquisition threshold was already met immediately before task arrival (forward_transfer_before_arrival) or was first met during its own stage (during_own_stage).",
+    "transport": "Separate native zero-calibration 1.7B signal: an acquired task gains at least 0.05 over both target raw and target initialized floors. Report target retention and stage/task scores separately from source success."
+  },
+  "sequence_tasks": [
+    "sequence_a",
+    "sequence_b",
+    "sequence_c"
+  ],
+  "training": {
+    "batch_size": 4,
+    "budget_contract": "Match current example schedules, reference example schedules, their computed tokens, and optimizer updates across all arms; persist exact realized counts and hashes.",
+    "capacity_policy": "Select a persistent LoRA rank pattern from model shapes and the native trainable parameter count before training. Log the actual rank pattern, counts, and relative mismatch; reject a mismatch above 0.005. Do not choose ranks using validation or test performance.",
+    "capacity_relative_tolerance": 0.005,
+    "checkpoint": "Use the fixed final step of each stage. Validation curves at 24/48/72/96 do not select a checkpoint or change the next stage.",
+    "core_lr": 3e-05,
+    "current_examples_per_stage": 384,
+    "current_schedule": "Use the identical deterministic ordered current-task exposure schedule in all four arms and log its row-ID hash. Stage labels are A then B then C, with no access to future task training examples.",
+    "effective_replay": "Weight 0.0 makes the computed reference gradient contribute zero to the update; weight 0.25 includes the weighted reference contribution. Report effective old-example replay separately from the matched reference computation.",
+    "latent_lr": 0.002,
+    "lora_lr": 0.0002,
+    "optimizer": "Keep the existing gold-continuation loss and AdamW update, zero weight decay, and gradient norm clipping at 1.0.",
+    "reference_batch_size": 4,
+    "reference_every": 4,
+    "reference_examples_per_stage": {
+      "sequence_a": 0,
+      "sequence_b": 96,
+      "sequence_c": 96
+    },
+    "reference_policy": "All arms compute a four-example reference batch every fourth B/C update. Draw only already observed prior-task training examples. At B all four are from A; at C each batch has two A and two B examples. Use identical reference row schedules for both methods and replay settings.",
+    "total_computed_reference_examples": 192,
+    "total_current_examples": 1152,
+    "total_updates": 288,
+    "updates_per_stage": 96,
+    "validation_every": 24
+  },
+  "transport": {
+    "after_each_stage": "Evaluate target raw, target original initialization, and transported native state on all three sequence tasks at initialization and after every stage, without any target calibration or target training. Separate acquired-task transport gains and retention from future-task forward transfer; future-task measurements remain evaluation-only.",
+    "lora_boundary": "The persistent LoRA comparison measures source-backbone learning and interference. No direct cross-backbone LoRA transport is asserted.",
+    "target": "Pinned Qwen3-1.7B base and original published alignment."
+  }
+}

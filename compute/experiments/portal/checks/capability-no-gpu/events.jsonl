@@ -1,0 +1,3 @@
+{"at": "2026-09-07T22:21:21.574555+00:00", "event": "run_started", "elapsed_seconds": 0.02360129199223593}
+{"at": "2026-09-07T22:21:21.577614+00:00", "event": "artifact_load_started", "elapsed_seconds": 0.026502749999053776, "artifact_id": "RampPublic/portal-qwen3-8b", "revision": "6593b49ae790ec6d601db5a081c81463cb8b3a5f"}
+{"at": "2026-09-07T22:21:21.872439+00:00", "event": "run_blocked", "elapsed_seconds": 0.32132950000232086}

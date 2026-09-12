@@ -1,0 +1,7 @@
+[
+  {"id":"Qwen/Qwen3-4B-Instruct-2507","revision":"cdbee75f17c01a7cc42f958dc650907174af0554"},
+  {"id":"Qwen/Qwen3-8B","revision":"b968826d9c46dd6066d109eabc6255188de91218"},
+  {"id":"Qwen/Qwen2.5-7B-Instruct","revision":"a09a35458c702b33eeacc393d103063234e8bc28"},
+  {"id":"kitft/nla-qwen2.5-7b-L20-av","revision":"b88469162777ae6553bc14208eb0cb579336f8f4"},
+  {"id":"kitft/nla-qwen2.5-7b-L20-ar","revision":"e2c9e57eac213d37a31612087f645ab6332c1bb6"}
+]

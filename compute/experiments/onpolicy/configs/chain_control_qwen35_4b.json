@@ -1,0 +1,59 @@
+{
+  "base_config_sha256": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670",
+  "checkpoints": {
+    "after_symbol_map": {
+      "path": "/mnt/shared/cl-portfolio/runs/resume-20260908-oracle-sft-replay-qwen35-4b-s37/adapters/after_symbol_map/adapter_model.safetensors",
+      "sha256": "517b73623d4c263800fad79336b3bfcf6e09f59409a182913802fa70efcd515a"
+    },
+    "initial": {
+      "path": "/mnt/shared/cl-portfolio/runs/resume-20260908-oracle-sft-replay-qwen35-4b-s37/adapters/initial/adapter_model.safetensors",
+      "sha256": "01da5206631ffc71c3c28cf1ea435bdcbddc653ef9e384482fbf19f44e2dc6dd"
+    }
+  },
+  "kind": "retained_primitive_chain_diagnostic",
+  "model_config": {
+    "arms": [
+      "oracle_sft"
+    ],
+    "checkpoint_every": 1,
+    "eval_examples": 32,
+    "experiment_kind": "pilot",
+    "gate_examples": 0,
+    "gradient_checkpointing": true,
+    "learning_rate": 0.0002,
+    "lora_alpha": 16,
+    "lora_rank": 8,
+    "max_new_tokens": 32,
+    "mode": "oracle_sft_control",
+    "model_id": "Qwen/Qwen3.5-4B",
+    "model_path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "replay_examples_per_update": 2,
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "seed": 37,
+    "steps_per_task": 32,
+    "teacher_min_accuracy": 1.0,
+    "tokens_per_update": 40,
+    "train_examples": 16
+  },
+  "protocol": {
+    "boundaries": "Roots are disjoint from earlier train/dev/eval and reserved future roots. Intermediate inputs may overlap earlier primitive inputs; all such unique calls are counted. No data is used to update parameters.",
+    "budget": "At most128x5=640 logical calls per condition,1280 across both. Cache identical primitive query/input calls within each condition, log actual unique calls, tokens and intermediate overlaps. Multi-call methods have extra inference budget.",
+    "conditions": [
+      "initial",
+      "after_symbol_map"
+    ],
+    "generation": "Native chat template with thinking disabled. Cue-only prompt, unrestricted full-vocabulary greedy generation, native model and tokenizer EOS, 32 new tokens per call. No grammar or choice restriction.",
+    "methods": [
+      "one_shot",
+      "model_chain",
+      "oracle_intermediate"
+    ],
+    "model_chain": "Each primitive receives only the preceding model-produced JSON array. Invalid output terminates the chain. No oracle correction, rules, demonstrations, chat history or answer-conditioned context.",
+    "next_step_gate": "Only consider chain-trace training if final model-chain accuracy>=.90, model-chain minus final one-shot>=.25, and final model-chain minus initial model-chain>=.25 on all128 queries. Any training requires a separate frozen protocol and disjoint inputs; this diagnostic launches none.",
+    "oracle_intermediate": "Each primitive receives the exact oracle intermediate input. Report last-step accuracy and all-step accuracy separately; privileged diagnostic, not transfer evidence.",
+    "root_inputs": "input_pool(37)[160:192], 32 unused roots. Reserve indices192:224. Every root is evaluated with all four ordered noncommuting pairs dax/wug,wug/dax,fep/kiv,kiv/fep.",
+    "scope": "One fixture, two saved adapters, zero optimizer updates. Tests external decomposition of retained primitives; no internal compositional learning claim.",
+    "scoring": "Whole-response JSON list of exactly four integers0..3. Exact executable final-answer accuracy; separately report the subset whose two orders have different answers. No substring extraction.",
+    "source_model": "Reuse verified cached exact Qwen3.5-4B revision and original rank8/alpha16 BF16 adapter setup. Hash base and adapters before/after calls, reload each saved adapter exactly."
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "arithmetic_contract": "Load the same pinned BF16-stored backbone values into FP32 storage for both methods. Disable autocast for native factor generation/export, losses, choice scoring and full-logit probes, including original floors, every saved checkpoint and target evaluation. Record actual floating parameter/buffer and raw-logit dtypes. Gates, ranks, alpha/r scaling, initialization factors, fixtures, model revisions and training hyperparameters remain unchanged.",
+  "capacity_exposure_table": [
+    {
+      "active_trainable_scalars_per_stage": 17436672,
+      "arm": "sequence_lora_no_replay",
+      "computed_reference_examples": 192,
+      "current_examples": 1152,
+      "effective_reference_examples": 0,
+      "optimizer_updates": 288,
+      "reference_gradient_weight": 0.0,
+      "retained_new_task_vector_scalars": 0,
+      "retained_published_task_vector_scalars": 0,
+      "stored_adapter_checkpoint_scalars": 17436672,
+      "stored_adapter_checkpoint_tensor_bytes_fp32": 69746688
+    },
+    {
+      "active_trainable_scalars_per_stage": 17436672,
+      "arm": "sequence_lora_replay",
+      "computed_reference_examples": 192,
+      "current_examples": 1152,
+      "effective_reference_examples": 192,
+      "optimizer_updates": 288,
+      "reference_gradient_weight": 0.25,
+      "retained_new_task_vector_scalars": 0,
+      "retained_published_task_vector_scalars": 0,
+      "stored_adapter_checkpoint_scalars": 17436672,
+      "stored_adapter_checkpoint_tensor_bytes_fp32": 69746688
+    },
+    {
+      "active_trainable_scalars_per_stage": 17484032,
+      "arm": "sequence_native_no_replay",
+      "computed_reference_examples": 192,
+      "current_examples": 1152,
+      "effective_reference_examples": 0,
+      "optimizer_updates": 288,
+      "reference_gradient_weight": 0.0,
+      "retained_new_task_vector_scalars": 768,
+      "retained_published_task_vector_scalars": 3584,
+      "stored_adapter_checkpoint_scalars": 31120768,
+      "stored_adapter_checkpoint_tensor_bytes_fp32": 124483072
+    },
+    {
+      "active_trainable_scalars_per_stage": 17484032,
+      "arm": "sequence_native_replay",
+      "computed_reference_examples": 192,
+      "current_examples": 1152,
+      "effective_reference_examples": 192,
+      "optimizer_updates": 288,
+      "reference_gradient_weight": 0.25,
+      "retained_new_task_vector_scalars": 768,
+      "retained_published_task_vector_scalars": 3584,
+      "stored_adapter_checkpoint_scalars": 31120768,
+      "stored_adapter_checkpoint_tensor_bytes_fp32": 124483072
+    }
+  ],
+  "comparison_entrypoint": "compare.py",
+  "confirmation": {
+    "arms": 4,
+    "fixture_seed": 419,
+    "status": "frozen_and_reserved_not_queued",
+    "training_seed": 41901
+  },
+  "cpu_evidence": {
+    "comparison_config_pairing": "outputs/sequence-comparison-cpu/config-pairing.json",
+    "comparison_pytest": "outputs/sequence-comparison-cpu/pytest.xml",
+    "comparison_synthetic_cli": "outputs/sequence-comparison-cpu/synthetic-cli-comparison.json",
+    "data": "outputs/sequence-data-cpu/verification.json",
+    "data_source_freeze": "outputs/sequence-data-cpu/source-freeze.json",
+    "fp32_arithmetic_review": "outputs/sequence-parity-review/review.json",
+    "fp32_owner_regressions": "outputs/sequence-fp32-cpu/verification.json",
+    "independent_data_review": "outputs/sequence-review/data-check.json",
+    "independent_dtype_counterexample": "outputs/sequence-review/dtype-check.json",
+    "independent_heldout_isolation": "outputs/sequence-review/i03-isolation-check.json",
+    "independent_implementation_review": "outputs/sequence-review/implementation-findings.json",
+    "isolated_shipped_source_prepare": "outputs/sequence-integration-cpu/package-check.json",
+    "learner_runner": "outputs/sequence-learning-cpu/verification.json",
+    "pinned_backbone_storage_headers": "outputs/sequence-primary/base-storage-headers.json",
+    "shape_capacity_plan": "outputs/sequence-learning-cpu/parameter-plan.json",
+    "source_freeze": "outputs/sequence-fp32-integration/source-freeze.json",
+    "whole_lane": "outputs/sequence-fp32-integration/verification.json",
+    "whole_lane_pytest": "outputs/sequence-fp32-integration/pytest.xml"
+  },
+  "cpu_verified_at": "2026-09-08T23:28:41.433760+00:00",
+  "entrypoint": "run.py",
+  "experiment": "post_upgrade_three_stage_digit_permutation_sequence",
+  "fixtures": {
+    "primary": {
+      "fixture_seed": 303,
+      "generator_sha256": "cf43c6e484b991fda6c3365cf99730b2de59acb0ce968fb18d62fc4c65219406",
+      "input_sha256": "9ba0c7d84ee54c5701b6acbd4c0401941894c8ec0dee15b3f27e09a4b49f9476",
+      "path": "data/sequence303.json",
+      "role": "primary",
+      "sha256": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2",
+      "source_generator_sha256": "f3b75979e4f92e1bfd207a62411249cf275ebe0c1c368d05c105e8103882d87e",
+      "task_sha256": {
+        "sequence_a": "bd66c2409eb745051fbb97c786daf22db4a48582b24a90732ebf67477a578492",
+        "sequence_b": "72c824bf3d0127e0ecb03974be722094b71d23ebc0b3da110e91c64b7f69d982",
+        "sequence_c": "c00128d0fb6e7619f64fecde1b70acf50e451ca15b9597f74aa3907d4229f5ee"
+      },
+      "training_seed": 30301
+    },
+    "reserved_confirmation": {
+      "fixture_seed": 419,
+      "generator_sha256": "678cbce1a8e9ca914bc8ff9cc7713e86ff55639a7b97bdce8c3e1cc610793fb6",
+      "input_sha256": "b6f2f00461f74754bfe538e988ebcf41f16c44cd546345e4c0cca925b067ae76",
+      "path": "data/sequence419.json",
+      "role": "reserved_confirmation",
+      "sha256": "cbc34593af7909a1f11a232c41f1538f20fc2dabd34852646cf5f959db25efd1",
+      "source_generator_sha256": "f3b75979e4f92e1bfd207a62411249cf275ebe0c1c368d05c105e8103882d87e",
+      "task_sha256": {
+        "sequence_a": "6899001a0ec5b31c4d8d43d8a96f316973a7672c5a1bf035a2f34c57d9000f4a",
+        "sequence_b": "d21cd7c9f7d9768ba27150568e520071a5f5b58ed2f3890e302213441274b101",
+        "sequence_c": "48978c2336860eb52e76f4ef52ab11846091bec2e13be17e0d49130651378d1d"
+      },
+      "training_seed": 41901
+    }
+  },
+  "gpu_jobs_started_by_this_worker_for_sequence": 0,
+  "gradient_contract": "Separate token-normalized current/reference gradients; combine g_current + replay_weight * g_reference before one global norm clip and one AdamW step. Replay-off computes and discards reference gradients. Retain shared-core or LoRA Adam state, with old native vectors and their optimizer state frozen.",
+  "initialization_contract": "All three native vectors clone published RTE. Persistent LoRA embeds the same effective RTE factors at ranks q=36/v=37 with nonzero extra A directions and zero extra B directions, preserving alpha/r=2. The fixed pretraining numerical gate uses validation-only native/LoRA choice scores and probes. Posttraining test floors reload the untouched raw backbone and original saved native/LoRA initial checkpoints, including the original task-vector state; trained state is never an initial floor.",
+  "lane": "portability",
+  "launch_plan": [
+    {
+      "arm": "sequence_lora_no_replay",
+      "config": "configs/sequence_lora_no_replay.json",
+      "dependency": "portability-sequence-fp32-qualification-s30301",
+      "entrypoint": "run.py",
+      "gpus": 1,
+      "planned_id": "portability-sequence-lora-no-replay-s30301-fp32",
+      "status": "not_queued_requires_successful_zero_update_qualification"
+    },
+    {
+      "arm": "sequence_lora_replay",
+      "config": "configs/sequence_lora_replay.json",
+      "dependency": "portability-sequence-fp32-qualification-s30301",
+      "entrypoint": "run.py",
+      "gpus": 1,
+      "planned_id": "portability-sequence-lora-replay-s30301-fp32",
+      "status": "not_queued_requires_successful_zero_update_qualification"
+    },
+    {
+      "arm": "sequence_native_no_replay",
+      "config": "configs/sequence_native_no_replay.json",
+      "dependency": "portability-sequence-fp32-qualification-s30301",
+      "entrypoint": "run.py",
+      "gpus": 1,
+      "planned_id": "portability-sequence-native-no-replay-s30301-fp32",
+      "status": "not_queued_requires_successful_zero_update_qualification"
+    },
+    {
+      "arm": "sequence_native_replay",
+      "config": "configs/sequence_native_replay.json",
+      "dependency": "portability-sequence-fp32-qualification-s30301",
+      "entrypoint": "run.py",
+      "gpus": 1,
+      "planned_id": "portability-sequence-native-replay-s30301-fp32",
+      "status": "not_queued_requires_successful_zero_update_qualification"
+    }
+  ],
+  "ownership": "experiments/portability/**; parent alone owns resources, runtime gates, queue and GPU dispatch",
+  "pending_proof": [
+    "One parent-owned validation-only zero-update GPU qualification with unchanged numerical gates",
+    "Only after qualification passes: parent may launch the same four configurations with fresh IDs",
+    "Paired primary results before any reserved fixture419 confirmation decision"
+  ],
+  "planned_primary_training_arms": 4,
+  "previous_initialization_attempt": {
+    "collection": "outputs/sequence-primary/collection.json",
+    "fixed_maximum_probe_absolute_gap": 0.125,
+    "maximum_probe_absolute_gap": 0.25,
+    "optimizer_updates": 0,
+    "run_ids": [
+      "portability-sequence-lora-no-replay-s30301",
+      "portability-sequence-lora-replay-s30301",
+      "portability-sequence-native-no-replay-s30301",
+      "portability-sequence-native-replay-s30301"
+    ],
+    "source_bundle_sha256": "538421b11d5e14b8015b7a220b38b6474240d0309474c55821d708c799f80125",
+    "status": "all_four_failed_fixed_initialization_gate_before_training",
+    "validation_choice_score_gap": 0.0
+  },
+  "primary_config_sha256": {
+    "configs/sequence_lora_no_replay.json": "068d07d7d51d0c0549db1d31618ef1cff33f904356acd36b4b43a258d5c2071b",
+    "configs/sequence_lora_replay.json": "b0eb5913ca38d6267c45c966149d9c5397bb6495b6c1c70621d1aa01ff86cbd4",
+    "configs/sequence_native_no_replay.json": "9610568cda1764356ea4ba004dfc6a9a8b89042803502c3987bfdb08fe6a9627",
+    "configs/sequence_native_replay.json": "d99d2a9f941fdc67b63f6309d531721fafda16aa361825c5f8f76684fb6afbbc"
+  },
+  "prior_runs": "Earlier Amber and catalog results remain in their immutable outputs and source bundles. This canonical handoff now describes only the new repeated sequence.",
+  "qualification_launch_plan": {
+    "config": "configs/sequence_native_no_replay.json",
+    "dependency": "resume-20260908-qualify-qwen3-8b",
+    "entrypoint": "qualify.py",
+    "execution": "prepare, validation-only initialization, fresh-process original-initial checkpoint reload, then exit",
+    "gpus": 1,
+    "heldout_access": false,
+    "planned_id": "portability-sequence-fp32-qualification-s30301",
+    "success_requirement": "Existing unchanged initialization and reload gates pass on the pinned GPU runtime.",
+    "training_updates": 0
+  },
+  "routing": "Both methods receive the identical explicit task name in each prompt. Native additionally selects the known task vector. One persistent LoRA remains installed for all tasks and boundaries. No unknown-task retrieval claim.",
+  "runtime_dependency": {
+    "execution_receipt_sha256": "a829d9dad868e5a088590ecb6f60e622a31292409c0f8742026ce2c01c35dae1",
+    "execution_status": "completed",
+    "exit_code": 0,
+    "pod_uid": "ad889807-3bfa-4d2f-b8fd-df6b146af062",
+    "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+    "scope": "Parent-owned original 8B runtime smoke; per-arm numerical parity remains required before sequence training.",
+    "task_id": "resume-20260908-qualify-qwen3-8b"
+  },
+  "runtime_requirements": "requirements.txt",
+  "scientific_limitations": [
+    "One procedural digit-permutation family and known task routing; four-choice accuracy rather than free generation.",
+    "Matched active scalar count and data schedules do not establish identical function dimension, optimization geometry or FLOPs.",
+    "Descriptive paired intervals concern held-out input groups within one fixture, not training-seed uncertainty or confirmed method superiority.",
+    "Source acquisition and zero-calibration 8B-to-1.7B transfer are separate measured claims."
+  ],
+  "sequence_tasks": [
+    "sequence_a",
+    "sequence_b",
+    "sequence_c"
+  ],
+  "status": "cpu_verified_ready_for_single_zero_update_qualification",
+  "table_evidence": {
+    "capacity": "CPU published-model shape plan; actual PEFT counts and serialized checkpoint tensor sizes must be verified in runner receipts before comparing learning.",
+    "counting": "Adapter checkpoint tensor counts exclude the common frozen 8B backbone and separately serialized optimizer state. Native full checkpoint includes frozen alignment and 17 task-vector rows. Active native count includes the core plus only the current 256-scalar vector.",
+    "exposure": "Planned schedules, not GPU execution counts. Current/reference supervised, input and padded token counts plus actual ordered-row hashes are required at runtime.",
+    "native_checkpoint_count_source": "outputs/inspection/sdk_receipt.json: original 8B artifact 31,120,000 scalars plus 3 x 256 new vector scalars."
+  },
+  "test_isolation_contract": "Training reads only current/past train and validation splits plus metadata-only initialization receipts. Test rows, labels, predictions and scores are evaluated only after all training has finished. CPU heldout-mutation counterexamples must preserve exact learned model and optimizer state and verify original initial-floor checkpoint identity.",
+  "torch_install_rule": "Keep the image vendor ROCm Torch; constrain its installed version during uv installation."
+}

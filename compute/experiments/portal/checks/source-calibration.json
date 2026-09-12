@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "status": "ready_for_parent_gpu_calibration",
+  "created_at": "2026-09-07T23:01:16.589062+00:00",
+  "scope": "Source-only train/dev capacity qualification; no test or target evaluation.",
+  "config_path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/configs/calibrate-qwen3-1.7b.json",
+  "config_sha256": "c3320ddc50619d92df30c65909189f5980b26341846345a2f069c59b9d474dc1",
+  "config_file_sha256": "517863844f7b75e6be37648a11d4b111a4fc6d0d812198aa2c98572d7a2bbf6e",
+  "source_manifest_sha256": "11894f75561ed199f5be1e63fef5dcb145734de36b7423ae0647c0685079f5b6",
+  "source_hash_definition": "SHA-256 of canonical JSON (sorted keys, compact separators) mapping package-relative file paths to their SHA-256 hashes.",
+  "implementation_sha256": "ddbf724e0650c0d89be20a447b9bf3b2b9d2eaa345d6d8371428c9e8d4514ea9",
+  "implementation_hash_definition": "The same canonical map restricted to root Python files; matches calibration_contract.source_sha256 at runtime.",
+  "bundle_files_sha256": {
+    "calibration.py": "7b7359a0cb63811635f9a7d0c7e089125ff7439654695927642f269fd4101241",
+    "configs/calibrate-qwen3-1.7b.json": "517863844f7b75e6be37648a11d4b111a4fc6d0d812198aa2c98572d7a2bbf6e",
+    "configs/pilot-gemma-3-4b.json": "055f33c376928fa819795687b642817aab393c16fccd25b4e3b7dfa0d9bbb532",
+    "configs/pilot-gemma-4-e2b.json": "2bd96c063a58b1b7da0dbbffb752cd6dfb803e2484b28440e0a4d440299de7f5",
+    "configs/pilot-mistral-7b.json": "aebc5b90dbcbf6c9cad960f6c3fa527b7e4c9eb6070da653fe39c0f93a8653a4",
+    "configs/pilot-qwen3-1.7b.json": "362f8f271a8bbfe975cdf1c6041af204033a9ce1a4e57bd7d1a91d2897b13908",
+    "configs/pilot-qwen3-4b.json": "184fd2bda45c1c755cfb8d6236c8b4d0e6b083970d61fa59adb7f3b9591a3b66",
+    "configs/pilot-qwen3-8b.json": "887b9df721783e35f06a0ea59de8117820434ffbe9eb4467d7f0fe14d7f2563b",
+    "configs/smoke-gemma-3-4b.json": "6f832cab582ca8f4a1778908ee5b8a8b174c8ff090f1067bb26018d78fd3dda6",
+    "configs/smoke-gemma-4-e2b.json": "ea6659f0ff5098f0e2d0c594f1f6c90f398fbbc430ed5dc1e6f9a62f4bb7438b",
+    "configs/smoke-inkling.json": "8b4bd887d78bc681ba1e01aea9210763718d12d727ca59c002cdedd81b39251f",
+    "configs/smoke-mistral-7b.json": "febd68380c6c159378e666f274d5e0c14862142d7d2d6cbca4e384c5d6866796",
+    "configs/smoke-qwen3-1.7b.json": "77bd6da6955e7711a815775f1821aa2826e1b7e76fddf2862c55abef6037e72f",
+    "configs/smoke-qwen3-4b.json": "215727aa2e542869392447b4aca5978efb794ab521dfd5144d78cf70f3cc0936",
+    "configs/smoke-qwen3-8b.json": "f42af100b94d86352712aa4fc28a5b63fcb939f4e1c4bc1e400ffbf473c0a3f4",
+    "engine.py": "53ddb1efd530cef65ac6e4c280bcb5093c06f52f82d68e32362b78e161652439",
+    "inventory.py": "9b21bd9e582f6d59bee6fe922620516197e1f08ad8c40bd1b7e19691594cff0a",
+    "pytest.ini": "b160d82f7811555051f8966d8e02750a985227c1d022208c784e606946f2eada",
+    "registry.json": "75c7adfa381c3e2804c0bbbd2f8b5150e03ad470a9793f9013d015cc1c9eec66",
+    "requirements.txt": "8b72388baee79d5ea355049763019a154313792e8b0f68b07781858c75284469",
+    "run.py": "8f80a96e17eec3bbeb5fdc3ad135c91375d81b47839cdb608ecaa506a3377f70",
+    "runtime.py": "63930296e2b933c3ee49daf3fd0b1c80f8b89f4caf94b01ee97dfe0b15a0def2",
+    "tasks.py": "2f122a041463aa3ef3b152c9372782038595d52a461c3f5b7cf3c3f5c5ffdaa1",
+    "tests/test_portal.py": "3d713274c2aff05a1db95af99898ab3b90808b6fccbb3336c7640a1652a9e944"
+  },
+  "bundle_excludes": [
+    ".venv",
+    ".artifacts",
+    ".pytest_cache",
+    ".pytest-cache-calibration",
+    ".test-calibration",
+    ".test-calibration-cli",
+    "__pycache__",
+    "checks",
+    "interface.json"
+  ],
+  "legacy_interface": "interface.json and original pilot/check receipts are preserved as historical evidence; this receipt binds the calibration source bundle.",
+  "data": {
+    "generator": "source_only_amber_train_dev_calibration",
+    "training_seed": 17,
+    "validation_seed": 2718,
+    "task": "acquisition_a",
+    "rules": {
+      "amber": [
+        3,
+        1,
+        0,
+        4,
+        5,
+        2,
+        7,
+        6
+      ]
+    },
+    "train_examples": 128,
+    "validation_examples": 128,
+    "train_sha256": "0c6115ef34862112f8c5ecc283d958bc6dd4b6aa56806d9d010f26961d537157",
+    "validation_sha256": "01e2a90ca119f8777ce5773a92f8528f020f92545a4362486990f8d9002fb4c0",
+    "excluded_prior_evaluation_input_count": 96,
+    "split_contract": "Original training rows are unchanged. Fresh validation inputs exclude training and the previous pilot's reserved evaluation inputs. No test examples are constructed or exposed.",
+    "metric": "four-choice continuation accuracy and token-normalized gold NLL"
+  },
+  "frozen_plan": {
+    "max_steps": 256,
+    "batch_size": 4,
+    "checkpoint_steps": [
+      32,
+      128,
+      256
+    ],
+    "latent_learning_rates": [
+      0.002,
+      0.02
+    ],
+    "lora_learning_rate": 0.0002,
+    "train_examples": 128,
+    "validation_examples": 128,
+    "validation_seed": 2718,
+    "prior_evaluation_examples": 96,
+    "eval_batch_size": 8,
+    "max_prompt_tokens": 128,
+    "gradient_clip": 1.0,
+    "gradient_checkpointing": true,
+    "min_train_accuracy": 0.9,
+    "min_validation_accuracy": 0.8,
+    "min_validation_accuracy_gain": 0.2,
+    "min_validation_nll_drop": 0.1,
+    "reload_atol": 1e-06
+  },
+  "qualification": {
+    "checkpoint": 256,
+    "min_train_accuracy": 0.9,
+    "min_validation_accuracy": 0.8,
+    "requires_finite_nonzero_gradients": true,
+    "requires_changed_trainable_state": true,
+    "requires_reloaded_predictions_equal_and_scores_within": 1e-06,
+    "requires_frozen_base_and_port_full_state_hashes_unchanged": true,
+    "overall_requires_native_lora_control_and_at_least_one_latent_pass": true,
+    "qualification_only": "Not evidence of heldout generalization, continual retention, or cross-model transfer.",
+    "anchor_comparisons": {
+      "latent": "no-adapter base and initial released mean latent",
+      "native_lora": "no-adapter base (its zero-update initial state)"
+    },
+    "min_validation_accuracy_gain": 0.2,
+    "min_validation_gold_nll_drop": 0.1
+  },
+  "reload_scope": "Fresh adaptation instance, same frozen base and released port; no optimizer updates during re-evaluation. Process resume reloads base/port and rejects changed full state hashes.",
+  "cpu_validation": {
+    "total_distinct_tests_passed": 37,
+    "runs": [
+      {
+        "command": "uv run --no-project --python .venv/bin/python python -B -m pytest -q tests --basetemp=.test-calibration -o cache_dir=.pytest-cache-calibration",
+        "passed": 36,
+        "exit_code": 0
+      },
+      {
+        "command": "uv run --no-project --python .venv/bin/python python -B -m pytest -q tests/test_portal.py -k calibration_cli_rejects_cpu --basetemp=.test-calibration-cli -o cache_dir=.pytest-cache-calibration",
+        "passed": 1,
+        "deselected": 36,
+        "exit_code": 0
+      }
+    ],
+    "evidence": [
+      "Source training rows and original generator output preserve their frozen digests.",
+      "Fresh validation inputs exclude original train and all prior evaluation inputs.",
+      "CalibrationData rejects test/heldout/target access; legacy test generator/evaluator and target loader paths are traps in orchestration tests.",
+      "Changing only validation seed leaves training losses, gradients, and final learned weight hashes identical.",
+      "Nonreentrant recomputation preserves loss and latent gradient exactly on a tiny Qwen CPU fixture.",
+      "SIGTERM after step three resumes from step three, skips committed step-two measurement, and yields identical losses, gradients, weights, and per-example train/dev receipts for all three arms.",
+      "Changed anchor, checkpoint result, prediction receipt, or same-metadata frozen base weight content rejects resume.",
+      "CPU execution cannot qualify or pass the production CLI guard."
+    ],
+    "ruff_check": "passed",
+    "ruff_format_check": "passed",
+    "ast_review": "No imports inside functions; calibration training accesses data.rows(train)."
+  },
+  "protected_files_unchanged": {
+    "configs/pilot-gemma-4-e2b.json": "2bd96c063a58b1b7da0dbbffb752cd6dfb803e2484b28440e0a4d440299de7f5",
+    "configs/smoke-qwen3-8b.json": "f42af100b94d86352712aa4fc28a5b63fcb939f4e1c4bc1e400ffbf473c0a3f4",
+    "configs/smoke-inkling.json": "8b4bd887d78bc681ba1e01aea9210763718d12d727ca59c002cdedd81b39251f",
+    "configs/pilot-qwen3-4b.json": "184fd2bda45c1c755cfb8d6236c8b4d0e6b083970d61fa59adb7f3b9591a3b66",
+    "configs/pilot-gemma-3-4b.json": "055f33c376928fa819795687b642817aab393c16fccd25b4e3b7dfa0d9bbb532",
+    "configs/smoke-mistral-7b.json": "febd68380c6c159378e666f274d5e0c14862142d7d2d6cbca4e384c5d6866796",
+    "configs/pilot-qwen3-8b.json": "887b9df721783e35f06a0ea59de8117820434ffbe9eb4467d7f0fe14d7f2563b",
+    "configs/smoke-qwen3-1.7b.json": "77bd6da6955e7711a815775f1821aa2826e1b7e76fddf2862c55abef6037e72f",
+    "configs/smoke-gemma-4-e2b.json": "ea6659f0ff5098f0e2d0c594f1f6c90f398fbbc430ed5dc1e6f9a62f4bb7438b",
+    "configs/smoke-qwen3-4b.json": "215727aa2e542869392447b4aca5978efb794ab521dfd5144d78cf70f3cc0936",
+    "configs/pilot-qwen3-1.7b.json": "362f8f271a8bbfe975cdf1c6041af204033a9ce1a4e57bd7d1a91d2897b13908",
+    "configs/pilot-mistral-7b.json": "aebc5b90dbcbf6c9cad960f6c3fa527b7e4c9eb6070da653fe39c0f93a8653a4",
+    "configs/smoke-gemma-3-4b.json": "6f832cab582ca8f4a1778908ee5b8a8b174c8ff090f1067bb26018d78fd3dda6",
+    "checks/validation.json": "4214b77ce3f1713d5d5c7c4b24fed38b1616f9f511f68284fd9069c36f0d9583",
+    "checks/pytest.xml": "66da53845a131c748c8bc9468dd23ea422c57e470a01b1d4dc70a6ef921d0dbf",
+    "checks/local-smoke-config.json": "6ad55c1292c7c0a7f922f73782a8816f1554d1bbe2da826f02cda25000494135",
+    "checks/capability-no-gpu/metrics.json": "3c695a5cea73f70969d590844d56975d42fd0c47f5021039bdf7dadd08ccfc10",
+    "checks/capability-no-gpu/config.json": "6ad55c1292c7c0a7f922f73782a8816f1554d1bbe2da826f02cda25000494135",
+    "checks/capability-no-gpu/events.jsonl": "612e1963958a5fb59eb53827f7920d3ad89a71008433e98123d9b2276da48905",
+    "checks/capability-no-gpu/progress.json": "0c4712fb1292841694a1e65a7aa2031ee4517dec0aa28ff8529a8f262741eaaa",
+    "checks/local-gpu-smoke/metrics.json": "29571ed3870e3ba5d7d7cccdb5e657854ed2662dc251c41ebe85ca8f65e27a27",
+    "checks/local-gpu-smoke/config.json": "68a5a6130edd6a8224ea206465384b8f12e945aa40df890e8af81dc80bd56a5c",
+    "checks/local-gpu-smoke/events.jsonl": "97baa5cc4fbc540974056e0ddd8b96d3ac991683c451b8cf49d63d5f530958d5",
+    "checks/local-gpu-smoke/progress.json": "308e2679cccfb36b90557023f9a5dcbe0bd90d23617e655bf138b8429f5aeb46",
+    "interface.json": "c6eda612b70c6c84c04c20e06dff98574ce7979d0e2756dacea63f1fb2e95998"
+  },
+  "gpu_execution_by_this_worker": false,
+  "jobs_submitted_by_this_worker": false,
+  "required_runtime": "Parent-provided one-GPU ROCm torch 2.10 / transformers 5.16.1 / accelerate 1.14.0 environment with requirements.txt installed.",
+  "launch_template": "uv run --no-project --python \"$PORTAL_PYTHON\" python \"$PORTAL_SOURCE/run.py\" --config \"$PORTAL_SOURCE/configs/calibrate-qwen3-1.7b.json\" --output-dir /mnt/shared/cl-portfolio/runs/portal-source-calibration-qwen3-17b-s17-dev2718",
+  "launch_variables": {
+    "PORTAL_PYTHON": "Absolute path to the parent-validated portal runtime Python",
+    "PORTAL_SOURCE": "Absolute path to the staged package matching bundle_files_sha256"
+  },
+  "resume": "Reuse exactly the same source, config, runtime, frozen weights and output directory. SIGTERM/SIGINT preserves optimizer/RNG checkpoint; committed milestone receipts are hash-verified before reuse."
+}

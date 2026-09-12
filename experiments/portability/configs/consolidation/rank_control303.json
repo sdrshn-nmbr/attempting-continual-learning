@@ -1,0 +1,76 @@
+{
+  "name": "frozen303_static_rank8_controls",
+  "rank": 8,
+  "alpha": 16,
+  "expected_projection_count": 72,
+  "cpu_threads": 4,
+  "probe_seed": 303808,
+  "probe_rows": 4,
+  "cpu_probe_contract": {
+    "injection_reference": "Same fitted factors serialized to FP32, evaluated with FP32 linear operations and scale 2.",
+    "fp64_fit_forward_rounding": "Reported separately without a behavioral or injection gate; FP64 weight residuals and serialization residual limits remain enforced."
+  },
+  "base_identity": {
+    "base_model_name_or_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+    "revision": null
+  },
+  "cpu_gates": {
+    "residual_energy_rtol": 1e-9,
+    "residual_energy_atol": 1e-9,
+    "initial_fp64_relative_error_max": 1e-12,
+    "serialization_relative_error_change_max": 1e-6,
+    "projection_probe_max_abs": 1e-4,
+    "projection_probe_relative_l2_max": 1e-6
+  },
+  "frozen_references": {
+    "spectrum_implementation": {
+      "path": "../../compression_spectrum.py",
+      "sha256": "707b9090edc943f10b265a53263eb4541403dcf49b2094ab8bd8431c9c20609b"
+    },
+    "spectrum": {
+      "path": "../../outputs/compression-spectrum-cpu/measurement/spectrum.json",
+      "sha256": "f56717d810f1f22c379ace40ba9242b18b40d21d26b88f381d935370790eb77e"
+    },
+    "spectrum_frozen_inputs": {
+      "path": "../../outputs/compression-spectrum-cpu/measurement/frozen-inputs.json",
+      "sha256": "f3c2d31c2c04999c0b9400f81afd346fa9a54e72c159a75f4fd237c0c8e7e3b2"
+    }
+  },
+  "checkpoints": {
+    "initial": {
+      "local_path": "../../outputs/compression-spectrum-cpu/inputs/initial",
+      "origin": "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/initial/lora/checkpoint",
+      "sha256": {
+        "adapter_config.json": "88aeeaa34d6de94e14722699a9ef172f877783144e804539785602233c32da83",
+        "adapter_model.safetensors": "0af95c2348eb699211bd87a905031349aaab3bb566daba9fb78e3acc9d92c72a"
+      }
+    },
+    "final": {
+      "local_path": "../../outputs/compression-spectrum-cpu/inputs/final",
+      "origin": "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/stages/after_c/checkpoint",
+      "sha256": {
+        "adapter_config.json": "88aeeaa34d6de94e14722699a9ef172f877783144e804539785602233c32da83",
+        "adapter_model.safetensors": "761115de00055eaa9a72fb66aa75bddaff9e954a77a7b7b9318347333d19efff"
+      }
+    }
+  },
+  "planned_parent_evaluation": {
+    "classification": "exploratory_mechanistic",
+    "input_groups": 288,
+    "choice_rows": 864,
+    "data_previously_observed_for_other_conditions": true,
+    "new_mapping_or_training_replication": false,
+    "conditions": ["full_initial", "full_final", "rank8_initial", "rank8_final"],
+    "rank8_final_per_task": {
+      "minimum_fraction_of_full_final_accuracy": 0.95,
+      "minimum_accuracy": 0.9,
+      "minimum_gain_over_max_initial_accuracy": 0.5
+    },
+    "initial_projection_numerical_control": {
+      "all_choice_predictions_identical": true,
+      "maximum_choice_score_difference": 1e-4,
+      "record_failure_without_retuning": true
+    },
+    "full_model_behavior_evaluated_in_this_cpu_run": false
+  }
+}

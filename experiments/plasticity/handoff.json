@@ -1,0 +1,106 @@
+{
+  "arms": [
+    "continue",
+    "optimizer_reset",
+    "capacity_refresh",
+    "replay"
+  ],
+  "cpu_validation": {
+    "checkpoint_stages_exact": [
+      "A",
+      "B",
+      "C"
+    ],
+    "data_rows": 4480,
+    "data_sha256": "033ec803e3ab9a69c7e847b908908e533508a9ac5777d7bc056d23c3034bb196",
+    "deprecated_output_flag_rejected": true,
+    "dispatcher_preexisting_files_accepted": true,
+    "frozen_historical_adapters_exact": true,
+    "matched_trainable_parameters": true,
+    "new_capacity_initially_noop": true,
+    "optimizer_state_exact": true,
+    "prompt_tokens_max": 79,
+    "real_tiny_model_gradients": true,
+    "receipt": "local-checks/qualified/verification.json",
+    "revision_and_snapshot_guards_tested": true,
+    "ruff": "passed",
+    "status": "passed",
+    "tokenizer_examples": 4480
+  },
+  "dataset_downloads": [],
+  "dispatch_authorized_now": false,
+  "dispatcher_argv": [
+    "run.py",
+    "--config",
+    "configs/screen.json",
+    "--output-dir",
+    "/mnt/shared/cl-portfolio/runs/plasticity-screen-seed17"
+  ],
+  "exclude_from_source_bundle": [
+    ".cache",
+    "local-checks",
+    "__pycache__"
+  ],
+  "extra_packages": [
+    "peft==0.20.0",
+    "safetensors==0.8.0"
+  ],
+  "gpu_count": 1,
+  "gpu_training_run": false,
+  "gpu_visibility": "Parent worker sets ROCR_VISIBLE_DEVICES and unsets CUDA_VISIBLE_DEVICES and HIP_VISIBLE_DEVICES. Runner asserts device_count=1 and uses cuda:0 without setting visibility.",
+  "interim_artifacts": [
+    "status.json",
+    "events.jsonl",
+    "metrics/<arm>/<stage>/updates.jsonl",
+    "metrics/<arm>/<stage>/curve.json",
+    "metrics/<arm>/<stage>/stage.json",
+    "checkpoints/<arm>/<stage>/checkpoint.json",
+    "checkpoints/<arm>/<stage>/reload.json",
+    "autoresearch/plasticity-screen/screen-results.tsv"
+  ],
+  "lane": "plasticity",
+  "launch_command": "uv run python run.py --config configs/screen.json --output-dir /mnt/shared/cl-portfolio/runs/plasticity-screen-seed17",
+  "model_downloads": [],
+  "model_path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "orchestration_disposition": "Finish CPU validity checks and retain first-screen artifact. Parent explicitly deferred GPU dispatch in favor of complementary priority lanes.",
+  "owned_paths": [
+    "experiments/plasticity"
+  ],
+  "primary_metric": "validation clean-context full-vocabulary exact next-token accuracy AUC on newly introduced B/C tasks at matched optimizer updates",
+  "proof_limitations": [
+    "Small synthetic classification task; not open-ended agent ability or long-horizon continual-learning evidence.",
+    "Capacity refresh adds a new frozen-history rank-8 adapter per stage; trainable rank is matched but cumulative inference rank increases.",
+    "Replay replaces one new-task example per batch; total updates and examples are matched, new-task exposure is lower and logged.",
+    "Policy editions are visible inputs; revision measures scoped versioned rule learning, not erasure of obsolete global knowledge.",
+    "A single screen seed is exploratory and cannot establish reproducibility.",
+    "GPU training and checkpoint reload have not yet run."
+  ],
+  "references": [
+    "fresh_B",
+    "fresh_C"
+  ],
+  "runtime_packages": [
+    "transformers==5.16.1",
+    "accelerate==1.14.0",
+    "huggingface-hub==1.30.0"
+  ],
+  "selection_rule": "Only nominate after A acquisition and fresh-reference learnability gates; candidate mean B/C AUC gain >=0.03 with <=0.05 retention regression. Confirm on untouched test splits and another training seed before claiming a repeatable gain.",
+  "source_files": [
+    "run.py",
+    "tasks.py",
+    "requirements.txt",
+    "configs/screen.json",
+    "verify.py"
+  ],
+  "source_sha256": {
+    "configs/screen.json": "60f29342d138c43ec6e2ec407852316f36c5a791b90b442670a38ec22dab1464",
+    "requirements.txt": "fd7f28e0f636aa787268dc707a15a60fbd170972f47b1fa8bb5cf680b61e2973",
+    "run.py": "dd7e26e80c4174e321aac88753aa81ba0f726df2a6c0b6960c5f778583f87322",
+    "tasks.py": "464ff17b393e1c4310ad174d789547098bf3755899c3de30abd0d20f6c934b89",
+    "verify.py": "fb379accfc4abb1071881986b32b06419a3b52bf3fad289b3c5ef2d46e944ae9"
+  },
+  "status": "ready_for_review_gpu_deferred",
+  "torch_policy": "Keep the image's existing ROCm torch distribution and constrain using importlib.metadata.version; do not install requirements in an environment that resolves torch replacement.",
+  "validated_at": "2026-09-07T22:17:43.614262+00:00",
+  "working_directory": "content-addressed lane source folder"
+}

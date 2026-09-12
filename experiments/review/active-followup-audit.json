@@ -1,0 +1,88 @@
+{
+  "status": "no_blocking_findings",
+  "reviewed_at": "2026-09-07T22:58:44.746277+00:00",
+  "scope": "Independent bounded review of the frozen seed29 acquisition-by-consolidation follow-up. Read-only source and CPU checks; only this review artifact was written.",
+  "source_bundle_sha256": "9e9449df61927208fb73aa5091e7a180f15b9473f7e3ee5a8c4f3e4e3465518f",
+  "source_bundle_verified": true,
+  "source_bundle_hash_method": "Recomputed the local bundle with the sorted-file, exclusion, suffix, relative-name NUL content algorithm in compute/dispatch.py. It matches the requested frozen hash.",
+  "reviewed_file_sha256": {
+    "consolidation.py": "405e8748edff841c4af8d3188c1fd72a6e63baeca383681d5c733c3167f55c65",
+    "environment.py": "6a4475565b9dc924e1c5027b88452218ae39fc88acefb86509ef845a61c74b9b",
+    "run.py": "3d630bbf5a2d39099b2a8c6a6f5528094f970c8202e44af988f02952ffb5bf37",
+    "verify.py": "89158c20cb4fe2eddd78aad8582d869a1bf1544255652051f95e5d06b5abff5b",
+    "protocol.json": "e5d64ee897fb8e225d08bb9be748191b106a475f4741a7d92111d08a61338b99",
+    "observed-replay.json": "67978d872d6136a7c48698dcd673ffb995bc439685c385c4e29546546726e7cd",
+    "posterior-replay.json": "4df84e53a05ec331652562b9b352f6ed6f1747e8f961c4a038db101f6454260f"
+  },
+  "proof": {
+    "path": "experiments/active_evidence/outputs/consolidation-verification/verification.json",
+    "sha256": "606cb224a94d55e8b643b1b4000c85d32703ef9bb61e427cb8c8dfde607cf7d1",
+    "recorded_source_hashes_match": true,
+    "check_consolidation_reproduced_exactly": true,
+    "check_promotion_reproduced_exactly": true,
+    "promotion_cases": 6,
+    "execution": "Existing local Python environment through uv run with bytecode writes disabled; called only the read-only consolidation and promotion checks."
+  },
+  "findings": [],
+  "checks": [
+    {
+      "contract": "Queried-label provenance and posterior calculation",
+      "result": "pass",
+      "evidence": [
+        "consolidation.py:6-20",
+        "consolidation.py:48-94",
+        "environment.py:141-168",
+        "verify.py:69-133"
+      ],
+      "observation": "The strict ledger admits only device, input, observed and query_index. Posterior construction uses each current device ledger and the public 88-rule family. No hidden-rule factory, clean evaluator label or heldout target reaches the builder. The poison rejection, unavailable hidden-rule API and observation inversion checks reproduce.",
+      "independent_check": "Recomputed all 2240 non-replay posterior labels with exact integer likelihood weights 9**matches, equivalent to the declared uniform prior and noise 0.1. No label disagreement; all 103 exact ties select zero; maximum probability error 2.220446049250313e-16."
+    },
+    {
+      "contract": "Matched acquisition, device exposure and old replay",
+      "result": "pass",
+      "evidence": [
+        "run.py:393-442",
+        "run.py:546-591",
+        "consolidation.py:61-115",
+        "verify.py:138-153"
+      ],
+      "observation": "The two configs differ only in consolidation.label_source. Query collection precedes adapter training and does not depend on that source. CPU replay reproduces identical per-acquisition-arm ledgers across conditions, 96 environment calls, stage0 160 examples per device0-3, and stage1 120 per device1-4 plus 160 old device0 observations. Old replay rows and order match across consolidation conditions, with two in every stage1 batch."
+    },
+    {
+      "contract": "Training consumes the declared plan",
+      "result": "pass_by_source_review",
+      "evidence": [
+        "run.py:445-505",
+        "run.py:524-543",
+        "run.py:650-675"
+      ],
+      "observation": "Training takes consecutive batch slices exactly once instead of resampling the plan. Labels are separate from model input. It asserts equal encoded prompt lengths, finite loss and nonzero finite gradients, frozen-parameter gradient absence, changed adapter tensors, and cross-acquisition-arm budget and initialization equality."
+    },
+    {
+      "contract": "Clean student context and checkpoint reload",
+      "result": "pass_by_source_review",
+      "evidence": [
+        "environment.py:342-367",
+        "run.py:129-166",
+        "run.py:259-305",
+        "run.py:568-606"
+      ],
+      "observation": "Training and primary evaluation call prompt without evidence or a true specification. Prompt ignores label and posterior metadata. Forward calls disable cache. Each trained stage saves and reloads into a fresh base-model object, requires exact adapter-tensor and probe-logit equality, restores optimizer state, and evaluates the reloaded model. The fixed final checkpoint is the primary endpoint; midpoint evaluation is disabled."
+    },
+    {
+      "contract": "Absolute forgetting gate and claim limits",
+      "result": "pass",
+      "evidence": [
+        "run.py:693-743",
+        "verify.py:208-266",
+        "protocol.json"
+      ],
+      "observation": "AE-001 is resolved by an absolute stable-retention-change floor of -0.05 in addition to the relative gate; all six supplied counterexamples reproduce. The protocol distinguishes known-family selection and inference privileges, limits heldout novelty to nuisance-bit combinations, and requires fresh-seed confirmation after the seed29 screen."
+    }
+  ],
+  "limits": [
+    "This is a source/data-flow and CPU-proof review, not a new GPU execution, convergence result or independent learning replication.",
+    "Submitted-task and remote-runtime state were not inspected. Runtime token-budget, initialization, gradient and reload assertions still need to pass in the actual execution receipts.",
+    "Cross-consolidation effects, paired intervals and confirmation-seed results require the final result artifacts; they are not established by this review."
+  ]
+}

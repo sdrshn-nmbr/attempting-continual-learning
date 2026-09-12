@@ -1,0 +1,5145 @@
+[
+  {
+    "repo": "RampPublic/portal-qwen3-1.7b",
+    "sha": "be09be533b5c0418ad20269f19ebb63e9efbc330",
+    "gated": false,
+    "card": {
+      "base_model": "Qwen/Qwen3-1.7B",
+      "datasets": [
+        "RampPublic/portallib-tasks"
+      ],
+      "library_name": "portallib",
+      "license": "apache-2.0",
+      "tags": [
+        "portal",
+        "hypernetwork",
+        "lora",
+        "peft",
+        "multiple-choice"
+      ]
+    },
+    "files": [
+      {
+        "path": ".gitattributes",
+        "size": 1519
+      },
+      {
+        "path": "README.md",
+        "size": 2414
+      },
+      {
+        "path": "config.json",
+        "size": 12486
+      },
+      {
+        "path": "model.safetensors",
+        "size": 99314952
+      }
+    ],
+    "config": {
+      "alpha": 16,
+      "architecture": "canonical",
+      "base_model_name_or_path": "Qwen/Qwen3-1.7B",
+      "base_model_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "d_core": 1024,
+      "d_layer": 32,
+      "d_z": 256,
+      "format_version": 1,
+      "hidden": 512,
+      "layer_path": "model.layers",
+      "library_name": "portallib",
+      "n_layers": 28,
+      "projection_targets": [
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 0,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 0,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 1,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 1,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 2,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 2,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 3,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 3,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 4,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 4,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 5,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 5,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 6,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 6,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 7,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 7,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 8,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 8,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 9,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 9,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 10,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 10,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 11,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 11,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 12,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 12,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 13,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 13,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 14,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 14,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 15,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 15,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 16,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 16,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 17,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 17,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 18,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 18,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 19,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 19,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 20,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 20,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 21,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 21,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 22,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 22,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 23,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 23,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 24,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 24,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 25,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 25,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 26,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 26,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "q",
+          "layer_index": 27,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2048,
+          "input_group": "v",
+          "layer_index": 27,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        }
+      ],
+      "rank": 8,
+      "task_type": "CAUSAL_LM",
+      "tasks": [
+        "truthfulqa",
+        "rte",
+        "cb",
+        "copa",
+        "wic",
+        "wsc",
+        "boolq",
+        "arc_easy",
+        "arc_challenge",
+        "hellaswag",
+        "openbookqa",
+        "winogrande",
+        "commonsense_qa",
+        "sciq"
+      ]
+    }
+  },
+  {
+    "repo": "RampPublic/portal-qwen3-4b",
+    "sha": "1ff8d529c07082f9da067918da2aceafc65ebaf9",
+    "gated": false,
+    "card": {
+      "base_model": "Qwen/Qwen3-4B",
+      "datasets": [
+        "RampPublic/portallib-tasks"
+      ],
+      "library_name": "portallib",
+      "license": "apache-2.0",
+      "tags": [
+        "portal",
+        "hypernetwork",
+        "lora",
+        "peft",
+        "multiple-choice"
+      ]
+    },
+    "files": [
+      {
+        "path": ".gitattributes",
+        "size": 1519
+      },
+      {
+        "path": "README.md",
+        "size": 2457
+      },
+      {
+        "path": "config.json",
+        "size": 15876
+      },
+      {
+        "path": "model.safetensors",
+        "size": 111898904
+      }
+    ],
+    "config": {
+      "alpha": 16,
+      "architecture": "canonical",
+      "base_model_name_or_path": "Qwen/Qwen3-4B",
+      "base_model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "d_core": 1024,
+      "d_layer": 32,
+      "d_z": 256,
+      "format_version": 1,
+      "hidden": 512,
+      "layer_path": "model.layers",
+      "library_name": "portallib",
+      "n_layers": 36,
+      "projection_targets": [
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 0,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 0,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 1,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 1,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 2,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 2,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 3,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 3,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 4,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 4,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 5,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 5,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 6,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 6,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 7,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 7,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 8,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 8,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 9,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 9,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 10,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 10,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 11,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 11,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 12,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 12,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 13,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 13,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 14,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 14,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 15,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 15,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 16,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 16,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 17,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 17,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 18,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 18,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 19,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 19,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 20,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 20,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 21,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 21,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 22,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 22,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 23,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 23,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 24,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 24,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 25,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 25,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 26,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 26,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 27,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 27,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 28,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 28,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 29,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 29,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 30,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 30,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 31,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 31,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 32,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 32,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 33,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 33,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 34,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 34,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 35,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 35,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        }
+      ],
+      "rank": 8,
+      "task_type": "CAUSAL_LM",
+      "tasks": [
+        "truthfulqa",
+        "rte",
+        "cb",
+        "copa",
+        "wic",
+        "wsc",
+        "boolq",
+        "arc_easy",
+        "arc_challenge",
+        "hellaswag",
+        "openbookqa",
+        "winogrande",
+        "commonsense_qa",
+        "sciq"
+      ]
+    }
+  },
+  {
+    "repo": "RampPublic/portal-qwen3-8b",
+    "sha": "6593b49ae790ec6d601db5a081c81463cb8b3a5f",
+    "gated": false,
+    "card": {
+      "base_model": "Qwen/Qwen3-8B",
+      "datasets": [
+        "RampPublic/portallib-tasks"
+      ],
+      "library_name": "portallib",
+      "license": "apache-2.0",
+      "tags": [
+        "portal",
+        "hypernetwork",
+        "lora",
+        "peft",
+        "multiple-choice"
+      ]
+    },
+    "files": [
+      {
+        "path": ".gitattributes",
+        "size": 1519
+      },
+      {
+        "path": "README.md",
+        "size": 2343
+      },
+      {
+        "path": "config.json",
+        "size": 15876
+      },
+      {
+        "path": "model.safetensors",
+        "size": 124481816
+      }
+    ],
+    "config": {
+      "alpha": 16,
+      "architecture": "canonical",
+      "base_model_name_or_path": "Qwen/Qwen3-8B",
+      "base_model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "d_core": 1024,
+      "d_layer": 32,
+      "d_z": 256,
+      "format_version": 1,
+      "hidden": 512,
+      "layer_path": "model.layers",
+      "library_name": "portallib",
+      "n_layers": 36,
+      "projection_targets": [
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 0,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 0,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 1,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 1,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 2,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 2,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 3,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 3,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 4,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 4,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 5,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 5,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 6,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 6,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 7,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 7,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 8,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 8,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 9,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 9,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 10,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 10,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 11,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 11,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 12,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 12,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 13,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 13,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 14,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 14,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 15,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 15,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 16,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 16,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 17,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 17,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 18,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 18,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 19,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 19,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 20,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 20,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 21,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 21,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 22,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 22,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 23,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 23,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 24,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 24,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 25,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 25,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 26,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 26,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 27,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 27,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 28,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 28,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 29,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 29,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 30,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 30,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 31,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 31,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 32,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 32,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 33,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 33,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 34,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 34,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 35,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 35,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        }
+      ],
+      "rank": 8,
+      "task_type": "CAUSAL_LM",
+      "tasks": [
+        "truthfulqa",
+        "rte",
+        "cb",
+        "copa",
+        "wic",
+        "wsc",
+        "boolq",
+        "arc_easy",
+        "arc_challenge",
+        "hellaswag",
+        "openbookqa",
+        "winogrande",
+        "commonsense_qa",
+        "sciq"
+      ]
+    }
+  },
+  {
+    "repo": "RampPublic/portal-gemma-3-4b",
+    "sha": "df48a77135f6f560d546c733472ac9d89c371ab0",
+    "gated": false,
+    "card": {
+      "base_model": "google/gemma-3-4b-pt",
+      "datasets": [
+        "RampPublic/portallib-tasks"
+      ],
+      "library_name": "portallib",
+      "license": "apache-2.0",
+      "tags": [
+        "portal",
+        "hypernetwork",
+        "lora",
+        "peft",
+        "multiple-choice"
+      ]
+    },
+    "files": [
+      {
+        "path": ".gitattributes",
+        "size": 1519
+      },
+      {
+        "path": "README.md",
+        "size": 2402
+      },
+      {
+        "path": "config.json",
+        "size": 15050
+      },
+      {
+        "path": "model.safetensors",
+        "size": 103510040
+      }
+    ],
+    "config": {
+      "alpha": 16,
+      "architecture": "canonical",
+      "base_model_name_or_path": "google/gemma-3-4b-pt",
+      "base_model_revision": "cc012e0a6d0787b4adcc0fa2c4da74402494554d",
+      "d_core": 1024,
+      "d_layer": 32,
+      "d_z": 256,
+      "format_version": 1,
+      "hidden": 512,
+      "layer_path": "model.language_model.layers",
+      "library_name": "portallib",
+      "n_layers": 34,
+      "projection_targets": [
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 0,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 0,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 1,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 1,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 2,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 2,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 3,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 3,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 4,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 4,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 5,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 5,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 6,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 6,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 7,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 7,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 8,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 8,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 9,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 9,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 10,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 10,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 11,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 11,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 12,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 12,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 13,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 13,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 14,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 14,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 15,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 15,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 16,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 16,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 17,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 17,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 18,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 18,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 19,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 19,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 20,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 20,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 21,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 21,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 22,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 22,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 23,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 23,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 24,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 24,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 25,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 25,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 26,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 26,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 27,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 27,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 28,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 28,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 29,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 29,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 30,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 30,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 31,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 31,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 32,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 32,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "q",
+          "layer_index": 33,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q"
+        },
+        {
+          "in_features": 2560,
+          "input_group": "v",
+          "layer_index": 33,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        }
+      ],
+      "rank": 8,
+      "task_type": "CAUSAL_LM",
+      "tasks": [
+        "truthfulqa",
+        "rte",
+        "cb",
+        "copa",
+        "wic",
+        "wsc",
+        "boolq",
+        "arc_easy",
+        "arc_challenge",
+        "hellaswag",
+        "openbookqa",
+        "winogrande",
+        "commonsense_qa",
+        "sciq"
+      ]
+    }
+  },
+  {
+    "repo": "RampPublic/portal-gemma-4-e2b",
+    "sha": "1059db59197489ac59b2ff9affd48043bdd22537",
+    "gated": false,
+    "card": {
+      "base_model": "google/gemma-4-E2B",
+      "datasets": [
+        "RampPublic/portallib-tasks"
+      ],
+      "library_name": "portallib",
+      "license": "apache-2.0",
+      "tags": [
+        "portal",
+        "hypernetwork",
+        "lora",
+        "peft",
+        "multiple-choice"
+      ]
+    },
+    "files": [
+      {
+        "path": ".gitattributes",
+        "size": 1519
+      },
+      {
+        "path": "README.md",
+        "size": 2871
+      },
+      {
+        "path": "config.json",
+        "size": 11702
+      },
+      {
+        "path": "metrics.json",
+        "size": 2159
+      },
+      {
+        "path": "model.safetensors",
+        "size": 110850416
+      }
+    ],
+    "config": {
+      "alpha": 16,
+      "architecture": "canonical",
+      "base_model_name_or_path": "google/gemma-4-E2B",
+      "base_model_revision": "d29ff6b45f081a49ee2733a859c9c9c2d95d1a6f",
+      "d_core": 1024,
+      "d_layer": 32,
+      "d_z": 256,
+      "format_version": 1,
+      "hidden": 512,
+      "layer_path": "model.language_model.layers",
+      "library_name": "portallib",
+      "n_layers": 35,
+      "projection_targets": [
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 0,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "v",
+          "layer_index": 0,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 256,
+          "output_group": "v__out_256"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 1,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "v",
+          "layer_index": 1,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 256,
+          "output_group": "v__out_256"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 2,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "v",
+          "layer_index": 2,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 256,
+          "output_group": "v__out_256"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 3,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "v",
+          "layer_index": 3,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 256,
+          "output_group": "v__out_256"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 4,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q__out_4096"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "v",
+          "layer_index": 4,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 512,
+          "output_group": "v__out_512"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 5,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "v",
+          "layer_index": 5,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 256,
+          "output_group": "v__out_256"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 6,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "v",
+          "layer_index": 6,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 256,
+          "output_group": "v__out_256"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 7,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "v",
+          "layer_index": 7,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 256,
+          "output_group": "v__out_256"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 8,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "v",
+          "layer_index": 8,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 256,
+          "output_group": "v__out_256"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 9,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q__out_4096"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "v",
+          "layer_index": 9,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 512,
+          "output_group": "v__out_512"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 10,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "v",
+          "layer_index": 10,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 256,
+          "output_group": "v__out_256"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 11,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "v",
+          "layer_index": 11,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 256,
+          "output_group": "v__out_256"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 12,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "v",
+          "layer_index": 12,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 256,
+          "output_group": "v__out_256"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 13,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "v",
+          "layer_index": 13,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 256,
+          "output_group": "v__out_256"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 14,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q__out_4096"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "v",
+          "layer_index": 14,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 512,
+          "output_group": "v__out_512"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 15,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 16,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 17,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 18,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 19,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q__out_4096"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 20,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 21,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 22,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 23,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 24,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q__out_4096"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 25,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 26,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 27,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 28,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 29,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q__out_4096"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 30,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 31,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 32,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 33,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 2048,
+          "output_group": "q__out_2048"
+        },
+        {
+          "in_features": 1536,
+          "input_group": "q",
+          "layer_index": 34,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q__out_4096"
+        }
+      ],
+      "rank": 8,
+      "task_type": "CAUSAL_LM",
+      "tasks": [
+        "truthfulqa",
+        "rte",
+        "cb",
+        "copa",
+        "wic",
+        "wsc",
+        "boolq",
+        "arc_easy",
+        "arc_challenge",
+        "hellaswag",
+        "openbookqa",
+        "winogrande",
+        "commonsense_qa",
+        "sciq"
+      ]
+    }
+  },
+  {
+    "repo": "RampPublic/portal-inkling",
+    "sha": "48c00853d6b03ab4986ba12ca8399afbb551c5a5",
+    "gated": false,
+    "card": {
+      "base_model": "thinkingmachines/Inkling",
+      "datasets": [
+        "RampPublic/portallib-tasks"
+      ],
+      "library_name": "portallib",
+      "license": "apache-2.0",
+      "tags": [
+        "portal",
+        "hypernetwork",
+        "lora",
+        "peft",
+        "multiple-choice",
+        "multimodal"
+      ]
+    },
+    "files": [
+      {
+        "path": ".gitattributes",
+        "size": 1519
+      },
+      {
+        "path": "README.md",
+        "size": 3240
+      },
+      {
+        "path": "config.json",
+        "size": 29281
+      },
+      {
+        "path": "metrics.json",
+        "size": 3421
+      },
+      {
+        "path": "model.safetensors",
+        "size": 166428816
+      }
+    ],
+    "config": {
+      "alpha": 16,
+      "architecture": "canonical",
+      "base_model_name_or_path": "thinkingmachines/Inkling",
+      "base_model_revision": "828496eeae4c243ff1a22f7f28ff83694f2f7bc9",
+      "d_core": 1024,
+      "d_layer": 32,
+      "d_z": 256,
+      "format_version": 1,
+      "hidden": 512,
+      "layer_path": "model.language_model.layers",
+      "library_name": "portallib",
+      "n_layers": 66,
+      "projection_targets": [
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 0,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 0,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 1,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 1,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 2,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 2,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 3,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 3,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 4,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 4,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 5,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 5,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v__out_1024"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 6,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 6,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 7,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 7,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 8,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 8,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 9,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 9,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 10,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 10,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 11,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 11,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v__out_1024"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 12,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 12,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 13,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 13,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 14,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 14,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 15,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 15,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 16,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 16,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 17,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 17,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v__out_1024"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 18,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 18,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 19,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 19,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 20,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 20,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 21,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 21,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 22,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 22,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 23,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 23,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v__out_1024"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 24,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 24,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 25,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 25,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 26,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 26,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 27,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 27,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 28,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 28,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 29,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 29,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v__out_1024"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 30,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 30,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 31,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 31,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 32,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 32,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 33,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 33,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 34,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 34,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 35,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 35,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v__out_1024"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 36,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 36,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 37,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 37,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 38,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 38,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 39,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 39,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 40,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 40,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 41,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 41,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v__out_1024"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 42,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 42,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 43,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 43,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 44,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 44,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 45,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 45,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 46,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 46,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 47,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 47,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v__out_1024"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 48,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 48,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 49,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 49,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 50,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 50,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 51,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 51,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 52,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 52,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 53,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 53,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v__out_1024"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 54,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 54,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 55,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 55,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 56,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 56,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 57,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 57,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 58,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 58,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 59,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 59,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v__out_1024"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 60,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 60,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 61,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 61,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 62,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 62,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 63,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 63,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 64,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 64,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 2048,
+          "output_group": "v__out_2048"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "q",
+          "layer_index": 65,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 8192,
+          "output_group": "q"
+        },
+        {
+          "in_features": 6144,
+          "input_group": "v",
+          "layer_index": 65,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v__out_1024"
+        }
+      ],
+      "rank": 8,
+      "task_type": "CAUSAL_LM",
+      "tasks": [
+        "truthfulqa",
+        "rte",
+        "cb",
+        "copa",
+        "wic",
+        "wsc",
+        "boolq",
+        "arc_easy",
+        "arc_challenge",
+        "hellaswag",
+        "openbookqa",
+        "winogrande",
+        "commonsense_qa",
+        "sciq"
+      ]
+    }
+  },
+  {
+    "repo": "RampPublic/portal-mistral-7b",
+    "sha": "478d8cda8d3eb94958324c80249d236debb53b88",
+    "gated": false,
+    "card": {
+      "base_model": "mistralai/Mistral-7B-v0.3",
+      "datasets": [
+        "RampPublic/portallib-tasks"
+      ],
+      "library_name": "portallib",
+      "license": "apache-2.0",
+      "tags": [
+        "portal",
+        "hypernetwork",
+        "lora",
+        "peft",
+        "multiple-choice"
+      ]
+    },
+    "files": [
+      {
+        "path": ".gitattributes",
+        "size": 1519
+      },
+      {
+        "path": "README.md",
+        "size": 2948
+      },
+      {
+        "path": "config.json",
+        "size": 14191
+      },
+      {
+        "path": "metrics.json",
+        "size": 2510
+      },
+      {
+        "path": "model.safetensors",
+        "size": 124481304
+      }
+    ],
+    "config": {
+      "alpha": 16,
+      "architecture": "canonical",
+      "base_model_name_or_path": "mistralai/Mistral-7B-v0.3",
+      "base_model_revision": "caa1feb0e54d415e2df31207e5f4e273e33509b1",
+      "d_core": 1024,
+      "d_layer": 32,
+      "d_z": 256,
+      "format_version": 1,
+      "hidden": 512,
+      "layer_path": "model.layers",
+      "library_name": "portallib",
+      "n_layers": 32,
+      "projection_targets": [
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 0,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 0,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 1,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 1,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 2,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 2,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 3,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 3,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 4,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 4,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 5,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 5,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 6,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 6,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 7,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 7,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 8,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 8,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 9,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 9,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 10,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 10,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 11,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 11,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 12,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 12,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 13,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 13,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 14,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 14,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 15,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 15,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 16,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 16,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 17,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 17,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 18,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 18,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 19,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 19,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 20,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 20,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 21,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 21,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 22,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 22,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 23,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 23,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 24,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 24,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 25,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 25,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 26,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 26,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 27,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 27,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 28,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 28,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 29,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 29,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 30,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 30,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "q",
+          "layer_index": 31,
+          "module_name": "q",
+          "module_path": "self_attn.q_proj",
+          "out_features": 4096,
+          "output_group": "q"
+        },
+        {
+          "in_features": 4096,
+          "input_group": "v",
+          "layer_index": 31,
+          "module_name": "v",
+          "module_path": "self_attn.v_proj",
+          "out_features": 1024,
+          "output_group": "v"
+        }
+      ],
+      "rank": 8,
+      "task_type": "CAUSAL_LM",
+      "tasks": [
+        "truthfulqa",
+        "rte",
+        "cb",
+        "copa",
+        "wic",
+        "wsc",
+        "boolq",
+        "arc_easy",
+        "arc_challenge",
+        "hellaswag",
+        "openbookqa",
+        "winogrande",
+        "commonsense_qa",
+        "sciq"
+      ]
+    }
+  }
+]

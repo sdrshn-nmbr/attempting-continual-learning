@@ -1,0 +1,131 @@
+{
+  "anchor_weight": 0.0,
+  "anchors": {
+    "alignments": "frozen_all_three",
+    "gram_dtype": "float64",
+    "holdout_tasks": [
+      "truthfulqa",
+      "arc_challenge",
+      "winogrande",
+      "sciq"
+    ],
+    "normalization_epsilon": 1e-12,
+    "parameter_dtype": "float32",
+    "pool_weighting": "equal_available_pools",
+    "prior_reference": "own_acquisition_boundary",
+    "prior_schedule": "round_robin_one_per_step",
+    "projection_weighting": "equal",
+    "published_reference": "initial_checkpoint",
+    "published_schedule": "shuffled_cycles_one_per_step",
+    "seed": 90302,
+    "surface_weighting": "equal",
+    "surfaces": [
+      "qwen8",
+      "qwen4",
+      "mistral7"
+    ],
+    "teacher_factor_generation": "same_device_fp32_before_first_use_no_llm_forward",
+    "train_tasks": [
+      "rte",
+      "cb",
+      "copa",
+      "wic",
+      "wsc",
+      "boolq",
+      "arc_easy",
+      "hellaswag",
+      "openbookqa",
+      "commonsense_qa"
+    ],
+    "trainable": "shared_core_and_current_vector"
+  },
+  "arm": "native_replay_anchor0",
+  "claim_boundary": "Matched native learning with and without generated-adapter product preservation. Released old target adapter functions are privileged supervision; no target ABC examples, labels, or LLM passes are used in training. Geometry agreement does not imply behavioral retention or transfer.",
+  "frozen_dependencies_sha256": {
+    "compare.py": "de6ff82a42091d9b428ec4050aa566f0a256f4a26a4b496170c2060ba0ec7d25",
+    "configs/confirmation419/sequence_lora_no_replay.json": "a13fa9128dcf7c4d21b348f7699538101008a27ae05112185e64519db5f8704f",
+    "configs/confirmation419/sequence_lora_replay.json": "83030380501dcc757bdfbdea4d4d2065382309834c8b3ad9af2ede40c5377d06",
+    "configs/confirmation419/sequence_native_no_replay.json": "8b8148b746172fbbfe73c46b8bbd3cc303a6aa6ab2f3c07967ad34af3303c55c",
+    "configs/confirmation419/sequence_native_replay.json": "a4e934a0353b3a1e1511ee82c985e89df905fa607dbbcc9bb2f854ab5f6998b6",
+    "configs/confirmation419/sequence_target_gemma3_s41901.json": "d57df707c32f7b05fd1963edd832aa6f8e6be7f9a61bc30f59d51b6cef1ccfb8",
+    "configs/confirmation419/sequence_target_gemma4_s41901.json": "070ef2294c355f9ea78eedb0850cb95c81e4a1ba950f95766af78ebed2c5a0dd",
+    "configs/confirmation419/sequence_target_mistral7_s41901.json": "5ce40b010eea6a28bbf924cda21d16046c602117df282814a41f7807be319568",
+    "configs/confirmation419/sequence_target_qwen4_s41901.json": "79a326f1807acf0ad73bcb392d44469ec2be9719af6ffe70b4107fade5fece02",
+    "configs/sequence_lora_no_replay.json": "068d07d7d51d0c0549db1d31618ef1cff33f904356acd36b4b43a258d5c2071b",
+    "configs/sequence_lora_replay.json": "b0eb5913ca38d6267c45c966149d9c5397bb6495b6c1c70621d1aa01ff86cbd4",
+    "configs/sequence_native_no_replay.json": "9610568cda1764356ea4ba004dfc6a9a8b89042803502c3987bfdb08fe6a9627",
+    "configs/sequence_native_replay.json": "d99d2a9f941fdc67b63f6309d531721fafda16aa361825c5f8f76684fb6afbbc",
+    "configs/sequence_target_gemma3_s30301.json": "fe094fdfc745ff28df0a3845c134a9b83c7ea0e5ec372f8859101a1aa7b69577",
+    "configs/sequence_target_gemma4_s30301.json": "5da64577f51b7d8f576e56ca3beb4fdc4c9c4f6392fe92348dfe8273f257431b",
+    "configs/sequence_target_mistral7_s30301.json": "d874fe11702440d77faebd7b5e590878a8a573dc9e1f8b93b09288051b3be166",
+    "configs/sequence_target_qwen4_s30301.json": "b23ad150db6751a9f554f651728b01ec20c728e4cae0d165bfca02dc14527f7a",
+    "data.py": "fe9e083a41caf518f3285ace906a63d2015f5002faa74337c39d8fa8b67992c2",
+    "data/amber.json": "6c57de9a7f2cf3730c9291e8d4d8fde51e7da414e8f1ad3c0d1ecf879b87dcae",
+    "data/sequence303.json": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2",
+    "data/sequence303_unused_inputs.json": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e",
+    "data/sequence419.json": "cbc34593af7909a1f11a232c41f1538f20fc2dabd34852646cf5f959db25efd1",
+    "evaluate_targets.py": "8f673b8da7b59937997d6858ecaa1c5a8e5ae347ba1f4dead889b9596212dd6e",
+    "fresh_inputs.py": "f1beb8ced474fb5ccf2cd0764e1edc1aefc94706bf04f476bab3b6ad237d5233",
+    "handoff.json": "18a57c83103264338b8868c526da2ad6cdc41d5899322f75dc0a08bea455d20c",
+    "learner.py": "958ea3e4cd054857f53100456195f08ce1c457237977f7fddb655efb79470874",
+    "metrics.py": "70d8b04f3ecd17881610924b806950fb9fa3259b809b372b221386c17f2a22fc",
+    "protocol.json": "9b0859aa6228df81a893fa1189e5388f979e389ed153a30ea20c07e34f462c1d",
+    "qualify.py": "e3fd0696493ce261568605f683b9996ffb77af7689e07fe901c9f75b9bdc54d0",
+    "repair_alignment.py": "42d5a12b1e8c7ae882b4b5be88796de2ec1b957604fa4e97307955d0b4165a5b",
+    "requirements.txt": "bf772f66dcae41ae30727fb41845ffe708a01e27f30ef0f46b0e944fbdfb822c",
+    "run.py": "33669ecd95aa0184b8fe68661d0d01913a9bb5384abb7e8187768c1d799d5d50"
+  },
+  "gates": {
+    "checkpoint_selection": "fixed_final_per_stage",
+    "failure_action": "skip_target_evaluation_after_completing_fixed_budget",
+    "max_later_validation_forgetting": 0.05,
+    "own_train_accuracy_min": 0.9,
+    "own_validation_accuracy_min": 0.9,
+    "own_validation_gain_min": 0.5,
+    "reloaded_all_boundaries": true,
+    "updates_each_arm": 288
+  },
+  "kind": "portal_function_anchoring_sequence",
+  "source_config": {
+    "path": "configs/sequence_native_replay.json",
+    "sha256": "d99d2a9f941fdc67b63f6309d531721fafda16aa361825c5f8f76684fb6afbbc"
+  },
+  "source_initial": {
+    "files_sha256": {
+      "config.json": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb",
+      "model.safetensors": "0dbbd18eacfb9dd870019f68b78188d5c0ed15beb8cfc400f4a48b79d84fb3db"
+    },
+    "path": "/mnt/shared/cl-portfolio/runs/portability-sequence-native-replay-s30301-fp32/initial/native/checkpoint"
+  },
+  "target_confirmation": {
+    "new_mapping_replication": false,
+    "new_training_seed_replication": false,
+    "owner": "parent_behavioral_evaluation",
+    "path": "data/sequence303_unused_inputs.json",
+    "rows_each_task": 288,
+    "scope": "all_previously_unused_303_input_triples",
+    "sha256": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e",
+    "source_trainer_access": "file_hash_only_never_deserialize",
+    "targets": [
+      "qwen4",
+      "mistral7"
+    ]
+  },
+  "targets": {
+    "mistral7": {
+      "files_sha256": {
+        "config.json": "00b37e68db52b74df41c02ab3e5e9513310bbf4dea04280a2c9c9392c1f2648e",
+        "model.safetensors": "4a61f44fcf07ee57d6ad5a84262601c57cd5b5ea3c501eb6c72e47a41d83a212"
+      },
+      "path": "/mnt/shared/cl-smoke/models/RampPublic/portal-mistral-7b/478d8cda8d3eb94958324c80249d236debb53b88"
+    },
+    "qwen4": {
+      "files_sha256": {
+        "config.json": "3848aec36900aa1f890aaa629e3b67b2cdf2b2e48e81ea423971e32cf15420f5",
+        "model.safetensors": "bdbc778aef719df2397b2267967d1a64a7b2c0a84cb3fb5203c3d846740725fa"
+      },
+      "path": "/mnt/shared/cl-smoke/models/RampPublic/portal-qwen3-4b/1ff8d529c07082f9da067918da2aceafc65ebaf9"
+    }
+  },
+  "version": 1
+}

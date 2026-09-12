@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "model_id": "Qwen/Qwen3.5-4B",
+  "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "seed": 1703,
+  "data_seed": 71239,
+  "methods": [
+    "sft",
+    "sdft_forward",
+    "sdpo_sampled_reverse"
+  ],
+  "family_order": [
+    "A",
+    "B",
+    "C"
+  ],
+  "sizes": {
+    "train": 96,
+    "gate": 24,
+    "validation": 32,
+    "test": 64,
+    "composition": 64
+  },
+  "updates_per_family": 24,
+  "examples_per_update": 4,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.0,
+  "max_grad_norm": 1.0,
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_targets": [
+    "q_proj",
+    "v_proj",
+    "in_proj_qkv",
+    "out_proj"
+  ],
+  "teacher_ema_rate": 0.05,
+  "max_new_tokens": 16,
+  "max_context_tokens": 2048,
+  "gate_min_accuracy": 0.5,
+  "gate_min_gain": 0.15,
+  "gate_max_p": 0.1,
+  "keep_min_final_gain": 0.1,
+  "keep_max_forgetting": 0.1,
+  "bootstrap_samples": 2000,
+  "model_config_sha256": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670",
+  "weight_files": [
+    "model.safetensors-00001-of-00002.safetensors",
+    "model.safetensors-00002-of-00002.safetensors"
+  ],
+  "weight_bytes": 9319828096
+}

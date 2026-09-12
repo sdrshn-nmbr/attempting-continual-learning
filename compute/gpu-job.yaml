@@ -1,0 +1,98 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: cl-gpu-smoke-
+  labels:
+    app: cl-compute-smoke
+spec:
+  backoffLimit: 0
+  activeDeadlineSeconds: 7200
+  template:
+    metadata:
+      labels:
+        app: cl-compute-smoke
+    spec:
+      restartPolicy: Never
+      terminationGracePeriodSeconds: 60
+      tolerations:
+        - key: amd.com/gpu
+          operator: Exists
+          effect: NoSchedule
+      initContainers:
+        - name: uv
+          image: ghcr.io/astral-sh/uv:0.12.10-python3.12-trixie-slim@sha256:4bf11151c225e2a4d60e2a576b67d925660055199389d9a64fbdc02b6f3d43d5
+          command: [sh, -c, 'cp "$(command -v uv)" /tools/uv']
+          volumeMounts:
+            - name: tools
+              mountPath: /tools
+      containers:
+        - name: smoke
+          image: rocm/pytorch:rocm7.2.4_ubuntu24.04_py3.12_pytorch_release_2.10.0@sha256:4449f856653602317e4101a76fce599c7fcd58ccec2e539951fce5f73083179e
+          command: [bash, -c]
+          args:
+            - |
+              set -Eeuo pipefail
+              export PATH="/tools:$PATH"
+              run_dir="/mnt/shared/cl-smoke/runs/$POD_NAME"
+              mkdir -p "$run_dir"
+              exec > >(tee -a "$run_dir/run.log") 2>&1
+              trap 'exit_code=$?; echo "[compute-smoke] failed at line $LINENO, exit $exit_code" >&2; exit "$exit_code"' ERR
+              test -f /mnt/shared/cl-smoke/downloads.json
+              runtime_python="$(command -v python)"
+              uv run --no-project --python "$runtime_python" python -c 'from importlib.metadata import version; print("torch==" + version("torch"))' > "$run_dir/torch-constraint.txt"
+              uv pip show --python "$runtime_python" torch
+              uv pip install --python "$runtime_python" --constraint "$run_dir/torch-constraint.txt" -r /code/requirements.txt
+              uv pip freeze --python "$runtime_python" > "$run_dir/packages.txt"
+              uv run --no-project --python "$runtime_python" python -m torch.distributed.run \
+                --standalone --nproc-per-node=8 /code/smoke.py \
+                --expected-gpus 8 --output "$run_dir/receipt.json"
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: PYTHONUNBUFFERED
+              value: "1"
+            - name: HF_HOME
+              value: /mnt/shared/cl-smoke/huggingface
+            - name: HF_HUB_OFFLINE
+              value: "1"
+            - name: HF_HUB_DISABLE_TELEMETRY
+              value: "1"
+            - name: UV_CACHE_DIR
+              value: /mnt/shared/cl-smoke/uv-cache
+            - name: OMP_NUM_THREADS
+              value: "4"
+            - name: TOKENIZERS_PARALLELISM
+              value: "false"
+          resources:
+            requests:
+              cpu: "16"
+              memory: 64Gi
+            limits:
+              amd.com/gpu: 8
+              memory: 128Gi
+          volumeMounts:
+            - name: shared
+              mountPath: /mnt/shared
+            - name: code
+              mountPath: /code
+              readOnly: true
+            - name: tools
+              mountPath: /tools
+            - name: shm
+              mountPath: /dev/shm
+      volumes:
+        - name: shared
+          hostPath:
+            path: /mnt/shared
+            type: Directory
+        - name: code
+          configMap:
+            name: cl-compute-smoke
+        - name: tools
+          emptyDir: {}
+        - name: shm
+          emptyDir:
+            medium: Memory
+            sizeLimit: 8Gi

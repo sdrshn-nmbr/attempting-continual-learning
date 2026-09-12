@@ -1,0 +1,147 @@
+{
+  "adapters": {
+    "full_final": {
+      "files": {
+        "adapter_config.json": "88aeeaa34d6de94e14722699a9ef172f877783144e804539785602233c32da83",
+        "adapter_model.safetensors": "761115de00055eaa9a72fb66aa75bddaff9e954a77a7b7b9318347333d19efff"
+      },
+      "path": "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/stages/after_c/checkpoint",
+      "tensor_sha256": "f3a7a74323bd85634f23faad504daff548f2e59d6d6c88b4ef8112218cbd3678"
+    },
+    "full_initial": {
+      "files": {
+        "adapter_config.json": "88aeeaa34d6de94e14722699a9ef172f877783144e804539785602233c32da83",
+        "adapter_model.safetensors": "0af95c2348eb699211bd87a905031349aaab3bb566daba9fb78e3acc9d92c72a"
+      },
+      "path": "/mnt/shared/cl-portfolio/runs/portability-sequence-lora-replay-s30301-fp32/initial/lora/checkpoint",
+      "tensor_sha256": "319efd067252857b8b3a3b48e04e31d7a530def4a3d6f2302e9a78895d9b085a"
+    },
+    "rank8_final": {
+      "files": {
+        "adapter_config.json": "92e516f4dd1e47231c9b31925eb67085c0969107eb1489fd66ea7fb166d28feb",
+        "adapter_model.safetensors": "87a418f2098bee5471259d3f400895aee270228e0152c2d33abbc1d9279f2895"
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/meta-20260909-rank8/final/adapter",
+      "tensor_sha256": "ce68ecd6c67d0218c03a626fe84870a54ac5502056fdabe7b64b98a522cc1669"
+    },
+    "rank8_initial": {
+      "files": {
+        "adapter_config.json": "92e516f4dd1e47231c9b31925eb67085c0969107eb1489fd66ea7fb166d28feb",
+        "adapter_model.safetensors": "18023a05fc3d4eff035929c450efe8f2479c40d52b12ca870b21afa552ccee3e"
+      },
+      "path": "/mnt/shared/cl-portfolio/artifacts/meta-20260909-rank8/initial/adapter",
+      "tensor_sha256": "5b7f34c31f08cb0c9f07201dd468937208d179272213d934fd7ce6997d2a8c15"
+    }
+  },
+  "claim_boundary": "Exploratory static best per-projection rank8 SVD control on all288 unused input triples of the already observed303mapping. Compare original and projected initial/finalLoRA at fixedFP32 choice scoring. Zerooptimizer updates; no sharedgenerator learning, autoregressive competence, target transfer, newmapping or trainingseed replication. Matrixapproximation failure does not prove rank8behavioralrepresentation impossible.",
+  "conditions": [
+    "full_initial",
+    "full_final",
+    "rank8_initial",
+    "rank8_final"
+  ],
+  "criteria": {
+    "initial_choice_agreement": 1.0,
+    "maximum_initial_choice_score_gap": 0.0001,
+    "minimum_final_accuracy": 0.9,
+    "minimum_fraction_of_full_final_accuracy": 0.95,
+    "minimum_gain_over_both_initializations": 0.5
+  },
+  "evaluation": {
+    "autocast": false,
+    "batch_size": 8,
+    "dtype": "float32",
+    "max_prompt": 768
+  },
+  "fresh_inputs": {
+    "path": "data/sequence303_unused_inputs.json",
+    "sha256": "4f298979c5f6e76ed4a1ca8d07d1880a20499bd5911d8991591ece3934e8ce2e"
+  },
+  "kind": "sequence303_static_rank8_source_behavior",
+  "projection_proof": {
+    "path": "/mnt/shared/cl-portfolio/artifacts/meta-20260909-rank8/proof.json",
+    "sha256": "501cfc739245b159bc1b7306408d15806d043f45f4a22049896a6a221aa1a2b5"
+  },
+  "seed": 90310,
+  "source_base": {
+    "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+    "files": [
+      {
+        "bytes": 728,
+        "git_blob_sha1": "d46195ac87f837ad233d02b2f80f148bf7c005e0",
+        "path": "config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 239,
+        "git_blob_sha1": "20a8a9156fc8c3f25295ca067f61fdf120d517c5",
+        "path": "generation_config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 1671853,
+        "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+        "path": "merges.txt",
+        "sha256": null
+      },
+      {
+        "bytes": 3996250744,
+        "git_blob_sha1": null,
+        "path": "model-00001-of-00005.safetensors",
+        "sha256": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f"
+      },
+      {
+        "bytes": 3993160032,
+        "git_blob_sha1": null,
+        "path": "model-00002-of-00005.safetensors",
+        "sha256": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282"
+      },
+      {
+        "bytes": 3959604768,
+        "git_blob_sha1": null,
+        "path": "model-00003-of-00005.safetensors",
+        "sha256": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836"
+      },
+      {
+        "bytes": 3187841392,
+        "git_blob_sha1": null,
+        "path": "model-00004-of-00005.safetensors",
+        "sha256": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a"
+      },
+      {
+        "bytes": 1244659840,
+        "git_blob_sha1": null,
+        "path": "model-00005-of-00005.safetensors",
+        "sha256": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff"
+      },
+      {
+        "bytes": 32878,
+        "git_blob_sha1": "2b85c00f1b118961cd7a477e2bba0fe197a4ce1a",
+        "path": "model.safetensors.index.json",
+        "sha256": null
+      },
+      {
+        "bytes": 11422654,
+        "git_blob_sha1": null,
+        "path": "tokenizer.json",
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+      },
+      {
+        "bytes": 9732,
+        "git_blob_sha1": "417d038a63fa3de29cfde265caedae14d1a58d92",
+        "path": "tokenizer_config.json",
+        "sha256": null
+      },
+      {
+        "bytes": 2776833,
+        "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+        "path": "vocab.json",
+        "sha256": null
+      }
+    ],
+    "local_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+    "repo_id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+  },
+  "source_base_tensor_sha256": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31"
+}

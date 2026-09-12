@@ -1,0 +1,107 @@
+{
+  "kind": "portal_alignment_geometry_repair",
+  "version": 1,
+  "source_initial": {
+    "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/repair-alignment-inputs/source_initial",
+    "files_sha256": {
+      "config.json": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb",
+      "model.safetensors": "0dbbd18eacfb9dd870019f68b78188d5c0ed15beb8cfc400f4a48b79d84fb3db"
+    }
+  },
+  "source_learned": {
+    "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/repair-alignment-inputs/source_learned",
+    "files_sha256": {
+      "config.json": "bd8e4deac7a108b41ae0e1da3ce9d325b5e40e1a7c23bb42e58658bc602e26cb",
+      "model.safetensors": "9ff74e79492d629d0949dcdcdc41d73d33c89dd3703e05bc56e06613376c1ea5"
+    }
+  },
+  "targets": {
+    "qwen4": {
+      "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/repair-alignment-inputs/qwen4",
+      "files_sha256": {
+        "config.json": "3848aec36900aa1f890aaa629e3b67b2cdf2b2e48e81ea423971e32cf15420f5",
+        "model.safetensors": "bdbc778aef719df2397b2267967d1a64a7b2c0a84cb3fb5203c3d846740725fa"
+      }
+    },
+    "mistral7": {
+      "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/outputs/repair-alignment-inputs/mistral7",
+      "files_sha256": {
+        "config.json": "00b37e68db52b74df41c02ab3e5e9513310bbf4dea04280a2c9c9392c1f2648e",
+        "model.safetensors": "4a61f44fcf07ee57d6ad5a84262601c57cd5b5ea3c501eb6c72e47a41d83a212"
+      }
+    }
+  },
+  "train_tasks": [
+    "rte",
+    "cb",
+    "copa",
+    "wic",
+    "wsc",
+    "boolq",
+    "arc_easy",
+    "hellaswag",
+    "openbookqa",
+    "commonsense_qa"
+  ],
+  "holdout_tasks": [
+    "truthfulqa",
+    "arc_challenge",
+    "winogrande",
+    "sciq"
+  ],
+  "mismatch_task_map": {
+    "rte": "cb",
+    "cb": "copa",
+    "copa": "wic",
+    "wic": "wsc",
+    "wsc": "boolq",
+    "boolq": "arc_easy",
+    "arc_easy": "hellaswag",
+    "hellaswag": "openbookqa",
+    "openbookqa": "commonsense_qa",
+    "commonsense_qa": "rte"
+  },
+  "arms": [
+    "identity",
+    "repair",
+    "mismatch"
+  ],
+  "fit": {
+    "device": "cpu",
+    "parameter_dtype": "float32",
+    "gram_dtype": "float64",
+    "cpu_threads": 4,
+    "steps": 100,
+    "tasks_per_step": 1,
+    "seed": 90301,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0,
+    "adam_epsilon": 1e-08,
+    "gradient_clip": 1.0,
+    "normalization_epsilon": 1e-12,
+    "schedule": "balanced_shuffled_cycles",
+    "checkpoint_selection": "fixed_final_step",
+    "trainable": "alignment_only"
+  },
+  "gates": {
+    "training_mean_final_over_initial_max": 0.5,
+    "heldout_mean_final_over_initial_max": 0.5,
+    "every_heldout_task_nonworsening": true,
+    "correct_over_mismatch_heldout_max": 0.9,
+    "identity_relative_squared_error_max": 1e-10,
+    "identity_alignment_max_abs_delta": 1e-10,
+    "negligible_initial_error": 1e-10,
+    "frozen_core_and_all_vectors_exact": true,
+    "saved_reload_exact": true
+  },
+  "provenance": {
+    "source_run_id": "portability-sequence-native-replay-s30301-fp32",
+    "source_fixture_seed": 303,
+    "source_training_seed": 30301,
+    "source_boundary": "after_c",
+    "primary_source_bundle_sha256": "370dfd20b44b1fa2f66a8b0a6b67ca15217b239cff4c112ad38a98077b53533c",
+    "target_choice_reason": "Prespecified Qwen source-family representative and Mistral cross-family diagnostic; both reported without selection.",
+    "behavioral_claim": "Geometry diagnostic only. No ABC examples or labels are used for repair. No claim of behavioral transfer follows from the tensor fit.",
+    "future_behavior_evaluation": "Prior fixture303/419 tests are exploratory; unused input triples may support new-input confirmation if separately frozen and authorized."
+  }
+}

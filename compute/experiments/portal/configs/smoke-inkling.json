@@ -1,0 +1,10 @@
+{
+  "mode": "smoke",
+  "model_id": "thinkingmachines/Inkling",
+  "revision": "828496eeae4c243ff1a22f7f28ff83694f2f7bc9",
+  "model_path": "/mnt/shared/cl-portfolio/portal-cache/models/thinkingmachines/Inkling/828496eeae4c243ff1a22f7f28ff83694f2f7bc9",
+  "seed": 17,
+  "device": "cuda:0",
+  "registry_path": "registry.json",
+  "artifact_cache_dir": "/mnt/shared/cl-portfolio/portal-cache/models"
+}

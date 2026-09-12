@@ -1,0 +1,61 @@
+{
+  "seed": 17,
+  "model": {
+    "id": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  },
+  "arms": [
+    "random",
+    "hypothesis_elimination_oracle"
+  ],
+  "environment": {
+    "bits": 10,
+    "pool_size": 64,
+    "observational_count": 40,
+    "queries_per_device": 8,
+    "common_queries": 2,
+    "repeat_queries": 2,
+    "candidate_panel": 16,
+    "assumed_noise": 0.1,
+    "noise_flip_steps": [
+      1,
+      5
+    ],
+    "eval_per_device": 8,
+    "compositions_per_pair": 2
+  },
+  "training": {
+    "rank": 8,
+    "alpha": 16,
+    "learning_rate": 0.0003,
+    "updates_per_stage": 12,
+    "batch_size": 4,
+    "eval_batch_size": 8,
+    "max_input_tokens": 2048,
+    "max_grad_norm": 1.0,
+    "target_modules": [
+      "q_proj",
+      "v_proj",
+      "in_proj_qkv",
+      "out_proj"
+    ],
+    "midpoint_eval": true
+  },
+  "screen": {
+    "qualification_only": true,
+    "iterations": 1,
+    "minimum_train_accuracy": 0.75,
+    "minimum_effect": 0.05,
+    "minimum_durable_gain": 0.05,
+    "minimum_new_skill_gain": 0.05,
+    "maximum_next_skill_regression": 0.05,
+    "maximum_retention_regression": 0.05,
+    "maximum_stable_forgetting": 0.05,
+    "claim": "Fast runtime and learner calibration only. This run must not be used to claim an acquisition effect."
+  },
+  "consolidation": {
+    "label_source": "observed_query",
+    "old_examples_per_batch": 0
+  }
+}

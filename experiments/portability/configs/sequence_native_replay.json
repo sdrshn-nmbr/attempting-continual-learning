@@ -1,0 +1,78 @@
+{
+  "arm": "sequence_native_replay",
+  "evaluation": {
+    "batch_size": 8
+  },
+  "method": "native",
+  "models": {
+    "qwen17": {
+      "base": {
+        "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+        "local_path": "/mnt/shared/cl-portfolio/portal-cache/models/Qwen/Qwen3-1.7B/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+        "repo_id": "Qwen/Qwen3-1.7B",
+        "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+      },
+      "portal": {
+        "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+        "local_path": "/mnt/shared/cl-portfolio/portal-cache/models/RampPublic/portal-qwen3-1.7b/be09be533b5c0418ad20269f19ebb63e9efbc330",
+        "repo_id": "RampPublic/portal-qwen3-1.7b",
+        "revision": "be09be533b5c0418ad20269f19ebb63e9efbc330"
+      }
+    },
+    "qwen4": {
+      "base": {
+        "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+        "local_path": "/mnt/shared/cl-portfolio/portal-cache/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c",
+        "repo_id": "Qwen/Qwen3-4B",
+        "revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+      },
+      "portal": {
+        "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+        "local_path": "/mnt/shared/cl-portfolio/portal-cache/models/RampPublic/portal-qwen3-4b/1ff8d529c07082f9da067918da2aceafc65ebaf9",
+        "repo_id": "RampPublic/portal-qwen3-4b",
+        "revision": "1ff8d529c07082f9da067918da2aceafc65ebaf9"
+      }
+    },
+    "qwen8": {
+      "base": {
+        "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+        "local_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+        "repo_id": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+      },
+      "portal": {
+        "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+        "local_path": "/mnt/shared/cl-portfolio/portal-cache/models/RampPublic/portal-qwen3-8b/6593b49ae790ec6d601db5a081c81463cb8b3a5f",
+        "repo_id": "RampPublic/portal-qwen3-8b",
+        "revision": "6593b49ae790ec6d601db5a081c81463cb8b3a5f"
+      }
+    }
+  },
+  "seed": 30301,
+  "sequence": {
+    "fixture_seed": 303,
+    "generator_sha256": "cf43c6e484b991fda6c3365cf99730b2de59acb0ce968fb18d62fc4c65219406",
+    "path": "data/sequence303.json",
+    "role": "primary",
+    "sha256": "d318a3200aea3ba90135bceb2d1b2bf81cbe2801cc2dc3924570c808c84203b2",
+    "source_generator_sha256": "f3b75979e4f92e1bfd207a62411249cf275ebe0c1c368d05c105e8103882d87e"
+  },
+  "source": "qwen4",
+  "train_model": "qwen8",
+  "training": {
+    "batch_size": 4,
+    "capacity_relative_tolerance": 0.005,
+    "core_lr": 3e-05,
+    "eval_every": 24,
+    "grad_clip": 1.0,
+    "latent_lr": 0.002,
+    "lora_lr": 0.0002,
+    "max_prompt": 768,
+    "replay_batch_size": 4,
+    "replay_every": 4,
+    "replay_weight": 0.25,
+    "steps": 96,
+    "train_core": true
+  },
+  "transport_model": "qwen17"
+}

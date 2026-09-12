@@ -1,0 +1,10 @@
+{
+  "mode": "smoke",
+  "model_id": "google/gemma-3-4b-pt",
+  "revision": "cc012e0a6d0787b4adcc0fa2c4da74402494554d",
+  "model_path": "/mnt/shared/cl-portfolio/portal-cache/models/google/gemma-3-4b-pt/cc012e0a6d0787b4adcc0fa2c4da74402494554d",
+  "seed": 17,
+  "device": "cuda:0",
+  "registry_path": "registry.json",
+  "artifact_cache_dir": "/mnt/shared/cl-portfolio/portal-cache/models"
+}

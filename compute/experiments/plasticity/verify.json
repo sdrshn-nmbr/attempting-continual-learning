@@ -1,0 +1,18 @@
+{
+  "source_sha256": "ab5d85d3b8a145255d715423df216433fc3510ccb55525235b8e568f4b0211f4",
+  "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+  "runs": [
+    {
+      "run_dir": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4",
+      "metrics_sha256": "373827bed9668cb2596309b88258a5c219565789f25d3e80ad4851d50ad96dc5",
+      "execution_sha256": "099bf200461a9cafd3e9bc02b9125e32148c3845204177a4ecc428b117fc99e8",
+      "events_sha256": "b74126099abec1ce415c7521f38f7815b72c1c868875e9bbe30ecb233eed1349"
+    },
+    {
+      "run_dir": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-confirmation-seed47-c31f860b",
+      "metrics_sha256": "8ad41cfd0b180bcfa31655d93185ed9a7bd9b26bae2334312a5b7d7e981fa967",
+      "execution_sha256": "f6ac75b5eef247bcc63aa318d82f2fab245d9088b0a2caae6310b581d8727afc",
+      "events_sha256": "46055b904fc77b4ffc94c1f531a593ea31fa872b1d03e91d0526c397e2190da4"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "RampPublic/portal-gemma-3-4b",
+    "revision": "df48a77135f6f560d546c733472ac9d89c371ab0"
+  },
+  {
+    "id": "google/gemma-4-E2B",
+    "revision": "d29ff6b45f081a49ee2733a859c9c9c2d95d1a6f"
+  },
+  {
+    "id": "RampPublic/portal-gemma-4-e2b",
+    "revision": "1059db59197489ac59b2ff9affd48043bdd22537"
+  },
+  {
+    "id": "RampPublic/portal-inkling",
+    "revision": "48c00853d6b03ab4986ba12ca8399afbb551c5a5"
+  },
+  {
+    "id": "mistralai/Mistral-7B-v0.3",
+    "revision": "caa1feb0e54d415e2df31207e5f4e273e33509b1"
+  },
+  {
+    "id": "RampPublic/portal-mistral-7b",
+    "revision": "478d8cda8d3eb94958324c80249d236debb53b88"
+  },
+  {
+    "id": "Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+  },
+  {
+    "id": "RampPublic/portal-qwen3-1.7b",
+    "revision": "be09be533b5c0418ad20269f19ebb63e9efbc330"
+  },
+  {
+    "id": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+  },
+  {
+    "id": "RampPublic/portal-qwen3-4b",
+    "revision": "1ff8d529c07082f9da067918da2aceafc65ebaf9"
+  },
+  {
+    "id": "RampPublic/portal-qwen3-8b",
+    "revision": "6593b49ae790ec6d601db5a081c81463cb8b3a5f"
+  }
+]

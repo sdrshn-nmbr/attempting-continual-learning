@@ -1,0 +1,2747 @@
+{
+  "schema_version": 1,
+  "audit": "independent_portability_amber_seed17_results",
+  "observed_at": "2026-09-07T23:16:28.640678+00:00",
+  "scope": "Read-only independent arithmetic and artifact consistency checks for three completed runs. No production metric helper was imported; no GPU, infrastructure, source changes, checkpoint downloads or tensor loading.",
+  "source_identity": {
+    "executed_bundle_sha256": "3fc571d03777b4ddd1ecb38c4ad29697502c0546aadc02ea872986635365ec88",
+    "evidence": "task.json source_sha256 and code_dir agree across all three runs; frozen run protocol/config are checked against preregistration hashes. The full original source bundle was not independently reconstructed from its bytes. Current edited source is not used to establish executed-bundle identity.",
+    "frozen_protocol_canonical_sha256": "db86d008790d340a9ecf12e3fd761de2d222ad0f191638d6f9224301e7334ce2",
+    "pinned_models": {
+      "qwen17": {
+        "base": {
+          "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+          "local_path": "/mnt/shared/cl-portfolio/portal-cache/models/Qwen/Qwen3-1.7B/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "repo_id": "Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+        },
+        "portal": {
+          "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+          "local_path": "/mnt/shared/cl-portfolio/portal-cache/models/RampPublic/portal-qwen3-1.7b/be09be533b5c0418ad20269f19ebb63e9efbc330",
+          "repo_id": "RampPublic/portal-qwen3-1.7b",
+          "revision": "be09be533b5c0418ad20269f19ebb63e9efbc330"
+        }
+      },
+      "qwen4": {
+        "base": {
+          "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+          "local_path": "/mnt/shared/cl-portfolio/portal-cache/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c",
+          "repo_id": "Qwen/Qwen3-4B",
+          "revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+        },
+        "portal": {
+          "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+          "local_path": "/mnt/shared/cl-portfolio/portal-cache/models/RampPublic/portal-qwen3-4b/1ff8d529c07082f9da067918da2aceafc65ebaf9",
+          "repo_id": "RampPublic/portal-qwen3-4b",
+          "revision": "1ff8d529c07082f9da067918da2aceafc65ebaf9"
+        }
+      },
+      "qwen8": {
+        "base": {
+          "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+          "local_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+          "repo_id": "Qwen/Qwen3-8B",
+          "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+        },
+        "portal": {
+          "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+          "local_path": "/mnt/shared/cl-portfolio/portal-cache/models/RampPublic/portal-qwen3-8b/6593b49ae790ec6d601db5a081c81463cb8b3a5f",
+          "repo_id": "RampPublic/portal-qwen3-8b",
+          "revision": "6593b49ae790ec6d601db5a081c81463cb8b3a5f"
+        }
+      }
+    }
+  },
+  "protocol": {
+    "fixture_seed": 17,
+    "training_seed": 1701,
+    "B_train_unique": 128,
+    "B_validation_unique": 32,
+    "B_test_unique": 64,
+    "B_test_group_unit": "input_digit_triple",
+    "A_retention_examples": 192,
+    "A_retention_tasks": 3,
+    "A_examples_per_task": 64,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 1701,
+    "sorted_endpoint_indices_zero_based": [
+      49,
+      1949
+    ],
+    "bootstrap_scope": "Paired descriptive resampling of held-out input triples; no training-seed, fresh-fixture or model-selection uncertainty.",
+    "checkpoint_selection": "fixed final step; validation every 24 steps is not checkpoint selection"
+  },
+  "data_identity": {
+    "fixture_sha256": "351ac962100b65b2f10ae483499e53d385fc1c25be6b49fdc0a18cc850447f23",
+    "fixture_exact_copy_used_for_audit": "experiments/portability/outputs/amber-qualification/staged/data/amber.json",
+    "fixture_generator_sha256": "aecf32ff0a071de00aabe692746deafa36de5b7c17fce5e425c59442bbf76c20",
+    "data_sha256": "fec68e6b3fbacd94fa6023a2b86a546f69f030c85c3f555cf9ccbf63e3398cb1",
+    "current_seed29_fixture_excluded": true,
+    "split_sha256": {
+      "a_eval": "f6822c1d6a2b6ab0d9f83af8856feabea55daced900e20ee11361ce4cbb2c136",
+      "a_train": "24765ef6a1646531c9c28d64e22bdf3738ad1124605b1b0c6cc14f47045be53c",
+      "b_test": "2dc6ccadc45a39c8b1f864c2ff904c98541c1afc3ce3ab99b1c500e3f2ace41b",
+      "b_train": "bb8879f855a061d4b4a46b99a6f43b03edb2399b479bbd13d6d61fff7bf960fd",
+      "b_validation": "012094802b4867a580ca9e0852b22cf0c91f57fe83d19b816d75edc8d2d12243"
+    },
+    "all_run_split_hashes_independently_recomputed": true,
+    "all_224_selected_B_examples_exactly_match_frozen_fixture": true,
+    "B_input_triples_unique_and_disjoint_across_splits": true,
+    "B_gold_positions_balanced_per_split": true,
+    "all_B_labels_match_frozen_hidden_rule": true,
+    "leading_spaces_and_all_four_choices_preserved": true,
+    "four_choice_accuracy_not_free_generation": true,
+    "A_evidence_boundary": "Public release validation for old inherited skills; not unseen skill acquisition or a novel-skill holdout."
+  },
+  "runs": [
+    {
+      "id": "portability-amber-core8-s1701",
+      "arm": "ported_qwen8_core_replay",
+      "method": "native",
+      "train_core": true,
+      "execution": {
+        "exit_code": 0,
+        "status": "completed",
+        "source_bundle_sha256": "3fc571d03777b4ddd1ecb38c4ad29697502c0546aadc02ea872986635365ec88",
+        "config_canonical_sha256": "d01aba3ea002b403bbebe65ca63fd1926d0806c51e46c344b28523de87bece28",
+        "training_pid": 6313,
+        "evaluation_pid": 6541
+      },
+      "B_test": {
+        "raw": {
+          "correct": 28,
+          "examples": 64,
+          "accuracy": 0.4375
+        },
+        "initial": {
+          "correct": 27,
+          "examples": 64,
+          "accuracy": 0.421875
+        },
+        "learned": {
+          "correct": 60,
+          "examples": 64,
+          "accuracy": 0.9375
+        }
+      },
+      "B_paired_gains": {
+        "raw": {
+          "mean_group_delta": 0.5,
+          "interval_95": [
+            0.375,
+            0.640625
+          ],
+          "groups": 64,
+          "group_unit": "input_digit_triple",
+          "replicates": 2000,
+          "bootstrap_seed": 1701,
+          "improved": 33,
+          "regressed": 1
+        },
+        "initial": {
+          "mean_group_delta": 0.515625,
+          "interval_95": [
+            0.390625,
+            0.65625
+          ],
+          "groups": 64,
+          "group_unit": "input_digit_triple",
+          "replicates": 2000,
+          "bootstrap_seed": 1701,
+          "improved": 34,
+          "regressed": 1
+        }
+      },
+      "A_retention": {
+        "backward_transfer": {
+          "arc_easy": -0.0625,
+          "boolq": 0,
+          "rte": -0.03125
+        },
+        "macro_forgetting": 0.03125,
+        "before": {
+          "arc_easy": {
+            "correct": 55,
+            "examples": 64,
+            "accuracy": 0.859375
+          },
+          "boolq": {
+            "correct": 55,
+            "examples": 64,
+            "accuracy": 0.859375
+          },
+          "rte": {
+            "correct": 60,
+            "examples": 64,
+            "accuracy": 0.9375
+          }
+        },
+        "after": {
+          "arc_easy": {
+            "correct": 51,
+            "examples": 64,
+            "accuracy": 0.796875
+          },
+          "boolq": {
+            "correct": 55,
+            "examples": 64,
+            "accuracy": 0.859375
+          },
+          "rte": {
+            "correct": 58,
+            "examples": 64,
+            "accuracy": 0.90625
+          }
+        },
+        "evaluation_examples": 192,
+        "protected_by_routing": false,
+        "interpretation": "The core-updating arm trains the shared core and new task vector; alignment and old task-vector invariants are reported unchanged. Recomputed mean forgetting is 3.125 percentage points, with a 6.25-point ARC-Easy drop."
+      },
+      "B_validation_curve": {
+        "24": 0.59375,
+        "48": 0.6875,
+        "72": 0.875,
+        "96": 0.9375
+      },
+      "transport": {
+        "target": "Qwen3-1.7B",
+        "B": {
+          "raw": {
+            "correct": 30,
+            "examples": 64,
+            "accuracy": 0.46875
+          },
+          "initial": {
+            "correct": 26,
+            "examples": 64,
+            "accuracy": 0.40625
+          },
+          "learned": {
+            "correct": 22,
+            "examples": 64,
+            "accuracy": 0.34375
+          }
+        },
+        "paired_gains": {
+          "raw": {
+            "mean_group_delta": -0.125,
+            "interval_95": [
+              -0.265625,
+              0.015625
+            ],
+            "groups": 64,
+            "group_unit": "input_digit_triple",
+            "replicates": 2000,
+            "bootstrap_seed": 1701,
+            "improved": 7,
+            "regressed": 15
+          },
+          "initial": {
+            "mean_group_delta": -0.0625,
+            "interval_95": [
+              -0.1875,
+              0.0625
+            ],
+            "groups": 64,
+            "group_unit": "input_digit_triple",
+            "replicates": 2000,
+            "bootstrap_seed": 1701,
+            "improved": 7,
+            "regressed": 11
+          }
+        },
+        "A": {
+          "backward_transfer": {
+            "arc_easy": 0,
+            "boolq": -0.03125,
+            "rte": -0.015625
+          },
+          "macro_forgetting": 0.015625,
+          "before": {
+            "arc_easy": {
+              "correct": 50,
+              "examples": 64,
+              "accuracy": 0.78125
+            },
+            "boolq": {
+              "correct": 52,
+              "examples": 64,
+              "accuracy": 0.8125
+            },
+            "rte": {
+              "correct": 61,
+              "examples": 64,
+              "accuracy": 0.953125
+            }
+          },
+          "after": {
+            "arc_easy": {
+              "correct": 50,
+              "examples": 64,
+              "accuracy": 0.78125
+            },
+            "boolq": {
+              "correct": 50,
+              "examples": 64,
+              "accuracy": 0.78125
+            },
+            "rte": {
+              "correct": 60,
+              "examples": 64,
+              "accuracy": 0.9375
+            }
+          },
+          "evaluation_examples": 192
+        },
+        "alignment_unchanged_receipt": true,
+        "calibration_examples_receipt": 0,
+        "positive_transfer_signal": false
+      },
+      "training": {
+        "steps": 96,
+        "B_training_exposures": 384,
+        "B_supervised_tokens": 2304,
+        "A_replay_exposures": 96,
+        "A_supervised_tokens": 217,
+        "replay_weight": 0.25,
+        "trainable_parameters": 17484032,
+        "trainable_name_count": 15,
+        "gradient_norm_min": 2.2773334980010986,
+        "gradient_norm_max": 48.73411178588867,
+        "all_96_losses_and_gradient_norms_finite": true,
+        "all_96_gradient_norms_nonzero": true,
+        "checks_reported": {
+          "alignment_unchanged": true,
+          "base_unchanged": true,
+          "core_gradient_nonzero": true,
+          "gradient_nonzero": true,
+          "new_vector_gradient_nonzero": true,
+          "old_task_vectors_unchanged": true,
+          "trainable_changed": true
+        },
+        "base_parameter_count_reported": 8190735360,
+        "base_state_sha256_reported": "6475dc8d998d84b1ac63728d8ad8a965c49987d5f9dc24ddfd2c0091a12231e5",
+        "checkpoint_state_sha256_reported": "7e9943746b82aa08c83a8330d53e38f68ff72c1b628af18ffd28f9e1afe9bb64",
+        "shared_state_provenance_reported": {
+          "source_shared_sha256": "36f908b6ecd4b3eb89f6a475f017897f3a7f06402d6ceeb138df64354e19cc7f",
+          "target_shared_sha256": "36f908b6ecd4b3eb89f6a475f017897f3a7f06402d6ceeb138df64354e19cc7f"
+        },
+        "test_splits_opened_receipt": [],
+        "checkpoint_selection": "fixed final step"
+      },
+      "reload": {
+        "different_process_ids": true,
+        "evaluation_runtime_after_training_qualified": true,
+        "probe_ids": [
+          "dbb553fc2ca57b98fb08db880a6faec387e270d1e6d9921b8de3d34b98c77bcb",
+          "fb0d1a106636c025d9d4b3d849fd5aa802aa482a6836868de9ecbe0b43b0a88f",
+          "8fc238438d282812468bd1f3ad961a7781e2c25ba6477829dd01d735aee0cf34",
+          "11bc2842cb611bc4ff856eea11720648002af87e4dd48ed6d7e9c43baa828060"
+        ],
+        "max_abs_reported": {
+          "11bc2842cb611bc4ff856eea11720648002af87e4dd48ed6d7e9c43baa828060": 0,
+          "8fc238438d282812468bd1f3ad961a7781e2c25ba6477829dd01d735aee0cf34": 0,
+          "dbb553fc2ca57b98fb08db880a6faec387e270d1e6d9921b8de3d34b98c77bcb": 0,
+          "fb0d1a106636c025d9d4b3d849fd5aa802aa482a6836868de9ecbe0b43b0a88f": 0
+        },
+        "checkpoint_state_hash_equal_reported": true,
+        "probe_logits_exact_reported": true,
+        "raw_checkpoint_and_probe_tensors_available": false,
+        "evidence_boundary": "Distinct PIDs, event sequence, checkpoint-state hash equality and four zero-error probe receipts agree. Underlying model/probe tensors were not supplied and were not downloaded or independently compared."
+      },
+      "protocol_signal_recomputed": {
+        "continued_learning_signal": true,
+        "after_upgrade_signal": true,
+        "new_b_transport_signal": false,
+        "decision": "keep_for_replication"
+      },
+      "all_reported_primary_metrics_match_independent_recomputation": true
+    },
+    {
+      "id": "portability-amber-latent8-s1701",
+      "arm": "ported_qwen8_latent_only",
+      "method": "native",
+      "train_core": false,
+      "execution": {
+        "exit_code": 0,
+        "status": "completed",
+        "source_bundle_sha256": "3fc571d03777b4ddd1ecb38c4ad29697502c0546aadc02ea872986635365ec88",
+        "config_canonical_sha256": "769c444b084d62b616c5d3e166327e9b8e0c2e562f3b09b927bd1d3cde1786ee",
+        "training_pid": 6374,
+        "evaluation_pid": 6564
+      },
+      "B_test": {
+        "raw": {
+          "correct": 28,
+          "examples": 64,
+          "accuracy": 0.4375
+        },
+        "initial": {
+          "correct": 27,
+          "examples": 64,
+          "accuracy": 0.421875
+        },
+        "learned": {
+          "correct": 32,
+          "examples": 64,
+          "accuracy": 0.5
+        }
+      },
+      "B_paired_gains": {
+        "raw": {
+          "mean_group_delta": 0.0625,
+          "interval_95": [
+            -0.046875,
+            0.171875
+          ],
+          "groups": 64,
+          "group_unit": "input_digit_triple",
+          "replicates": 2000,
+          "bootstrap_seed": 1701,
+          "improved": 9,
+          "regressed": 5
+        },
+        "initial": {
+          "mean_group_delta": 0.078125,
+          "interval_95": [
+            -0.015625,
+            0.171875
+          ],
+          "groups": 64,
+          "group_unit": "input_digit_triple",
+          "replicates": 2000,
+          "bootstrap_seed": 1701,
+          "improved": 7,
+          "regressed": 2
+        }
+      },
+      "A_retention": {
+        "backward_transfer": {
+          "arc_easy": 0,
+          "boolq": 0,
+          "rte": 0
+        },
+        "macro_forgetting": 0,
+        "before": {
+          "arc_easy": {
+            "correct": 55,
+            "examples": 64,
+            "accuracy": 0.859375
+          },
+          "boolq": {
+            "correct": 55,
+            "examples": 64,
+            "accuracy": 0.859375
+          },
+          "rte": {
+            "correct": 60,
+            "examples": 64,
+            "accuracy": 0.9375
+          }
+        },
+        "after": {
+          "arc_easy": {
+            "correct": 55,
+            "examples": 64,
+            "accuracy": 0.859375
+          },
+          "boolq": {
+            "correct": 55,
+            "examples": 64,
+            "accuracy": 0.859375
+          },
+          "rte": {
+            "correct": 60,
+            "examples": 64,
+            "accuracy": 0.9375
+          }
+        },
+        "evaluation_examples": 192,
+        "protected_by_routing": true,
+        "interpretation": "Old core and old task vectors are frozen; evaluating old task identities leaves their predictions unchanged by construction."
+      },
+      "B_validation_curve": {
+        "24": 0.40625,
+        "48": 0.4375,
+        "72": 0.59375,
+        "96": 0.46875
+      },
+      "transport": {
+        "target": "Qwen3-1.7B",
+        "B": {
+          "raw": {
+            "correct": 30,
+            "examples": 64,
+            "accuracy": 0.46875
+          },
+          "initial": {
+            "correct": 26,
+            "examples": 64,
+            "accuracy": 0.40625
+          },
+          "learned": {
+            "correct": 21,
+            "examples": 64,
+            "accuracy": 0.328125
+          }
+        },
+        "paired_gains": {
+          "raw": {
+            "mean_group_delta": -0.140625,
+            "interval_95": [
+              -0.265625,
+              -0.015625
+            ],
+            "groups": 64,
+            "group_unit": "input_digit_triple",
+            "replicates": 2000,
+            "bootstrap_seed": 1701,
+            "improved": 5,
+            "regressed": 14
+          },
+          "initial": {
+            "mean_group_delta": -0.078125,
+            "interval_95": [
+              -0.1875,
+              0.03125
+            ],
+            "groups": 64,
+            "group_unit": "input_digit_triple",
+            "replicates": 2000,
+            "bootstrap_seed": 1701,
+            "improved": 5,
+            "regressed": 10
+          }
+        },
+        "A": {
+          "backward_transfer": {
+            "arc_easy": 0,
+            "boolq": 0,
+            "rte": 0
+          },
+          "macro_forgetting": 0,
+          "before": {
+            "arc_easy": {
+              "correct": 50,
+              "examples": 64,
+              "accuracy": 0.78125
+            },
+            "boolq": {
+              "correct": 52,
+              "examples": 64,
+              "accuracy": 0.8125
+            },
+            "rte": {
+              "correct": 61,
+              "examples": 64,
+              "accuracy": 0.953125
+            }
+          },
+          "after": {
+            "arc_easy": {
+              "correct": 50,
+              "examples": 64,
+              "accuracy": 0.78125
+            },
+            "boolq": {
+              "correct": 52,
+              "examples": 64,
+              "accuracy": 0.8125
+            },
+            "rte": {
+              "correct": 61,
+              "examples": 64,
+              "accuracy": 0.953125
+            }
+          },
+          "evaluation_examples": 192
+        },
+        "alignment_unchanged_receipt": true,
+        "calibration_examples_receipt": 0,
+        "positive_transfer_signal": false
+      },
+      "training": {
+        "steps": 96,
+        "B_training_exposures": 384,
+        "B_supervised_tokens": 2304,
+        "A_replay_exposures": 0,
+        "A_supervised_tokens": 0,
+        "replay_weight": 0,
+        "trainable_parameters": 256,
+        "trainable_name_count": 1,
+        "gradient_norm_min": 0.5307284593582153,
+        "gradient_norm_max": 4.789330005645752,
+        "all_96_losses_and_gradient_norms_finite": true,
+        "all_96_gradient_norms_nonzero": true,
+        "checks_reported": {
+          "alignment_unchanged": true,
+          "base_unchanged": true,
+          "core_unchanged": true,
+          "gradient_nonzero": true,
+          "new_vector_gradient_nonzero": true,
+          "old_task_vectors_unchanged": true,
+          "trainable_changed": true
+        },
+        "base_parameter_count_reported": 8190735360,
+        "base_state_sha256_reported": "6475dc8d998d84b1ac63728d8ad8a965c49987d5f9dc24ddfd2c0091a12231e5",
+        "checkpoint_state_sha256_reported": "c5c4a00f598e86453cbda3f149d6b814bef8fab8330abdfc34212cb613066b50",
+        "shared_state_provenance_reported": {
+          "source_shared_sha256": "36f908b6ecd4b3eb89f6a475f017897f3a7f06402d6ceeb138df64354e19cc7f",
+          "target_shared_sha256": "36f908b6ecd4b3eb89f6a475f017897f3a7f06402d6ceeb138df64354e19cc7f"
+        },
+        "test_splits_opened_receipt": [],
+        "checkpoint_selection": "fixed final step"
+      },
+      "reload": {
+        "different_process_ids": true,
+        "evaluation_runtime_after_training_qualified": true,
+        "probe_ids": [
+          "dbb553fc2ca57b98fb08db880a6faec387e270d1e6d9921b8de3d34b98c77bcb",
+          "fb0d1a106636c025d9d4b3d849fd5aa802aa482a6836868de9ecbe0b43b0a88f",
+          "8fc238438d282812468bd1f3ad961a7781e2c25ba6477829dd01d735aee0cf34",
+          "11bc2842cb611bc4ff856eea11720648002af87e4dd48ed6d7e9c43baa828060"
+        ],
+        "max_abs_reported": {
+          "11bc2842cb611bc4ff856eea11720648002af87e4dd48ed6d7e9c43baa828060": 0,
+          "8fc238438d282812468bd1f3ad961a7781e2c25ba6477829dd01d735aee0cf34": 0,
+          "dbb553fc2ca57b98fb08db880a6faec387e270d1e6d9921b8de3d34b98c77bcb": 0,
+          "fb0d1a106636c025d9d4b3d849fd5aa802aa482a6836868de9ecbe0b43b0a88f": 0
+        },
+        "checkpoint_state_hash_equal_reported": true,
+        "probe_logits_exact_reported": true,
+        "raw_checkpoint_and_probe_tensors_available": false,
+        "evidence_boundary": "Distinct PIDs, event sequence, checkpoint-state hash equality and four zero-error probe receipts agree. Underlying model/probe tensors were not supplied and were not downloaded or independently compared."
+      },
+      "protocol_signal_recomputed": {
+        "continued_learning_signal": false,
+        "after_upgrade_signal": false,
+        "new_b_transport_signal": false,
+        "decision": "retain_negative_or_control"
+      },
+      "all_reported_primary_metrics_match_independent_recomputation": true
+    },
+    {
+      "id": "portability-amber-lora8-s1701",
+      "arm": "fresh_qwen8_task_lora",
+      "method": "lora",
+      "train_core": false,
+      "execution": {
+        "exit_code": 0,
+        "status": "completed",
+        "source_bundle_sha256": "3fc571d03777b4ddd1ecb38c4ad29697502c0546aadc02ea872986635365ec88",
+        "config_canonical_sha256": "7cddda1e1fe48e82b8080c42dba39310664ea979115ea67a395c9b944e67cba9",
+        "training_pid": 6421,
+        "evaluation_pid": 6548
+      },
+      "B_test": {
+        "raw": {
+          "correct": 28,
+          "examples": 64,
+          "accuracy": 0.4375
+        },
+        "initial": {
+          "correct": 27,
+          "examples": 64,
+          "accuracy": 0.421875
+        },
+        "learned": {
+          "correct": 64,
+          "examples": 64,
+          "accuracy": 1
+        }
+      },
+      "B_paired_gains": {
+        "raw": {
+          "mean_group_delta": 0.5625,
+          "interval_95": [
+            0.4375,
+            0.6875
+          ],
+          "groups": 64,
+          "group_unit": "input_digit_triple",
+          "replicates": 2000,
+          "bootstrap_seed": 1701,
+          "improved": 36,
+          "regressed": 0
+        },
+        "initial": {
+          "mean_group_delta": 0.578125,
+          "interval_95": [
+            0.453125,
+            0.703125
+          ],
+          "groups": 64,
+          "group_unit": "input_digit_triple",
+          "replicates": 2000,
+          "bootstrap_seed": 1701,
+          "improved": 37,
+          "regressed": 0
+        }
+      },
+      "A_retention": {
+        "backward_transfer": {
+          "arc_easy": 0,
+          "boolq": 0,
+          "rte": 0
+        },
+        "macro_forgetting": 0,
+        "before": {
+          "arc_easy": {
+            "correct": 55,
+            "examples": 64,
+            "accuracy": 0.859375
+          },
+          "boolq": {
+            "correct": 55,
+            "examples": 64,
+            "accuracy": 0.859375
+          },
+          "rte": {
+            "correct": 60,
+            "examples": 64,
+            "accuracy": 0.9375
+          }
+        },
+        "after": {
+          "arc_easy": {
+            "correct": 55,
+            "examples": 64,
+            "accuracy": 0.859375
+          },
+          "boolq": {
+            "correct": 55,
+            "examples": 64,
+            "accuracy": 0.859375
+          },
+          "rte": {
+            "correct": 60,
+            "examples": 64,
+            "accuracy": 0.9375
+          }
+        },
+        "evaluation_examples": 192,
+        "protected_by_routing": true,
+        "B_adapter_on_A_diagnostic": {
+          "arc_easy": {
+            "correct": 53,
+            "examples": 64,
+            "accuracy": 0.828125
+          },
+          "boolq": {
+            "correct": 51,
+            "examples": 64,
+            "accuracy": 0.796875
+          },
+          "rte": {
+            "correct": 54,
+            "examples": 64,
+            "accuracy": 0.84375
+          }
+        },
+        "interpretation": "The original published A adapter is restored for A evaluation; zero forgetting is protected by separate task routing and is not shared-state retention."
+      },
+      "B_validation_curve": {
+        "24": 0.875,
+        "48": 1,
+        "72": 1,
+        "96": 1
+      },
+      "transport": {
+        "measured": false,
+        "reason": "Backbone-specific LoRA control; no direct transport claim."
+      },
+      "training": {
+        "steps": 96,
+        "B_training_exposures": 384,
+        "B_supervised_tokens": 2304,
+        "A_replay_exposures": 0,
+        "A_supervised_tokens": 0,
+        "replay_weight": 0,
+        "trainable_parameters": 3833856,
+        "trainable_name_count": 144,
+        "gradient_norm_min": 0.00005177412822376937,
+        "gradient_norm_max": 36.8154296875,
+        "all_96_losses_and_gradient_norms_finite": true,
+        "all_96_gradient_norms_nonzero": true,
+        "checks_reported": {
+          "alignment_unchanged": true,
+          "base_unchanged": true,
+          "gradient_nonzero": true,
+          "old_task_vectors_unchanged": true,
+          "trainable_changed": true
+        },
+        "base_parameter_count_reported": 8190735360,
+        "base_state_sha256_reported": "6475dc8d998d84b1ac63728d8ad8a965c49987d5f9dc24ddfd2c0091a12231e5",
+        "checkpoint_state_sha256_reported": "b6d8500ca3b3f7c643abf6c32a14c3045b055290ea7c99d0ac9ed141db872fed",
+        "shared_state_provenance_reported": {
+          "source_shared_sha256": "36f908b6ecd4b3eb89f6a475f017897f3a7f06402d6ceeb138df64354e19cc7f",
+          "target_shared_sha256": "36f908b6ecd4b3eb89f6a475f017897f3a7f06402d6ceeb138df64354e19cc7f"
+        },
+        "test_splits_opened_receipt": [],
+        "checkpoint_selection": "fixed final step"
+      },
+      "reload": {
+        "different_process_ids": true,
+        "evaluation_runtime_after_training_qualified": true,
+        "probe_ids": [
+          "dbb553fc2ca57b98fb08db880a6faec387e270d1e6d9921b8de3d34b98c77bcb",
+          "fb0d1a106636c025d9d4b3d849fd5aa802aa482a6836868de9ecbe0b43b0a88f",
+          "8fc238438d282812468bd1f3ad961a7781e2c25ba6477829dd01d735aee0cf34",
+          "11bc2842cb611bc4ff856eea11720648002af87e4dd48ed6d7e9c43baa828060"
+        ],
+        "max_abs_reported": {
+          "11bc2842cb611bc4ff856eea11720648002af87e4dd48ed6d7e9c43baa828060": 0,
+          "8fc238438d282812468bd1f3ad961a7781e2c25ba6477829dd01d735aee0cf34": 0,
+          "dbb553fc2ca57b98fb08db880a6faec387e270d1e6d9921b8de3d34b98c77bcb": 0,
+          "fb0d1a106636c025d9d4b3d849fd5aa802aa482a6836868de9ecbe0b43b0a88f": 0
+        },
+        "checkpoint_state_hash_equal_reported": true,
+        "probe_logits_exact_reported": true,
+        "raw_checkpoint_and_probe_tensors_available": false,
+        "evidence_boundary": "Distinct PIDs, event sequence, checkpoint-state hash equality and four zero-error probe receipts agree. Underlying model/probe tensors were not supplied and were not downloaded or independently compared."
+      },
+      "protocol_signal_recomputed": {
+        "continued_learning_signal": true,
+        "after_upgrade_signal": null,
+        "new_b_transport_signal": false,
+        "decision": "keep_for_replication"
+      },
+      "all_reported_primary_metrics_match_independent_recomputation": true
+    }
+  ],
+  "findings": [],
+  "cross_arm_exposure": {
+    "all_data_splits_identical_including_order": true,
+    "all_96_B_step_exposure_and_supervised_token_counters_match": true,
+    "B_exposures_per_arm": 384,
+    "B_supervised_tokens_per_arm": 2304,
+    "B_unique_training_triples": 128,
+    "B_epochs_under_declared_cycle": 3,
+    "declared_deterministic_B_order_sha256": "47adca028e9b656cf0f744780bc50156d5c0de8bb6907f989df30975128f7892",
+    "order_evidence_boundary": "Input data order, seed and frozen protocol are identical. The inspected Cycle logic uses a dedicated seeded shuffle/pop stream, so matched order is inferred under that contract. Events record counts and tokens but no per-step example IDs; runtime sample order cannot be independently replay-verified from these logs.",
+    "core_only_extra_A_replay": 96,
+    "extra_A_replay_supervised_tokens": 217,
+    "compute_or_parameter_matched": false,
+    "hyperparameter_checks": {
+      "shared_training_config_except_train_core_and_replay_weight": {
+        "batch_size": 4,
+        "core_lr": 0.00003,
+        "eval_every": 24,
+        "grad_clip": 1,
+        "latent_lr": 0.002,
+        "lora_lr": 0.0002,
+        "max_prompt": 768,
+        "replay_every": 4,
+        "steps": 96
+      },
+      "arm_specific_fields_match_frozen_protocol": true,
+      "all_three_configs_share_same_source_and_target_model_identities": true
+    }
+  },
+  "core_vs_lora": {
+    "core_correct": 60,
+    "lora_correct": 64,
+    "test_examples": 64,
+    "core_minus_lora_accuracy": -0.0625,
+    "core_better_cases": 0,
+    "lora_better_cases": 4,
+    "native_trainable_parameters": 17484032,
+    "lora_trainable_parameters": 3833856,
+    "core_extra_A_replay": 96,
+    "superiority_claim_supported": false,
+    "interpretation": "LoRA is 4/64 cases higher on this one fixture. Different trainable capacities, learning rates, extra A replay, protected LoRA A routing and one training seed prevent a general superiority comparison."
+  },
+  "scientific_conclusion": {
+    "post_upgrade_learning": "The core-updating 8B arm reaches 60/64 (93.75%) from raw 28/64 (43.75%) and published initialization 27/64 (42.1875%), with 3.125-point mean old-task forgetting. This is a bounded positive acquisition signal on the reused fixture, eligible for fresh-fixture confirmation.",
+    "latent_only_control": "32/64 (50%) with unchanged old-task predictions. Gains of 6.25 and 7.8125 points do not reach the declared 10-point threshold and their descriptive intervals include zero.",
+    "lora_control": "64/64 (100%) demonstrates task learnability with a separate rank-8 B adapter. Zero A forgetting uses restoration of the original published A adapter.",
+    "transport": "The learned core yields 22/64 (34.375%) on 1.7B versus raw 30/64 (46.875%) and initialization 26/64 (40.625%). The latent-only arm yields 21/64 (32.8125%). Neither supports new-skill transport; LoRA transport was not measured.",
+    "qualified_general_continual_learning_claim": false,
+    "qualified_alignment_repair_or_transfer_claim": false,
+    "qualified_method_superiority_claim": false,
+    "fresh_fixture_confirmation_required": true,
+    "requested_confirmation_scope": "A separate seed-29 fixture with training/data seed 2901 and unchanged optimization hyperparameters can confirm post-upgrade B acquisition and A retention. It is planned work, not evidence in this audit; it does not establish alignment repair or successful transport.",
+    "uncertainty_boundary": "All intervals condition on this one reused fixture and one training seed; they do not measure fresh-fixture or training-seed variability and are not corrected for the prior fixture/method selection."
+  },
+  "evidence_limits": [
+    "Original bundle identity is recorded consistently by task receipts, but its full source bytes were not independently reconstituted here.",
+    "Full-base hashing is reported for 8,190,735,360 named parameters, with the same before digest and successful unchanged checks across arms. The model tensors and separate after-hash arrays are not locally present for independent verification.",
+    "Nonzero gradient norms and per-group gate receipts are checked; the receipts record a combined trainable-state change, not a separate numerical delta for every trainable tensor.",
+    "Fresh-process checkpoint/probe equality is checked at the receipt/PID/event level only, for four validation probes.",
+    "Runtime batch IDs are not logged, so exact B sampling order is protocol/source-derived rather than directly observed.",
+    "A retention is measured on 192 public examples across three inherited tasks; LoRA and latent-only zero forgetting are protected by task routing/frozen old state.",
+    "No test has established free generation, unseen task families, longer compositions, robust continual learning, new alignment fitting or successful 1.7B transport."
+  ],
+  "status": "complete_no_blocking_result_discrepancies",
+  "input_sha256": {
+    "experiments/portability/outputs/amber-qualification/staged/data/amber.json": "351ac962100b65b2f10ae483499e53d385fc1c25be6b49fdc0a18cc850447f23",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/result.json": "e92df30bf911934aa63b09b30ea48bec266ccecf905fd7112acc60d963e3cf3f",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/evaluation.json": "04021c4d0362a0f125883f646b8a766e071801bb02a3626ec06e5828d3f7c49d",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/training_receipt.json": "68c45f189909919f43c62d5b2b6c62d229a74ecbdd353408af76717c7f518477",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/data_manifest.json": "4702999c406519b69e31d0c4102c26b69a99451656263c77bde019f0441fdf4f",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/config.json": "28a74750d742dcdc99eabdcb9fad465fdf85f7c04066d915e68077482a94027a",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/task.json": "4953ecc56ed2f6bc2f57a1b8197aeffbccb6d61a0af8e939eae5706515097360",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/execution.json": "0a82772b1807bf73b52379b11e9f4ff37b1724fd10922a6ff1f4aeef65060411",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/protocol.json": "b86a81deb191b90233e44dabbd4652736a00fc4b903b57c2e3b4d7f1b20fcd4b",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/trainable_parameters.json": "9395688e5051f79c9a23790620b4ea7ef51d5c55b21770fe893189c8143f3940",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/probe_ids.json": "5c801edd59f6ed39a3490436b66a0d7e971bf2d9ba38c0a975c13f186e644674",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/events.jsonl": "0aeaf80d83adfb0e0e56d1a15c5c4e40376cd384d9f8bd368f22219773675665",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/packages.txt": "b299277e76ceb34b945aa5e99b2dd369ada26dd175712ecaccdaf98029c86851",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/data/a_eval.json": "1094e2109fba7dbfc27ca3efa42922917f1ce94a52a31b068a34708dc59039bf",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/data/a_train.json": "02b979053113aed03cec3a2b9d7e783570835852a08daba6b0aad611c0f84a0e",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/data/b_test.json": "e4e340f6ce893d5f5e3630d4960022d708033927f08d42ade103c03957b160ad",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/data/b_train.json": "4ae68a38aa6c845a350fccd05eadb1cdfcec690bf48fbe338aa66b94c78047f9",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/data/b_validation.json": "edc7326c10c593f94f6ccff6bfeb4cd1d506340f98d40c2a6fa23624ae4eaedf",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/validation/step-0024.json": "3026647c9687cb847ef7f8efed6e58725398c234e859fee7fed8062f7259afc7",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/validation/step-0048.json": "50f8a6ac54fd3e8ff99b18791b913b1cfce2fbbdc705177832af1761b379bfe7",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/validation/step-0072.json": "9dcc3fa1167ecbe78066b0bfe2e930825088b6fb3edaf761e4276b0d708d2e52",
+    "outputs/portfolio/runs/portability-amber-core8-s1701/validation/step-0096.json": "673bd31d58f14033c6ca04b09e57f0141ff0f1e378b0028a45095fa41a9715f1",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/result.json": "8b7953621aea741049314dd965e53b7ee866912013877bf890666879a424bae8",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/evaluation.json": "50dcd661b9b8b6e5942e1b4956aa97ec5e132740c13b0a8d649476b952ebc313",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/training_receipt.json": "b7157b2d93956da182e98e222984d474f22ec1d34f4e4635bcc121a9000faec8",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/data_manifest.json": "4702999c406519b69e31d0c4102c26b69a99451656263c77bde019f0441fdf4f",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/config.json": "6c47d67d78c8ba0d05c96262a965f89738b57785448b4abdc0fa809374f6f554",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/task.json": "6132335c1d0a67fca1c9f5ff6c438899a56d337ed597275113e1471ad36d5098",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/execution.json": "ef3f2b9b122d0672206a3bc4cc0d5789c9d67a09f24890c95a9eab6f7dce7d55",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/protocol.json": "b86a81deb191b90233e44dabbd4652736a00fc4b903b57c2e3b4d7f1b20fcd4b",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/trainable_parameters.json": "3b13adb776d9e7aa7a507b89f6918810d47425da18afa5237bc8ffd7d821f567",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/probe_ids.json": "5c801edd59f6ed39a3490436b66a0d7e971bf2d9ba38c0a975c13f186e644674",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/events.jsonl": "4234f4f3dcaa60242f0984b31b7066c83347132bfd005bb2e4650dd9051a6696",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/packages.txt": "b299277e76ceb34b945aa5e99b2dd369ada26dd175712ecaccdaf98029c86851",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/data/a_eval.json": "1094e2109fba7dbfc27ca3efa42922917f1ce94a52a31b068a34708dc59039bf",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/data/a_train.json": "02b979053113aed03cec3a2b9d7e783570835852a08daba6b0aad611c0f84a0e",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/data/b_test.json": "e4e340f6ce893d5f5e3630d4960022d708033927f08d42ade103c03957b160ad",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/data/b_train.json": "4ae68a38aa6c845a350fccd05eadb1cdfcec690bf48fbe338aa66b94c78047f9",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/data/b_validation.json": "edc7326c10c593f94f6ccff6bfeb4cd1d506340f98d40c2a6fa23624ae4eaedf",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/validation/step-0024.json": "2fb9ce2b2c970979c7105b57936649f1621fd0532125b02368410a0abc792161",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/validation/step-0048.json": "45f19d19065289aa5f2e635fe42b72c2388823366eb33798421f0a223bdf7f37",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/validation/step-0072.json": "4c4f0a501e93af09862bc968c9f314426434035f9fa8372ecd212f735813aea7",
+    "outputs/portfolio/runs/portability-amber-latent8-s1701/validation/step-0096.json": "90698a3792dae573cfd22929bb2f8edfac2044bd5ba31e79aa15ab5f2634c22e",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/result.json": "237991dea8e3090a4bd700258c1a26d51d709a1111e48a3b91685b2c7a699a7c",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/evaluation.json": "a22e6f2c84a5ca8a402af40a72b2aaf9922038331cfe6381bd87563da79436a9",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/training_receipt.json": "d4ba3b25ca3ce1c7bd9ee7ca46ceea60101d542572c2b8e52b29e82a616999cf",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/data_manifest.json": "4702999c406519b69e31d0c4102c26b69a99451656263c77bde019f0441fdf4f",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/config.json": "255b09c85f10318f7374496a7736dac0badd87ec1f80b3b4b233d981df004308",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/task.json": "2347ef591d061841542783a08426fe35be5466c1068a1e2f738822abebc2c371",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/execution.json": "b2f58af70a4d87fe858ac39558fe6533e03c17e65d5d58f80f68e75cb4a00d17",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/protocol.json": "b86a81deb191b90233e44dabbd4652736a00fc4b903b57c2e3b4d7f1b20fcd4b",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/trainable_parameters.json": "b28c2b46dba9b87acb4b54b1a1ae71a909c9073f9ac2fa690067f4f722851820",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/probe_ids.json": "5c801edd59f6ed39a3490436b66a0d7e971bf2d9ba38c0a975c13f186e644674",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/events.jsonl": "cbf4e71542bf0bb9e59960398e8351c741034d6789c930a326ec160662ae3ff3",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/packages.txt": "b299277e76ceb34b945aa5e99b2dd369ada26dd175712ecaccdaf98029c86851",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/data/a_eval.json": "1094e2109fba7dbfc27ca3efa42922917f1ce94a52a31b068a34708dc59039bf",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/data/a_train.json": "02b979053113aed03cec3a2b9d7e783570835852a08daba6b0aad611c0f84a0e",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/data/b_test.json": "e4e340f6ce893d5f5e3630d4960022d708033927f08d42ade103c03957b160ad",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/data/b_train.json": "4ae68a38aa6c845a350fccd05eadb1cdfcec690bf48fbe338aa66b94c78047f9",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/data/b_validation.json": "edc7326c10c593f94f6ccff6bfeb4cd1d506340f98d40c2a6fa23624ae4eaedf",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/validation/step-0024.json": "cdb8ee6e54c1128addc9512836292a4bbe9c1b5055b343f87d64a1c1f0d498d9",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/validation/step-0048.json": "84ab4b5a6fa5e5ec1dec7628c3c237a89753c6c14250f44d9cedbbb9fd44a8b8",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/validation/step-0072.json": "437bf69e3c7d1a1c9cc93050c71a654da04d745fbf60663e71ccb7153de44252",
+    "outputs/portfolio/runs/portability-amber-lora8-s1701/validation/step-0096.json": "0fdeba9df02fa1f17af8fc6d3499703cab68e4f20f1bb6a775bab0bfd25cbc54"
+  },
+  "audited_inputs_unchanged": true,
+  "training_evidence_boundary": "Parameter counts and tensor-state digests are reported runtime evidence, cross-checked against names, receipts and events. Digests describe tensor states and are not safetensors-file checksums. No independent tensor-byte verification was performed.",
+  "output_path": "experiments/review/portability-results-audit.json",
+  "audit_writes": [
+    "experiments/review/portability-results-audit.json"
+  ],
+  "fresh_fixture_confirmation": {
+    "schema_version": 1,
+    "audit": "independent_portability_amber_seed29_results",
+    "observed_at": "2026-09-07T23:28:11.813790+00:00",
+    "scope": "Read-only independent arithmetic and artifact consistency checks for three completed runs. No production metric helper was imported; no GPU, infrastructure, source changes, checkpoint downloads or tensor loading.",
+    "source_identity": {
+      "executed_bundle_sha256": "a182188693ef7354ad840f600ae017bd558a2b8aec0b435e85216e5f1c618c35",
+      "bundle_recomputed_from_local_frozen_source_bytes": true,
+      "bundle_encoding": "SHA-256 of relative filename + NUL + raw file bytes, concatenated in pathlib.Path ordering for all 12 dispatch files",
+      "source_files_sha256": {
+        "configs/fresh_qwen8_task_lora.json": "4de250b56aa4faf7b35ce8c23cef5012d96a2819c0d82130307b801108bb28b9",
+        "configs/ported_qwen8_core_replay.json": "ee130ccb8b7e6051f1c5cc3cd6850d7d3ab655859ea6f5c0d4f2fed77e6e38d6",
+        "configs/ported_qwen8_latent_only.json": "aeca064df9463f78f6a0b8da6d440fac3bf7f27324d14684d027cb79903bf95d",
+        "data/amber.json": "6c57de9a7f2cf3730c9291e8d4d8fde51e7da414e8f1ad3c0d1ecf879b87dcae",
+        "data.py": "48f96a8ee39df6e623e6b8dab711a1e060e8bb5ff5fff5e3a2a3eec84984fb5d",
+        "handoff.json": "fb9f28b4767c325eddcea93eb6bcb7f5cdf0e45566a9b4ee8d5657b82f2372df",
+        "learner.py": "c396bf02f0fe5293dcb722fc3d680b8c79659f7e02a89b314651cf202f0b38d4",
+        "metrics.py": "f9da0d6eee2312dc6746b12320dbcd55786d8c7327178f0b8a092ee28d53a402",
+        "protocol.json": "e889511fdc896638132f1a0c34813df08454495d26cc0cac07d3f722ce2c12bb",
+        "qualify.py": "ba74761f31d8459e6e36bb04e541d682a7df6bb70d24b640f4d8477e83fbc69c",
+        "requirements.txt": "bf772f66dcae41ae30727fb41845ffe708a01e27f30ef0f46b0e944fbdfb822c",
+        "run.py": "9eff1de9fa20b9f78d764d9629ce7c6c2c4e0a25bd3e1d7cb7f4111bdd8185d7"
+      },
+      "frozen_protocol_file_sha256": "e889511fdc896638132f1a0c34813df08454495d26cc0cac07d3f722ce2c12bb",
+      "frozen_protocol_canonical_sha256": "0a90cf0b144ff976a99b3ef11b9b980866b44ca565169f16ba10af9cffd5d153",
+      "pinned_models": {
+        "qwen17": {
+          "base": {
+            "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+            "local_path": "/mnt/shared/cl-portfolio/portal-cache/models/Qwen/Qwen3-1.7B/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "repo_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+          },
+          "portal": {
+            "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+            "local_path": "/mnt/shared/cl-portfolio/portal-cache/models/RampPublic/portal-qwen3-1.7b/be09be533b5c0418ad20269f19ebb63e9efbc330",
+            "repo_id": "RampPublic/portal-qwen3-1.7b",
+            "revision": "be09be533b5c0418ad20269f19ebb63e9efbc330"
+          }
+        },
+        "qwen4": {
+          "base": {
+            "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+            "local_path": "/mnt/shared/cl-portfolio/portal-cache/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c",
+            "repo_id": "Qwen/Qwen3-4B",
+            "revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+          },
+          "portal": {
+            "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+            "local_path": "/mnt/shared/cl-portfolio/portal-cache/models/RampPublic/portal-qwen3-4b/1ff8d529c07082f9da067918da2aceafc65ebaf9",
+            "repo_id": "RampPublic/portal-qwen3-4b",
+            "revision": "1ff8d529c07082f9da067918da2aceafc65ebaf9"
+          }
+        },
+        "qwen8": {
+          "base": {
+            "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+            "local_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+            "repo_id": "Qwen/Qwen3-8B",
+            "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+          },
+          "portal": {
+            "cache_dir": "/mnt/shared/cl-portfolio/huggingface/hub",
+            "local_path": "/mnt/shared/cl-portfolio/portal-cache/models/RampPublic/portal-qwen3-8b/6593b49ae790ec6d601db5a081c81463cb8b3a5f",
+            "repo_id": "RampPublic/portal-qwen3-8b",
+            "revision": "6593b49ae790ec6d601db5a081c81463cb8b3a5f"
+          }
+        }
+      },
+      "all_run_task_source_identities_match": true,
+      "all_run_entrypoints": "run.py",
+      "source_change_review": {
+        "AST_change_inventory_independently_recomputed": {
+          "data.py": {
+            "changed_definitions": [
+              "amber_splits"
+            ],
+            "unchanged_definitions": [
+              "digest",
+              "write_json",
+              "Example",
+              "validate_splits",
+              "published_rows",
+              "prepare_data",
+              "read_data"
+            ],
+            "added_or_removed_definitions": []
+          },
+          "learner.py": {
+            "changed_definitions": [],
+            "unchanged_definitions": [
+              "tensor_hash",
+              "shared_hash",
+              "load_portal",
+              "model_source",
+              "extend_portal",
+              "transplant",
+              "save_native",
+              "load_base",
+              "make_lora",
+              "supervised_loss",
+              "score_rows",
+              "evaluate",
+              "probe_logits"
+            ],
+            "added_or_removed_definitions": []
+          },
+          "metrics.py": {
+            "changed_definitions": [
+              "paired_group_interval"
+            ],
+            "unchanged_definitions": [],
+            "added_or_removed_definitions": []
+          },
+          "qualify.py": {
+            "changed_definitions": [],
+            "unchanged_definitions": [
+              "reload_only",
+              "main"
+            ],
+            "added_or_removed_definitions": []
+          },
+          "run.py": {
+            "changed_definitions": [
+              "validate_config",
+              "finish"
+            ],
+            "unchanged_definitions": [
+              "emit",
+              "require_gpu",
+              "Cycle",
+              "initial_portal",
+              "train",
+              "eval_set",
+              "evaluate_checkpoint",
+              "main"
+            ],
+            "added_or_removed_definitions": []
+          }
+        },
+        "numerical_training_scoring_reload_transport_and_bootstrap_contracts_unchanged": true,
+        "interpretation": "Byte hashes and the AST change inventory match the frozen before/after proof. The reviewed changes add confirmation-role validation and metadata and alter descriptive scope text; learner.py, qualify.py, Cycle, train, eval_set, evaluate_checkpoint and main are unchanged.",
+        "historical_freeze_status_boundary": "The source_freeze GPU-executed false field describes the prelaunch freeze; completion is established by the three later local execution and result artifacts."
+      },
+      "evidence_boundary": "Local frozen source bytes reproduce the task source hash. Runtime use is tied through task entrypoint, code_dir, config/preregistration and execution/log receipts; no remote attestation or GPU rerun was performed."
+    },
+    "protocol": {
+      "fixture_seed": 29,
+      "training_seed": 2901,
+      "B_train_unique": 128,
+      "B_validation_unique": 32,
+      "B_test_unique": 64,
+      "B_test_group_unit": "input_digit_triple",
+      "A_retention_examples": 192,
+      "A_retention_tasks": 3,
+      "A_examples_per_task": 64,
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 2901,
+      "sorted_endpoint_indices_zero_based": [
+        49,
+        1949
+      ],
+      "bootstrap_scope": "Paired descriptive resampling of held-out input triples; no training-seed, fresh-fixture or model-selection uncertainty.",
+      "checkpoint_selection": "fixed final step; validation every 24 steps is not checkpoint selection"
+    },
+    "data_identity": {
+      "fixture_sha256": "6c57de9a7f2cf3730c9291e8d4d8fde51e7da414e8f1ad3c0d1ecf879b87dcae",
+      "fixture_exact_copy_used_for_audit": "experiments/portability/outputs/amber-confirmation-seed29/staged/data/amber.json",
+      "fixture_generator_sha256": "d9c78e534701c0e2862d013d23082427b86039f551c1e54c1abdf19bbf71968c",
+      "data_sha256": "92014c6ff8dfb365bfe5ab475a76631e8541d7d69a90bac9376a9fb7bd6e2e72",
+      "frozen_seed29_fixture_verified": true,
+      "split_sha256": {
+        "a_eval": "be5bdb3c038b0fd29690fe5d81d4816645d00783bd42e80ea7171c796c0b55be",
+        "a_train": "caeae6888c22d654dea2542717fd0af9effc2290acefb2aa6544c19f8ec14a54",
+        "b_test": "899ddd96dc8cb4ac7bbcb51ec9bf8b3c903f36ba745f89d8848fffa9333a0d7f",
+        "b_train": "b780fdeb3c3fa0a1022a33c63eab2fc0a9c9f02884b4c53b82aec2de016c9b80",
+        "b_validation": "5f8a4e6f865e491e333b0db3c500f172256e3ed7b7777623fe81c719650427f3"
+      },
+      "all_run_split_hashes_independently_recomputed": true,
+      "all_224_selected_B_examples_exactly_match_frozen_fixture": true,
+      "B_input_triples_unique_and_disjoint_across_splits": true,
+      "B_gold_positions_balanced_per_split": true,
+      "all_B_labels_match_frozen_hidden_rule": true,
+      "leading_spaces_and_all_four_choices_preserved": true,
+      "four_choice_accuracy_not_free_generation": true,
+      "A_evidence_boundary": "Public release validation for old inherited skills; not unseen skill acquisition or a novel-skill holdout.",
+      "generator_source_sha256": "5b04712724b3e8230f5d416e9020e8b613f8afb6e123c97cc160aad5e8c3daa3",
+      "generator_content_hash_encoding": "json.dumps(splits, sort_keys=True) with default spaces",
+      "generator_source_hash_verified": true,
+      "generator_rerun_by_this_audit": false,
+      "generator_reproducibility_claim_boundary": "Generation receipts report seed17 reproduction and identical repeated seed29 generation. This audit verifies their source and fixture bytes and independently validates all selected labels and split contents; it does not rerun the generator.",
+      "parent_analysis_path": "outputs/portfolio/analyses/portability-amber-seed29.json",
+      "published_A_source_selection_replayed": false,
+      "published_A_source_selection_evidence_boundary": "Exported A rows, exact split hashes, task counts, predicted labels and retention arithmetic were checked. Pinned source Parquet identities and sampling configuration agree across receipts; this bounded review does not reread the full Parquet or independently replay its A-row sampling."
+    },
+    "runs": [
+      {
+        "id": "portability-amber-core8-s2901",
+        "arm": "ported_qwen8_core_replay",
+        "method": "native",
+        "train_core": true,
+        "execution": {
+          "exit_code": 0,
+          "status": "completed",
+          "source_bundle_sha256": "a182188693ef7354ad840f600ae017bd558a2b8aec0b435e85216e5f1c618c35",
+          "config_canonical_sha256": "4bdc1eae72d786ddb952af11a0b2bcd0a26738f3efde34071a58ef5c807f7201",
+          "training_pid": 7541,
+          "evaluation_pid": 7656,
+          "all_events_match_run_log": true,
+          "event_count": 112
+        },
+        "B_test": {
+          "raw": {
+            "correct": 11,
+            "examples": 64,
+            "accuracy": 0.171875,
+            "gold_char_mean_logp": -1.4930053738256295,
+            "reported_truncated_prompts": 0,
+            "reported_gold_nll": 1.4930053738256295
+          },
+          "initial": {
+            "correct": 15,
+            "examples": 64,
+            "accuracy": 0.234375,
+            "gold_char_mean_logp": -1.57439823448658,
+            "reported_truncated_prompts": 0,
+            "reported_gold_nll": 1.57439823448658
+          },
+          "learned": {
+            "correct": 59,
+            "examples": 64,
+            "accuracy": 0.921875,
+            "gold_char_mean_logp": -0.5157472277060151,
+            "reported_truncated_prompts": 0,
+            "reported_gold_nll": 0.5157472277060151
+          }
+        },
+        "B_paired_gains": {
+          "raw": {
+            "mean_group_delta": 0.75,
+            "interval_95": [
+              0.625,
+              0.84375
+            ],
+            "groups": 64,
+            "group_unit": "input_digit_triple",
+            "replicates": 2000,
+            "bootstrap_seed": 2901,
+            "improved": 49,
+            "regressed": 1
+          },
+          "initial": {
+            "mean_group_delta": 0.6875,
+            "interval_95": [
+              0.546875,
+              0.796875
+            ],
+            "groups": 64,
+            "group_unit": "input_digit_triple",
+            "replicates": 2000,
+            "bootstrap_seed": 2901,
+            "improved": 46,
+            "regressed": 2
+          }
+        },
+        "A_retention": {
+          "backward_transfer": {
+            "arc_easy": -0.015625,
+            "boolq": -0.015625,
+            "rte": 0
+          },
+          "macro_forgetting": 0.010416666666666666,
+          "before": {
+            "arc_easy": {
+              "correct": 51,
+              "examples": 64,
+              "accuracy": 0.796875,
+              "gold_char_mean_logp": -0.2911448092421304,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 1.6043430598082666
+            },
+            "boolq": {
+              "correct": 59,
+              "examples": 64,
+              "accuracy": 0.921875,
+              "gold_char_mean_logp": -0.04091468690831116,
+              "reported_truncated_prompts": 1,
+              "reported_gold_nll": 0.14277189156982217
+            },
+            "rte": {
+              "correct": 60,
+              "examples": 64,
+              "accuracy": 0.9375,
+              "gold_char_mean_logp": -0.0998482428873775,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 0.5471180251733281
+            }
+          },
+          "after": {
+            "arc_easy": {
+              "correct": 50,
+              "examples": 64,
+              "accuracy": 0.78125,
+              "gold_char_mean_logp": -0.29172304687843154,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 1.6018274537842683
+            },
+            "boolq": {
+              "correct": 58,
+              "examples": 64,
+              "accuracy": 0.90625,
+              "gold_char_mean_logp": -0.07100171701420284,
+              "reported_truncated_prompts": 1,
+              "reported_gold_nll": 0.2451208813967014
+            },
+            "rte": {
+              "correct": 60,
+              "examples": 64,
+              "accuracy": 0.9375,
+              "gold_char_mean_logp": -0.09670731132036266,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 0.5274882104102123
+            }
+          },
+          "evaluation_examples": 192,
+          "protected_by_routing": false,
+          "interpretation": "Shared core changed while alignment and old task vectors were held fixed; mean forgetting is 1.0416667 percentage points, with 1.5625-point ARC-Easy and BoolQ drops."
+        },
+        "B_validation_curve": {
+          "24": 0.3125,
+          "48": 0.53125,
+          "72": 0.75,
+          "96": 0.875
+        },
+        "transport": {
+          "target": "Qwen3-1.7B",
+          "B": {
+            "raw": {
+              "correct": 16,
+              "examples": 64,
+              "accuracy": 0.25,
+              "gold_char_mean_logp": -1.4718737738827865,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 1.4718737738827865
+            },
+            "initial": {
+              "correct": 21,
+              "examples": 64,
+              "accuracy": 0.328125,
+              "gold_char_mean_logp": -1.7089608994623025,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 1.7089608994623025
+            },
+            "learned": {
+              "correct": 15,
+              "examples": 64,
+              "accuracy": 0.234375,
+              "gold_char_mean_logp": -2.6344899783531823,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 2.6344899783531823
+            }
+          },
+          "paired_gains": {
+            "raw": {
+              "mean_group_delta": -0.015625,
+              "interval_95": [
+                -0.140625,
+                0.109375
+              ],
+              "groups": 64,
+              "group_unit": "input_digit_triple",
+              "replicates": 2000,
+              "bootstrap_seed": 2901,
+              "improved": 7,
+              "regressed": 8
+            },
+            "initial": {
+              "mean_group_delta": -0.09375,
+              "interval_95": [
+                -0.234375,
+                0.046875
+              ],
+              "groups": 64,
+              "group_unit": "input_digit_triple",
+              "replicates": 2000,
+              "bootstrap_seed": 2901,
+              "improved": 8,
+              "regressed": 14
+            }
+          },
+          "A": {
+            "backward_transfer": {
+              "arc_easy": -0.03125,
+              "boolq": 0.015625,
+              "rte": -0.015625
+            },
+            "macro_forgetting": 0.010416666666666666,
+            "before": {
+              "arc_easy": {
+                "correct": 50,
+                "examples": 64,
+                "accuracy": 0.78125,
+                "gold_char_mean_logp": -0.3476517873111979,
+                "reported_truncated_prompts": 0,
+                "reported_gold_nll": 1.8787050953617803
+              },
+              "boolq": {
+                "correct": 53,
+                "examples": 64,
+                "accuracy": 0.828125,
+                "gold_char_mean_logp": -0.37503656893310283,
+                "reported_truncated_prompts": 1,
+                "reported_gold_nll": 1.2968595396527811
+              },
+              "rte": {
+                "correct": 58,
+                "examples": 64,
+                "accuracy": 0.90625,
+                "gold_char_mean_logp": -0.1961464270714797,
+                "reported_truncated_prompts": 0,
+                "reported_gold_nll": 1.0907661502749582
+              }
+            },
+            "after": {
+              "arc_easy": {
+                "correct": 48,
+                "examples": 64,
+                "accuracy": 0.75,
+                "gold_char_mean_logp": -0.3468652815387853,
+                "reported_truncated_prompts": 0,
+                "reported_gold_nll": 1.8789294289067537
+              },
+              "boolq": {
+                "correct": 54,
+                "examples": 64,
+                "accuracy": 0.84375,
+                "gold_char_mean_logp": -0.32181646801079355,
+                "reported_truncated_prompts": 1,
+                "reported_gold_nll": 1.1317975377692457
+              },
+              "rte": {
+                "correct": 57,
+                "examples": 64,
+                "accuracy": 0.890625,
+                "gold_char_mean_logp": -0.18548156364085025,
+                "reported_truncated_prompts": 0,
+                "reported_gold_nll": 1.0043782582973382
+              }
+            },
+            "evaluation_examples": 192
+          },
+          "alignment_unchanged_receipt": true,
+          "calibration_examples_receipt": 0,
+          "positive_transfer_signal": false
+        },
+        "training": {
+          "steps": 96,
+          "B_training_exposures": 384,
+          "B_supervised_tokens": 2304,
+          "A_replay_exposures": 96,
+          "A_supervised_tokens": 192,
+          "replay_weight": 0.25,
+          "trainable_parameters": 17484032,
+          "trainable_name_count": 15,
+          "gradient_norm_min": 2.3830366134643555,
+          "gradient_norm_max": 40.74590301513672,
+          "all_96_losses_and_gradient_norms_finite": true,
+          "all_96_gradient_norms_nonzero": true,
+          "checks_reported": {
+            "alignment_unchanged": true,
+            "base_unchanged": true,
+            "core_gradient_nonzero": true,
+            "gradient_nonzero": true,
+            "new_vector_gradient_nonzero": true,
+            "old_task_vectors_unchanged": true,
+            "trainable_changed": true
+          },
+          "base_parameter_count_reported": 8190735360,
+          "base_state_sha256_reported": "6475dc8d998d84b1ac63728d8ad8a965c49987d5f9dc24ddfd2c0091a12231e5",
+          "checkpoint_state_sha256_reported": "ed3c241f09ec3d9f102bc16237e0d9ca35796496a8040087abd7137d5cafe37f",
+          "shared_state_provenance_reported": {
+            "source_shared_sha256": "36f908b6ecd4b3eb89f6a475f017897f3a7f06402d6ceeb138df64354e19cc7f",
+            "target_shared_sha256": "36f908b6ecd4b3eb89f6a475f017897f3a7f06402d6ceeb138df64354e19cc7f"
+          },
+          "test_splits_opened_receipt": [],
+          "checkpoint_selection": "fixed final step",
+          "all_step_replay_schedule_and_token_counters_match": true,
+          "A_replay_token_count_context": "The replay policy and 96 A-example budget are unchanged. The seed2901 exported A sample differs, and receipts record 192 supervised A tokens versus 217 in seed1701; this is not token-matched replay across fixtures."
+        },
+        "reload": {
+          "different_process_ids": true,
+          "evaluation_runtime_after_training_qualified": true,
+          "probe_ids": [
+            "b3986ab95b75b0ef4134a14607b9ee8ce7c18d1447db6531fcbec19c55afd18d",
+            "1c45cd29c4c0f553cfa852390239ef87ff008abd683a1d0cc07393f08494930d",
+            "3761d0f2170deaae305a93589e7afb154a8460be8c52cc7fd47ed4e9322eefca",
+            "f229ca3ba5559a6f47baaac82532d179ac36917fa48a27387e6f06750528c10e"
+          ],
+          "max_abs_reported": {
+            "1c45cd29c4c0f553cfa852390239ef87ff008abd683a1d0cc07393f08494930d": 0,
+            "3761d0f2170deaae305a93589e7afb154a8460be8c52cc7fd47ed4e9322eefca": 0,
+            "b3986ab95b75b0ef4134a14607b9ee8ce7c18d1447db6531fcbec19c55afd18d": 0,
+            "f229ca3ba5559a6f47baaac82532d179ac36917fa48a27387e6f06750528c10e": 0
+          },
+          "checkpoint_state_hash_equal_reported": true,
+          "probe_logits_exact_reported": true,
+          "raw_checkpoint_and_probe_tensors_available": false,
+          "evidence_boundary": "Distinct PIDs, event sequence, checkpoint-state hash equality and four zero-error probe receipts agree. Underlying model/probe tensors were not supplied and were not downloaded or independently compared.",
+          "clean_evaluation_complete_event_confirms_exact": true
+        },
+        "protocol_signal_recomputed": {
+          "continued_learning_signal": true,
+          "after_upgrade_signal": true,
+          "new_b_transport_signal": false,
+          "decision": "keep_for_replication"
+        },
+        "all_reported_primary_metrics_match_independent_recomputation": true
+      },
+      {
+        "id": "portability-amber-latent8-s2901",
+        "arm": "ported_qwen8_latent_only",
+        "method": "native",
+        "train_core": false,
+        "execution": {
+          "exit_code": 0,
+          "status": "completed",
+          "source_bundle_sha256": "a182188693ef7354ad840f600ae017bd558a2b8aec0b435e85216e5f1c618c35",
+          "config_canonical_sha256": "955f9df67f1a1cc29be11de97ff2df0b3980f13d9b39040a99ae2657dd597de1",
+          "training_pid": 7586,
+          "evaluation_pid": 7678,
+          "all_events_match_run_log": true,
+          "event_count": 112
+        },
+        "B_test": {
+          "raw": {
+            "correct": 11,
+            "examples": 64,
+            "accuracy": 0.171875,
+            "gold_char_mean_logp": -1.4930053738256295,
+            "reported_truncated_prompts": 0,
+            "reported_gold_nll": 1.4930053738256295
+          },
+          "initial": {
+            "correct": 15,
+            "examples": 64,
+            "accuracy": 0.234375,
+            "gold_char_mean_logp": -1.57439823448658,
+            "reported_truncated_prompts": 0,
+            "reported_gold_nll": 1.57439823448658
+          },
+          "learned": {
+            "correct": 26,
+            "examples": 64,
+            "accuracy": 0.40625,
+            "gold_char_mean_logp": -1.2327865635355313,
+            "reported_truncated_prompts": 0,
+            "reported_gold_nll": 1.2327865635355313
+          }
+        },
+        "B_paired_gains": {
+          "raw": {
+            "mean_group_delta": 0.234375,
+            "interval_95": [
+              0.125,
+              0.34375
+            ],
+            "groups": 64,
+            "group_unit": "input_digit_triple",
+            "replicates": 2000,
+            "bootstrap_seed": 2901,
+            "improved": 16,
+            "regressed": 1
+          },
+          "initial": {
+            "mean_group_delta": 0.171875,
+            "interval_95": [
+              0.046875,
+              0.296875
+            ],
+            "groups": 64,
+            "group_unit": "input_digit_triple",
+            "replicates": 2000,
+            "bootstrap_seed": 2901,
+            "improved": 15,
+            "regressed": 4
+          }
+        },
+        "A_retention": {
+          "backward_transfer": {
+            "arc_easy": 0,
+            "boolq": 0,
+            "rte": 0
+          },
+          "macro_forgetting": 0,
+          "before": {
+            "arc_easy": {
+              "correct": 51,
+              "examples": 64,
+              "accuracy": 0.796875,
+              "gold_char_mean_logp": -0.2911448092421304,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 1.6043430598082666
+            },
+            "boolq": {
+              "correct": 59,
+              "examples": 64,
+              "accuracy": 0.921875,
+              "gold_char_mean_logp": -0.04132076712858416,
+              "reported_truncated_prompts": 1,
+              "reported_gold_nll": 0.14439621245091416
+            },
+            "rte": {
+              "correct": 60,
+              "examples": 64,
+              "accuracy": 0.9375,
+              "gold_char_mean_logp": -0.0998482428873775,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 0.5471180251733281
+            }
+          },
+          "after": {
+            "arc_easy": {
+              "correct": 51,
+              "examples": 64,
+              "accuracy": 0.796875,
+              "gold_char_mean_logp": -0.2911448092421304,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 1.6043430598082666
+            },
+            "boolq": {
+              "correct": 59,
+              "examples": 64,
+              "accuracy": 0.921875,
+              "gold_char_mean_logp": -0.0413347351291146,
+              "reported_truncated_prompts": 1,
+              "reported_gold_nll": 0.14445208445303592
+            },
+            "rte": {
+              "correct": 60,
+              "examples": 64,
+              "accuracy": 0.9375,
+              "gold_char_mean_logp": -0.0998482428873775,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 0.5471180251733281
+            }
+          },
+          "evaluation_examples": 192,
+          "protected_by_routing": true,
+          "interpretation": "Old core and old task vectors are frozen; evaluating old task identities leaves their predictions unchanged by construction."
+        },
+        "B_validation_curve": {
+          "24": 0.21875,
+          "48": 0.28125,
+          "72": 0.21875,
+          "96": 0.25
+        },
+        "transport": {
+          "target": "Qwen3-1.7B",
+          "B": {
+            "raw": {
+              "correct": 16,
+              "examples": 64,
+              "accuracy": 0.25,
+              "gold_char_mean_logp": -1.4718737738827865,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 1.4718737738827865
+            },
+            "initial": {
+              "correct": 21,
+              "examples": 64,
+              "accuracy": 0.328125,
+              "gold_char_mean_logp": -1.7089608994623025,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 1.7089608994623025
+            },
+            "learned": {
+              "correct": 23,
+              "examples": 64,
+              "accuracy": 0.359375,
+              "gold_char_mean_logp": -2.496770722170671,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 2.496770722170671
+            }
+          },
+          "paired_gains": {
+            "raw": {
+              "mean_group_delta": 0.109375,
+              "interval_95": [
+                -0.015625,
+                0.234375
+              ],
+              "groups": 64,
+              "group_unit": "input_digit_triple",
+              "replicates": 2000,
+              "bootstrap_seed": 2901,
+              "improved": 12,
+              "regressed": 5
+            },
+            "initial": {
+              "mean_group_delta": 0.03125,
+              "interval_95": [
+                -0.109375,
+                0.171875
+              ],
+              "groups": 64,
+              "group_unit": "input_digit_triple",
+              "replicates": 2000,
+              "bootstrap_seed": 2901,
+              "improved": 10,
+              "regressed": 8
+            }
+          },
+          "A": {
+            "backward_transfer": {
+              "arc_easy": 0,
+              "boolq": 0,
+              "rte": 0
+            },
+            "macro_forgetting": 0,
+            "before": {
+              "arc_easy": {
+                "correct": 50,
+                "examples": 64,
+                "accuracy": 0.78125,
+                "gold_char_mean_logp": -0.3476517873111979,
+                "reported_truncated_prompts": 0,
+                "reported_gold_nll": 1.8787050953617803
+              },
+              "boolq": {
+                "correct": 53,
+                "examples": 64,
+                "accuracy": 0.828125,
+                "gold_char_mean_logp": -0.3750365586887064,
+                "reported_truncated_prompts": 1,
+                "reported_gold_nll": 1.2968594986751953
+              },
+              "rte": {
+                "correct": 58,
+                "examples": 64,
+                "accuracy": 0.90625,
+                "gold_char_mean_logp": -0.1961464270714797,
+                "reported_truncated_prompts": 0,
+                "reported_gold_nll": 1.0907661502749582
+              }
+            },
+            "after": {
+              "arc_easy": {
+                "correct": 50,
+                "examples": 64,
+                "accuracy": 0.78125,
+                "gold_char_mean_logp": -0.3476517873111979,
+                "reported_truncated_prompts": 0,
+                "reported_gold_nll": 1.8787050953617803
+              },
+              "boolq": {
+                "correct": 53,
+                "examples": 64,
+                "accuracy": 0.828125,
+                "gold_char_mean_logp": -0.3750365712614057,
+                "reported_truncated_prompts": 1,
+                "reported_gold_nll": 1.2968595489659926
+              },
+              "rte": {
+                "correct": 58,
+                "examples": 64,
+                "accuracy": 0.90625,
+                "gold_char_mean_logp": -0.1961464270714797,
+                "reported_truncated_prompts": 0,
+                "reported_gold_nll": 1.0907661502749582
+              }
+            },
+            "evaluation_examples": 192
+          },
+          "alignment_unchanged_receipt": true,
+          "calibration_examples_receipt": 0,
+          "positive_transfer_signal": false
+        },
+        "training": {
+          "steps": 96,
+          "B_training_exposures": 384,
+          "B_supervised_tokens": 2304,
+          "A_replay_exposures": 0,
+          "A_supervised_tokens": 0,
+          "replay_weight": 0,
+          "trainable_parameters": 256,
+          "trainable_name_count": 1,
+          "gradient_norm_min": 0.5074878334999084,
+          "gradient_norm_max": 8.312167167663574,
+          "all_96_losses_and_gradient_norms_finite": true,
+          "all_96_gradient_norms_nonzero": true,
+          "checks_reported": {
+            "alignment_unchanged": true,
+            "base_unchanged": true,
+            "core_unchanged": true,
+            "gradient_nonzero": true,
+            "new_vector_gradient_nonzero": true,
+            "old_task_vectors_unchanged": true,
+            "trainable_changed": true
+          },
+          "base_parameter_count_reported": 8190735360,
+          "base_state_sha256_reported": "6475dc8d998d84b1ac63728d8ad8a965c49987d5f9dc24ddfd2c0091a12231e5",
+          "checkpoint_state_sha256_reported": "87b8f2054201124dad0f651b8a5d6ceef03bcb8f03a18501f13f408f967ad705",
+          "shared_state_provenance_reported": {
+            "source_shared_sha256": "36f908b6ecd4b3eb89f6a475f017897f3a7f06402d6ceeb138df64354e19cc7f",
+            "target_shared_sha256": "36f908b6ecd4b3eb89f6a475f017897f3a7f06402d6ceeb138df64354e19cc7f"
+          },
+          "test_splits_opened_receipt": [],
+          "checkpoint_selection": "fixed final step",
+          "all_step_replay_schedule_and_token_counters_match": true
+        },
+        "reload": {
+          "different_process_ids": true,
+          "evaluation_runtime_after_training_qualified": true,
+          "probe_ids": [
+            "b3986ab95b75b0ef4134a14607b9ee8ce7c18d1447db6531fcbec19c55afd18d",
+            "1c45cd29c4c0f553cfa852390239ef87ff008abd683a1d0cc07393f08494930d",
+            "3761d0f2170deaae305a93589e7afb154a8460be8c52cc7fd47ed4e9322eefca",
+            "f229ca3ba5559a6f47baaac82532d179ac36917fa48a27387e6f06750528c10e"
+          ],
+          "max_abs_reported": {
+            "1c45cd29c4c0f553cfa852390239ef87ff008abd683a1d0cc07393f08494930d": 0,
+            "3761d0f2170deaae305a93589e7afb154a8460be8c52cc7fd47ed4e9322eefca": 0,
+            "b3986ab95b75b0ef4134a14607b9ee8ce7c18d1447db6531fcbec19c55afd18d": 0,
+            "f229ca3ba5559a6f47baaac82532d179ac36917fa48a27387e6f06750528c10e": 0
+          },
+          "checkpoint_state_hash_equal_reported": true,
+          "probe_logits_exact_reported": true,
+          "raw_checkpoint_and_probe_tensors_available": false,
+          "evidence_boundary": "Distinct PIDs, event sequence, checkpoint-state hash equality and four zero-error probe receipts agree. Underlying model/probe tensors were not supplied and were not downloaded or independently compared.",
+          "clean_evaluation_complete_event_confirms_exact": true
+        },
+        "protocol_signal_recomputed": {
+          "continued_learning_signal": true,
+          "after_upgrade_signal": true,
+          "new_b_transport_signal": false,
+          "decision": "keep_for_replication"
+        },
+        "all_reported_primary_metrics_match_independent_recomputation": true
+      },
+      {
+        "id": "portability-amber-lora8-s2901",
+        "arm": "fresh_qwen8_task_lora",
+        "method": "lora",
+        "train_core": false,
+        "execution": {
+          "exit_code": 0,
+          "status": "completed",
+          "source_bundle_sha256": "a182188693ef7354ad840f600ae017bd558a2b8aec0b435e85216e5f1c618c35",
+          "config_canonical_sha256": "91e3f88a1ece1a193a681f1784cff4a8a8f9dfa5f266a2b08452ac59c2bd0db1",
+          "training_pid": 7631,
+          "evaluation_pid": 7700,
+          "all_events_match_run_log": true,
+          "event_count": 111
+        },
+        "B_test": {
+          "raw": {
+            "correct": 11,
+            "examples": 64,
+            "accuracy": 0.171875,
+            "gold_char_mean_logp": -1.4930053738256295,
+            "reported_truncated_prompts": 0,
+            "reported_gold_nll": 1.4930053738256295
+          },
+          "initial": {
+            "correct": 15,
+            "examples": 64,
+            "accuracy": 0.234375,
+            "gold_char_mean_logp": -1.57439823448658,
+            "reported_truncated_prompts": 0,
+            "reported_gold_nll": 1.57439823448658
+          },
+          "learned": {
+            "correct": 64,
+            "examples": 64,
+            "accuracy": 1,
+            "gold_char_mean_logp": -0.0055417249451619926,
+            "reported_truncated_prompts": 0,
+            "reported_gold_nll": 0.0055417249451619926
+          }
+        },
+        "B_paired_gains": {
+          "raw": {
+            "mean_group_delta": 0.828125,
+            "interval_95": [
+              0.734375,
+              0.90625
+            ],
+            "groups": 64,
+            "group_unit": "input_digit_triple",
+            "replicates": 2000,
+            "bootstrap_seed": 2901,
+            "improved": 53,
+            "regressed": 0
+          },
+          "initial": {
+            "mean_group_delta": 0.765625,
+            "interval_95": [
+              0.65625,
+              0.859375
+            ],
+            "groups": 64,
+            "group_unit": "input_digit_triple",
+            "replicates": 2000,
+            "bootstrap_seed": 2901,
+            "improved": 49,
+            "regressed": 0
+          }
+        },
+        "A_retention": {
+          "backward_transfer": {
+            "arc_easy": 0,
+            "boolq": 0,
+            "rte": 0
+          },
+          "macro_forgetting": 0,
+          "before": {
+            "arc_easy": {
+              "correct": 51,
+              "examples": 64,
+              "accuracy": 0.796875,
+              "gold_char_mean_logp": -0.2911448092421304,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 1.6043430598082666
+            },
+            "boolq": {
+              "correct": 59,
+              "examples": 64,
+              "accuracy": 0.921875,
+              "gold_char_mean_logp": -0.040926866598513335,
+              "reported_truncated_prompts": 1,
+              "reported_gold_nll": 0.14282061033063087
+            },
+            "rte": {
+              "correct": 60,
+              "examples": 64,
+              "accuracy": 0.9375,
+              "gold_char_mean_logp": -0.0998482428873775,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 0.5471180251733281
+            }
+          },
+          "after": {
+            "arc_easy": {
+              "correct": 51,
+              "examples": 64,
+              "accuracy": 0.796875,
+              "gold_char_mean_logp": -0.2911448092421304,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 1.6043430598082666
+            },
+            "boolq": {
+              "correct": 59,
+              "examples": 64,
+              "accuracy": 0.921875,
+              "gold_char_mean_logp": -0.04130938173398372,
+              "reported_truncated_prompts": 1,
+              "reported_gold_nll": 0.1443506708725124
+            },
+            "rte": {
+              "correct": 60,
+              "examples": 64,
+              "accuracy": 0.9375,
+              "gold_char_mean_logp": -0.0998482428873775,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 0.5471180251733281
+            }
+          },
+          "evaluation_examples": 192,
+          "protected_by_routing": true,
+          "B_adapter_on_A_diagnostic": {
+            "arc_easy": {
+              "correct": 42,
+              "examples": 64,
+              "accuracy": 0.65625,
+              "gold_char_mean_logp": -0.6706278219553344,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 3.262374277518253
+            },
+            "boolq": {
+              "correct": 56,
+              "examples": 64,
+              "accuracy": 0.875,
+              "gold_char_mean_logp": -1.1379961476971705,
+              "reported_truncated_prompts": 1,
+              "reported_gold_nll": 4.024655761197209
+            },
+            "rte": {
+              "correct": 53,
+              "examples": 64,
+              "accuracy": 0.828125,
+              "gold_char_mean_logp": -0.12710564547075287,
+              "reported_truncated_prompts": 0,
+              "reported_gold_nll": 0.7218530956088216
+            }
+          },
+          "interpretation": "The original published A adapter is restored for A evaluation; zero forgetting is protected by separate task routing and is not shared-state retention."
+        },
+        "B_validation_curve": {
+          "24": 0.75,
+          "48": 1,
+          "72": 1,
+          "96": 1
+        },
+        "transport": {
+          "measured": false,
+          "reason": "Backbone-specific LoRA control; no direct transport claim."
+        },
+        "training": {
+          "steps": 96,
+          "B_training_exposures": 384,
+          "B_supervised_tokens": 2304,
+          "A_replay_exposures": 0,
+          "A_supervised_tokens": 0,
+          "replay_weight": 0,
+          "trainable_parameters": 3833856,
+          "trainable_name_count": 144,
+          "gradient_norm_min": 2.98932172881905e-05,
+          "gradient_norm_max": 19.875633239746094,
+          "all_96_losses_and_gradient_norms_finite": true,
+          "all_96_gradient_norms_nonzero": true,
+          "checks_reported": {
+            "alignment_unchanged": true,
+            "base_unchanged": true,
+            "gradient_nonzero": true,
+            "old_task_vectors_unchanged": true,
+            "trainable_changed": true
+          },
+          "base_parameter_count_reported": 8190735360,
+          "base_state_sha256_reported": "6475dc8d998d84b1ac63728d8ad8a965c49987d5f9dc24ddfd2c0091a12231e5",
+          "checkpoint_state_sha256_reported": "5e112f5f724a031e7d5d783dc5dabfec80a1d3e8ccba328a5dcc645a58c6159d",
+          "shared_state_provenance_reported": {
+            "source_shared_sha256": "36f908b6ecd4b3eb89f6a475f017897f3a7f06402d6ceeb138df64354e19cc7f",
+            "target_shared_sha256": "36f908b6ecd4b3eb89f6a475f017897f3a7f06402d6ceeb138df64354e19cc7f"
+          },
+          "test_splits_opened_receipt": [],
+          "checkpoint_selection": "fixed final step",
+          "all_step_replay_schedule_and_token_counters_match": true
+        },
+        "reload": {
+          "different_process_ids": true,
+          "evaluation_runtime_after_training_qualified": true,
+          "probe_ids": [
+            "b3986ab95b75b0ef4134a14607b9ee8ce7c18d1447db6531fcbec19c55afd18d",
+            "1c45cd29c4c0f553cfa852390239ef87ff008abd683a1d0cc07393f08494930d",
+            "3761d0f2170deaae305a93589e7afb154a8460be8c52cc7fd47ed4e9322eefca",
+            "f229ca3ba5559a6f47baaac82532d179ac36917fa48a27387e6f06750528c10e"
+          ],
+          "max_abs_reported": {
+            "1c45cd29c4c0f553cfa852390239ef87ff008abd683a1d0cc07393f08494930d": 0,
+            "3761d0f2170deaae305a93589e7afb154a8460be8c52cc7fd47ed4e9322eefca": 0,
+            "b3986ab95b75b0ef4134a14607b9ee8ce7c18d1447db6531fcbec19c55afd18d": 0,
+            "f229ca3ba5559a6f47baaac82532d179ac36917fa48a27387e6f06750528c10e": 0
+          },
+          "checkpoint_state_hash_equal_reported": true,
+          "probe_logits_exact_reported": true,
+          "raw_checkpoint_and_probe_tensors_available": false,
+          "evidence_boundary": "Distinct PIDs, event sequence, checkpoint-state hash equality and four zero-error probe receipts agree. Underlying model/probe tensors were not supplied and were not downloaded or independently compared.",
+          "clean_evaluation_complete_event_confirms_exact": true
+        },
+        "protocol_signal_recomputed": {
+          "continued_learning_signal": true,
+          "after_upgrade_signal": null,
+          "new_b_transport_signal": false,
+          "decision": "keep_for_replication"
+        },
+        "all_reported_primary_metrics_match_independent_recomputation": true
+      }
+    ],
+    "findings": [],
+    "cross_arm_exposure": {
+      "all_data_splits_identical_including_order": true,
+      "all_96_B_step_exposure_and_supervised_token_counters_match": true,
+      "B_exposures_per_arm": 384,
+      "B_supervised_tokens_per_arm": 2304,
+      "B_unique_training_triples": 128,
+      "B_epochs_under_declared_cycle": 3,
+      "declared_deterministic_B_order_sha256": "d1d01daf3bf0069dbdf0d22f05ce3870a82bfce2603c52009af987b0d3919ea0",
+      "order_evidence_boundary": "Input data order, seed and frozen protocol are identical. The inspected Cycle logic uses a dedicated seeded shuffle/pop stream, so matched order is inferred under that contract. Events record counts and tokens but no per-step example IDs; runtime sample order cannot be independently replay-verified from these logs.",
+      "core_only_extra_A_replay": 96,
+      "extra_A_replay_supervised_tokens": 192,
+      "compute_or_parameter_matched": false,
+      "hyperparameter_checks": {
+        "all_five_config_difference_paths_match_frozen_proof": {
+          "core": [
+            "data.seed",
+            "new_skill.generator_sha256",
+            "new_skill.role",
+            "new_skill.sha256",
+            "seed"
+          ],
+          "latent": [
+            "data.seed",
+            "new_skill.generator_sha256",
+            "new_skill.role",
+            "new_skill.sha256",
+            "seed"
+          ],
+          "lora": [
+            "data.seed",
+            "new_skill.generator_sha256",
+            "new_skill.role",
+            "new_skill.sha256",
+            "seed"
+          ]
+        },
+        "optimization_models_scoring_and_batch_settings_unchanged_from_reference": true
+      }
+    },
+    "core_vs_lora": {
+      "core_correct": 59,
+      "lora_correct": 64,
+      "test_examples": 64,
+      "core_minus_lora_accuracy": -0.078125,
+      "core_better_cases": 0,
+      "lora_better_cases": 5,
+      "native_trainable_parameters": 17484032,
+      "lora_trainable_parameters": 3833856,
+      "core_extra_A_replay": 96,
+      "superiority_claim_supported": false,
+      "interpretation": "LoRA is 5/64 cases higher on this fixture. Different trainable capacities, learning rates, extra A replay, protected LoRA A routing and one training seed prevent a general superiority comparison."
+    },
+    "bounded_artifact_inventory": {
+      "run_artifact_count": 74,
+      "all_read_and_hashed": true,
+      "included_extensions": [
+        ".json",
+        ".jsonl",
+        ".log",
+        ".txt"
+      ],
+      "checkpoint_tensors_or_probe_tensors_present_in_run_directories": false
+    },
+    "checkpoint_configuration_checks": {
+      "core": {
+        "checkpoint": {
+          "model_id": "Qwen/Qwen3-8B",
+          "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+          "rank": 8,
+          "alpha": 16,
+          "task_count": 15,
+          "projection_target_count": 72
+        },
+        "transport_checkpoint": {
+          "model_id": "Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "rank": 8,
+          "alpha": 16,
+          "task_count": 15,
+          "projection_target_count": 56
+        }
+      },
+      "latent": {
+        "checkpoint": {
+          "model_id": "Qwen/Qwen3-8B",
+          "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+          "rank": 8,
+          "alpha": 16,
+          "task_count": 15,
+          "projection_target_count": 72
+        },
+        "transport_checkpoint": {
+          "model_id": "Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "rank": 8,
+          "alpha": 16,
+          "task_count": 15,
+          "projection_target_count": 56
+        }
+      },
+      "lora": {
+        "rank": 8,
+        "alpha": 16,
+        "target_modules": [
+          "q_proj",
+          "v_proj"
+        ],
+        "pinned_8B_base_path_matches": true
+      }
+    },
+    "scoring_evidence": {
+      "all_recorded_argmax_gold_correctness_and_character_normalized_gold_means_recomputed": true,
+      "all_primary_B_and_A_accuracy_and_backward_transfer_metrics_match": true,
+      "all_B_test_and_validation_truncated_prompt_counts_reported_zero": true,
+      "old_A_truncated_prompts_reported_per_evaluation": {
+        "arc_easy": 0,
+        "boolq": 1,
+        "rte": 0
+      },
+      "truncation_count_evidence_boundary": "Counts are runtime reports; raw tokenizer/prompt-token lengths were not supplied and were not recomputed here.",
+      "B_raw_and_initial_scores_identical_across_three_arms": true,
+      "A_baseline_predicted_labels_identical_across_three_arms": true,
+      "full_A_score_arrays_identical": false,
+      "A_score_variation_comparisons": [
+        {
+          "comparison": "8B raw: core versus latent",
+          "same_predictions_gold_correctness_and_identity": true,
+          "score_rows_different": 3,
+          "differences": [
+            {
+              "id": "bd41886ff904f6e7b21b3dd511ea276d66195a23f8e20f55c74083aa9d1ca5ac",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.07233111063639308
+            },
+            {
+              "id": "999cb9fe6eddd067938901e359d117b9fb2c00317bf00b55315e87a7b6be03bc",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.000766913096109878
+            },
+            {
+              "id": "be09a3dc2e1898d100c05863085e55dbf833e5236046a08c44b3a269d3bc8aba",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.0609747568766279
+            }
+          ]
+        },
+        {
+          "comparison": "8B initial: core versus latent",
+          "same_predictions_gold_correctness_and_identity": true,
+          "score_rows_different": 3,
+          "differences": [
+            {
+              "id": "bd41886ff904f6e7b21b3dd511ea276d66195a23f8e20f55c74083aa9d1ca5ac",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.0007636738009750843
+            },
+            {
+              "id": "999cb9fe6eddd067938901e359d117b9fb2c00317bf00b55315e87a7b6be03bc",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 3.2759271562099457e-07
+            },
+            {
+              "id": "be09a3dc2e1898d100c05863085e55dbf833e5236046a08c44b3a269d3bc8aba",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.025225132703781128
+            }
+          ]
+        },
+        {
+          "comparison": "8B initial versus learned old A: latent",
+          "same_predictions_gold_correctness_and_identity": true,
+          "score_rows_different": 3,
+          "differences": [
+            {
+              "id": "bd41886ff904f6e7b21b3dd511ea276d66195a23f8e20f55c74083aa9d1ca5ac",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.0008662245236337185
+            },
+            {
+              "id": "999cb9fe6eddd067938901e359d117b9fb2c00317bf00b55315e87a7b6be03bc",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.04163058598836278
+            },
+            {
+              "id": "be09a3dc2e1898d100c05863085e55dbf833e5236046a08c44b3a269d3bc8aba",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.008000363906224564
+            }
+          ]
+        },
+        {
+          "comparison": "1.7B raw: core versus latent",
+          "same_predictions_gold_correctness_and_identity": true,
+          "score_rows_different": 2,
+          "differences": [
+            {
+              "id": "999cb9fe6eddd067938901e359d117b9fb2c00317bf00b55315e87a7b6be03bc",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.04141887029012059
+            },
+            {
+              "id": "be09a3dc2e1898d100c05863085e55dbf833e5236046a08c44b3a269d3bc8aba",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.04143937428792288
+            }
+          ]
+        },
+        {
+          "comparison": "1.7B initial: core versus latent",
+          "same_predictions_gold_correctness_and_identity": true,
+          "score_rows_different": 2,
+          "differences": [
+            {
+              "id": "999cb9fe6eddd067938901e359d117b9fb2c00317bf00b55315e87a7b6be03bc",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 7.450480552506633e-07
+            },
+            {
+              "id": "be09a3dc2e1898d100c05863085e55dbf833e5236046a08c44b3a269d3bc8aba",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 8.940668294599163e-08
+            }
+          ]
+        },
+        {
+          "comparison": "1.7B initial versus learned old A: latent",
+          "same_predictions_gold_correctness_and_identity": true,
+          "score_rows_different": 2,
+          "differences": [
+            {
+              "id": "999cb9fe6eddd067938901e359d117b9fb2c00317bf00b55315e87a7b6be03bc",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.04166634877522801
+            },
+            {
+              "id": "be09a3dc2e1898d100c05863085e55dbf833e5236046a08c44b3a269d3bc8aba",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.04166666666666696
+            }
+          ]
+        },
+        {
+          "comparison": "8B raw: core versus lora",
+          "same_predictions_gold_correctness_and_identity": true,
+          "score_rows_different": 3,
+          "differences": [
+            {
+              "id": "bd41886ff904f6e7b21b3dd511ea276d66195a23f8e20f55c74083aa9d1ca5ac",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.03189198176066066
+            },
+            {
+              "id": "999cb9fe6eddd067938901e359d117b9fb2c00317bf00b55315e87a7b6be03bc",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.03901592890421535
+            },
+            {
+              "id": "be09a3dc2e1898d100c05863085e55dbf833e5236046a08c44b3a269d3bc8aba",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.0009374618530273438
+            }
+          ]
+        },
+        {
+          "comparison": "8B initial: core versus lora",
+          "same_predictions_gold_correctness_and_identity": true,
+          "score_rows_different": 3,
+          "differences": [
+            {
+              "id": "bd41886ff904f6e7b21b3dd511ea276d66195a23f8e20f55c74083aa9d1ca5ac",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.04064599672953295
+            },
+            {
+              "id": "999cb9fe6eddd067938901e359d117b9fb2c00317bf00b55315e87a7b6be03bc",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 2.3912580218166113e-05
+            },
+            {
+              "id": "be09a3dc2e1898d100c05863085e55dbf833e5236046a08c44b3a269d3bc8aba",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.01526554922262828
+            }
+          ]
+        },
+        {
+          "comparison": "8B initial versus learned old A: lora",
+          "same_predictions_gold_correctness_and_identity": true,
+          "score_rows_different": 3,
+          "differences": [
+            {
+              "id": "bd41886ff904f6e7b21b3dd511ea276d66195a23f8e20f55c74083aa9d1ca5ac",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.040645678838094
+            },
+            {
+              "id": "999cb9fe6eddd067938901e359d117b9fb2c00317bf00b55315e87a7b6be03bc",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 5.9560989029705524e-08
+            },
+            {
+              "id": "be09a3dc2e1898d100c05863085e55dbf833e5236046a08c44b3a269d3bc8aba",
+              "task": "boolq",
+              "max_abs_choice_score_delta": 0.025245368480682373
+            }
+          ]
+        }
+      ],
+      "interpretation": "Some BoolQ choice scores vary even when old state is protected or equivalent floors are evaluated. All compared old-A predicted labels remain identical. This does not alter audited accuracy/forgetting or the exact four-B-validation-probe receipts; it rules out claiming full-evaluation score identity. The cause is not established by these bounded artifacts.",
+      "gold_token_NLL_boundary": "Character-normalized gold means are independently recomputed from raw scores. Per-token gold NLL is retained as reported and checked finite; token counts needed to independently reconstruct it are not in these bounded prediction records."
+    },
+    "paired_arm_comparisons": {
+      "core_minus_latent": {
+        "mean_group_delta": 0.515625,
+        "interval_95": [
+          0.390625,
+          0.640625
+        ],
+        "groups": 64,
+        "group_unit": "input_digit_triple",
+        "replicates": 2000,
+        "bootstrap_seed": 2901,
+        "improved": 33,
+        "regressed": 0
+      },
+      "core_minus_lora": {
+        "mean_group_delta": -0.078125,
+        "interval_95": [
+          -0.15625,
+          -0.015625
+        ],
+        "groups": 64,
+        "group_unit": "input_digit_triple",
+        "replicates": 2000,
+        "bootstrap_seed": 2901,
+        "improved": 0,
+        "regressed": 5
+      }
+    },
+    "parent_analysis_all_primary_numerical_claims_match": true,
+    "nonblocking_observations": [
+      {
+        "id": "PORT29-OBS-001",
+        "scope": "Old-A score equality and truncation reporting",
+        "status": "recorded_limit_no_accuracy_or_reload_gate_failure",
+        "summary": "One BoolQ prompt per A evaluation is reported truncated. Several old-A BoolQ choice-score arrays vary across equivalent conditions; predicted labels, B baseline arrays and the four exact reload probes remain consistent.",
+        "details_field": "scoring_evidence"
+      }
+    ],
+    "scientific_conclusion": {
+      "post_upgrade_learning": "The native core arm passes the prespecified point acquisition/retention gate on seed29, reaching 59/64 (92.1875%) from 11/64 raw and 15/64 published initialization with 1.0416667-point old-A mean forgetting.",
+      "latent_only_control": "26/64 (40.625%) passes the seed29 point gate, including a 17.1875-point gain over initialization. Its seed17 failure prevents a two-fixture robust learning claim.",
+      "lora_control": "64/64 (100%) demonstrates learnability on this fixture, with externally restored A routing.",
+      "transport": "Native core reaches 15/64 on 1.7B versus raw 16/64 and initialization 21/64. Latent-only reaches 23/64, only 2/64 above the higher floor and below the five-point transport threshold. Neither arm passes the transport gate.",
+      "qualified_general_continual_learning_claim": false,
+      "qualified_alignment_repair_or_transfer_claim": false,
+      "qualified_method_superiority_claim": false,
+      "parent_paired_review_completed_by_this_audit": true,
+      "interpretation_scope": "Read together with the preserved reference audit and paired_two_fixture_review."
+    },
+    "evidence_limits": [
+      "Full-base freeze, alignment/old-vector immutability, shared-state provenance and checkpoint-state equality are runtime hash/assertion evidence. No model or checkpoint tensor bytes were downloaded, loaded or independently compared.",
+      "Fresh-process reload equality covers four fixed B-validation probes, supported by distinct PIDs and chronological events. It is not an all-task score-equality proof.",
+      "Gradient and state-change checks are combined/group-level receipts, not a numerical delta for every trainable tensor.",
+      "Runtime batch example IDs are not logged; exact order is inferred from matching input order, seeds and unchanged dedicated Cycle implementation. Actual per-step exposure and token counters were verified from all 96 events per arm.",
+      "Old A uses a new seed2901 sample of the same public release validation; zero forgetting in LoRA/latent controls is protected by routing/frozen old state. One BoolQ prompt is reported truncated and some equivalent-condition choice scores vary without label changes.",
+      "Per-token gold NLL and tokenizer truncation counts are reported-only quantities; character-normalized gold means and all accuracy-based metrics are independently recomputed.",
+      "Within-fixture input-triple intervals are descriptive and do not estimate training-seed, between-fixture or prior-selection uncertainty.",
+      "No free-generation, unseen task family, length/composition generalization, extended continual-learning sequence, alignment fitting or successful 1.7B new-skill transport was established.",
+      "A-source Parquet bytes and the sampling procedure were not replayed in this bounded follow-up; A retention is computed from the checksummed exported run rows."
+    ],
+    "status": "complete_no_blocking_result_discrepancies",
+    "reference_audit_sha256_before_append": "7050e7d424153fe71b3f1ef47602f3ea0fd8d7486e6bfafbb1a3ea8aa510a50d",
+    "reference_input_hashes_reverified_unchanged": true,
+    "original_audit_fields_retained": true,
+    "input_sha256": {
+      "experiments/portability/outputs/amber-confirmation-seed29/staged/data/amber.json": "6c57de9a7f2cf3730c9291e8d4d8fde51e7da414e8f1ad3c0d1ecf879b87dcae",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/result.json": "999d65bc80477b2b05d834efa4d021617da48e4747de2e9d97556fd9e097aab7",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/evaluation.json": "eef8758a81846258b8c7e6789ad115edde444db8c65510a595d373357c631cd7",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/training_receipt.json": "c8742b2401d724be4241502e32a955a550e82dfb298ea3f7bf55b11219bbf050",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/data_manifest.json": "fff6abcd74e862147605f6f683de4b3c3a60e8008cb4bab44bfb9f74aa9d497f",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/config.json": "b4e3683e971bbc73ac86345663cb0d961dd399a9baa943c72b219387c3784a71",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/task.json": "b5d9df784586044cde02a932d682eda6a9da0f1420d7d07f9e5de68949b01240",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/execution.json": "29fe810364a44d97fb488c523a1ec551ca6637ba1a61dda1f32ac371774d98dd",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/protocol.json": "d026e1e563c4e1fe5f6fa357f273cbab0e289f4fdf4a0241a2844c5d01ce9a05",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/trainable_parameters.json": "9395688e5051f79c9a23790620b4ea7ef51d5c55b21770fe893189c8143f3940",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/probe_ids.json": "361fbbb9157ea33bd97c9a4b2d8ee1687afaf4930d55d4c3bcb2b1b0fee3b15c",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/events.jsonl": "ed2fe5d595387ec635d3d41074217de3ecd6dca6ee91b59dffb854b6a2ace055",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/packages.txt": "b299277e76ceb34b945aa5e99b2dd369ada26dd175712ecaccdaf98029c86851",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/data/a_eval.json": "e54526e4d6a5184ef10e2e5cfc93dcfddaf21aa3be766687b896e906ec2d2e1e",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/data/a_train.json": "8c71c9f461f0a09450a11c940575b788fd31788b5fb770b30c6fd8af2d2ed780",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/data/b_test.json": "252a0fc5e17e70c496434995d8414bc82ac6ec8e246d780b7703cef2d80c9e37",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/data/b_train.json": "35ad4b22094d39b254a08a98407d2b7126b554dc28c87e0582d56beae8dc541f",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/data/b_validation.json": "979d8de3780510a4ffab8d4f8da46ca3e4042014bd6d4847d865dd64a20fafb0",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/validation/step-0024.json": "b040ebd6f3dd80f263f0c7dc708ddc5761646d3315e28c7a5139884aca6eca43",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/validation/step-0048.json": "9463764d127afca8a00c8165ad9468c6533cebe2a7fe89137fa6492526a08977",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/validation/step-0072.json": "d0a026729cb9c1441e961add77f3abbd22f58d8e55e5e3ae8f5c019b6092b714",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/validation/step-0096.json": "25cfc4cdfda2540133388750b75c8066fe82f00c4724d2b012a8481f5732f730",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/result.json": "d258cd69cdb68c827c03c18f4ee32769058363d6e3360a24fe75dc9954d0c886",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/evaluation.json": "9f9aeb7099c20637f471690494a04ce6bbc94e362a203e90a79247b8b48f2844",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/training_receipt.json": "98b39ba39b5299ade097a9e5d134c6efab0fc073033cce8caf68f218a93719c8",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/data_manifest.json": "fff6abcd74e862147605f6f683de4b3c3a60e8008cb4bab44bfb9f74aa9d497f",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/config.json": "20fc4fe71ea4aad6a56b11c5c9916164f7f11b54e015b6132bdeaa0b8a6cbc8d",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/task.json": "0bde559a18bc2220e2372948768abad3ffb37beb298060447b9102ac83a2fdd1",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/execution.json": "2ea007fe3209cb3054ebca089f9222f0d46989a73731f1b4d7c7b05d2d0f1250",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/protocol.json": "d026e1e563c4e1fe5f6fa357f273cbab0e289f4fdf4a0241a2844c5d01ce9a05",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/trainable_parameters.json": "3b13adb776d9e7aa7a507b89f6918810d47425da18afa5237bc8ffd7d821f567",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/probe_ids.json": "361fbbb9157ea33bd97c9a4b2d8ee1687afaf4930d55d4c3bcb2b1b0fee3b15c",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/events.jsonl": "1940973f1a473b5937b77a6dc83c2c21aa358c82936836931127a571390cf0cc",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/packages.txt": "b299277e76ceb34b945aa5e99b2dd369ada26dd175712ecaccdaf98029c86851",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/data/a_eval.json": "e54526e4d6a5184ef10e2e5cfc93dcfddaf21aa3be766687b896e906ec2d2e1e",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/data/a_train.json": "8c71c9f461f0a09450a11c940575b788fd31788b5fb770b30c6fd8af2d2ed780",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/data/b_test.json": "252a0fc5e17e70c496434995d8414bc82ac6ec8e246d780b7703cef2d80c9e37",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/data/b_train.json": "35ad4b22094d39b254a08a98407d2b7126b554dc28c87e0582d56beae8dc541f",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/data/b_validation.json": "979d8de3780510a4ffab8d4f8da46ca3e4042014bd6d4847d865dd64a20fafb0",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/validation/step-0024.json": "ee53e28f696a62c5188283c3791ec33759ac2888461a02ba1f0b432405a81494",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/validation/step-0048.json": "b20104dd3891c3fb05c5c810b05f17385732198a725f1fcf1b4e0e35e08fdaa3",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/validation/step-0072.json": "d9b71131bea1d9256cfb8f642494b70def60cc99442ee36e33448e90a02dbcfe",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/validation/step-0096.json": "9aa1f0d5a4ef283e1fe872c1f5b153fa59d9f57b9876b1569848f91c5ebcce9f",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/result.json": "c58eba0b0a2198647094807109d7a6f0cb6646a99d89573f763f4cfe3e5b6940",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/evaluation.json": "bbb667276889e841c5e438f5c532613dc1bec5487826a37212b02d730f10d55a",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/training_receipt.json": "56f7aa114e9ef1ec90813feb4cff3b5582cd6712c9d4f6d5aa4dbb8a80930f07",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/data_manifest.json": "fff6abcd74e862147605f6f683de4b3c3a60e8008cb4bab44bfb9f74aa9d497f",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/config.json": "545150789f7eb7b55053e4975571c96fb7fac5b015b78b309cf5b3f2df5ddc5b",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/task.json": "6d0e16749082c943be97cde0eea6e0526b50f2f38df636b2f6eb8c7d5902a85d",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/execution.json": "4719d6a2e4ad62db8f95f760c6c452935a5fd97c327d39c57c67d3b3f37f5a25",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/protocol.json": "d026e1e563c4e1fe5f6fa357f273cbab0e289f4fdf4a0241a2844c5d01ce9a05",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/trainable_parameters.json": "b28c2b46dba9b87acb4b54b1a1ae71a909c9073f9ac2fa690067f4f722851820",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/probe_ids.json": "361fbbb9157ea33bd97c9a4b2d8ee1687afaf4930d55d4c3bcb2b1b0fee3b15c",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/events.jsonl": "5195049e6dc232748720f6bbdb3a9ba9f090e4e0ec80ead346150741f82c522d",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/packages.txt": "b299277e76ceb34b945aa5e99b2dd369ada26dd175712ecaccdaf98029c86851",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/data/a_eval.json": "e54526e4d6a5184ef10e2e5cfc93dcfddaf21aa3be766687b896e906ec2d2e1e",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/data/a_train.json": "8c71c9f461f0a09450a11c940575b788fd31788b5fb770b30c6fd8af2d2ed780",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/data/b_test.json": "252a0fc5e17e70c496434995d8414bc82ac6ec8e246d780b7703cef2d80c9e37",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/data/b_train.json": "35ad4b22094d39b254a08a98407d2b7126b554dc28c87e0582d56beae8dc541f",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/data/b_validation.json": "979d8de3780510a4ffab8d4f8da46ca3e4042014bd6d4847d865dd64a20fafb0",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/validation/step-0024.json": "4bcf2e60b5e8f432dc652f92c749565c89b3481dc2913a9263bee5670938628d",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/validation/step-0048.json": "c71e1a51682b5e80e508edff4370f6149eeb319c634575447e17a3c80bc7b3d0",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/validation/step-0072.json": "d72a26106769d9868f1fbb6016addd0a78f648a32dba19d71308ef356df5e5b5",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/validation/step-0096.json": "10f7a66a8fcd35fe44606ca8eb5febeb714c068460d508c6ec4e237d59ed5a1d",
+      "compute/dispatch.py": "d89ad67dd57c4fe516c127eb728d58c08053711dc6eb45a557061b780800c63b",
+      "experiments/portability/outputs/amber-confirmation-seed29/source_freeze.json": "674f84f077566d3d1f03142b5d2da678e77aefc3326cb4676b4f8ec4e7f38de8",
+      "experiments/portability/outputs/amber-confirmation-seed29/python-semantic-diff.json": "c7b235aacfd9bf9defaedac774b6fefcae8b0de45122843d3a589aa99d0ef819",
+      "experiments/portability/outputs/amber-confirmation-seed29/generation.json": "962c7f8b731cbb41b9f57c0e3cf79f951dbb66c120fd9836d3cfbd5b334bcf73",
+      "experiments/portability/outputs/amber-confirmation-seed29/generator-receipt.json": "57a864d7be112abddc99a34c089899a6825e51889d24043c7e9835870271c6e3",
+      "experiments/portability/configs/fresh_qwen8_task_lora.json": "4de250b56aa4faf7b35ce8c23cef5012d96a2819c0d82130307b801108bb28b9",
+      "experiments/portability/outputs/amber-confirmation-seed29/staged/configs/fresh_qwen8_task_lora.json": "4de250b56aa4faf7b35ce8c23cef5012d96a2819c0d82130307b801108bb28b9",
+      "experiments/portability/configs/ported_qwen8_core_replay.json": "ee130ccb8b7e6051f1c5cc3cd6850d7d3ab655859ea6f5c0d4f2fed77e6e38d6",
+      "experiments/portability/outputs/amber-confirmation-seed29/staged/configs/ported_qwen8_core_replay.json": "ee130ccb8b7e6051f1c5cc3cd6850d7d3ab655859ea6f5c0d4f2fed77e6e38d6",
+      "experiments/portability/configs/ported_qwen8_latent_only.json": "aeca064df9463f78f6a0b8da6d440fac3bf7f27324d14684d027cb79903bf95d",
+      "experiments/portability/outputs/amber-confirmation-seed29/staged/configs/ported_qwen8_latent_only.json": "aeca064df9463f78f6a0b8da6d440fac3bf7f27324d14684d027cb79903bf95d",
+      "experiments/portability/data/amber.json": "6c57de9a7f2cf3730c9291e8d4d8fde51e7da414e8f1ad3c0d1ecf879b87dcae",
+      "experiments/portability/data.py": "48f96a8ee39df6e623e6b8dab711a1e060e8bb5ff5fff5e3a2a3eec84984fb5d",
+      "experiments/portability/outputs/amber-confirmation-seed29/staged/data.py": "48f96a8ee39df6e623e6b8dab711a1e060e8bb5ff5fff5e3a2a3eec84984fb5d",
+      "experiments/portability/handoff.json": "fb9f28b4767c325eddcea93eb6bcb7f5cdf0e45566a9b4ee8d5657b82f2372df",
+      "experiments/portability/learner.py": "c396bf02f0fe5293dcb722fc3d680b8c79659f7e02a89b314651cf202f0b38d4",
+      "experiments/portability/outputs/amber-confirmation-seed29/staged/learner.py": "c396bf02f0fe5293dcb722fc3d680b8c79659f7e02a89b314651cf202f0b38d4",
+      "experiments/portability/metrics.py": "f9da0d6eee2312dc6746b12320dbcd55786d8c7327178f0b8a092ee28d53a402",
+      "experiments/portability/outputs/amber-confirmation-seed29/staged/metrics.py": "f9da0d6eee2312dc6746b12320dbcd55786d8c7327178f0b8a092ee28d53a402",
+      "experiments/portability/protocol.json": "e889511fdc896638132f1a0c34813df08454495d26cc0cac07d3f722ce2c12bb",
+      "experiments/portability/outputs/amber-confirmation-seed29/staged/protocol.json": "e889511fdc896638132f1a0c34813df08454495d26cc0cac07d3f722ce2c12bb",
+      "experiments/portability/qualify.py": "ba74761f31d8459e6e36bb04e541d682a7df6bb70d24b640f4d8477e83fbc69c",
+      "experiments/portability/outputs/amber-confirmation-seed29/staged/qualify.py": "ba74761f31d8459e6e36bb04e541d682a7df6bb70d24b640f4d8477e83fbc69c",
+      "experiments/portability/requirements.txt": "bf772f66dcae41ae30727fb41845ffe708a01e27f30ef0f46b0e944fbdfb822c",
+      "experiments/portability/outputs/amber-confirmation-seed29/staged/requirements.txt": "bf772f66dcae41ae30727fb41845ffe708a01e27f30ef0f46b0e944fbdfb822c",
+      "experiments/portability/run.py": "9eff1de9fa20b9f78d764d9629ce7c6c2c4e0a25bd3e1d7cb7f4111bdd8185d7",
+      "experiments/portability/outputs/amber-confirmation-seed29/staged/run.py": "9eff1de9fa20b9f78d764d9629ce7c6c2c4e0a25bd3e1d7cb7f4111bdd8185d7",
+      "experiments/portability/outputs/amber-confirmation-seed29/generator/tasks.py": "5b04712724b3e8230f5d416e9020e8b613f8afb6e123c97cc160aad5e8c3daa3",
+      "experiments/portability/outputs/amber-qualification/staged/data.py": "7176db58fc952943e2dafa2de63cc7b163d1eb00fe6d6f6311885157aa26c95d",
+      "experiments/portability/outputs/amber-qualification/staged/learner.py": "c396bf02f0fe5293dcb722fc3d680b8c79659f7e02a89b314651cf202f0b38d4",
+      "experiments/portability/outputs/amber-qualification/staged/metrics.py": "eddef7f1efa38f767d1a1eb6667de317dfea27002a6267e746e2374bc485c2a7",
+      "experiments/portability/outputs/amber-qualification/staged/qualify.py": "ba74761f31d8459e6e36bb04e541d682a7df6bb70d24b640f4d8477e83fbc69c",
+      "experiments/portability/outputs/amber-qualification/staged/run.py": "27f88f15d2a63e35ea86c1d6e19d94d9a8e383a59da8d9d3a33af2aaf42ebf4d",
+      "experiments/portability/outputs/amber-confirmation-seed29/source.patch": "4ec4ec868f00be4dcda58dd9a9472cbe0e08b42ca19b14e789ec1daee54e416c",
+      "outputs/portfolio/analyses/portability-amber-seed29.json": "e0eeff942745925253be6aa949ef88b3da0b6e60d40f9947965453fac1b36b1f",
+      "outputs/portfolio/runs/portability-amber-core8-s1701/config.json": "28a74750d742dcdc99eabdcb9fad465fdf85f7c04066d915e68077482a94027a",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/run.log": "83f0603696e0030eca776b5decf8e35f0a3c3d3a435138265f64e5dbdf378047",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/checkpoint/config.json": "453a26b81905e670386ebd707e9f30f31cb536340202def27863d3ed2074eb83",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/transport_checkpoint/config.json": "317fda663040d697f2d42e75d177a8d1835c4624c0b498efb4bded7666712682",
+      "outputs/portfolio/runs/portability-amber-core8-s2901/autoresearch/explore-260907-2321/handoff.json": "d914a613401c8c27b28a1e96cd944fc89cdeedf376fb8ffbedb1a6da11ad00e1",
+      "outputs/portfolio/runs/portability-amber-latent8-s1701/config.json": "6c47d67d78c8ba0d05c96262a965f89738b57785448b4abdc0fa809374f6f554",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/run.log": "3234d4d20417d86f7f8f97b1f603600e81fec088c1746dcb23a6f047b5b648e3",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/checkpoint/config.json": "453a26b81905e670386ebd707e9f30f31cb536340202def27863d3ed2074eb83",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/transport_checkpoint/config.json": "317fda663040d697f2d42e75d177a8d1835c4624c0b498efb4bded7666712682",
+      "outputs/portfolio/runs/portability-amber-latent8-s2901/autoresearch/explore-260907-2321/handoff.json": "f130c36c47d19d0381fb57b0c8c27b7d28eab0f394f15727a0f1e97d5b3fd928",
+      "outputs/portfolio/runs/portability-amber-lora8-s1701/config.json": "255b09c85f10318f7374496a7736dac0badd87ec1f80b3b4b233d981df004308",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/run.log": "15d0d271cfa2f4fea61bed33c35744d5fe35a26350bb1920e5881f8aa5276d23",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/checkpoint/adapter_config.json": "45581ddb9ac51de6c50c876e1febb804dc84c2c4e367df123234c6dfe40723c6",
+      "outputs/portfolio/runs/portability-amber-lora8-s2901/autoresearch/explore-260907-2321/handoff.json": "7885e6383d4c679e9a8e5b5cf7e72bcbcf03de56c7042617a0dd20d0e1a376ba",
+      "outputs/portfolio/analyses/portability-amber-seed17.json": "a9e41430a6f853dfee768db9b1b1d972ba3a2e35a3fc616f29b056ac3a6a1495",
+      "outputs/portfolio/runs/portability-amber-core8-s1701/evaluation.json": "04021c4d0362a0f125883f646b8a766e071801bb02a3626ec06e5828d3f7c49d",
+      "outputs/portfolio/runs/portability-amber-core8-s1701/data/b_test.json": "e4e340f6ce893d5f5e3630d4960022d708033927f08d42ade103c03957b160ad",
+      "outputs/portfolio/runs/portability-amber-latent8-s1701/evaluation.json": "50dcd661b9b8b6e5942e1b4956aa97ec5e132740c13b0a8d649476b952ebc313",
+      "outputs/portfolio/runs/portability-amber-latent8-s1701/data/b_test.json": "e4e340f6ce893d5f5e3630d4960022d708033927f08d42ade103c03957b160ad",
+      "outputs/portfolio/runs/portability-amber-lora8-s1701/evaluation.json": "a22e6f2c84a5ca8a402af40a72b2aaf9922038331cfe6381bd87563da79436a9",
+      "outputs/portfolio/runs/portability-amber-lora8-s1701/data/b_test.json": "e4e340f6ce893d5f5e3630d4960022d708033927f08d42ade103c03957b160ad",
+      "experiments/portability/outputs/amber-qualification/staged/data/amber.json": "351ac962100b65b2f10ae483499e53d385fc1c25be6b49fdc0a18cc850447f23",
+      "outputs/portfolio/runs/portability-amber-core8-s1701/data/b_train.json": "4ae68a38aa6c845a350fccd05eadb1cdfcec690bf48fbe338aa66b94c78047f9"
+    },
+    "audited_inputs_unchanged": true
+  },
+  "paired_two_fixture_review": {
+    "status": "closed_two_fixture_review_no_blocking_discrepancies",
+    "observed_at": "2026-09-07T23:28:11.992405+00:00",
+    "reference_fixture_seed": 17,
+    "confirmation_fixture_seed": 29,
+    "reference_training_and_A_sampling_seed": 1701,
+    "confirmation_training_and_A_sampling_seed": 2901,
+    "original_audit_scope": "All original top-level fields remain the historical seed17 audit; references there to planned confirmation are resolved by this appended completed review.",
+    "protocol_and_source_change_boundary": "Different fixture, training/A-sampling seed and explicit confirmation metadata; same published model/adapter pins, optimization, training budget, replay schedule, scoring, qualification, bootstrap and point thresholds.",
+    "hidden_amber_mapping_changed": true,
+    "input_triple_overlap_between_fixtures": {
+      "seed17_test_vs_seed29_test": 12,
+      "seed17_train_vs_seed29_test": 13
+    },
+    "cross_fixture_row_pairing_performed": false,
+    "cross_fixture_uncertainty_interval_computed": false,
+    "cross_fixture_interpretation": "Freshness is a different mapping and sampled fixture, not a new universe of digits. All arms restart from the pinned published state. Input-triple overlaps across fixtures are not paired as the same statistical observation.",
+    "arm_results": [
+      {
+        "arm": "ported_qwen8_core_replay",
+        "reference_run": "portability-amber-core8-s1701",
+        "confirmation_run": "portability-amber-core8-s2901",
+        "reference": {
+          "fixture_seed": 17,
+          "training_and_A_sampling_seed": 1701,
+          "raw_B_accuracy": 0.4375,
+          "initial_B_accuracy": 0.421875,
+          "learned_B_correct": 60,
+          "learned_B_accuracy": 0.9375,
+          "minimum_B_gain_over_both_floors": 0.5,
+          "A_macro_forgetting": 0.03125,
+          "learning_point_gate_passed": true,
+          "new_B_transport_point_gate_passed": false,
+          "target_B_accuracy": 0.34375,
+          "minimum_target_B_gain_over_both_floors": -0.125,
+          "target_A_macro_forgetting": 0.015625,
+          "B_training_exposures": 384,
+          "B_supervised_tokens": 2304,
+          "A_replay_exposures": 96,
+          "A_supervised_tokens": 217
+        },
+        "confirmation": {
+          "fixture_seed": 29,
+          "training_and_A_sampling_seed": 2901,
+          "raw_B_accuracy": 0.171875,
+          "initial_B_accuracy": 0.234375,
+          "learned_B_correct": 59,
+          "learned_B_accuracy": 0.921875,
+          "minimum_B_gain_over_both_floors": 0.6875,
+          "A_macro_forgetting": 0.010416666666666666,
+          "learning_point_gate_passed": true,
+          "new_B_transport_point_gate_passed": false,
+          "target_B_accuracy": 0.234375,
+          "minimum_target_B_gain_over_both_floors": -0.09375,
+          "target_A_macro_forgetting": 0.010416666666666666,
+          "B_training_exposures": 384,
+          "B_supervised_tokens": 2304,
+          "A_replay_exposures": 96,
+          "A_supervised_tokens": 192
+        },
+        "learning_gate_passes_both_fixtures": true,
+        "transport_gate_passes_both_fixtures": false
+      },
+      {
+        "arm": "ported_qwen8_latent_only",
+        "reference_run": "portability-amber-latent8-s1701",
+        "confirmation_run": "portability-amber-latent8-s2901",
+        "reference": {
+          "fixture_seed": 17,
+          "training_and_A_sampling_seed": 1701,
+          "raw_B_accuracy": 0.4375,
+          "initial_B_accuracy": 0.421875,
+          "learned_B_correct": 32,
+          "learned_B_accuracy": 0.5,
+          "minimum_B_gain_over_both_floors": 0.0625,
+          "A_macro_forgetting": 0,
+          "learning_point_gate_passed": false,
+          "new_B_transport_point_gate_passed": false,
+          "target_B_accuracy": 0.328125,
+          "minimum_target_B_gain_over_both_floors": -0.140625,
+          "target_A_macro_forgetting": 0,
+          "B_training_exposures": 384,
+          "B_supervised_tokens": 2304,
+          "A_replay_exposures": 0,
+          "A_supervised_tokens": 0
+        },
+        "confirmation": {
+          "fixture_seed": 29,
+          "training_and_A_sampling_seed": 2901,
+          "raw_B_accuracy": 0.171875,
+          "initial_B_accuracy": 0.234375,
+          "learned_B_correct": 26,
+          "learned_B_accuracy": 0.40625,
+          "minimum_B_gain_over_both_floors": 0.171875,
+          "A_macro_forgetting": 0,
+          "learning_point_gate_passed": true,
+          "new_B_transport_point_gate_passed": false,
+          "target_B_accuracy": 0.359375,
+          "minimum_target_B_gain_over_both_floors": 0.03125,
+          "target_A_macro_forgetting": 0,
+          "B_training_exposures": 384,
+          "B_supervised_tokens": 2304,
+          "A_replay_exposures": 0,
+          "A_supervised_tokens": 0
+        },
+        "learning_gate_passes_both_fixtures": false,
+        "transport_gate_passes_both_fixtures": false
+      },
+      {
+        "arm": "fresh_qwen8_task_lora",
+        "reference_run": "portability-amber-lora8-s1701",
+        "confirmation_run": "portability-amber-lora8-s2901",
+        "reference": {
+          "fixture_seed": 17,
+          "training_and_A_sampling_seed": 1701,
+          "raw_B_accuracy": 0.4375,
+          "initial_B_accuracy": 0.421875,
+          "learned_B_correct": 64,
+          "learned_B_accuracy": 1,
+          "minimum_B_gain_over_both_floors": 0.5625,
+          "A_macro_forgetting": 0,
+          "learning_point_gate_passed": true,
+          "new_B_transport_point_gate_passed": false,
+          "target_B_accuracy": null,
+          "minimum_target_B_gain_over_both_floors": null,
+          "target_A_macro_forgetting": null,
+          "B_training_exposures": 384,
+          "B_supervised_tokens": 2304,
+          "A_replay_exposures": 0,
+          "A_supervised_tokens": 0
+        },
+        "confirmation": {
+          "fixture_seed": 29,
+          "training_and_A_sampling_seed": 2901,
+          "raw_B_accuracy": 0.171875,
+          "initial_B_accuracy": 0.234375,
+          "learned_B_correct": 64,
+          "learned_B_accuracy": 1,
+          "minimum_B_gain_over_both_floors": 0.765625,
+          "A_macro_forgetting": 0,
+          "learning_point_gate_passed": true,
+          "new_B_transport_point_gate_passed": false,
+          "target_B_accuracy": null,
+          "minimum_target_B_gain_over_both_floors": null,
+          "target_A_macro_forgetting": null,
+          "B_training_exposures": 384,
+          "B_supervised_tokens": 2304,
+          "A_replay_exposures": 0,
+          "A_supervised_tokens": 0
+        },
+        "learning_gate_passes_both_fixtures": true,
+        "transport_gate_passes_both_fixtures": false
+      }
+    ],
+    "within_fixture_paired_arm_comparisons": {
+      "seed17": {
+        "core_minus_latent": {
+          "mean_group_delta": 0.4375,
+          "interval_95": [
+            0.3125,
+            0.5625
+          ],
+          "groups": 64,
+          "group_unit": "input_digit_triple",
+          "replicates": 2000,
+          "bootstrap_seed": 1701,
+          "improved": 29,
+          "regressed": 1
+        },
+        "core_minus_lora": {
+          "mean_group_delta": -0.0625,
+          "interval_95": [
+            -0.125,
+            -0.015625
+          ],
+          "groups": 64,
+          "group_unit": "input_digit_triple",
+          "replicates": 2000,
+          "bootstrap_seed": 1701,
+          "improved": 0,
+          "regressed": 4
+        }
+      },
+      "seed29": {
+        "core_minus_latent": {
+          "mean_group_delta": 0.515625,
+          "interval_95": [
+            0.390625,
+            0.640625
+          ],
+          "groups": 64,
+          "group_unit": "input_digit_triple",
+          "replicates": 2000,
+          "bootstrap_seed": 2901,
+          "improved": 33,
+          "regressed": 0
+        },
+        "core_minus_lora": {
+          "mean_group_delta": -0.078125,
+          "interval_95": [
+            -0.15625,
+            -0.015625
+          ],
+          "groups": 64,
+          "group_unit": "input_digit_triple",
+          "replicates": 2000,
+          "bootstrap_seed": 2901,
+          "improved": 0,
+          "regressed": 5
+        }
+      }
+    },
+    "claim_decisions": {
+      "bounded_two_fixture_post_upgrade_learning_supported": true,
+      "eligible_claim": "Under the fixed four-choice amber protocol, training the native shared core plus new task vector after the published 4B-to-8B upgrade acquired the new skill on both fixtures while meeting the stated old-A mean-forgetting threshold.",
+      "latent_only_robust_two_fixture_learning_supported": false,
+      "new_skill_transport_supported": false,
+      "general_continual_learning_supported": false,
+      "method_superiority_supported": false,
+      "alignment_repair_supported": false,
+      "free_generation_or_unseen_task_family_generalization_supported": false,
+      "scope": "A reused reference fixture plus one prespecified fresh confirmation fixture and one training run per arm per fixture. This is bounded replication of post-upgrade acquisition, not broad robustness across training seeds or task families."
+    },
+    "controls_and_fairness": "Fresh task LoRA reaches 64/64 on both fixtures and exceeds native core by four and five cases respectively. Native core exceeds latent-only by 28 and 33 cases. Capacities differ (17,484,032 native versus 3,833,856 LoRA versus 256 latent); native core alone adds 96 old-A replay examples. The comparison does not establish efficiency or method superiority.",
+    "mechanical_evidence_boundary": "Six runs have internally consistent training/freeze/reload receipts. For seed29 all 288 updates, event/log agreement, final checkpoint choice, distinct train/eval PIDs and four zero-error B-validation probes per arm were checked. Full tensor and model outputs were not independently rerun.",
+    "uncertainty_boundary": "Paired intervals resample 64 input triples within each fixture using that fixture seed. No pooled interval or between-fixture/training-seed uncertainty estimate is justified from these two selected fixtures.",
+    "blocking_findings": [],
+    "completion": "Requested paired review is complete. Only bounded two-fixture post-upgrade learning is eligible among the proposed native learning/transport claims."
+  }
+}

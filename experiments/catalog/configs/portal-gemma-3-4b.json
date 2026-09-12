@@ -1,0 +1,20 @@
+{
+  "manifest": "manifest.json",
+  "model": "portal-gemma-3-4b",
+  "cache_root": "/mnt/shared",
+  "seed": 20260907,
+  "tasks": [
+    "boolq",
+    "hellaswag",
+    "winogrande",
+    "commonsense_qa"
+  ],
+  "excluded_validation_prefix": 1000,
+  "examples_per_task": 32,
+  "max_prompt": 768,
+  "batch_size": 4,
+  "visible_gpus": 1,
+  "channel_timeout_seconds": 1800,
+  "peft_parity_atol": 0.0005,
+  "selection_sha256": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b"
+}

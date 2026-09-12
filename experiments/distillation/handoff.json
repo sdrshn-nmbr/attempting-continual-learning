@@ -1,0 +1,89 @@
+{
+  "lane": "distillation",
+  "status": "ready_retained_not_dispatched",
+  "required_packages": [
+    "transformers==5.16.1",
+    "peft==0.20.0",
+    "safetensors==0.8.0"
+  ],
+  "torch_policy": "Use parent ROCm torch unchanged; constrain its exact importlib.metadata version when installing dependencies.",
+  "downloads": [],
+  "cached_model": "Qwen/Qwen3.5-4B@851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "launch": "python run.py --config configs/qwen35_4b_screen.json --output-dir /mnt/shared/cl-portfolio/runs/distillation-qwen35-4b-seed1703",
+  "working_directory": "Dispatcher content-addressed copy of experiments/distillation; lane files are at cwd root.",
+  "owner_paths": [
+    "experiments/distillation/**"
+  ],
+  "active_remote_operations": [],
+  "local_validation": {
+    "test_command": "uv run python test_lane.py",
+    "tests_passed": 10,
+    "data_tasks": 858,
+    "overlap": {
+      "exact_task": 0,
+      "family_input": 0
+    },
+    "static_checks": [
+      "ruff check passed",
+      "ast-grep nested-import check passed"
+    ],
+    "model_test_scope": "Tiny randomly initialized Qwen3.5 with linear and full attention on CPU; gradient, base freeze, EMA, response alignment and exact reload. Not 4B GPU evidence.",
+    "qualification_receipt": "output/qualification/receipt.json",
+    "canonical_cli": "All three configs validated from lane-only cwd with prewritten dispatcher config/packages. Obsolete --output is rejected."
+  },
+  "gpu_slots": 1,
+  "scope": "Synthetic device-rule acquisition, held-out inputs and deeper command compositions; no broad capability or SOTA claim.",
+  "design": "Matched optimizer updates, question order, LoRA initialization, optimizer, frozen base, decoder support and rollout cap. Method-specific conditioning and supervised token counts differ and are reported.",
+  "sources": [
+    "https://arxiv.org/html/2601.19897v2",
+    "https://arxiv.org/html/2601.20802v1"
+  ],
+  "adaptations": [
+    "SDFT-style full-vocabulary forward KL along fresh student trajectories; teacher receives worked examples for other inputs, including verified operation explanations.",
+    "SDPO-style sampled reverse-KL score-function estimator with full-support sampling, verifier feedback and an EMA teacher; K=0 only.",
+    "Feedback reports wrong positions and device contracts, withholding expected final states on failed attempts. Successful generated attempts receive verifier confirmation. This is richer synthetic feedback than a scalar verifier.",
+    "No hyperparameter selection on test; one predetermined configuration and seed per initial method. Followup requires independent seeds and stronger controls."
+  ],
+  "parallel_launches": [
+    {
+      "method": "sft",
+      "config": "configs/qwen35_4b_sft.json",
+      "command": "python run.py --config configs/qwen35_4b_sft.json --output-dir /mnt/shared/cl-portfolio/runs/distillation-qwen35-4b-sft-seed1703",
+      "visible_gpus": 1
+    },
+    {
+      "method": "sdft_forward",
+      "config": "configs/qwen35_4b_sdft_forward.json",
+      "command": "python run.py --config configs/qwen35_4b_sdft_forward.json --output-dir /mnt/shared/cl-portfolio/runs/distillation-qwen35-4b-sdft_forward-seed1703",
+      "visible_gpus": 1
+    },
+    {
+      "method": "sdpo_sampled_reverse",
+      "config": "configs/qwen35_4b_sdpo_sampled_reverse.json",
+      "command": "python run.py --config configs/qwen35_4b_sdpo_sampled_reverse.json --output-dir /mnt/shared/cl-portfolio/runs/distillation-qwen35-4b-sdpo_sampled_reverse-seed1703",
+      "visible_gpus": 1
+    }
+  ],
+  "replication_required_before_promising_claim": "Independent model seed and new disjoint held-out data seed; initial config may only earn keep_for_replication.",
+  "requirements_file": "requirements.txt",
+  "cli_contract": "Only --output-dir; no --output alias. Absolute or cwd-relative --config; pinned model_path is absolute.",
+  "gpu_dispatch_authorized_now": false,
+  "proof_status": {
+    "cpu_validity": "passed",
+    "gpu_training": "not_run",
+    "teacher_headroom": "not_measured",
+    "heldout_skill_gain": "not_measured",
+    "old_skill_retention": "not_measured"
+  },
+  "conditional_real_hf_followup": {
+    "status": "suggestion_only_not_implemented_or_selected",
+    "dataset": "Ahren09/ToolAlpaca",
+    "dataset_url": "https://huggingface.co/datasets/Ahren09/ToolAlpaca",
+    "candidate_sequence": "Three disjoint tool-domain groups, only schema-valid single-call records; 64 training examples and separate held-out instructions per group.",
+    "verifier": "Exact function name plus canonical parsed JSON arguments against golden_answer. No network tool execution; not execution-success evidence.",
+    "headroom_evidence": "SDFT v2 reports Qwen2.5-7B ToolAlpaca accuracy 42 percent without demonstrations and 100 percent with them. This is evidence for that model and setup, not a Qwen3.5 teacher-advantage claim.",
+    "headroom_source": "https://arxiv.org/html/2601.19897v2",
+    "activation_gate": "Only consider after synthetic pilot qualification and positive held-out replication; separately gate teacher advantage on the selected backbone and verify HF mirror against original ToolAlpaca source."
+  },
+  "model_pin_validation": "Revision and snapshot path match authoritative compute/models.json and outputs/nationalcompute-smoke/downloads.json; startup checks 40-hex revision, snapshot directory, config SHA256, both shards and total weight bytes."
+}

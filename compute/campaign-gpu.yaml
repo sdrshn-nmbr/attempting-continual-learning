@@ -1,0 +1,90 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: cl-campaign-gpu-
+  labels:
+    app: cl-campaign
+spec:
+  backoffLimit: 0
+  activeDeadlineSeconds: 28800
+  template:
+    metadata:
+      labels:
+        app: cl-campaign
+    spec:
+      restartPolicy: Never
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 60
+      tolerations:
+        - key: amd.com/gpu
+          operator: Exists
+          effect: NoSchedule
+      initContainers:
+        - name: uv
+          image: ghcr.io/astral-sh/uv:0.12.10-python3.12-trixie-slim@sha256:4bf11151c225e2a4d60e2a576b67d925660055199389d9a64fbdc02b6f3d43d5
+          command: [sh, -c, 'cp "$(command -v uv)" /tools/uv']
+          volumeMounts:
+            - name: tools
+              mountPath: /tools
+      containers:
+        - name: experiments
+          image: rocm/pytorch:rocm7.2.4_ubuntu24.04_py3.12_pytorch_release_2.10.0@sha256:4449f856653602317e4101a76fce599c7fcd58ccec2e539951fce5f73083179e
+          command: [bash, -c]
+          args:
+            - |
+              set -Eeuo pipefail
+              export PATH="/tools:$PATH"
+              campaign_root=/mnt/shared/cl-campaign
+              mkdir -p "$campaign_root/environment/$POD_NAME"
+              run_dir="$campaign_root/environment/$POD_NAME"
+              exec > >(tee -a "$run_dir/bootstrap.log") 2>&1
+              trap 'exit_code=$?; echo "[campaign-bootstrap] failed at line $LINENO, exit $exit_code" >&2; exit "$exit_code"' ERR
+              runtime_python="$(command -v python)"
+              uv run --no-project --python "$runtime_python" python -c 'from importlib.metadata import version; print("torch==" + version("torch"))' > "$run_dir/torch-constraint.txt"
+              uv pip install --python "$runtime_python" --constraint "$run_dir/torch-constraint.txt" -r "$campaign_root/code/compute/campaign-requirements.txt"
+              uv pip freeze --python "$runtime_python" > "$run_dir/packages.txt"
+              uv run --no-project --python "$runtime_python" python -c 'import torch; assert torch.version.hip; assert torch.cuda.device_count()==8; print([str(torch.cuda.get_device_properties(i)) for i in range(8)])'
+              touch "$campaign_root/environment/$POD_NAME/READY"
+              exec uv run --no-project --python "$runtime_python" python "$campaign_root/code/compute/campaign-worker.py" --root "$campaign_root" --gpus 8
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: PYTHONUNBUFFERED
+              value: "1"
+            - name: HF_HOME
+              value: /mnt/shared/cl-smoke/huggingface
+            - name: HF_HUB_DISABLE_TELEMETRY
+              value: "1"
+            - name: UV_CACHE_DIR
+              value: /mnt/shared/cl-smoke/uv-cache
+            - name: OMP_NUM_THREADS
+              value: "4"
+            - name: TOKENIZERS_PARALLELISM
+              value: "false"
+          resources:
+            requests:
+              cpu: "32"
+              memory: 128Gi
+            limits:
+              amd.com/gpu: 8
+              memory: 512Gi
+          volumeMounts:
+            - name: shared
+              mountPath: /mnt/shared
+            - name: tools
+              mountPath: /tools
+            - name: shm
+              mountPath: /dev/shm
+      volumes:
+        - name: shared
+          hostPath:
+            path: /mnt/shared
+            type: Directory
+        - name: tools
+          emptyDir: {}
+        - name: shm
+          emptyDir:
+            medium: Memory
+            sizeLimit: 32Gi

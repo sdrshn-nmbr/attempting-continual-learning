@@ -1,0 +1,3 @@
+[submodule "experiments/catalog/upstream"]
+	path = experiments/catalog/upstream
+	url = https://github.com/ramp-public/portallib.git

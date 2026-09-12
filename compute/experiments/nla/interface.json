@@ -1,0 +1,54 @@
+{
+  "cli": "python compute/experiments/nla/run.py --config <json> --output-dir <path>",
+  "smallest_gate_config": "compute/experiments/nla/smoke.json",
+  "one_update_config": "compute/experiments/nla/pilot.json",
+  "next_config": "compute/experiments/nla/native_diagnostic.json",
+  "native_diagnostic": {
+    "config": "compute/experiments/nla/native_diagnostic.json",
+    "seed": 2718,
+    "source_states": 16,
+    "topics": 8,
+    "counterfactual_binding_pairs": 4,
+    "conditions": ["true", "empty", "shuffled", "random"],
+    "av_generations": 64,
+    "max_new_tokens_per_generation": 192,
+    "weight_updates": 0,
+    "decision": "Original true/empty/shuffled fidelity gate and thresholds remain unchanged. Random and independent per-condition diagnostics do not rescue a gate failure."
+  },
+  "model_registry_additions": "compute/experiments/nla/model_registry.json",
+  "requirements": "compute/experiments/nla/requirements.txt",
+  "torch": {
+    "provided_by_parent_image": "2.10.0 with ROCm 7.2.4",
+    "pip_install_torch": false
+  },
+  "gpu_count": 1,
+  "isolation": "Parent sets ROCR_VISIBLE_DEVICES; lane uses cuda:0 and changes no GPU visibility settings.",
+  "memory": {
+    "measured_at_runtime": [
+      "free_bytes",
+      "allocated_bytes",
+      "reserved_bytes",
+      "peak_allocated_bytes",
+      "peak_reserved_bytes"
+    ],
+    "placement": "Native source, AV and AR resident on one GPU and fully frozen during calibration. Continual mode separately permits source LoRA updates only after a passed native gate."
+  },
+  "outputs": [
+    "metrics.json",
+    "progress.json",
+    "events.jsonl",
+    "data.json",
+    "states/",
+    "readouts/",
+    "checkpoints/"
+  ],
+  "status_exit_codes": {
+    "0": "native_calibration_complete or pilot_complete",
+    "1": "configuration/runtime failure",
+    "2": "measured native_fidelity_gate_failed; zero updates",
+    "143": "SIGTERM checkpointed/interrupted"
+  },
+  "resume": "Set resume=true and reuse output-dir with exactly the same config (except resume) and code. Training resumes from complete optimizer steps with adapter/optimizer/RNG state; evaluation resumes per item and condition.",
+  "scope": "Weight-based acquisition, retention and readout drift. No context/KV repair, online model downloads, cluster mutation, service credentials or cross-model decoding.",
+  "pilot_limit": "The small one-update config deliberately permits insufficient heldout prediction samples and reports no forecast score in that case. The sequential config increases entities and adds a matched-budget update on disjoint new bindings."
+}

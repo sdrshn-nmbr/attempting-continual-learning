@@ -1,0 +1,9 @@
+transformers==5.16.1
+accelerate==1.14.0
+huggingface-hub==1.30.0
+peft==0.20.0
+portallib[training]==0.2.1
+datasets==4.8.5
+pydantic==2.13.5
+safetensors==0.8.0
+pyarrow==25.0.1

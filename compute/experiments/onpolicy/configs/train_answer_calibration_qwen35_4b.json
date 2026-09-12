@@ -1,0 +1,19 @@
+{
+  "model_id": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "seed": 37,
+  "experiment_kind": "preflight",
+  "mode": "train_answer_calibration",
+  "arms": [],
+  "steps_per_task": 0,
+  "tokens_per_update": 0,
+  "train_examples": 16,
+  "eval_examples": 0,
+  "gate_examples": 0,
+  "teacher_min_accuracy": 1.0,
+  "max_new_tokens": 32,
+  "lora_rank": 4,
+  "lora_alpha": 8,
+  "gradient_checkpointing": false
+}

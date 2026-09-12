@@ -1,0 +1,769 @@
+{
+  "question": "Does a fixed total support of 32 old training examples preserve global acquisition and at least 90 percent final old-task accuracy relative to a fresh full-history replay control with identical current-example and replay-class exposures?",
+  "dataset": {
+    "id": "clinc/clinc_oos",
+    "revision": "155b9c710419136e17307b80d0a13e68cd46b4ec",
+    "subset": "small",
+    "license": "cc-by-3.0",
+    "source": "https://huggingface.co/datasets/clinc/clinc_oos/tree/155b9c710419136e17307b80d0a13e68cd46b4ec",
+    "attribution": "Stefan Larson et al., An Evaluation Dataset for Intent Classification and Out-of-Scope Prediction, EMNLP-IJCNLP 2019",
+    "paper": "https://aclanthology.org/D19-1131/",
+    "split_counts": {
+      "train": 7600,
+      "validation": 3100,
+      "test": 5500
+    },
+    "transformation": "Exclude oos; seed class order and independently permute letter codes; sample balanced disjoint official splits; normalize text to remove exact cross-split duplicates. No semantic near-duplicate or pretraining-contamination guarantee."
+  },
+  "objective": "Cross-entropy over the fixed full set of selected single-token letter codes at the final prompt position. Base model, embeddings, and LM head frozen; only text MLP LoRA weights train. No labels, examples, task identity, class descriptions, or code mapping in the prompt. This is constrained classification, not free generation or full-vocabulary language-model loss.",
+  "model": {
+    "model_id": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "model_path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  },
+  "methods": {
+    "balanced_replay": "One method per run. Carry LoRA weights and AdamW state across all four tasks; no boundary resets. The two fresh runs differ only in replay_capacity: null for full history, 32 for bounded candidate support."
+  },
+  "replay_support": {
+    "scope": "Bounded replay candidate support only. The loader and shared scheduling metadata still contain historical rows; this is not a physical bounded host-RAM claim.",
+    "eligible_rows": "Only selected official TRAIN examples. After each completed task, form candidates from the previously retained members plus the newly completed task. Never add an old row that was absent from the previous buffer.",
+    "quota_rule": "Assign floor(min(capacity, available examples) / seen classes) per class and one extra to the lowest learned letter codes until the remainder is used. Old-class quotas never increase as classes are added; class counts differ by at most one. Full history retains every candidate.",
+    "retention_order": "Within each class, retain the lowest derived_seed(seed, replay_retention, source_task_index, selected_train_row_index) priorities. Canonically sort retained reference pairs. Decisions use no validation/test values or model scores.",
+    "sampling": "Both capacities use the original full-class permutations, class draws and mixed-batch shuffle RNG. Filter each class permutation to the active retained members and cycle those members until the next full-class permutation is drawn. Full-class permutation consumption fixes the shared RNG trajectory and mixing positions. All actual trainer replay references must belong to the active buffer.",
+    "full_identity": "With unlimited support, every candidate is retained and filtering is the identity: candidate queues equal the original full queues, consume in the same order, and leave every original RNG call and training reference unchanged. This is one sampler, not a separate legacy implementation.",
+    "activation": "The engine updates active replay members only after a task completes, checks them against the deterministic prepared plan, logs actual before/after members, per-class counts and membership SHA256, and checkpoints the active buffer. Every update validates old references before forward/backward.",
+    "members_reference_format": "[source_task_index, selected_train_row_index]; the selected-row data provenance binds each reference to text and tokens.",
+    "full_examples_after_tasks": [
+      128,
+      256,
+      384,
+      512
+    ],
+    "bounded_examples_after_tasks": [
+      32,
+      32,
+      32,
+      32
+    ],
+    "bounded_quotas_after_tasks": [
+      "8 per class across 4 classes",
+      "4 per class across 8 classes",
+      "2 or 3 per class across 12 classes",
+      "2 per class across 16 classes"
+    ]
+  },
+  "paired_contract": {
+    "screen_seed": 23,
+    "screen_configs": {
+      "full": "support-full-seed23.json",
+      "bounded": "support-32-seed23.json"
+    },
+    "reserved_seed": 47,
+    "reserved_configs": {
+      "full": "support-full-seed47.json",
+      "bounded": "support-32-seed47.json"
+    },
+    "reserved_policy": "Prepared only. No automatic dispatch, retry, confirmation or tuning.",
+    "only_config_difference_within_pair": "replay_capacity",
+    "matching": "Identical pinned model/base weights, initialization seed and initial LoRA, task/code/sample selections, rank/alpha/targets, optimizer hyperparameters, prompt/tokenization, update/microbatch/accumulation/evaluation schedules. Current row references and replay class codes match at every batch position.",
+    "seed_interpretation": "Each seed jointly fixes task selection/order, code mapping, samples, retention priorities and initialization. A second seed is a controlled repetition, not a significance claim.",
+    "tasks": 4,
+    "classes_per_task": 4,
+    "updates_per_task": 32,
+    "updates_per_arm": 128,
+    "effective_batch_size": 8,
+    "replay_fraction_after_task_zero": 0.5,
+    "current_examples_by_task": [
+      256,
+      128,
+      128,
+      128
+    ],
+    "replay_examples_by_task": [
+      0,
+      128,
+      128,
+      128
+    ],
+    "current_examples_total": 640,
+    "replay_examples_total": 384,
+    "examples_total": 1024,
+    "token_accounting": "Current input-token exposures match. Old input tokens and padded tokens can differ because retained replay rows differ; report realized counts without asserting a token match.",
+    "evaluation": "Use all fixed 32-update endpoints, global logits over the same 16 learned letter codes, and the same 80 heldout test examples per task. No validation-selected checkpoint, early stopping, heldout-dependent retention or hyperparameter tuning."
+  },
+  "primary_gate": {
+    "all_conditions_required": true,
+    "both_own_stage_global_floor": {
+      "numerator": 9,
+      "denominator": 10,
+      "minimum_correct_each_task": 72,
+      "examples_each_task": 80
+    },
+    "bounded_acquisition_drop_from_full": {
+      "numerator": 1,
+      "denominator": 20,
+      "maximum_correct_deficit_each_task": 4,
+      "examples_each_task": 80
+    },
+    "bounded_final_old_global_floor": {
+      "numerator": 9,
+      "denominator": 10,
+      "minimum_correct": 216,
+      "examples": 240
+    },
+    "bounded_final_old_drop_from_full": {
+      "numerator": 1,
+      "denominator": 20,
+      "maximum_correct_deficit": 12,
+      "examples": 240
+    },
+    "arithmetic": "Recompute correct counts from raw predictions. Floor test: 10*correct >= 9*examples. Deficit test with matched denominators: 20*(full_correct - bounded_correct) <= examples. Inclusive integer comparisons only; no floating threshold tolerances.",
+    "entrypoint": "compare.py --full-metrics <fresh-full>/metrics.json --bounded-metrics <fresh-bounded>/metrics.json --output <new-comparison.json>",
+    "gate_exclusions": "Original no-replay metrics, task-local oracle accuracy, validation curves and diagnostics do not enter this gate."
+  },
+  "descriptive_no_replay": {
+    "23": {
+      "run_id": "plasticity-clinc-replay-screen-seed23-6a27d9c4",
+      "metrics_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-screen-seed23-6a27d9c4/metrics.json",
+      "metrics_sha256": "373827bed9668cb2596309b88258a5c219565789f25d3e80ad4851d50ad96dc5",
+      "method": "persistent",
+      "role": "Descriptive original no-replay contrast only; excluded from the paired primary gate."
+    },
+    "47": {
+      "run_id": "plasticity-clinc-replay-confirmation-seed47-c31f860b",
+      "metrics_path": "/mnt/shared/cl-portfolio/runs/plasticity-clinc-replay-confirmation-seed47-c31f860b/metrics.json",
+      "metrics_sha256": "8ad41cfd0b180bcfa31655d93185ed9a7bd9b26bae2334312a5b7d7e981fa967",
+      "method": "persistent",
+      "role": "Descriptive original no-replay contrast only; excluded from the paired primary gate."
+    }
+  },
+  "verification_prerequisite": {
+    "task_id": "plasticity-clinc-replay-saved-adapter-verification",
+    "source_bundle_sha256": "9477840e23c15d355e8b6a5a8fb6c763bdc248e24eef0af6d9fc9a07d4b4136e",
+    "runtime_sha256": "2b9aa79c013839810d3e7049f77ec4dcee073099e670ac69688242da92ed0e5c",
+    "execution_sha256": "4bcba072079d057caf52db3ed21658426d9bdce57af2fcfa7fcdb63b12daacf1",
+    "receipt_sha256": "8090ec73217f5381bedaa48479949c0f7d2d26bfb9ff749bc51bd6b7ddf725a0",
+    "collection_sha256": "432065e93dc8c535f89ca391fdbe33b822bd03f256b6853764712635d3c65414",
+    "status": "completed",
+    "exit_code": 0,
+    "updates": 0,
+    "identical_saved_adapter_predictions": 1280
+  },
+  "launch": {
+    "entrypoint": "run.py",
+    "owner": "Parent reviews the frozen source/config/proof hashes and owns all GPU and queue actions. No run is dispatched by this preparation."
+  },
+  "data_commitments": {
+    "support-full-seed23.json": {
+      "seed": 23,
+      "replay_capacity": null,
+      "evaluation_sha256": "fa220c2c36e9286ee44c8c15b7b332a681c641dd8217be826e6640369beeab81",
+      "selected_train_rows_sha256": "efd2540a59a98f1d7976abf8d05dde46b40169a08d8a54be5d46405e3277cb05",
+      "selection_sha256": "b55975ed153865fb44c6a73bb4c00b5082b6d174a4e6e564b4be6b97b846bcdf",
+      "training_schedules_sha256": "b94099f018993282e421eaf935362602297bfa36ba5c40cf11e23881b9e009fe",
+      "shared_current_refs_and_replay_class_slots_sha256": "d6dc397a7f9c1a5c2eb48f1038bdc834da1d602a4d7a5e379e3fe05cc446ead8",
+      "buffer_examples_after_task": [
+        128,
+        256,
+        384,
+        512
+      ],
+      "buffer_members_sha256_after_task": [
+        "0a799222595a13219849261af5f15e50eef92bee9a57e7801088cbca9f839857",
+        "ce612382135d6698f9ba477bc4ae1dbd3043ab02522bfb47b8cfdef3c049834f",
+        "81f4cb214d4b41af0f997f95120b74cac49907970f76ead5e02ce99468a237d2",
+        "0e6184994ec756bcb8fdf29e9ec54fa993dc7e2461512b246e8a96a528de660b"
+      ],
+      "budgets_by_task": [
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 8176,
+          "training_padded_tokens": 9036,
+          "current_examples": 256,
+          "replay_examples": 0,
+          "current_input_tokens": 8176,
+          "replay_input_tokens": 0,
+          "examples_by_source_task": [
+            256,
+            0,
+            0,
+            0
+          ],
+          "examples_by_code": {
+            "1": 64,
+            "2": 64,
+            "4": 64,
+            "7": 64
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 0,
+          "replay_pool_examples": 0,
+          "schedule_sha256": "049f8c4f593d81367cfe3a1d868029f6683ca2679652f7f68c93b9ef8796257d"
+        },
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 8490,
+          "training_padded_tokens": 9596,
+          "current_examples": 128,
+          "replay_examples": 128,
+          "current_input_tokens": 4402,
+          "replay_input_tokens": 4088,
+          "examples_by_source_task": [
+            128,
+            128,
+            0,
+            0
+          ],
+          "examples_by_code": {
+            "1": 32,
+            "2": 32,
+            "3": 32,
+            "4": 32,
+            "7": 32,
+            "8": 32,
+            "11": 32,
+            "12": 32
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 128,
+          "replay_pool_examples": 128,
+          "schedule_sha256": "dd1ec716fb888f3f67a91f56ef35c5b013129420427446dfa9a4e392bf658c10"
+        },
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 8237,
+          "training_padded_tokens": 9232,
+          "current_examples": 128,
+          "replay_examples": 128,
+          "current_input_tokens": 4021,
+          "replay_input_tokens": 4216,
+          "examples_by_source_task": [
+            64,
+            64,
+            128,
+            0
+          ],
+          "examples_by_code": {
+            "0": 32,
+            "1": 16,
+            "2": 16,
+            "3": 16,
+            "4": 16,
+            "5": 32,
+            "7": 16,
+            "8": 16,
+            "11": 16,
+            "12": 16,
+            "13": 32,
+            "15": 32
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 128,
+          "replay_pool_examples": 256,
+          "schedule_sha256": "98c6995c8cb290cf0ed3e1dd2e512d367af23e5712e3b646eca1ad3f3ceec367"
+        },
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 8456,
+          "training_padded_tokens": 9512,
+          "current_examples": 128,
+          "replay_examples": 128,
+          "current_input_tokens": 4285,
+          "replay_input_tokens": 4171,
+          "examples_by_source_task": [
+            44,
+            42,
+            42,
+            128
+          ],
+          "examples_by_code": {
+            "0": 10,
+            "1": 11,
+            "2": 11,
+            "3": 10,
+            "4": 11,
+            "5": 11,
+            "6": 32,
+            "7": 11,
+            "8": 11,
+            "9": 32,
+            "10": 32,
+            "11": 10,
+            "12": 11,
+            "13": 10,
+            "14": 32,
+            "15": 11
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 128,
+          "replay_pool_examples": 384,
+          "schedule_sha256": "9b9beee5e8ceff9c4aeeed8e5b83e42389495da7e6e74a3ff9bf4be3365662d1"
+        }
+      ]
+    },
+    "support-32-seed23.json": {
+      "seed": 23,
+      "replay_capacity": 32,
+      "evaluation_sha256": "fa220c2c36e9286ee44c8c15b7b332a681c641dd8217be826e6640369beeab81",
+      "selected_train_rows_sha256": "efd2540a59a98f1d7976abf8d05dde46b40169a08d8a54be5d46405e3277cb05",
+      "selection_sha256": "450fa9697a8748ffd9521b80f284966907c37eab045876fcd9221126978cf186",
+      "training_schedules_sha256": "43e8f43b9ff0a31a0f1122f0cf37a54ff822d0376eafc49f95acd0747230daff",
+      "shared_current_refs_and_replay_class_slots_sha256": "d6dc397a7f9c1a5c2eb48f1038bdc834da1d602a4d7a5e379e3fe05cc446ead8",
+      "buffer_examples_after_task": [
+        32,
+        32,
+        32,
+        32
+      ],
+      "buffer_members_sha256_after_task": [
+        "1251cbfc381a360971607b2fa2f08b007c5656118dde2b2bf9ccdf4f306974d4",
+        "85c112493595b2bb55a466ec836e2470deaad4946b92d70e2e1aff621f387848",
+        "043e75a0e3ad28fad69944b2353dd07511acb57eea96aa18fc1ed6e349ae2de0",
+        "50605f07c802c7e966cec03733cf85c6fca671a8d94c43913510c1a4677735cd"
+      ],
+      "budgets_by_task": [
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 8176,
+          "training_padded_tokens": 9036,
+          "current_examples": 256,
+          "replay_examples": 0,
+          "current_input_tokens": 8176,
+          "replay_input_tokens": 0,
+          "examples_by_source_task": [
+            256,
+            0,
+            0,
+            0
+          ],
+          "examples_by_code": {
+            "1": 64,
+            "2": 64,
+            "4": 64,
+            "7": 64
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 0,
+          "replay_pool_examples": 0,
+          "schedule_sha256": "049f8c4f593d81367cfe3a1d868029f6683ca2679652f7f68c93b9ef8796257d"
+        },
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 8590,
+          "training_padded_tokens": 9664,
+          "current_examples": 128,
+          "replay_examples": 128,
+          "current_input_tokens": 4402,
+          "replay_input_tokens": 4188,
+          "examples_by_source_task": [
+            128,
+            128,
+            0,
+            0
+          ],
+          "examples_by_code": {
+            "1": 32,
+            "2": 32,
+            "3": 32,
+            "4": 32,
+            "7": 32,
+            "8": 32,
+            "11": 32,
+            "12": 32
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 32,
+          "replay_pool_examples": 32,
+          "schedule_sha256": "09bd0fc24dd7895353b2ab60c999d32499fdcace040a46498d036289e54c14e9"
+        },
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 8305,
+          "training_padded_tokens": 9400,
+          "current_examples": 128,
+          "replay_examples": 128,
+          "current_input_tokens": 4021,
+          "replay_input_tokens": 4284,
+          "examples_by_source_task": [
+            64,
+            64,
+            128,
+            0
+          ],
+          "examples_by_code": {
+            "0": 32,
+            "1": 16,
+            "2": 16,
+            "3": 16,
+            "4": 16,
+            "5": 32,
+            "7": 16,
+            "8": 16,
+            "11": 16,
+            "12": 16,
+            "13": 32,
+            "15": 32
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 32,
+          "replay_pool_examples": 32,
+          "schedule_sha256": "a0b4241fe338da0d892ac07aaeade2724180341926c94efd182574cbec75f966"
+        },
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 8503,
+          "training_padded_tokens": 9544,
+          "current_examples": 128,
+          "replay_examples": 128,
+          "current_input_tokens": 4285,
+          "replay_input_tokens": 4218,
+          "examples_by_source_task": [
+            44,
+            42,
+            42,
+            128
+          ],
+          "examples_by_code": {
+            "0": 10,
+            "1": 11,
+            "2": 11,
+            "3": 10,
+            "4": 11,
+            "5": 11,
+            "6": 32,
+            "7": 11,
+            "8": 11,
+            "9": 32,
+            "10": 32,
+            "11": 10,
+            "12": 11,
+            "13": 10,
+            "14": 32,
+            "15": 11
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 32,
+          "replay_pool_examples": 32,
+          "schedule_sha256": "e6762dfbc74a6ab006433f2a34ac1418bc1ff701c8fce4bedde7010a52569402"
+        }
+      ]
+    },
+    "support-full-seed47.json": {
+      "seed": 47,
+      "replay_capacity": null,
+      "evaluation_sha256": "f2971054c9307082617d38e1a84969b9ca0cd7f150b1ac8d985387875f6e1780",
+      "selected_train_rows_sha256": "7577af2da72820a8b344c932d43c21d7c5581257d07c1af5510a8bad6ce2860d",
+      "selection_sha256": "ce599f21e97aee1e6362ab1ca217b8cc4e83a199da0f952d73aeb3b92af22999",
+      "training_schedules_sha256": "149921ce837cb174fb3842883c0ab6a2b32464ceefb2e6f30a7df7665b346954",
+      "shared_current_refs_and_replay_class_slots_sha256": "9948a33ff7cfae91175042dda4ad4be0269953e9b89f410550ecda0f01f04139",
+      "buffer_examples_after_task": [
+        128,
+        256,
+        384,
+        512
+      ],
+      "buffer_members_sha256_after_task": [
+        "0a799222595a13219849261af5f15e50eef92bee9a57e7801088cbca9f839857",
+        "ce612382135d6698f9ba477bc4ae1dbd3043ab02522bfb47b8cfdef3c049834f",
+        "81f4cb214d4b41af0f997f95120b74cac49907970f76ead5e02ce99468a237d2",
+        "0e6184994ec756bcb8fdf29e9ec54fa993dc7e2461512b246e8a96a528de660b"
+      ],
+      "budgets_by_task": [
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 8144,
+          "training_padded_tokens": 9020,
+          "current_examples": 256,
+          "replay_examples": 0,
+          "current_input_tokens": 8144,
+          "replay_input_tokens": 0,
+          "examples_by_source_task": [
+            256,
+            0,
+            0,
+            0
+          ],
+          "examples_by_code": {
+            "4": 64,
+            "5": 64,
+            "9": 64,
+            "15": 64
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 0,
+          "replay_pool_examples": 0,
+          "schedule_sha256": "64fa0baf85ea4821099219b41866f5feb248975543d34c4d13fa27190c6dbe56"
+        },
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 8066,
+          "training_padded_tokens": 9068,
+          "current_examples": 128,
+          "replay_examples": 128,
+          "current_input_tokens": 3994,
+          "replay_input_tokens": 4072,
+          "examples_by_source_task": [
+            128,
+            128,
+            0,
+            0
+          ],
+          "examples_by_code": {
+            "0": 32,
+            "4": 32,
+            "5": 32,
+            "8": 32,
+            "9": 32,
+            "11": 32,
+            "12": 32,
+            "15": 32
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 128,
+          "replay_pool_examples": 128,
+          "schedule_sha256": "8e7f958b8a0e3bbb7b6d2b5aed8430fd3a79104fe898e35eda909c40bb90635e"
+        },
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 7932,
+          "training_padded_tokens": 8912,
+          "current_examples": 128,
+          "replay_examples": 128,
+          "current_input_tokens": 3902,
+          "replay_input_tokens": 4030,
+          "examples_by_source_task": [
+            64,
+            64,
+            128,
+            0
+          ],
+          "examples_by_code": {
+            "0": 16,
+            "1": 32,
+            "2": 32,
+            "4": 16,
+            "5": 16,
+            "8": 16,
+            "9": 16,
+            "10": 32,
+            "11": 16,
+            "12": 16,
+            "14": 32,
+            "15": 16
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 128,
+          "replay_pool_examples": 256,
+          "schedule_sha256": "0ba119ae7e53d7b757c822c4b7422654d542bf3f322fa166f36b84f556e773fc"
+        },
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 7976,
+          "training_padded_tokens": 8868,
+          "current_examples": 128,
+          "replay_examples": 128,
+          "current_input_tokens": 3983,
+          "replay_input_tokens": 3993,
+          "examples_by_source_task": [
+            44,
+            42,
+            42,
+            128
+          ],
+          "examples_by_code": {
+            "0": 10,
+            "1": 10,
+            "2": 11,
+            "3": 32,
+            "4": 11,
+            "5": 11,
+            "6": 32,
+            "7": 32,
+            "8": 11,
+            "9": 11,
+            "10": 11,
+            "11": 10,
+            "12": 11,
+            "13": 32,
+            "14": 10,
+            "15": 11
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 128,
+          "replay_pool_examples": 384,
+          "schedule_sha256": "4a94fc07563a78f974ce24e46a09c72018c1f0cd9549baf101b780a8e8c496e3"
+        }
+      ]
+    },
+    "support-32-seed47.json": {
+      "seed": 47,
+      "replay_capacity": 32,
+      "evaluation_sha256": "f2971054c9307082617d38e1a84969b9ca0cd7f150b1ac8d985387875f6e1780",
+      "selected_train_rows_sha256": "7577af2da72820a8b344c932d43c21d7c5581257d07c1af5510a8bad6ce2860d",
+      "selection_sha256": "56e7fe24c4b1632bf217f6ccdbd91f4068b37227c0e37cdfd6db87b26888d748",
+      "training_schedules_sha256": "e8ddc6b8f38bdd1137671a91ff360f84a1de48c53a0e44e723cb61bf0814cc49",
+      "shared_current_refs_and_replay_class_slots_sha256": "9948a33ff7cfae91175042dda4ad4be0269953e9b89f410550ecda0f01f04139",
+      "buffer_examples_after_task": [
+        32,
+        32,
+        32,
+        32
+      ],
+      "buffer_members_sha256_after_task": [
+        "36c2d3bfd4f30f330c72b94120cf41ee6fd3e64a48d64d2a85fbc25e48e3afe5",
+        "bcc9a4696192f9a6ba73c717ad7098eeaf374ecff6971daa8dd3422595dbc95e",
+        "8a5c93084cd30d83c751b4347777c91683e447fa2d8f817ca6ef90706f0741cb",
+        "04d89258fea77c802f4b2f4812a8f0341ce050500e0e7cd02a6b4ecb9526a975"
+      ],
+      "budgets_by_task": [
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 8144,
+          "training_padded_tokens": 9020,
+          "current_examples": 256,
+          "replay_examples": 0,
+          "current_input_tokens": 8144,
+          "replay_input_tokens": 0,
+          "examples_by_source_task": [
+            256,
+            0,
+            0,
+            0
+          ],
+          "examples_by_code": {
+            "4": 64,
+            "5": 64,
+            "9": 64,
+            "15": 64
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 0,
+          "replay_pool_examples": 0,
+          "schedule_sha256": "64fa0baf85ea4821099219b41866f5feb248975543d34c4d13fa27190c6dbe56"
+        },
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 8030,
+          "training_padded_tokens": 9012,
+          "current_examples": 128,
+          "replay_examples": 128,
+          "current_input_tokens": 3994,
+          "replay_input_tokens": 4036,
+          "examples_by_source_task": [
+            128,
+            128,
+            0,
+            0
+          ],
+          "examples_by_code": {
+            "0": 32,
+            "4": 32,
+            "5": 32,
+            "8": 32,
+            "9": 32,
+            "11": 32,
+            "12": 32,
+            "15": 32
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 32,
+          "replay_pool_examples": 32,
+          "schedule_sha256": "0e8dbbb31d0a5c2f4b9742a5fbc820078a168aae33be986af35b2cf52923a75c"
+        },
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 7962,
+          "training_padded_tokens": 8840,
+          "current_examples": 128,
+          "replay_examples": 128,
+          "current_input_tokens": 3902,
+          "replay_input_tokens": 4060,
+          "examples_by_source_task": [
+            64,
+            64,
+            128,
+            0
+          ],
+          "examples_by_code": {
+            "0": 16,
+            "1": 32,
+            "2": 32,
+            "4": 16,
+            "5": 16,
+            "8": 16,
+            "9": 16,
+            "10": 32,
+            "11": 16,
+            "12": 16,
+            "14": 32,
+            "15": 16
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 32,
+          "replay_pool_examples": 32,
+          "schedule_sha256": "f08706de2288a5f6daa1abdd90cf3a1babbc7edb418c92382c880509aeadde72"
+        },
+        {
+          "updates": 32,
+          "training_examples": 256,
+          "training_input_tokens": 7967,
+          "training_padded_tokens": 8744,
+          "current_examples": 128,
+          "replay_examples": 128,
+          "current_input_tokens": 3983,
+          "replay_input_tokens": 3984,
+          "examples_by_source_task": [
+            44,
+            42,
+            42,
+            128
+          ],
+          "examples_by_code": {
+            "0": 10,
+            "1": 10,
+            "2": 11,
+            "3": 32,
+            "4": 11,
+            "5": 11,
+            "6": 32,
+            "7": 32,
+            "8": 11,
+            "9": 11,
+            "10": 11,
+            "11": 10,
+            "12": 11,
+            "13": 32,
+            "14": 10,
+            "15": 11
+          },
+          "unique_current_examples": 128,
+          "unique_replay_examples": 32,
+          "replay_pool_examples": 32,
+          "schedule_sha256": "ab009db070a5f2bf76d7978f0c70a43f9a0ec3b64e46f7111286ba17cffea848"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "The candidate support is bounded; host memory and historical dataset storage are not bounded.",
+    "This is frozen-base LoRA intent classification on four tasks, not a general continual-learning result.",
+    "The public dataset may occur in pretraining; arbitrary label codes must be learned but intent knowledge need not be novel.",
+    "CPU tests establish mechanics and pairing. Scientific acquisition and retention require the new native GPU runs.",
+    "Predeclared thresholds are a screening policy, not a statistical equivalence or significance test."
+  ]
+}

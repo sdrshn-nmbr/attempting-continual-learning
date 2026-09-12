@@ -1,0 +1,31 @@
+{
+  "mode": "source_calibration",
+  "model_id": "Qwen/Qwen3-1.7B",
+  "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "model_path": "/mnt/shared/cl-portfolio/portal-cache/models/Qwen/Qwen3-1.7B/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "seed": 17,
+  "device": "cuda:0",
+  "registry_path": "registry.json",
+  "artifact_cache_dir": "/mnt/shared/cl-portfolio/portal-cache/models",
+  "source_training_rows_sha256": "0c6115ef34862112f8c5ecc283d958bc6dd4b6aa56806d9d010f26961d537157",
+  "calibration": {
+    "max_steps": 256,
+    "batch_size": 4,
+    "checkpoint_steps": [32, 128, 256],
+    "latent_learning_rates": [0.002, 0.02],
+    "lora_learning_rate": 0.0002,
+    "train_examples": 128,
+    "validation_examples": 128,
+    "validation_seed": 2718,
+    "prior_evaluation_examples": 96,
+    "eval_batch_size": 8,
+    "max_prompt_tokens": 128,
+    "gradient_clip": 1.0,
+    "gradient_checkpointing": true,
+    "min_train_accuracy": 0.9,
+    "min_validation_accuracy": 0.8,
+    "min_validation_accuracy_gain": 0.2,
+    "min_validation_nll_drop": 0.1,
+    "reload_atol": 0.000001
+  }
+}

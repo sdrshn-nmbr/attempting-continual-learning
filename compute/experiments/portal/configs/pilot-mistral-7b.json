@@ -1,0 +1,26 @@
+{
+  "mode": "transfer",
+  "model_id": "mistralai/Mistral-7B-v0.3",
+  "revision": "caa1feb0e54d415e2df31207e5f4e273e33509b1",
+  "model_path": "/mnt/shared/cl-portfolio/portal-cache/models/mistralai/Mistral-7B-v0.3/caa1feb0e54d415e2df31207e5f4e273e33509b1",
+  "seed": 17,
+  "device": "cuda:0",
+  "source": {
+    "model_id": "Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "model_path": "/mnt/shared/cl-portfolio/portal-cache/models/Qwen/Qwen3-1.7B/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+  },
+  "pilot": {
+    "steps_per_task": 32,
+    "batch_size": 4,
+    "train_examples": 128,
+    "validation_examples": 32,
+    "test_examples": 64,
+    "eval_batch_size": 8,
+    "checkpoint_every": 8,
+    "gradient_checkpointing": true,
+    "source_native_lora": true
+  },
+  "registry_path": "registry.json",
+  "artifact_cache_dir": "/mnt/shared/cl-portfolio/portal-cache/models"
+}

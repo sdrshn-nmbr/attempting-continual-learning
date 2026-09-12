@@ -1,0 +1,48 @@
+{
+  "status": "blocked",
+  "config": {
+    "mode": "smoke",
+    "model_id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "model_path": "/mnt/shared/cl-portfolio/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+    "seed": 17,
+    "device": "cuda:0"
+  },
+  "config_sha256": "d016d4706f16a7249a021c0584e2dc8591cdc7d513ebf0a795d1070873752252",
+  "measurements": {
+    "artifact_load": {
+      "status": "passed",
+      "projections": 72
+    }
+  },
+  "provenance": {
+    "RampPublic/portal-qwen3-8b": {
+      "revision": "6593b49ae790ec6d601db5a081c81463cb8b3a5f",
+      "weights_sha256": "b1e94342fe777770f14147d2cacee1f568159a7c39788c661cdf46ff8e1284c4",
+      "path": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/compute/experiments/portal/.artifacts/qwen3-8b",
+      "core_sha256": "465814411378973f68d4888281f39208cb1c636e030b331a9d791c8114042c29"
+    }
+  },
+  "timing_seconds": {
+    "last_invocation": 0.3313269169884734
+  },
+  "runtime": {
+    "python": "3.12.11",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "torch": "2.10.0",
+    "hip": null,
+    "transformers": "5.16.1",
+    "accelerate": "1.14.0",
+    "portallib": "0.2.1",
+    "peft": "0.20.0",
+    "ROCR_VISIBLE_DEVICES": null,
+    "cuda_available": false,
+    "gpu_execution": false
+  },
+  "blockers": [
+    {
+      "code": "capability_blocked",
+      "detail": "gpu_unavailable: native ROCm forward/backward has not run"
+    }
+  ]
+}

@@ -1,0 +1,1018 @@
+{
+  "schema_version": 1,
+  "audit": "independent_catalog_review",
+  "status": "complete_with_one_source_finding",
+  "scope": {
+    "source_root": "experiments/catalog",
+    "independent": true,
+    "audited_lanes": [
+      "catalog"
+    ],
+    "permitted_output": "experiments/review/catalog-audit.json",
+    "source_edits": [],
+    "infrastructure_actions": [],
+    "gpu_jobs_launched": [],
+    "new_gpu_execution_by_auditor": false
+  },
+  "conclusion": "One reproduced cache-integrity gap should be closed before the remaining ports are dispatched. No confirmed native/PEFT arithmetic or projection-path defect was found. Both completed Qwen GPU receipts report exact parity, matched reviewed source, and discard the positive-accuracy claim. Inkling still requires actual eight-GPU qualification.",
+  "findings": [
+    {
+      "id": "CAT-001",
+      "priority": "P2",
+      "status": "reproduced",
+      "title": "Verify the bytes of cached configuration and base snapshots before using pinned identities",
+      "locations": [
+        {
+          "file": "experiments/catalog/factory.py",
+          "start_line": 21,
+          "end_line": 34,
+          "role": "local_asset only checks existence and byte count"
+        },
+        {
+          "file": "experiments/catalog/factory.py",
+          "start_line": 37,
+          "end_line": 50,
+          "role": "load_portal checks model.safetensors but does not bind config.json to its recorded digest"
+        },
+        {
+          "file": "experiments/catalog/factory.py",
+          "start_line": 53,
+          "end_line": 74,
+          "role": "load_base and the explicit base_path override accept size-matching snapshots"
+        },
+        {
+          "file": "experiments/catalog/common.py",
+          "start_line": 38,
+          "end_line": 47,
+          "role": "reuse cache selection admits equal-length changed files"
+        }
+      ],
+      "trigger": "A file in an accepted canonical/reuse cache or base_path override differs from the pinned snapshot while retaining its byte count. The current process does not consume a checksum receipt for that concrete path.",
+      "effect": "The runner can report the manifest revision while loading changed model/tokenizer/configuration bytes. For an adapter, changing alpha alters its applied scaling even when the safetensors checksum is correct. Native roundtrip and native/PEFT parity can still agree on the same changed adapter, so those gates do not establish published identity.",
+      "evidence": {
+        "artifact": "portal-qwen3-4b",
+        "original_alpha": 16,
+        "loaded_alpha": 32,
+        "loaded_scaling": 4,
+        "config_same_byte_length": true,
+        "expected_raw_config_sha256": "3848aec36900aa1f890aaa629e3b67b2cdf2b2e48e81ea423971e32cf15420f5",
+        "changed_config_sha256": "70718d88dbe57cd4627c050d4f2120ebd6f6be5f1d5b3fc8969400e93db072a2",
+        "config_substitutions": 1,
+        "load_accepted": true,
+        "disk_unchanged": true,
+        "scope": "In-memory json.load substitution models a same-length config corruption. No cache or catalog file was changed."
+      },
+      "reproduction": "Read the real portal-qwen3-4b config, replace the 16 in its alpha field with 32 without changing serialized length, and substitute that parsed JSON only for the corresponding json.load call using unittest.mock.patch. Call the real factory.load_portal against the published, hash-verified safetensors. It returns alpha=32 and scaling=4.0. Re-read the file and assert its bytes are unchanged. This is a non-mutating counterexample, not evidence that the real cache was corrupt.",
+      "affected_models": "All seven catalog entries share these admission paths; base_path also covers the proposed Inkling node-local checkpoint.",
+      "existing_mitigation": "download.py checks every downloaded file against SHA256 or the Git blob SHA1. Existing successful download receipts reduce the current-run risk. That integrity check is not enforced by load_base/load_portal and is not tied to a later concrete cache path.",
+      "requested_change": "Reuse a single content-verification function at the load boundary, or require a verified immutable snapshot receipt tied to the exact selected path. Check the adapter config.json digest (entry.raw_config_sha256 is already present) and all loaded base/tokenizer metadata and shard identities, including the override path. Add a focused same-length config-corruption rejection check.",
+      "claim_boundary": "The two completed Qwen receipts remain observed GPU parity results. This finding alone does not show their cached bytes were wrong."
+    }
+  ],
+  "passed_checks": [
+    {
+      "name": "installed_portallib_source_identity",
+      "evidence": {
+        "versions": {
+          "torch": "2.10.0",
+          "transformers": "5.16.1",
+          "peft": "0.20.0",
+          "portallib": "0.2.1",
+          "accelerate": "1.14.0",
+          "pyarrow": "25.0.1"
+        },
+        "source_mismatches": []
+      },
+      "source_repository": "https://github.com/ramp-public/portallib",
+      "revision": "1a7b8c5b0200c301060bfbceca12653f86d2fa31",
+      "files_compared": 14,
+      "observation": "Installed Python source matches the manifest's pinned source inventory."
+    },
+    {
+      "name": "holdout_selection",
+      "evidence": {
+        "checksummed_dataset": true,
+        "recomputed_selection_sha256": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b",
+        "matches_config": true,
+        "selected_examples": 128,
+        "prefix_min_index": 1006,
+        "eval_prompt_overlap_with_train_or_prefix": 0
+      },
+      "observation": "Independently read and hashed both parquet files, recomputed normalized-prompt exclusions against the full train split and the first 1000 validation rows of every task, and reproduced the exact 128-example selection.",
+      "tasks": [
+        "boolq",
+        "hellaswag",
+        "winogrande",
+        "commonsense_qa"
+      ],
+      "examples_per_task": 32,
+      "prefix_basis": [
+        "upstream/examples/configs/train.toml eval_max_examples=1000",
+        "upstream/examples/configs/refits/*.toml eval_max_examples=1000",
+        "upstream/training.py forwards max_examples to the evaluator",
+        "ChoiceDataset.rows returns rows[:limit]"
+      ],
+      "limitation": "This verifies exclusion of the released training prompts and documented public selection prefix. It does not establish absence from unknown pretraining or unpublished selection."
+    },
+    {
+      "name": "bf16_projection_math_and_hook_cleanup",
+      "scope": "Published boolq factors on synthetic projections, not a complete pretrained transformer.",
+      "initial_results": [
+        {
+          "model": "portal-gemma-3-4b",
+          "targets_exercised": 68,
+          "dtype": "bfloat16",
+          "max_projection_error": 0,
+          "exact_equal_targets": 68,
+          "changed_from_base_targets": 68,
+          "hooks_removed_cleanly": true
+        },
+        {
+          "model": "portal-gemma-4-e2b",
+          "targets_exercised": 50,
+          "dtype": "bfloat16",
+          "max_projection_error": 0.8671875,
+          "exact_equal_targets": 49,
+          "changed_from_base_targets": 50,
+          "hooks_removed_cleanly": true
+        },
+        {
+          "model": "portal-inkling",
+          "targets_exercised": 132,
+          "dtype": "bfloat16",
+          "max_projection_error": 0,
+          "exact_equal_targets": 132,
+          "changed_from_base_targets": 132,
+          "hooks_removed_cleanly": true
+        },
+        {
+          "model": "portal-mistral-7b",
+          "targets_exercised": 64,
+          "dtype": "bfloat16",
+          "max_projection_error": 0,
+          "exact_equal_targets": 64,
+          "changed_from_base_targets": 64,
+          "hooks_removed_cleanly": true
+        },
+        {
+          "model": "portal-qwen3-1.7b",
+          "targets_exercised": 56,
+          "dtype": "bfloat16",
+          "max_projection_error": 0,
+          "exact_equal_targets": 56,
+          "changed_from_base_targets": 56,
+          "hooks_removed_cleanly": true
+        },
+        {
+          "model": "portal-qwen3-4b",
+          "targets_exercised": 72,
+          "dtype": "bfloat16",
+          "max_projection_error": 0,
+          "exact_equal_targets": 72,
+          "changed_from_base_targets": 72,
+          "hooks_removed_cleanly": true
+        },
+        {
+          "model": "portal-qwen3-8b",
+          "targets_exercised": 72,
+          "dtype": "bfloat16",
+          "max_projection_error": 0,
+          "exact_equal_targets": 72,
+          "changed_from_base_targets": 72,
+          "hooks_removed_cleanly": true
+        },
+        {
+          "scope": "Published boolq factors on synthetic independent projections, not pretrained transformer forward or multi-GPU execution.",
+          "all_seven_passed": false
+        }
+      ],
+      "gemma_independent_weights_default_threads": [
+        {
+          "raw_keys_head": [
+            "base_model.model.model.language_model.layers.0.self_attn.q_proj.lora_A.weight",
+            "base_model.model.model.language_model.layers.0.self_attn.q_proj.lora_B.weight",
+            "base_model.model.model.language_model.layers.0.self_attn.v_proj.lora_A.weight",
+            "base_model.model.model.language_model.layers.0.self_attn.v_proj.lora_B.weight"
+          ],
+          "torch_threads": 12
+        },
+        {
+          "model": "portal-gemma-4-e2b",
+          "unique_base_weights": 50,
+          "targets": 50,
+          "hooks_removed_cleanly": true,
+          "mismatches": [
+            {
+              "path": "model.language_model.layers.0.self_attn.v_proj",
+              "max_error": 0.359375,
+              "native_abs_max": 1.578125,
+              "peft_abs_max": 1.6015625,
+              "factor_errors": [
+                0.19921875,
+                0
+              ],
+              "scaling_native": 2,
+              "scaling_peft": {
+                "default": 2
+              }
+            },
+            {
+              "path": "model.language_model.layers.2.self_attn.q_proj",
+              "max_error": 0.0009765625,
+              "native_abs_max": 1.78125,
+              "peft_abs_max": 1.78125,
+              "factor_errors": [
+                5.960464477539063e-08,
+                0.0001220703125
+              ],
+              "scaling_native": 2,
+              "scaling_peft": {
+                "default": 2
+              }
+            },
+            {
+              "path": "model.language_model.layers.8.self_attn.q_proj",
+              "max_error": 0.001953125,
+              "native_abs_max": 2.90625,
+              "peft_abs_max": 2.90625,
+              "factor_errors": [
+                5.960464477539063e-08,
+                0.0001220703125
+              ],
+              "scaling_native": 2,
+              "scaling_peft": {
+                "default": 2
+              }
+            },
+            {
+              "path": "model.language_model.layers.10.self_attn.v_proj",
+              "max_error": 2.171875,
+              "native_abs_max": 2.125,
+              "peft_abs_max": 1.8984375,
+              "factor_errors": [
+                0,
+                0.1572265625
+              ],
+              "scaling_native": 2,
+              "scaling_peft": {
+                "default": 2
+              }
+            },
+            {
+              "path": "model.language_model.layers.11.self_attn.q_proj",
+              "max_error": 0.001953125,
+              "native_abs_max": 3.78125,
+              "peft_abs_max": 3.78125,
+              "factor_errors": [
+                0.00048828125,
+                6.103515625e-05
+              ],
+              "scaling_native": 2,
+              "scaling_peft": {
+                "default": 2
+              }
+            },
+            {
+              "path": "model.language_model.layers.17.self_attn.q_proj",
+              "max_error": 0.001953125,
+              "native_abs_max": 3.390625,
+              "peft_abs_max": 3.390625,
+              "factor_errors": [
+                0,
+                0.000244140625
+              ],
+              "scaling_native": 2,
+              "scaling_peft": {
+                "default": 2
+              }
+            },
+            {
+              "path": "model.language_model.layers.34.self_attn.q_proj",
+              "max_error": 6.103515625e-05,
+              "native_abs_max": 1.671875,
+              "peft_abs_max": 1.671875,
+              "factor_errors": [
+                4.656612873077393e-10,
+                7.62939453125e-06
+              ],
+              "scaling_native": 2,
+              "scaling_peft": {
+                "default": 2
+              }
+            }
+          ],
+          "factor_mismatches": [
+            {
+              "path": "model.language_model.layers.0.self_attn.v_proj",
+              "factor_errors_bf16": [
+                0.19921875,
+                0
+              ],
+              "raw_errors_fp32": [
+                0,
+                0
+              ]
+            },
+            {
+              "path": "model.language_model.layers.2.self_attn.q_proj",
+              "factor_errors_bf16": [
+                5.960464477539063e-08,
+                0.0001220703125
+              ],
+              "raw_errors_fp32": [
+                2.9802322387695312e-08,
+                1.4901161193847656e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.2.self_attn.v_proj",
+              "factor_errors_bf16": [
+                0.000244140625,
+                0
+              ],
+              "raw_errors_fp32": [
+                2.9802322387695312e-08,
+                1.4901161193847656e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.5.self_attn.q_proj",
+              "factor_errors_bf16": [
+                0,
+                0
+              ],
+              "raw_errors_fp32": [
+                2.9802322387695312e-08,
+                1.4901161193847656e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.5.self_attn.v_proj",
+              "factor_errors_bf16": [
+                0,
+                2.9802322387695312e-08
+              ],
+              "raw_errors_fp32": [
+                2.9802322387695312e-08,
+                1.4901161193847656e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.8.self_attn.q_proj",
+              "factor_errors_bf16": [
+                5.960464477539063e-08,
+                0.0001220703125
+              ],
+              "raw_errors_fp32": [
+                2.9802322387695312e-08,
+                1.4901161193847656e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.8.self_attn.v_proj",
+              "factor_errors_bf16": [
+                0,
+                4.656612873077393e-10
+              ],
+              "raw_errors_fp32": [
+                2.9802322387695312e-08,
+                1.4901161193847656e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.10.self_attn.v_proj",
+              "factor_errors_bf16": [
+                0,
+                0.1572265625
+              ],
+              "raw_errors_fp32": [
+                0,
+                0
+              ]
+            },
+            {
+              "path": "model.language_model.layers.11.self_attn.q_proj",
+              "factor_errors_bf16": [
+                0.00048828125,
+                6.103515625e-05
+              ],
+              "raw_errors_fp32": [
+                2.9802322387695312e-08,
+                1.4901161193847656e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.11.self_attn.v_proj",
+              "factor_errors_bf16": [
+                0.0001220703125,
+                0
+              ],
+              "raw_errors_fp32": [
+                2.9802322387695312e-08,
+                1.1175870895385742e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.14.self_attn.q_proj",
+              "factor_errors_bf16": [
+                0,
+                1.9073486328125e-06
+              ],
+              "raw_errors_fp32": [
+                2.2351741790771484e-08,
+                1.4901161193847656e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.14.self_attn.v_proj",
+              "factor_errors_bf16": [
+                0,
+                0
+              ],
+              "raw_errors_fp32": [
+                2.2351741790771484e-08,
+                1.4901161193847656e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.17.self_attn.q_proj",
+              "factor_errors_bf16": [
+                0,
+                0.000244140625
+              ],
+              "raw_errors_fp32": [
+                2.9802322387695312e-08,
+                2.9802322387695312e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.20.self_attn.q_proj",
+              "factor_errors_bf16": [
+                0.0001220703125,
+                3.725290298461914e-09
+              ],
+              "raw_errors_fp32": [
+                2.9802322387695312e-08,
+                1.4901161193847656e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.23.self_attn.q_proj",
+              "factor_errors_bf16": [
+                0.0001220703125,
+                7.62939453125e-06
+              ],
+              "raw_errors_fp32": [
+                2.9802322387695312e-08,
+                1.4901161193847656e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.26.self_attn.q_proj",
+              "factor_errors_bf16": [
+                0,
+                0
+              ],
+              "raw_errors_fp32": [
+                2.9802322387695312e-08,
+                2.2351741790771484e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.29.self_attn.q_proj",
+              "factor_errors_bf16": [
+                7.450580596923828e-09,
+                9.5367431640625e-07
+              ],
+              "raw_errors_fp32": [
+                2.2351741790771484e-08,
+                1.4901161193847656e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.32.self_attn.q_proj",
+              "factor_errors_bf16": [
+                3.0517578125e-05,
+                0.000244140625
+              ],
+              "raw_errors_fp32": [
+                2.9802322387695312e-08,
+                1.4901161193847656e-08
+              ]
+            },
+            {
+              "path": "model.language_model.layers.34.self_attn.q_proj",
+              "factor_errors_bf16": [
+                4.656612873077393e-10,
+                7.62939453125e-06
+              ],
+              "raw_errors_fp32": [
+                1.4901161193847656e-08,
+                7.450580596923828e-09
+              ]
+            }
+          ]
+        }
+      ],
+      "gemma_independent_weights_one_thread": [
+        {
+          "raw_keys_head": [
+            "base_model.model.model.language_model.layers.0.self_attn.q_proj.lora_A.weight",
+            "base_model.model.model.language_model.layers.0.self_attn.q_proj.lora_B.weight",
+            "base_model.model.model.language_model.layers.0.self_attn.v_proj.lora_A.weight",
+            "base_model.model.model.language_model.layers.0.self_attn.v_proj.lora_B.weight"
+          ],
+          "torch_threads": 1
+        },
+        {
+          "model": "portal-gemma-4-e2b",
+          "unique_base_weights": 50,
+          "targets": 50,
+          "hooks_removed_cleanly": true,
+          "mismatches": [],
+          "factor_mismatches": []
+        }
+      ],
+      "interpretation": "All non-Gemma4 initial projection comparisons were exact. Gemma4 with 50 distinct base weights and torch.set_num_threads(1) was also exact for every target and factor, and hook removal restored baseline outputs. The default-thread anomaly is separately recorded below."
+    },
+    {
+      "name": "inkling_static_integration",
+      "targets": 132,
+      "base_revision": "828496eeae4c243ff1a22f7f28ff83694f2f7bc9",
+      "single_checkpoint_shards": 109,
+      "single_checkpoint_weight_bytes": 1904755463940,
+      "observations": [
+        "Pinned Transformers InklingAttention.forward directly calls the configured q_proj and v_proj modules, so native forward hooks are exercised by that implementation.",
+        "The inspected SDPA implementation accepts and applies position_bias; no missing-position-bias defect was found.",
+        "PortalInjector places factors and inputs using the projection output device and dtype. Accelerate's root hook can return outputs to the input device; first-parameter device alone did not prove a placement bug."
+      ],
+      "scope": "Source inspection, published artifact projection math and existing meta-model topology evidence only."
+    }
+  ],
+  "nonblocking_observations": [
+    {
+      "id": "CAT-OBS-001",
+      "title": "Gemma4 local multithreaded CPU projection anomaly",
+      "environment": {
+        "torch": "2.10.0",
+        "transformers": "5.16.1",
+        "peft": "0.20.0",
+        "portallib": "0.2.1",
+        "accelerate": "1.14.0",
+        "pyarrow": "25.0.1"
+      },
+      "observed": "With 12 CPU threads, actual PEFT loading produced several BF16 factors that differed from independently loaded export tensors; two projections had large errors (0.359375 and 2.171875). With one CPU thread and the same published checkpoint/export, all 50 distinct projections and all factors were exact.",
+      "inference": "The result depends on the local CPU execution setting; a Gemma-specific catalog arithmetic defect was not isolated.",
+      "recommendation": "Retain the actual GPU native/PEFT/reload gate for Gemma4. Use a single CPU thread when reproducing this CPU fixture. Do not extrapolate the CPU anomaly into an observed ROCm failure.",
+      "resolution": "Not elevated to a source-code finding or used to invalidate the passing Qwen GPU receipts."
+    }
+  ],
+  "pending_runtime_evidence": [
+    "Remaining four smaller bases still need their own complete pretrained GPU forward and native/PEFT/reload receipts.",
+    "Inkling requires actual eight-GPU resident load, observed module/device placement, finite candidate scores and native/PEFT/reload parity on the occupied worker.",
+    "The 8 x 270GiB balanced placement setting and checkpoint-size calculation are feasibility checks, not completed Inkling execution.",
+    "The current GPU PEFT parity gate covers one BoolQ example. Its receipt must not be described as numerical equivalence across all tasks/prompts.",
+    "All catalog evaluation uses pretrained task adapters with zero optimizer updates; no continual-learning result is established."
+  ],
+  "reviewed_sha256": {
+    "experiments/catalog/run.py": "6eb1ac41961e9c642e1e2f38f318cbc2a2a3c1ceb3e19c35dc43e693124c4e12",
+    "experiments/catalog/download.py": "14049794c9cf8988bb84bea5e81f4c06d71ab9c7b442c0163d22e56461702797",
+    "experiments/catalog/factory.py": "ced886a5569b6fbc73666013b96337ad0cfdc116a5bdcef1a7d27c726de0d623",
+    "experiments/catalog/common.py": "c16115eea54686c0234ce6506e24710a3beafb488aa00699cca646945735ab74",
+    "experiments/catalog/verify.py": "b0188fceb75b3701faf19a0f1032cc173d36681b37020be90c52653cc31b916e",
+    "experiments/catalog/data.py": "a02ebf10a8998007c114bb8843ed657eb692fdfd4e452672b9aa51dc6024dc87",
+    "experiments/catalog/inventory.py": "f9892c0066e929bb0c78a23aae4689fd43d48a60cfddf7bbd9bcc36aa88f73be",
+    "experiments/catalog/manifest.json": "f7cf070b03b2fe89cadba0421e4e8bd5402684f38040d8c275cec369da1ca6f7",
+    "experiments/catalog/requirements.txt": "5e88d1a7d0971f717cc1e1a9f954b83c05c956c2c5e76b36383e6b0cd5adf1df",
+    "experiments/catalog/configs/portal-qwen3-8b.json": "7217203ec930835711786696a55d4ee306124b8047ff71e954a70b1ed7f173f4",
+    "experiments/catalog/configs/portal-inkling.json": "dfe9835def055f0573f7298e798bb685f6c8e108e409d9b83955b67ba91c675b",
+    "experiments/catalog/configs/portal-gemma-4-e2b.json": "18cbdeba691d277b0fe8e422eac82d8a123e0b3f86907801dc29c8a07f207d53",
+    "experiments/catalog/configs/portal-qwen3-1.7b.json": "89d111532cfc67dd5e67eda30b0a79fab3e152d0ddac5eda8d2557cc97bdedfb",
+    "experiments/catalog/configs/portal-mistral-7b.json": "39aed9fd2f77e1fa2ee98d848a0bbfe9bd015c3fb73bc4fd53ad244a789ddea2",
+    "experiments/catalog/configs/portal-qwen3-4b.json": "26913a64f2861c57b64537ae8214c346491fade93833dda6fd550dabe7aad670",
+    "experiments/catalog/configs/portal-gemma-3-4b.json": "3315fd4fa429679d9bc79bf7a7c3295443cdde66473077e2d43dbfdd2c51a90a",
+    "experiments/catalog/upstream/src/portallib/evaluation.py": "40d90fc8a6f01eba213108016bb210b7c179c55f356e6140af4f11ea7a5bfe5e",
+    "experiments/catalog/upstream/src/portallib/model.py": "9d2d6a9db00238cc9285c1cb25fbc1dd19a7ecae056058b3f3d63b4c404509da",
+    "experiments/catalog/upstream/src/portallib/training.py": "340f57dadebfd30b67249044edbb41d01fb9205f7bbf74c8c21eff9162b4e633",
+    "experiments/catalog/upstream/src/portallib/data.py": "ed6f89837bdf180b79a7b64c68bd34c825b6dd38becf98811ba6a31d60d11141",
+    "experiments/catalog/upstream/examples/configs/train.toml": "f9ddf29b03f2b181095bbfa06b33fb75f676fe8cc0f4459aa4fca5da5f57d2f9",
+    "experiments/catalog/upstream/examples/configs/refits/inkling.toml": "8e08c8ef7e25e3975a8440cb463691ed001818e578ce0732ccc58b5ad96c896e",
+    "experiments/catalog/outputs/cpu-verification/verification.json": "72e298cefef1040f705407848178b47a9b251e09e7b1bdb927fed90089a3d38d"
+  },
+  "external_primary_sources": [
+    {
+      "url": "https://github.com/ramp-public/portallib/blob/1a7b8c5b0200c301060bfbceca12653f86d2fa31/src/portallib/evaluation.py",
+      "purpose": "Verify exact-path injection and scoring implementation against pinned upstream."
+    }
+  ],
+  "source_snapshot_changed_during_audit": false,
+  "no_cache_corruption_observed": true,
+  "reproduction_commands": {
+    "gemma_one_thread": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/catalog uv run --no-project --python 3.12 --with torch==2.10.0 --with transformers==5.16.1 --with peft==0.20.0 --with portallib==0.2.1 --with pyarrow==25.0.1 python -B - <<'PY'\nfrom pathlib import Path\nimport json\nimport torch\nfrom torch import nn\nfrom peft import PeftModel\nfrom safetensors.torch import load_file\nfrom factory import load_portal\nfrom portallib.evaluation import PortalInjector\n\ntorch.set_num_threads(1)\nroot = Path('experiments/catalog')\nmanifest = json.loads((root/'manifest.json').read_text())\nentry = next(e for e in manifest['models'] if e['name'] == 'portal-gemma-4-e2b')\nportal = load_portal(manifest, entry, root/'outputs/cpu-cache')\ntargets = list(portal.config.resolved_targets())\nexport = root/'outputs/cpu-verification'/entry['name']/'peft/boolq'\nraw = load_file(export/'adapter_model.safetensors')\nprint(json.dumps({'raw_keys_head': list(raw)[:4], 'torch_threads': torch.get_num_threads()}), flush=True)\n\nclass SyntheticProjectionModel(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.config = {'model_type': entry['model_type'], 'tie_word_embeddings': False}\n        for target, path in targets:\n            parts = path.split('.')\n            node = self\n            for part in parts[:-1]:\n                if part not in node._modules:\n                    node.add_module(part, nn.Module())\n                node = node._modules[part]\n            projection = nn.Linear(target.in_features, target.out_features, bias=False, dtype=torch.bfloat16)\n            with torch.no_grad():\n                projection.weight.normal_(mean=0.0, std=0.01)\n            node.add_module(parts[-1], projection)\n    def prepare_inputs_for_generation(self, *args, **kwargs):\n        return kwargs\n    def forward(self, inputs):\n        return {path: self.get_submodule(path)(inputs[target.in_features]) for target, path in targets}\n\ntorch.manual_seed(704)\nmodel = SyntheticProjectionModel().eval()\ninputs = {target.in_features: torch.randn(2,3,target.in_features, dtype=torch.bfloat16) for target, path in targets}\nwith torch.inference_mode():\n    factors = portal.generate('boolq')\n    base = model(inputs)\n    injector = PortalInjector(model, portal.config)\n    with injector.activate(factors):\n        native = model(inputs)\n    injector.close()\n    clean = all(torch.equal(base[p], v) for p,v in model(inputs).items())\n    wrapped = PeftModel.from_pretrained(model, export, is_trainable=False, autocast_adapter_dtype=False)\n    peft_outputs = wrapped.base_model.model(inputs)\n    mismatches = []\n    factor_mismatches = []\n    for target, path in targets:\n        module = wrapped.base_model.model.get_submodule(path)\n        a, b = factors[target.key]\n        factors_actual = (module.lora_A['default'].weight, module.lora_B['default'].weight)\n        factor_errors = [float((x.to(torch.bfloat16).float()-y.float()).abs().max()) for x,y in zip((a,b), factors_actual)]\n        raw_errors = [float((x.float()-raw[f'base_model.model.{path}.lora_{letter}.weight'].float()).abs().max()) for x,letter in zip((a,b),('A','B'))]\n        if any(factor_errors) or any(raw_errors):\n            factor_mismatches.append({'path': path, 'factor_errors_bf16': factor_errors, 'raw_errors_fp32': raw_errors})\n        error = float((native[path]-peft_outputs[path]).abs().max())\n        if error:\n            mismatches.append({'path': path, 'max_error': error, 'native_abs_max': float(native[path].abs().max()), 'peft_abs_max': float(peft_outputs[path].abs().max()), 'factor_errors':factor_errors, 'scaling_native': portal.config.scaling, 'scaling_peft': module.scaling})\n    print(json.dumps({'model':entry['name'], 'unique_base_weights':len({model.get_submodule(p).base_layer.weight.data_ptr() for _,p in targets}), 'targets':len(targets),'hooks_removed_cleanly':clean,'mismatches': mismatches,'factor_mismatches': factor_mismatches}), flush=True)\nPY"
+  },
+  "observed_at": "2026-09-07T22:33:25.087397+00:00",
+  "gpu_receipts_reviewed": [
+    {
+      "id": "catalog-qwen3-17b-screen",
+      "result_path": "outputs/portfolio/runs/catalog-qwen3-17b-screen/result.json",
+      "result_sha256": "99b153efbb1029aaa84ce33642614fbf89280f3ebfa25c9d9e4446f588605599",
+      "source_matches_reviewed_files": true,
+      "execution_receipt": {
+        "task_id": "catalog-qwen3-17b-screen",
+        "started_at": "2026-09-07T22:26:07.476427+00:00",
+        "status": "completed",
+        "gpus": [
+          1
+        ],
+        "pid": 390,
+        "pod": "cl-portfolio-b94bq-x5vbc",
+        "runtime_sha256": "b8a7c06900441b8b529f7c7e6b7eee6cff9134bda5d8d84b19cad6ab015f3ac4",
+        "finished_at": "2026-09-07T22:26:47.829711+00:00",
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "model": "portal-qwen3-1.7b",
+      "base_identity_recorded": {
+        "repo": "Qwen/Qwen3-1.7B",
+        "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+        "model_class": "Qwen3ForCausalLM",
+        "parameters": 1720574976,
+        "trainable_parameters": 0
+      },
+      "gpu": {
+        "visible_count": 1,
+        "hip_version": "7.2.53211",
+        "devices": [
+          {
+            "name": "AMD Radeon Graphics",
+            "total_memory": 309220868096
+          }
+        ]
+      },
+      "packages": {
+        "portallib": "0.2.1",
+        "peft": "0.20.0",
+        "transformers": "5.16.1",
+        "torch": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+        "huggingface-hub": "1.30.0",
+        "datasets": "4.8.5",
+        "pyarrow": "25.0.1"
+      },
+      "selection_sha256": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b",
+      "native_roundtrip": {
+        "state_exact_equal": true,
+        "generated_factors_exact_equal": true,
+        "tasks": [
+          "boolq",
+          "hellaswag",
+          "winogrande",
+          "commonsense_qa"
+        ],
+        "checkpoint_sha256": "0fd40438c0ab7d610ee4ac8d994966cd2587468e27ae2e9005368e46d3219c76"
+      },
+      "peft_roundtrip": {
+        "task": "boolq",
+        "examples": 1,
+        "native_peft_max_score_error": 0.0,
+        "reload_max_score_error": 0.0,
+        "reload_scores_exact_equal": true,
+        "native_peft_atol": 0.0005
+      },
+      "statistics": {
+        "paired_examples": 128,
+        "improved": 21,
+        "regressed": 13,
+        "macro_accuracy_delta": 0.0625,
+        "paired_stratified_bootstrap_95ci": [
+          -0.0234375,
+          0.1484375
+        ],
+        "exact_mcnemar_two_sided_p": 0.22948101302608848,
+        "interpretation": "exploratory screen; interval is within-model and unadjusted for seven model comparisons"
+      },
+      "status": "qualified",
+      "decision": "discard_positive_claim",
+      "optimizer_steps": 0,
+      "durable_learning_demonstrated": false,
+      "finished_at": "2026-09-07T22:26:45.340970+00:00"
+    },
+    {
+      "id": "catalog-qwen3-4b-screen",
+      "result_path": "outputs/portfolio/runs/catalog-qwen3-4b-screen/result.json",
+      "result_sha256": "e17f7a88713b137c439387b695ecdd72ae9711c5c91c0b42fe3175522b7544bf",
+      "source_matches_reviewed_files": true,
+      "execution_receipt": {
+        "task_id": "catalog-qwen3-4b-screen",
+        "started_at": "2026-09-07T22:26:07.493258+00:00",
+        "status": "completed",
+        "gpus": [
+          2
+        ],
+        "pid": 395,
+        "pod": "cl-portfolio-b94bq-x5vbc",
+        "runtime_sha256": "b8a7c06900441b8b529f7c7e6b7eee6cff9134bda5d8d84b19cad6ab015f3ac4",
+        "finished_at": "2026-09-07T22:27:03.913513+00:00",
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "model": "portal-qwen3-4b",
+      "base_identity_recorded": {
+        "repo": "Qwen/Qwen3-4B",
+        "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+        "model_class": "Qwen3ForCausalLM",
+        "parameters": 4022468096,
+        "trainable_parameters": 0
+      },
+      "gpu": {
+        "visible_count": 1,
+        "hip_version": "7.2.53211",
+        "devices": [
+          {
+            "name": "AMD Radeon Graphics",
+            "total_memory": 309220868096
+          }
+        ]
+      },
+      "packages": {
+        "portallib": "0.2.1",
+        "peft": "0.20.0",
+        "transformers": "5.16.1",
+        "torch": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+        "huggingface-hub": "1.30.0",
+        "datasets": "4.8.5",
+        "pyarrow": "25.0.1"
+      },
+      "selection_sha256": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b",
+      "native_roundtrip": {
+        "state_exact_equal": true,
+        "generated_factors_exact_equal": true,
+        "tasks": [
+          "boolq",
+          "hellaswag",
+          "winogrande",
+          "commonsense_qa"
+        ],
+        "checkpoint_sha256": "bdbc778aef719df2397b2267967d1a64a7b2c0a84cb3fb5203c3d846740725fa"
+      },
+      "peft_roundtrip": {
+        "task": "boolq",
+        "examples": 1,
+        "native_peft_max_score_error": 0.0,
+        "reload_max_score_error": 0.0,
+        "reload_scores_exact_equal": true,
+        "native_peft_atol": 0.0005
+      },
+      "statistics": {
+        "paired_examples": 128,
+        "improved": 14,
+        "regressed": 10,
+        "macro_accuracy_delta": 0.03125,
+        "paired_stratified_bootstrap_95ci": [
+          -0.0390625,
+          0.109375
+        ],
+        "exact_mcnemar_two_sided_p": 0.5412561893463135,
+        "interpretation": "exploratory screen; interval is within-model and unadjusted for seven model comparisons"
+      },
+      "status": "qualified",
+      "decision": "discard_positive_claim",
+      "optimizer_steps": 0,
+      "durable_learning_demonstrated": false,
+      "finished_at": "2026-09-07T22:27:00.705529+00:00"
+    }
+  ],
+  "existing_cpu_receipt_reviewed": {
+    "path": "experiments/catalog/outputs/cpu-verification/verification.json",
+    "sha256": "72e298cefef1040f705407848178b47a9b251e09e7b1bdb927fed90089a3d38d",
+    "manifest_matches": true,
+    "complete": true,
+    "models": [
+      {
+        "name": "portal-qwen3-1.7b",
+        "status": "qualified_cpu",
+        "exports": 14,
+        "native_roundtrip": {
+          "state_exact_equal": true,
+          "generated_factors_exact_equal": true,
+          "tasks": [
+            "truthfulqa",
+            "rte",
+            "cb",
+            "copa",
+            "wic",
+            "wsc",
+            "boolq",
+            "arc_easy",
+            "arc_challenge",
+            "hellaswag",
+            "openbookqa",
+            "winogrande",
+            "commonsense_qa",
+            "sciq"
+          ],
+          "checkpoint_sha256": "732286e119c396c62b8c1d6b115f3ae6eec951a47eaa9bcdf0fee65564ff9688"
+        },
+        "topology": {
+          "architecture": "Qwen3ForCausalLM",
+          "targets": 56,
+          "meta_parameters": 1720574976,
+          "actual_weights_loaded": false
+        }
+      },
+      {
+        "name": "portal-qwen3-4b",
+        "status": "qualified_cpu",
+        "exports": 14,
+        "native_roundtrip": {
+          "state_exact_equal": true,
+          "generated_factors_exact_equal": true,
+          "tasks": [
+            "truthfulqa",
+            "rte",
+            "cb",
+            "copa",
+            "wic",
+            "wsc",
+            "boolq",
+            "arc_easy",
+            "arc_challenge",
+            "hellaswag",
+            "openbookqa",
+            "winogrande",
+            "commonsense_qa",
+            "sciq"
+          ],
+          "checkpoint_sha256": "35b861468179282068815455d0972a33e36ac3623aea90c85ac6b1c91decc867"
+        },
+        "topology": {
+          "architecture": "Qwen3ForCausalLM",
+          "targets": 72,
+          "meta_parameters": 4022468096,
+          "actual_weights_loaded": false
+        }
+      },
+      {
+        "name": "portal-qwen3-8b",
+        "status": "qualified_cpu",
+        "exports": 14,
+        "native_roundtrip": {
+          "state_exact_equal": true,
+          "generated_factors_exact_equal": true,
+          "tasks": [
+            "truthfulqa",
+            "rte",
+            "cb",
+            "copa",
+            "wic",
+            "wsc",
+            "boolq",
+            "arc_easy",
+            "arc_challenge",
+            "hellaswag",
+            "openbookqa",
+            "winogrande",
+            "commonsense_qa",
+            "sciq"
+          ],
+          "checkpoint_sha256": "dc5ecdc25c40dedfa649a6f0a8580d5984210a5579a90e8634123da059543d32"
+        },
+        "topology": {
+          "architecture": "Qwen3ForCausalLM",
+          "targets": 72,
+          "meta_parameters": 8190735360,
+          "actual_weights_loaded": false
+        }
+      },
+      {
+        "name": "portal-gemma-3-4b",
+        "status": "qualified_cpu",
+        "exports": 14,
+        "native_roundtrip": {
+          "state_exact_equal": true,
+          "generated_factors_exact_equal": true,
+          "tasks": [
+            "truthfulqa",
+            "rte",
+            "cb",
+            "copa",
+            "wic",
+            "wsc",
+            "boolq",
+            "arc_easy",
+            "arc_challenge",
+            "hellaswag",
+            "openbookqa",
+            "winogrande",
+            "commonsense_qa",
+            "sciq"
+          ],
+          "checkpoint_sha256": "026008fc1ebfcc1c00424260f6dd1fe925bfe58d233423302a0aab1e18f3b887"
+        },
+        "topology": {
+          "architecture": "Gemma3ForConditionalGeneration",
+          "targets": 68,
+          "meta_parameters": 4300079472,
+          "actual_weights_loaded": false
+        }
+      },
+      {
+        "name": "portal-gemma-4-e2b",
+        "status": "qualified_cpu",
+        "exports": 14,
+        "native_roundtrip": {
+          "state_exact_equal": true,
+          "generated_factors_exact_equal": true,
+          "tasks": [
+            "truthfulqa",
+            "rte",
+            "cb",
+            "copa",
+            "wic",
+            "wsc",
+            "boolq",
+            "arc_easy",
+            "arc_challenge",
+            "hellaswag",
+            "openbookqa",
+            "winogrande",
+            "commonsense_qa",
+            "sciq"
+          ],
+          "checkpoint_sha256": "ba63db93c9798091825a49128d6011d78192222f82456037d5f0b22b0b770d6a"
+        },
+        "topology": {
+          "architecture": "Gemma4ForConditionalGeneration",
+          "targets": 50,
+          "meta_parameters": 5104297504,
+          "actual_weights_loaded": false
+        }
+      },
+      {
+        "name": "portal-inkling",
+        "status": "qualified_cpu",
+        "exports": 14,
+        "native_roundtrip": {
+          "state_exact_equal": true,
+          "generated_factors_exact_equal": true,
+          "tasks": [
+            "truthfulqa",
+            "rte",
+            "cb",
+            "copa",
+            "wic",
+            "wsc",
+            "boolq",
+            "arc_easy",
+            "arc_challenge",
+            "hellaswag",
+            "openbookqa",
+            "winogrande",
+            "commonsense_qa",
+            "sciq"
+          ],
+          "checkpoint_sha256": "4eb6ccdfe1e86b39a98e11aa57e0d9f1d4dfe205ad0ec24bdac3f82b6ff37878"
+        },
+        "topology": {
+          "architecture": "InklingForConditionalGeneration",
+          "targets": 132,
+          "meta_parameters": 947117177922,
+          "actual_weights_loaded": false
+        }
+      },
+      {
+        "name": "portal-mistral-7b",
+        "status": "qualified_cpu",
+        "exports": 14,
+        "native_roundtrip": {
+          "state_exact_equal": true,
+          "generated_factors_exact_equal": true,
+          "tasks": [
+            "truthfulqa",
+            "rte",
+            "cb",
+            "copa",
+            "wic",
+            "wsc",
+            "boolq",
+            "arc_easy",
+            "arc_challenge",
+            "hellaswag",
+            "openbookqa",
+            "winogrande",
+            "commonsense_qa",
+            "sciq"
+          ],
+          "checkpoint_sha256": "4f786cd8e01dab2ee301fad7960c90e0a77319f2c41fb0d66ed183106988b7ce"
+        },
+        "topology": {
+          "architecture": "MistralForCausalLM",
+          "targets": 64,
+          "meta_parameters": 7248023552,
+          "actual_weights_loaded": false
+        }
+      }
+    ],
+    "total_exports": 98,
+    "provenance": "Existing catalog-owner artifact, inspected independently; it is not a new seven-model GPU execution."
+  }
+}

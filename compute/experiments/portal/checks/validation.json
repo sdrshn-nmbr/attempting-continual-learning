@@ -1,0 +1,37 @@
+{
+  "cpu_pytest": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "14",
+    "time": "6.455",
+    "timestamp": "2026-09-07T18:27:53.080791-04:00",
+    "hostname": "Suds-MacBook-Pro.local"
+  },
+  "official_artifacts_downloaded_hashed_loaded_and_generated": 7,
+  "cli_without_gpu": {
+    "exit_code": 2,
+    "status": "blocked",
+    "measurement_scope": "CPU artifact load only; correctly rejects missing GPU"
+  },
+  "ast_check": "passed: imports at module top, no dynamic imports or eval/exec",
+  "config_paths": "all 13 configs match the parent cache layout and bundled registry",
+  "gpu_learning_or_transfer_run_by_this_worker": false,
+  "source_hashes": {
+    "engine.py": "8961b6d9710155476a3a5dc8d3b789eaa708b5b8dea5e51055c982815d4b1981",
+    "inventory.py": "9b21bd9e582f6d59bee6fe922620516197e1f08ad8c40bd1b7e19691594cff0a",
+    "run.py": "b82bff2138a381490e202b2c0c883f1201f9e8d2c4cc0540192b303d3670ae25",
+    "runtime.py": "63930296e2b933c3ee49daf3fd0b1c80f8b89f4caf94b01ee97dfe0b15a0def2",
+    "tasks.py": "5b04712724b3e8230f5d416e9020e8b613f8afb6e123c97cc160aad5e8c3daa3",
+    "tests/test_portal.py": "4f43a20ad4580534d7e26a9473bcfe7658d79209f9fb8c42abc3a7c20402d3ce"
+  },
+  "observed_at": "2026-09-07T22:29:08.046952+00:00",
+  "output_directory_lock": {
+    "status": "passed",
+    "cross_process_duplicate_rejected": true,
+    "owner_outputs_unchanged": true,
+    "safe_close_and_exception_cleanup": true
+  },
+  "scientific_sources_and_configs_unchanged": true
+}

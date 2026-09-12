@@ -1,0 +1,7458 @@
+{
+  "splits": {
+    "train": {
+      "acquisition_a": [
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 5 5\nOutput:",
+          "choices": [
+            " 4 0 0",
+            " 2 4 4",
+            " 6 5 1",
+            " 4 5 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 5 7\nOutput:",
+          "choices": [
+            " 5 5 0",
+            " 5 4 1",
+            " 6 3 0",
+            " 5 6 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 5 2\nOutput:",
+          "choices": [
+            " 7 5 2",
+            " 3 6 0",
+            " 5 5 1",
+            " 7 4 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 0 1\nOutput:",
+          "choices": [
+            " 4 0 6",
+            " 1 3 7",
+            " 4 4 5",
+            " 1 5 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 5 7\nOutput:",
+          "choices": [
+            " 3 4 1",
+            " 2 5 0",
+            " 2 7 1",
+            " 3 4 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 6 2\nOutput:",
+          "choices": [
+            " 2 7 4",
+            " 0 2 0",
+            " 1 1 5",
+            " 3 4 5"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 2 2\nOutput:",
+          "choices": [
+            " 5 6 3",
+            " 4 4 4",
+            " 5 0 0",
+            " 5 2 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 1 1\nOutput:",
+          "choices": [
+            " 2 3 6",
+            " 0 7 2",
+            " 4 7 0",
+            " 0 7 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 1 6\nOutput:",
+          "choices": [
+            " 4 3 0",
+            " 4 0 0",
+            " 1 7 2",
+            " 3 1 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 5 7\nOutput:",
+          "choices": [
+            " 0 4 1",
+            " 7 3 0",
+            " 1 4 3",
+            " 2 3 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 7 6\nOutput:",
+          "choices": [
+            " 0 1 2",
+            " 7 2 5",
+            " 6 7 3",
+            " 5 1 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 0 4\nOutput:",
+          "choices": [
+            " 3 3 3",
+            " 1 3 5",
+            " 4 3 5",
+            " 6 0 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 5 1\nOutput:",
+          "choices": [
+            " 4 4 6",
+            " 0 4 7",
+            " 5 7 3",
+            " 6 6 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 3 4\nOutput:",
+          "choices": [
+            " 6 6 7",
+            " 0 6 5",
+            " 6 2 6",
+            " 2 3 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 4 7\nOutput:",
+          "choices": [
+            " 6 4 2",
+            " 5 3 3",
+            " 1 0 4",
+            " 0 5 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 2 4\nOutput:",
+          "choices": [
+            " 7 5 6",
+            " 3 1 3",
+            " 3 3 7",
+            " 2 0 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 5 2\nOutput:",
+          "choices": [
+            " 1 4 0",
+            " 5 0 5",
+            " 6 2 0",
+            " 5 1 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 5 1\nOutput:",
+          "choices": [
+            " 1 4 7",
+            " 7 3 6",
+            " 2 6 7",
+            " 1 0 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 7 2\nOutput:",
+          "choices": [
+            " 1 6 0",
+            " 0 1 0",
+            " 2 3 6",
+            " 3 7 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 4 6\nOutput:",
+          "choices": [
+            " 4 3 4",
+            " 5 7 0",
+            " 4 1 7",
+            " 2 5 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 0 7\nOutput:",
+          "choices": [
+            " 4 3 1",
+            " 2 5 6",
+            " 4 6 6",
+            " 0 0 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 7 5\nOutput:",
+          "choices": [
+            " 7 1 4",
+            " 7 2 3",
+            " 0 2 7",
+            " 0 3 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 7 2\nOutput:",
+          "choices": [
+            " 0 5 0",
+            " 1 1 2",
+            " 2 2 0",
+            " 7 1 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 2 3\nOutput:",
+          "choices": [
+            " 1 5 5",
+            " 7 7 5",
+            " 2 0 4",
+            " 2 0 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 5 1\nOutput:",
+          "choices": [
+            " 4 1 7",
+            " 7 1 1",
+            " 2 4 7",
+            " 7 5 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 2 7\nOutput:",
+          "choices": [
+            " 5 4 3",
+            " 0 0 1",
+            " 6 4 0",
+            " 1 4 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 1 5\nOutput:",
+          "choices": [
+            " 0 7 4",
+            " 2 7 1",
+            " 6 0 3",
+            " 4 2 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 1 2\nOutput:",
+          "choices": [
+            " 6 7 0",
+            " 7 0 7",
+            " 6 2 2",
+            " 5 7 1"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 0 5\nOutput:",
+          "choices": [
+            " 0 3 4",
+            " 4 0 6",
+            " 0 5 7",
+            " 3 0 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 7 1\nOutput:",
+          "choices": [
+            " 1 7 1",
+            " 2 1 7",
+            " 3 4 0",
+            " 6 2 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 0 3\nOutput:",
+          "choices": [
+            " 4 3 6",
+            " 4 0 0",
+            " 1 3 6",
+            " 2 4 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 6 5\nOutput:",
+          "choices": [
+            " 1 0 0",
+            " 7 5 7",
+            " 4 5 7",
+            " 2 2 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 0 2\nOutput:",
+          "choices": [
+            " 4 4 3",
+            " 5 3 0",
+            " 0 7 3",
+            " 1 1 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 2 3\nOutput:",
+          "choices": [
+            " 3 2 2",
+            " 7 2 2",
+            " 0 5 0",
+            " 4 0 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 7 2\nOutput:",
+          "choices": [
+            " 2 1 0",
+            " 0 1 4",
+            " 3 1 3",
+            " 5 3 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 3 4\nOutput:",
+          "choices": [
+            " 6 6 3",
+            " 6 6 5",
+            " 6 2 1",
+            " 1 3 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 5 2\nOutput:",
+          "choices": [
+            " 2 4 6",
+            " 1 2 7",
+            " 3 4 0",
+            " 3 0 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 1 0\nOutput:",
+          "choices": [
+            " 1 3 4",
+            " 2 5 2",
+            " 7 7 3",
+            " 0 4 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 5 2\nOutput:",
+          "choices": [
+            " 2 4 2",
+            " 6 6 2",
+            " 6 4 0",
+            " 4 3 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 6 0\nOutput:",
+          "choices": [
+            " 6 2 3",
+            " 4 7 5",
+            " 6 6 6",
+            " 5 4 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 2 5\nOutput:",
+          "choices": [
+            " 4 2 5",
+            " 2 5 5",
+            " 0 7 7",
+            " 0 0 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 0 0\nOutput:",
+          "choices": [
+            " 1 4 5",
+            " 0 1 1",
+            " 7 2 5",
+            " 1 3 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 0 5\nOutput:",
+          "choices": [
+            " 4 3 7",
+            " 5 3 4",
+            " 0 4 4",
+            " 4 2 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 4 3\nOutput:",
+          "choices": [
+            " 6 2 4",
+            " 7 0 5",
+            " 6 6 0",
+            " 6 5 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 0 1\nOutput:",
+          "choices": [
+            " 1 5 4",
+            " 6 0 7",
+            " 6 1 0",
+            " 3 3 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 7 4\nOutput:",
+          "choices": [
+            " 4 1 5",
+            " 7 3 2",
+            " 4 6 1",
+            " 7 0 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 3 6\nOutput:",
+          "choices": [
+            " 5 2 7",
+            " 6 1 2",
+            " 2 6 2",
+            " 0 1 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 1 1\nOutput:",
+          "choices": [
+            " 3 7 7",
+            " 1 1 5",
+            " 2 0 4",
+            " 0 7 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 4 6\nOutput:",
+          "choices": [
+            " 1 5 2",
+            " 3 3 7",
+            " 7 2 1",
+            " 0 1 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 0 4\nOutput:",
+          "choices": [
+            " 3 4 6",
+            " 0 6 4",
+            " 7 7 5",
+            " 0 3 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 3 3\nOutput:",
+          "choices": [
+            " 5 6 6",
+            " 6 0 7",
+            " 3 6 5",
+            " 5 1 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 4 4\nOutput:",
+          "choices": [
+            " 2 0 5",
+            " 7 1 1",
+            " 7 5 7",
+            " 5 5 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 1 5\nOutput:",
+          "choices": [
+            " 6 3 3",
+            " 6 0 5",
+            " 5 7 4",
+            " 2 1 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 0 4\nOutput:",
+          "choices": [
+            " 7 3 5",
+            " 7 6 6",
+            " 6 7 2",
+            " 3 0 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 7 3\nOutput:",
+          "choices": [
+            " 2 2 3",
+            " 5 0 5",
+            " 7 1 6",
+            " 2 4 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 0 2\nOutput:",
+          "choices": [
+            " 4 3 0",
+            " 4 3 3",
+            " 3 6 0",
+            " 5 1 1"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 5 6\nOutput:",
+          "choices": [
+            " 7 7 4",
+            " 7 4 2",
+            " 5 7 2",
+            " 1 2 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 1 4\nOutput:",
+          "choices": [
+            " 3 7 5",
+            " 7 5 3",
+            " 2 1 4",
+            " 5 4 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 7 0\nOutput:",
+          "choices": [
+            " 5 1 1",
+            " 7 5 4",
+            " 2 6 1",
+            " 6 1 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 6 0\nOutput:",
+          "choices": [
+            " 5 7 1",
+            " 3 1 3",
+            " 5 3 5",
+            " 1 2 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 7 7\nOutput:",
+          "choices": [
+            " 3 4 0",
+            " 7 1 1",
+            " 4 3 0",
+            " 3 2 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 5 3\nOutput:",
+          "choices": [
+            " 6 2 2",
+            " 3 5 1",
+            " 1 4 6",
+            " 1 3 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 1 7\nOutput:",
+          "choices": [
+            " 6 1 4",
+            " 2 1 6",
+            " 0 7 1",
+            " 5 2 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 2 1\nOutput:",
+          "choices": [
+            " 7 3 5",
+            " 4 2 3",
+            " 0 0 7",
+            " 0 2 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 3 7\nOutput:",
+          "choices": [
+            " 7 6 1",
+            " 0 1 5",
+            " 2 0 4",
+            " 3 4 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 1 1\nOutput:",
+          "choices": [
+            " 4 6 1",
+            " 4 7 0",
+            " 4 5 3",
+            " 1 7 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 4 7\nOutput:",
+          "choices": [
+            " 1 0 5",
+            " 6 5 1",
+            " 2 3 4",
+            " 2 4 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 4 3\nOutput:",
+          "choices": [
+            " 4 5 6",
+            " 7 6 3",
+            " 1 1 3",
+            " 5 5 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 3 6\nOutput:",
+          "choices": [
+            " 2 1 2",
+            " 1 0 5",
+            " 0 6 2",
+            " 6 1 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 3 2\nOutput:",
+          "choices": [
+            " 3 1 3",
+            " 4 6 0",
+            " 4 1 0",
+            " 7 0 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 5 3\nOutput:",
+          "choices": [
+            " 2 0 5",
+            " 5 4 6",
+            " 0 6 5",
+            " 0 2 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 7 2\nOutput:",
+          "choices": [
+            " 5 1 0",
+            " 1 3 4",
+            " 1 3 5",
+            " 2 0 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 0 6\nOutput:",
+          "choices": [
+            " 1 4 6",
+            " 6 6 1",
+            " 6 4 2",
+            " 0 3 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 6 6\nOutput:",
+          "choices": [
+            " 0 5 6",
+            " 0 2 1",
+            " 4 2 4",
+            " 1 2 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 6 1\nOutput:",
+          "choices": [
+            " 6 7 2",
+            " 5 0 6",
+            " 4 2 7",
+            " 1 2 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 7 7\nOutput:",
+          "choices": [
+            " 2 1 1",
+            " 2 7 6",
+            " 0 4 7",
+            " 1 3 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 0 5\nOutput:",
+          "choices": [
+            " 2 2 7",
+            " 6 6 3",
+            " 4 1 1",
+            " 3 3 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 7 6\nOutput:",
+          "choices": [
+            " 2 6 7",
+            " 7 1 2",
+            " 1 6 7",
+            " 5 5 3"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 3 7\nOutput:",
+          "choices": [
+            " 3 6 1",
+            " 0 7 0",
+            " 5 5 7",
+            " 3 5 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 7 0\nOutput:",
+          "choices": [
+            " 3 1 2",
+            " 6 3 6",
+            " 3 1 3",
+            " 5 7 4"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 0 3\nOutput:",
+          "choices": [
+            " 4 5 4",
+            " 2 2 7",
+            " 6 3 6",
+            " 7 4 4"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 2 7\nOutput:",
+          "choices": [
+            " 1 5 3",
+            " 7 5 7",
+            " 2 0 1",
+            " 1 1 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 6 6\nOutput:",
+          "choices": [
+            " 5 3 3",
+            " 5 2 4",
+            " 5 1 0",
+            " 2 2 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 2 2\nOutput:",
+          "choices": [
+            " 3 7 7",
+            " 3 0 0",
+            " 1 1 1",
+            " 2 6 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 5 0\nOutput:",
+          "choices": [
+            " 4 1 1",
+            " 3 4 3",
+            " 6 6 0",
+            " 3 5 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 6 2\nOutput:",
+          "choices": [
+            " 1 6 1",
+            " 3 6 7",
+            " 4 0 3",
+            " 6 2 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 3 0\nOutput:",
+          "choices": [
+            " 5 5 2",
+            " 2 7 6",
+            " 4 3 6",
+            " 1 6 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 1 1\nOutput:",
+          "choices": [
+            " 0 4 1",
+            " 2 1 6",
+            " 4 7 7",
+            " 7 2 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 7 3\nOutput:",
+          "choices": [
+            " 3 3 7",
+            " 2 1 6",
+            " 1 1 2",
+            " 3 6 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 0 6\nOutput:",
+          "choices": [
+            " 2 3 0",
+            " 3 0 6",
+            " 4 7 4",
+            " 2 3 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 1 4\nOutput:",
+          "choices": [
+            " 1 3 6",
+            " 2 7 5",
+            " 6 4 3",
+            " 5 7 5"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 0 6\nOutput:",
+          "choices": [
+            " 5 4 6",
+            " 5 7 5",
+            " 7 1 4",
+            " 6 3 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 0 2\nOutput:",
+          "choices": [
+            " 7 3 0",
+            " 4 7 2",
+            " 5 1 7",
+            " 1 6 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 6 5\nOutput:",
+          "choices": [
+            " 0 2 4",
+            " 6 0 3",
+            " 6 5 0",
+            " 6 0 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 7 4\nOutput:",
+          "choices": [
+            " 2 3 0",
+            " 1 7 3",
+            " 1 1 5",
+            " 2 3 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 7 2\nOutput:",
+          "choices": [
+            " 6 6 1",
+            " 4 1 0",
+            " 0 0 3",
+            " 3 6 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 3 5\nOutput:",
+          "choices": [
+            " 3 7 0",
+            " 0 0 7",
+            " 5 4 3",
+            " 5 6 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 7 1\nOutput:",
+          "choices": [
+            " 5 1 5",
+            " 5 4 4",
+            " 5 1 7",
+            " 0 0 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 7 0\nOutput:",
+          "choices": [
+            " 7 1 3",
+            " 5 1 7",
+            " 7 7 4",
+            " 1 7 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 3 3\nOutput:",
+          "choices": [
+            " 2 4 6",
+            " 1 6 6",
+            " 2 3 0",
+            " 7 4 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 3 1\nOutput:",
+          "choices": [
+            " 4 1 1",
+            " 1 1 2",
+            " 3 6 7",
+            " 3 3 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 5 7\nOutput:",
+          "choices": [
+            " 0 2 6",
+            " 2 4 1",
+            " 7 5 3",
+            " 0 4 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 6 4\nOutput:",
+          "choices": [
+            " 2 1 2",
+            " 3 1 7",
+            " 4 2 5",
+            " 6 1 4"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 3 4\nOutput:",
+          "choices": [
+            " 4 6 5",
+            " 0 2 4",
+            " 7 3 4",
+            " 3 5 1"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 1 4\nOutput:",
+          "choices": [
+            " 5 0 5",
+            " 5 6 1",
+            " 6 6 3",
+            " 4 7 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 4 1\nOutput:",
+          "choices": [
+            " 2 0 4",
+            " 7 3 4",
+            " 6 5 7",
+            " 5 7 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 1 0\nOutput:",
+          "choices": [
+            " 6 5 1",
+            " 0 5 4",
+            " 3 5 3",
+            " 2 7 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 7 1\nOutput:",
+          "choices": [
+            " 5 6 2",
+            " 1 5 5",
+            " 0 1 7",
+            " 1 6 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 1 7\nOutput:",
+          "choices": [
+            " 7 1 6",
+            " 5 1 2",
+            " 6 7 1",
+            " 7 6 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 6 7\nOutput:",
+          "choices": [
+            " 1 4 6",
+            " 0 6 0",
+            " 4 4 5",
+            " 6 2 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 2 5\nOutput:",
+          "choices": [
+            " 6 0 4",
+            " 4 6 7",
+            " 2 2 1",
+            " 1 4 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 4 2\nOutput:",
+          "choices": [
+            " 1 3 1",
+            " 1 5 0",
+            " 7 6 5",
+            " 3 7 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 3 2\nOutput:",
+          "choices": [
+            " 3 0 6",
+            " 1 6 0",
+            " 2 5 1",
+            " 6 0 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 3 6\nOutput:",
+          "choices": [
+            " 7 5 0",
+            " 3 6 2",
+            " 6 2 2",
+            " 2 1 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 4 2\nOutput:",
+          "choices": [
+            " 2 3 1",
+            " 4 2 4",
+            " 2 5 0",
+            " 5 6 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 0 0\nOutput:",
+          "choices": [
+            " 5 3 3",
+            " 6 3 3",
+            " 3 2 7",
+            " 0 0 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 3 6\nOutput:",
+          "choices": [
+            " 1 4 0",
+            " 7 0 2",
+            " 7 6 2",
+            " 0 7 4"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 1 2\nOutput:",
+          "choices": [
+            " 7 7 0",
+            " 2 5 6",
+            " 0 3 5",
+            " 4 1 1"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 4 0\nOutput:",
+          "choices": [
+            " 4 2 6",
+            " 2 1 4",
+            " 2 0 2",
+            " 3 5 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 5 3\nOutput:",
+          "choices": [
+            " 3 5 3",
+            " 0 3 2",
+            " 6 4 6",
+            " 6 3 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 6 1\nOutput:",
+          "choices": [
+            " 2 2 7",
+            " 3 5 2",
+            " 3 2 4",
+            " 3 6 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 2 2\nOutput:",
+          "choices": [
+            " 6 0 2",
+            " 4 0 0",
+            " 7 6 3",
+            " 3 3 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 5 6\nOutput:",
+          "choices": [
+            " 7 6 3",
+            " 0 3 1",
+            " 3 4 2",
+            " 5 7 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 3 1\nOutput:",
+          "choices": [
+            " 6 5 5",
+            " 6 6 7",
+            " 7 6 1",
+            " 6 4 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 2 1\nOutput:",
+          "choices": [
+            " 0 4 0",
+            " 3 7 3",
+            " 6 0 7",
+            " 0 3 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 6 1\nOutput:",
+          "choices": [
+            " 5 5 6",
+            " 4 5 2",
+            " 3 2 7",
+            " 5 2 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 5 4\nOutput:",
+          "choices": [
+            " 4 4 5",
+            " 4 3 5",
+            " 6 0 0",
+            " 4 1 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 4 0\nOutput:",
+          "choices": [
+            " 2 6 0",
+            " 6 5 3",
+            " 3 2 5",
+            " 2 6 7"
+          ],
+          "gold_idx": 1
+        }
+      ],
+      "acquisition_b": [
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 5 5\nOutput:",
+          "choices": [
+            " 7 0 5",
+            " 7 1 3",
+            " 0 0 3",
+            " 2 4 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 5 7\nOutput:",
+          "choices": [
+            " 7 3 3",
+            " 5 2 3",
+            " 1 4 3",
+            " 6 0 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 5 2\nOutput:",
+          "choices": [
+            " 5 2 1",
+            " 1 0 7",
+            " 4 5 6",
+            " 4 7 5"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 0 1\nOutput:",
+          "choices": [
+            " 2 6 4",
+            " 5 5 5",
+            " 7 2 1",
+            " 7 2 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 5 7\nOutput:",
+          "choices": [
+            " 3 6 7",
+            " 1 6 0",
+            " 6 0 6",
+            " 6 0 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 6 2\nOutput:",
+          "choices": [
+            " 1 3 1",
+            " 1 5 5",
+            " 3 5 0",
+            " 5 2 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 2 2\nOutput:",
+          "choices": [
+            " 0 5 5",
+            " 7 2 5",
+            " 0 2 7",
+            " 1 1 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 1 1\nOutput:",
+          "choices": [
+            " 0 0 1",
+            " 4 0 2",
+            " 3 4 6",
+            " 7 7 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 1 6\nOutput:",
+          "choices": [
+            " 1 1 7",
+            " 3 7 6",
+            " 7 1 0",
+            " 5 5 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 5 7\nOutput:",
+          "choices": [
+            " 7 2 2",
+            " 6 0 1",
+            " 7 0 5",
+            " 3 5 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 7 6\nOutput:",
+          "choices": [
+            " 2 4 3",
+            " 0 1 0",
+            " 3 6 1",
+            " 3 2 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 0 4\nOutput:",
+          "choices": [
+            " 2 6 1",
+            " 3 2 2",
+            " 5 2 6",
+            " 6 7 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 5 1\nOutput:",
+          "choices": [
+            " 2 3 5",
+            " 2 2 6",
+            " 5 1 1",
+            " 7 0 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 3 4\nOutput:",
+          "choices": [
+            " 0 4 3",
+            " 0 3 3",
+            " 2 5 7",
+            " 5 4 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 4 7\nOutput:",
+          "choices": [
+            " 5 4 1",
+            " 6 5 1",
+            " 1 7 6",
+            " 1 5 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 2 4\nOutput:",
+          "choices": [
+            " 0 3 0",
+            " 5 1 3",
+            " 2 7 6",
+            " 0 4 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 5 2\nOutput:",
+          "choices": [
+            " 4 2 1",
+            " 1 5 7",
+            " 1 0 6",
+            " 7 3 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 5 1\nOutput:",
+          "choices": [
+            " 7 0 6",
+            " 3 7 7",
+            " 4 5 2",
+            " 0 3 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 7 2\nOutput:",
+          "choices": [
+            " 3 6 2",
+            " 4 7 4",
+            " 4 5 2",
+            " 1 6 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 4 6\nOutput:",
+          "choices": [
+            " 4 5 3",
+            " 3 5 3",
+            " 1 1 2",
+            " 0 4 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 0 7\nOutput:",
+          "choices": [
+            " 6 2 0",
+            " 4 1 6",
+            " 1 0 0",
+            " 4 7 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 7 5\nOutput:",
+          "choices": [
+            " 7 1 5",
+            " 4 7 6",
+            " 0 6 7",
+            " 0 0 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 7 2\nOutput:",
+          "choices": [
+            " 1 5 5",
+            " 1 2 1",
+            " 1 3 1",
+            " 1 6 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 2 3\nOutput:",
+          "choices": [
+            " 4 3 1",
+            " 4 1 3",
+            " 3 4 3",
+            " 1 5 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 5 1\nOutput:",
+          "choices": [
+            " 5 3 2",
+            " 7 0 3",
+            " 5 6 6",
+            " 7 0 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 2 7\nOutput:",
+          "choices": [
+            " 6 0 4",
+            " 2 4 0",
+            " 3 5 7",
+            " 6 1 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 1 5\nOutput:",
+          "choices": [
+            " 1 7 1",
+            " 4 1 5",
+            " 0 7 1",
+            " 5 7 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 1 2\nOutput:",
+          "choices": [
+            " 3 5 1",
+            " 7 4 4",
+            " 1 7 4",
+            " 3 7 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 0 5\nOutput:",
+          "choices": [
+            " 0 4 2",
+            " 3 0 5",
+            " 7 0 1",
+            " 0 2 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 7 1\nOutput:",
+          "choices": [
+            " 6 6 7",
+            " 2 3 7",
+            " 7 6 7",
+            " 7 6 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 0 3\nOutput:",
+          "choices": [
+            " 4 2 6",
+            " 2 7 2",
+            " 7 6 5",
+            " 1 3 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 6 5\nOutput:",
+          "choices": [
+            " 6 2 7",
+            " 0 3 3",
+            " 6 6 2",
+            " 4 2 3"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 0 2\nOutput:",
+          "choices": [
+            " 6 0 3",
+            " 1 4 1",
+            " 1 2 5",
+            " 6 4 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 2 3\nOutput:",
+          "choices": [
+            " 1 2 1",
+            " 7 5 0",
+            " 0 2 1",
+            " 4 1 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 7 2\nOutput:",
+          "choices": [
+            " 7 2 7",
+            " 3 3 0",
+            " 1 6 3",
+            " 2 0 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 3 4\nOutput:",
+          "choices": [
+            " 5 4 4",
+            " 4 7 6",
+            " 2 3 4",
+            " 2 2 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 5 2\nOutput:",
+          "choices": [
+            " 7 7 4",
+            " 0 4 6",
+            " 1 0 2",
+            " 7 6 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 1 0\nOutput:",
+          "choices": [
+            " 5 3 4",
+            " 2 0 1",
+            " 4 5 3",
+            " 2 7 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 5 2\nOutput:",
+          "choices": [
+            " 5 4 6",
+            " 2 1 6",
+            " 0 7 2",
+            " 1 0 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 6 0\nOutput:",
+          "choices": [
+            " 2 3 4",
+            " 7 1 3",
+            " 7 2 6",
+            " 7 4 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 2 5\nOutput:",
+          "choices": [
+            " 0 1 1",
+            " 2 2 6",
+            " 0 0 6",
+            " 6 5 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 0 0\nOutput:",
+          "choices": [
+            " 2 2 6",
+            " 2 1 0",
+            " 5 3 0",
+            " 0 4 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 0 5\nOutput:",
+          "choices": [
+            " 1 6 6",
+            " 6 4 2",
+            " 7 7 6",
+            " 0 2 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 4 3\nOutput:",
+          "choices": [
+            " 2 4 6",
+            " 4 5 4",
+            " 4 4 6",
+            " 1 6 3"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 0 1\nOutput:",
+          "choices": [
+            " 2 1 2",
+            " 7 2 2",
+            " 4 7 7",
+            " 5 1 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 7 4\nOutput:",
+          "choices": [
+            " 5 6 0",
+            " 4 2 5",
+            " 1 5 4",
+            " 2 1 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 3 6\nOutput:",
+          "choices": [
+            " 3 4 4",
+            " 3 4 3",
+            " 5 7 2",
+            " 0 7 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 1 1\nOutput:",
+          "choices": [
+            " 7 7 2",
+            " 1 2 4",
+            " 4 5 7",
+            " 4 4 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 4 6\nOutput:",
+          "choices": [
+            " 5 4 1",
+            " 4 5 7",
+            " 3 5 6",
+            " 1 5 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 0 4\nOutput:",
+          "choices": [
+            " 0 7 1",
+            " 3 0 7",
+            " 1 5 6",
+            " 5 2 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 3 3\nOutput:",
+          "choices": [
+            " 4 4 5",
+            " 7 7 5",
+            " 1 2 2",
+            " 5 5 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 4 4\nOutput:",
+          "choices": [
+            " 5 5 5",
+            " 0 6 5",
+            " 5 3 2",
+            " 7 0 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 1 5\nOutput:",
+          "choices": [
+            " 3 4 7",
+            " 1 2 6",
+            " 1 5 0",
+            " 0 7 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 0 4\nOutput:",
+          "choices": [
+            " 6 1 7",
+            " 5 2 7",
+            " 5 4 2",
+            " 6 7 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 7 3\nOutput:",
+          "choices": [
+            " 4 6 7",
+            " 4 5 3",
+            " 0 3 4",
+            " 5 7 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 0 2\nOutput:",
+          "choices": [
+            " 7 7 5",
+            " 2 5 5",
+            " 6 2 2",
+            " 1 2 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 5 6\nOutput:",
+          "choices": [
+            " 3 0 7",
+            " 2 5 3",
+            " 6 1 1",
+            " 6 4 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 1 4\nOutput:",
+          "choices": [
+            " 5 7 2",
+            " 2 2 0",
+            " 6 6 5",
+            " 4 0 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 7 0\nOutput:",
+          "choices": [
+            " 2 0 6",
+            " 4 5 4",
+            " 2 6 4",
+            " 3 3 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 6 0\nOutput:",
+          "choices": [
+            " 2 7 4",
+            " 2 3 6",
+            " 1 0 5",
+            " 7 1 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 7 7\nOutput:",
+          "choices": [
+            " 4 2 7",
+            " 6 1 3",
+            " 1 5 6",
+            " 6 6 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 5 3\nOutput:",
+          "choices": [
+            " 2 2 3",
+            " 6 5 1",
+            " 4 0 6",
+            " 2 2 4"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 1 7\nOutput:",
+          "choices": [
+            " 5 1 6",
+            " 0 3 0",
+            " 6 7 1",
+            " 0 1 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 2 1\nOutput:",
+          "choices": [
+            " 0 1 6",
+            " 7 1 1",
+            " 2 3 6",
+            " 1 4 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 3 7\nOutput:",
+          "choices": [
+            " 6 0 2",
+            " 3 3 7",
+            " 6 4 7",
+            " 2 3 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 1 1\nOutput:",
+          "choices": [
+            " 3 0 5",
+            " 7 7 6",
+            " 6 2 1",
+            " 6 0 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 4 7\nOutput:",
+          "choices": [
+            " 6 5 4",
+            " 1 0 4",
+            " 1 5 3",
+            " 1 7 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 4 3\nOutput:",
+          "choices": [
+            " 4 4 3",
+            " 6 3 2",
+            " 4 5 5",
+            " 4 0 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 3 6\nOutput:",
+          "choices": [
+            " 1 0 0",
+            " 3 5 1",
+            " 3 4 1",
+            " 6 2 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 3 2\nOutput:",
+          "choices": [
+            " 4 1 7",
+            " 0 3 6",
+            " 1 4 0",
+            " 3 6 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 5 3\nOutput:",
+          "choices": [
+            " 4 3 5",
+            " 1 0 5",
+            " 4 0 5",
+            " 1 3 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 7 2\nOutput:",
+          "choices": [
+            " 1 6 5",
+            " 3 2 5",
+            " 0 0 0",
+            " 3 4 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 0 6\nOutput:",
+          "choices": [
+            " 7 0 4",
+            " 7 3 1",
+            " 3 2 1",
+            " 7 2 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 6 6\nOutput:",
+          "choices": [
+            " 3 3 6",
+            " 4 0 3",
+            " 7 7 3",
+            " 2 0 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 6 1\nOutput:",
+          "choices": [
+            " 0 1 4",
+            " 7 3 0",
+            " 0 4 0",
+            " 0 7 3"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 7 7\nOutput:",
+          "choices": [
+            " 7 1 4",
+            " 0 4 7",
+            " 6 6 3",
+            " 6 1 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 0 5\nOutput:",
+          "choices": [
+            " 2 5 0",
+            " 0 1 1",
+            " 6 6 5",
+            " 0 2 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 7 6\nOutput:",
+          "choices": [
+            " 3 6 7",
+            " 0 7 5",
+            " 6 6 2",
+            " 4 4 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 3 7\nOutput:",
+          "choices": [
+            " 3 5 5",
+            " 6 4 2",
+            " 5 3 2",
+            " 1 3 3"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 7 0\nOutput:",
+          "choices": [
+            " 0 7 0",
+            " 2 7 2",
+            " 2 6 2",
+            " 7 7 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 0 3\nOutput:",
+          "choices": [
+            " 1 3 2",
+            " 3 2 1",
+            " 7 0 5",
+            " 4 2 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 2 7\nOutput:",
+          "choices": [
+            " 1 5 1",
+            " 6 5 7",
+            " 4 4 3",
+            " 6 1 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 6 6\nOutput:",
+          "choices": [
+            " 6 7 1",
+            " 0 5 2",
+            " 0 2 2",
+            " 3 3 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 2 2\nOutput:",
+          "choices": [
+            " 1 1 2",
+            " 4 1 1",
+            " 3 1 6",
+            " 7 7 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 5 0\nOutput:",
+          "choices": [
+            " 2 0 2",
+            " 0 1 0",
+            " 6 1 7",
+            " 2 5 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 6 2\nOutput:",
+          "choices": [
+            " 5 7 6",
+            " 3 4 5",
+            " 1 3 4",
+            " 7 0 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 3 0\nOutput:",
+          "choices": [
+            " 2 4 6",
+            " 5 2 6",
+            " 6 3 4",
+            " 3 0 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 1 1\nOutput:",
+          "choices": [
+            " 7 7 0",
+            " 5 3 5",
+            " 0 5 0",
+            " 4 3 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 7 3\nOutput:",
+          "choices": [
+            " 4 6 3",
+            " 7 2 4",
+            " 5 0 4",
+            " 5 4 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 0 6\nOutput:",
+          "choices": [
+            " 4 2 2",
+            " 3 2 3",
+            " 1 5 4",
+            " 6 4 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 1 4\nOutput:",
+          "choices": [
+            " 1 7 6",
+            " 1 3 7",
+            " 5 7 3",
+            " 2 5 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 0 6\nOutput:",
+          "choices": [
+            " 0 4 2",
+            " 3 2 4",
+            " 3 0 3",
+            " 2 6 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 0 2\nOutput:",
+          "choices": [
+            " 3 0 2",
+            " 5 3 0",
+            " 6 6 4",
+            " 1 2 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 6 5\nOutput:",
+          "choices": [
+            " 7 6 2",
+            " 1 1 5",
+            " 6 5 2",
+            " 0 3 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 7 4\nOutput:",
+          "choices": [
+            " 6 6 6",
+            " 5 6 6",
+            " 4 3 5",
+            " 1 7 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 7 2\nOutput:",
+          "choices": [
+            " 5 1 0",
+            " 4 1 3",
+            " 6 2 4",
+            " 1 6 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 3 5\nOutput:",
+          "choices": [
+            " 3 1 7",
+            " 6 6 1",
+            " 0 4 5",
+            " 1 5 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 7 1\nOutput:",
+          "choices": [
+            " 0 7 0",
+            " 7 6 5",
+            " 7 0 6",
+            " 3 6 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 7 0\nOutput:",
+          "choices": [
+            " 0 1 0",
+            " 3 0 1",
+            " 2 6 7",
+            " 7 2 4"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 3 3\nOutput:",
+          "choices": [
+            " 3 1 1",
+            " 4 4 6",
+            " 0 0 3",
+            " 2 3 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 3 1\nOutput:",
+          "choices": [
+            " 5 0 2",
+            " 7 4 2",
+            " 0 0 7",
+            " 1 6 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 5 7\nOutput:",
+          "choices": [
+            " 4 7 2",
+            " 3 4 2",
+            " 1 4 3",
+            " 6 0 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 6 4\nOutput:",
+          "choices": [
+            " 6 6 1",
+            " 5 3 0",
+            " 3 6 5",
+            " 2 2 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 3 4\nOutput:",
+          "choices": [
+            " 4 1 3",
+            " 4 5 7",
+            " 5 4 0",
+            " 7 4 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 1 4\nOutput:",
+          "choices": [
+            " 6 7 0",
+            " 5 7 0",
+            " 1 7 4",
+            " 2 3 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 4 1\nOutput:",
+          "choices": [
+            " 5 3 5",
+            " 7 5 4",
+            " 2 7 2",
+            " 3 0 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 1 0\nOutput:",
+          "choices": [
+            " 0 3 5",
+            " 2 6 0",
+            " 2 7 3",
+            " 0 5 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 7 1\nOutput:",
+          "choices": [
+            " 6 2 7",
+            " 5 1 6",
+            " 7 6 1",
+            " 7 3 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 1 7\nOutput:",
+          "choices": [
+            " 6 1 4",
+            " 6 7 4",
+            " 4 1 2",
+            " 1 2 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 6 7\nOutput:",
+          "choices": [
+            " 6 3 4",
+            " 3 4 6",
+            " 5 1 5",
+            " 7 5 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 2 5\nOutput:",
+          "choices": [
+            " 1 0 2",
+            " 3 1 4",
+            " 0 1 4",
+            " 0 2 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 4 2\nOutput:",
+          "choices": [
+            " 1 0 4",
+            " 2 0 5",
+            " 1 5 6",
+            " 4 7 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 3 2\nOutput:",
+          "choices": [
+            " 6 4 4",
+            " 6 0 2",
+            " 4 3 7",
+            " 1 4 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 3 6\nOutput:",
+          "choices": [
+            " 3 4 2",
+            " 7 7 7",
+            " 5 1 2",
+            " 3 1 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 4 2\nOutput:",
+          "choices": [
+            " 6 2 2",
+            " 2 4 4",
+            " 2 5 6",
+            " 1 5 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 0 0\nOutput:",
+          "choices": [
+            " 1 0 6",
+            " 6 7 5",
+            " 7 2 3",
+            " 2 2 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 3 6\nOutput:",
+          "choices": [
+            " 3 4 7",
+            " 4 0 4",
+            " 6 5 5",
+            " 5 0 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 1 2\nOutput:",
+          "choices": [
+            " 1 7 7",
+            " 7 7 4",
+            " 6 1 7",
+            " 0 3 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 4 0\nOutput:",
+          "choices": [
+            " 6 5 7",
+            " 2 5 2",
+            " 5 5 6",
+            " 0 7 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 5 3\nOutput:",
+          "choices": [
+            " 4 0 4",
+            " 7 7 6",
+            " 2 4 7",
+            " 0 7 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 6 1\nOutput:",
+          "choices": [
+            " 2 2 7",
+            " 7 3 3",
+            " 0 3 2",
+            " 0 6 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 2 2\nOutput:",
+          "choices": [
+            " 7 7 1",
+            " 2 1 3",
+            " 1 7 0",
+            " 1 1 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 5 6\nOutput:",
+          "choices": [
+            " 3 0 2",
+            " 0 4 5",
+            " 5 0 1",
+            " 6 2 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 3 1\nOutput:",
+          "choices": [
+            " 4 5 0",
+            " 7 4 4",
+            " 3 2 6",
+            " 7 4 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 2 1\nOutput:",
+          "choices": [
+            " 7 1 4",
+            " 0 6 3",
+            " 3 0 6",
+            " 0 6 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 6 1\nOutput:",
+          "choices": [
+            " 1 3 5",
+            " 7 3 2",
+            " 5 4 0",
+            " 7 7 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 5 4\nOutput:",
+          "choices": [
+            " 1 1 1",
+            " 6 6 4",
+            " 5 0 0",
+            " 3 7 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 4 0\nOutput:",
+          "choices": [
+            " 2 5 4",
+            " 3 0 3",
+            " 2 4 7",
+            " 4 2 1"
+          ],
+          "gold_idx": 0
+        }
+      ],
+      "control_copy": [
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 5 5\nOutput:",
+          "choices": [
+            " 0 7 3",
+            " 6 5 5",
+            " 6 4 1",
+            " 3 3 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 5 7\nOutput:",
+          "choices": [
+            " 0 4 0",
+            " 5 5 6",
+            " 1 2 2",
+            " 4 5 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 5 2\nOutput:",
+          "choices": [
+            " 1 5 2",
+            " 4 4 6",
+            " 6 5 5",
+            " 0 0 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 0 1\nOutput:",
+          "choices": [
+            " 0 5 3",
+            " 3 5 0",
+            " 7 0 1",
+            " 7 3 4"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 5 7\nOutput:",
+          "choices": [
+            " 3 2 4",
+            " 0 5 7",
+            " 5 2 1",
+            " 6 1 3"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 6 2\nOutput:",
+          "choices": [
+            " 2 6 2",
+            " 2 2 7",
+            " 1 6 3",
+            " 3 4 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 2 2\nOutput:",
+          "choices": [
+            " 6 6 0",
+            " 4 2 2",
+            " 4 6 0",
+            " 3 3 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 1 1\nOutput:",
+          "choices": [
+            " 1 7 6",
+            " 2 1 1",
+            " 5 4 3",
+            " 6 5 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 1 6\nOutput:",
+          "choices": [
+            " 5 2 1",
+            " 2 1 3",
+            " 7 1 6",
+            " 2 3 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 5 7\nOutput:",
+          "choices": [
+            " 6 1 3",
+            " 2 3 2",
+            " 2 5 7",
+            " 5 3 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 7 6\nOutput:",
+          "choices": [
+            " 5 7 3",
+            " 5 6 0",
+            " 2 7 6",
+            " 2 5 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 0 4\nOutput:",
+          "choices": [
+            " 3 2 0",
+            " 2 7 4",
+            " 7 0 4",
+            " 4 3 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 5 1\nOutput:",
+          "choices": [
+            " 2 5 1",
+            " 2 1 4",
+            " 3 4 2",
+            " 3 2 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 3 4\nOutput:",
+          "choices": [
+            " 3 6 0",
+            " 2 3 4",
+            " 7 4 1",
+            " 4 2 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 4 7\nOutput:",
+          "choices": [
+            " 2 4 7",
+            " 0 6 0",
+            " 2 7 6",
+            " 6 6 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 2 4\nOutput:",
+          "choices": [
+            " 6 2 4",
+            " 5 5 6",
+            " 4 1 5",
+            " 5 0 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 5 2\nOutput:",
+          "choices": [
+            " 5 7 6",
+            " 2 5 7",
+            " 1 6 0",
+            " 7 5 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 5 1\nOutput:",
+          "choices": [
+            " 0 7 0",
+            " 7 5 1",
+            " 6 1 0",
+            " 6 1 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 7 2\nOutput:",
+          "choices": [
+            " 4 6 7",
+            " 2 7 2",
+            " 1 4 1",
+            " 1 5 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 4 6\nOutput:",
+          "choices": [
+            " 6 5 0",
+            " 7 0 5",
+            " 4 2 7",
+            " 6 4 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 0 7\nOutput:",
+          "choices": [
+            " 5 0 7",
+            " 6 0 0",
+            " 3 5 6",
+            " 7 6 1"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 7 5\nOutput:",
+          "choices": [
+            " 2 3 2",
+            " 7 5 2",
+            " 1 2 1",
+            " 1 7 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 7 2\nOutput:",
+          "choices": [
+            " 2 4 5",
+            " 1 7 2",
+            " 7 2 0",
+            " 5 5 3"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 2 3\nOutput:",
+          "choices": [
+            " 3 4 5",
+            " 2 1 6",
+            " 2 3 7",
+            " 6 2 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 5 1\nOutput:",
+          "choices": [
+            " 5 2 3",
+            " 2 3 7",
+            " 5 1 1",
+            " 6 5 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 2 7\nOutput:",
+          "choices": [
+            " 1 0 4",
+            " 1 0 2",
+            " 7 7 7",
+            " 2 2 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 1 5\nOutput:",
+          "choices": [
+            " 0 6 0",
+            " 5 5 6",
+            " 2 1 5",
+            " 6 2 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 1 2\nOutput:",
+          "choices": [
+            " 3 6 7",
+            " 3 1 2",
+            " 7 3 0",
+            " 0 7 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 0 5\nOutput:",
+          "choices": [
+            " 2 0 5",
+            " 4 1 2",
+            " 4 1 5",
+            " 7 3 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 7 1\nOutput:",
+          "choices": [
+            " 6 7 1",
+            " 0 1 2",
+            " 0 4 7",
+            " 6 1 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 0 3\nOutput:",
+          "choices": [
+            " 6 0 0",
+            " 0 2 0",
+            " 7 0 3",
+            " 3 5 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 6 5\nOutput:",
+          "choices": [
+            " 6 6 5",
+            " 3 3 3",
+            " 1 5 2",
+            " 5 0 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 0 2\nOutput:",
+          "choices": [
+            " 7 4 7",
+            " 4 7 2",
+            " 4 0 2",
+            " 2 4 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 2 3\nOutput:",
+          "choices": [
+            " 5 5 4",
+            " 3 2 4",
+            " 5 2 3",
+            " 0 5 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 7 2\nOutput:",
+          "choices": [
+            " 6 0 4",
+            " 7 6 5",
+            " 2 4 6",
+            " 6 7 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 3 4\nOutput:",
+          "choices": [
+            " 3 3 4",
+            " 2 4 7",
+            " 6 2 0",
+            " 7 3 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 5 2\nOutput:",
+          "choices": [
+            " 5 3 3",
+            " 7 3 0",
+            " 0 5 2",
+            " 7 3 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 1 0\nOutput:",
+          "choices": [
+            " 0 2 4",
+            " 6 0 7",
+            " 1 1 0",
+            " 2 3 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 5 2\nOutput:",
+          "choices": [
+            " 3 6 5",
+            " 7 1 1",
+            " 3 6 1",
+            " 3 5 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 6 0\nOutput:",
+          "choices": [
+            " 3 6 0",
+            " 0 4 0",
+            " 7 2 3",
+            " 6 3 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 2 5\nOutput:",
+          "choices": [
+            " 7 4 7",
+            " 0 5 4",
+            " 2 2 5",
+            " 0 3 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 0 0\nOutput:",
+          "choices": [
+            " 7 0 0",
+            " 1 4 1",
+            " 0 5 1",
+            " 2 3 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 0 5\nOutput:",
+          "choices": [
+            " 0 5 7",
+            " 4 0 5",
+            " 7 6 6",
+            " 2 7 5"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 4 3\nOutput:",
+          "choices": [
+            " 3 4 3",
+            " 3 2 0",
+            " 7 4 2",
+            " 4 2 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 0 1\nOutput:",
+          "choices": [
+            " 0 3 0",
+            " 0 0 1",
+            " 1 6 7",
+            " 0 5 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 7 4\nOutput:",
+          "choices": [
+            " 5 5 2",
+            " 0 7 5",
+            " 1 2 0",
+            " 5 7 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 3 6\nOutput:",
+          "choices": [
+            " 7 6 2",
+            " 3 3 1",
+            " 6 3 6",
+            " 0 4 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 1 1\nOutput:",
+          "choices": [
+            " 1 0 1",
+            " 0 1 1",
+            " 0 1 0",
+            " 5 1 3"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 4 6\nOutput:",
+          "choices": [
+            " 7 5 6",
+            " 5 1 7",
+            " 6 6 7",
+            " 7 4 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 0 4\nOutput:",
+          "choices": [
+            " 2 0 4",
+            " 1 3 5",
+            " 0 1 4",
+            " 3 3 1"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 3 3\nOutput:",
+          "choices": [
+            " 4 3 3",
+            " 0 2 3",
+            " 5 2 2",
+            " 1 4 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 4 4\nOutput:",
+          "choices": [
+            " 5 7 2",
+            " 4 4 4",
+            " 2 0 1",
+            " 6 7 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 1 5\nOutput:",
+          "choices": [
+            " 4 1 5",
+            " 1 4 7",
+            " 4 4 1",
+            " 6 3 1"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 0 4\nOutput:",
+          "choices": [
+            " 1 0 4",
+            " 3 6 6",
+            " 4 6 5",
+            " 2 5 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 7 3\nOutput:",
+          "choices": [
+            " 3 5 2",
+            " 1 7 3",
+            " 7 2 4",
+            " 6 6 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 0 2\nOutput:",
+          "choices": [
+            " 5 0 2",
+            " 0 4 6",
+            " 4 5 4",
+            " 6 2 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 5 6\nOutput:",
+          "choices": [
+            " 1 5 6",
+            " 4 4 2",
+            " 5 6 0",
+            " 4 3 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 1 4\nOutput:",
+          "choices": [
+            " 0 1 7",
+            " 6 2 4",
+            " 0 1 4",
+            " 1 4 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 7 0\nOutput:",
+          "choices": [
+            " 1 1 7",
+            " 2 7 6",
+            " 5 6 7",
+            " 3 7 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 6 0\nOutput:",
+          "choices": [
+            " 0 5 1",
+            " 6 4 2",
+            " 0 3 3",
+            " 7 6 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 7 7\nOutput:",
+          "choices": [
+            " 5 6 2",
+            " 6 2 6",
+            " 1 7 7",
+            " 5 3 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 5 3\nOutput:",
+          "choices": [
+            " 6 2 6",
+            " 7 7 5",
+            " 0 3 3",
+            " 7 5 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 1 7\nOutput:",
+          "choices": [
+            " 5 7 6",
+            " 5 1 1",
+            " 6 0 0",
+            " 2 1 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 2 1\nOutput:",
+          "choices": [
+            " 5 4 2",
+            " 2 2 1",
+            " 3 3 0",
+            " 7 0 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 3 7\nOutput:",
+          "choices": [
+            " 3 2 1",
+            " 1 3 7",
+            " 0 7 3",
+            " 3 4 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 1 1\nOutput:",
+          "choices": [
+            " 2 3 0",
+            " 7 0 5",
+            " 7 1 1",
+            " 3 0 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 4 7\nOutput:",
+          "choices": [
+            " 4 2 2",
+            " 3 4 7",
+            " 6 1 7",
+            " 5 6 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 4 3\nOutput:",
+          "choices": [
+            " 4 4 3",
+            " 2 1 1",
+            " 5 3 4",
+            " 0 7 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 3 6\nOutput:",
+          "choices": [
+            " 5 4 7",
+            " 6 6 4",
+            " 2 6 3",
+            " 2 3 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 3 2\nOutput:",
+          "choices": [
+            " 0 2 6",
+            " 6 0 7",
+            " 5 3 2",
+            " 6 1 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 5 3\nOutput:",
+          "choices": [
+            " 5 6 0",
+            " 2 2 1",
+            " 7 7 7",
+            " 4 5 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 7 2\nOutput:",
+          "choices": [
+            " 4 5 1",
+            " 4 3 1",
+            " 3 5 3",
+            " 4 7 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 0 6\nOutput:",
+          "choices": [
+            " 2 0 6",
+            " 4 6 7",
+            " 5 2 5",
+            " 6 7 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 6 6\nOutput:",
+          "choices": [
+            " 2 1 7",
+            " 3 2 2",
+            " 7 6 6",
+            " 2 7 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 6 1\nOutput:",
+          "choices": [
+            " 0 2 0",
+            " 3 7 6",
+            " 5 6 1",
+            " 0 5 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 7 7\nOutput:",
+          "choices": [
+            " 0 1 5",
+            " 7 1 6",
+            " 2 4 5",
+            " 6 7 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 0 5\nOutput:",
+          "choices": [
+            " 1 4 5",
+            " 0 0 5",
+            " 3 3 7",
+            " 3 7 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 7 6\nOutput:",
+          "choices": [
+            " 1 7 6",
+            " 7 1 7",
+            " 1 6 0",
+            " 7 0 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 3 7\nOutput:",
+          "choices": [
+            " 5 2 0",
+            " 0 3 7",
+            " 7 4 1",
+            " 0 4 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 7 0\nOutput:",
+          "choices": [
+            " 5 6 4",
+            " 3 6 3",
+            " 1 4 3",
+            " 0 7 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 0 3\nOutput:",
+          "choices": [
+            " 0 4 3",
+            " 3 5 7",
+            " 4 1 5",
+            " 3 0 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 2 7\nOutput:",
+          "choices": [
+            " 6 2 7",
+            " 4 2 2",
+            " 6 7 4",
+            " 2 2 1"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 6 6\nOutput:",
+          "choices": [
+            " 6 1 2",
+            " 5 7 4",
+            " 0 5 4",
+            " 6 6 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 2 2\nOutput:",
+          "choices": [
+            " 1 5 4",
+            " 5 1 1",
+            " 5 7 3",
+            " 0 2 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 5 0\nOutput:",
+          "choices": [
+            " 2 2 6",
+            " 4 6 7",
+            " 0 5 0",
+            " 2 4 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 6 2\nOutput:",
+          "choices": [
+            " 3 6 2",
+            " 1 2 1",
+            " 2 7 6",
+            " 4 2 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 3 0\nOutput:",
+          "choices": [
+            " 6 5 7",
+            " 7 3 0",
+            " 1 4 6",
+            " 6 7 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 1 1\nOutput:",
+          "choices": [
+            " 4 0 0",
+            " 5 2 7",
+            " 5 1 1",
+            " 1 7 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 7 3\nOutput:",
+          "choices": [
+            " 0 6 3",
+            " 1 1 3",
+            " 6 7 3",
+            " 2 2 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 0 6\nOutput:",
+          "choices": [
+            " 6 0 6",
+            " 1 5 5",
+            " 0 5 4",
+            " 3 2 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 1 4\nOutput:",
+          "choices": [
+            " 6 1 4",
+            " 7 7 4",
+            " 1 3 0",
+            " 4 3 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 0 6\nOutput:",
+          "choices": [
+            " 5 4 5",
+            " 7 2 6",
+            " 3 0 6",
+            " 6 7 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 0 2\nOutput:",
+          "choices": [
+            " 0 1 0",
+            " 1 2 6",
+            " 5 6 7",
+            " 1 0 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 6 5\nOutput:",
+          "choices": [
+            " 7 3 4",
+            " 0 7 5",
+            " 2 6 5",
+            " 6 0 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 7 4\nOutput:",
+          "choices": [
+            " 7 7 4",
+            " 5 3 7",
+            " 2 0 2",
+            " 3 3 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 7 2\nOutput:",
+          "choices": [
+            " 4 5 3",
+            " 5 7 2",
+            " 2 7 0",
+            " 2 3 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 3 5\nOutput:",
+          "choices": [
+            " 4 6 5",
+            " 4 3 5",
+            " 6 6 1",
+            " 2 3 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 7 1\nOutput:",
+          "choices": [
+            " 4 6 6",
+            " 4 7 1",
+            " 3 7 5",
+            " 6 4 3"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 7 0\nOutput:",
+          "choices": [
+            " 1 1 4",
+            " 1 7 0",
+            " 2 6 5",
+            " 7 6 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 3 3\nOutput:",
+          "choices": [
+            " 5 1 3",
+            " 7 3 3",
+            " 5 4 3",
+            " 2 7 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 3 1\nOutput:",
+          "choices": [
+            " 3 2 3",
+            " 1 3 6",
+            " 5 0 1",
+            " 0 3 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 5 7\nOutput:",
+          "choices": [
+            " 7 0 7",
+            " 5 4 6",
+            " 6 5 7",
+            " 0 6 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 6 4\nOutput:",
+          "choices": [
+            " 2 7 1",
+            " 3 4 5",
+            " 5 3 2",
+            " 5 6 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 3 4\nOutput:",
+          "choices": [
+            " 6 4 2",
+            " 1 3 2",
+            " 5 3 4",
+            " 1 7 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 1 4\nOutput:",
+          "choices": [
+            " 1 0 1",
+            " 3 5 2",
+            " 1 0 5",
+            " 5 1 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 4 1\nOutput:",
+          "choices": [
+            " 1 7 3",
+            " 3 4 1",
+            " 0 3 1",
+            " 4 0 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 1 0\nOutput:",
+          "choices": [
+            " 1 6 3",
+            " 0 0 4",
+            " 6 1 0",
+            " 2 3 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 7 1\nOutput:",
+          "choices": [
+            " 2 7 1",
+            " 2 5 2",
+            " 3 4 7",
+            " 7 6 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 1 7\nOutput:",
+          "choices": [
+            " 1 1 0",
+            " 7 3 2",
+            " 5 4 5",
+            " 3 1 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 6 7\nOutput:",
+          "choices": [
+            " 3 6 7",
+            " 1 7 0",
+            " 6 5 2",
+            " 4 5 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 2 5\nOutput:",
+          "choices": [
+            " 5 6 6",
+            " 3 2 5",
+            " 1 5 3",
+            " 5 1 3"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 4 2\nOutput:",
+          "choices": [
+            " 1 0 1",
+            " 1 0 6",
+            " 7 4 2",
+            " 0 5 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 3 2\nOutput:",
+          "choices": [
+            " 0 0 3",
+            " 3 1 1",
+            " 7 4 7",
+            " 7 3 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 3 6\nOutput:",
+          "choices": [
+            " 7 2 1",
+            " 2 6 0",
+            " 0 3 6",
+            " 4 7 4"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 4 2\nOutput:",
+          "choices": [
+            " 5 5 6",
+            " 6 4 7",
+            " 6 4 2",
+            " 4 1 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 0 0\nOutput:",
+          "choices": [
+            " 2 0 3",
+            " 4 0 0",
+            " 2 7 1",
+            " 2 7 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 3 6\nOutput:",
+          "choices": [
+            " 6 4 0",
+            " 1 3 6",
+            " 1 6 4",
+            " 3 3 5"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 1 2\nOutput:",
+          "choices": [
+            " 0 5 3",
+            " 1 1 2",
+            " 1 5 4",
+            " 7 7 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 4 0\nOutput:",
+          "choices": [
+            " 4 5 4",
+            " 4 2 0",
+            " 0 4 0",
+            " 6 2 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 5 3\nOutput:",
+          "choices": [
+            " 0 3 4",
+            " 0 7 0",
+            " 1 4 4",
+            " 3 5 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 6 1\nOutput:",
+          "choices": [
+            " 6 6 1",
+            " 3 1 2",
+            " 5 4 5",
+            " 5 7 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 2 2\nOutput:",
+          "choices": [
+            " 2 0 4",
+            " 1 3 6",
+            " 1 3 7",
+            " 5 2 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 5 6\nOutput:",
+          "choices": [
+            " 4 5 0",
+            " 0 5 6",
+            " 0 2 4",
+            " 2 7 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 3 1\nOutput:",
+          "choices": [
+            " 3 0 3",
+            " 2 7 3",
+            " 7 3 5",
+            " 3 3 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 2 1\nOutput:",
+          "choices": [
+            " 3 2 1",
+            " 3 2 3",
+            " 4 4 0",
+            " 3 1 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 6 1\nOutput:",
+          "choices": [
+            " 0 6 1",
+            " 0 4 7",
+            " 6 2 2",
+            " 2 7 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 5 4\nOutput:",
+          "choices": [
+            " 5 4 5",
+            " 5 5 4",
+            " 5 2 1",
+            " 5 7 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 4 0\nOutput:",
+          "choices": [
+            " 2 1 7",
+            " 6 0 3",
+            " 3 4 0",
+            " 4 7 2"
+          ],
+          "gold_idx": 2
+        }
+      ]
+    },
+    "validation": {
+      "acquisition_a": [
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 3 0\nOutput:",
+          "choices": [
+            " 5 6 5",
+            " 2 6 3",
+            " 7 3 1",
+            " 6 5 5"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 0 4\nOutput:",
+          "choices": [
+            " 2 3 5",
+            " 3 3 3",
+            " 5 3 5",
+            " 2 1 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 3 3\nOutput:",
+          "choices": [
+            " 4 6 6",
+            " 7 0 4",
+            " 5 6 7",
+            " 0 5 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 2 2\nOutput:",
+          "choices": [
+            " 4 2 7",
+            " 3 7 2",
+            " 7 6 5",
+            " 7 0 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 1 7\nOutput:",
+          "choices": [
+            " 1 2 0",
+            " 6 4 1",
+            " 5 7 1",
+            " 7 1 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 7 4\nOutput:",
+          "choices": [
+            " 3 1 5",
+            " 1 2 2",
+            " 6 2 5",
+            " 7 5 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 3 4\nOutput:",
+          "choices": [
+            " 2 4 1",
+            " 0 0 7",
+            " 7 6 5",
+            " 0 4 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 7 7\nOutput:",
+          "choices": [
+            " 6 6 4",
+            " 5 0 2",
+            " 5 1 1",
+            " 1 5 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 7 0\nOutput:",
+          "choices": [
+            " 1 1 3",
+            " 3 7 0",
+            " 5 0 4",
+            " 2 5 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 6 3\nOutput:",
+          "choices": [
+            " 2 1 2",
+            " 5 2 4",
+            " 6 7 1",
+            " 7 2 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 1 1\nOutput:",
+          "choices": [
+            " 1 1 0",
+            " 2 7 7",
+            " 6 4 3",
+            " 2 3 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 1 3\nOutput:",
+          "choices": [
+            " 1 3 6",
+            " 0 7 6",
+            " 7 3 5",
+            " 3 4 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 5 7\nOutput:",
+          "choices": [
+            " 6 4 1",
+            " 2 5 2",
+            " 4 7 5",
+            " 5 0 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 0 1\nOutput:",
+          "choices": [
+            " 7 0 1",
+            " 5 3 7",
+            " 7 6 6",
+            " 0 3 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 2 6\nOutput:",
+          "choices": [
+            " 1 0 1",
+            " 0 3 0",
+            " 4 0 2",
+            " 6 4 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 1 3\nOutput:",
+          "choices": [
+            " 4 7 6",
+            " 0 3 2",
+            " 5 7 6",
+            " 1 3 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 1 5\nOutput:",
+          "choices": [
+            " 1 7 4",
+            " 4 4 2",
+            " 6 7 3",
+            " 5 5 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 0 0\nOutput:",
+          "choices": [
+            " 6 3 3",
+            " 7 3 6",
+            " 2 3 6",
+            " 2 3 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 2 5\nOutput:",
+          "choices": [
+            " 1 5 5",
+            " 2 3 3",
+            " 3 0 4",
+            " 0 1 4"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 7 0\nOutput:",
+          "choices": [
+            " 0 5 3",
+            " 1 4 5",
+            " 6 2 3",
+            " 2 1 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 5 1\nOutput:",
+          "choices": [
+            " 0 2 5",
+            " 6 6 4",
+            " 0 6 0",
+            " 5 4 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 2 5\nOutput:",
+          "choices": [
+            " 1 7 1",
+            " 2 7 3",
+            " 2 1 2",
+            " 4 0 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 5 0\nOutput:",
+          "choices": [
+            " 7 1 5",
+            " 4 1 3",
+            " 3 3 1",
+            " 2 4 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 3 5\nOutput:",
+          "choices": [
+            " 5 7 0",
+            " 4 6 4",
+            " 5 5 5",
+            " 2 1 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 1 4\nOutput:",
+          "choices": [
+            " 0 6 2",
+            " 1 7 5",
+            " 5 5 0",
+            " 2 2 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 2 0\nOutput:",
+          "choices": [
+            " 7 0 3",
+            " 3 4 4",
+            " 6 6 2",
+            " 1 4 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 2 7\nOutput:",
+          "choices": [
+            " 1 0 1",
+            " 0 3 1",
+            " 2 1 4",
+            " 3 0 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 3 3\nOutput:",
+          "choices": [
+            " 4 4 5",
+            " 2 7 5",
+            " 2 1 1",
+            " 0 6 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 6 0\nOutput:",
+          "choices": [
+            " 7 6 6",
+            " 3 2 3",
+            " 3 3 4",
+            " 5 2 3"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 5 5\nOutput:",
+          "choices": [
+            " 5 2 7",
+            " 7 4 4",
+            " 3 0 7",
+            " 2 0 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 7 7\nOutput:",
+          "choices": [
+            " 0 5 7",
+            " 6 7 4",
+            " 3 6 6",
+            " 0 1 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 4 5\nOutput:",
+          "choices": [
+            " 6 2 0",
+            " 2 7 1",
+            " 0 5 4",
+            " 6 4 5"
+          ],
+          "gold_idx": 2
+        }
+      ],
+      "acquisition_b": [
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 3 0\nOutput:",
+          "choices": [
+            " 2 4 3",
+            " 6 5 3",
+            " 2 1 6",
+            " 1 0 1"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 0 4\nOutput:",
+          "choices": [
+            " 3 4 2",
+            " 5 2 5",
+            " 7 3 2",
+            " 5 3 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 3 3\nOutput:",
+          "choices": [
+            " 1 1 7",
+            " 1 0 5",
+            " 4 2 3",
+            " 4 4 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 2 2\nOutput:",
+          "choices": [
+            " 1 1 7",
+            " 1 4 3",
+            " 0 4 4",
+            " 1 5 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 1 7\nOutput:",
+          "choices": [
+            " 6 7 5",
+            " 5 4 1",
+            " 3 2 5",
+            " 5 3 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 7 4\nOutput:",
+          "choices": [
+            " 5 6 2",
+            " 1 4 0",
+            " 3 3 2",
+            " 5 2 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 3 4\nOutput:",
+          "choices": [
+            " 2 1 3",
+            " 3 7 6",
+            " 7 6 4",
+            " 5 4 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 7 7\nOutput:",
+          "choices": [
+            " 6 6 5",
+            " 2 3 7",
+            " 6 4 4",
+            " 1 5 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 7 0\nOutput:",
+          "choices": [
+            " 1 0 0",
+            " 0 3 5",
+            " 3 7 2",
+            " 2 6 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 6 3\nOutput:",
+          "choices": [
+            " 5 5 4",
+            " 0 4 0",
+            " 4 3 7",
+            " 4 7 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 1 1\nOutput:",
+          "choices": [
+            " 2 4 4",
+            " 7 7 3",
+            " 1 6 4",
+            " 6 2 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 1 3\nOutput:",
+          "choices": [
+            " 3 6 2",
+            " 6 7 4",
+            " 4 7 7",
+            " 4 7 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 5 7\nOutput:",
+          "choices": [
+            " 5 0 1",
+            " 6 0 4",
+            " 2 6 6",
+            " 7 2 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 0 1\nOutput:",
+          "choices": [
+            " 6 7 3",
+            " 7 2 5",
+            " 1 4 6",
+            " 0 6 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 2 6\nOutput:",
+          "choices": [
+            " 1 6 3",
+            " 3 1 0",
+            " 5 4 1",
+            " 2 4 5"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 1 3\nOutput:",
+          "choices": [
+            " 4 7 5",
+            " 1 3 0",
+            " 5 4 5",
+            " 1 2 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 1 5\nOutput:",
+          "choices": [
+            " 7 1 0",
+            " 2 1 6",
+            " 0 7 6",
+            " 3 3 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 0 0\nOutput:",
+          "choices": [
+            " 6 7 1",
+            " 7 5 5",
+            " 2 2 4",
+            " 5 1 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 2 5\nOutput:",
+          "choices": [
+            " 5 2 7",
+            " 0 1 2",
+            " 3 5 4",
+            " 5 7 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 7 0\nOutput:",
+          "choices": [
+            " 4 3 5",
+            " 3 4 7",
+            " 5 2 7",
+            " 2 6 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 5 1\nOutput:",
+          "choices": [
+            " 5 0 2",
+            " 4 4 5",
+            " 7 0 5",
+            " 7 5 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 2 5\nOutput:",
+          "choices": [
+            " 2 1 3",
+            " 3 4 1",
+            " 5 1 1",
+            " 0 1 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 5 0\nOutput:",
+          "choices": [
+            " 3 5 0",
+            " 2 0 3",
+            " 7 3 5",
+            " 6 3 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 3 5\nOutput:",
+          "choices": [
+            " 3 3 3",
+            " 3 0 7",
+            " 0 4 0",
+            " 7 4 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 1 4\nOutput:",
+          "choices": [
+            " 5 7 6",
+            " 1 1 4",
+            " 4 2 4",
+            " 7 7 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 2 0\nOutput:",
+          "choices": [
+            " 5 0 5",
+            " 1 4 7",
+            " 2 1 7",
+            " 7 7 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 2 7\nOutput:",
+          "choices": [
+            " 4 3 6",
+            " 6 1 6",
+            " 7 5 0",
+            " 7 6 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 3 3\nOutput:",
+          "choices": [
+            " 4 4 1",
+            " 1 3 2",
+            " 3 3 5",
+            " 0 6 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 6 0\nOutput:",
+          "choices": [
+            " 0 4 3",
+            " 1 5 7",
+            " 2 3 2",
+            " 6 7 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 5 5\nOutput:",
+          "choices": [
+            " 7 7 5",
+            " 3 1 5",
+            " 0 0 7",
+            " 5 4 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 7 7\nOutput:",
+          "choices": [
+            " 5 2 1",
+            " 2 6 2",
+            " 1 6 3",
+            " 6 6 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 4 5\nOutput:",
+          "choices": [
+            " 3 2 2",
+            " 0 4 2",
+            " 4 5 3",
+            " 0 5 1"
+          ],
+          "gold_idx": 3
+        }
+      ],
+      "control_copy": [
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 3 0\nOutput:",
+          "choices": [
+            " 3 6 4",
+            " 6 0 3",
+            " 6 3 0",
+            " 4 5 4"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 0 4\nOutput:",
+          "choices": [
+            " 0 0 1",
+            " 3 6 7",
+            " 7 7 7",
+            " 4 0 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 3 3\nOutput:",
+          "choices": [
+            " 6 3 6",
+            " 5 3 3",
+            " 2 7 4",
+            " 0 1 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 2 2\nOutput:",
+          "choices": [
+            " 5 3 0",
+            " 1 2 2",
+            " 1 6 0",
+            " 0 6 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 1 7\nOutput:",
+          "choices": [
+            " 2 1 4",
+            " 4 1 0",
+            " 4 1 7",
+            " 0 3 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 7 4\nOutput:",
+          "choices": [
+            " 2 7 0",
+            " 6 1 3",
+            " 3 3 1",
+            " 0 7 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 3 4\nOutput:",
+          "choices": [
+            " 6 0 4",
+            " 4 3 2",
+            " 6 1 2",
+            " 1 3 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 7 7\nOutput:",
+          "choices": [
+            " 2 4 2",
+            " 4 7 7",
+            " 0 5 0",
+            " 7 6 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 7 0\nOutput:",
+          "choices": [
+            " 7 7 0",
+            " 0 7 3",
+            " 6 2 2",
+            " 3 5 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 6 3\nOutput:",
+          "choices": [
+            " 0 4 0",
+            " 1 6 3",
+            " 6 2 2",
+            " 2 4 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 1 1\nOutput:",
+          "choices": [
+            " 4 0 7",
+            " 0 3 5",
+            " 6 1 1",
+            " 0 1 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 1 3\nOutput:",
+          "choices": [
+            " 7 1 6",
+            " 2 1 3",
+            " 6 3 3",
+            " 5 5 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 5 7\nOutput:",
+          "choices": [
+            " 3 5 7",
+            " 4 2 0",
+            " 7 3 3",
+            " 1 5 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 0 1\nOutput:",
+          "choices": [
+            " 4 6 3",
+            " 4 0 1",
+            " 6 2 1",
+            " 4 2 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 2 6\nOutput:",
+          "choices": [
+            " 7 4 5",
+            " 7 3 7",
+            " 4 3 4",
+            " 5 2 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 1 3\nOutput:",
+          "choices": [
+            " 7 3 2",
+            " 4 1 3",
+            " 6 6 6",
+            " 1 3 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 1 5\nOutput:",
+          "choices": [
+            " 7 1 4",
+            " 5 5 0",
+            " 7 1 5",
+            " 0 5 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 0 0\nOutput:",
+          "choices": [
+            " 1 3 0",
+            " 1 5 7",
+            " 7 7 2",
+            " 3 0 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 2 5\nOutput:",
+          "choices": [
+            " 0 2 5",
+            " 2 6 1",
+            " 6 3 5",
+            " 5 4 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 7 0\nOutput:",
+          "choices": [
+            " 3 0 3",
+            " 3 5 3",
+            " 2 3 3",
+            " 6 7 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 5 1\nOutput:",
+          "choices": [
+            " 4 5 1",
+            " 1 3 3",
+            " 3 3 2",
+            " 4 7 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 2 5\nOutput:",
+          "choices": [
+            " 5 2 5",
+            " 0 3 1",
+            " 7 6 7",
+            " 1 5 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 5 0\nOutput:",
+          "choices": [
+            " 6 5 0",
+            " 1 5 2",
+            " 2 5 0",
+            " 0 1 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 3 5\nOutput:",
+          "choices": [
+            " 5 1 0",
+            " 6 5 4",
+            " 5 3 5",
+            " 5 5 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 1 4\nOutput:",
+          "choices": [
+            " 6 6 5",
+            " 3 3 1",
+            " 5 2 2",
+            " 7 1 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 2 0\nOutput:",
+          "choices": [
+            " 0 5 2",
+            " 3 7 1",
+            " 5 5 6",
+            " 1 2 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 2 7\nOutput:",
+          "choices": [
+            " 3 1 1",
+            " 6 3 3",
+            " 7 2 7",
+            " 7 2 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 3 3\nOutput:",
+          "choices": [
+            " 4 5 2",
+            " 6 6 4",
+            " 2 3 3",
+            " 0 0 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 6 0\nOutput:",
+          "choices": [
+            " 2 3 7",
+            " 6 2 2",
+            " 0 6 0",
+            " 0 1 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 5 5\nOutput:",
+          "choices": [
+            " 1 5 5",
+            " 1 3 7",
+            " 0 2 5",
+            " 1 1 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 7 7\nOutput:",
+          "choices": [
+            " 2 7 7",
+            " 3 5 6",
+            " 7 4 3",
+            " 6 2 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 4 5\nOutput:",
+          "choices": [
+            " 3 2 5",
+            " 2 4 5",
+            " 1 1 7",
+            " 0 7 7"
+          ],
+          "gold_idx": 1
+        }
+      ]
+    },
+    "test": {
+      "acquisition_a": [
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 1 0\nOutput:",
+          "choices": [
+            " 6 1 7",
+            " 0 5 0",
+            " 3 7 2",
+            " 4 7 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 3 5\nOutput:",
+          "choices": [
+            " 5 3 6",
+            " 7 1 3",
+            " 3 2 6",
+            " 2 6 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 6 7\nOutput:",
+          "choices": [
+            " 7 1 7",
+            " 0 4 5",
+            " 0 6 2",
+            " 1 2 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 5 3\nOutput:",
+          "choices": [
+            " 4 4 2",
+            " 0 4 6",
+            " 6 1 3",
+            " 5 5 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 5 6\nOutput:",
+          "choices": [
+            " 0 2 5",
+            " 0 0 2",
+            " 4 1 4",
+            " 5 4 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 0 2\nOutput:",
+          "choices": [
+            " 4 3 7",
+            " 2 4 2",
+            " 0 3 0",
+            " 1 5 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 1 0\nOutput:",
+          "choices": [
+            " 2 6 2",
+            " 5 1 1",
+            " 1 7 3",
+            " 7 7 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 0 6\nOutput:",
+          "choices": [
+            " 3 3 2",
+            " 0 1 6",
+            " 7 2 4",
+            " 4 7 1"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 4 7\nOutput:",
+          "choices": [
+            " 0 1 0",
+            " 3 6 2",
+            " 4 4 4",
+            " 3 5 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 3 5\nOutput:",
+          "choices": [
+            " 6 3 2",
+            " 7 6 4",
+            " 5 4 4",
+            " 0 2 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 4 6\nOutput:",
+          "choices": [
+            " 1 0 0",
+            " 0 7 1",
+            " 6 5 2",
+            " 5 6 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 5 1\nOutput:",
+          "choices": [
+            " 0 4 6",
+            " 4 7 0",
+            " 4 5 6",
+            " 3 4 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 6 4\nOutput:",
+          "choices": [
+            " 6 3 7",
+            " 7 2 2",
+            " 5 2 5",
+            " 0 4 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 1 2\nOutput:",
+          "choices": [
+            " 7 7 4",
+            " 0 7 0",
+            " 7 6 1",
+            " 0 5 5"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 4 6\nOutput:",
+          "choices": [
+            " 3 5 2",
+            " 2 1 4",
+            " 6 7 6",
+            " 6 2 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 0 3\nOutput:",
+          "choices": [
+            " 4 3 6",
+            " 5 5 6",
+            " 1 1 0",
+            " 4 2 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 5 2\nOutput:",
+          "choices": [
+            " 5 4 0",
+            " 3 0 6",
+            " 3 6 4",
+            " 5 0 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 6 0\nOutput:",
+          "choices": [
+            " 2 2 5",
+            " 2 0 3",
+            " 5 2 3",
+            " 3 5 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 7 6\nOutput:",
+          "choices": [
+            " 4 3 5",
+            " 1 1 2",
+            " 3 1 7",
+            " 6 2 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 5 5\nOutput:",
+          "choices": [
+            " 1 2 0",
+            " 0 5 4",
+            " 2 5 0",
+            " 3 4 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 5 0\nOutput:",
+          "choices": [
+            " 5 4 3",
+            " 0 4 0",
+            " 4 7 7",
+            " 5 7 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 7 0\nOutput:",
+          "choices": [
+            " 5 1 3",
+            " 3 5 6",
+            " 0 7 2",
+            " 4 3 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 5 7\nOutput:",
+          "choices": [
+            " 0 0 0",
+            " 4 4 1",
+            " 3 0 6",
+            " 4 6 3"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 1 5\nOutput:",
+          "choices": [
+            " 4 3 2",
+            " 6 7 4",
+            " 2 1 7",
+            " 3 7 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 5 5\nOutput:",
+          "choices": [
+            " 1 1 2",
+            " 1 3 1",
+            " 1 4 4",
+            " 3 0 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 2 7\nOutput:",
+          "choices": [
+            " 3 0 1",
+            " 3 0 7",
+            " 1 6 4",
+            " 5 0 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 3 4\nOutput:",
+          "choices": [
+            " 1 3 3",
+            " 0 3 0",
+            " 5 6 5",
+            " 2 2 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 6 3\nOutput:",
+          "choices": [
+            " 4 3 3",
+            " 2 2 6",
+            " 5 7 3",
+            " 5 0 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 1 6\nOutput:",
+          "choices": [
+            " 7 7 2",
+            " 6 6 7",
+            " 0 6 2",
+            " 5 1 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 1 1\nOutput:",
+          "choices": [
+            " 5 3 6",
+            " 1 0 4",
+            " 2 5 0",
+            " 6 7 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 0 2\nOutput:",
+          "choices": [
+            " 4 6 7",
+            " 6 3 0",
+            " 0 2 1",
+            " 1 4 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 1 6\nOutput:",
+          "choices": [
+            " 5 1 3",
+            " 4 7 2",
+            " 2 6 7",
+            " 1 7 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 2 6\nOutput:",
+          "choices": [
+            " 7 0 2",
+            " 0 1 3",
+            " 7 3 1",
+            " 3 3 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 4 1\nOutput:",
+          "choices": [
+            " 2 2 6",
+            " 4 5 7",
+            " 2 2 2",
+            " 6 4 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 6 5\nOutput:",
+          "choices": [
+            " 5 2 4",
+            " 6 2 5",
+            " 1 7 7",
+            " 1 4 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 6 3\nOutput:",
+          "choices": [
+            " 1 4 7",
+            " 7 7 5",
+            " 7 3 4",
+            " 0 2 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 4 0\nOutput:",
+          "choices": [
+            " 2 7 4",
+            " 7 2 1",
+            " 6 5 3",
+            " 2 5 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 3 3\nOutput:",
+          "choices": [
+            " 5 0 7",
+            " 3 5 1",
+            " 6 6 6",
+            " 1 1 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 4 0\nOutput:",
+          "choices": [
+            " 1 5 3",
+            " 4 5 4",
+            " 6 2 3",
+            " 6 0 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 0 2\nOutput:",
+          "choices": [
+            " 1 4 2",
+            " 3 2 1",
+            " 3 3 0",
+            " 4 2 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 4 4\nOutput:",
+          "choices": [
+            " 4 7 4",
+            " 6 7 4",
+            " 3 5 5",
+            " 7 0 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 7 3\nOutput:",
+          "choices": [
+            " 0 1 5",
+            " 6 1 6",
+            " 2 4 7",
+            " 6 1 5"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 5 4\nOutput:",
+          "choices": [
+            " 4 7 6",
+            " 7 4 5",
+            " 7 5 7",
+            " 7 1 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 7 7 2\nOutput:",
+          "choices": [
+            " 1 6 2",
+            " 0 4 3",
+            " 1 1 0",
+            " 2 1 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 3 7\nOutput:",
+          "choices": [
+            " 5 6 1",
+            " 5 7 5",
+            " 6 0 3",
+            " 6 0 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 1 2\nOutput:",
+          "choices": [
+            " 3 7 0",
+            " 0 7 7",
+            " 3 0 3",
+            " 6 1 1"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 0 5\nOutput:",
+          "choices": [
+            " 1 6 5",
+            " 2 7 0",
+            " 6 3 4",
+            " 7 2 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 2 4\nOutput:",
+          "choices": [
+            " 5 4 6",
+            " 6 7 6",
+            " 2 0 3",
+            " 4 0 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 5 4 7\nOutput:",
+          "choices": [
+            " 1 2 5",
+            " 0 4 4",
+            " 4 5 1",
+            " 1 0 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 1 7 1\nOutput:",
+          "choices": [
+            " 4 5 5",
+            " 6 5 7",
+            " 7 1 7",
+            " 6 6 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 2 4\nOutput:",
+          "choices": [
+            " 4 3 2",
+            " 0 1 6",
+            " 3 5 2",
+            " 5 0 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 4 0\nOutput:",
+          "choices": [
+            " 4 6 2",
+            " 6 7 1",
+            " 6 7 4",
+            " 0 5 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 0 3\nOutput:",
+          "choices": [
+            " 4 0 0",
+            " 0 1 2",
+            " 5 3 6",
+            " 6 5 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 6 4\nOutput:",
+          "choices": [
+            " 6 2 5",
+            " 3 7 4",
+            " 2 7 7",
+            " 3 2 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 6 5\nOutput:",
+          "choices": [
+            " 7 7 4",
+            " 6 0 7",
+            " 1 7 1",
+            " 6 2 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 2 6 7\nOutput:",
+          "choices": [
+            " 0 2 3",
+            " 0 2 1",
+            " 2 3 5",
+            " 0 4 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 3 1\nOutput:",
+          "choices": [
+            " 5 6 7",
+            " 0 6 3",
+            " 6 7 3",
+            " 2 5 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 2 3\nOutput:",
+          "choices": [
+            " 3 1 7",
+            " 3 1 6",
+            " 0 7 0",
+            " 6 0 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 3 7 5\nOutput:",
+          "choices": [
+            " 6 1 4",
+            " 5 2 2",
+            " 0 6 4",
+            " 4 2 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 4 7\nOutput:",
+          "choices": [
+            " 7 1 0",
+            " 5 5 1",
+            " 6 4 4",
+            " 1 1 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 4 1\nOutput:",
+          "choices": [
+            " 3 2 3",
+            " 5 0 1",
+            " 5 5 7",
+            " 2 6 4"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 4 2 1\nOutput:",
+          "choices": [
+            " 6 5 3",
+            " 5 0 7",
+            " 6 7 1",
+            " 7 3 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 0 6 7\nOutput:",
+          "choices": [
+            " 1 0 6",
+            " 0 7 7",
+            " 0 1 3",
+            " 3 2 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_a",
+          "prompt": "Apply the amber code.\nInput: 6 5 2\nOutput:",
+          "choices": [
+            " 4 4 3",
+            " 2 4 0",
+            " 1 5 6",
+            " 6 2 7"
+          ],
+          "gold_idx": 1
+        }
+      ],
+      "acquisition_b": [
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 1 0\nOutput:",
+          "choices": [
+            " 4 5 3",
+            " 0 3 6",
+            " 1 3 1",
+            " 2 7 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 3 5\nOutput:",
+          "choices": [
+            " 0 4 3",
+            " 1 7 0",
+            " 7 5 2",
+            " 6 3 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 6 7\nOutput:",
+          "choices": [
+            " 3 4 7",
+            " 1 1 3",
+            " 6 3 6",
+            " 6 3 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 5 3\nOutput:",
+          "choices": [
+            " 0 1 5",
+            " 0 5 4",
+            " 4 0 1",
+            " 4 6 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 5 6\nOutput:",
+          "choices": [
+            " 7 0 7",
+            " 6 2 5",
+            " 3 6 5",
+            " 3 0 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 0 2\nOutput:",
+          "choices": [
+            " 2 1 4",
+            " 1 2 1",
+            " 4 3 6",
+            " 3 7 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 1 0\nOutput:",
+          "choices": [
+            " 2 6 4",
+            " 2 7 6",
+            " 6 7 5",
+            " 7 3 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 0 6\nOutput:",
+          "choices": [
+            " 3 2 2",
+            " 3 6 0",
+            " 4 5 6",
+            " 5 4 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 4 7\nOutput:",
+          "choices": [
+            " 3 5 6",
+            " 0 7 4",
+            " 6 3 4",
+            " 6 5 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 3 5\nOutput:",
+          "choices": [
+            " 3 0 1",
+            " 0 4 7",
+            " 7 3 6",
+            " 2 2 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 4 6\nOutput:",
+          "choices": [
+            " 6 6 5",
+            " 2 5 1",
+            " 3 5 4",
+            " 2 2 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 5 1\nOutput:",
+          "choices": [
+            " 0 4 1",
+            " 6 3 7",
+            " 7 0 2",
+            " 6 3 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 6 4\nOutput:",
+          "choices": [
+            " 3 7 6",
+            " 0 5 5",
+            " 5 3 5",
+            " 7 3 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 1 2\nOutput:",
+          "choices": [
+            " 0 6 1",
+            " 2 4 5",
+            " 1 7 1",
+            " 3 7 5"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 4 6\nOutput:",
+          "choices": [
+            " 6 3 2",
+            " 6 7 6",
+            " 5 3 2",
+            " 3 5 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 0 3\nOutput:",
+          "choices": [
+            " 6 5 6",
+            " 6 0 2",
+            " 4 2 0",
+            " 5 0 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 5 2\nOutput:",
+          "choices": [
+            " 1 4 6",
+            " 0 1 3",
+            " 4 3 2",
+            " 1 0 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 6 0\nOutput:",
+          "choices": [
+            " 6 5 1",
+            " 2 3 5",
+            " 7 3 3",
+            " 0 2 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 7 6\nOutput:",
+          "choices": [
+            " 3 6 6",
+            " 1 3 7",
+            " 3 5 2",
+            " 1 4 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 5 5\nOutput:",
+          "choices": [
+            " 0 0 7",
+            " 1 4 5",
+            " 0 0 2",
+            " 6 7 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 5 0\nOutput:",
+          "choices": [
+            " 4 0 4",
+            " 2 0 5",
+            " 3 4 0",
+            " 0 6 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 7 0\nOutput:",
+          "choices": [
+            " 2 2 6",
+            " 0 3 0",
+            " 2 6 5",
+            " 1 2 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 5 7\nOutput:",
+          "choices": [
+            " 2 0 7",
+            " 6 0 0",
+            " 3 1 6",
+            " 3 4 5"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 1 5\nOutput:",
+          "choices": [
+            " 0 7 4",
+            " 3 6 3",
+            " 0 2 4",
+            " 6 0 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 5 5\nOutput:",
+          "choices": [
+            " 2 5 3",
+            " 0 1 2",
+            " 5 2 7",
+            " 0 0 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 2 7\nOutput:",
+          "choices": [
+            " 7 2 1",
+            " 1 7 5",
+            " 6 1 2",
+            " 4 0 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 3 4\nOutput:",
+          "choices": [
+            " 5 4 5",
+            " 3 3 4",
+            " 0 5 2",
+            " 1 1 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 6 3\nOutput:",
+          "choices": [
+            " 4 3 3",
+            " 0 0 7",
+            " 2 0 6",
+            " 6 3 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 1 6\nOutput:",
+          "choices": [
+            " 5 1 0",
+            " 3 7 7",
+            " 5 7 6",
+            " 0 4 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 1 1\nOutput:",
+          "choices": [
+            " 1 4 7",
+            " 7 7 4",
+            " 3 5 2",
+            " 7 6 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 0 2\nOutput:",
+          "choices": [
+            " 5 0 0",
+            " 4 2 0",
+            " 7 3 7",
+            " 1 2 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 1 6\nOutput:",
+          "choices": [
+            " 3 7 0",
+            " 0 4 3",
+            " 6 2 2",
+            " 3 4 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 2 6\nOutput:",
+          "choices": [
+            " 2 0 6",
+            " 3 1 7",
+            " 6 7 2",
+            " 6 2 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 4 1\nOutput:",
+          "choices": [
+            " 1 0 7",
+            " 3 1 7",
+            " 7 5 0",
+            " 6 4 4"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 6 5\nOutput:",
+          "choices": [
+            " 4 1 6",
+            " 3 6 6",
+            " 2 3 2",
+            " 0 3 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 6 3\nOutput:",
+          "choices": [
+            " 4 3 1",
+            " 1 4 6",
+            " 6 4 0",
+            " 7 3 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 4 0\nOutput:",
+          "choices": [
+            " 2 5 3",
+            " 6 6 1",
+            " 6 7 1",
+            " 7 3 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 3 3\nOutput:",
+          "choices": [
+            " 4 4 4",
+            " 1 0 0",
+            " 7 4 3",
+            " 2 7 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 4 0\nOutput:",
+          "choices": [
+            " 2 5 6",
+            " 4 1 4",
+            " 4 3 0",
+            " 6 3 3"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 0 2\nOutput:",
+          "choices": [
+            " 1 7 6",
+            " 5 6 0",
+            " 1 2 2",
+            " 7 4 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 4 4\nOutput:",
+          "choices": [
+            " 1 1 2",
+            " 7 6 0",
+            " 5 5 2",
+            " 6 0 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 7 3\nOutput:",
+          "choices": [
+            " 4 7 1",
+            " 0 5 3",
+            " 4 6 4",
+            " 2 6 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 5 4\nOutput:",
+          "choices": [
+            " 5 2 3",
+            " 5 0 7",
+            " 4 7 2",
+            " 2 1 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 7 7 2\nOutput:",
+          "choices": [
+            " 1 6 6",
+            " 5 7 6",
+            " 4 5 4",
+            " 3 0 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 3 7\nOutput:",
+          "choices": [
+            " 7 3 5",
+            " 2 3 7",
+            " 6 4 5",
+            " 5 1 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 1 2\nOutput:",
+          "choices": [
+            " 6 1 5",
+            " 1 7 2",
+            " 5 1 3",
+            " 6 1 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 0 5\nOutput:",
+          "choices": [
+            " 7 7 5",
+            " 0 2 4",
+            " 7 7 3",
+            " 3 3 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 2 4\nOutput:",
+          "choices": [
+            " 5 1 0",
+            " 4 0 5",
+            " 0 6 6",
+            " 3 7 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 5 4 7\nOutput:",
+          "choices": [
+            " 3 6 4",
+            " 6 5 0",
+            " 6 6 0",
+            " 1 0 5"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 1 7 1\nOutput:",
+          "choices": [
+            " 5 2 1",
+            " 7 6 7",
+            " 0 2 5",
+            " 3 2 7"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 2 4\nOutput:",
+          "choices": [
+            " 3 5 2",
+            " 1 4 5",
+            " 3 0 6",
+            " 5 1 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 4 0\nOutput:",
+          "choices": [
+            " 7 6 7",
+            " 5 1 1",
+            " 6 4 1",
+            " 2 5 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 0 3\nOutput:",
+          "choices": [
+            " 7 5 4",
+            " 4 5 5",
+            " 0 6 1",
+            " 4 2 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 6 4\nOutput:",
+          "choices": [
+            " 2 5 7",
+            " 0 5 7",
+            " 7 6 1",
+            " 5 3 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 6 5\nOutput:",
+          "choices": [
+            " 3 3 5",
+            " 0 3 4",
+            " 6 2 3",
+            " 5 6 5"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 2 6 7\nOutput:",
+          "choices": [
+            " 4 1 5",
+            " 7 4 7",
+            " 7 7 4",
+            " 6 3 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 3 1\nOutput:",
+          "choices": [
+            " 4 5 1",
+            " 4 7 0",
+            " 0 1 6",
+            " 7 4 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 2 3\nOutput:",
+          "choices": [
+            " 6 4 3",
+            " 4 1 4",
+            " 2 0 6",
+            " 6 5 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 3 7 5\nOutput:",
+          "choices": [
+            " 0 6 4",
+            " 3 0 7",
+            " 2 7 3",
+            " 2 3 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 4 7\nOutput:",
+          "choices": [
+            " 1 2 4",
+            " 1 7 7",
+            " 6 5 5",
+            " 2 4 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 4 1\nOutput:",
+          "choices": [
+            " 0 2 7",
+            " 4 4 1",
+            " 2 5 5",
+            " 7 5 5"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 4 2 1\nOutput:",
+          "choices": [
+            " 7 1 5",
+            " 0 1 6",
+            " 6 6 7",
+            " 5 4 4"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 0 6 7\nOutput:",
+          "choices": [
+            " 6 3 2",
+            " 0 4 2",
+            " 4 3 6",
+            " 4 0 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "acquisition_b",
+          "prompt": "Apply the violet code.\nInput: 6 5 2\nOutput:",
+          "choices": [
+            " 0 1 5",
+            " 2 7 7",
+            " 7 6 5",
+            " 1 0 3"
+          ],
+          "gold_idx": 3
+        }
+      ],
+      "control_copy": [
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 1 0\nOutput:",
+          "choices": [
+            " 5 1 0",
+            " 0 1 3",
+            " 0 3 0",
+            " 4 7 1"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 3 5\nOutput:",
+          "choices": [
+            " 1 3 3",
+            " 7 3 6",
+            " 6 3 5",
+            " 7 6 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 6 7\nOutput:",
+          "choices": [
+            " 2 2 6",
+            " 4 5 7",
+            " 7 6 7",
+            " 0 3 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 5 3\nOutput:",
+          "choices": [
+            " 2 5 3",
+            " 1 2 7",
+            " 1 7 5",
+            " 5 6 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 5 6\nOutput:",
+          "choices": [
+            " 1 6 4",
+            " 0 1 4",
+            " 4 5 6",
+            " 0 3 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 0 2\nOutput:",
+          "choices": [
+            " 5 4 2",
+            " 3 2 2",
+            " 0 7 6",
+            " 2 0 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 1 0\nOutput:",
+          "choices": [
+            " 3 2 6",
+            " 7 1 0",
+            " 2 1 5",
+            " 0 3 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 0 6\nOutput:",
+          "choices": [
+            " 6 6 5",
+            " 0 0 6",
+            " 3 0 3",
+            " 7 2 5"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 4 7\nOutput:",
+          "choices": [
+            " 1 5 2",
+            " 3 6 5",
+            " 5 1 6",
+            " 0 4 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 3 5\nOutput:",
+          "choices": [
+            " 0 6 2",
+            " 3 1 5",
+            " 1 3 5",
+            " 3 3 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 4 6\nOutput:",
+          "choices": [
+            " 0 7 7",
+            " 6 7 3",
+            " 4 4 4",
+            " 3 4 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 5 1\nOutput:",
+          "choices": [
+            " 2 2 4",
+            " 0 5 1",
+            " 3 4 2",
+            " 6 4 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 6 4\nOutput:",
+          "choices": [
+            " 1 7 6",
+            " 7 4 5",
+            " 0 7 1",
+            " 4 6 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 1 2\nOutput:",
+          "choices": [
+            " 2 1 2",
+            " 1 7 1",
+            " 2 6 3",
+            " 6 5 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 4 6\nOutput:",
+          "choices": [
+            " 4 1 3",
+            " 2 2 6",
+            " 0 1 6",
+            " 0 4 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 0 3\nOutput:",
+          "choices": [
+            " 0 3 6",
+            " 4 6 3",
+            " 5 0 3",
+            " 7 2 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 5 2\nOutput:",
+          "choices": [
+            " 7 3 3",
+            " 1 0 5",
+            " 5 0 3",
+            " 4 5 2"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 6 0\nOutput:",
+          "choices": [
+            " 4 6 0",
+            " 0 4 4",
+            " 7 6 2",
+            " 0 2 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 7 6\nOutput:",
+          "choices": [
+            " 3 3 5",
+            " 5 7 1",
+            " 6 6 0",
+            " 7 7 6"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 5 5\nOutput:",
+          "choices": [
+            " 5 3 2",
+            " 0 5 5",
+            " 1 6 5",
+            " 2 4 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 5 0\nOutput:",
+          "choices": [
+            " 4 5 0",
+            " 1 4 2",
+            " 4 7 3",
+            " 0 1 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 7 0\nOutput:",
+          "choices": [
+            " 5 5 3",
+            " 3 1 3",
+            " 1 5 4",
+            " 4 7 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 5 7\nOutput:",
+          "choices": [
+            " 5 5 7",
+            " 3 4 7",
+            " 3 7 2",
+            " 3 6 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 1 5\nOutput:",
+          "choices": [
+            " 3 1 5",
+            " 5 4 6",
+            " 6 7 5",
+            " 5 5 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 5 5\nOutput:",
+          "choices": [
+            " 4 0 4",
+            " 7 5 5",
+            " 3 6 7",
+            " 3 5 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 2 7\nOutput:",
+          "choices": [
+            " 3 7 0",
+            " 0 2 7",
+            " 2 5 5",
+            " 7 3 6"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 3 4\nOutput:",
+          "choices": [
+            " 4 3 4",
+            " 4 2 4",
+            " 4 2 0",
+            " 7 3 2"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 6 3\nOutput:",
+          "choices": [
+            " 6 6 3",
+            " 4 2 7",
+            " 0 6 2",
+            " 6 1 7"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 1 6\nOutput:",
+          "choices": [
+            " 1 1 6",
+            " 1 7 6",
+            " 7 4 1",
+            " 2 1 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 1 1\nOutput:",
+          "choices": [
+            " 0 6 0",
+            " 2 7 5",
+            " 3 1 1",
+            " 1 1 3"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 0 2\nOutput:",
+          "choices": [
+            " 4 1 5",
+            " 3 4 6",
+            " 3 0 2",
+            " 7 5 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 1 6\nOutput:",
+          "choices": [
+            " 2 3 0",
+            " 5 1 6",
+            " 1 1 1",
+            " 1 3 3"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 2 6\nOutput:",
+          "choices": [
+            " 7 0 3",
+            " 7 4 1",
+            " 1 2 6",
+            " 2 7 4"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 4 1\nOutput:",
+          "choices": [
+            " 7 1 2",
+            " 5 4 1",
+            " 5 7 3",
+            " 2 4 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 6 5\nOutput:",
+          "choices": [
+            " 4 5 2",
+            " 4 6 5",
+            " 2 7 7",
+            " 6 4 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 6 3\nOutput:",
+          "choices": [
+            " 1 0 4",
+            " 5 5 7",
+            " 2 6 3",
+            " 1 0 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 4 0\nOutput:",
+          "choices": [
+            " 6 4 0",
+            " 5 1 6",
+            " 1 1 2",
+            " 7 2 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 3 3\nOutput:",
+          "choices": [
+            " 7 5 3",
+            " 3 3 3",
+            " 1 0 2",
+            " 6 2 4"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 4 0\nOutput:",
+          "choices": [
+            " 7 1 5",
+            " 7 4 0",
+            " 5 3 5",
+            " 5 6 1"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 0 2\nOutput:",
+          "choices": [
+            " 3 2 2",
+            " 0 0 2",
+            " 4 1 7",
+            " 7 4 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 4 4\nOutput:",
+          "choices": [
+            " 5 5 4",
+            " 1 5 0",
+            " 0 4 4",
+            " 7 5 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 7 3\nOutput:",
+          "choices": [
+            " 2 6 2",
+            " 3 7 3",
+            " 0 4 3",
+            " 1 7 3"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 5 4\nOutput:",
+          "choices": [
+            " 7 3 3",
+            " 2 0 5",
+            " 1 5 4",
+            " 1 4 0"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 7 7 2\nOutput:",
+          "choices": [
+            " 0 1 2",
+            " 4 6 2",
+            " 7 7 2",
+            " 1 6 6"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 3 7\nOutput:",
+          "choices": [
+            " 4 7 6",
+            " 3 0 7",
+            " 2 5 4",
+            " 4 3 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 1 2\nOutput:",
+          "choices": [
+            " 2 0 4",
+            " 5 2 7",
+            " 0 1 2",
+            " 4 7 7"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 0 5\nOutput:",
+          "choices": [
+            " 3 0 5",
+            " 2 6 1",
+            " 1 0 3",
+            " 0 1 6"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 2 4\nOutput:",
+          "choices": [
+            " 2 2 2",
+            " 3 0 0",
+            " 4 7 5",
+            " 5 2 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 5 4 7\nOutput:",
+          "choices": [
+            " 3 6 6",
+            " 0 3 7",
+            " 4 7 4",
+            " 5 4 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 1 7 1\nOutput:",
+          "choices": [
+            " 1 7 1",
+            " 5 5 6",
+            " 2 0 6",
+            " 1 7 0"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 2 4\nOutput:",
+          "choices": [
+            " 7 7 6",
+            " 3 4 0",
+            " 1 1 3",
+            " 4 2 4"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 4 0\nOutput:",
+          "choices": [
+            " 1 7 7",
+            " 7 1 2",
+            " 4 2 4",
+            " 2 4 0"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 0 3\nOutput:",
+          "choices": [
+            " 4 0 3",
+            " 6 1 1",
+            " 5 2 2",
+            " 0 4 1"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 6 4\nOutput:",
+          "choices": [
+            " 6 3 1",
+            " 3 6 4",
+            " 3 0 1",
+            " 5 6 0"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 6 5\nOutput:",
+          "choices": [
+            " 3 7 1",
+            " 6 2 4",
+            " 3 6 5",
+            " 4 3 4"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 2 6 7\nOutput:",
+          "choices": [
+            " 4 2 4",
+            " 6 6 3",
+            " 2 6 7",
+            " 4 7 2"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 3 1\nOutput:",
+          "choices": [
+            " 4 3 1",
+            " 4 1 0",
+            " 5 5 1",
+            " 7 1 5"
+          ],
+          "gold_idx": 0
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 2 3\nOutput:",
+          "choices": [
+            " 3 3 6",
+            " 7 6 2",
+            " 2 7 2",
+            " 3 2 3"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 3 7 5\nOutput:",
+          "choices": [
+            " 0 0 5",
+            " 3 7 5",
+            " 4 4 7",
+            " 2 5 3"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 4 7\nOutput:",
+          "choices": [
+            " 1 1 5",
+            " 7 4 7",
+            " 6 1 5",
+            " 4 4 7"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 4 1\nOutput:",
+          "choices": [
+            " 5 2 7",
+            " 6 4 0",
+            " 4 4 1",
+            " 0 7 1"
+          ],
+          "gold_idx": 2
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 4 2 1\nOutput:",
+          "choices": [
+            " 1 7 2",
+            " 7 3 5",
+            " 4 6 2",
+            " 4 2 1"
+          ],
+          "gold_idx": 3
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 0 6 7\nOutput:",
+          "choices": [
+            " 7 6 7",
+            " 0 6 7",
+            " 7 7 0",
+            " 1 5 2"
+          ],
+          "gold_idx": 1
+        },
+        {
+          "task": "control_copy",
+          "prompt": "Copy the input digits unchanged.\nInput: 6 5 2\nOutput:",
+          "choices": [
+            " 6 5 2",
+            " 7 3 2",
+            " 5 2 5",
+            " 4 4 7"
+          ],
+          "gold_idx": 0
+        }
+      ]
+    }
+  },
+  "provenance": {
+    "generator": "seeded_hidden_digit_relabeling_and_reverse",
+    "version": 1,
+    "seed": 29,
+    "rules": {
+      "amber": [
+        3,
+        7,
+        0,
+        6,
+        5,
+        4,
+        2,
+        1
+      ],
+      "violet_reverse_then_map": [
+        2,
+        7,
+        1,
+        4,
+        5,
+        0,
+        3,
+        6
+      ]
+    },
+    "split_sizes_per_task": {
+      "train": 128,
+      "validation": 32,
+      "test": 64
+    },
+    "sha256": "d9c78e534701c0e2862d013d23082427b86039f551c1e54c1abdf19bbf71968c",
+    "heldout_contract": "Input digit triples are disjoint across train, validation, and test for all tasks. Mappings are never included in model prompts.",
+    "chance_accuracy": 0.25,
+    "choice_lengths_equal": true,
+    "validation_use": "fixed-budget diagnostic only; no test-driven checkpoint or hyperparameter selection",
+    "primary_metric": "four-choice continuation accuracy; this is not free-generation accuracy"
+  }
+}

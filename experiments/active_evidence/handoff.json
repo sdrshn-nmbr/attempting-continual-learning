@@ -1,0 +1,73 @@
+{
+  "lane": "active_evidence",
+  "status": "gpu_mini_qualified_full_screen_ready_after_scheduler_barrier",
+  "additional_packages": [],
+  "verified_sdk": [
+    "peft==0.20.0",
+    "transformers==5.16.1"
+  ],
+  "preserve_runtime": "Constrain torch to importlib.metadata.version('torch'); do not replace the ROCm build.",
+  "downloads": [],
+  "entrypoint": "run.py",
+  "source_directory": "experiments/active_evidence",
+  "qualification_launch": "uv run python run.py --config mini.json --output-dir /mnt/shared/cl-portfolio/runs/active_evidence-mini-seed17",
+  "launch": "uv run python run.py --config screen.json --output-dir /mnt/shared/cl-portfolio/runs/active_evidence-screen-seed17",
+  "parent_dispatch_qualification": "uv run python compute/dispatch.py --lane-dir experiments/active_evidence --config experiments/active_evidence/mini.json --id active_evidence-mini-seed17 --gpus 1 --submit",
+  "parent_dispatch_screen": "uv run python compute/dispatch.py --lane-dir experiments/active_evidence --config experiments/active_evidence/screen.json --id active_evidence-screen-seed17 --gpus 1 --submit",
+  "visibility": "Dispatcher sets ROCR_VISIBLE_DEVICES. Runner leaves visibility untouched and requires exactly one visible GPU at cuda:0.",
+  "gpu_count": 1,
+  "local_verification": {
+    "artifact": "outputs/local-verification/verification.json",
+    "environment_invariants": "passed across four seeds",
+    "tiny_cpu_adapter_gradient_and_reload": "passed; finite decreasing loss, changed adapters, bitwise equal reloaded logits and unchanged base",
+    "tokenizer_budget": "3840 distinct device/input prompts all exactly 130 input tokens; binary labels each one token",
+    "rocm_qwen_training": "GPU mini passed: 2 arms x 2 stages, nonzero parameter updates, identical initial adapters and training budgets, exact checkpoint logits after reload; qualification only",
+    "promotion_regression": "outputs/promotion-verification/verification.json"
+  },
+  "arms": [
+    "random",
+    "model_uncertainty",
+    "hypothesis_elimination_oracle"
+  ],
+  "budgets": {
+    "queries_per_arm": 96,
+    "optimizer_updates_per_arm": 160,
+    "batch_size": 8
+  },
+  "qualification_budgets": {
+    "queries_per_arm": 64,
+    "optimizer_updates_per_arm": 24,
+    "batch_size": 4
+  },
+  "promotion_rule": "Full screen requires held-out gain over untouched base, ability to learn the next skill, active-versus-random gain, relative retention/next-skill regressions <= 0.05, and own stable-task forgetting <= 0.05. A kept candidate still requires fresh-seed independent confirmation. Mini remains qualification only.",
+  "selection_boundary": "Frozen base Qwen scores uncertainty from the current device's acquired evidence. The exact finite-family selector knows the public hypothesis family, but cannot access the true rule, unqueried labels, or held-out inputs. It is an oracle upper bound.",
+  "student_boundary": "Only current-stage observed query labels enter supervised training. The stable old device receives no second-stage training. All primary evaluations clear evidence, disable cache, and evaluate saved/reloaded adapters.",
+  "limitations": [
+    "One seed is a screen, not a robust effect estimate.",
+    "Synthetic binary rules do not establish general agentic learning.",
+    "The oracle selector has exact family knowledge and is not evidence of learned experiment design.",
+    "Forced-choice accuracy is accompanied by unrestricted next-token accuracy and answer-token probability mass."
+  ],
+  "resolved_review_findings": [
+    "AE-001: absolute stable-task forgetting threshold added and verified with six CPU decision counterexamples"
+  ],
+  "source_sha256": {
+    "environment.py": "6a4475565b9dc924e1c5027b88452218ae39fc88acefb86509ef845a61c74b9b",
+    "run.py": "d5db1a14b0921b480febd10fb1cf8ff94417f17291622c514d150a04d090cc8e",
+    "verify.py": "7340067888d057d749ed12eec78720c8af745e653f800733e0b101926f5b92fa"
+  },
+  "gpu_mini_run_id": "active-evidence-mini-seed17",
+  "gpu_mini_local_result": "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/outputs/portfolio/runs/active-evidence-mini-seed17/result.json",
+  "followup": {
+    "status": "cpu_verified_ready_for_gpu",
+    "protocol": "protocol.json",
+    "configs": [
+      "observed-replay.json",
+      "posterior-replay.json"
+    ],
+    "verification": "outputs/consolidation-verification/verification.json",
+    "verification_sha256": "606cb224a94d55e8b643b1b4000c85d32703ef9bb61e427cb8c8dfde607cf7d1",
+    "prior_negative_run": "active-evidence-screen-seed17",
+    "proof_limit": "Dataflow and matched-budget CPU proof; followup GPU learning not measured yet."
+  }
+}

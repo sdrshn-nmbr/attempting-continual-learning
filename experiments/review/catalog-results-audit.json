@@ -1,0 +1,1779 @@
+{
+  "schema_version": 1,
+  "audit": "independent_six_model_catalog_results",
+  "observed_at": "2026-09-07T22:58:32.413581+00:00",
+  "scope": "Read-only local source, dataset and result audit. Independent arithmetic from candidate-score argmax and dataset labels; no import of catalog statistics/evaluator helpers, model execution, training, GPU or infrastructure actions.",
+  "protocol": {
+    "tasks": [
+      "boolq",
+      "hellaswag",
+      "winogrande",
+      "commonsense_qa"
+    ],
+    "examples_per_task": 32,
+    "examples_per_condition": 128,
+    "bootstrap_replicates": 4000,
+    "bootstrap_seed": 20260907,
+    "bootstrap": "paired nonparametric resampling within each task, equally weighted task means",
+    "sorted_endpoint_indices_zero_based": [
+      100,
+      3899
+    ],
+    "ci_nominal_coverage": 0.95,
+    "multiple_comparisons": "Holm and Bonferroni corrections over the six completed models; seven-model sensitivity also reported because Inkling was planned."
+  },
+  "dataset": {
+    "repo": "RampPublic/portallib-tasks",
+    "revision": "ffc3c0e44f529bf64a5ae62ed5db090952db97ea",
+    "selection_sha256_recomputed": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b",
+    "files": {
+      "experiments/catalog/outputs/cpu-cache/cl-campaign/datasets/RampPublic/portallib-tasks/ffc3c0e44f529bf64a5ae62ed5db090952db97ea/data/train-00000-of-00001.parquet": {
+        "bytes": 39569897,
+        "sha256": "a2b188cf297de659d57d715f31a546e01ec869e07921265038a806537c85f822",
+        "matches_manifest": true
+      },
+      "experiments/catalog/outputs/cpu-cache/cl-campaign/datasets/RampPublic/portallib-tasks/ffc3c0e44f529bf64a5ae62ed5db090952db97ea/data/validation-00000-of-00001.parquet": {
+        "bytes": 9080138,
+        "sha256": "ebc0968aa8d724d4c325cf6db5858fe1100914684ed9c2ce4de66436dfe6c377",
+        "matches_manifest": true
+      }
+    },
+    "selection_counts": {
+      "boolq": {
+        "eligible": 2270,
+        "selected": 32
+      },
+      "hellaswag": {
+        "eligible": 9005,
+        "selected": 32
+      },
+      "winogrande": {
+        "eligible": 219,
+        "selected": 32
+      },
+      "commonsense_qa": {
+        "eligible": 221,
+        "selected": 32
+      }
+    },
+    "minimum_selected_within_task_index": 1006,
+    "training_overlap": 0,
+    "documented_selection_prefix_overlap": 0,
+    "unknown_pretraining_or_unpublished_selection_exposure_excluded": false
+  },
+  "runs": [
+    {
+      "id": "catalog-qwen3-17b-screen",
+      "model": "portal-qwen3-1.7b",
+      "execution": {
+        "task_id": "catalog-qwen3-17b-screen",
+        "started_at": "2026-09-07T22:26:07.476427+00:00",
+        "status": "completed",
+        "gpus": [
+          1
+        ],
+        "pid": 390,
+        "pod": "cl-portfolio-b94bq-x5vbc",
+        "runtime_sha256": "b8a7c06900441b8b529f7c7e6b7eee6cff9134bda5d8d84b19cad6ab015f3ac4",
+        "finished_at": "2026-09-07T22:26:47.829711+00:00",
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "source_bundle_sha256": "f2064ec85db6d3f804dda58ca2548cb666c8d7c6d460f1fe0ee986d90d7de344",
+      "statistics_and_dataset_source_match_current": true,
+      "manifest_sha256": "f7cf070b03b2fe89cadba0421e4e8bd5402684f38040d8c275cec369da1ca6f7",
+      "selection_sha256": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b",
+      "config_task_result_match": true,
+      "row_labels_predictions_correct_flags_verified": true,
+      "per_task": {
+        "boolq": {
+          "examples": 32,
+          "base_correct": 28,
+          "portal_correct": 26,
+          "base_accuracy": 0.875,
+          "portal_accuracy": 0.8125,
+          "delta": -0.0625,
+          "improved": 2,
+          "regressed": 4
+        },
+        "hellaswag": {
+          "examples": 32,
+          "base_correct": 15,
+          "portal_correct": 14,
+          "base_accuracy": 0.46875,
+          "portal_accuracy": 0.4375,
+          "delta": -0.03125,
+          "improved": 3,
+          "regressed": 4
+        },
+        "winogrande": {
+          "examples": 32,
+          "base_correct": 19,
+          "portal_correct": 20,
+          "base_accuracy": 0.59375,
+          "portal_accuracy": 0.625,
+          "delta": 0.03125,
+          "improved": 4,
+          "regressed": 3
+        },
+        "commonsense_qa": {
+          "examples": 32,
+          "base_correct": 16,
+          "portal_correct": 26,
+          "base_accuracy": 0.5,
+          "portal_accuracy": 0.8125,
+          "delta": 0.3125,
+          "improved": 12,
+          "regressed": 2
+        }
+      },
+      "base_accuracy": 0.609375,
+      "portal_accuracy": 0.671875,
+      "statistics_recomputed": {
+        "paired_examples": 128,
+        "improved": 21,
+        "regressed": 13,
+        "macro_accuracy_delta": 0.0625,
+        "paired_stratified_bootstrap_95ci": [
+          -0.0234375,
+          0.1484375
+        ],
+        "exact_mcnemar_two_sided_p": 0.22948101302608848
+      },
+      "all_primary_metrics_exactly_match_report": true,
+      "argmax_ties": {
+        "base": 0,
+        "portal": 0
+      },
+      "prompt_truncation": {
+        "base": {
+          "examples": 0,
+          "max_removed_tokens": 0
+        },
+        "portal": {
+          "examples": 0,
+          "max_removed_tokens": 0
+        }
+      },
+      "native_roundtrip_receipt": {
+        "state_exact_equal": true,
+        "generated_factors_exact_equal": true,
+        "tasks": [
+          "boolq",
+          "hellaswag",
+          "winogrande",
+          "commonsense_qa"
+        ],
+        "checkpoint_sha256": "0fd40438c0ab7d610ee4ac8d994966cd2587468e27ae2e9005368e46d3219c76"
+      },
+      "native_checkpoint_bytes_available_locally": false,
+      "peft_roundtrip_receipt": {
+        "task": "boolq",
+        "examples": 1,
+        "native_peft_max_score_error": 0,
+        "reload_max_score_error": 0,
+        "reload_scores_exact_equal": true,
+        "native_peft_atol": 0.0005
+      },
+      "raw_reload_scores_audited": {
+        "rows": 3,
+        "example": {
+          "task": "boolq",
+          "prompt_sha256": "6fb96f6fc6be02f1c84fdbe203059db3fdcc0230d784b245f9b015849f359550"
+        },
+        "native_peft_max_score_error": 0.0,
+        "reload_max_score_error": 0.0,
+        "scores_exact_equal": true
+      },
+      "parity_scope": "one BoolQ example; native-state/factor equality is a receipt claim because native checkpoint bytes were not included in this local sync",
+      "reported_decision": "discard_positive_claim",
+      "optimizer_steps": 0,
+      "novel_continual_learning_qualified": false,
+      "base": {
+        "repo": "Qwen/Qwen3-1.7B",
+        "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+        "model_class": "Qwen3ForCausalLM",
+        "parameters": 1720574976,
+        "trainable_parameters": 0
+      },
+      "artifact_asset": "model:RampPublic/portal-qwen3-1.7b@be09be533b5c0418ad20269f19ebb63e9efbc330",
+      "base_asset": "model:Qwen/Qwen3-1.7B@70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "runtime_packages_match_receipt": true,
+      "runtime_packages": {
+        "portallib": "0.2.1",
+        "peft": "0.20.0",
+        "transformers": "5.16.1",
+        "torch": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+        "huggingface-hub": "1.30.0",
+        "datasets": "4.8.5",
+        "pyarrow": "25.0.1"
+      },
+      "multiplicity": {
+        "holm_six_adjusted_p": 1,
+        "bonferroni_six_adjusted_p": 1,
+        "bonferroni_planned_seven_adjusted_p": 1,
+        "holm_six_reject_at_0_05": false
+      }
+    },
+    {
+      "id": "catalog-qwen3-4b-screen",
+      "model": "portal-qwen3-4b",
+      "execution": {
+        "task_id": "catalog-qwen3-4b-screen",
+        "started_at": "2026-09-07T22:26:07.493258+00:00",
+        "status": "completed",
+        "gpus": [
+          2
+        ],
+        "pid": 395,
+        "pod": "cl-portfolio-b94bq-x5vbc",
+        "runtime_sha256": "b8a7c06900441b8b529f7c7e6b7eee6cff9134bda5d8d84b19cad6ab015f3ac4",
+        "finished_at": "2026-09-07T22:27:03.913513+00:00",
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "source_bundle_sha256": "f2064ec85db6d3f804dda58ca2548cb666c8d7c6d460f1fe0ee986d90d7de344",
+      "statistics_and_dataset_source_match_current": true,
+      "manifest_sha256": "f7cf070b03b2fe89cadba0421e4e8bd5402684f38040d8c275cec369da1ca6f7",
+      "selection_sha256": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b",
+      "config_task_result_match": true,
+      "row_labels_predictions_correct_flags_verified": true,
+      "per_task": {
+        "boolq": {
+          "examples": 32,
+          "base_correct": 28,
+          "portal_correct": 28,
+          "base_accuracy": 0.875,
+          "portal_accuracy": 0.875,
+          "delta": 0,
+          "improved": 1,
+          "regressed": 1
+        },
+        "hellaswag": {
+          "examples": 32,
+          "base_correct": 20,
+          "portal_correct": 19,
+          "base_accuracy": 0.625,
+          "portal_accuracy": 0.59375,
+          "delta": -0.03125,
+          "improved": 2,
+          "regressed": 3
+        },
+        "winogrande": {
+          "examples": 32,
+          "base_correct": 19,
+          "portal_correct": 18,
+          "base_accuracy": 0.59375,
+          "portal_accuracy": 0.5625,
+          "delta": -0.03125,
+          "improved": 4,
+          "regressed": 5
+        },
+        "commonsense_qa": {
+          "examples": 32,
+          "base_correct": 20,
+          "portal_correct": 26,
+          "base_accuracy": 0.625,
+          "portal_accuracy": 0.8125,
+          "delta": 0.1875,
+          "improved": 7,
+          "regressed": 1
+        }
+      },
+      "base_accuracy": 0.6796875,
+      "portal_accuracy": 0.7109375,
+      "statistics_recomputed": {
+        "paired_examples": 128,
+        "improved": 14,
+        "regressed": 10,
+        "macro_accuracy_delta": 0.03125,
+        "paired_stratified_bootstrap_95ci": [
+          -0.0390625,
+          0.109375
+        ],
+        "exact_mcnemar_two_sided_p": 0.5412561893463135
+      },
+      "all_primary_metrics_exactly_match_report": true,
+      "argmax_ties": {
+        "base": 0,
+        "portal": 0
+      },
+      "prompt_truncation": {
+        "base": {
+          "examples": 0,
+          "max_removed_tokens": 0
+        },
+        "portal": {
+          "examples": 0,
+          "max_removed_tokens": 0
+        }
+      },
+      "native_roundtrip_receipt": {
+        "state_exact_equal": true,
+        "generated_factors_exact_equal": true,
+        "tasks": [
+          "boolq",
+          "hellaswag",
+          "winogrande",
+          "commonsense_qa"
+        ],
+        "checkpoint_sha256": "bdbc778aef719df2397b2267967d1a64a7b2c0a84cb3fb5203c3d846740725fa"
+      },
+      "native_checkpoint_bytes_available_locally": false,
+      "peft_roundtrip_receipt": {
+        "task": "boolq",
+        "examples": 1,
+        "native_peft_max_score_error": 0,
+        "reload_max_score_error": 0,
+        "reload_scores_exact_equal": true,
+        "native_peft_atol": 0.0005
+      },
+      "raw_reload_scores_audited": {
+        "rows": 3,
+        "example": {
+          "task": "boolq",
+          "prompt_sha256": "6fb96f6fc6be02f1c84fdbe203059db3fdcc0230d784b245f9b015849f359550"
+        },
+        "native_peft_max_score_error": 0.0,
+        "reload_max_score_error": 0.0,
+        "scores_exact_equal": true
+      },
+      "parity_scope": "one BoolQ example; native-state/factor equality is a receipt claim because native checkpoint bytes were not included in this local sync",
+      "reported_decision": "discard_positive_claim",
+      "optimizer_steps": 0,
+      "novel_continual_learning_qualified": false,
+      "base": {
+        "repo": "Qwen/Qwen3-4B",
+        "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+        "model_class": "Qwen3ForCausalLM",
+        "parameters": 4022468096,
+        "trainable_parameters": 0
+      },
+      "artifact_asset": "model:RampPublic/portal-qwen3-4b@1ff8d529c07082f9da067918da2aceafc65ebaf9",
+      "base_asset": "model:Qwen/Qwen3-4B@1cfa9a7208912126459214e8b04321603b3df60c",
+      "runtime_packages_match_receipt": true,
+      "runtime_packages": {
+        "portallib": "0.2.1",
+        "peft": "0.20.0",
+        "transformers": "5.16.1",
+        "torch": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+        "huggingface-hub": "1.30.0",
+        "datasets": "4.8.5",
+        "pyarrow": "25.0.1"
+      },
+      "multiplicity": {
+        "holm_six_adjusted_p": 1,
+        "bonferroni_six_adjusted_p": 1,
+        "bonferroni_planned_seven_adjusted_p": 1,
+        "holm_six_reject_at_0_05": false
+      }
+    },
+    {
+      "id": "catalog-qwen3-8b-screen",
+      "model": "portal-qwen3-8b",
+      "execution": {
+        "task_id": "catalog-qwen3-8b-screen",
+        "started_at": "2026-09-07T22:33:41.334612+00:00",
+        "status": "completed",
+        "gpus": [
+          6
+        ],
+        "pid": 2006,
+        "pod": "cl-portfolio-b94bq-5mcr7",
+        "runtime_sha256": "ec71f7d4d38fbbb7e9457a61a7f2b1a24e6a55e26453c22a941ba3352cd54895",
+        "finished_at": "2026-09-07T22:34:34.138421+00:00",
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "source_bundle_sha256": "54f34beef67281807a8af2dc218f438ee8e04e4c019ea61780f8b191a8dff27c",
+      "statistics_and_dataset_source_match_current": true,
+      "manifest_sha256": "f7cf070b03b2fe89cadba0421e4e8bd5402684f38040d8c275cec369da1ca6f7",
+      "selection_sha256": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b",
+      "config_task_result_match": true,
+      "row_labels_predictions_correct_flags_verified": true,
+      "per_task": {
+        "boolq": {
+          "examples": 32,
+          "base_correct": 29,
+          "portal_correct": 32,
+          "base_accuracy": 0.90625,
+          "portal_accuracy": 1,
+          "delta": 0.09375,
+          "improved": 3,
+          "regressed": 0
+        },
+        "hellaswag": {
+          "examples": 32,
+          "base_correct": 24,
+          "portal_correct": 24,
+          "base_accuracy": 0.75,
+          "portal_accuracy": 0.75,
+          "delta": 0,
+          "improved": 2,
+          "regressed": 2
+        },
+        "winogrande": {
+          "examples": 32,
+          "base_correct": 19,
+          "portal_correct": 20,
+          "base_accuracy": 0.59375,
+          "portal_accuracy": 0.625,
+          "delta": 0.03125,
+          "improved": 5,
+          "regressed": 4
+        },
+        "commonsense_qa": {
+          "examples": 32,
+          "base_correct": 25,
+          "portal_correct": 23,
+          "base_accuracy": 0.78125,
+          "portal_accuracy": 0.71875,
+          "delta": -0.0625,
+          "improved": 2,
+          "regressed": 4
+        }
+      },
+      "base_accuracy": 0.7578125,
+      "portal_accuracy": 0.7734375,
+      "statistics_recomputed": {
+        "paired_examples": 128,
+        "improved": 12,
+        "regressed": 10,
+        "macro_accuracy_delta": 0.015625,
+        "paired_stratified_bootstrap_95ci": [
+          -0.0546875,
+          0.0859375
+        ],
+        "exact_mcnemar_two_sided_p": 0.8318119049072266
+      },
+      "all_primary_metrics_exactly_match_report": true,
+      "argmax_ties": {
+        "base": 0,
+        "portal": 0
+      },
+      "prompt_truncation": {
+        "base": {
+          "examples": 0,
+          "max_removed_tokens": 0
+        },
+        "portal": {
+          "examples": 0,
+          "max_removed_tokens": 0
+        }
+      },
+      "native_roundtrip_receipt": {
+        "state_exact_equal": true,
+        "generated_factors_exact_equal": true,
+        "tasks": [
+          "boolq",
+          "hellaswag",
+          "winogrande",
+          "commonsense_qa"
+        ],
+        "checkpoint_sha256": "b1e94342fe777770f14147d2cacee1f568159a7c39788c661cdf46ff8e1284c4"
+      },
+      "native_checkpoint_bytes_available_locally": false,
+      "peft_roundtrip_receipt": {
+        "task": "boolq",
+        "examples": 1,
+        "native_peft_max_score_error": 0,
+        "reload_max_score_error": 0,
+        "reload_scores_exact_equal": true,
+        "native_peft_atol": 0.0005
+      },
+      "raw_reload_scores_audited": {
+        "rows": 3,
+        "example": {
+          "task": "boolq",
+          "prompt_sha256": "6fb96f6fc6be02f1c84fdbe203059db3fdcc0230d784b245f9b015849f359550"
+        },
+        "native_peft_max_score_error": 0,
+        "reload_max_score_error": 0,
+        "scores_exact_equal": true
+      },
+      "parity_scope": "one BoolQ example; native-state/factor equality is a receipt claim because native checkpoint bytes were not included in this local sync",
+      "reported_decision": "discard_positive_claim",
+      "optimizer_steps": 0,
+      "novel_continual_learning_qualified": false,
+      "base": {
+        "repo": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "model_class": "Qwen3ForCausalLM",
+        "parameters": 8190735360,
+        "trainable_parameters": 0
+      },
+      "artifact_asset": "model:RampPublic/portal-qwen3-8b@6593b49ae790ec6d601db5a081c81463cb8b3a5f",
+      "base_asset": "model:Qwen/Qwen3-8B@b968826d9c46dd6066d109eabc6255188de91218",
+      "runtime_packages_match_receipt": true,
+      "runtime_packages": {
+        "portallib": "0.2.1",
+        "peft": "0.20.0",
+        "transformers": "5.16.1",
+        "torch": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+        "huggingface-hub": "1.30.0",
+        "datasets": "4.8.5",
+        "pyarrow": "25.0.1"
+      },
+      "multiplicity": {
+        "holm_six_adjusted_p": 1,
+        "bonferroni_six_adjusted_p": 1,
+        "bonferroni_planned_seven_adjusted_p": 1,
+        "holm_six_reject_at_0_05": false
+      }
+    },
+    {
+      "id": "catalog-mistral7-screen",
+      "model": "portal-mistral-7b",
+      "execution": {
+        "task_id": "catalog-mistral7-screen",
+        "started_at": "2026-09-07T22:33:45.401489+00:00",
+        "status": "completed",
+        "gpus": [
+          7
+        ],
+        "pid": 2289,
+        "pod": "cl-portfolio-b94bq-5mcr7",
+        "runtime_sha256": "ec71f7d4d38fbbb7e9457a61a7f2b1a24e6a55e26453c22a941ba3352cd54895",
+        "finished_at": "2026-09-07T22:34:50.323590+00:00",
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "source_bundle_sha256": "54f34beef67281807a8af2dc218f438ee8e04e4c019ea61780f8b191a8dff27c",
+      "statistics_and_dataset_source_match_current": true,
+      "manifest_sha256": "f7cf070b03b2fe89cadba0421e4e8bd5402684f38040d8c275cec369da1ca6f7",
+      "selection_sha256": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b",
+      "config_task_result_match": true,
+      "row_labels_predictions_correct_flags_verified": true,
+      "per_task": {
+        "boolq": {
+          "examples": 32,
+          "base_correct": 25,
+          "portal_correct": 27,
+          "base_accuracy": 0.78125,
+          "portal_accuracy": 0.84375,
+          "delta": 0.0625,
+          "improved": 5,
+          "regressed": 3
+        },
+        "hellaswag": {
+          "examples": 32,
+          "base_correct": 24,
+          "portal_correct": 25,
+          "base_accuracy": 0.75,
+          "portal_accuracy": 0.78125,
+          "delta": 0.03125,
+          "improved": 1,
+          "regressed": 0
+        },
+        "winogrande": {
+          "examples": 32,
+          "base_correct": 22,
+          "portal_correct": 24,
+          "base_accuracy": 0.6875,
+          "portal_accuracy": 0.75,
+          "delta": 0.0625,
+          "improved": 5,
+          "regressed": 3
+        },
+        "commonsense_qa": {
+          "examples": 32,
+          "base_correct": 22,
+          "portal_correct": 27,
+          "base_accuracy": 0.6875,
+          "portal_accuracy": 0.84375,
+          "delta": 0.15625,
+          "improved": 6,
+          "regressed": 1
+        }
+      },
+      "base_accuracy": 0.7265625,
+      "portal_accuracy": 0.8046875,
+      "statistics_recomputed": {
+        "paired_examples": 128,
+        "improved": 17,
+        "regressed": 7,
+        "macro_accuracy_delta": 0.078125,
+        "paired_stratified_bootstrap_95ci": [
+          0.0078125,
+          0.1484375
+        ],
+        "exact_mcnemar_two_sided_p": 0.06391465663909912
+      },
+      "all_primary_metrics_exactly_match_report": true,
+      "argmax_ties": {
+        "base": 0,
+        "portal": 0
+      },
+      "prompt_truncation": {
+        "base": {
+          "examples": 0,
+          "max_removed_tokens": 0
+        },
+        "portal": {
+          "examples": 0,
+          "max_removed_tokens": 0
+        }
+      },
+      "native_roundtrip_receipt": {
+        "state_exact_equal": true,
+        "generated_factors_exact_equal": true,
+        "tasks": [
+          "boolq",
+          "hellaswag",
+          "winogrande",
+          "commonsense_qa"
+        ],
+        "checkpoint_sha256": "4a61f44fcf07ee57d6ad5a84262601c57cd5b5ea3c501eb6c72e47a41d83a212"
+      },
+      "native_checkpoint_bytes_available_locally": false,
+      "peft_roundtrip_receipt": {
+        "task": "boolq",
+        "examples": 1,
+        "native_peft_max_score_error": 0,
+        "reload_max_score_error": 0,
+        "reload_scores_exact_equal": true,
+        "native_peft_atol": 0.0005
+      },
+      "raw_reload_scores_audited": {
+        "rows": 3,
+        "example": {
+          "task": "boolq",
+          "prompt_sha256": "6fb96f6fc6be02f1c84fdbe203059db3fdcc0230d784b245f9b015849f359550"
+        },
+        "native_peft_max_score_error": 0,
+        "reload_max_score_error": 0,
+        "scores_exact_equal": true
+      },
+      "parity_scope": "one BoolQ example; native-state/factor equality is a receipt claim because native checkpoint bytes were not included in this local sync",
+      "reported_decision": "keep_for_followup",
+      "optimizer_steps": 0,
+      "novel_continual_learning_qualified": false,
+      "base": {
+        "repo": "mistralai/Mistral-7B-v0.3",
+        "revision": "caa1feb0e54d415e2df31207e5f4e273e33509b1",
+        "model_class": "MistralForCausalLM",
+        "parameters": 7248023552,
+        "trainable_parameters": 0
+      },
+      "artifact_asset": "model:RampPublic/portal-mistral-7b@478d8cda8d3eb94958324c80249d236debb53b88",
+      "base_asset": "model:mistralai/Mistral-7B-v0.3@caa1feb0e54d415e2df31207e5f4e273e33509b1",
+      "runtime_packages_match_receipt": true,
+      "runtime_packages": {
+        "portallib": "0.2.1",
+        "peft": "0.20.0",
+        "transformers": "5.16.1",
+        "torch": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+        "huggingface-hub": "1.30.0",
+        "datasets": "4.8.5",
+        "pyarrow": "25.0.1"
+      },
+      "multiplicity": {
+        "holm_six_adjusted_p": 0.3834879398345947,
+        "bonferroni_six_adjusted_p": 0.3834879398345947,
+        "bonferroni_planned_seven_adjusted_p": 0.44740259647369385,
+        "holm_six_reject_at_0_05": false
+      }
+    },
+    {
+      "id": "catalog-gemma3-screen",
+      "model": "portal-gemma-3-4b",
+      "execution": {
+        "task_id": "catalog-gemma3-screen",
+        "started_at": "2026-09-07T22:34:22.007702+00:00",
+        "status": "completed",
+        "gpus": [
+          0
+        ],
+        "pid": 2474,
+        "pod": "cl-portfolio-b94bq-5mcr7",
+        "runtime_sha256": "ec71f7d4d38fbbb7e9457a61a7f2b1a24e6a55e26453c22a941ba3352cd54895",
+        "finished_at": "2026-09-07T22:35:12.558973+00:00",
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "source_bundle_sha256": "54f34beef67281807a8af2dc218f438ee8e04e4c019ea61780f8b191a8dff27c",
+      "statistics_and_dataset_source_match_current": true,
+      "manifest_sha256": "f7cf070b03b2fe89cadba0421e4e8bd5402684f38040d8c275cec369da1ca6f7",
+      "selection_sha256": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b",
+      "config_task_result_match": true,
+      "row_labels_predictions_correct_flags_verified": true,
+      "per_task": {
+        "boolq": {
+          "examples": 32,
+          "base_correct": 22,
+          "portal_correct": 27,
+          "base_accuracy": 0.6875,
+          "portal_accuracy": 0.84375,
+          "delta": 0.15625,
+          "improved": 7,
+          "regressed": 2
+        },
+        "hellaswag": {
+          "examples": 32,
+          "base_correct": 23,
+          "portal_correct": 21,
+          "base_accuracy": 0.71875,
+          "portal_accuracy": 0.65625,
+          "delta": -0.0625,
+          "improved": 0,
+          "regressed": 2
+        },
+        "winogrande": {
+          "examples": 32,
+          "base_correct": 20,
+          "portal_correct": 21,
+          "base_accuracy": 0.625,
+          "portal_accuracy": 0.65625,
+          "delta": 0.03125,
+          "improved": 5,
+          "regressed": 4
+        },
+        "commonsense_qa": {
+          "examples": 32,
+          "base_correct": 27,
+          "portal_correct": 27,
+          "base_accuracy": 0.84375,
+          "portal_accuracy": 0.84375,
+          "delta": 0,
+          "improved": 2,
+          "regressed": 2
+        }
+      },
+      "base_accuracy": 0.71875,
+      "portal_accuracy": 0.75,
+      "statistics_recomputed": {
+        "paired_examples": 128,
+        "improved": 14,
+        "regressed": 10,
+        "macro_accuracy_delta": 0.03125,
+        "paired_stratified_bootstrap_95ci": [
+          -0.0390625,
+          0.1015625
+        ],
+        "exact_mcnemar_two_sided_p": 0.5412561893463135
+      },
+      "all_primary_metrics_exactly_match_report": true,
+      "argmax_ties": {
+        "base": 0,
+        "portal": 0
+      },
+      "prompt_truncation": {
+        "base": {
+          "examples": 0,
+          "max_removed_tokens": 0
+        },
+        "portal": {
+          "examples": 0,
+          "max_removed_tokens": 0
+        }
+      },
+      "native_roundtrip_receipt": {
+        "state_exact_equal": true,
+        "generated_factors_exact_equal": true,
+        "tasks": [
+          "boolq",
+          "hellaswag",
+          "winogrande",
+          "commonsense_qa"
+        ],
+        "checkpoint_sha256": "83e31290bee61a9e6b85ff5d537d2cd4bd0ae3962c51d67e21d369731a95b1da"
+      },
+      "native_checkpoint_bytes_available_locally": false,
+      "peft_roundtrip_receipt": {
+        "task": "boolq",
+        "examples": 1,
+        "native_peft_max_score_error": 0,
+        "reload_max_score_error": 0,
+        "reload_scores_exact_equal": true,
+        "native_peft_atol": 0.0005
+      },
+      "raw_reload_scores_audited": {
+        "rows": 3,
+        "example": {
+          "task": "boolq",
+          "prompt_sha256": "6fb96f6fc6be02f1c84fdbe203059db3fdcc0230d784b245f9b015849f359550"
+        },
+        "native_peft_max_score_error": 0,
+        "reload_max_score_error": 0,
+        "scores_exact_equal": true
+      },
+      "parity_scope": "one BoolQ example; native-state/factor equality is a receipt claim because native checkpoint bytes were not included in this local sync",
+      "reported_decision": "discard_positive_claim",
+      "optimizer_steps": 0,
+      "novel_continual_learning_qualified": false,
+      "base": {
+        "repo": "google/gemma-3-4b-pt",
+        "revision": "cc012e0a6d0787b4adcc0fa2c4da74402494554d",
+        "model_class": "Gemma3ForConditionalGeneration",
+        "parameters": 4300079472,
+        "trainable_parameters": 0
+      },
+      "artifact_asset": "model:RampPublic/portal-gemma-3-4b@df48a77135f6f560d546c733472ac9d89c371ab0",
+      "base_asset": "model:google/gemma-3-4b-pt@cc012e0a6d0787b4adcc0fa2c4da74402494554d",
+      "runtime_packages_match_receipt": true,
+      "runtime_packages": {
+        "portallib": "0.2.1",
+        "peft": "0.20.0",
+        "transformers": "5.16.1",
+        "torch": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+        "huggingface-hub": "1.30.0",
+        "datasets": "4.8.5",
+        "pyarrow": "25.0.1"
+      },
+      "multiplicity": {
+        "holm_six_adjusted_p": 1,
+        "bonferroni_six_adjusted_p": 1,
+        "bonferroni_planned_seven_adjusted_p": 1,
+        "holm_six_reject_at_0_05": false
+      }
+    },
+    {
+      "id": "catalog-gemma4-screen",
+      "model": "portal-gemma-4-e2b",
+      "execution": {
+        "task_id": "catalog-gemma4-screen",
+        "started_at": "2026-09-07T22:34:30.110701+00:00",
+        "status": "completed",
+        "gpus": [
+          2
+        ],
+        "pid": 2537,
+        "pod": "cl-portfolio-b94bq-5mcr7",
+        "runtime_sha256": "ec71f7d4d38fbbb7e9457a61a7f2b1a24e6a55e26453c22a941ba3352cd54895",
+        "finished_at": "2026-09-07T22:35:26.800039+00:00",
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "source_bundle_sha256": "54f34beef67281807a8af2dc218f438ee8e04e4c019ea61780f8b191a8dff27c",
+      "statistics_and_dataset_source_match_current": true,
+      "manifest_sha256": "f7cf070b03b2fe89cadba0421e4e8bd5402684f38040d8c275cec369da1ca6f7",
+      "selection_sha256": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b",
+      "config_task_result_match": true,
+      "row_labels_predictions_correct_flags_verified": true,
+      "per_task": {
+        "boolq": {
+          "examples": 32,
+          "base_correct": 24,
+          "portal_correct": 26,
+          "base_accuracy": 0.75,
+          "portal_accuracy": 0.8125,
+          "delta": 0.0625,
+          "improved": 3,
+          "regressed": 1
+        },
+        "hellaswag": {
+          "examples": 32,
+          "base_correct": 19,
+          "portal_correct": 22,
+          "base_accuracy": 0.59375,
+          "portal_accuracy": 0.6875,
+          "delta": 0.09375,
+          "improved": 3,
+          "regressed": 0
+        },
+        "winogrande": {
+          "examples": 32,
+          "base_correct": 19,
+          "portal_correct": 19,
+          "base_accuracy": 0.59375,
+          "portal_accuracy": 0.59375,
+          "delta": 0,
+          "improved": 5,
+          "regressed": 5
+        },
+        "commonsense_qa": {
+          "examples": 32,
+          "base_correct": 25,
+          "portal_correct": 27,
+          "base_accuracy": 0.78125,
+          "portal_accuracy": 0.84375,
+          "delta": 0.0625,
+          "improved": 4,
+          "regressed": 2
+        }
+      },
+      "base_accuracy": 0.6796875,
+      "portal_accuracy": 0.734375,
+      "statistics_recomputed": {
+        "paired_examples": 128,
+        "improved": 15,
+        "regressed": 8,
+        "macro_accuracy_delta": 0.0546875,
+        "paired_stratified_bootstrap_95ci": [
+          -0.015625,
+          0.125
+        ],
+        "exact_mcnemar_two_sided_p": 0.21003961563110352
+      },
+      "all_primary_metrics_exactly_match_report": true,
+      "argmax_ties": {
+        "base": 0,
+        "portal": 0
+      },
+      "prompt_truncation": {
+        "base": {
+          "examples": 0,
+          "max_removed_tokens": 0
+        },
+        "portal": {
+          "examples": 0,
+          "max_removed_tokens": 0
+        }
+      },
+      "native_roundtrip_receipt": {
+        "state_exact_equal": true,
+        "generated_factors_exact_equal": true,
+        "tasks": [
+          "boolq",
+          "hellaswag",
+          "winogrande",
+          "commonsense_qa"
+        ],
+        "checkpoint_sha256": "ba63db93c9798091825a49128d6011d78192222f82456037d5f0b22b0b770d6a"
+      },
+      "native_checkpoint_bytes_available_locally": false,
+      "peft_roundtrip_receipt": {
+        "task": "boolq",
+        "examples": 1,
+        "native_peft_max_score_error": 0,
+        "reload_max_score_error": 0,
+        "reload_scores_exact_equal": true,
+        "native_peft_atol": 0.0005
+      },
+      "raw_reload_scores_audited": {
+        "rows": 3,
+        "example": {
+          "task": "boolq",
+          "prompt_sha256": "6fb96f6fc6be02f1c84fdbe203059db3fdcc0230d784b245f9b015849f359550"
+        },
+        "native_peft_max_score_error": 0,
+        "reload_max_score_error": 0,
+        "scores_exact_equal": true
+      },
+      "parity_scope": "one BoolQ example; native-state/factor equality is a receipt claim because native checkpoint bytes were not included in this local sync",
+      "reported_decision": "discard_positive_claim",
+      "optimizer_steps": 0,
+      "novel_continual_learning_qualified": false,
+      "base": {
+        "repo": "google/gemma-4-E2B",
+        "revision": "d29ff6b45f081a49ee2733a859c9c9c2d95d1a6f",
+        "model_class": "Gemma4ForConditionalGeneration",
+        "parameters": 5104297504,
+        "trainable_parameters": 0
+      },
+      "artifact_asset": "model:RampPublic/portal-gemma-4-e2b@1059db59197489ac59b2ff9affd48043bdd22537",
+      "base_asset": "model:google/gemma-4-E2B@d29ff6b45f081a49ee2733a859c9c9c2d95d1a6f",
+      "runtime_packages_match_receipt": true,
+      "runtime_packages": {
+        "portallib": "0.2.1",
+        "peft": "0.20.0",
+        "transformers": "5.16.1",
+        "torch": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+        "huggingface-hub": "1.30.0",
+        "datasets": "4.8.5",
+        "pyarrow": "25.0.1"
+      },
+      "multiplicity": {
+        "holm_six_adjusted_p": 1,
+        "bonferroni_six_adjusted_p": 1,
+        "bonferroni_planned_seven_adjusted_p": 1,
+        "holm_six_reject_at_0_05": false
+      }
+    }
+  ],
+  "cross_run_checks": {
+    "same_128_example_keys_in_same_order": true,
+    "same_gold_labels": true,
+    "same_config_except_model": true,
+    "same_reported_python_source_hashes": true,
+    "all_six_execution_exit_codes_zero": true,
+    "all_six_actual_rocm_receipts": true,
+    "all_primary_metrics_match_independent_recomputation": true,
+    "pooling_warning": "The six models share the same 128 cases. They are six correlated paired comparisons, not 768 independent examples.",
+    "distinct_evaluation_prompt_identities": 128
+  },
+  "multiplicity": {
+    "family": "six completed model-level paired comparisons",
+    "method": "Holm-Bonferroni applied to exact two-sided McNemar p-values; ordinary Bonferroni also reported",
+    "alpha": 0.05,
+    "rejections": 0,
+    "smallest_raw_p": 0.06391465663909912,
+    "smallest_holm_six_p": 0.3834879398345947,
+    "planned_seven_comparison_sensitivity": "No positive conclusion under the planned seven-model family either. Inkling has no result in this six-model audit.",
+    "bootstrap_caveat": "The reported 95% percentile intervals are unadjusted, discrete, approximate within-model intervals. A positive lower endpoint can coexist with a two-sided exact McNemar p above 0.05; they are not the same test and do not establish a multiplicity-controlled gain."
+  },
+  "cache_integrity": {
+    "receipt_path": "outputs/portfolio/runs/catalog-cache-content-audit/result.json",
+    "manifest_matches_all_six_runs": true,
+    "verified_assets": 14,
+    "verified_file_count": 101,
+    "verified_bytes": 62844820666,
+    "all_six_adapter_and_base_revisions_covered": true,
+    "all_receipt_paths_are_manifest_canonical_or_reuse_paths": true,
+    "assets": [
+      {
+        "asset": "model:RampPublic/portal-qwen3-1.7b@be09be533b5c0418ad20269f19ebb63e9efbc330",
+        "repo": "RampPublic/portal-qwen3-1.7b",
+        "revision": "be09be533b5c0418ad20269f19ebb63e9efbc330",
+        "path": "/mnt/shared/cl-smoke/models/RampPublic/portal-qwen3-1.7b/be09be533b5c0418ad20269f19ebb63e9efbc330",
+        "files": 4,
+        "bytes": 99331371,
+        "status": "verified"
+      },
+      {
+        "asset": "model:Qwen/Qwen3-1.7B@70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+        "repo": "Qwen/Qwen3-1.7B",
+        "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+        "path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3-1.7B/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+        "files": 10,
+        "bytes": 4079437197,
+        "status": "verified"
+      },
+      {
+        "asset": "model:RampPublic/portal-qwen3-4b@1ff8d529c07082f9da067918da2aceafc65ebaf9",
+        "repo": "RampPublic/portal-qwen3-4b",
+        "revision": "1ff8d529c07082f9da067918da2aceafc65ebaf9",
+        "path": "/mnt/shared/cl-smoke/models/RampPublic/portal-qwen3-4b/1ff8d529c07082f9da067918da2aceafc65ebaf9",
+        "files": 4,
+        "bytes": 111918756,
+        "status": "verified"
+      },
+      {
+        "asset": "model:Qwen/Qwen3-4B@1cfa9a7208912126459214e8b04321603b3df60c",
+        "repo": "Qwen/Qwen3-4B",
+        "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+        "path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c",
+        "files": 11,
+        "bytes": 8060913713,
+        "status": "verified"
+      },
+      {
+        "asset": "model:RampPublic/portal-qwen3-8b@6593b49ae790ec6d601db5a081c81463cb8b3a5f",
+        "repo": "RampPublic/portal-qwen3-8b",
+        "revision": "6593b49ae790ec6d601db5a081c81463cb8b3a5f",
+        "path": "/mnt/shared/cl-smoke/models/RampPublic/portal-qwen3-8b/6593b49ae790ec6d601db5a081c81463cb8b3a5f",
+        "files": 4,
+        "bytes": 124501554,
+        "status": "verified"
+      },
+      {
+        "asset": "model:Qwen/Qwen3-8B@b968826d9c46dd6066d109eabc6255188de91218",
+        "repo": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3-8B/b968826d9c46dd6066d109eabc6255188de91218",
+        "files": 13,
+        "bytes": 16397448353,
+        "status": "verified"
+      },
+      {
+        "asset": "model:RampPublic/portal-gemma-3-4b@df48a77135f6f560d546c733472ac9d89c371ab0",
+        "repo": "RampPublic/portal-gemma-3-4b",
+        "revision": "df48a77135f6f560d546c733472ac9d89c371ab0",
+        "path": "/mnt/shared/cl-smoke/models/RampPublic/portal-gemma-3-4b/df48a77135f6f560d546c733472ac9d89c371ab0",
+        "files": 4,
+        "bytes": 103529011,
+        "status": "verified"
+      },
+      {
+        "asset": "model:google/gemma-3-4b-pt@cc012e0a6d0787b4adcc0fa2c4da74402494554d",
+        "repo": "google/gemma-3-4b-pt",
+        "revision": "cc012e0a6d0787b4adcc0fa2c4da74402494554d",
+        "path": "/mnt/shared/cl-smoke/models/google/gemma-3-4b-pt/cc012e0a6d0787b4adcc0fa2c4da74402494554d",
+        "files": 13,
+        "bytes": 8639623849,
+        "status": "verified"
+      },
+      {
+        "asset": "model:RampPublic/portal-gemma-4-e2b@1059db59197489ac59b2ff9affd48043bdd22537",
+        "repo": "RampPublic/portal-gemma-4-e2b",
+        "revision": "1059db59197489ac59b2ff9affd48043bdd22537",
+        "path": "/mnt/shared/cl-smoke/models/RampPublic/portal-gemma-4-e2b/1059db59197489ac59b2ff9affd48043bdd22537",
+        "files": 5,
+        "bytes": 110868667,
+        "status": "verified"
+      },
+      {
+        "asset": "model:google/gemma-4-E2B@d29ff6b45f081a49ee2733a859c9c9c2d95d1a6f",
+        "repo": "google/gemma-4-E2B",
+        "revision": "d29ff6b45f081a49ee2733a859c9c9c2d95d1a6f",
+        "path": "/mnt/shared/cl-smoke/models/google/gemma-4-E2B/d29ff6b45f081a49ee2733a859c9c9c2d95d1a6f",
+        "files": 7,
+        "bytes": 10278827489,
+        "status": "verified"
+      },
+      {
+        "asset": "model:RampPublic/portal-inkling@48c00853d6b03ab4986ba12ca8399afbb551c5a5",
+        "repo": "RampPublic/portal-inkling",
+        "revision": "48c00853d6b03ab4986ba12ca8399afbb551c5a5",
+        "path": "/mnt/shared/cl-smoke/models/RampPublic/portal-inkling/48c00853d6b03ab4986ba12ca8399afbb551c5a5",
+        "files": 5,
+        "bytes": 166466277,
+        "status": "verified"
+      },
+      {
+        "asset": "model:RampPublic/portal-mistral-7b@478d8cda8d3eb94958324c80249d236debb53b88",
+        "repo": "RampPublic/portal-mistral-7b",
+        "revision": "478d8cda8d3eb94958324c80249d236debb53b88",
+        "path": "/mnt/shared/cl-smoke/models/RampPublic/portal-mistral-7b/478d8cda8d3eb94958324c80249d236debb53b88",
+        "files": 5,
+        "bytes": 124502472,
+        "status": "verified"
+      },
+      {
+        "asset": "model:mistralai/Mistral-7B-v0.3@caa1feb0e54d415e2df31207e5f4e273e33509b1",
+        "repo": "mistralai/Mistral-7B-v0.3",
+        "revision": "caa1feb0e54d415e2df31207e5f4e273e33509b1",
+        "path": "/mnt/shared/cl-smoke/models/mistralai/Mistral-7B-v0.3/caa1feb0e54d415e2df31207e5f4e273e33509b1",
+        "files": 12,
+        "bytes": 14498795440,
+        "status": "verified"
+      },
+      {
+        "asset": "dataset:RampPublic/portallib-tasks@ffc3c0e44f529bf64a5ae62ed5db090952db97ea",
+        "repo": "RampPublic/portallib-tasks",
+        "revision": "ffc3c0e44f529bf64a5ae62ed5db090952db97ea",
+        "path": "/mnt/shared/cl-campaign/datasets/RampPublic/portallib-tasks/ffc3c0e44f529bf64a5ae62ed5db090952db97ea",
+        "files": 4,
+        "bytes": 48656517,
+        "status": "verified"
+      }
+    ],
+    "started_at": "2026-09-07T22:43:08.496672+00:00",
+    "finished_at": "2026-09-07T22:44:50.133675+00:00",
+    "evidence_level": "Independently checked the post-run full-content-audit receipt against the manifest and all six result base identities; did not rehash remote base shards from this local audit.",
+    "actual_corruption_observed": false,
+    "prior_P2_disposition": "No observed corruption for these screened assets. The post-run receipt covers their expected snapshot contents. The current common.py, factory.py and download.py have since changed to verify content at loading, and the six results retain the earlier source hashes. This audit does not attribute the newer loader checks to these already-completed runs. Inkling base is outside this cache receipt.",
+    "latest_screen_execution_finished_at": "2026-09-07T22:35:26.800039+00:00",
+    "full_content_receipt_started_after_all_screens": true
+  },
+  "scientific_conclusion": {
+    "novel_continual_learning_qualified": false,
+    "confirmed_multiplicity_controlled_catalog_gain": false,
+    "replication_candidate_only": "catalog-mistral7-screen",
+    "mistral": {
+      "delta": 0.078125,
+      "ci": [
+        0.0078125,
+        0.1484375
+      ],
+      "exact_mcnemar_p": 0.06391465663909912,
+      "holm_six_adjusted_p": 0.3834879398345947,
+      "decision": "retain only for independent replication of the published pretrained adapter effect; do not label a confirmed gain or new learning result",
+      "net_correct_examples": 10,
+      "improved": 17,
+      "regressed": 7,
+      "all_four_task_point_deltas_positive": true,
+      "bootstrap_CI_excludes_zero_only_before_multiplicity": true
+    },
+    "other_five": "No positive-effect claim justified by these exploratory screens. Nonsignificance does not prove absence of an effect.",
+    "why_no_novel_CL": "Every run evaluates an already-published pretrained task adapter with zero optimizer updates and a frozen base. No new skill acquisition, sequential learning, retention, transfer after learning, or next-skill plasticity was measured.",
+    "replication_requirements": [
+      "Freeze the same adapter/base revisions and scoring before observing another sample.",
+      "Use new held-out prompt identities disjoint from these 128 cases and the same released-train/documented-prefix exclusions.",
+      "Predeclare the primary endpoint and comparison family; report per-task results and uncertainty."
+    ],
+    "limitations": [
+      "One deterministic sample of four tasks; no novel-CL inference or general capability claim.",
+      "Models share examples and should not be pooled as independent trials.",
+      "Native/PEFT/reload numerical parity is verified only for the recorded one-example gate.",
+      "GPU-produced native checkpoint tensors were not available for independent byte/state comparison in this audit; native checkpoint state/factor equalities remain receipt-level evidence.",
+      "Unknown pretraining and unpublished checkpoint-selection exposure are not ruled out."
+    ]
+  },
+  "findings": [],
+  "status": "complete_no_primary_result_discrepancies",
+  "input_sha256": {
+    "experiments/catalog/manifest.json": "f7cf070b03b2fe89cadba0421e4e8bd5402684f38040d8c275cec369da1ca6f7",
+    "outputs/portfolio/runs/catalog-qwen3-17b-screen/config.json": "89d111532cfc67dd5e67eda30b0a79fab3e152d0ddac5eda8d2557cc97bdedfb",
+    "experiments/catalog/outputs/cpu-cache/cl-campaign/datasets/RampPublic/portallib-tasks/ffc3c0e44f529bf64a5ae62ed5db090952db97ea/data/train-00000-of-00001.parquet": "a2b188cf297de659d57d715f31a546e01ec869e07921265038a806537c85f822",
+    "experiments/catalog/outputs/cpu-cache/cl-campaign/datasets/RampPublic/portallib-tasks/ffc3c0e44f529bf64a5ae62ed5db090952db97ea/data/validation-00000-of-00001.parquet": "ebc0968aa8d724d4c325cf6db5858fe1100914684ed9c2ce4de66436dfe6c377",
+    "outputs/portfolio/runs/catalog-qwen3-17b-screen/result.json": "99b153efbb1029aaa84ce33642614fbf89280f3ebfa25c9d9e4446f588605599",
+    "outputs/portfolio/runs/catalog-qwen3-17b-screen/task.json": "5c7fe5965644aa02f13c39cfc7b680304c704c755381cf462c8f0dbe5c6c72c9",
+    "outputs/portfolio/runs/catalog-qwen3-17b-screen/execution.json": "585e1d3e0e824658a3ed99c2a5985c7e115b7ab23594d03d7196752a5d11846b",
+    "outputs/portfolio/runs/catalog-qwen3-17b-screen/packages.txt": "07390408aa34ca16ea0278e5efd5610907f12face509f3bac570d2b218047046",
+    "experiments/catalog/common.py": "a87d8626fefea8ed760c668b7743583ccdaec27791b4a37c15cad6fd9922f0ae",
+    "experiments/catalog/data.py": "a02ebf10a8998007c114bb8843ed657eb692fdfd4e452672b9aa51dc6024dc87",
+    "experiments/catalog/download.py": "3372bdd9fcc39c5db7702d6290899dd1090bbdbf54ffa35c406cf00f5feed54b",
+    "experiments/catalog/factory.py": "bd81ad182e2f8b951c005c9bf701d21a515aa60e58939a34a1f9ebf763e5b438",
+    "experiments/catalog/inventory.py": "f9892c0066e929bb0c78a23aae4689fd43d48a60cfddf7bbd9bcc36aa88f73be",
+    "experiments/catalog/run.py": "6eb1ac41961e9c642e1e2f38f318cbc2a2a3c1ceb3e19c35dc43e693124c4e12",
+    "experiments/catalog/verify.py": "b0188fceb75b3701faf19a0f1032cc173d36681b37020be90c52653cc31b916e",
+    "outputs/portfolio/runs/catalog-qwen3-17b-screen/predictions.jsonl": "917f730c21d694074f72b201caaf6b55cbfccd0342b68adfe3b16145731214ab",
+    "outputs/portfolio/runs/catalog-qwen3-4b-screen/result.json": "e17f7a88713b137c439387b695ecdd72ae9711c5c91c0b42fe3175522b7544bf",
+    "outputs/portfolio/runs/catalog-qwen3-4b-screen/config.json": "26913a64f2861c57b64537ae8214c346491fade93833dda6fd550dabe7aad670",
+    "outputs/portfolio/runs/catalog-qwen3-4b-screen/task.json": "54ba052af12ee48959bf8b95a25d7662099d05dbb04b3ee5a1fb9e1fc46876a8",
+    "outputs/portfolio/runs/catalog-qwen3-4b-screen/execution.json": "4f1bac747c866bc8863014d79002351c46c2d92aa85c213fb10d978b480203ca",
+    "outputs/portfolio/runs/catalog-qwen3-4b-screen/packages.txt": "07390408aa34ca16ea0278e5efd5610907f12face509f3bac570d2b218047046",
+    "outputs/portfolio/runs/catalog-qwen3-4b-screen/predictions.jsonl": "756c472362788666f6bf1606acfa564aba268778c6df5c109843acabba6aa523",
+    "outputs/portfolio/runs/catalog-qwen3-8b-screen/result.json": "f1f8fea510c0c5e73295f96c635bab85d274b052aad4afe5716b7baad1785d34",
+    "outputs/portfolio/runs/catalog-qwen3-8b-screen/config.json": "7217203ec930835711786696a55d4ee306124b8047ff71e954a70b1ed7f173f4",
+    "outputs/portfolio/runs/catalog-qwen3-8b-screen/task.json": "05e4c209380427f6d83914e0fb1cb0a1ee9828e0512a89366775166296b2a03a",
+    "outputs/portfolio/runs/catalog-qwen3-8b-screen/execution.json": "6ed49530ee7d652dfba3cce7e1158125bbdf3cf1df10b388efab99383130958e",
+    "outputs/portfolio/runs/catalog-qwen3-8b-screen/packages.txt": "07390408aa34ca16ea0278e5efd5610907f12face509f3bac570d2b218047046",
+    "outputs/portfolio/runs/catalog-qwen3-8b-screen/predictions.jsonl": "cd0a5e9ff2b8eb1003180ebaba5ba0ab40a4250d112ac7f8150efc1ba9b1ca5a",
+    "outputs/portfolio/runs/catalog-qwen3-8b-screen/reload_predictions.jsonl": "7fd654618439eb2fb37ffb210abc0dd85d05be9ba35a43f7e3bf479ecb0f1284",
+    "outputs/portfolio/runs/catalog-qwen3-8b-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+    "outputs/portfolio/runs/catalog-mistral7-screen/result.json": "385bf960610fafe09de5f6142e3216c8831abf5c855f51e7ce71c0f8da07b8eb",
+    "outputs/portfolio/runs/catalog-mistral7-screen/config.json": "39aed9fd2f77e1fa2ee98d848a0bbfe9bd015c3fb73bc4fd53ad244a789ddea2",
+    "outputs/portfolio/runs/catalog-mistral7-screen/task.json": "2555bdff9ef72f3c8701ae74b99cba925e26fc8a42b0e14671a4a21ea2397d4f",
+    "outputs/portfolio/runs/catalog-mistral7-screen/execution.json": "f684d2b95ee5500d007059266b0171f978d226b5246b4a2b80c0c6abdddcd444",
+    "outputs/portfolio/runs/catalog-mistral7-screen/packages.txt": "07390408aa34ca16ea0278e5efd5610907f12face509f3bac570d2b218047046",
+    "outputs/portfolio/runs/catalog-mistral7-screen/predictions.jsonl": "9f97caf2e45f706ca4fbcd2f4f7e7770d19803e14cdaa51dae6b05843b662b81",
+    "outputs/portfolio/runs/catalog-mistral7-screen/reload_predictions.jsonl": "0b6dd3e8121697d1e8adfe6350b9ed42e84e942d81aa570bc66bd5278b0597db",
+    "outputs/portfolio/runs/catalog-mistral7-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+    "outputs/portfolio/runs/catalog-gemma3-screen/result.json": "cf159555c848f19f9e67a73800ece8f1293ec57bd006d49f5c8ef4a0c3dce5a5",
+    "outputs/portfolio/runs/catalog-gemma3-screen/config.json": "3315fd4fa429679d9bc79bf7a7c3295443cdde66473077e2d43dbfdd2c51a90a",
+    "outputs/portfolio/runs/catalog-gemma3-screen/task.json": "d22ab8b58da08f40bdcc6bd0d031c7eb7fb8c409e637c72571ed707f486c2378",
+    "outputs/portfolio/runs/catalog-gemma3-screen/execution.json": "187b41b536055ddf7cfa315ab273be2d2f4e5f9ff971da64f27fc983c06696ab",
+    "outputs/portfolio/runs/catalog-gemma3-screen/packages.txt": "07390408aa34ca16ea0278e5efd5610907f12face509f3bac570d2b218047046",
+    "outputs/portfolio/runs/catalog-gemma3-screen/predictions.jsonl": "c218c26a1bd50b6ff10f6332c300dc9c9de0f979cc7cb61b2367fe6fae6ac237",
+    "outputs/portfolio/runs/catalog-gemma3-screen/reload_predictions.jsonl": "dd960b847c1340f8fd618077b9bde72dbf5ff14146893e27f2e7b9ab7ce5cf47",
+    "outputs/portfolio/runs/catalog-gemma3-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+    "outputs/portfolio/runs/catalog-gemma4-screen/result.json": "236fb3b96d6466afffbe38284cbf0b6e9b9ec70df5010b19c5500593bf60ae30",
+    "outputs/portfolio/runs/catalog-gemma4-screen/config.json": "18cbdeba691d277b0fe8e422eac82d8a123e0b3f86907801dc29c8a07f207d53",
+    "outputs/portfolio/runs/catalog-gemma4-screen/task.json": "447866a1a7b1af33dfd1bff9951531f5f59cad47082d1c8a4ba3c4c3314e5bb6",
+    "outputs/portfolio/runs/catalog-gemma4-screen/execution.json": "92acb98de71ac17f1a9ba76c7dc519448be40fda77a7c81f9c802c00e14cd823",
+    "outputs/portfolio/runs/catalog-gemma4-screen/packages.txt": "07390408aa34ca16ea0278e5efd5610907f12face509f3bac570d2b218047046",
+    "outputs/portfolio/runs/catalog-gemma4-screen/predictions.jsonl": "05abbf77b8e8667e09fea1956ea4878aef54bcaec9c31217e7334caf691be0ff",
+    "outputs/portfolio/runs/catalog-gemma4-screen/reload_predictions.jsonl": "16c659a787d7a373f7249690e2a2985268411dff40a9c7bcc73ca154175b5a94",
+    "outputs/portfolio/runs/catalog-gemma4-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+    "outputs/portfolio/runs/catalog-cache-content-audit/result.json": "dbde5f4e8a8191db6cc44caf7e0a9671a389e107b3e481b866dd908a1d3989b9",
+    "outputs/portfolio/runs/catalog-qwen3-17b-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+    "outputs/portfolio/runs/catalog-qwen3-17b-screen/reload_predictions.jsonl": "1f62d188393fb8e51c502ed9d2b46af490628d4e090329cdef1e4298a082e04b",
+    "outputs/portfolio/runs/catalog-qwen3-4b-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+    "outputs/portfolio/runs/catalog-qwen3-4b-screen/reload_predictions.jsonl": "4a3bf9e41687e9ce9cfa7561a30d3bfb5a07dfecdec15ea83619e76b166455c8"
+  },
+  "all_inputs_unchanged_during_audit": true,
+  "source_identity": {
+    "all_six_record_the_same_python_source_hashes": true,
+    "executed_python_sha256": {
+      "common.py": "c16115eea54686c0234ce6506e24710a3beafb488aa00699cca646945735ab74",
+      "data.py": "a02ebf10a8998007c114bb8843ed657eb692fdfd4e452672b9aa51dc6024dc87",
+      "download.py": "14049794c9cf8988bb84bea5e81f4c06d71ab9c7b442c0163d22e56461702797",
+      "factory.py": "ced886a5569b6fbc73666013b96337ad0cfdc116a5bdcef1a7d27c726de0d623",
+      "inventory.py": "f9892c0066e929bb0c78a23aae4689fd43d48a60cfddf7bbd9bcc36aa88f73be",
+      "run.py": "6eb1ac41961e9c642e1e2f38f318cbc2a2a3c1ceb3e19c35dc43e693124c4e12",
+      "verify.py": "b0188fceb75b3701faf19a0f1032cc173d36681b37020be90c52653cc31b916e"
+    },
+    "current_source_changes_since_execution": {
+      "common.py": {
+        "execution_sha256": "c16115eea54686c0234ce6506e24710a3beafb488aa00699cca646945735ab74",
+        "current_sha256": "a87d8626fefea8ed760c668b7743583ccdaec27791b4a37c15cad6fd9922f0ae"
+      },
+      "download.py": {
+        "execution_sha256": "14049794c9cf8988bb84bea5e81f4c06d71ab9c7b442c0163d22e56461702797",
+        "current_sha256": "3372bdd9fcc39c5db7702d6290899dd1090bbdbf54ffa35c406cf00f5feed54b"
+      },
+      "factory.py": {
+        "execution_sha256": "ced886a5569b6fbc73666013b96337ad0cfdc116a5bdcef1a7d27c726de0d623",
+        "current_sha256": "bd81ad182e2f8b951c005c9bf701d21a515aa60e58939a34a1f9ebf763e5b438"
+      }
+    },
+    "interpretation": "The source for statistics and data selection still matches all six receipts. common.py, factory.py and download.py were subsequently changed to verify snapshot contents. Current loader hardening was not executed by these six historical runs."
+  },
+  "parity_evidence_summary": {
+    "completed_GPU_qualification_receipts": 6,
+    "native_state_and_generated_factor_roundtrips_reported_exact": 6,
+    "GPU_native_checkpoint_tensors_available_for_independent_byte_comparison": 0,
+    "native_PEFT_reload_all_report_zero_error": 6,
+    "raw_score_triplets_independently_checked": 6,
+    "raw_triplets_unavailable_locally": [],
+    "one_example_gate_task": "boolq",
+    "scope": "All six raw native/export/reload score triplets are independently checked and identical. Every gate covers one BoolQ example. Native checkpoint state/factor equalities remain receipt-level evidence; no checkpoint tensor comparison, full-model re-execution or all-task PEFT equivalence is claimed."
+  },
+  "observations": [
+    {
+      "id": "CAT-RESULT-001",
+      "classification": "interpretation",
+      "message": "Mistral is the only run whose nominal bootstrap lower endpoint exceeds zero. Exact McNemar p=0.06391465663909912 and Holm-adjusted p=0.3834879398345947 do not support a confirmed positive effect. keep_for_followup is appropriate only as independent replication of an already-published adapter."
+    },
+    {
+      "id": "CAT-RESULT-002",
+      "classification": "evidence_boundary",
+      "message": "Zero optimizer updates across all six runs and frozen backbones mean no novel continual-learning outcome was tested or qualified."
+    },
+    {
+      "id": "CAT-RESULT-003",
+      "classification": "parity_coverage",
+      "message": "Raw native/PEFT/reload score triplets are now independently checked for all six models and match exactly. Every parity gate covers one BoolQ prompt. Native checkpoint tensor state/factor equality remains receipt-level evidence."
+    },
+    {
+      "id": "CAT-RESULT-004",
+      "classification": "source_provenance",
+      "message": "The current cache-verification source differs from the source hashes in all six completed runs. The independent post-run cache receipt covers their expected 14 snapshots without an observed mismatch; newer loader checks must not be attributed retroactively."
+    }
+  ],
+  "output_path": "experiments/review/catalog-results-audit.json",
+  "audit_writes": [
+    "experiments/review/catalog-results-audit.json"
+  ],
+  "bounded_followup": {
+    "completed_at": "2026-09-07T23:01:30.678047+00:00",
+    "scope": "Only the two newly synced early-Qwen raw reload triplets and selection files were checked, against the prior audited selection and receipts. Statistics, cache audit and loader interpretation were not recomputed or revised. No checkpoints were downloaded or loaded.",
+    "new_input_sha256": {
+      "outputs/portfolio/runs/catalog-qwen3-17b-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+      "outputs/portfolio/runs/catalog-qwen3-17b-screen/reload_predictions.jsonl": "1f62d188393fb8e51c502ed9d2b46af490628d4e090329cdef1e4298a082e04b",
+      "outputs/portfolio/runs/catalog-qwen3-4b-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+      "outputs/portfolio/runs/catalog-qwen3-4b-screen/reload_predictions.jsonl": "4a3bf9e41687e9ce9cfa7561a30d3bfb5a07dfecdec15ea83619e76b166455c8"
+    },
+    "checks": [
+      {
+        "run": "catalog-qwen3-17b-screen",
+        "selection_sha256_recomputed": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b",
+        "selection_matches_previously_audited_rows_and_indices": true,
+        "native_peft_max_score_error": 0.0,
+        "reload_max_score_error": 0.0,
+        "scores_exact_equal": true
+      },
+      {
+        "run": "catalog-qwen3-4b-screen",
+        "selection_sha256_recomputed": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b",
+        "selection_matches_previously_audited_rows_and_indices": true,
+        "native_peft_max_score_error": 0.0,
+        "reload_max_score_error": 0.0,
+        "scores_exact_equal": true
+      }
+    ],
+    "missing_raw_score_gap_closed": true
+  },
+  "terminal_inkling_review": {
+    "status": "complete_terminal_host_load_infrastructure_failure_unmeasured",
+    "observed_at": "2026-09-08T00:11:15.608203+00:00",
+    "run_id": "catalog-inkling-screen",
+    "model": "portal-inkling",
+    "scope": "Independent reconciliation of copied local metadata, logs, pod termination, download and guardian receipts. No remote access, host/GPU actions, new downloads, allocations, source/model edits, tensor loading or statistical comparison.",
+    "original_catalog_audit_sha256_before_append": "056ca192b950dc9a7eb6fca8f4d983f1b1114660774229b8579dac2d805a2eef",
+    "scientific_status": "unmeasured",
+    "failure_classification": "host_load_infrastructure_failure",
+    "model_capability_negative": false,
+    "GPU_memory_capacity_failure_demonstrated": false,
+    "GPU_resident_loading_or_evaluation_qualified": false,
+    "attempts": [
+      {
+        "attempt": 1,
+        "pod": "cl-portfolio-b94bq-5mcr7",
+        "node_reported": "golden-yak",
+        "original_execution_started_at_reported": "2026-09-07T23:37:48.968588+00:00",
+        "qualification_start_log_at": "2026-09-07T23:37:51.533900+00:00",
+        "stage_reached": "pretrained base weight loading after full content verification",
+        "load_boundary_base_verification": {
+          "at": "2026-09-07T23:56:51.996624+00:00",
+          "event": "snapshot_content_verified",
+          "path": "/tmp/inkling-cache/cl-portfolio/portal-cache/models/thinkingmachines/Inkling/828496eeae4c243ff1a22f7f28ff83694f2f7bc9",
+          "repo": "thinkingmachines/Inkling",
+          "revision": "828496eeae4c243ff1a22f7f28ff83694f2f7bc9",
+          "files": 118
+        },
+        "last_loader_progress": {
+          "completed_items": 610,
+          "total_items": 1392,
+          "reported_percent": 44,
+          "scope": "Loader progress items, not checkpoint shard count, loaded-byte fraction or GPU utilization."
+        },
+        "termination": {
+          "reason": "OOMKilled",
+          "container_exit_code": 137,
+          "finished_at": "2026-09-08T00:03:28Z",
+          "host_memory_limit": "768Gi",
+          "host_memory_limit_bytes": 824633720832,
+          "host_memory_request": "256Gi",
+          "GPU_resource_limit": 8,
+          "restart_count": 0
+        },
+        "host_memory_growth_root_cause": "not established by these bounded receipts",
+        "benchmark_prediction_count_reported": 0,
+        "source_of_attempt_identity": "Appended run.log first launch and verification/loading segment plus supplied pod-termination.json; original execution/request/result files were overwritten.",
+        "original_execution_json_available_locally": false,
+        "original_request_json_available_locally": false,
+        "original_result_json_available_locally": false,
+        "not_a_GPU_OOM_or_model_accuracy_result": true
+      },
+      {
+        "attempt": 2,
+        "origin": "automatic Kubernetes replacement and supervisor reattempt, as recorded by the supplied termination receipt",
+        "pod": "cl-portfolio-b94bq-l4xvb",
+        "execution": {
+          "task_id": "catalog-inkling-screen",
+          "started_at": "2026-09-08T00:03:49.786433+00:00",
+          "status": "failed",
+          "gpus": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "pid": 11,
+          "pod": "cl-portfolio-b94bq-l4xvb",
+          "runtime_sha256": "ec71f7d4d38fbbb7e9457a61a7f2b1a24e6a55e26453c22a941ba3352cd54895",
+          "finished_at": "2026-09-08T00:04:09.999150+00:00",
+          "exit_code": 1,
+          "timed_out": false
+        },
+        "request_started_at": "2026-09-08T00:03:57.175740+00:00",
+        "qualification_start_log_at": "2026-09-08T00:03:57.204250+00:00",
+        "failure_at": "2026-09-08T00:04:07.108618+00:00",
+        "stage_reached": "base snapshot verification, before pretrained base loading",
+        "error_type": "ValueError",
+        "error": "SNAPSHOT_CONTENT_MISMATCH: thinkingmachines/Inkling@828496eeae4c243ff1a22f7f28ff83694f2f7bc9: /tmp/inkling-cache/cl-portfolio/portal-cache/models/thinkingmachines/Inkling/828496eeae4c243ff1a22f7f28ff83694f2f7bc9/README.md",
+        "replacement_cache_exists_reported": false,
+        "replacement_weight_files_reported": 0,
+        "failed_path": "/tmp/inkling-cache/cl-portfolio/portal-cache/models/thinkingmachines/Inkling/828496eeae4c243ff1a22f7f28ff83694f2f7bc9/README.md",
+        "classification": "container_local_cache_missing_after_replacement",
+        "current_execution_request_result_belong_to_this_attempt": true,
+        "source_bundle_sha256_from_current_task": "29f9a65aa2f601a7a567eed4b48e1ab3f76b271c25a0e0af3f56c00b24c8f3ed",
+        "source_python_sha256_from_current_request": {
+          "common.py": "a87d8626fefea8ed760c668b7743583ccdaec27791b4a37c15cad6fd9922f0ae",
+          "data.py": "a02ebf10a8998007c114bb8843ed657eb692fdfd4e452672b9aa51dc6024dc87",
+          "download.py": "3372bdd9fcc39c5db7702d6290899dd1090bbdbf54ffa35c406cf00f5feed54b",
+          "factory.py": "bd81ad182e2f8b951c005c9bf701d21a515aa60e58939a34a1f9ebf763e5b438",
+          "inventory.py": "f9892c0066e929bb0c78a23aae4689fd43d48a60cfddf7bbd9bcc36aa88f73be",
+          "run.py": "6eb1ac41961e9c642e1e2f38f318cbc2a2a3c1ceb3e19c35dc43e693124c4e12",
+          "verify.py": "b0188fceb75b3701faf19a0f1032cc173d36681b37020be90c52653cc31b916e"
+        },
+        "separate_from_original_OOM": true,
+        "benchmark_scores_produced": false,
+        "cache_absence_boundary": "The failure traceback identifies the missing README snapshot path; cache absence and zero weight files come from the supplied pod-termination observation. No replacement filesystem was accessed by this audit."
+      }
+    ],
+    "artifact_identity": {
+      "manifest_sha256": "f7cf070b03b2fe89cadba0421e4e8bd5402684f38040d8c275cec369da1ca6f7",
+      "base_repo": "thinkingmachines/Inkling",
+      "base_revision": "828496eeae4c243ff1a22f7f28ff83694f2f7bc9",
+      "adapter_repo": "RampPublic/portal-inkling",
+      "adapter_revision": "48c00853d6b03ab4986ba12ca8399afbb551c5a5",
+      "expected_base_snapshot_files": 118,
+      "expected_unique_weight_files": 109,
+      "expected_base_snapshot_bytes": 1904787120669,
+      "expected_weight_bytes": 1904755463940,
+      "manifest_checksum_counts": {
+        "sha256": 111,
+        "git_blob_sha1": 7
+      },
+      "attempted_container_local_base_path": "/tmp/inkling-cache/cl-portfolio/portal-cache/models/thinkingmachines/Inkling/828496eeae4c243ff1a22f7f28ff83694f2f7bc9"
+    },
+    "two_full_snapshot_verification_receipts_before_original_load": {
+      "successful_pass_count": 2,
+      "first": {
+        "stage": "downloader verification after fetching",
+        "completed_at": "2026-09-07T23:37:45.718686+00:00",
+        "files": 118,
+        "bytes": 1904787120669,
+        "status": "verified",
+        "receipt_path": "outputs/portfolio/runs/catalog-inkling-download/download.json",
+        "receipt_sha256": "3d2008da055f365c180803c55f6cc8f6247bf38d97bec8ff503f3426f1bb456b",
+        "log_event": {
+          "at": "2026-09-07T23:37:45.718686+00:00",
+          "event": "download_result",
+          "repo": "thinkingmachines/Inkling",
+          "revision": "828496eeae4c243ff1a22f7f28ff83694f2f7bc9",
+          "kind": "base",
+          "path": "/tmp/inkling-cache/cl-portfolio/portal-cache/models/thinkingmachines/Inkling/828496eeae4c243ff1a22f7f28ff83694f2f7bc9",
+          "status": "verified",
+          "files": 118,
+          "bytes": 1904787120669
+        }
+      },
+      "second": {
+        "stage": "original model-load boundary verification",
+        "completed_at": "2026-09-07T23:56:51.996624+00:00",
+        "files": 118,
+        "status": "snapshot_content_verified",
+        "log_path": "outputs/portfolio/runs/catalog-inkling-screen/run.log",
+        "log_line": 5
+      },
+      "guardian": {
+        "completed_at": "2026-09-07T23:37:48.351096+00:00",
+        "exit_code": 0,
+        "qualified_download_only": true,
+        "scientific_result": null,
+        "receipt_sha256_matches_local_download_receipt": true,
+        "not_a_third_independent_checksum_pass": true
+      },
+      "evidence_boundary": "This audit verifies the copied receipt/log identities, hashes, manifest count/byte/checksum metadata and order. It does not independently hash the roughly 1.9 TB model bytes or claim those bytes survived replacement.",
+      "download_receipt_at_is_start_not_completion": true,
+      "historical_launch_status": "launch.json records an earlier downloader launch state and a PATH failure before the successful download; neither is an additional model-evaluation attempt."
+    },
+    "non_scientific_preload_outputs": {
+      "selection_metadata_matches_previously_audited_Mistral_selection": true,
+      "selection_sha256": "454860ff6e65d49ce076bcb2d63ab01cd189649764eb9f792fae6d4d5a06516b",
+      "selected_examples": 128,
+      "selection_is_not_predictions": true,
+      "native_roundtrip_in_current_replacement_result": {
+        "state_exact_equal": true,
+        "generated_factors_exact_equal": true,
+        "tasks": [
+          "boolq",
+          "hellaswag",
+          "winogrande",
+          "commonsense_qa"
+        ],
+        "checkpoint_sha256": "0438cee34ce5aca819d8a125eb4b34276ba0b9f5938ff7ac2a047003b6fe4ae3"
+      },
+      "native_roundtrip_scope": "Pretrained adapter-state and generated-factor serialization receipt before full-base loading; not native-versus-PEFT GPU parity or scientific evaluation.",
+      "native_checkpoint_metadata_targets": 132,
+      "native_checkpoint_tensors_locally_available": false,
+      "ledger_metric_value_blank": true,
+      "discard_unqualified_interpretation": "The failed attempt is unqualified operationally; no negative model-capability measurement exists."
+    },
+    "scientific_outputs": {
+      "predictions_jsonl_present": false,
+      "reload_predictions_jsonl_present": false,
+      "evaluation_json_present": false,
+      "scientific_metrics_in_current_result": false,
+      "base_accuracy": null,
+      "portal_accuracy": null,
+      "paired_effect": null,
+      "confidence_interval": null,
+      "p_value": null,
+      "seventh_statistical_test_performed": false
+    },
+    "multiplicity_and_claim_boundary": {
+      "completed_model_comparisons": 6,
+      "planned_catalog_models": 7,
+      "Inkling_in_six_model_test_family": false,
+      "seventh_p_value_imputed": false,
+      "existing_six_model_statistics_and_adjustments_preserved": true,
+      "existing_planned_seven_family_sensitivity_preserved": true,
+      "original_multiplicity": {
+        "family": "six completed model-level paired comparisons",
+        "method": "Holm-Bonferroni applied to exact two-sided McNemar p-values; ordinary Bonferroni also reported",
+        "alpha": 0.05,
+        "rejections": 0,
+        "smallest_raw_p": 0.06391465663909912,
+        "smallest_holm_six_p": 0.3834879398345947,
+        "planned_seven_comparison_sensitivity": "No positive conclusion under the planned seven-model family either. Inkling has no result in this six-model audit.",
+        "bootstrap_caveat": "The reported 95% percentile intervals are unadjusted, discrete, approximate within-model intervals. A positive lower endpoint can coexist with a two-sided exact McNemar p above 0.05; they are not the same test and do not establish a multiplicity-controlled gain."
+      },
+      "interpretation": "Keep the six completed exact paired comparisons and their existing multiplicity limits. The planned seventh model has no measured effect or p-value; infrastructure failure must not be entered as an accuracy of zero, a null result or a synthetic seventh test. No seven-model coverage or general catalog capability claim follows."
+    },
+    "preserved_reviews": {
+      "six_reviewed_run_ids": [
+        "catalog-qwen3-17b-screen",
+        "catalog-qwen3-4b-screen",
+        "catalog-qwen3-8b-screen",
+        "catalog-mistral7-screen",
+        "catalog-gemma3-screen",
+        "catalog-gemma4-screen"
+      ],
+      "all_six_review_objects_retained": true,
+      "all_prior_49_bounded_run_receipt_hashes_match": true,
+      "preserved_prior_bounded_input_sha256": {
+        "outputs/portfolio/runs/catalog-qwen3-17b-screen/config.json": "89d111532cfc67dd5e67eda30b0a79fab3e152d0ddac5eda8d2557cc97bdedfb",
+        "outputs/portfolio/runs/catalog-qwen3-17b-screen/result.json": "99b153efbb1029aaa84ce33642614fbf89280f3ebfa25c9d9e4446f588605599",
+        "outputs/portfolio/runs/catalog-qwen3-17b-screen/task.json": "5c7fe5965644aa02f13c39cfc7b680304c704c755381cf462c8f0dbe5c6c72c9",
+        "outputs/portfolio/runs/catalog-qwen3-17b-screen/execution.json": "585e1d3e0e824658a3ed99c2a5985c7e115b7ab23594d03d7196752a5d11846b",
+        "outputs/portfolio/runs/catalog-qwen3-17b-screen/packages.txt": "07390408aa34ca16ea0278e5efd5610907f12face509f3bac570d2b218047046",
+        "outputs/portfolio/runs/catalog-qwen3-17b-screen/predictions.jsonl": "917f730c21d694074f72b201caaf6b55cbfccd0342b68adfe3b16145731214ab",
+        "outputs/portfolio/runs/catalog-qwen3-4b-screen/result.json": "e17f7a88713b137c439387b695ecdd72ae9711c5c91c0b42fe3175522b7544bf",
+        "outputs/portfolio/runs/catalog-qwen3-4b-screen/config.json": "26913a64f2861c57b64537ae8214c346491fade93833dda6fd550dabe7aad670",
+        "outputs/portfolio/runs/catalog-qwen3-4b-screen/task.json": "54ba052af12ee48959bf8b95a25d7662099d05dbb04b3ee5a1fb9e1fc46876a8",
+        "outputs/portfolio/runs/catalog-qwen3-4b-screen/execution.json": "4f1bac747c866bc8863014d79002351c46c2d92aa85c213fb10d978b480203ca",
+        "outputs/portfolio/runs/catalog-qwen3-4b-screen/packages.txt": "07390408aa34ca16ea0278e5efd5610907f12face509f3bac570d2b218047046",
+        "outputs/portfolio/runs/catalog-qwen3-4b-screen/predictions.jsonl": "756c472362788666f6bf1606acfa564aba268778c6df5c109843acabba6aa523",
+        "outputs/portfolio/runs/catalog-qwen3-8b-screen/result.json": "f1f8fea510c0c5e73295f96c635bab85d274b052aad4afe5716b7baad1785d34",
+        "outputs/portfolio/runs/catalog-qwen3-8b-screen/config.json": "7217203ec930835711786696a55d4ee306124b8047ff71e954a70b1ed7f173f4",
+        "outputs/portfolio/runs/catalog-qwen3-8b-screen/task.json": "05e4c209380427f6d83914e0fb1cb0a1ee9828e0512a89366775166296b2a03a",
+        "outputs/portfolio/runs/catalog-qwen3-8b-screen/execution.json": "6ed49530ee7d652dfba3cce7e1158125bbdf3cf1df10b388efab99383130958e",
+        "outputs/portfolio/runs/catalog-qwen3-8b-screen/packages.txt": "07390408aa34ca16ea0278e5efd5610907f12face509f3bac570d2b218047046",
+        "outputs/portfolio/runs/catalog-qwen3-8b-screen/predictions.jsonl": "cd0a5e9ff2b8eb1003180ebaba5ba0ab40a4250d112ac7f8150efc1ba9b1ca5a",
+        "outputs/portfolio/runs/catalog-qwen3-8b-screen/reload_predictions.jsonl": "7fd654618439eb2fb37ffb210abc0dd85d05be9ba35a43f7e3bf479ecb0f1284",
+        "outputs/portfolio/runs/catalog-qwen3-8b-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+        "outputs/portfolio/runs/catalog-mistral7-screen/result.json": "385bf960610fafe09de5f6142e3216c8831abf5c855f51e7ce71c0f8da07b8eb",
+        "outputs/portfolio/runs/catalog-mistral7-screen/config.json": "39aed9fd2f77e1fa2ee98d848a0bbfe9bd015c3fb73bc4fd53ad244a789ddea2",
+        "outputs/portfolio/runs/catalog-mistral7-screen/task.json": "2555bdff9ef72f3c8701ae74b99cba925e26fc8a42b0e14671a4a21ea2397d4f",
+        "outputs/portfolio/runs/catalog-mistral7-screen/execution.json": "f684d2b95ee5500d007059266b0171f978d226b5246b4a2b80c0c6abdddcd444",
+        "outputs/portfolio/runs/catalog-mistral7-screen/packages.txt": "07390408aa34ca16ea0278e5efd5610907f12face509f3bac570d2b218047046",
+        "outputs/portfolio/runs/catalog-mistral7-screen/predictions.jsonl": "9f97caf2e45f706ca4fbcd2f4f7e7770d19803e14cdaa51dae6b05843b662b81",
+        "outputs/portfolio/runs/catalog-mistral7-screen/reload_predictions.jsonl": "0b6dd3e8121697d1e8adfe6350b9ed42e84e942d81aa570bc66bd5278b0597db",
+        "outputs/portfolio/runs/catalog-mistral7-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+        "outputs/portfolio/runs/catalog-gemma3-screen/result.json": "cf159555c848f19f9e67a73800ece8f1293ec57bd006d49f5c8ef4a0c3dce5a5",
+        "outputs/portfolio/runs/catalog-gemma3-screen/config.json": "3315fd4fa429679d9bc79bf7a7c3295443cdde66473077e2d43dbfdd2c51a90a",
+        "outputs/portfolio/runs/catalog-gemma3-screen/task.json": "d22ab8b58da08f40bdcc6bd0d031c7eb7fb8c409e637c72571ed707f486c2378",
+        "outputs/portfolio/runs/catalog-gemma3-screen/execution.json": "187b41b536055ddf7cfa315ab273be2d2f4e5f9ff971da64f27fc983c06696ab",
+        "outputs/portfolio/runs/catalog-gemma3-screen/packages.txt": "07390408aa34ca16ea0278e5efd5610907f12face509f3bac570d2b218047046",
+        "outputs/portfolio/runs/catalog-gemma3-screen/predictions.jsonl": "c218c26a1bd50b6ff10f6332c300dc9c9de0f979cc7cb61b2367fe6fae6ac237",
+        "outputs/portfolio/runs/catalog-gemma3-screen/reload_predictions.jsonl": "dd960b847c1340f8fd618077b9bde72dbf5ff14146893e27f2e7b9ab7ce5cf47",
+        "outputs/portfolio/runs/catalog-gemma3-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+        "outputs/portfolio/runs/catalog-gemma4-screen/result.json": "236fb3b96d6466afffbe38284cbf0b6e9b9ec70df5010b19c5500593bf60ae30",
+        "outputs/portfolio/runs/catalog-gemma4-screen/config.json": "18cbdeba691d277b0fe8e422eac82d8a123e0b3f86907801dc29c8a07f207d53",
+        "outputs/portfolio/runs/catalog-gemma4-screen/task.json": "447866a1a7b1af33dfd1bff9951531f5f59cad47082d1c8a4ba3c4c3314e5bb6",
+        "outputs/portfolio/runs/catalog-gemma4-screen/execution.json": "92acb98de71ac17f1a9ba76c7dc519448be40fda77a7c81f9c802c00e14cd823",
+        "outputs/portfolio/runs/catalog-gemma4-screen/packages.txt": "07390408aa34ca16ea0278e5efd5610907f12face509f3bac570d2b218047046",
+        "outputs/portfolio/runs/catalog-gemma4-screen/predictions.jsonl": "05abbf77b8e8667e09fea1956ea4878aef54bcaec9c31217e7334caf691be0ff",
+        "outputs/portfolio/runs/catalog-gemma4-screen/reload_predictions.jsonl": "16c659a787d7a373f7249690e2a2985268411dff40a9c7bcc73ca154175b5a94",
+        "outputs/portfolio/runs/catalog-gemma4-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+        "outputs/portfolio/runs/catalog-cache-content-audit/result.json": "dbde5f4e8a8191db6cc44caf7e0a9671a389e107b3e481b866dd908a1d3989b9",
+        "outputs/portfolio/runs/catalog-qwen3-17b-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+        "outputs/portfolio/runs/catalog-qwen3-17b-screen/reload_predictions.jsonl": "1f62d188393fb8e51c502ed9d2b46af490628d4e090329cdef1e4298a082e04b",
+        "outputs/portfolio/runs/catalog-qwen3-4b-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+        "outputs/portfolio/runs/catalog-qwen3-4b-screen/reload_predictions.jsonl": "4a3bf9e41687e9ce9cfa7561a30d3bfb5a07dfecdec15ea83619e76b166455c8"
+      },
+      "prior_statistical_results_not_recomputed_in_this_extension": true,
+      "portability_audit_path": "experiments/review/portability-results-audit.json",
+      "portability_audit_sha256": "6a9a79b29b0a3f2988fa903b31f773877eea2095aced9381f4f2195c2df7f377",
+      "portability_audit_unchanged": true
+    },
+    "local_bounded_artifact_inventory": {
+      "catalog-inkling-screen": [
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-screen/autoresearch/qualification/handoff.json",
+          "bytes": 184
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-screen/autoresearch/qualification/qualification-results.tsv",
+          "bytes": 120
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-screen/config.json",
+          "bytes": 583
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-screen/execution.json",
+          "bytes": 419
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-screen/failure.log",
+          "bytes": 773
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-screen/native_checkpoint/config.json",
+          "bytes": 29281
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-screen/packages.txt",
+          "bytes": 1545
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-screen/pod-termination.json",
+          "bytes": 2032
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-screen/request.json",
+          "bytes": 1809
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-screen/result.json",
+          "bytes": 2571
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-screen/run.log",
+          "bytes": 9341
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-screen/selection.json",
+          "bytes": 98318
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-screen/task.json",
+          "bytes": 1063
+        }
+      ],
+      "catalog-inkling-download": [
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-download/download.json",
+          "bytes": 557
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-download/download.log",
+          "bytes": 10243
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-download/launch.json",
+          "bytes": 1252
+        }
+      ],
+      "catalog-inkling-download-watch": [
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-download-watch/config.json",
+          "bytes": 691
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-download-watch/execution.json",
+          "bytes": 383
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-download-watch/packages.txt",
+          "bytes": 1167
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-download-watch/progress.json",
+          "bytes": 252
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-download-watch/result.json",
+          "bytes": 682
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-download-watch/run.log",
+          "bytes": 24756
+        },
+        {
+          "path": "outputs/portfolio/runs/catalog-inkling-download-watch/task.json",
+          "bytes": 1112
+        }
+      ]
+    },
+    "input_sha256": {
+      "outputs/portfolio/runs/catalog-inkling-screen/autoresearch/qualification/handoff.json": "d9fee381d96e513c7cb1bfd8165159c8b8c695ba666243857f174058b34a7c41",
+      "outputs/portfolio/runs/catalog-inkling-screen/autoresearch/qualification/qualification-results.tsv": "0c25c5faf0cc4fdea9e576bcc31d785ab3fcc761a292be158363581e01667ee8",
+      "outputs/portfolio/runs/catalog-inkling-screen/config.json": "691a2b01bdac6a19fbea4da3da7a18e7dc8fb2ff1acda79535a2730db549078a",
+      "outputs/portfolio/runs/catalog-inkling-screen/execution.json": "bafad6855290d1855eacb6f655593e4a0e4fbdaf300744e49543b047844d37fa",
+      "outputs/portfolio/runs/catalog-inkling-screen/failure.log": "7ba42bb78a7056890159774d7bf5b3a9df8f6743813501e2c743066af898c5e5",
+      "outputs/portfolio/runs/catalog-inkling-screen/native_checkpoint/config.json": "8809ba3432426b63a315ddf27698ceda0008e5c78aa7b6f7d9c0bf96ebb8948e",
+      "outputs/portfolio/runs/catalog-inkling-screen/packages.txt": "07390408aa34ca16ea0278e5efd5610907f12face509f3bac570d2b218047046",
+      "outputs/portfolio/runs/catalog-inkling-screen/pod-termination.json": "d16705ba6ee43afc7006dca96939f7ff06290f2910beb8dce0e9490627ceb731",
+      "outputs/portfolio/runs/catalog-inkling-screen/request.json": "f2e4ceb6add8b737eb750342173c41f2b02c9390e9717bfa4cf9c0b340e8f0ff",
+      "outputs/portfolio/runs/catalog-inkling-screen/result.json": "34becece2dc010d82ae4056d8cda9b381d392b924369cadc7188054e08fb664a",
+      "outputs/portfolio/runs/catalog-inkling-screen/run.log": "959282c2f03f81199da23947bb31ce2360291daba7f6b313c232977f80f9b200",
+      "outputs/portfolio/runs/catalog-inkling-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1",
+      "outputs/portfolio/runs/catalog-inkling-screen/task.json": "316cc6ad60d289c2a539d8faf808036393b842a4657f28225b49646fb251d797",
+      "outputs/portfolio/runs/catalog-inkling-download/download.json": "3d2008da055f365c180803c55f6cc8f6247bf38d97bec8ff503f3426f1bb456b",
+      "outputs/portfolio/runs/catalog-inkling-download/download.log": "83fca96efb6daa2195bf834be2ff11d5547ec2baebce186ee947f6de2eb8c3dd",
+      "outputs/portfolio/runs/catalog-inkling-download/launch.json": "f99458b53ba803b2e6c3f76bcbaf2e2940fa33677bd2772ed6fd399bfd008189",
+      "outputs/portfolio/runs/catalog-inkling-download-watch/config.json": "294af1bd67a1b02bb00e4e96cb17201053124e4aef0900371559253800b2c83e",
+      "outputs/portfolio/runs/catalog-inkling-download-watch/execution.json": "a605d1b6d6759eeae570cd77ae3bb461fd0631ffe5e298aa82172569052ae010",
+      "outputs/portfolio/runs/catalog-inkling-download-watch/packages.txt": "240e008a706c856666dc562481c6446601b8a3734e05b4aa876a1b0cb3f05137",
+      "outputs/portfolio/runs/catalog-inkling-download-watch/progress.json": "eb9cbe5cc5c6434594e275ca989ddcd3a38111b1d22c885ec6173be74777e761",
+      "outputs/portfolio/runs/catalog-inkling-download-watch/result.json": "99a1e8b85f9c4115e8c1b284411395c7ace01764157a90dd83ad32057ce9748a",
+      "outputs/portfolio/runs/catalog-inkling-download-watch/run.log": "5e3ebd2d670182b783ea5dacd8e8c0dacdc9443e537953bb460b2684d98fb12e",
+      "outputs/portfolio/runs/catalog-inkling-download-watch/task.json": "b04ee9a7e35268c5d9d0817720ab1b42a1a9b404647a634770863e0cc42e1bb1",
+      "experiments/catalog/manifest.json": "f7cf070b03b2fe89cadba0421e4e8bd5402684f38040d8c275cec369da1ca6f7",
+      "outputs/portfolio/runs/catalog-mistral7-screen/selection.json": "7ab9e157d3fe8a4d820c3ce2ae6abacb5b28db25e2c6dd0be6bdee98225094c1"
+    },
+    "findings": [],
+    "evidence_limits": [
+      "Original attempt identity and exit 137 come from the supplied pod termination snapshot plus retained log segment, not the overwritten execution.json.",
+      "The currently copied execution/request/result describe replacement l4xvb and its exit-1 cache-validation failure; they cannot replace the original OOM chronology.",
+      "OOMKilled under the container host-memory limit establishes an infrastructure interruption during loading. The precise host-memory growth mechanism and whether a full GPU-resident load would succeed remain unmeasured.",
+      "Full snapshot checksum success is runtime receipt evidence. Local metadata reconciliation does not reverify the model tensor bytes or establish cache persistence.",
+      "No scientific results were produced in the supplied evidence; prepared selections and native adapter serialization receipts do not substitute for GPU evaluation.",
+      "This review records the terminal supplied attempts only. Any subsequent cache repair or retry investigation belongs to the parent work and is not authorized or executed here."
+    ],
+    "all_inputs_unchanged_during_extension": true,
+    "audit_writes": [
+      "experiments/review/catalog-results-audit.json"
+    ]
+  },
+  "catalog_completion_scope": {
+    "status": "six_GPU_qualified_models_and_one_terminal_unmeasured_model",
+    "GPU_qualified_model_count": 6,
+    "scientifically_compared_model_count": 6,
+    "unmeasured_model_count": 1,
+    "unmeasured_models": [
+      {
+        "model": "portal-inkling",
+        "run_id": "catalog-inkling-screen",
+        "reason": "host_load_infrastructure_failure_followed_by_automatic_replacement_cache_miss",
+        "scientific_result": null
+      }
+    ],
+    "all_seven_models_scientifically_evaluated": false,
+    "seventh_comparison_added": false,
+    "existing_catalog_gain_and_novel_CL_conclusions_unchanged": true,
+    "terminal_attempt_review_complete": true
+  }
+}

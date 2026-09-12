@@ -1,0 +1,10 @@
+{
+  "mode": "smoke",
+  "model_id": "google/gemma-4-E2B",
+  "revision": "d29ff6b45f081a49ee2733a859c9c9c2d95d1a6f",
+  "model_path": "/mnt/shared/cl-portfolio/portal-cache/models/google/gemma-4-E2B/d29ff6b45f081a49ee2733a859c9c9c2d95d1a6f",
+  "seed": 17,
+  "device": "cuda:0",
+  "registry_path": "registry.json",
+  "artifact_cache_dir": "/mnt/shared/cl-portfolio/portal-cache/models"
+}
