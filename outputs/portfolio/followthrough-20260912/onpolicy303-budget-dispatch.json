@@ -1,0 +1,39 @@
+{
+  "at": "2026-09-12T08:47:10.068941+00:00",
+  "handoff_sha256": "1fbde94e44d4ff99fd4b81cef1e53d614095ab94a9735f1bfbf1df858232c333",
+  "protocol_sha256": "97300f7fd7fda6f209f829708995accaea34381faef29f603ac25e028416dc92",
+  "scientific_files_mapping_sha256": "93167f7d90428514e8f96e94eaeb6e6279c83fc880e3407ad959b2fc3e72de76",
+  "parent_cpu_tests_passed": 32,
+  "frozen_files_verified": 24,
+  "tokens": {
+    "additional": 588,
+    "cached_at384": 10752,
+    "cached_at405": 11340,
+    "excess_over_ownprefix": 26,
+    "ownprefix_at384": 11314
+  },
+  "jobs": [
+    {
+      "id": "followthrough-20260912-onpolicy303-budget-cached-teacher-sft",
+      "method": "cached_teacher_sft",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-cached-teacher-sft-train"
+      ],
+      "manifest": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/manifests/followthrough-20260912-onpolicy303-budget-cached-teacher-sft.json",
+      "manifest_sha256": "3863cd631d75c9ee300c02ea401b0fcb7d7d9dc3be0f2e6aaa878a0102252eb7"
+    },
+    {
+      "id": "followthrough-20260912-onpolicy303-budget-cached-teacher-kl",
+      "method": "cached_teacher_kl",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-cached-teacher-kl-train",
+        "consolidation-source303-coverage-20260912"
+      ],
+      "manifest": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/manifests/followthrough-20260912-onpolicy303-budget-cached-teacher-kl.json",
+      "manifest_sha256": "23f4e0d48c718de97662b3fc55d9fbd5917f150206356e1fedc5e49dfd6f0c92"
+    }
+  ],
+  "source_sha256": "d11de8b7ba587cb7c99315232785ac2a20f8353130ab2db15bba3fa0e1e1d9f4"
+}

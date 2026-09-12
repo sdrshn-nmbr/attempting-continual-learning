@@ -1,0 +1,30 @@
+{
+  "at": "2026-09-12T09:04:18.417736+00:00",
+  "handoff_sha256": "323a4030abb91bdcd41c60f91fadea183505362d7098ae08166ce484819ddb6a",
+  "parent_cpu_tests_passed": 35,
+  "frozen_source_files_verified": 26,
+  "source_mapping_sha256": "6e852da54e364c55c28f5108a454e1ad175e3d6ae2e242a1485ee79994436f69",
+  "new_optimizer_updates": 0,
+  "original_training_runs_unchanged": true,
+  "jobs": [
+    {
+      "id": "followthrough-20260912-onpolicy303-budget-sft-evaluate-only",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-cached-teacher-sft-train"
+      ],
+      "manifest": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/manifests/followthrough-20260912-onpolicy303-budget-sft-evaluate-only.json",
+      "manifest_sha256": "5a7297cad1b0cb22d03fb8ff7cc6f1d6ff1e73a71459755da3ced8bab02e93f3"
+    },
+    {
+      "id": "followthrough-20260912-onpolicy303-budget-kl-evaluate-only",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-cached-teacher-kl-train"
+      ],
+      "manifest": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/manifests/followthrough-20260912-onpolicy303-budget-kl-evaluate-only.json",
+      "manifest_sha256": "f14afec63015e1ec1d6fdd2ca602b6a1c91ddf9f029db5af22a3e7cbe503f496"
+    }
+  ],
+  "source_sha256": "78806a1515c8027c1a334694fe45fcb5d74bd50b8649f10b4d47d1d8f8b6a454"
+}
