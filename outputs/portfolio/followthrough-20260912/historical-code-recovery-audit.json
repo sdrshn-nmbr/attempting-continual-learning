@@ -1,0 +1,892 @@
+{
+  "kind": "post_hoc_original_code_score_feasibility",
+  "boundary": "Post-hoc rescoring of previously executed observations using their original 16-code classifier. This does not revise the failed sealed primary experiment or qualify a recovery predictor. No new GPU operations or repair updates.",
+  "inputs": {
+    "dataset_sha256": "cef67da6b485efa7dc2029bebe0ef21d937ded2983afbe0e35f1bcda9ba83e36",
+    "seal_payload_keys": [
+      "assets",
+      "config",
+      "dataset_sha256",
+      "implementation",
+      "protocol",
+      "protocol_sha256",
+      "runtime"
+    ],
+    "collection_sha256": "9ffc0f014970be124ffed30cf99204aee83d67c45a596df0670fa17cf80824f5"
+  },
+  "counts": {
+    "train": {
+      "previously_learned": 4,
+      "forgotten": 3,
+      "recovered": {}
+    },
+    "test": {
+      "previously_learned": 2,
+      "forgotten": 2,
+      "recovered": {}
+    }
+  },
+  "units": [
+    {
+      "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/income",
+      "skill": "income",
+      "split": "train",
+      "before": 0.0,
+      "after": 0.0,
+      "eligible": false,
+      "guard_after": 0.9625,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -0.9625
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/are_you_a_bot",
+      "skill": "are_you_a_bot",
+      "split": "train",
+      "before": 0.0,
+      "after": 0.0,
+      "eligible": false,
+      "guard_after": 0.9625,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -0.9625
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/text",
+      "skill": "text",
+      "split": "train",
+      "before": 0.0,
+      "after": 0.0,
+      "eligible": false,
+      "guard_after": 0.9625,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -0.9625
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/card_declined",
+      "skill": "card_declined",
+      "split": "train",
+      "before": 0.0,
+      "after": 0.0,
+      "eligible": false,
+      "guard_after": 0.9625,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -0.9625
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/reset_settings",
+      "skill": "reset_settings",
+      "split": "train",
+      "before": 0.0,
+      "after": 0.55,
+      "eligible": false,
+      "guard_after": 0.9625,
+      "actions": {
+        "none": {
+          "accuracy": 0.55,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.6,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.04999999999999993
+        },
+        "replay_short": {
+          "accuracy": 0.55,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -1.5125000000000002
+        },
+        "sham": {
+          "accuracy": 0.55,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/confirm_reservation",
+      "skill": "confirm_reservation",
+      "split": "train",
+      "before": 0.0,
+      "after": 0.0,
+      "eligible": false,
+      "guard_after": 0.9625,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -0.9625
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/international_visa",
+      "skill": "international_visa",
+      "split": "train",
+      "before": 0.0,
+      "after": 0.0,
+      "eligible": false,
+      "guard_after": 0.9625,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -0.9625
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/schedule_meeting",
+      "skill": "schedule_meeting",
+      "split": "train",
+      "before": 0.0,
+      "after": 0.0,
+      "eligible": false,
+      "guard_after": 0.9625,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -0.9625
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/bill_balance",
+      "skill": "bill_balance",
+      "split": "train",
+      "before": 1.0,
+      "after": 0.85,
+      "eligible": false,
+      "guard_after": 0.9625,
+      "actions": {
+        "none": {
+          "accuracy": 0.85,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.85,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.85,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 1.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -0.8125
+        },
+        "sham": {
+          "accuracy": 0.85,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/rewards_balance",
+      "skill": "rewards_balance",
+      "split": "train",
+      "before": 1.0,
+      "after": 0.0,
+      "eligible": true,
+      "guard_after": 0.9625,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 1.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": 0.03749999999999998
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/change_speed",
+      "skill": "change_speed",
+      "split": "train",
+      "before": 1.0,
+      "after": 0.05,
+      "eligible": true,
+      "guard_after": 0.9625,
+      "actions": {
+        "none": {
+          "accuracy": 0.05,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.15,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.09999999999999999
+        },
+        "replay_short": {
+          "accuracy": 0.1,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.05
+        },
+        "restore": {
+          "accuracy": 1.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -0.012500000000000067
+        },
+        "sham": {
+          "accuracy": 0.05,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-screen-seed23-6a27d9c4/definition",
+      "skill": "definition",
+      "split": "train",
+      "before": 1.0,
+      "after": 0.0,
+      "eligible": true,
+      "guard_after": 0.9625,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 1.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": 0.03749999999999998
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.9625,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/whisper_mode",
+      "skill": "whisper_mode",
+      "split": "test",
+      "before": 0.0,
+      "after": 0.0,
+      "eligible": false,
+      "guard_after": 1.0,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -1.0
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/order",
+      "skill": "order",
+      "split": "test",
+      "before": 0.0,
+      "after": 0.55,
+      "eligible": false,
+      "guard_after": 1.0,
+      "actions": {
+        "none": {
+          "accuracy": 0.55,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.55,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.55,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -1.55
+        },
+        "sham": {
+          "accuracy": 0.55,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/todo_list",
+      "skill": "todo_list",
+      "split": "test",
+      "before": 0.0,
+      "after": 0.0,
+      "eligible": false,
+      "guard_after": 1.0,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -1.0
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/recipe",
+      "skill": "recipe",
+      "split": "test",
+      "before": 0.0,
+      "after": 0.0,
+      "eligible": false,
+      "guard_after": 1.0,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -1.0
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/next_holiday",
+      "skill": "next_holiday",
+      "split": "test",
+      "before": 0.0,
+      "after": 0.0,
+      "eligible": false,
+      "guard_after": 1.0,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -1.0
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/what_is_your_name",
+      "skill": "what_is_your_name",
+      "split": "test",
+      "before": 0.0,
+      "after": 0.0,
+      "eligible": false,
+      "guard_after": 1.0,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -1.0
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/goodbye",
+      "skill": "goodbye",
+      "split": "test",
+      "before": 0.0,
+      "after": 0.0,
+      "eligible": false,
+      "guard_after": 1.0,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 0.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": -1.0
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/yes",
+      "skill": "yes",
+      "split": "test",
+      "before": 1.0,
+      "after": 0.0,
+      "eligible": true,
+      "guard_after": 1.0,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 1.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    },
+    {
+      "id": "plasticity-clinc-replay-confirmation-seed47-c31f860b/vaccines",
+      "skill": "vaccines",
+      "split": "test",
+      "before": 1.0,
+      "after": 0.0,
+      "eligible": true,
+      "guard_after": 1.0,
+      "actions": {
+        "none": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_long": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "replay_short": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "restore": {
+          "accuracy": 1.0,
+          "guard_accuracy": 0.0,
+          "recovered": false,
+          "utility": 0.0
+        },
+        "sham": {
+          "accuracy": 0.0,
+          "guard_accuracy": 1.0,
+          "recovered": false,
+          "utility": 0.0
+        }
+      }
+    }
+  ]
+}

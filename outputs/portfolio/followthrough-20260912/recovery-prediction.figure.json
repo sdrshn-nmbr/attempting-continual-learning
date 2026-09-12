@@ -1,0 +1,82 @@
+{
+  "source": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-predict-analyze/study/analysis.json",
+  "source_sha256": "fb805149ced8eb796ede9dac5ad27c729fa0c6ce0d247e1f857989c2cc9fa791",
+  "independent_audit_sha256": "501d8b813bac35385f500089d9ac5ef4300ead8a10b788f9ac0e4eec20cd57d7",
+  "script_sha256": "0316a44ceeb3afa34fe39f1f261741f81f51711f8b9106fc1f6f87d2404c553e",
+  "methods": [
+    "always/2",
+    "always/4",
+    "always/8",
+    "always/16",
+    "frozen",
+    "tuned"
+  ],
+  "source_counts": {
+    "fresh-test-a": 7,
+    "fresh-test-b": 6
+  },
+  "qualification": {
+    "fresh-test-a": {
+      "always/2": {
+        "qualified": 3,
+        "n": 7
+      },
+      "always/4": {
+        "qualified": 4,
+        "n": 7
+      },
+      "always/8": {
+        "qualified": 7,
+        "n": 7
+      },
+      "always/16": {
+        "qualified": 7,
+        "n": 7
+      },
+      "frozen": {
+        "qualified": 2,
+        "n": 7
+      },
+      "tuned": {
+        "qualified": 4,
+        "n": 7
+      }
+    },
+    "fresh-test-b": {
+      "always/2": {
+        "qualified": 6,
+        "n": 6
+      },
+      "always/4": {
+        "qualified": 6,
+        "n": 6
+      },
+      "always/8": {
+        "qualified": 6,
+        "n": 6
+      },
+      "always/16": {
+        "qualified": 6,
+        "n": 6
+      },
+      "frozen": {
+        "qualified": 6,
+        "n": 6
+      },
+      "tuned": {
+        "qualified": 5,
+        "n": 6
+      }
+    }
+  },
+  "pooled_mean_updates": {
+    "always/2": 2.0,
+    "always/4": 4.0,
+    "always/8": 8.0,
+    "always/16": 16.0,
+    "frozen": 1.8461538461538463,
+    "tuned": 2.4615384615384617
+  },
+  "independent_model_clusters": 2,
+  "uncertainty": "Descriptive paired source results; no intent-level confidence intervals."
+}

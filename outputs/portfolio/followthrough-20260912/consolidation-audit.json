@@ -1,0 +1,564 @@
+{
+  "claim_boundary": "Independent rescoring and artifact checks, not a rerun of model inference. Existing Sequence303 task mapping and historical evaluation panels; no independent task replication.",
+  "cross_split_input_overlap": 0,
+  "runs": {
+    "consolidation-choice303-evaluate-20260912": {
+      "execution_sha256": "d1a8da6a30834c10414a539fe0113942705765d5ce954c42078f24d36ebcca6b",
+      "new_process": true,
+      "panels_sha256": "92c13890c62ce10f339c0be4ba8972db4188fee02822f8ac74827acf1b71c5bf",
+      "scores": {
+        "test": {
+          "oracle_sft": {
+            "correct": 192,
+            "count": 192,
+            "tasks": {
+              "sequence_a": {
+                "correct": 64,
+                "count": 64
+              },
+              "sequence_b": {
+                "correct": 64,
+                "count": 64
+              },
+              "sequence_c": {
+                "correct": 64,
+                "count": 64
+              }
+            }
+          },
+          "teacher_choice_kl": {
+            "correct": 187,
+            "count": 192,
+            "tasks": {
+              "sequence_a": {
+                "correct": 64,
+                "count": 64
+              },
+              "sequence_b": {
+                "correct": 59,
+                "count": 64
+              },
+              "sequence_c": {
+                "correct": 64,
+                "count": 64
+              }
+            }
+          },
+          "untouched": {
+            "correct": 62,
+            "count": 192,
+            "tasks": {
+              "sequence_a": {
+                "correct": 18,
+                "count": 64
+              },
+              "sequence_b": {
+                "correct": 13,
+                "count": 64
+              },
+              "sequence_c": {
+                "correct": 31,
+                "count": 64
+              }
+            }
+          }
+        },
+        "unused288": {
+          "oracle_sft": {
+            "correct": 864,
+            "count": 864,
+            "tasks": {
+              "sequence_a": {
+                "correct": 288,
+                "count": 288
+              },
+              "sequence_b": {
+                "correct": 288,
+                "count": 288
+              },
+              "sequence_c": {
+                "correct": 288,
+                "count": 288
+              }
+            }
+          },
+          "teacher_choice_kl": {
+            "correct": 838,
+            "count": 864,
+            "tasks": {
+              "sequence_a": {
+                "correct": 287,
+                "count": 288
+              },
+              "sequence_b": {
+                "correct": 269,
+                "count": 288
+              },
+              "sequence_c": {
+                "correct": 282,
+                "count": 288
+              }
+            }
+          },
+          "untouched": {
+            "correct": 286,
+            "count": 864,
+            "tasks": {
+              "sequence_a": {
+                "correct": 84,
+                "count": 288
+              },
+              "sequence_b": {
+                "correct": 85,
+                "count": 288
+              },
+              "sequence_c": {
+                "correct": 117,
+                "count": 288
+              }
+            }
+          }
+        }
+      },
+      "source_sha256": "295d5b8eaa67d049079409da04823b2482f26c6f2814ace56cd70ce3506de66b",
+      "status": "passed"
+    },
+    "consolidation-coverage303-20260912": {
+      "execution_sha256": "622ea7f37da754ecd695f5a7266dba954a1a8775e019d0fb9666dfbaaf2c7585",
+      "new_process": true,
+      "panels_sha256": "cfd81a219cd8191d53e0edb6955aac204f215148d15c46f7c6abd167632e8602",
+      "scores": {
+        "test": {
+          "oracle_sft": {
+            "correct": 187,
+            "count": 192,
+            "tasks": {
+              "sequence_a": {
+                "correct": 64,
+                "count": 64
+              },
+              "sequence_b": {
+                "correct": 61,
+                "count": 64
+              },
+              "sequence_c": {
+                "correct": 62,
+                "count": 64
+              }
+            }
+          },
+          "teacher_output_sft": {
+            "correct": 187,
+            "count": 192,
+            "tasks": {
+              "sequence_a": {
+                "correct": 64,
+                "count": 64
+              },
+              "sequence_b": {
+                "correct": 61,
+                "count": 64
+              },
+              "sequence_c": {
+                "correct": 62,
+                "count": 64
+              }
+            }
+          },
+          "untouched": {
+            "correct": 0,
+            "count": 192,
+            "tasks": {
+              "sequence_a": {
+                "correct": 0,
+                "count": 64
+              },
+              "sequence_b": {
+                "correct": 0,
+                "count": 64
+              },
+              "sequence_c": {
+                "correct": 0,
+                "count": 64
+              }
+            }
+          }
+        },
+        "unused288": {
+          "oracle_sft": {
+            "correct": 854,
+            "count": 864,
+            "tasks": {
+              "sequence_a": {
+                "correct": 288,
+                "count": 288
+              },
+              "sequence_b": {
+                "correct": 284,
+                "count": 288
+              },
+              "sequence_c": {
+                "correct": 282,
+                "count": 288
+              }
+            }
+          },
+          "teacher_output_sft": {
+            "correct": 854,
+            "count": 864,
+            "tasks": {
+              "sequence_a": {
+                "correct": 288,
+                "count": 288
+              },
+              "sequence_b": {
+                "correct": 284,
+                "count": 288
+              },
+              "sequence_c": {
+                "correct": 282,
+                "count": 288
+              }
+            }
+          },
+          "untouched": {
+            "correct": 0,
+            "count": 864,
+            "tasks": {
+              "sequence_a": {
+                "correct": 0,
+                "count": 288
+              },
+              "sequence_b": {
+                "correct": 0,
+                "count": 288
+              },
+              "sequence_c": {
+                "correct": 0,
+                "count": 288
+              }
+            }
+          }
+        }
+      },
+      "source_sha256": "70832a0f6412574f88016759669d679f1a2d6e2539d166e9adc2e0e096fb5c5b",
+      "status": "passed",
+      "target_identity": {
+        "all_384_teacher_targets_equal_oracle": true,
+        "final_arm_tensors_equal": true,
+        "initial_and_schedule_match_previous_noisy_teacher_run": true,
+        "interpretation": "Correct teacher outputs induce the same SFT objective as the oracle. This is a target-quality comparison with the earlier noisy teacher and a replication control, not a superior distillation objective."
+      }
+    },
+    "consolidation-generated303-20260912": {
+      "execution_sha256": "55366db15473bd4030bb78efeab9b4b8f6aeffc6d6defc952387393a38a23cf3",
+      "new_process": true,
+      "panels_sha256": "ff493132c2ec8dfcbca23492dfa0bca5cd0590886c593c8685f3e4b8cb4a704f",
+      "scores": {
+        "test": {
+          "oracle_sft": {
+            "correct": 187,
+            "count": 192,
+            "tasks": {
+              "sequence_a": {
+                "correct": 64,
+                "count": 64
+              },
+              "sequence_b": {
+                "correct": 61,
+                "count": 64
+              },
+              "sequence_c": {
+                "correct": 62,
+                "count": 64
+              }
+            }
+          },
+          "teacher_output_sft": {
+            "correct": 179,
+            "count": 192,
+            "tasks": {
+              "sequence_a": {
+                "correct": 55,
+                "count": 64
+              },
+              "sequence_b": {
+                "correct": 64,
+                "count": 64
+              },
+              "sequence_c": {
+                "correct": 60,
+                "count": 64
+              }
+            }
+          },
+          "untouched": {
+            "correct": 0,
+            "count": 192,
+            "tasks": {
+              "sequence_a": {
+                "correct": 0,
+                "count": 64
+              },
+              "sequence_b": {
+                "correct": 0,
+                "count": 64
+              },
+              "sequence_c": {
+                "correct": 0,
+                "count": 64
+              }
+            }
+          }
+        },
+        "unused288": {
+          "oracle_sft": {
+            "correct": 854,
+            "count": 864,
+            "tasks": {
+              "sequence_a": {
+                "correct": 288,
+                "count": 288
+              },
+              "sequence_b": {
+                "correct": 284,
+                "count": 288
+              },
+              "sequence_c": {
+                "correct": 282,
+                "count": 288
+              }
+            }
+          },
+          "teacher_output_sft": {
+            "correct": 820,
+            "count": 864,
+            "tasks": {
+              "sequence_a": {
+                "correct": 259,
+                "count": 288
+              },
+              "sequence_b": {
+                "correct": 287,
+                "count": 288
+              },
+              "sequence_c": {
+                "correct": 274,
+                "count": 288
+              }
+            }
+          },
+          "untouched": {
+            "correct": 0,
+            "count": 864,
+            "tasks": {
+              "sequence_a": {
+                "correct": 0,
+                "count": 288
+              },
+              "sequence_b": {
+                "correct": 0,
+                "count": 288
+              },
+              "sequence_c": {
+                "correct": 0,
+                "count": 288
+              }
+            }
+          }
+        }
+      },
+      "source_sha256": "3f90a58bc931c90cd03807bd2dfc4974ffdbf2c0649dc61b94c9be6fd53e79f9",
+      "status": "passed"
+    },
+    "consolidation-source303-coverage-20260912": {
+      "candidate_TRAIN_counts": {
+        "128": {
+          "correct": 383,
+          "n": 384,
+          "passed": false
+        },
+        "32": {
+          "correct": 376,
+          "n": 384,
+          "passed": false
+        },
+        "384": {
+          "correct": 384,
+          "n": 384,
+          "passed": true
+        }
+      },
+      "claim_boundary": "Perfect coverage of these384TRAIN answers and96reusedvalidation answers; no TEST selection and no newly executed teacher optimization. Perfect generated targets equal the oracle SFT labels.",
+      "execution_sha256": "49d5d91ee48bb5291c99cfdfe3ad871f1a727fb17c3d53640b967c6ddcdcc473",
+      "qualification": {
+        "train": {
+          "choice": {
+            "correct": 384,
+            "n": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 128,
+                "count": 128
+              },
+              "sequence_b": {
+                "correct": 128,
+                "count": 128
+              },
+              "sequence_c": {
+                "correct": 128,
+                "count": 128
+              }
+            }
+          },
+          "generated": {
+            "correct": 384,
+            "n": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 128,
+                "count": 128
+              },
+              "sequence_b": {
+                "correct": 128,
+                "count": 128
+              },
+              "sequence_c": {
+                "correct": 128,
+                "count": 128
+              }
+            }
+          }
+        },
+        "validation": {
+          "choice": {
+            "correct": 96,
+            "n": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 32,
+                "count": 32
+              },
+              "sequence_b": {
+                "correct": 32,
+                "count": 32
+              },
+              "sequence_c": {
+                "correct": 32,
+                "count": 32
+              }
+            }
+          },
+          "generated": {
+            "correct": 96,
+            "n": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 32,
+                "count": 32
+              },
+              "sequence_b": {
+                "correct": 32,
+                "count": 32
+              },
+              "sequence_c": {
+                "correct": 32,
+                "count": 32
+              }
+            }
+          }
+        }
+      },
+      "selected_checkpoint": 384,
+      "source_sha256": "20643be28fc30b45cdb847f4381f300b40ae4b548f509e94b1fa72b564689ffa",
+      "status": "passed"
+    },
+    "consolidation-source303-generation-evaluate-20260912": {
+      "execution_sha256": "8fa2754b621ea98b6d4fa056d5c27cda75d7df70585cb3799fb9f4f254ebdd46",
+      "new_process": true,
+      "panels_sha256": "ec47bb7ce183fe9ad4f965556e65e290fb2dba6884e9c0154d1d37a8a43ab44d",
+      "scores": {
+        "train": {
+          "choice": {
+            "correct": 384,
+            "count": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 128,
+                "count": 128
+              },
+              "sequence_b": {
+                "correct": 128,
+                "count": 128
+              },
+              "sequence_c": {
+                "correct": 128,
+                "count": 128
+              }
+            }
+          },
+          "generated": {
+            "correct": 376,
+            "count": 384,
+            "tasks": {
+              "sequence_a": {
+                "correct": 120,
+                "count": 128
+              },
+              "sequence_b": {
+                "correct": 128,
+                "count": 128
+              },
+              "sequence_c": {
+                "correct": 128,
+                "count": 128
+              }
+            }
+          }
+        },
+        "validation": {
+          "choice": {
+            "correct": 96,
+            "count": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 32,
+                "count": 32
+              },
+              "sequence_b": {
+                "correct": 32,
+                "count": 32
+              },
+              "sequence_c": {
+                "correct": 32,
+                "count": 32
+              }
+            }
+          },
+          "generated": {
+            "correct": 94,
+            "count": 96,
+            "tasks": {
+              "sequence_a": {
+                "correct": 30,
+                "count": 32
+              },
+              "sequence_b": {
+                "correct": 32,
+                "count": 32
+              },
+              "sequence_c": {
+                "correct": 32,
+                "count": 32
+              }
+            }
+          }
+        }
+      },
+      "source_sha256": "e5a7e03463257737a5a0c7bfb61bd8ed66ecfa419a8f4002313ad7b64e7cfcbd",
+      "status": "passed"
+    }
+  },
+  "status": "passed",
+  "tokenizer_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+}

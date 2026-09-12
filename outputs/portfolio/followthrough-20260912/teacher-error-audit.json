@@ -1,0 +1,318 @@
+{
+  "kind": "post_hoc_teacher_error_decomposition",
+  "boundary": "Diagnostics of saved qualification generations, not new outcomes or a changed qualification rule. Per-position and prefix measures are descriptive only.",
+  "candidates": {
+    "instruction_demo": {
+      "source": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/resume-20260911/runs/distillation-generated-qualification-20260911",
+      "pairs_sha256": "3bf50fbae1ba6adb74960da190d46ffa3d711687d3631e0b46f37b8180efa7f8",
+      "panels": {
+        "train/A": {
+          "n": 24,
+          "correct": 3,
+          "format_valid": 22,
+          "terminated": 22,
+          "wrong_state_with_valid_format_and_eos": 19,
+          "correct_four_digit_prefix_but_invalid_completion": 1,
+          "returned_input_unchanged": 2,
+          "per_position_correct": [
+            7,
+            14,
+            14,
+            12
+          ]
+        },
+        "train/depth2": {
+          "n": 54,
+          "correct": 2,
+          "format_valid": 43,
+          "terminated": 43,
+          "wrong_state_with_valid_format_and_eos": 41,
+          "correct_four_digit_prefix_but_invalid_completion": 3,
+          "returned_input_unchanged": 0,
+          "per_position_correct": [
+            14,
+            19,
+            17,
+            14
+          ]
+        },
+        "train/depth1": {
+          "n": 18,
+          "correct": 3,
+          "format_valid": 18,
+          "terminated": 18,
+          "wrong_state_with_valid_format_and_eos": 15,
+          "correct_four_digit_prefix_but_invalid_completion": 0,
+          "returned_input_unchanged": 4,
+          "per_position_correct": [
+            5,
+            13,
+            10,
+            10
+          ]
+        },
+        "train/B": {
+          "n": 24,
+          "correct": 1,
+          "format_valid": 24,
+          "terminated": 24,
+          "wrong_state_with_valid_format_and_eos": 23,
+          "correct_four_digit_prefix_but_invalid_completion": 0,
+          "returned_input_unchanged": 0,
+          "per_position_correct": [
+            3,
+            6,
+            3,
+            7
+          ]
+        },
+        "train/C": {
+          "n": 24,
+          "correct": 1,
+          "format_valid": 15,
+          "terminated": 15,
+          "wrong_state_with_valid_format_and_eos": 14,
+          "correct_four_digit_prefix_but_invalid_completion": 2,
+          "returned_input_unchanged": 2,
+          "per_position_correct": [
+            9,
+            12,
+            10,
+            5
+          ]
+        },
+        "validation/A": {
+          "n": 24,
+          "correct": 3,
+          "format_valid": 23,
+          "terminated": 23,
+          "wrong_state_with_valid_format_and_eos": 20,
+          "correct_four_digit_prefix_but_invalid_completion": 1,
+          "returned_input_unchanged": 0,
+          "per_position_correct": [
+            6,
+            9,
+            10,
+            10
+          ]
+        },
+        "validation/depth2": {
+          "n": 54,
+          "correct": 3,
+          "format_valid": 42,
+          "terminated": 42,
+          "wrong_state_with_valid_format_and_eos": 39,
+          "correct_four_digit_prefix_but_invalid_completion": 2,
+          "returned_input_unchanged": 0,
+          "per_position_correct": [
+            9,
+            15,
+            15,
+            13
+          ]
+        },
+        "validation/depth1": {
+          "n": 18,
+          "correct": 1,
+          "format_valid": 18,
+          "terminated": 18,
+          "wrong_state_with_valid_format_and_eos": 17,
+          "correct_four_digit_prefix_but_invalid_completion": 0,
+          "returned_input_unchanged": 3,
+          "per_position_correct": [
+            6,
+            10,
+            9,
+            12
+          ]
+        },
+        "validation/B": {
+          "n": 24,
+          "correct": 0,
+          "format_valid": 23,
+          "terminated": 23,
+          "wrong_state_with_valid_format_and_eos": 23,
+          "correct_four_digit_prefix_but_invalid_completion": 0,
+          "returned_input_unchanged": 0,
+          "per_position_correct": [
+            1,
+            7,
+            4,
+            8
+          ]
+        },
+        "validation/C": {
+          "n": 24,
+          "correct": 1,
+          "format_valid": 14,
+          "terminated": 14,
+          "wrong_state_with_valid_format_and_eos": 13,
+          "correct_four_digit_prefix_but_invalid_completion": 1,
+          "returned_input_unchanged": 3,
+          "per_position_correct": [
+            8,
+            9,
+            10,
+            7
+          ]
+        }
+      }
+    },
+    "trained_teacher": {
+      "source": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/resume-20260911/runs/distillation-generated-teacher-training-20260911",
+      "pairs_sha256": "682bca8933f14626fbc2f9953d2493267bcb501c87124979c3d31170995adf13",
+      "panels": {
+        "train/A": {
+          "n": 24,
+          "correct": 12,
+          "format_valid": 24,
+          "terminated": 24,
+          "wrong_state_with_valid_format_and_eos": 12,
+          "correct_four_digit_prefix_but_invalid_completion": 0,
+          "returned_input_unchanged": 7,
+          "per_position_correct": [
+            13,
+            18,
+            18,
+            14
+          ]
+        },
+        "train/depth2": {
+          "n": 54,
+          "correct": 14,
+          "format_valid": 54,
+          "terminated": 54,
+          "wrong_state_with_valid_format_and_eos": 40,
+          "correct_four_digit_prefix_but_invalid_completion": 0,
+          "returned_input_unchanged": 15,
+          "per_position_correct": [
+            21,
+            32,
+            31,
+            20
+          ]
+        },
+        "train/depth1": {
+          "n": 18,
+          "correct": 14,
+          "format_valid": 18,
+          "terminated": 18,
+          "wrong_state_with_valid_format_and_eos": 4,
+          "correct_four_digit_prefix_but_invalid_completion": 0,
+          "returned_input_unchanged": 3,
+          "per_position_correct": [
+            17,
+            17,
+            15,
+            16
+          ]
+        },
+        "train/B": {
+          "n": 24,
+          "correct": 8,
+          "format_valid": 24,
+          "terminated": 24,
+          "wrong_state_with_valid_format_and_eos": 16,
+          "correct_four_digit_prefix_but_invalid_completion": 0,
+          "returned_input_unchanged": 2,
+          "per_position_correct": [
+            8,
+            13,
+            10,
+            9
+          ]
+        },
+        "train/C": {
+          "n": 24,
+          "correct": 8,
+          "format_valid": 24,
+          "terminated": 24,
+          "wrong_state_with_valid_format_and_eos": 16,
+          "correct_four_digit_prefix_but_invalid_completion": 0,
+          "returned_input_unchanged": 9,
+          "per_position_correct": [
+            17,
+            18,
+            18,
+            13
+          ]
+        },
+        "fallback_validation/A": {
+          "n": 24,
+          "correct": 9,
+          "format_valid": 24,
+          "terminated": 24,
+          "wrong_state_with_valid_format_and_eos": 15,
+          "correct_four_digit_prefix_but_invalid_completion": 0,
+          "returned_input_unchanged": 7,
+          "per_position_correct": [
+            13,
+            14,
+            12,
+            12
+          ]
+        },
+        "fallback_validation/depth2": {
+          "n": 54,
+          "correct": 8,
+          "format_valid": 54,
+          "terminated": 54,
+          "wrong_state_with_valid_format_and_eos": 46,
+          "correct_four_digit_prefix_but_invalid_completion": 0,
+          "returned_input_unchanged": 19,
+          "per_position_correct": [
+            21,
+            24,
+            18,
+            18
+          ]
+        },
+        "fallback_validation/depth1": {
+          "n": 18,
+          "correct": 12,
+          "format_valid": 18,
+          "terminated": 18,
+          "wrong_state_with_valid_format_and_eos": 6,
+          "correct_four_digit_prefix_but_invalid_completion": 0,
+          "returned_input_unchanged": 0,
+          "per_position_correct": [
+            15,
+            16,
+            14,
+            16
+          ]
+        },
+        "fallback_validation/B": {
+          "n": 24,
+          "correct": 6,
+          "format_valid": 24,
+          "terminated": 24,
+          "wrong_state_with_valid_format_and_eos": 18,
+          "correct_four_digit_prefix_but_invalid_completion": 0,
+          "returned_input_unchanged": 3,
+          "per_position_correct": [
+            8,
+            8,
+            10,
+            12
+          ]
+        },
+        "fallback_validation/C": {
+          "n": 24,
+          "correct": 5,
+          "format_valid": 24,
+          "terminated": 24,
+          "wrong_state_with_valid_format_and_eos": 19,
+          "correct_four_digit_prefix_but_invalid_completion": 0,
+          "returned_input_unchanged": 9,
+          "per_position_correct": [
+            15,
+            18,
+            10,
+            10
+          ]
+        }
+      }
+    }
+  }
+}

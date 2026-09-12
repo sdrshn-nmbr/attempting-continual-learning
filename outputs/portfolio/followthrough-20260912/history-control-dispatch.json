@@ -1,0 +1,184 @@
+{
+  "interface_sha256": "e835613850d282a456786b535fada1bf179a70f052da83b152035a19ca21a3f6",
+  "protocol_sha256": "818e6c527a7edbf146bdf8d6aef44f91a0feff530283436d828cbabf4036bfb9",
+  "jobs": [
+    {
+      "task_id": "followthrough-20260912-recovery-history-learn-alternate-binding-test-a",
+      "config": "configs/history-control-learn-alternate-binding-test-a.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"atomically_installed\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-learn-alternate-binding-test-a\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-learn-alternate-binding-test-b",
+      "config": "configs/history-control-learn-alternate-binding-test-b.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-learn-alternate-binding-test-b\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-learn-alternate-binding-train-a",
+      "config": "configs/history-control-learn-alternate-binding-train-a.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-learn-alternate-binding-train-a\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-learn-alternate-binding-train-b",
+      "config": "configs/history-control-learn-alternate-binding-train-b.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-learn-alternate-binding-train-b\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-learn-new-only-test-a",
+      "config": "configs/history-control-learn-new-only-test-a.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-learn-new-only-test-a\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-learn-new-only-test-b",
+      "config": "configs/history-control-learn-new-only-test-b.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-learn-new-only-test-b\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-learn-new-only-train-a",
+      "config": "configs/history-control-learn-new-only-train-a.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-learn-new-only-train-a\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-learn-new-only-train-b",
+      "config": "configs/history-control-learn-new-only-train-b.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-learn-new-only-train-b\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-gate",
+      "config": "configs/history-control-gate.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-history-learn-new-only-train-a",
+        "followthrough-20260912-recovery-history-learn-alternate-binding-train-a",
+        "followthrough-20260912-recovery-history-learn-new-only-train-b",
+        "followthrough-20260912-recovery-history-learn-alternate-binding-train-b",
+        "followthrough-20260912-recovery-history-learn-new-only-test-a",
+        "followthrough-20260912-recovery-history-learn-alternate-binding-test-a",
+        "followthrough-20260912-recovery-history-learn-new-only-test-b",
+        "followthrough-20260912-recovery-history-learn-alternate-binding-test-b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-gate\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-repair-alternate-binding-test-a",
+      "config": "configs/history-control-repair-alternate-binding-test-a.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-test-a",
+        "followthrough-20260912-recovery-predict-forecast"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-repair-alternate-binding-test-a\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-repair-alternate-binding-test-b",
+      "config": "configs/history-control-repair-alternate-binding-test-b.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-test-b",
+        "followthrough-20260912-recovery-predict-forecast"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-repair-alternate-binding-test-b\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-repair-alternate-binding-train-a",
+      "config": "configs/history-control-repair-alternate-binding-train-a.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-train-a"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-repair-alternate-binding-train-a\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-repair-alternate-binding-train-b",
+      "config": "configs/history-control-repair-alternate-binding-train-b.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-train-b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-repair-alternate-binding-train-b\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-repair-new-only-test-a",
+      "config": "configs/history-control-repair-new-only-test-a.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-test-a",
+        "followthrough-20260912-recovery-predict-forecast"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-repair-new-only-test-a\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-repair-new-only-test-b",
+      "config": "configs/history-control-repair-new-only-test-b.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-test-b",
+        "followthrough-20260912-recovery-predict-forecast"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-repair-new-only-test-b\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-repair-new-only-train-a",
+      "config": "configs/history-control-repair-new-only-train-a.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-train-a"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-repair-new-only-train-a\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-repair-new-only-train-b",
+      "config": "configs/history-control-repair-new-only-train-b.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-history-gate",
+        "followthrough-20260912-recovery-predict-repair-train-b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-repair-new-only-train-b\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-recovery-history-analyze",
+      "config": "configs/history-control-analyze.json",
+      "depends_on": [
+        "followthrough-20260912-recovery-history-repair-new-only-train-a",
+        "followthrough-20260912-recovery-history-repair-alternate-binding-train-a",
+        "followthrough-20260912-recovery-history-repair-new-only-train-b",
+        "followthrough-20260912-recovery-history-repair-alternate-binding-train-b",
+        "followthrough-20260912-recovery-history-repair-new-only-test-a",
+        "followthrough-20260912-recovery-history-repair-alternate-binding-test-a",
+        "followthrough-20260912-recovery-history-repair-new-only-test-b",
+        "followthrough-20260912-recovery-history-repair-alternate-binding-test-b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-recovery-history-analyze\", \"source_sha256\": \"d93d4bad5c2fe9f70e7219a00f636fff427ef119681c475e260764852b70d658\", \"source_files\": 134}\n"
+    }
+  ]
+}

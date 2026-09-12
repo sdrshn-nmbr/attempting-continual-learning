@@ -1,0 +1,27 @@
+{
+  "payload": {
+    "at": "2026-09-12T07:12:26.537466+00:00",
+    "decision": "Measure whether specific prior bindings help small-budget repair using matched alternate-binding history and new-only controls.",
+    "scientific_motivation": "Previous16-update new-only references nearly saturated, leaving stored-binding reuse unresolved. Minimum-budget pilot variation was mostlynew-task guard damage.",
+    "dataset_sha256": "14781a4cd46816767903e43a0a1cd74b5d7d80b096ad7c0eeb92b69fd29ebc93",
+    "sources": "four fresh cohorts with13historicallyeligibleTRAIN and13TEST skills",
+    "conditions": [
+      "existing_true_old128_new128",
+      "alternate_old128_new128",
+      "new_only128"
+    ],
+    "alternate_mapping": "Rotate the eight old code assignments by one position in each stream old-intent order, no fixedpoints; allprompts/text/UIDorder unchanged, newlabelsunchanged.",
+    "repair_budgets": [
+      2,
+      4,
+      8,
+      16
+    ],
+    "repair": "Original bindings for allconditions; sameold/new examples,prefixes,freshAdamW. Separate analysis neverfeeds originalpredictor.",
+    "eligibility": "Beforecontrolrepairs: historicaleligible intersectionwithalternate-own-binding acquisition; eachcontrolpassesnewacquisition. Atleast4perstream,8persplit,twoindependentmodels. Reportexclusions andfailedgates.",
+    "temporal_boundary": "ParentproposalbeforefreshTESTrepairoutcomesobserved; TESTcontrolrepairs mustdependon original sealedforecast. Existingpredictorpipelineunchanged.",
+    "status": "protocol_and_implementation_assigned_not_dispatched",
+    "interpretation_limit": "Behavioral evidencefor specifictraininghistory, notcircuitlocalization or directproof of astoredlatentmemory."
+  },
+  "sha256": "9d7ae6269ba2a5c67a37f2f131dcce66e06cf1b67f2d92c1fb21eaba740ec16d"
+}

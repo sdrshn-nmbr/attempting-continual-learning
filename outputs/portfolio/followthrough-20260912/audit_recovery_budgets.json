@@ -1,0 +1,3732 @@
+{
+  "acquisition_eligibility": {
+    "train-a": {
+      "new": {
+        "book_hotel": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 10,
+          "phase_start_correct": 5
+        },
+        "fun_fact": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 10,
+          "phase_start_correct": 0
+        },
+        "how_busy": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 10,
+          "phase_start_correct": 0
+        },
+        "meeting_schedule": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 10,
+          "phase_start_correct": 0
+        },
+        "order_status": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 10,
+          "phase_start_correct": 0
+        },
+        "restaurant_suggestion": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 10,
+          "phase_start_correct": 0
+        },
+        "routing": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 10,
+          "phase_start_correct": 0
+        },
+        "sync_device": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 10,
+          "phase_start_correct": 0
+        }
+      },
+      "old": {
+        "calendar": {
+          "acquired": true,
+          "acquired_correct": 10,
+          "denominator": 10,
+          "eligible": true,
+          "forgotten_correct": 0,
+          "initial_correct": 1
+        },
+        "change_language": {
+          "acquired": true,
+          "acquired_correct": 10,
+          "denominator": 10,
+          "eligible": false,
+          "forgotten_correct": 10,
+          "initial_correct": 4
+        },
+        "definition": {
+          "acquired": true,
+          "acquired_correct": 10,
+          "denominator": 10,
+          "eligible": true,
+          "forgotten_correct": 0,
+          "initial_correct": 0
+        },
+        "expiration_date": {
+          "acquired": true,
+          "acquired_correct": 10,
+          "denominator": 10,
+          "eligible": true,
+          "forgotten_correct": 0,
+          "initial_correct": 2
+        },
+        "meal_suggestion": {
+          "acquired": true,
+          "acquired_correct": 10,
+          "denominator": 10,
+          "eligible": true,
+          "forgotten_correct": 0,
+          "initial_correct": 0
+        },
+        "play_music": {
+          "acquired": true,
+          "acquired_correct": 10,
+          "denominator": 10,
+          "eligible": true,
+          "forgotten_correct": 2,
+          "initial_correct": 0
+        },
+        "reset_settings": {
+          "acquired": true,
+          "acquired_correct": 10,
+          "denominator": 10,
+          "eligible": true,
+          "forgotten_correct": 0,
+          "initial_correct": 0
+        },
+        "where_are_you_from": {
+          "acquired": true,
+          "acquired_correct": 10,
+          "denominator": 10,
+          "eligible": true,
+          "forgotten_correct": 0,
+          "initial_correct": 0
+        }
+      },
+      "original_learning_optimizers": {
+        "acquired": {
+          "moment_tensors_loaded_on_cpu": true,
+          "sha256": "c6067c7caf1bcc522d4274e407ab2c0ac7d0721add0d92950f15dcfb7e460305",
+          "states": 192,
+          "steps": [
+            128
+          ]
+        },
+        "forgotten": {
+          "moment_tensors_loaded_on_cpu": true,
+          "sha256": "78446bda587c833166e30dd6d1e3fec76146da40ccc1e52165b77e3c99364958",
+          "states": 192,
+          "steps": [
+            256
+          ]
+        },
+        "initial": {
+          "moment_tensors_loaded_on_cpu": true,
+          "sha256": "2389d11e492e562e926cbd937de9b96b6b39d1551b2efa2c263ab0f0beeb2a2c",
+          "states": 0,
+          "steps": []
+        }
+      }
+    },
+    "train-b": {
+      "new": {
+        "accept_reservations": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 10,
+          "phase_start_correct": 0
+        },
+        "account_blocked": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 10,
+          "phase_start_correct": 0
+        },
+        "confirm_reservation": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 10,
+          "phase_start_correct": 0
+        },
+        "freeze_account": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 10,
+          "phase_start_correct": 0
+        },
+        "last_maintenance": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 10,
+          "phase_start_correct": 0
+        },
+        "meaning_of_life": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 9,
+          "phase_start_correct": 0
+        },
+        "oil_change_how": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 10,
+          "phase_start_correct": 0
+        },
+        "pto_request": {
+          "acquired": true,
+          "denominator": 10,
+          "final_correct": 10,
+          "phase_start_correct": 0
+        }
+      },
+      "old": {
+        "how_old_are_you": {
+          "acquired": true,
+          "acquired_correct": 10,
+          "denominator": 10,
+          "eligible": true,
+          "forgotten_correct": 4,
+          "initial_correct": 0
+        },
+        "lost_luggage": {
+          "acquired": true,
+          "acquired_correct": 10,
+          "denominator": 10,
+          "eligible": false,
+          "forgotten_correct": 7,
+          "initial_correct": 0
+        },
+        "make_call": {
+          "acquired": true,
+          "acquired_correct": 10,
+          "denominator": 10,
+          "eligible": true,
+          "forgotten_correct": 0,
+          "initial_correct": 0
+        },
+        "min_payment": {
+          "acquired": true,
+          "acquired_correct": 10,
+          "denominator": 10,
+          "eligible": true,
+          "forgotten_correct": 0,
+          "initial_correct": 0
+        },
+        "oil_change_when": {
+          "acquired": true,
+          "acquired_correct": 10,
+          "denominator": 10,
+          "eligible": true,
+          "forgotten_correct": 0,
+          "initial_correct": 0
+        },
+        "restaurant_reservation": {
+          "acquired": true,
+          "acquired_correct": 9,
+          "denominator": 10,
+          "eligible": true,
+          "forgotten_correct": 0,
+          "initial_correct": 0
+        },
+        "schedule_meeting": {
+          "acquired": true,
+          "acquired_correct": 10,
+          "denominator": 10,
+          "eligible": true,
+          "forgotten_correct": 0,
+          "initial_correct": 0
+        },
+        "vaccines": {
+          "acquired": true,
+          "acquired_correct": 10,
+          "denominator": 10,
+          "eligible": true,
+          "forgotten_correct": 0,
+          "initial_correct": 0
+        }
+      },
+      "original_learning_optimizers": {
+        "acquired": {
+          "moment_tensors_loaded_on_cpu": true,
+          "sha256": "926a40d96d5cae1f1310ebdbae4f9d31b13332665543ddb0ef882f59004603b8",
+          "states": 192,
+          "steps": [
+            128
+          ]
+        },
+        "forgotten": {
+          "moment_tensors_loaded_on_cpu": true,
+          "sha256": "7de2049c3e4edd984a156eec6832fb9af7f075dea390ad93acff2ee789acd5b2",
+          "states": 192,
+          "steps": [
+            256
+          ]
+        },
+        "initial": {
+          "moment_tensors_loaded_on_cpu": true,
+          "sha256": "2389d11e492e562e926cbd937de9b96b6b39d1551b2efa2c263ab0f0beeb2a2c",
+          "states": 0,
+          "steps": []
+        }
+      }
+    }
+  },
+  "audited_at": "2026-09-12T06:43:23.576880+00:00",
+  "auditor_sha256": "ecd96db73fa3f20dd9eeb7e4fb833b9f788e7fc66fea7a3084e3930c5cc505c5",
+  "budget_outcomes": [
+    {
+      "acquired_old_correct": 19,
+      "budgets": {
+        "16": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": false,
+            "old_gain": true
+          },
+          "gain": 0.55,
+          "guard_correct": 159,
+          "guard_drop": 0.00625,
+          "guard_lost_correct": 1,
+          "guard_total": 160,
+          "old_correct": 11,
+          "old_gain_correct": 11,
+          "old_total": 20,
+          "recovered": false,
+          "utility_exact": "87/160"
+        },
+        "2": {
+          "checks": {
+            "new_guard": false,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 0.95,
+          "guard_correct": 140,
+          "guard_drop": 0.125,
+          "guard_lost_correct": 20,
+          "guard_total": 160,
+          "old_correct": 19,
+          "old_gain_correct": 19,
+          "old_total": 20,
+          "recovered": false,
+          "utility_exact": "33/40"
+        },
+        "4": {
+          "checks": {
+            "new_guard": false,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 138,
+          "guard_drop": 0.1375,
+          "guard_lost_correct": 22,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": false,
+          "utility_exact": "69/80"
+        },
+        "8": {
+          "checks": {
+            "new_guard": false,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 128,
+          "guard_drop": 0.2,
+          "guard_lost_correct": 32,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": false,
+          "utility_exact": "4/5"
+        }
+      },
+      "common_prefixes": {
+        "16": {
+          "adapter_sha256": "8ca28a2c9ce7615b37f8dc666ee8682c9c7c794bf69b6fe5bca1b126b5972a29",
+          "optimizer_steps": [
+            16
+          ],
+          "updates_sha256": "dac27d4bafdaffbfeef90f1ae323da14900edc10b6528d80f627cf13836f4177"
+        },
+        "2": {
+          "adapter_sha256": "3205f255152e614e44fd57e41832d9831ece9dce61e3f6c653e232a11ffab5d7",
+          "optimizer_steps": [
+            2
+          ],
+          "updates_sha256": "8b2e71de7e01909c2e2c4c90eb2497b49acf942249523e807fa937457c5304c2"
+        },
+        "4": {
+          "adapter_sha256": "6bd50233dae5d7a4e26f149bd853c63caf0f1f9e8c55e3e17e18bd71943bd90b",
+          "optimizer_steps": [
+            4
+          ],
+          "updates_sha256": "50f86813782b085a5e5ab9b214af79bbbbcd2bcc4c61a088b63494fd3dd21397"
+        },
+        "8": {
+          "adapter_sha256": "4b92d6e678129324a559d3cec25b6515ddcf0705cb90d9329ab510db9bec6ddf",
+          "optimizer_steps": [
+            8
+          ],
+          "updates_sha256": "915074a346a402e973fccdc64bfd3832df87cdfe74628168a4bbb459f67df34d"
+        }
+      },
+      "forgotten_guard_correct": 160,
+      "forgotten_old_correct": 0,
+      "guard_denominator": 160,
+      "id": "train-a/calendar",
+      "later_loss_budgets": [],
+      "minimum_budget": "never",
+      "old_denominator": 20,
+      "original16_anchor_exact": true,
+      "qualified_budgets": []
+    },
+    {
+      "acquired_old_correct": 20,
+      "budgets": {
+        "16": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 160,
+          "guard_drop": 0.0,
+          "guard_lost_correct": 0,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "1"
+        },
+        "2": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 158,
+          "guard_drop": 0.0125,
+          "guard_lost_correct": 2,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "79/80"
+        },
+        "4": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 157,
+          "guard_drop": 0.01875,
+          "guard_lost_correct": 3,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "157/160"
+        },
+        "8": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 159,
+          "guard_drop": 0.00625,
+          "guard_lost_correct": 1,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "159/160"
+        }
+      },
+      "common_prefixes": {
+        "16": {
+          "adapter_sha256": "9f6f3d95dfdc4a1e92ddb095ffa20d05f9c57edd5eb87e5fa382c71ef8eab76d",
+          "optimizer_steps": [
+            16
+          ],
+          "updates_sha256": "36c8b0ad8221e0cc9394e547df0ecff4a7fe60a845b0e63cb46f30949d43c9f8"
+        },
+        "2": {
+          "adapter_sha256": "bb2ea283d7b05afd330262cc2cac5cc7336d732ff4bcef78d0b709f3f8505bfd",
+          "optimizer_steps": [
+            2
+          ],
+          "updates_sha256": "96ae74eb8fb3bb5ef385915e2c2d5e0ef63c4e0f9f5841a3858baa27cde80c9c"
+        },
+        "4": {
+          "adapter_sha256": "2ea45c9f2a031b6e6b7ced900231660679743e179e2b4a9fea8bb41cef58817f",
+          "optimizer_steps": [
+            4
+          ],
+          "updates_sha256": "141637cd6cd533cff5dcf18b8f23df36c086d9d2db43a08dc19ca1e458b761ba"
+        },
+        "8": {
+          "adapter_sha256": "87a6d11381ebbb71ed07f97c935a6d1f31f6c22a1d736ee6748b726c2fd0c481",
+          "optimizer_steps": [
+            8
+          ],
+          "updates_sha256": "dfa88fd8dfb3cc064b227fca1e6b4fa340486b08278b7325f6bbf6b58b8e4f42"
+        }
+      },
+      "forgotten_guard_correct": 160,
+      "forgotten_old_correct": 0,
+      "guard_denominator": 160,
+      "id": "train-a/definition",
+      "later_loss_budgets": [],
+      "minimum_budget": "2",
+      "old_denominator": 20,
+      "original16_anchor_exact": true,
+      "qualified_budgets": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    {
+      "acquired_old_correct": 20,
+      "budgets": {
+        "16": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 159,
+          "guard_drop": 0.00625,
+          "guard_lost_correct": 1,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "159/160"
+        },
+        "2": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 160,
+          "guard_drop": 0.0,
+          "guard_lost_correct": 0,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "1"
+        },
+        "4": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 159,
+          "guard_drop": 0.00625,
+          "guard_lost_correct": 1,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "159/160"
+        },
+        "8": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 158,
+          "guard_drop": 0.0125,
+          "guard_lost_correct": 2,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "79/80"
+        }
+      },
+      "common_prefixes": {
+        "16": {
+          "adapter_sha256": "6d92e266a75eea8edec1c6036e9bbb787be93d4555cb456b9388acd5f4afe38b",
+          "optimizer_steps": [
+            16
+          ],
+          "updates_sha256": "dac15c9d354a966f3cb09970baf1d93d5d80345c7b933e00ebd9245610999352"
+        },
+        "2": {
+          "adapter_sha256": "1dcd6516a12a7b8d50456c837fdaedd8be63355dc4f8632d029a9d53a3fff520",
+          "optimizer_steps": [
+            2
+          ],
+          "updates_sha256": "17c4aa9263875609c7c3c36b40a36091317fc551281d37ab643b9f0e7e54adc5"
+        },
+        "4": {
+          "adapter_sha256": "7981d585906fc8232ddf6538f8a0f41f59a4c8f2fa8044fad47ec7c5fddc4f2c",
+          "optimizer_steps": [
+            4
+          ],
+          "updates_sha256": "7dca1f2ddf9faa0a3bd05ae69cdbe32d38512d446ca2e85954848990fe837802"
+        },
+        "8": {
+          "adapter_sha256": "4c67671f106da4dfe71a127666d780e41bc863dc1daacb1d8b7a8847e1e07b95",
+          "optimizer_steps": [
+            8
+          ],
+          "updates_sha256": "1a60a73cebe59ab7c96fb5677cf838ce407f6abb75d316a8cffeccf97ca51263"
+        }
+      },
+      "forgotten_guard_correct": 160,
+      "forgotten_old_correct": 0,
+      "guard_denominator": 160,
+      "id": "train-a/expiration_date",
+      "later_loss_budgets": [],
+      "minimum_budget": "2",
+      "old_denominator": 20,
+      "original16_anchor_exact": true,
+      "qualified_budgets": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    {
+      "acquired_old_correct": 18,
+      "budgets": {
+        "16": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 0.95,
+          "guard_correct": 155,
+          "guard_drop": 0.03125,
+          "guard_lost_correct": 5,
+          "guard_total": 160,
+          "old_correct": 19,
+          "old_gain_correct": 19,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "147/160"
+        },
+        "2": {
+          "checks": {
+            "new_guard": false,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 136,
+          "guard_drop": 0.15,
+          "guard_lost_correct": 24,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": false,
+          "utility_exact": "17/20"
+        },
+        "4": {
+          "checks": {
+            "new_guard": false,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 139,
+          "guard_drop": 0.13125,
+          "guard_lost_correct": 21,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": false,
+          "utility_exact": "139/160"
+        },
+        "8": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": false,
+            "old_gain": true
+          },
+          "gain": 0.6,
+          "guard_correct": 154,
+          "guard_drop": 0.0375,
+          "guard_lost_correct": 6,
+          "guard_total": 160,
+          "old_correct": 12,
+          "old_gain_correct": 12,
+          "old_total": 20,
+          "recovered": false,
+          "utility_exact": "9/16"
+        }
+      },
+      "common_prefixes": {
+        "16": {
+          "adapter_sha256": "9503c3c760b0e707606d1b0439dbe3fb02ce62b30d2f8b80414d774e42700d8e",
+          "optimizer_steps": [
+            16
+          ],
+          "updates_sha256": "df38a2aa192a6c4dcd2d69b526870b456c9c45186d9e99ccad3fb5d7b81a1992"
+        },
+        "2": {
+          "adapter_sha256": "404b3fe2fa846e844268614d3ff17956f5b3b35acb7b37f3cd1dddc46daf93cf",
+          "optimizer_steps": [
+            2
+          ],
+          "updates_sha256": "c68c85d030bb0af94f1e8b3d256c38e847e8f73584008b6e8d6819318d49171a"
+        },
+        "4": {
+          "adapter_sha256": "f0ffe9778b22cef140ca463ec74a825f184f15d2d37b6574c95697c1ff3118ce",
+          "optimizer_steps": [
+            4
+          ],
+          "updates_sha256": "340068bf48c9e5ad44a939bb68715e983e9712c2e4d9cc149456f41a54a2657f"
+        },
+        "8": {
+          "adapter_sha256": "26f9f0bef5faf9af2ea8b36acf7a6ae5740f8d2643c34008b93d732be45828bc",
+          "optimizer_steps": [
+            8
+          ],
+          "updates_sha256": "82d37c1997aadbb55a7cf6c5345b71570c9e40023d1c48939ea7b9c9f33487ac"
+        }
+      },
+      "forgotten_guard_correct": 160,
+      "forgotten_old_correct": 0,
+      "guard_denominator": 160,
+      "id": "train-a/meal_suggestion",
+      "later_loss_budgets": [],
+      "minimum_budget": "16",
+      "old_denominator": 20,
+      "original16_anchor_exact": true,
+      "qualified_budgets": [
+        16
+      ]
+    },
+    {
+      "acquired_old_correct": 19,
+      "budgets": {
+        "16": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 0.8,
+          "guard_correct": 160,
+          "guard_drop": 0.0,
+          "guard_lost_correct": 0,
+          "guard_total": 160,
+          "old_correct": 19,
+          "old_gain_correct": 16,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "4/5"
+        },
+        "2": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 0.85,
+          "guard_correct": 158,
+          "guard_drop": 0.0125,
+          "guard_lost_correct": 2,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 17,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "67/80"
+        },
+        "4": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 0.85,
+          "guard_correct": 157,
+          "guard_drop": 0.01875,
+          "guard_lost_correct": 3,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 17,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "133/160"
+        },
+        "8": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 0.85,
+          "guard_correct": 159,
+          "guard_drop": 0.00625,
+          "guard_lost_correct": 1,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 17,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "27/32"
+        }
+      },
+      "common_prefixes": {
+        "16": {
+          "adapter_sha256": "33503ffaf97eac872f30c5cdaf5022661786ce3abeee6e2b2fc46ab63c59821c",
+          "optimizer_steps": [
+            16
+          ],
+          "updates_sha256": "8fbe261931df2901d7f1422ac91cb2db531e0eb213af89e88c5c3f0f41335324"
+        },
+        "2": {
+          "adapter_sha256": "99770fee4b15f69491dbd5c4f700e1c02f22ddea7b355db2f27f450770175dca",
+          "optimizer_steps": [
+            2
+          ],
+          "updates_sha256": "bc9e21e090254156bc94b95faa78009c81d7e6dac537a7467a318548fd832bad"
+        },
+        "4": {
+          "adapter_sha256": "15f7a36ef927ab924bd096ea3d812478a7302c7f15815cd55ed5dfe1600e6fba",
+          "optimizer_steps": [
+            4
+          ],
+          "updates_sha256": "1a0bd720ed90f6adbfc2a9543727ca1c2ee10f8301e659ee09969bf5bc2d8826"
+        },
+        "8": {
+          "adapter_sha256": "612a4884da6614bf02f4d953b93864a34211b9cdc9b87a96365bb28c9b2e7acf",
+          "optimizer_steps": [
+            8
+          ],
+          "updates_sha256": "4c9f8d7edf77971f6923a7eebf793bfa5d1ac21f9d1a9da86199f88bd5c56800"
+        }
+      },
+      "forgotten_guard_correct": 160,
+      "forgotten_old_correct": 3,
+      "guard_denominator": 160,
+      "id": "train-a/play_music",
+      "later_loss_budgets": [],
+      "minimum_budget": "2",
+      "old_denominator": 20,
+      "original16_anchor_exact": true,
+      "qualified_budgets": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    {
+      "acquired_old_correct": 20,
+      "budgets": {
+        "16": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 160,
+          "guard_drop": 0.0,
+          "guard_lost_correct": 0,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "1"
+        },
+        "2": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 158,
+          "guard_drop": 0.0125,
+          "guard_lost_correct": 2,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "79/80"
+        },
+        "4": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 152,
+          "guard_drop": 0.05,
+          "guard_lost_correct": 8,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "19/20"
+        },
+        "8": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 154,
+          "guard_drop": 0.0375,
+          "guard_lost_correct": 6,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "77/80"
+        }
+      },
+      "common_prefixes": {
+        "16": {
+          "adapter_sha256": "9c580854f59a9eb7c0f45d03de99639cefa354866cc27b4e92667e9e7da1c4d1",
+          "optimizer_steps": [
+            16
+          ],
+          "updates_sha256": "ecc60838000e67a0bf6cd395507d6b546815f9c89308fbfda54997e260acb498"
+        },
+        "2": {
+          "adapter_sha256": "61941063cbef756ccdaf78eafd20a4149419aac7dca8c1f91d2d8a70dbd872a2",
+          "optimizer_steps": [
+            2
+          ],
+          "updates_sha256": "1d517d48c7588b436dd9e387d9bdd4111968f193931c3694116df9359beeb51c"
+        },
+        "4": {
+          "adapter_sha256": "52d66fac2f51ea6c4972b2339e0977294d0b556f5e1c1385ece91bd5824e48a4",
+          "optimizer_steps": [
+            4
+          ],
+          "updates_sha256": "987f764f0fab6137452a910bab9070d7dc7b7f67dc303244040a6d1563538255"
+        },
+        "8": {
+          "adapter_sha256": "ecbf3f95dcc5ebf7702c3e423001548d4cba5473d73d2a958509bca569a07fbd",
+          "optimizer_steps": [
+            8
+          ],
+          "updates_sha256": "1670a93355413a32312f4546883f3368a16074c9dd6cca192b373d56c15f9f80"
+        }
+      },
+      "forgotten_guard_correct": 160,
+      "forgotten_old_correct": 0,
+      "guard_denominator": 160,
+      "id": "train-a/reset_settings",
+      "later_loss_budgets": [],
+      "minimum_budget": "2",
+      "old_denominator": 20,
+      "original16_anchor_exact": true,
+      "qualified_budgets": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    {
+      "acquired_old_correct": 19,
+      "budgets": {
+        "16": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 0.9,
+          "guard_correct": 159,
+          "guard_drop": 0.00625,
+          "guard_lost_correct": 1,
+          "guard_total": 160,
+          "old_correct": 19,
+          "old_gain_correct": 18,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "143/160"
+        },
+        "2": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 0.95,
+          "guard_correct": 155,
+          "guard_drop": 0.03125,
+          "guard_lost_correct": 5,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 19,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "147/160"
+        },
+        "4": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 0.95,
+          "guard_correct": 158,
+          "guard_drop": 0.0125,
+          "guard_lost_correct": 2,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 19,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "15/16"
+        },
+        "8": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 0.95,
+          "guard_correct": 160,
+          "guard_drop": 0.0,
+          "guard_lost_correct": 0,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 19,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "19/20"
+        }
+      },
+      "common_prefixes": {
+        "16": {
+          "adapter_sha256": "c29d67355977ba604b454165546ed1a9c95f181d69a2bbb84fedaa99bb575a96",
+          "optimizer_steps": [
+            16
+          ],
+          "updates_sha256": "ef20ab249774bb0b06bf1c2906ca366e1d601f4735adf5155f7bd788b785c7f9"
+        },
+        "2": {
+          "adapter_sha256": "8b55728892fd56ba866553ef1d53c403eb8bedd0eb63c904e12901290117771c",
+          "optimizer_steps": [
+            2
+          ],
+          "updates_sha256": "fdb1a4a363bd6ac5e6a4c4e5848eabbd776a55d54f75205449113d4b2482ab77"
+        },
+        "4": {
+          "adapter_sha256": "c765227352bf4b4c46d4bbeeb58687b83192c3bcd0df4077719afa7fa05e76ae",
+          "optimizer_steps": [
+            4
+          ],
+          "updates_sha256": "ec441caf749a7c1a0af4816abe40c45f5b37cfd7d43b3157f3ba4c29bbaf6ee8"
+        },
+        "8": {
+          "adapter_sha256": "5fa3ec48f21cdd58ecd105f75d325af9784cf9f51f2c6e9ce61b4a111c4bed54",
+          "optimizer_steps": [
+            8
+          ],
+          "updates_sha256": "8979230d6c606bf4a77a49f24f5b2e3ffc833f733eb3d933eae2584965602b52"
+        }
+      },
+      "forgotten_guard_correct": 160,
+      "forgotten_old_correct": 1,
+      "guard_denominator": 160,
+      "id": "train-a/where_are_you_from",
+      "later_loss_budgets": [],
+      "minimum_budget": "2",
+      "old_denominator": 20,
+      "original16_anchor_exact": true,
+      "qualified_budgets": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    {
+      "acquired_old_correct": 20,
+      "budgets": {
+        "16": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 0.55,
+          "guard_correct": 158,
+          "guard_drop": 0.0,
+          "guard_lost_correct": 0,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 11,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "11/20"
+        },
+        "2": {
+          "checks": {
+            "new_guard": false,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 0.55,
+          "guard_correct": 138,
+          "guard_drop": 0.1125,
+          "guard_lost_correct": 18,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 11,
+          "old_total": 20,
+          "recovered": false,
+          "utility_exact": "7/16"
+        },
+        "4": {
+          "checks": {
+            "new_guard": false,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 0.55,
+          "guard_correct": 134,
+          "guard_drop": 0.1375,
+          "guard_lost_correct": 22,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 11,
+          "old_total": 20,
+          "recovered": false,
+          "utility_exact": "33/80"
+        },
+        "8": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 0.55,
+          "guard_correct": 157,
+          "guard_drop": 0.0,
+          "guard_lost_correct": 0,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 11,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "11/20"
+        }
+      },
+      "common_prefixes": {
+        "16": {
+          "adapter_sha256": "4605cbecfea0b1676eff5f17b7388d6c12cd1d270627ccc05f43ad95825cd47e",
+          "optimizer_steps": [
+            16
+          ],
+          "updates_sha256": "25bd1628fad433c8c4b0b1b79c46aa30a79baad9b2c751a07e7df4db8bb9a5b5"
+        },
+        "2": {
+          "adapter_sha256": "e7615e3a62f512de3b79deb1e13d2e0758504f1ff198abbc46ce1951586ccfb3",
+          "optimizer_steps": [
+            2
+          ],
+          "updates_sha256": "de2c8609e883e377f813a3fa7ae6819212df330b2aa138f5f6491d696103af4f"
+        },
+        "4": {
+          "adapter_sha256": "00c4315d3c8357db9c0a486bf06c92b519a99f98a36a85b4633d76c4f5c8c155",
+          "optimizer_steps": [
+            4
+          ],
+          "updates_sha256": "d6b9cf104ebd99b14b3800e8ca6372b4c53a6483849205643c9ea66e1de5858f"
+        },
+        "8": {
+          "adapter_sha256": "1b43463c0ad5e785e2fad306c9be0d9119f1fc14dc22b9344e069a28f97b404b",
+          "optimizer_steps": [
+            8
+          ],
+          "updates_sha256": "7552fc40cb6beee5aa466e1202fdae1a7b8c3b326e82e7e2c6a8db694dfe437f"
+        }
+      },
+      "forgotten_guard_correct": 156,
+      "forgotten_old_correct": 9,
+      "guard_denominator": 160,
+      "id": "train-b/how_old_are_you",
+      "later_loss_budgets": [],
+      "minimum_budget": "8",
+      "old_denominator": 20,
+      "original16_anchor_exact": true,
+      "qualified_budgets": [
+        8,
+        16
+      ]
+    },
+    {
+      "acquired_old_correct": 20,
+      "budgets": {
+        "16": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 155,
+          "guard_drop": 0.00625,
+          "guard_lost_correct": 1,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "159/160"
+        },
+        "2": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 144,
+          "guard_drop": 0.075,
+          "guard_lost_correct": 12,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "37/40"
+        },
+        "4": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 155,
+          "guard_drop": 0.00625,
+          "guard_lost_correct": 1,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "159/160"
+        },
+        "8": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 154,
+          "guard_drop": 0.0125,
+          "guard_lost_correct": 2,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "79/80"
+        }
+      },
+      "common_prefixes": {
+        "16": {
+          "adapter_sha256": "484f6ce7e7a44f1862a22439aa1e1cddd60a8b0d24987e38100ac370347942c8",
+          "optimizer_steps": [
+            16
+          ],
+          "updates_sha256": "02aff721d5bc3df614d2f13f17c04beff36b5de99b6ef93c1e48a2b2c98b6b93"
+        },
+        "2": {
+          "adapter_sha256": "4b8874e7563383dec47e6b166ff76a268e4b217904c1f1bd37497e4a9214024d",
+          "optimizer_steps": [
+            2
+          ],
+          "updates_sha256": "bb20f0ba9dc0045872a94575971ee77faef84f46fd80697ced3eb6b9deef7975"
+        },
+        "4": {
+          "adapter_sha256": "1cd49f851ed902799f59748ae223dbe2b24b422f3a6246783b830a1bb2bd64d5",
+          "optimizer_steps": [
+            4
+          ],
+          "updates_sha256": "c23b8b0062dfe3b321a255e9f8c96956ea160089ba29f91a91e015e0173b06e4"
+        },
+        "8": {
+          "adapter_sha256": "83d6e06856a24b05237c57c0a264f90d8218449388a9f428a79f17a38466a457",
+          "optimizer_steps": [
+            8
+          ],
+          "updates_sha256": "0ac03b499e9a4699e18b76da4f27cd765a9bbbca11ad88e7c3f827b422d63015"
+        }
+      },
+      "forgotten_guard_correct": 156,
+      "forgotten_old_correct": 0,
+      "guard_denominator": 160,
+      "id": "train-b/make_call",
+      "later_loss_budgets": [],
+      "minimum_budget": "2",
+      "old_denominator": 20,
+      "original16_anchor_exact": true,
+      "qualified_budgets": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    {
+      "acquired_old_correct": 20,
+      "budgets": {
+        "16": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 157,
+          "guard_drop": 0.0,
+          "guard_lost_correct": 0,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "1"
+        },
+        "2": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 156,
+          "guard_drop": 0.0,
+          "guard_lost_correct": 0,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "1"
+        },
+        "4": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 155,
+          "guard_drop": 0.00625,
+          "guard_lost_correct": 1,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "159/160"
+        },
+        "8": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 154,
+          "guard_drop": 0.0125,
+          "guard_lost_correct": 2,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "79/80"
+        }
+      },
+      "common_prefixes": {
+        "16": {
+          "adapter_sha256": "a58039565db73f7793528e84e66fd0aec67e6e05ef5fcac9bd98f97bca55ccdf",
+          "optimizer_steps": [
+            16
+          ],
+          "updates_sha256": "d96def8ee4cf21da8cfe2f96a985824c34754cb4c8f0f3b93408041af0321cfa"
+        },
+        "2": {
+          "adapter_sha256": "ffeb9fde587bce324d1ea5d30ad351e66c24149c55f272bb70ce2c1ee3e30f50",
+          "optimizer_steps": [
+            2
+          ],
+          "updates_sha256": "d9b172befefa700758c1127cf017203d52158f2000e68033e3458fc877e62b72"
+        },
+        "4": {
+          "adapter_sha256": "d3717582bec2fb0626d86fffb4e85fcd7c57e8f2e4a99305299e6dca9153a2a2",
+          "optimizer_steps": [
+            4
+          ],
+          "updates_sha256": "6bc63e65ce44cd313e83358a93d13d7b6c54b14b1b34ab7faf705908d766a5fd"
+        },
+        "8": {
+          "adapter_sha256": "d1782ae6f5d972656bfe2d4bb27579257c8922f5b6d6c841b631ff8894902b8b",
+          "optimizer_steps": [
+            8
+          ],
+          "updates_sha256": "704cde5d5d0b28487a3fb016b47a18f00b60b54fbdd1d7725d973ba68206197b"
+        }
+      },
+      "forgotten_guard_correct": 156,
+      "forgotten_old_correct": 0,
+      "guard_denominator": 160,
+      "id": "train-b/min_payment",
+      "later_loss_budgets": [],
+      "minimum_budget": "2",
+      "old_denominator": 20,
+      "original16_anchor_exact": true,
+      "qualified_budgets": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    {
+      "acquired_old_correct": 20,
+      "budgets": {
+        "16": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 156,
+          "guard_drop": 0.0,
+          "guard_lost_correct": 0,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "1"
+        },
+        "2": {
+          "checks": {
+            "new_guard": false,
+            "old_accuracy": false,
+            "old_gain": true
+          },
+          "gain": 0.5,
+          "guard_correct": 108,
+          "guard_drop": 0.3,
+          "guard_lost_correct": 48,
+          "guard_total": 160,
+          "old_correct": 10,
+          "old_gain_correct": 10,
+          "old_total": 20,
+          "recovered": false,
+          "utility_exact": "1/5"
+        },
+        "4": {
+          "checks": {
+            "new_guard": false,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 113,
+          "guard_drop": 0.26875,
+          "guard_lost_correct": 43,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": false,
+          "utility_exact": "117/160"
+        },
+        "8": {
+          "checks": {
+            "new_guard": false,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 133,
+          "guard_drop": 0.14375,
+          "guard_lost_correct": 23,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": false,
+          "utility_exact": "137/160"
+        }
+      },
+      "common_prefixes": {
+        "16": {
+          "adapter_sha256": "a70643729f5412cef0f1d970be458aa46441383a172f57a2f675e09e4b06ae42",
+          "optimizer_steps": [
+            16
+          ],
+          "updates_sha256": "5540d64754deb9e756f64d24da79b72356bbe6a811225884c1b8e39cc667a06c"
+        },
+        "2": {
+          "adapter_sha256": "2701c4f2d80553f5a04ea3bd3db1057db8ad2201225b3f73feb9d204b29e27cc",
+          "optimizer_steps": [
+            2
+          ],
+          "updates_sha256": "24c9808df4fcf9cc839f33b03cf351005ffc3cf3babb0dc7bde6c5f423bfb440"
+        },
+        "4": {
+          "adapter_sha256": "a4220fd4b7a5eebff03143abdcf6579759388fd1458318fabae4d81ac97190b3",
+          "optimizer_steps": [
+            4
+          ],
+          "updates_sha256": "b62f98fc1aa3c846436ea22ec505ed94d4395210cea8e056e454d9576c913909"
+        },
+        "8": {
+          "adapter_sha256": "397277782be1942c9c810024dc8d0b662b700f0560317f0645c2506f92ad5059",
+          "optimizer_steps": [
+            8
+          ],
+          "updates_sha256": "136bc7da1ca579686307f0983854dd2411b86b17df73bf8376ea62cd6dee6fe9"
+        }
+      },
+      "forgotten_guard_correct": 156,
+      "forgotten_old_correct": 0,
+      "guard_denominator": 160,
+      "id": "train-b/oil_change_when",
+      "later_loss_budgets": [],
+      "minimum_budget": "16",
+      "old_denominator": 20,
+      "original16_anchor_exact": true,
+      "qualified_budgets": [
+        16
+      ]
+    },
+    {
+      "acquired_old_correct": 20,
+      "budgets": {
+        "16": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 0.95,
+          "guard_correct": 157,
+          "guard_drop": 0.0,
+          "guard_lost_correct": 0,
+          "guard_total": 160,
+          "old_correct": 19,
+          "old_gain_correct": 19,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "19/20"
+        },
+        "2": {
+          "checks": {
+            "new_guard": false,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 124,
+          "guard_drop": 0.2,
+          "guard_lost_correct": 32,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": false,
+          "utility_exact": "4/5"
+        },
+        "4": {
+          "checks": {
+            "new_guard": false,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 122,
+          "guard_drop": 0.2125,
+          "guard_lost_correct": 34,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": false,
+          "utility_exact": "63/80"
+        },
+        "8": {
+          "checks": {
+            "new_guard": false,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 134,
+          "guard_drop": 0.1375,
+          "guard_lost_correct": 22,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": false,
+          "utility_exact": "69/80"
+        }
+      },
+      "common_prefixes": {
+        "16": {
+          "adapter_sha256": "5325592f9523fdce06ab61a849f744270d3785aac749725ab16bc66d4dee977b",
+          "optimizer_steps": [
+            16
+          ],
+          "updates_sha256": "41e6f49c21ac7015f0c98c001d5ce700476314b5a291ca25a884a6c1c6e239f5"
+        },
+        "2": {
+          "adapter_sha256": "cc5800abdeec3bc6be779b6c3961770df1ace6a8c0da62fe6f3ea4f0aa75df47",
+          "optimizer_steps": [
+            2
+          ],
+          "updates_sha256": "ba5edf1786c0b8f277ec453e6c9d1c6e8c82de51a1ec43866282ebdd957ec311"
+        },
+        "4": {
+          "adapter_sha256": "3262089c480573fb3699487c626bbde811ddab2f200171e67a9db3bbff3e6650",
+          "optimizer_steps": [
+            4
+          ],
+          "updates_sha256": "479bf8b874dbc29395ebcd280de94bf451dac73ee148479f2d676d1b8ec577b1"
+        },
+        "8": {
+          "adapter_sha256": "4d1e94ddd44bbaea62f979ef75742d85d01175fe8dc14629872174432901341c",
+          "optimizer_steps": [
+            8
+          ],
+          "updates_sha256": "75988fc01876b219f05efa086ebf6aa040940f9cfe8de6440e0801ca13ac6c56"
+        }
+      },
+      "forgotten_guard_correct": 156,
+      "forgotten_old_correct": 0,
+      "guard_denominator": 160,
+      "id": "train-b/restaurant_reservation",
+      "later_loss_budgets": [],
+      "minimum_budget": "16",
+      "old_denominator": 20,
+      "original16_anchor_exact": true,
+      "qualified_budgets": [
+        16
+      ]
+    },
+    {
+      "acquired_old_correct": 20,
+      "budgets": {
+        "16": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 154,
+          "guard_drop": 0.0125,
+          "guard_lost_correct": 2,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "79/80"
+        },
+        "2": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 155,
+          "guard_drop": 0.00625,
+          "guard_lost_correct": 1,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "159/160"
+        },
+        "4": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 157,
+          "guard_drop": 0.0,
+          "guard_lost_correct": 0,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "1"
+        },
+        "8": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 157,
+          "guard_drop": 0.0,
+          "guard_lost_correct": 0,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "1"
+        }
+      },
+      "common_prefixes": {
+        "16": {
+          "adapter_sha256": "ffcd859ff64432ee23d9b991ea58ab89b9dc2e4ab53dce553aac00c616ba73b9",
+          "optimizer_steps": [
+            16
+          ],
+          "updates_sha256": "6a3d5715094396114f45cfac95a6a04339d6b1cd8e30524823a6fc5b3fac47cc"
+        },
+        "2": {
+          "adapter_sha256": "be0d8cca53ae6c00595b66d71d62a3ac85f1da2c66d031d9205bcdae678992ba",
+          "optimizer_steps": [
+            2
+          ],
+          "updates_sha256": "08fbcad3e8d1ee4a2f50ecbb37d1cad219ad8879d5c80214c194df3918ccc23d"
+        },
+        "4": {
+          "adapter_sha256": "3c220cfb62bddb5a5884ee3ed3d43b50416babbb9de80d5ed586da5b7b5e7e5b",
+          "optimizer_steps": [
+            4
+          ],
+          "updates_sha256": "4b57de95982068f1adfd928e430b24940fea21d9def0cd7e490943e01ab1fcac"
+        },
+        "8": {
+          "adapter_sha256": "549a3d6e0f963a45efbcff19f34dc87f6337f0e98794af26bfb40068ab070de2",
+          "optimizer_steps": [
+            8
+          ],
+          "updates_sha256": "0ea36917ae76e86ecfec1086b2474b70489d5f36ed9c4f9fe2fb323e13934d23"
+        }
+      },
+      "forgotten_guard_correct": 156,
+      "forgotten_old_correct": 0,
+      "guard_denominator": 160,
+      "id": "train-b/schedule_meeting",
+      "later_loss_budgets": [],
+      "minimum_budget": "2",
+      "old_denominator": 20,
+      "original16_anchor_exact": true,
+      "qualified_budgets": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    {
+      "acquired_old_correct": 20,
+      "budgets": {
+        "16": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 155,
+          "guard_drop": 0.00625,
+          "guard_lost_correct": 1,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "159/160"
+        },
+        "2": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 152,
+          "guard_drop": 0.025,
+          "guard_lost_correct": 4,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "39/40"
+        },
+        "4": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 145,
+          "guard_drop": 0.06875,
+          "guard_lost_correct": 11,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "149/160"
+        },
+        "8": {
+          "checks": {
+            "new_guard": true,
+            "old_accuracy": true,
+            "old_gain": true
+          },
+          "gain": 1.0,
+          "guard_correct": 154,
+          "guard_drop": 0.0125,
+          "guard_lost_correct": 2,
+          "guard_total": 160,
+          "old_correct": 20,
+          "old_gain_correct": 20,
+          "old_total": 20,
+          "recovered": true,
+          "utility_exact": "79/80"
+        }
+      },
+      "common_prefixes": {
+        "16": {
+          "adapter_sha256": "8c48764ec3368baa47e50e89350fb69ed3681e7e57aefd1c834be496acfbb319",
+          "optimizer_steps": [
+            16
+          ],
+          "updates_sha256": "f55b4303b17afd850f2dc91cf357118a5b406163a59f6c1379b807a5b4715797"
+        },
+        "2": {
+          "adapter_sha256": "ada1896b1676bb307c2a478d5c02d38086c3a32b57116549c38e47f7af1ad7e6",
+          "optimizer_steps": [
+            2
+          ],
+          "updates_sha256": "dcca7e1a6a2bede495ae65b4f5fc91c67c3eeadc0fb460daa69dee866c1afe02"
+        },
+        "4": {
+          "adapter_sha256": "5fbad5e7d40239a700519a7df20bca4d341e1790d8fa4cd261752fa407983ecc",
+          "optimizer_steps": [
+            4
+          ],
+          "updates_sha256": "cb3b9182a469f3936de86450ddc7a841d149755436a888c5259d82e72e1ac854"
+        },
+        "8": {
+          "adapter_sha256": "1f6f55debf3d9e1191be525f27164fa920b20076267164d7058105b2d5d7b247",
+          "optimizer_steps": [
+            8
+          ],
+          "updates_sha256": "39874f452ba4220fe75a1ee540de02243caf3c5c408671ffe686e11e2ebd0fe3"
+        }
+      },
+      "forgotten_guard_correct": 156,
+      "forgotten_old_correct": 0,
+      "guard_denominator": 160,
+      "id": "train-b/vaccines",
+      "later_loss_budgets": [],
+      "minimum_budget": "2",
+      "old_denominator": 20,
+      "original16_anchor_exact": true,
+      "qualified_budgets": [
+        2,
+        4,
+        8,
+        16
+      ]
+    }
+  ],
+  "counts": {
+    "max_feature_error": 1.8635610388173518e-06,
+    "new_exposures": 1680,
+    "old_exposures": 1680,
+    "prefix_checkpoints": 140,
+    "records_scored": 18360,
+    "repair_arms": 56,
+    "repair_updates": 420,
+    "total_exposures": 3360
+  },
+  "dataset": {
+    "global_text_token_source_overlaps": 0,
+    "lens_intents": 16,
+    "lens_training_cohort_overlap": 0,
+    "predictor_train_test_intent_overlap": 0,
+    "rows": 5760,
+    "stream_intents": 64,
+    "streams": {
+      "test-a": {
+        "id": "test-a",
+        "seed": 307,
+        "split": "test"
+      },
+      "test-b": {
+        "id": "test-b",
+        "seed": 401,
+        "split": "test"
+      },
+      "train-a": {
+        "id": "train-a",
+        "seed": 101,
+        "split": "train"
+      },
+      "train-b": {
+        "id": "train-b",
+        "seed": 211,
+        "split": "train"
+      }
+    }
+  },
+  "features_frozen_before_pilot": {
+    "train-a": {
+      "feature_file_sha256": "0fba28945818675af6b6b288e6b8a4e268360aefd00553d4b7f74f8dcab8e5cb",
+      "original_measurement_finished": "2026-09-12T05:23:21.562324+00:00",
+      "pilot_started": "2026-09-12T06:11:28.676991+00:00",
+      "same_feature_bytes_predate_pilot": true
+    },
+    "train-b": {
+      "feature_file_sha256": "706f4a6a59ba9491e10be2a31317e0e3e1fb83091ff57b22b353314e2e0a5b29",
+      "original_measurement_finished": "2026-09-12T05:22:54.624980+00:00",
+      "pilot_started": "2026-09-12T06:11:30.863222+00:00",
+      "same_feature_bytes_predate_pilot": true
+    }
+  },
+  "gate": {
+    "counts": {
+      "16": 3,
+      "2": 9,
+      "8": 1,
+      "never": 1
+    },
+    "counts_by_source": {
+      "train-a": {
+        "16": 1,
+        "2": 5,
+        "never": 1
+      },
+      "train-b": {
+        "16": 2,
+        "2": 4,
+        "8": 1
+      }
+    },
+    "later_qualification_loss_ids": [],
+    "qualified": true,
+    "source_clusters": 2,
+    "supported_classes": [
+      "2",
+      "16"
+    ],
+    "train_skills": 14
+  },
+  "permutations": {
+    "draw_count": 40,
+    "draws": [
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 13,
+          "2/recovered": 6,
+          "2/utility": 13,
+          "4/recovered": 6,
+          "4/utility": 12,
+          "8/recovered": 6,
+          "8/utility": 11,
+          "minimum_budget": 7
+        },
+        "fixed_indices": [
+          7
+        ],
+        "indices": [
+          3,
+          6,
+          5,
+          1,
+          2,
+          0,
+          4,
+          7,
+          9,
+          13,
+          12,
+          8,
+          10,
+          11
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091201
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 12,
+          "2/recovered": 8,
+          "2/utility": 12,
+          "4/recovered": 8,
+          "4/utility": 12,
+          "8/recovered": 6,
+          "8/utility": 12,
+          "minimum_budget": 8
+        },
+        "fixed_indices": [
+          12
+        ],
+        "indices": [
+          4,
+          6,
+          3,
+          5,
+          0,
+          1,
+          2,
+          13,
+          9,
+          11,
+          8,
+          10,
+          12,
+          7
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091202
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 14,
+          "2/recovered": 10,
+          "2/utility": 14,
+          "4/recovered": 10,
+          "4/utility": 13,
+          "8/recovered": 8,
+          "8/utility": 13,
+          "minimum_budget": 10
+        },
+        "fixed_indices": [],
+        "indices": [
+          6,
+          2,
+          4,
+          1,
+          0,
+          3,
+          5,
+          9,
+          7,
+          8,
+          12,
+          13,
+          10,
+          11
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091203
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 11,
+          "2/recovered": 6,
+          "2/utility": 11,
+          "4/recovered": 6,
+          "4/utility": 11,
+          "8/recovered": 6,
+          "8/utility": 11,
+          "minimum_budget": 6
+        },
+        "fixed_indices": [
+          6,
+          7
+        ],
+        "indices": [
+          1,
+          5,
+          3,
+          4,
+          2,
+          0,
+          6,
+          7,
+          9,
+          11,
+          8,
+          10,
+          13,
+          12
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091204
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 12,
+          "2/recovered": 6,
+          "2/utility": 14,
+          "4/recovered": 6,
+          "4/utility": 14,
+          "8/recovered": 6,
+          "8/utility": 13,
+          "minimum_budget": 8
+        },
+        "fixed_indices": [],
+        "indices": [
+          2,
+          4,
+          5,
+          0,
+          1,
+          6,
+          3,
+          11,
+          12,
+          10,
+          13,
+          9,
+          7,
+          8
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091205
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 11,
+          "2/recovered": 6,
+          "2/utility": 11,
+          "4/recovered": 6,
+          "4/utility": 11,
+          "8/recovered": 4,
+          "8/utility": 11,
+          "minimum_budget": 7
+        },
+        "fixed_indices": [
+          5,
+          8,
+          13
+        ],
+        "indices": [
+          6,
+          3,
+          1,
+          0,
+          2,
+          5,
+          4,
+          9,
+          8,
+          11,
+          12,
+          10,
+          7,
+          13
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091206
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 10,
+          "2/recovered": 4,
+          "2/utility": 10,
+          "4/recovered": 4,
+          "4/utility": 10,
+          "8/recovered": 4,
+          "8/utility": 10,
+          "minimum_budget": 4
+        },
+        "fixed_indices": [
+          3,
+          7,
+          10,
+          13
+        ],
+        "indices": [
+          1,
+          6,
+          0,
+          3,
+          2,
+          4,
+          5,
+          7,
+          11,
+          12,
+          10,
+          8,
+          9,
+          13
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091207
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 8,
+          "2/recovered": 4,
+          "2/utility": 9,
+          "4/recovered": 4,
+          "4/utility": 9,
+          "8/recovered": 6,
+          "8/utility": 8,
+          "minimum_budget": 7
+        },
+        "fixed_indices": [
+          1,
+          4,
+          5,
+          6,
+          9
+        ],
+        "indices": [
+          2,
+          1,
+          3,
+          0,
+          4,
+          5,
+          6,
+          11,
+          10,
+          9,
+          7,
+          12,
+          13,
+          8
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091208
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 11,
+          "2/recovered": 8,
+          "2/utility": 11,
+          "4/recovered": 8,
+          "4/utility": 11,
+          "8/recovered": 6,
+          "8/utility": 11,
+          "minimum_budget": 8
+        },
+        "fixed_indices": [
+          6,
+          8,
+          13
+        ],
+        "indices": [
+          4,
+          3,
+          1,
+          2,
+          5,
+          0,
+          6,
+          9,
+          8,
+          7,
+          12,
+          10,
+          11,
+          13
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091209
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 12,
+          "2/recovered": 6,
+          "2/utility": 14,
+          "4/recovered": 6,
+          "4/utility": 14,
+          "8/recovered": 4,
+          "8/utility": 13,
+          "minimum_budget": 7
+        },
+        "fixed_indices": [],
+        "indices": [
+          2,
+          6,
+          5,
+          0,
+          1,
+          3,
+          4,
+          12,
+          13,
+          11,
+          9,
+          10,
+          8,
+          7
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091210
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 0,
+          "16/utility": 13,
+          "2/recovered": 6,
+          "2/utility": 13,
+          "4/recovered": 6,
+          "4/utility": 12,
+          "8/recovered": 6,
+          "8/utility": 11,
+          "minimum_budget": 7
+        },
+        "fixed_indices": [
+          0
+        ],
+        "indices": [
+          0,
+          3,
+          4,
+          2,
+          1,
+          6,
+          5,
+          13,
+          11,
+          8,
+          7,
+          12,
+          10,
+          9
+        ],
+        "inert_targets": [
+          "16/recovered"
+        ],
+        "scheme": "within_source",
+        "seed": 2026091211
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 13,
+          "2/recovered": 8,
+          "2/utility": 13,
+          "4/recovered": 8,
+          "4/utility": 13,
+          "8/recovered": 8,
+          "8/utility": 11,
+          "minimum_budget": 9
+        },
+        "fixed_indices": [
+          6
+        ],
+        "indices": [
+          5,
+          3,
+          4,
+          1,
+          2,
+          0,
+          6,
+          11,
+          7,
+          13,
+          8,
+          12,
+          10,
+          9
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091212
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 13,
+          "2/recovered": 6,
+          "2/utility": 13,
+          "4/recovered": 6,
+          "4/utility": 14,
+          "8/recovered": 4,
+          "8/utility": 14,
+          "minimum_budget": 7
+        },
+        "fixed_indices": [],
+        "indices": [
+          3,
+          2,
+          4,
+          6,
+          0,
+          1,
+          5,
+          8,
+          7,
+          12,
+          11,
+          9,
+          13,
+          10
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091213
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 0,
+          "16/utility": 12,
+          "2/recovered": 6,
+          "2/utility": 12,
+          "4/recovered": 6,
+          "4/utility": 12,
+          "8/recovered": 4,
+          "8/utility": 12,
+          "minimum_budget": 6
+        },
+        "fixed_indices": [
+          0,
+          11
+        ],
+        "indices": [
+          0,
+          4,
+          5,
+          6,
+          3,
+          2,
+          1,
+          8,
+          10,
+          7,
+          13,
+          11,
+          9,
+          12
+        ],
+        "inert_targets": [
+          "16/recovered"
+        ],
+        "scheme": "within_source",
+        "seed": 2026091214
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 11,
+          "2/recovered": 6,
+          "2/utility": 12,
+          "4/recovered": 6,
+          "4/utility": 13,
+          "8/recovered": 4,
+          "8/utility": 12,
+          "minimum_budget": 7
+        },
+        "fixed_indices": [
+          10
+        ],
+        "indices": [
+          3,
+          6,
+          0,
+          5,
+          2,
+          1,
+          4,
+          12,
+          13,
+          11,
+          10,
+          8,
+          9,
+          7
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091215
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 9,
+          "2/recovered": 4,
+          "2/utility": 10,
+          "4/recovered": 4,
+          "4/utility": 10,
+          "8/recovered": 4,
+          "8/utility": 8,
+          "minimum_budget": 4
+        },
+        "fixed_indices": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "indices": [
+          1,
+          2,
+          6,
+          3,
+          4,
+          5,
+          0,
+          7,
+          10,
+          13,
+          11,
+          12,
+          9,
+          8
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091216
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 0,
+          "16/utility": 8,
+          "2/recovered": 4,
+          "2/utility": 8,
+          "4/recovered": 4,
+          "4/utility": 8,
+          "8/recovered": 4,
+          "8/utility": 7,
+          "minimum_budget": 4
+        },
+        "fixed_indices": [
+          0,
+          2,
+          3,
+          6,
+          7
+        ],
+        "indices": [
+          0,
+          5,
+          2,
+          3,
+          1,
+          4,
+          6,
+          7,
+          10,
+          8,
+          12,
+          13,
+          11,
+          9
+        ],
+        "inert_targets": [
+          "16/recovered"
+        ],
+        "scheme": "within_source",
+        "seed": 2026091217
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 0,
+          "16/utility": 9,
+          "2/recovered": 6,
+          "2/utility": 11,
+          "4/recovered": 6,
+          "4/utility": 13,
+          "8/recovered": 6,
+          "8/utility": 13,
+          "minimum_budget": 7
+        },
+        "fixed_indices": [
+          0
+        ],
+        "indices": [
+          0,
+          5,
+          3,
+          2,
+          6,
+          1,
+          4,
+          13,
+          11,
+          10,
+          9,
+          7,
+          8,
+          12
+        ],
+        "inert_targets": [
+          "16/recovered"
+        ],
+        "scheme": "within_source",
+        "seed": 2026091218
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 11,
+          "2/recovered": 6,
+          "2/utility": 11,
+          "4/recovered": 6,
+          "4/utility": 10,
+          "8/recovered": 6,
+          "8/utility": 10,
+          "minimum_budget": 7
+        },
+        "fixed_indices": [
+          3,
+          5,
+          6
+        ],
+        "indices": [
+          1,
+          2,
+          4,
+          3,
+          0,
+          5,
+          6,
+          10,
+          7,
+          8,
+          12,
+          13,
+          9,
+          11
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091219
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 12,
+          "2/recovered": 8,
+          "2/utility": 12,
+          "4/recovered": 8,
+          "4/utility": 11,
+          "8/recovered": 6,
+          "8/utility": 11,
+          "minimum_budget": 8
+        },
+        "fixed_indices": [
+          4,
+          10
+        ],
+        "indices": [
+          2,
+          3,
+          6,
+          1,
+          4,
+          0,
+          5,
+          13,
+          7,
+          8,
+          10,
+          9,
+          11,
+          12
+        ],
+        "inert_targets": [],
+        "scheme": "within_source",
+        "seed": 2026091220
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 11,
+          "2/recovered": 2,
+          "2/utility": 12,
+          "4/recovered": 2,
+          "4/utility": 12,
+          "8/recovered": 2,
+          "8/utility": 12,
+          "minimum_budget": 3
+        },
+        "fixed_indices": [
+          7,
+          10
+        ],
+        "indices": [
+          3,
+          2,
+          4,
+          11,
+          13,
+          8,
+          9,
+          7,
+          1,
+          5,
+          10,
+          6,
+          0,
+          12
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091201
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 12,
+          "2/recovered": 10,
+          "2/utility": 14,
+          "4/recovered": 10,
+          "4/utility": 14,
+          "8/recovered": 8,
+          "8/utility": 13,
+          "minimum_budget": 10
+        },
+        "fixed_indices": [],
+        "indices": [
+          13,
+          6,
+          10,
+          4,
+          11,
+          12,
+          3,
+          5,
+          0,
+          1,
+          8,
+          9,
+          7,
+          2
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091202
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 12,
+          "2/recovered": 8,
+          "2/utility": 13,
+          "4/recovered": 8,
+          "4/utility": 13,
+          "8/recovered": 8,
+          "8/utility": 13,
+          "minimum_budget": 9
+        },
+        "fixed_indices": [
+          9
+        ],
+        "indices": [
+          2,
+          10,
+          1,
+          13,
+          11,
+          12,
+          4,
+          6,
+          0,
+          9,
+          8,
+          7,
+          3,
+          5
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091203
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 12,
+          "2/recovered": 6,
+          "2/utility": 13,
+          "4/recovered": 6,
+          "4/utility": 12,
+          "8/recovered": 6,
+          "8/utility": 12,
+          "minimum_budget": 7
+        },
+        "fixed_indices": [
+          10
+        ],
+        "indices": [
+          13,
+          2,
+          8,
+          9,
+          1,
+          3,
+          11,
+          12,
+          4,
+          6,
+          10,
+          7,
+          5,
+          0
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091204
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 10,
+          "2/recovered": 6,
+          "2/utility": 12,
+          "4/recovered": 6,
+          "4/utility": 12,
+          "8/recovered": 6,
+          "8/utility": 11,
+          "minimum_budget": 7
+        },
+        "fixed_indices": [
+          7
+        ],
+        "indices": [
+          4,
+          5,
+          12,
+          6,
+          2,
+          10,
+          1,
+          7,
+          13,
+          8,
+          0,
+          9,
+          11,
+          3
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091205
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 13,
+          "2/recovered": 6,
+          "2/utility": 14,
+          "4/recovered": 6,
+          "4/utility": 14,
+          "8/recovered": 6,
+          "8/utility": 14,
+          "minimum_budget": 8
+        },
+        "fixed_indices": [],
+        "indices": [
+          11,
+          12,
+          10,
+          1,
+          6,
+          9,
+          13,
+          3,
+          0,
+          7,
+          8,
+          2,
+          5,
+          4
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091206
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 9,
+          "2/recovered": 6,
+          "2/utility": 11,
+          "4/recovered": 6,
+          "4/utility": 11,
+          "8/recovered": 6,
+          "8/utility": 10,
+          "minimum_budget": 8
+        },
+        "fixed_indices": [
+          4,
+          12
+        ],
+        "indices": [
+          3,
+          10,
+          13,
+          8,
+          4,
+          1,
+          11,
+          6,
+          9,
+          0,
+          7,
+          2,
+          12,
+          5
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091207
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 11,
+          "2/recovered": 4,
+          "2/utility": 12,
+          "4/recovered": 4,
+          "4/utility": 12,
+          "8/recovered": 4,
+          "8/utility": 12,
+          "minimum_budget": 6
+        },
+        "fixed_indices": [
+          2,
+          9
+        ],
+        "indices": [
+          5,
+          13,
+          2,
+          7,
+          3,
+          10,
+          12,
+          8,
+          1,
+          9,
+          11,
+          0,
+          4,
+          6
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091208
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 11,
+          "2/recovered": 6,
+          "2/utility": 13,
+          "4/recovered": 6,
+          "4/utility": 13,
+          "8/recovered": 6,
+          "8/utility": 12,
+          "minimum_budget": 7
+        },
+        "fixed_indices": [
+          1
+        ],
+        "indices": [
+          12,
+          1,
+          7,
+          9,
+          2,
+          4,
+          11,
+          0,
+          3,
+          6,
+          5,
+          10,
+          13,
+          8
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091209
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 11,
+          "2/recovered": 8,
+          "2/utility": 14,
+          "4/recovered": 8,
+          "4/utility": 13,
+          "8/recovered": 6,
+          "8/utility": 13,
+          "minimum_budget": 8
+        },
+        "fixed_indices": [],
+        "indices": [
+          5,
+          6,
+          8,
+          2,
+          11,
+          10,
+          9,
+          13,
+          12,
+          0,
+          1,
+          3,
+          4,
+          7
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091210
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 11,
+          "2/recovered": 6,
+          "2/utility": 12,
+          "4/recovered": 6,
+          "4/utility": 11,
+          "8/recovered": 6,
+          "8/utility": 11,
+          "minimum_budget": 7
+        },
+        "fixed_indices": [
+          9,
+          10
+        ],
+        "indices": [
+          8,
+          11,
+          4,
+          6,
+          12,
+          0,
+          7,
+          3,
+          2,
+          9,
+          10,
+          1,
+          13,
+          5
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091211
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 13,
+          "2/recovered": 8,
+          "2/utility": 13,
+          "4/recovered": 8,
+          "4/utility": 13,
+          "8/recovered": 8,
+          "8/utility": 13,
+          "minimum_budget": 9
+        },
+        "fixed_indices": [
+          5
+        ],
+        "indices": [
+          6,
+          13,
+          11,
+          4,
+          8,
+          5,
+          9,
+          3,
+          10,
+          7,
+          12,
+          1,
+          2,
+          0
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091212
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 13,
+          "2/recovered": 6,
+          "2/utility": 13,
+          "4/recovered": 6,
+          "4/utility": 13,
+          "8/recovered": 6,
+          "8/utility": 13,
+          "minimum_budget": 8
+        },
+        "fixed_indices": [
+          1
+        ],
+        "indices": [
+          10,
+          1,
+          6,
+          4,
+          13,
+          2,
+          11,
+          3,
+          7,
+          0,
+          12,
+          8,
+          9,
+          5
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091213
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 12,
+          "2/recovered": 8,
+          "2/utility": 13,
+          "4/recovered": 8,
+          "4/utility": 12,
+          "8/recovered": 6,
+          "8/utility": 12,
+          "minimum_budget": 8
+        },
+        "fixed_indices": [
+          11
+        ],
+        "indices": [
+          12,
+          13,
+          3,
+          6,
+          0,
+          8,
+          4,
+          2,
+          9,
+          7,
+          5,
+          11,
+          10,
+          1
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091214
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 12,
+          "2/recovered": 8,
+          "2/utility": 13,
+          "4/recovered": 8,
+          "4/utility": 13,
+          "8/recovered": 6,
+          "8/utility": 13,
+          "minimum_budget": 8
+        },
+        "fixed_indices": [
+          3
+        ],
+        "indices": [
+          5,
+          12,
+          7,
+          3,
+          9,
+          10,
+          8,
+          13,
+          0,
+          11,
+          2,
+          1,
+          6,
+          4
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091215
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 11,
+          "2/recovered": 6,
+          "2/utility": 12,
+          "4/recovered": 6,
+          "4/utility": 11,
+          "8/recovered": 6,
+          "8/utility": 11,
+          "minimum_budget": 8
+        },
+        "fixed_indices": [
+          5,
+          9
+        ],
+        "indices": [
+          10,
+          13,
+          6,
+          1,
+          3,
+          5,
+          11,
+          8,
+          2,
+          9,
+          12,
+          7,
+          4,
+          0
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091216
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 0,
+          "16/utility": 11,
+          "2/recovered": 8,
+          "2/utility": 12,
+          "4/recovered": 8,
+          "4/utility": 12,
+          "8/recovered": 6,
+          "8/utility": 12,
+          "minimum_budget": 8
+        },
+        "fixed_indices": [
+          0,
+          12
+        ],
+        "indices": [
+          0,
+          3,
+          11,
+          9,
+          10,
+          4,
+          2,
+          8,
+          7,
+          5,
+          13,
+          1,
+          12,
+          6
+        ],
+        "inert_targets": [
+          "16/recovered"
+        ],
+        "scheme": "pooled_train",
+        "seed": 2026091217
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 13,
+          "2/recovered": 8,
+          "2/utility": 13,
+          "4/recovered": 8,
+          "4/utility": 13,
+          "8/recovered": 6,
+          "8/utility": 13,
+          "minimum_budget": 9
+        },
+        "fixed_indices": [],
+        "indices": [
+          10,
+          7,
+          11,
+          8,
+          3,
+          9,
+          0,
+          13,
+          5,
+          2,
+          6,
+          4,
+          1,
+          12
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091218
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 14,
+          "2/recovered": 4,
+          "2/utility": 14,
+          "4/recovered": 4,
+          "4/utility": 14,
+          "8/recovered": 4,
+          "8/utility": 14,
+          "minimum_budget": 6
+        },
+        "fixed_indices": [],
+        "indices": [
+          9,
+          12,
+          1,
+          11,
+          13,
+          2,
+          8,
+          10,
+          4,
+          3,
+          0,
+          5,
+          7,
+          6
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091219
+      },
+      {
+        "changed_labels": {
+          "16/recovered": 2,
+          "16/utility": 11,
+          "2/recovered": 6,
+          "2/utility": 13,
+          "4/recovered": 6,
+          "4/utility": 12,
+          "8/recovered": 6,
+          "8/utility": 12,
+          "minimum_budget": 8
+        },
+        "fixed_indices": [
+          13
+        ],
+        "indices": [
+          10,
+          3,
+          8,
+          12,
+          1,
+          6,
+          9,
+          2,
+          11,
+          5,
+          7,
+          4,
+          0,
+          13
+        ],
+        "inert_targets": [],
+        "scheme": "pooled_train",
+        "seed": 2026091220
+      }
+    ],
+    "plan_sha256": "e4f8ef0a4039c0f61b4320006b78fa73c27eedfb604ba0e5c0c237747a4746f8",
+    "predictor_fits": 0,
+    "redraws": 0,
+    "source_clusters": 2,
+    "target_summary": {
+      "pooled_train": {
+        "16/recovered": {
+          "changed_max": 2,
+          "changed_min": 0,
+          "inert_draws": 1
+        },
+        "16/utility": {
+          "changed_max": 14,
+          "changed_min": 9,
+          "inert_draws": 0
+        },
+        "2/recovered": {
+          "changed_max": 10,
+          "changed_min": 2,
+          "inert_draws": 0
+        },
+        "2/utility": {
+          "changed_max": 14,
+          "changed_min": 11,
+          "inert_draws": 0
+        },
+        "4/recovered": {
+          "changed_max": 10,
+          "changed_min": 2,
+          "inert_draws": 0
+        },
+        "4/utility": {
+          "changed_max": 14,
+          "changed_min": 11,
+          "inert_draws": 0
+        },
+        "8/recovered": {
+          "changed_max": 8,
+          "changed_min": 2,
+          "inert_draws": 0
+        },
+        "8/utility": {
+          "changed_max": 14,
+          "changed_min": 10,
+          "inert_draws": 0
+        },
+        "minimum_budget": {
+          "changed_max": 10,
+          "changed_min": 3,
+          "inert_draws": 0
+        }
+      },
+      "within_source": {
+        "16/recovered": {
+          "changed_max": 2,
+          "changed_min": 0,
+          "inert_draws": 4
+        },
+        "16/utility": {
+          "changed_max": 14,
+          "changed_min": 8,
+          "inert_draws": 0
+        },
+        "2/recovered": {
+          "changed_max": 10,
+          "changed_min": 4,
+          "inert_draws": 0
+        },
+        "2/utility": {
+          "changed_max": 14,
+          "changed_min": 8,
+          "inert_draws": 0
+        },
+        "4/recovered": {
+          "changed_max": 10,
+          "changed_min": 4,
+          "inert_draws": 0
+        },
+        "4/utility": {
+          "changed_max": 14,
+          "changed_min": 8,
+          "inert_draws": 0
+        },
+        "8/recovered": {
+          "changed_max": 8,
+          "changed_min": 4,
+          "inert_draws": 0
+        },
+        "8/utility": {
+          "changed_max": 14,
+          "changed_min": 7,
+          "inert_draws": 0
+        },
+        "minimum_budget": {
+          "changed_max": 10,
+          "changed_min": 4,
+          "inert_draws": 0
+        }
+      }
+    },
+    "utility_count_rule": "Recompute prescribed float arithmetic; also check exact rational utility ties.",
+    "utility_rounding_changed_count_differences": []
+  },
+  "prefix_evidence": {
+    "all14_original16_weight_schedule_trace_and_raw_observation_anchors_exact": true,
+    "all_actual_prefix_weights_and_trace_hashes_equal": true,
+    "file_bytes_per_adapter": 36203608,
+    "frozen_backbone_manifest_tensors": 723,
+    "optimizer_proof_boundary": "Pilot fresh/continuous Adam clocks are saved JSON assertions enforced by archived code and exact trace/weight reproduction. Pilot Adam moments were not saved and cannot be independently reloaded. Original acquisition optimizer states were saved and inspected on CPU.",
+    "original_learning_optimizer_state_files_loaded": 6,
+    "parameters_per_adapter": 9043968,
+    "pilot_optimizer_state_files": 0,
+    "reload_proof_boundary": "Runtime code requires exact observations after adapter reload and baseline reset. This audit verifies those receipts and saved bytes; it does not rerun model inference.",
+    "tensor_bytes_per_adapter": 36175872,
+    "tensors_per_adapter": 192,
+    "unique_adapter_contents_loaded_and_finite": 56
+  },
+  "provenance": {
+    "archives": {
+      "5bf6ccd31faff80d196574ba0999d4a277ccadbeb0b414eaaa9d035cfb494ec9": {
+        "closure": "5bf6ccd31faff80d196574ba0999d4a277ccadbeb0b414eaaa9d035cfb494ec9",
+        "path": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/code/5bf6ccd31faff80d196574ba0999d4a277ccadbeb0b414eaaa9d035cfb494ec9.tar",
+        "sha256": "6393cfa7d50d8ba715f1b96ae94fdc7a8654458dcbbd385740e462b3bbb299e8"
+      },
+      "674800836fba82539ed5e8eff984b367888afa0ec592b3a7e02b6f1192464711": {
+        "closure": "674800836fba82539ed5e8eff984b367888afa0ec592b3a7e02b6f1192464711",
+        "path": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/code/674800836fba82539ed5e8eff984b367888afa0ec592b3a7e02b6f1192464711.tar",
+        "sha256": "585ed75cb0a1640659497dd75dff19069da9f647f74ca42e8f0b9d312ee8e67f"
+      },
+      "e3f58079eaa1025f31164f34a05d8e2042c04ed2e47eb42fee681af00084d2c3": {
+        "closure": "e3f58079eaa1025f31164f34a05d8e2042c04ed2e47eb42fee681af00084d2c3",
+        "path": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/code/e3f58079eaa1025f31164f34a05d8e2042c04ed2e47eb42fee681af00084d2c3.tar",
+        "sha256": "93233be4df7faed59d55bd4ae61c382d86d652fdb4a7152b6ab0ba3fdf8f9e58"
+      }
+    },
+    "helper_source": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/recovery-audit.py",
+    "helper_source_sha256": "45dcf7f5b147b2cc61eb1a6438b396325671b3991f4025dc7a3ff0876fccc3f5",
+    "helpers_adapted_at_authoring": [
+      "require",
+      "sha",
+      "digest",
+      "file_hash",
+      "binding",
+      "score",
+      "rows_for",
+      "data_audit",
+      "check_updates",
+      "close",
+      "feature_audit"
+    ],
+    "implementation": {
+      "minimum_budget.py": "ef7230f741e312dfc2d0d5d42678be2af76012989b9ff91d53043843fb346392",
+      "model.py": "5af6edb1a42d6042a3a38b9d0ab4ce01ea6cadac6728d9e0fea84acd695442b2",
+      "prospective.py": "3f2ce28d0c350b26b1e0d8d97a9fc9084e9f75837f20945e82e8c80584f817dc",
+      "prospective_analysis.py": "2eeb9b61a14a58df2cf8f20b5148d73afda3364b4b93424ef408faad6e6ebad6",
+      "prospective_data.py": "8d39002c90359c7c62e65d121ba907d5b6639faa105aad237fc476168dc04048",
+      "prospective_model.py": "46c4c6901e61479759bf38ae2af01a36a1c5282db34639900428aad016447399",
+      "protocol.py": "a1e54302b007827b9c2982d8c366b68b89f573ddeb4b1c8f2ac50bf440d23776",
+      "tuned_lens.py": "c640f82a9e4510287678774625dd6ecebe74063461659b5d763adaf5ddceecc8"
+    },
+    "minimum_budget_identity": "8d8835798734fbb3143da4970fdceadf318abbf951b1aa270180e7cd7cbd791b",
+    "minimum_budget_protocol_sha256": "7b7e01962d72080a4ba5f183713c5dc91746452a08125f221a037afa6ec0116e",
+    "runs": {
+      "budget-pilot-gate-slot": {
+        "attempt_states_newest_first": [
+          "completed",
+          "running",
+          "running"
+        ],
+        "bytes_verified": 125290,
+        "execution_sha256": "32e662190ac105fd01214a48e222d24be54282abb0f1a604637635d4daaccca5",
+        "files_verified": 14,
+        "receipt_sha256": "98f4ca1e34a21df38f3ef425e70edc5647e832b4dab10bf33925d4920bd14ec9",
+        "run": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-budget-pilot-gate-slot",
+        "seal_sha256": "653df753e380236d9db09ef7bde393ca60160e03496c0a698898aa892773fb8d",
+        "source_closure": "674800836fba82539ed5e8eff984b367888afa0ec592b3a7e02b6f1192464711"
+      },
+      "budget-pilot-train-a": {
+        "attempt_states_newest_first": [
+          "completed",
+          "running",
+          "running"
+        ],
+        "bytes_verified": 2574127296,
+        "execution_sha256": "b88420e9ac80d69ef470a9a98059dcec876429c7beb3b34a93b7e1ad5bfd09c8",
+        "files_verified": 221,
+        "receipt_sha256": "457e37e180a60f7eb5a052d51b6fff33706abc01c990efe61c6f1e7096f7b306",
+        "run": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-budget-pilot-train-a",
+        "seal_sha256": "c89efec68b3ef435bd8b477b65dbf8389cb6c59668b8cd3e60e9442eb47cf443",
+        "source_closure": "674800836fba82539ed5e8eff984b367888afa0ec592b3a7e02b6f1192464711"
+      },
+      "budget-pilot-train-b": {
+        "attempt_states_newest_first": [
+          "completed",
+          "running",
+          "running"
+        ],
+        "bytes_verified": 2574380216,
+        "execution_sha256": "6fb43ac8653eb4bdaaaf59eb4a591d58e9a44fd219285af09a729d82751e70ac",
+        "files_verified": 221,
+        "receipt_sha256": "ab52b547a0d910067ec4b577e69ebbfb29e942c30af9d719e3e0b3cf68c132a5",
+        "run": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-budget-pilot-train-b",
+        "seal_sha256": "95f29c463e024a24115f82a7e24d7bb0f86b055ee0485833de9788f3ea8c2721",
+        "source_closure": "674800836fba82539ed5e8eff984b367888afa0ec592b3a7e02b6f1192464711"
+      },
+      "learn-train-a": {
+        "attempt_states_newest_first": [
+          "completed",
+          "running",
+          "running"
+        ],
+        "bytes_verified": 255048037,
+        "execution_sha256": "68dcbc681c915326d0aea85ffe1724ba448f74ebb4c22e8cd499ef43cf79ed4f",
+        "files_verified": 25,
+        "receipt_sha256": "b7a5d7b1be40753f6ff17ebb07744f95acb613ead33562ca9d885395a711b7dd",
+        "run": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-learn-train-a",
+        "seal_sha256": "07ad5fa89bedb274a174eba1cb7c43deab81528e00b16927b413872d8092f4d6",
+        "source_closure": "e3f58079eaa1025f31164f34a05d8e2042c04ed2e47eb42fee681af00084d2c3"
+      },
+      "learn-train-b": {
+        "attempt_states_newest_first": [
+          "completed",
+          "running",
+          "running"
+        ],
+        "bytes_verified": 255046319,
+        "execution_sha256": "557508ca81a34ac3925cf237fc544e4f6540bdbe9bd5a67f09b14d5302e46256",
+        "files_verified": 25,
+        "receipt_sha256": "78115611c223249a26dc74109b1c67d9d8777c98f40dcde06a30dcf74641384f",
+        "run": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-learn-train-b",
+        "seal_sha256": "07ad5fa89bedb274a174eba1cb7c43deab81528e00b16927b413872d8092f4d6",
+        "source_closure": "e3f58079eaa1025f31164f34a05d8e2042c04ed2e47eb42fee681af00084d2c3"
+      },
+      "measure-train-a": {
+        "attempt_states_newest_first": [
+          "completed",
+          "running",
+          "running"
+        ],
+        "bytes_verified": 1374065728,
+        "execution_sha256": "024374a49d1470eb262c1521c573c0f239c4453f657e12e620933bd3c230b03d",
+        "files_verified": 128,
+        "receipt_sha256": "cbde722caffbc3bdf1366b38fae5edf324c425488e200cfc24f12824afc84ead",
+        "run": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-measure-train-a",
+        "seal_sha256": "8e3b6ef712a6ee6d536fc6acbc81a8030eed9e233ea60b479dbcdbaa8c7393cf",
+        "source_closure": "5bf6ccd31faff80d196574ba0999d4a277ccadbeb0b414eaaa9d035cfb494ec9"
+      },
+      "measure-train-b": {
+        "attempt_states_newest_first": [
+          "completed",
+          "running",
+          "running"
+        ],
+        "bytes_verified": 1374186503,
+        "execution_sha256": "4834ba6051f76897636b58a784de09da100b811d64e80160a48ae78c0d092fca",
+        "files_verified": 128,
+        "receipt_sha256": "b4b7950c866749a834299fdececa7f376deea48261583317355aaaff2b7ac7a9",
+        "run": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-recovery-measure-train-b",
+        "seal_sha256": "8e3b6ef712a6ee6d536fc6acbc81a8030eed9e233ea60b479dbcdbaa8c7393cf",
+        "source_closure": "5bf6ccd31faff80d196574ba0999d4a277ccadbeb0b414eaaa9d035cfb494ec9"
+      }
+    },
+    "source_dataset_canonical_sha256": "40335614a474a5665f446a68053d0344c6c12d82a3e94dbca2bbf05c6a16203d",
+    "source_protocol_sha256": "51f2f2771b59e7f4f93090bf8463758032e2c88a41764212849fe4499f0d4719"
+  },
+  "runtime": {
+    "device": "cpu",
+    "numpy": "2.5.3",
+    "torch": "2.14.0"
+  },
+  "scope": {
+    "backbone_boundary": "723 saved frozen tensor hashes agree and archived code enforces the before/after check; base model weights were not reloaded locally.",
+    "gpu_inference_or_dispatch": false,
+    "outcome_rows": "20 old and160 new-guard CLINC TEST utterances per action, all within TRAIN predictor cohorts. No predictor TEST outcomes opened in this audit.",
+    "prospective_validity": "Supports preparing a separately sealed predictor on new disjoint cohorts. No predictor was fit here; fresh TEST outcomes, predictor accuracy, policy gain and recovery-versus-relearning speed remain untested by this pilot.",
+    "scoring": "Argmax among the same16 native answer codes throughout learning, forgetting and repair; not full-vocabulary generation.",
+    "test_authorized": false,
+    "threshold_arithmetic": "Integer counts and exact rational comparisons, independent of experiment gate functions.",
+    "unit_boundary": "14 intent-to-code bindings in2 independently trained TRAIN streams; no semantic-erasure or general skill-recovery claim."
+  },
+  "self_tests": {
+    "cases": [
+      "accuracy .8 / gain .3 / guard drop .1 equality",
+      "one row beyond old_accuracy",
+      "one row beyond old_gain",
+      "one row beyond new_guard",
+      "guard improvements give no extra utility",
+      "nonmonotonic budgets and numeric minimum",
+      "never class",
+      "class support including singleton rejection",
+      "two classes with two skills each",
+      "reject modified prefix adapter_sha256",
+      "reject modified prefix updates_sha256",
+      "reject modified prefix optimizer_steps"
+    ],
+    "passed": 12
+  },
+  "source_order": {
+    "actual_optimizer_clock_guard_line": 374,
+    "adapter_only_save_line": 377,
+    "basis": "Control flow in exact archived source plus earlier completed feature receipts and matching file bytes; not collected file mtimes.",
+    "feature_file_written_line": 442,
+    "first_repair_call_line": 446,
+    "fresh_optimizer_line": 365,
+    "frozen_hash_guard_line": 458,
+    "plan_written_line": 621,
+    "prerequisites_line": 604,
+    "source": "minimum_budget.py",
+    "source_sha256": "ef7230f741e312dfc2d0d5d42678be2af76012989b9ff91d53043843fb346392"
+  },
+  "status": "passed"
+}

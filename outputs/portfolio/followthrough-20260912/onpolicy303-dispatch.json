@@ -1,0 +1,69 @@
+{
+  "protocol_digest": "31ec528d68e04062d7be72c3b8d0c8d1c5b915b7670c3be4be5af0a69f13a2be",
+  "jobs": [
+    {
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-kl-train",
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_kl_train.json",
+      "config_sha256": "28bdbd5c3b272b3672f831308a5a6d79b8d2f63a75a5bdd70439c85af19f4119",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "consolidation-source303-coverage-20260912",
+        "consolidation-coverage303-20260912"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b\", \"source_files\": 130, \"source_installation\": \"atomically_installed\"}\n{\"submitted\": \"followthrough-20260912-onpolicy303-cached-teacher-kl-train\", \"source_sha256\": \"85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b\", \"source_files\": 130}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-sft-train",
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_sft_train.json",
+      "config_sha256": "14502754f43a1bb3928d3f2f9d2963ff81f30e48350527dacb150cae8d7dfe9a",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "consolidation-source303-coverage-20260912",
+        "consolidation-coverage303-20260912"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b\", \"source_files\": 130, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-onpolicy303-cached-teacher-sft-train\", \"source_sha256\": \"85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b\", \"source_files\": 130}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-onpolicy303-onpolicy-kl-train",
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_onpolicy_kl_train.json",
+      "config_sha256": "04888d5b18ce983d2992f12a1b3430c04dca42c3a2baa3527e730d7dc5559078",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "consolidation-source303-coverage-20260912",
+        "consolidation-coverage303-20260912"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b\", \"source_files\": 130, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-onpolicy303-onpolicy-kl-train\", \"source_sha256\": \"85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b\", \"source_files\": 130}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-kl-evaluate",
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_kl_evaluate.json",
+      "config_sha256": "97f5b89640f4c5c1dbc92437ecbf3796c5474fa03208991654ae79c04bda1105",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-cached-teacher-kl-train"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b\", \"source_files\": 130, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-onpolicy303-cached-teacher-kl-evaluate\", \"source_sha256\": \"85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b\", \"source_files\": 130}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-sft-evaluate",
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_cached_teacher_sft_evaluate.json",
+      "config_sha256": "ebfe3c2065e93e8fabf2ddc673b88387d88b4a4557819810417c358cf81fc9d6",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-cached-teacher-sft-train"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b\", \"source_files\": 130, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-onpolicy303-cached-teacher-sft-evaluate\", \"source_sha256\": \"85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b\", \"source_files\": 130}\n"
+    },
+    {
+      "task_id": "followthrough-20260912-onpolicy303-onpolicy-kl-evaluate",
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/distillation/configs/onpolicy303_onpolicy_kl_evaluate.json",
+      "config_sha256": "9aaec3d055133b59830de1dfca6f4586811a789b8dd553afb53bb10285b41d13",
+      "depends_on": [
+        "followthrough-20260912-recovery-worker-runtime-qwen3-8b",
+        "followthrough-20260912-onpolicy303-onpolicy-kl-train"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b\", \"source_files\": 130, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"followthrough-20260912-onpolicy303-onpolicy-kl-evaluate\", \"source_sha256\": \"85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b\", \"source_files\": 130}\n"
+    }
+  ],
+  "source_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b"
+}

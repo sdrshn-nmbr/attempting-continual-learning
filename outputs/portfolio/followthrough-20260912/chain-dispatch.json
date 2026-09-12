@@ -1,0 +1,87 @@
+{
+  "status": "submitted_not_completed",
+  "tasks": [
+    {
+      "id": "distillation-device4-chain-qualify-20260912",
+      "lane": "distillation",
+      "code_dir": "/mnt/shared/cl-portfolio/code/8d36ba48bb9c429d28d2cbca78f9f4362120639568ab9b60380cc62a73b98361",
+      "source_sha256": "8d36ba48bb9c429d28d2cbca78f9f4362120639568ab9b60380cc62a73b98361",
+      "config": {
+        "protocol": "configs/device4_chain_protocol.json",
+        "protocol_sha256": "fc39cb5bdf3c79a08bf21b566baf6004ee3688e9e4a133ebd91a199d1d7c9327",
+        "stage": "qualify"
+      },
+      "gpus": 1,
+      "entrypoint": "device4_chain.py",
+      "depends_on": [
+        "distillation-device4-recovery-20260912",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "distillation-device4-chain-a-20260912",
+      "lane": "distillation",
+      "code_dir": "/mnt/shared/cl-portfolio/code/8d36ba48bb9c429d28d2cbca78f9f4362120639568ab9b60380cc62a73b98361",
+      "source_sha256": "8d36ba48bb9c429d28d2cbca78f9f4362120639568ab9b60380cc62a73b98361",
+      "config": {
+        "family": "A",
+        "protocol": "configs/device4_chain_protocol.json",
+        "protocol_sha256": "fc39cb5bdf3c79a08bf21b566baf6004ee3688e9e4a133ebd91a199d1d7c9327",
+        "qualification_dir": "/mnt/shared/cl-portfolio/runs/distillation-device4-chain-qualify-20260912",
+        "stage": "learn"
+      },
+      "gpus": 1,
+      "entrypoint": "device4_chain.py",
+      "depends_on": [
+        "distillation-device4-chain-qualify-20260912",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "distillation-device4-chain-b-20260912",
+      "lane": "distillation",
+      "code_dir": "/mnt/shared/cl-portfolio/code/8d36ba48bb9c429d28d2cbca78f9f4362120639568ab9b60380cc62a73b98361",
+      "source_sha256": "8d36ba48bb9c429d28d2cbca78f9f4362120639568ab9b60380cc62a73b98361",
+      "config": {
+        "family": "B",
+        "protocol": "configs/device4_chain_protocol.json",
+        "protocol_sha256": "fc39cb5bdf3c79a08bf21b566baf6004ee3688e9e4a133ebd91a199d1d7c9327",
+        "qualification_dir": "/mnt/shared/cl-portfolio/runs/distillation-device4-chain-qualify-20260912",
+        "stage": "learn"
+      },
+      "gpus": 1,
+      "entrypoint": "device4_chain.py",
+      "depends_on": [
+        "distillation-device4-chain-qualify-20260912",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "distillation-device4-chain-c-20260912",
+      "lane": "distillation",
+      "code_dir": "/mnt/shared/cl-portfolio/code/8d36ba48bb9c429d28d2cbca78f9f4362120639568ab9b60380cc62a73b98361",
+      "source_sha256": "8d36ba48bb9c429d28d2cbca78f9f4362120639568ab9b60380cc62a73b98361",
+      "config": {
+        "family": "C",
+        "protocol": "configs/device4_chain_protocol.json",
+        "protocol_sha256": "fc39cb5bdf3c79a08bf21b566baf6004ee3688e9e4a133ebd91a199d1d7c9327",
+        "qualification_dir": "/mnt/shared/cl-portfolio/runs/distillation-device4-chain-qualify-20260912",
+        "stage": "learn"
+      },
+      "gpus": 1,
+      "entrypoint": "device4_chain.py",
+      "depends_on": [
+        "distillation-device4-chain-qualify-20260912",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    }
+  ]
+}

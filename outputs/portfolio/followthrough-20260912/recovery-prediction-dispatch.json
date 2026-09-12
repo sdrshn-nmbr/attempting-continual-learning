@@ -1,0 +1,464 @@
+{
+  "status": "submitted_not_completed",
+  "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+  "tasks": [
+    {
+      "id": "followthrough-20260912-recovery-predict-authorize",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "budget_gate": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-budget-pilot-gate-slot/study",
+        "stage": "authorize",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-budget-pilot-gate-slot"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-learn-test-a",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "stage": "learn",
+        "stream": "fresh-test-a",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-learn-test-b",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "stage": "learn",
+        "stream": "fresh-test-b",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-learn-train-a",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "stage": "learn",
+        "stream": "fresh-train-a",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-learn-train-b",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "stage": "learn",
+        "stream": "fresh-train-b",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-cohort",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "learning_sources": {
+          "fresh-test-a": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-test-a/study",
+          "fresh-test-b": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-test-b/study",
+          "fresh-train-a": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-train-a/study",
+          "fresh-train-b": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-learn-train-b/study"
+        },
+        "stage": "cohort",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-learn-test-a",
+        "followthrough-20260912-recovery-predict-learn-test-b",
+        "followthrough-20260912-recovery-predict-learn-train-a",
+        "followthrough-20260912-recovery-predict-learn-train-b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-readout-train-a",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+        "stage": "readout",
+        "stream": "fresh-train-a",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-readout-train-b",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+        "stage": "readout",
+        "stream": "fresh-train-b",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-readout-gate-train",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+        "sources": {
+          "fresh-train-a": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-train-a/study",
+          "fresh-train-b": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-train-b/study"
+        },
+        "split": "train",
+        "stage": "readout-gate",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-readout-train-a",
+        "followthrough-20260912-recovery-predict-readout-train-b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-repair-train-a",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+        "readout_gate": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-gate-train/study",
+        "stage": "repair",
+        "stream": "fresh-train-a",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-readout-gate-train",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-repair-train-b",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+        "readout_gate": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-gate-train/study",
+        "stage": "repair",
+        "stream": "fresh-train-b",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-readout-gate-train",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-fit",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+        "readout_gate": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-gate-train/study",
+        "sources": {
+          "fresh-train-a": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-train-a/study",
+          "fresh-train-b": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-train-b/study"
+        },
+        "stage": "fit",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-readout-gate-train",
+        "followthrough-20260912-recovery-predict-repair-train-a",
+        "followthrough-20260912-recovery-predict-repair-train-b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-readout-test-a",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+        "fitted": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-fit/study",
+        "stage": "readout",
+        "stream": "fresh-test-a",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-fit",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-readout-test-b",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+        "fitted": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-fit/study",
+        "stage": "readout",
+        "stream": "fresh-test-b",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-fit",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-readout-gate-test",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+        "fitted": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-fit/study",
+        "sources": {
+          "fresh-test-a": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-test-a/study",
+          "fresh-test-b": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-test-b/study"
+        },
+        "split": "test",
+        "stage": "readout-gate",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-fit",
+        "followthrough-20260912-recovery-predict-readout-test-a",
+        "followthrough-20260912-recovery-predict-readout-test-b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-forecast",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+        "fitted": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-fit/study",
+        "readout_gate": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-gate-test/study",
+        "stage": "forecast",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-fit",
+        "followthrough-20260912-recovery-predict-readout-gate-test"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-repair-test-a",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+        "forecasts": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-forecast/study",
+        "readout_gate": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-gate-test/study",
+        "stage": "repair",
+        "stream": "fresh-test-a",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-forecast",
+        "followthrough-20260912-recovery-predict-readout-gate-test",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-repair-test-b",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+        "forecasts": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-forecast/study",
+        "readout_gate": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-gate-test/study",
+        "stage": "repair",
+        "stream": "fresh-test-b",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-forecast",
+        "followthrough-20260912-recovery-predict-readout-gate-test",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    },
+    {
+      "id": "followthrough-20260912-recovery-predict-analyze",
+      "lane": "recoverability",
+      "code_dir": "/mnt/shared/cl-portfolio/code/99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "source_sha256": "99ac3030bb56b44579b07e0f672ce098b0831f9c871b350d087201ad546ba8d1",
+      "config": {
+        "authorization": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-authorize/study",
+        "cohort": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-cohort/study",
+        "fitted": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-fit/study",
+        "forecasts": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-forecast/study",
+        "readout_gate": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-readout-gate-test/study",
+        "sources": {
+          "fresh-test-a": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-test-a/study",
+          "fresh-test-b": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-recovery-predict-repair-test-b/study"
+        },
+        "stage": "analyze",
+        "study_config": "configs/budget-prediction.json"
+      },
+      "gpus": 1,
+      "entrypoint": "budget_prediction.py",
+      "depends_on": [
+        "followthrough-20260912-recovery-predict-authorize",
+        "followthrough-20260912-recovery-predict-cohort",
+        "followthrough-20260912-recovery-predict-fit",
+        "followthrough-20260912-recovery-predict-forecast",
+        "followthrough-20260912-recovery-predict-readout-gate-test",
+        "followthrough-20260912-recovery-predict-repair-test-a",
+        "followthrough-20260912-recovery-predict-repair-test-b"
+      ],
+      "priority": 5,
+      "max_seconds": 18000
+    }
+  ]
+}

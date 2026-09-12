@@ -1,0 +1,967 @@
+{
+  "arithmetic_controls": {
+    "passed": 23
+  },
+  "audit": "recovery-audit.causal.json",
+  "audit_sha256": "184bccbff243ac51dfd0771a7bfc681e1e45d8011a29d6d11dda82a6c36d36b5",
+  "binary_control_inference": "The original shuffle changes zero TRAIN binary labels for both actions. Balanced replay has only one TRAIN negative and the saved permutation fixes its index. The binary negative controls are inert; no redraw or change to the original fits was made. Utility labels changed 10/14 balanced and 12/14 target-only.",
+  "checks": {
+    "eligibility_mismatches": 0,
+    "frozen_source_unchanged": true,
+    "gpu_dispatches": 0,
+    "max_feature_error": 1.9641659214642004e-06,
+    "prediction_mismatches": 0,
+    "records_scored": 75328,
+    "remote_reads_only": true,
+    "reported_utility_mismatches": 0
+  },
+  "continuous_inference": "Posthoc evaluation of saved, unchanged ridge forecasts. Tuned balanced-utility MSE/MAE improve over constant TRAIN mean overall, but the improvement over that baseline is on TEST-b; TEST-a MSE and MAE worsen. Tuned beats the single shuffled utility model for balanced replay on both streams. For target-only utility, tuned improves overall over TRAIN mean but the shuffle does better overall. These descriptive error reductions do not establish calibrated probabilities, replicated recoverability discrimination, policy gain, or model-level generalization.",
+  "continuous_utility_forecasts": {
+    "replay_balanced": {
+      "confidence": {
+        "equal_source_mae": 0.12234762721540351,
+        "equal_source_mse": 0.03323527430923352,
+        "mae": 0.12783070268256905,
+        "mae_by_source": {
+          "test-a": 0.08396609894524483,
+          "test-b": 0.16072915548556221
+        },
+        "mse": 0.034437293778281634,
+        "mse_by_source": {
+          "test-a": 0.024821138025896746,
+          "test-b": 0.0416494105925703
+        }
+      },
+      "frozen": {
+        "equal_source_mae": 0.15591615482083365,
+        "equal_source_mse": 0.0474032777157507,
+        "mae": 0.16178774391873918,
+        "mae_by_source": {
+          "test-a": 0.11481503113549507,
+          "test-b": 0.19701727850617223
+        },
+        "mse": 0.049128939189073025,
+        "mse_by_source": {
+          "test-a": 0.03532364740249443,
+          "test-b": 0.05948290802900697
+        }
+      },
+      "output": {
+        "equal_source_mae": 0.11746766298315775,
+        "equal_source_mse": 0.032370541974798356,
+        "mae": 0.12455963687407519,
+        "mae_by_source": {
+          "test-a": 0.0678238457467356,
+          "test-b": 0.1671114802195799
+        },
+        "mse": 0.034705436431563284,
+        "mse_by_source": {
+          "test-a": 0.016026280777443856,
+          "test-b": 0.048714803172152855
+        }
+      },
+      "permuted": {
+        "equal_source_mae": 0.12962279857205736,
+        "equal_source_mse": 0.0434162257021195,
+        "mae": 0.1384531985317814,
+        "mae_by_source": {
+          "test-a": 0.0678099988539891,
+          "test-b": 0.19143559829012563
+        },
+        "mse": 0.047201226621491364,
+        "mse_by_source": {
+          "test-a": 0.016921219266516466,
+          "test-b": 0.06991123213772253
+        }
+      },
+      "train_mean": {
+        "equal_source_mae": 0.12544642857142851,
+        "equal_source_mse": 0.027307411245748314,
+        "mae": 0.13335459183673462,
+        "mae_by_source": {
+          "test-a": 0.07008928571428558,
+          "test-b": 0.18080357142857142
+        },
+        "mse": 0.030436463647959204,
+        "mse_by_source": {
+          "test-a": 0.00540404443027209,
+          "test-b": 0.049210778061224536
+        }
+      },
+      "tuned": {
+        "equal_source_mae": 0.11170001182032316,
+        "equal_source_mse": 0.02591723422457795,
+        "mae": 0.11752456703876689,
+        "mae_by_source": {
+          "test-a": 0.07092812529121699,
+          "test-b": 0.1524718983494293
+        },
+        "mse": 0.02747428183501995,
+        "mse_by_source": {
+          "test-a": 0.015017900951483986,
+          "test-b": 0.03681656749767192
+        }
+      }
+    },
+    "replay_target": {
+      "confidence": {
+        "equal_source_mae": 0.3791139513167602,
+        "equal_source_mse": 0.20481285997049417,
+        "mae": 0.355791056337963,
+        "mae_by_source": {
+          "test-a": 0.5423742161683403,
+          "test-b": 0.21585368646518008
+        },
+        "mse": 0.18323562486917871,
+        "mse_by_source": {
+          "test-a": 0.3558535056797023,
+          "test-b": 0.05377221426128603
+        }
+      },
+      "frozen": {
+        "equal_source_mae": 0.3948089221210289,
+        "equal_source_mse": 0.22418064215488248,
+        "mae": 0.37345831382601274,
+        "mae_by_source": {
+          "test-a": 0.544263180186142,
+          "test-b": 0.24535466405591588
+        },
+        "mse": 0.20366858735072693,
+        "mse_by_source": {
+          "test-a": 0.36776502578397124,
+          "test-b": 0.0805962585257937
+        }
+      },
+      "output": {
+        "equal_source_mae": 0.3679890461501682,
+        "equal_source_mse": 0.19800060343318499,
+        "mae": 0.34456511372070403,
+        "mae_by_source": {
+          "test-a": 0.5319565731564173,
+          "test-b": 0.20402151914391908
+        },
+        "mse": 0.1771111613893636,
+        "mse_by_source": {
+          "test-a": 0.34422669773993453,
+          "test-b": 0.051774509126435435
+        }
+      },
+      "permuted": {
+        "equal_source_mae": 0.32526592568933277,
+        "equal_source_mse": 0.15593633775091487,
+        "mae": 0.3025411383286707,
+        "mae_by_source": {
+          "test-a": 0.48433943721396727,
+          "test-b": 0.16619241416469827
+        },
+        "mse": 0.1395925700283725,
+        "mse_by_source": {
+          "test-a": 0.2703427118087113,
+          "test-b": 0.04152996369311843
+        }
+      },
+      "train_mean": {
+        "equal_source_mae": 0.3777157738095238,
+        "equal_source_mse": 0.20030608923256804,
+        "mae": 0.35293367346938775,
+        "mae_by_source": {
+          "test-a": 0.5511904761904762,
+          "test-b": 0.2042410714285714
+        },
+        "mse": 0.17921077806122448,
+        "mse_by_source": {
+          "test-a": 0.3479732674319728,
+          "test-b": 0.052638911033163246
+        }
+      },
+      "tuned": {
+        "equal_source_mae": 0.33397444743077714,
+        "equal_source_mse": 0.16897123638933775,
+        "mae": 0.3143384705914735,
+        "mae_by_source": {
+          "test-a": 0.47142628530590264,
+          "test-b": 0.19652260955565165
+        },
+        "mse": 0.15323696242716112,
+        "mse_by_source": {
+          "test-a": 0.27911115412457427,
+          "test-b": 0.05883131865410124
+        }
+      }
+    }
+  },
+  "coverage": {
+    "completed_stages_audited": 26,
+    "matched_reference_test_split_complete": true,
+    "pending_stages": 0,
+    "published_heldout_analysis_audited": true
+  },
+  "history_confound": {
+    "ceiling_limit": "At the 16-update old-accuracy ceiling, endpoint differences cannot establish recovery speed. Smaller matched recovery and retain-only budget curves are needed.",
+    "historical_before_repair": "128 old-intent updates (1024 exposures), then 128 newer-intent updates with continuous AdamW state.",
+    "matched_at_repair": "Same pretrained base, adapter capacity, code contract, support rows, schedules, update count and fresh AdamW reset for both histories.",
+    "not_isolated": "Lifetime updates/exposures, starting weights for newer training, and optimizer history during newer training differ. A guard advantage can reflect path-dependent robustness from the extra training history; it does not by itself isolate stored old bindings as the cause.",
+    "retain_only_before_repair": "128 identical newer-intent batches from the same initial adapter with initially fresh AdamW; zero old-intent training exposures."
+  },
+  "next_direction": "Sealed TRAIN-only 2/4/8/16 balanced-repair budget pilot. Require two minimum-budget classes with at least two TRAIN skills each. No TEST stage. Any future speed/storage comparison needs matched retain-only curves at smaller budgets, and future prediction evaluation needs newly selected disjoint intent cohorts.",
+  "original_permutation": {
+    "replay_balanced": {
+      "recovered": {
+        "changed_labels": 0,
+        "inert_for_this_scalar": true,
+        "labels": 14,
+        "unchanged_labels": 14
+      },
+      "utility": {
+        "changed_labels": 10,
+        "inert_for_this_scalar": false,
+        "labels": 14,
+        "unchanged_labels": 4
+      }
+    },
+    "replay_target": {
+      "recovered": {
+        "changed_labels": 0,
+        "inert_for_this_scalar": true,
+        "labels": 14,
+        "unchanged_labels": 14
+      },
+      "utility": {
+        "changed_labels": 12,
+        "inert_for_this_scalar": false,
+        "labels": 14,
+        "unchanged_labels": 2
+      }
+    }
+  },
+  "policy": {
+    "all_balanced_test_recoveries": 14,
+    "all_five_choose_balanced_for_all_test_intents": true,
+    "always_balanced_oracle_regret": 0.0,
+    "always_balanced_utility": 0.8888392857142857,
+    "balanced_by_source": {
+      "test-a": 0.971875,
+      "test-b": 0.8265625
+    },
+    "learned_policy_gain_over_always_balanced": 0.0,
+    "target_only_guard_failures": 13,
+    "target_only_test_recoveries": 1
+  },
+  "reference_aggregates": {
+    "test": {
+      "complete_split": true,
+      "equal_source_means": {
+        "none": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.0,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.9875,
+          "fresh_guard_baseline": 0.9875,
+          "fresh_guard_drop": 0.0,
+          "fresh_minus_recovery_guard_drop": 0.0,
+          "fresh_utility": 0.0,
+          "recovery_accuracy": 0.08125,
+          "recovery_baseline": 0.08125,
+          "recovery_guard": 0.98125,
+          "recovery_guard_baseline": 0.98125,
+          "recovery_guard_drop": 0.0,
+          "recovery_minus_fresh_accuracy": 0.08125,
+          "recovery_minus_fresh_gain": 0.0,
+          "recovery_minus_fresh_guard_accuracy": -0.006249999999999978,
+          "recovery_minus_fresh_guard_baseline": -0.006249999999999978,
+          "recovery_minus_fresh_utility": 0.0,
+          "recovery_utility": 0.0
+        },
+        "replay_balanced": {
+          "both_at_accuracy_ceiling": 0.47916666666666663,
+          "fresh_acquisition_accuracy": 0.975,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.979296875,
+          "fresh_guard_baseline": 0.9875,
+          "fresh_guard_drop": 0.011328125000000003,
+          "fresh_minus_recovery_guard_drop": 0.0032552083333333127,
+          "fresh_utility": 0.963671875,
+          "recovery_accuracy": 0.9885416666666667,
+          "recovery_baseline": 0.08125,
+          "recovery_guard": 0.979296875,
+          "recovery_guard_baseline": 0.98125,
+          "recovery_guard_drop": 0.00807291666666669,
+          "recovery_minus_fresh_accuracy": 0.013541666666666664,
+          "recovery_minus_fresh_gain": -0.06770833333333333,
+          "recovery_minus_fresh_guard_accuracy": -2.6020852139652106e-18,
+          "recovery_minus_fresh_guard_baseline": -0.006249999999999978,
+          "recovery_minus_fresh_utility": -0.06445312500000003,
+          "recovery_utility": 0.89921875
+        },
+        "replay_target": {
+          "both_at_accuracy_ceiling": 1,
+          "fresh_acquisition_accuracy": 1.0,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.047265625,
+          "fresh_guard_baseline": 0.9875,
+          "fresh_guard_drop": 0.940234375,
+          "fresh_minus_recovery_guard_drop": 0.5178385416666667,
+          "fresh_utility": 0.05976562500000001,
+          "recovery_accuracy": 1.0,
+          "recovery_baseline": 0.08125,
+          "recovery_guard": 0.5588541666666667,
+          "recovery_guard_baseline": 0.98125,
+          "recovery_guard_drop": 0.42239583333333336,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": -0.08125,
+          "recovery_minus_fresh_guard_accuracy": 0.5115885416666667,
+          "recovery_minus_fresh_guard_baseline": -0.006249999999999978,
+          "recovery_minus_fresh_utility": 0.4365885416666666,
+          "recovery_utility": 0.49635416666666665
+        },
+        "sham": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.0,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.9826822916666667,
+          "fresh_guard_baseline": 0.9875,
+          "fresh_guard_drop": 0.006380208333333319,
+          "fresh_minus_recovery_guard_drop": 0.005598958333333315,
+          "fresh_utility": -0.006380208333333319,
+          "recovery_accuracy": 0.0,
+          "recovery_baseline": 0.08125,
+          "recovery_guard": 0.9899739583333333,
+          "recovery_guard_baseline": 0.98125,
+          "recovery_guard_drop": 0.0007812500000000042,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": -0.08125,
+          "recovery_minus_fresh_guard_accuracy": 0.007291666666666682,
+          "recovery_minus_fresh_guard_baseline": -0.006249999999999978,
+          "recovery_minus_fresh_utility": -0.07565104166666668,
+          "recovery_utility": -0.08203125000000001
+        }
+      },
+      "intents": 14,
+      "pooled_intent_means": {
+        "none": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.0,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.9857142857142857,
+          "fresh_guard_baseline": 0.9857142857142857,
+          "fresh_guard_drop": 0.0,
+          "fresh_minus_recovery_guard_drop": 0.0,
+          "fresh_utility": 0.0,
+          "recovery_accuracy": 0.09285714285714286,
+          "recovery_baseline": 0.09285714285714286,
+          "recovery_guard": 0.9821428571428572,
+          "recovery_guard_baseline": 0.9821428571428572,
+          "recovery_guard_drop": 0.0,
+          "recovery_minus_fresh_accuracy": 0.09285714285714286,
+          "recovery_minus_fresh_gain": 0.0,
+          "recovery_minus_fresh_guard_accuracy": -0.0035714285714285427,
+          "recovery_minus_fresh_guard_baseline": -0.0035714285714285427,
+          "recovery_minus_fresh_utility": 0.0,
+          "recovery_utility": 0.0
+        },
+        "replay_balanced": {
+          "both_at_accuracy_ceiling": 0.5,
+          "fresh_acquisition_accuracy": 0.975,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.9785714285714285,
+          "fresh_guard_baseline": 0.9857142857142857,
+          "fresh_guard_drop": 0.010714285714285716,
+          "fresh_minus_recovery_guard_drop": 0.003124999999999973,
+          "fresh_utility": 0.9642857142857143,
+          "recovery_accuracy": 0.9892857142857143,
+          "recovery_baseline": 0.09285714285714286,
+          "recovery_guard": 0.9803571428571428,
+          "recovery_guard_baseline": 0.9821428571428572,
+          "recovery_guard_drop": 0.007589285714285743,
+          "recovery_minus_fresh_accuracy": 0.014285714285714282,
+          "recovery_minus_fresh_gain": -0.07857142857142858,
+          "recovery_minus_fresh_guard_accuracy": 0.0017857142857142794,
+          "recovery_minus_fresh_guard_baseline": -0.0035714285714285427,
+          "recovery_minus_fresh_utility": -0.07544642857142861,
+          "recovery_utility": 0.8888392857142857
+        },
+        "replay_target": {
+          "both_at_accuracy_ceiling": 1,
+          "fresh_acquisition_accuracy": 1.0,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.040625,
+          "fresh_guard_baseline": 0.9857142857142857,
+          "fresh_guard_drop": 0.9450892857142857,
+          "fresh_minus_recovery_guard_drop": 0.5022321428571428,
+          "fresh_utility": 0.0549107142857143,
+          "recovery_accuracy": 1.0,
+          "recovery_baseline": 0.09285714285714286,
+          "recovery_guard": 0.5392857142857143,
+          "recovery_guard_baseline": 0.9821428571428572,
+          "recovery_guard_drop": 0.4428571428571429,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": -0.09285714285714286,
+          "recovery_minus_fresh_guard_accuracy": 0.4986607142857143,
+          "recovery_minus_fresh_guard_baseline": -0.0035714285714285427,
+          "recovery_minus_fresh_utility": 0.40937499999999993,
+          "recovery_utility": 0.46428571428571425
+        },
+        "sham": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.0,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.98125,
+          "fresh_guard_baseline": 0.9857142857142857,
+          "fresh_guard_drop": 0.006249999999999986,
+          "fresh_minus_recovery_guard_drop": 0.005357142857142838,
+          "fresh_utility": -0.006249999999999986,
+          "recovery_accuracy": 0.0,
+          "recovery_baseline": 0.09285714285714286,
+          "recovery_guard": 0.9897321428571428,
+          "recovery_guard_baseline": 0.9821428571428572,
+          "recovery_guard_drop": 0.0008928571428571476,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": -0.09285714285714286,
+          "recovery_minus_fresh_guard_accuracy": 0.008482142857142874,
+          "recovery_minus_fresh_guard_baseline": -0.0035714285714285427,
+          "recovery_minus_fresh_utility": -0.08750000000000002,
+          "recovery_utility": -0.09375000000000001
+        }
+      },
+      "source_clusters": 2
+    },
+    "train": {
+      "complete_split": true,
+      "equal_source_means": {
+        "none": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.010714285714285714,
+          "fresh_baseline": 0.010714285714285714,
+          "fresh_guard": 0.9875,
+          "fresh_guard_baseline": 0.9875,
+          "fresh_guard_drop": 0.0,
+          "fresh_minus_recovery_guard_drop": 0.0,
+          "fresh_utility": 0.0,
+          "recovery_accuracy": 0.04642857142857143,
+          "recovery_baseline": 0.04642857142857143,
+          "recovery_guard": 0.9875,
+          "recovery_guard_baseline": 0.9875,
+          "recovery_guard_drop": 0.0,
+          "recovery_minus_fresh_accuracy": 0.03571428571428571,
+          "recovery_minus_fresh_gain": 0.0,
+          "recovery_minus_fresh_guard_accuracy": 0.0,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": 0.0,
+          "recovery_utility": 0.0
+        },
+        "replay_balanced": {
+          "both_at_accuracy_ceiling": 0.5714285714285714,
+          "fresh_acquisition_accuracy": 0.9642857142857142,
+          "fresh_baseline": 0.010714285714285714,
+          "fresh_guard": 0.98125,
+          "fresh_guard_baseline": 0.9875,
+          "fresh_guard_drop": 0.008928571428571421,
+          "fresh_minus_recovery_guard_drop": 0.0035714285714285744,
+          "fresh_utility": 0.9446428571428571,
+          "recovery_accuracy": 0.9535714285714285,
+          "recovery_baseline": 0.04642857142857143,
+          "recovery_guard": 0.9839285714285715,
+          "recovery_guard_baseline": 0.9875,
+          "recovery_guard_drop": 0.005357142857142846,
+          "recovery_minus_fresh_accuracy": -0.010714285714285714,
+          "recovery_minus_fresh_gain": -0.04642857142857143,
+          "recovery_minus_fresh_guard_accuracy": 0.0026785714285714347,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": -0.04285714285714286,
+          "recovery_utility": 0.9017857142857143
+        },
+        "replay_target": {
+          "both_at_accuracy_ceiling": 1,
+          "fresh_acquisition_accuracy": 1.0,
+          "fresh_baseline": 0.010714285714285714,
+          "fresh_guard": 0.06607142857142857,
+          "fresh_guard_baseline": 0.9875,
+          "fresh_guard_drop": 0.9214285714285715,
+          "fresh_minus_recovery_guard_drop": 0.1375,
+          "fresh_utility": 0.06785714285714287,
+          "recovery_accuracy": 1.0,
+          "recovery_baseline": 0.04642857142857143,
+          "recovery_guard": 0.20357142857142857,
+          "recovery_guard_baseline": 0.9875,
+          "recovery_guard_drop": 0.7839285714285714,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": -0.03571428571428571,
+          "recovery_minus_fresh_guard_accuracy": 0.1375,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": 0.10178571428571428,
+          "recovery_utility": 0.16964285714285715
+        },
+        "sham": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.0,
+          "fresh_baseline": 0.010714285714285714,
+          "fresh_guard": 0.9709821428571428,
+          "fresh_guard_baseline": 0.9875,
+          "fresh_guard_drop": 0.020089285714285705,
+          "fresh_minus_recovery_guard_drop": -0.006696428571428563,
+          "fresh_utility": -0.03080357142857142,
+          "recovery_accuracy": 0.0,
+          "recovery_baseline": 0.04642857142857143,
+          "recovery_guard": 0.9611607142857144,
+          "recovery_guard_baseline": 0.9875,
+          "recovery_guard_drop": 0.02678571428571427,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": -0.03571428571428571,
+          "recovery_minus_fresh_guard_accuracy": -0.009821428571428576,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": -0.04241071428571428,
+          "recovery_utility": -0.0732142857142857
+        }
+      },
+      "intents": 14,
+      "pooled_intent_means": {
+        "none": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.010714285714285714,
+          "fresh_baseline": 0.010714285714285714,
+          "fresh_guard": 0.9875,
+          "fresh_guard_baseline": 0.9875,
+          "fresh_guard_drop": 0.0,
+          "fresh_minus_recovery_guard_drop": 0.0,
+          "fresh_utility": 0.0,
+          "recovery_accuracy": 0.04642857142857143,
+          "recovery_baseline": 0.04642857142857143,
+          "recovery_guard": 0.9875,
+          "recovery_guard_baseline": 0.9875,
+          "recovery_guard_drop": 0.0,
+          "recovery_minus_fresh_accuracy": 0.03571428571428571,
+          "recovery_minus_fresh_gain": 0.0,
+          "recovery_minus_fresh_guard_accuracy": 0.0,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": 0.0,
+          "recovery_utility": 0.0
+        },
+        "replay_balanced": {
+          "both_at_accuracy_ceiling": 0.5714285714285714,
+          "fresh_acquisition_accuracy": 0.9642857142857143,
+          "fresh_baseline": 0.010714285714285714,
+          "fresh_guard": 0.98125,
+          "fresh_guard_baseline": 0.9875,
+          "fresh_guard_drop": 0.008928571428571421,
+          "fresh_minus_recovery_guard_drop": 0.003571428571428575,
+          "fresh_utility": 0.9446428571428571,
+          "recovery_accuracy": 0.9535714285714285,
+          "recovery_baseline": 0.04642857142857143,
+          "recovery_guard": 0.9839285714285715,
+          "recovery_guard_baseline": 0.9875,
+          "recovery_guard_drop": 0.005357142857142846,
+          "recovery_minus_fresh_accuracy": -0.010714285714285716,
+          "recovery_minus_fresh_gain": -0.04642857142857143,
+          "recovery_minus_fresh_guard_accuracy": 0.002678571428571435,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": -0.04285714285714286,
+          "recovery_utility": 0.9017857142857143
+        },
+        "replay_target": {
+          "both_at_accuracy_ceiling": 1,
+          "fresh_acquisition_accuracy": 1.0,
+          "fresh_baseline": 0.010714285714285714,
+          "fresh_guard": 0.06607142857142857,
+          "fresh_guard_baseline": 0.9875,
+          "fresh_guard_drop": 0.9214285714285714,
+          "fresh_minus_recovery_guard_drop": 0.13749999999999998,
+          "fresh_utility": 0.06785714285714287,
+          "recovery_accuracy": 1.0,
+          "recovery_baseline": 0.04642857142857143,
+          "recovery_guard": 0.20357142857142857,
+          "recovery_guard_baseline": 0.9875,
+          "recovery_guard_drop": 0.7839285714285714,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": -0.03571428571428571,
+          "recovery_minus_fresh_guard_accuracy": 0.1375,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": 0.10178571428571428,
+          "recovery_utility": 0.16964285714285715
+        },
+        "sham": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.0,
+          "fresh_baseline": 0.010714285714285714,
+          "fresh_guard": 0.9709821428571429,
+          "fresh_guard_baseline": 0.9875,
+          "fresh_guard_drop": 0.020089285714285705,
+          "fresh_minus_recovery_guard_drop": -0.006696428571428563,
+          "fresh_utility": -0.03080357142857142,
+          "recovery_accuracy": 0.0,
+          "recovery_baseline": 0.04642857142857143,
+          "recovery_guard": 0.9611607142857143,
+          "recovery_guard_baseline": 0.9875,
+          "recovery_guard_drop": 0.02678571428571427,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": -0.03571428571428571,
+          "recovery_minus_fresh_guard_accuracy": -0.009821428571428576,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": -0.04241071428571428,
+          "recovery_utility": -0.0732142857142857
+        }
+      },
+      "source_clusters": 2
+    }
+  },
+  "reference_inference": "The clearest historical advantage at 16 target-only updates is newer-skill retention, with both old-accuracy endpoints at 100%. Balanced fresh acquisition nearly matches historical old accuracy; higher residual baseline on TEST-b reverses the apparent historical advantage when measuring additional gain or utility. This endpoint does not identify stored-binding reuse or recovery speed. Extra old training and continuous optimizer history through newer training are not isolated from binding storage.",
+  "references": {
+    "test-a": {
+      "paired_intents": 6,
+      "run_level": {
+        "none": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.0,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 1.0,
+          "fresh_guard_baseline": 1.0,
+          "fresh_guard_drop": 0.0,
+          "fresh_minus_recovery_guard_drop": 0.0,
+          "fresh_utility": 0.0,
+          "recovery_accuracy": 0.0,
+          "recovery_baseline": 0.0,
+          "recovery_guard": 0.975,
+          "recovery_guard_baseline": 0.975,
+          "recovery_guard_drop": 0.0,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": 0.0,
+          "recovery_minus_fresh_guard_accuracy": -0.025000000000000022,
+          "recovery_minus_fresh_guard_baseline": -0.025000000000000022,
+          "recovery_minus_fresh_utility": 0.0,
+          "recovery_utility": 0.0
+        },
+        "replay_balanced": {
+          "both_at_accuracy_ceiling": 0.3333333333333333,
+          "fresh_acquisition_accuracy": 0.975,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.984375,
+          "fresh_guard_baseline": 1.0,
+          "fresh_guard_drop": 0.015625000000000017,
+          "fresh_minus_recovery_guard_drop": 0.004166666666666689,
+          "fresh_utility": 0.959375,
+          "recovery_accuracy": 0.9833333333333333,
+          "recovery_baseline": 0.0,
+          "recovery_guard": 0.971875,
+          "recovery_guard_baseline": 0.975,
+          "recovery_guard_drop": 0.011458333333333329,
+          "recovery_minus_fresh_accuracy": 0.008333333333333323,
+          "recovery_minus_fresh_gain": 0.008333333333333323,
+          "recovery_minus_fresh_guard_accuracy": -0.012499999999999975,
+          "recovery_minus_fresh_guard_baseline": -0.025000000000000022,
+          "recovery_minus_fresh_utility": 0.012500000000000011,
+          "recovery_utility": 0.971875
+        },
+        "replay_target": {
+          "both_at_accuracy_ceiling": 1,
+          "fresh_acquisition_accuracy": 1.0,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.09375,
+          "fresh_guard_baseline": 1.0,
+          "fresh_guard_drop": 0.90625,
+          "fresh_minus_recovery_guard_drop": 0.6270833333333333,
+          "fresh_utility": 0.09375,
+          "recovery_accuracy": 1.0,
+          "recovery_baseline": 0.0,
+          "recovery_guard": 0.6958333333333333,
+          "recovery_guard_baseline": 0.975,
+          "recovery_guard_drop": 0.2791666666666667,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": 0.0,
+          "recovery_minus_fresh_guard_accuracy": 0.6020833333333333,
+          "recovery_minus_fresh_guard_baseline": -0.025000000000000022,
+          "recovery_minus_fresh_utility": 0.6270833333333333,
+          "recovery_utility": 0.7208333333333333
+        },
+        "sham": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.0,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.9927083333333333,
+          "fresh_guard_baseline": 1.0,
+          "fresh_guard_drop": 0.007291666666666659,
+          "fresh_minus_recovery_guard_drop": 0.007291666666666659,
+          "fresh_utility": -0.007291666666666659,
+          "recovery_accuracy": 0.0,
+          "recovery_baseline": 0.0,
+          "recovery_guard": 0.9916666666666667,
+          "recovery_guard_baseline": 0.975,
+          "recovery_guard_drop": 0.0,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": 0.0,
+          "recovery_minus_fresh_guard_accuracy": -0.001041666666666663,
+          "recovery_minus_fresh_guard_baseline": -0.025000000000000022,
+          "recovery_minus_fresh_utility": 0.007291666666666659,
+          "recovery_utility": 0.0
+        }
+      }
+    },
+    "test-b": {
+      "paired_intents": 8,
+      "run_level": {
+        "none": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.0,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.975,
+          "fresh_guard_baseline": 0.975,
+          "fresh_guard_drop": 0.0,
+          "fresh_minus_recovery_guard_drop": 0.0,
+          "fresh_utility": 0.0,
+          "recovery_accuracy": 0.1625,
+          "recovery_baseline": 0.1625,
+          "recovery_guard": 0.9875,
+          "recovery_guard_baseline": 0.9875,
+          "recovery_guard_drop": 0.0,
+          "recovery_minus_fresh_accuracy": 0.1625,
+          "recovery_minus_fresh_gain": 0.0,
+          "recovery_minus_fresh_guard_accuracy": 0.012500000000000067,
+          "recovery_minus_fresh_guard_baseline": 0.012500000000000067,
+          "recovery_minus_fresh_utility": 0.0,
+          "recovery_utility": 0.0
+        },
+        "replay_balanced": {
+          "both_at_accuracy_ceiling": 0.625,
+          "fresh_acquisition_accuracy": 0.975,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.97421875,
+          "fresh_guard_baseline": 0.975,
+          "fresh_guard_drop": 0.007031249999999989,
+          "fresh_minus_recovery_guard_drop": 0.002343749999999936,
+          "fresh_utility": 0.96796875,
+          "recovery_accuracy": 0.99375,
+          "recovery_baseline": 0.1625,
+          "recovery_guard": 0.98671875,
+          "recovery_guard_baseline": 0.9875,
+          "recovery_guard_drop": 0.004687500000000053,
+          "recovery_minus_fresh_accuracy": 0.018750000000000003,
+          "recovery_minus_fresh_gain": -0.14375,
+          "recovery_minus_fresh_guard_accuracy": 0.01249999999999997,
+          "recovery_minus_fresh_guard_baseline": 0.012500000000000067,
+          "recovery_minus_fresh_utility": -0.14140625000000007,
+          "recovery_utility": 0.8265625
+        },
+        "replay_target": {
+          "both_at_accuracy_ceiling": 1,
+          "fresh_acquisition_accuracy": 1.0,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.00078125,
+          "fresh_guard_baseline": 0.975,
+          "fresh_guard_drop": 0.97421875,
+          "fresh_minus_recovery_guard_drop": 0.4085937499999999,
+          "fresh_utility": 0.02578125000000002,
+          "recovery_accuracy": 1.0,
+          "recovery_baseline": 0.1625,
+          "recovery_guard": 0.421875,
+          "recovery_guard_baseline": 0.9875,
+          "recovery_guard_drop": 0.565625,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": -0.1625,
+          "recovery_minus_fresh_guard_accuracy": 0.42109375,
+          "recovery_minus_fresh_guard_baseline": 0.012500000000000067,
+          "recovery_minus_fresh_utility": 0.24609374999999992,
+          "recovery_utility": 0.2718749999999999
+        },
+        "sham": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.0,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.97265625,
+          "fresh_guard_baseline": 0.975,
+          "fresh_guard_drop": 0.005468749999999981,
+          "fresh_minus_recovery_guard_drop": 0.0039062499999999722,
+          "fresh_utility": -0.005468749999999981,
+          "recovery_accuracy": 0.0,
+          "recovery_baseline": 0.1625,
+          "recovery_guard": 0.98828125,
+          "recovery_guard_baseline": 0.9875,
+          "recovery_guard_drop": 0.0015625000000000083,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": -0.1625,
+          "recovery_minus_fresh_guard_accuracy": 0.015625000000000028,
+          "recovery_minus_fresh_guard_baseline": 0.012500000000000067,
+          "recovery_minus_fresh_utility": -0.15859375000000003,
+          "recovery_utility": -0.16406250000000003
+        }
+      }
+    },
+    "train-a": {
+      "paired_intents": 7,
+      "run_level": {
+        "none": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.0,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 1.0,
+          "fresh_guard_baseline": 1.0,
+          "fresh_guard_drop": 0.0,
+          "fresh_minus_recovery_guard_drop": 0.0,
+          "fresh_utility": 0.0,
+          "recovery_accuracy": 0.02857142857142857,
+          "recovery_baseline": 0.02857142857142857,
+          "recovery_guard": 1.0,
+          "recovery_guard_baseline": 1.0,
+          "recovery_guard_drop": 0.0,
+          "recovery_minus_fresh_accuracy": 0.02857142857142857,
+          "recovery_minus_fresh_gain": 0.0,
+          "recovery_minus_fresh_guard_accuracy": 0.0,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": 0.0,
+          "recovery_utility": 0.0
+        },
+        "replay_balanced": {
+          "both_at_accuracy_ceiling": 0.42857142857142855,
+          "fresh_acquisition_accuracy": 0.95,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.9839285714285715,
+          "fresh_guard_baseline": 1.0,
+          "fresh_guard_drop": 0.016071428571428563,
+          "fresh_minus_recovery_guard_drop": 0.008928571428571428,
+          "fresh_utility": 0.9339285714285714,
+          "recovery_accuracy": 0.9142857142857143,
+          "recovery_baseline": 0.02857142857142857,
+          "recovery_guard": 0.9928571428571429,
+          "recovery_guard_baseline": 1.0,
+          "recovery_guard_drop": 0.007142857142857133,
+          "recovery_minus_fresh_accuracy": -0.03571428571428571,
+          "recovery_minus_fresh_gain": -0.0642857142857143,
+          "recovery_minus_fresh_guard_accuracy": 0.008928571428571428,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": -0.05535714285714287,
+          "recovery_utility": 0.8785714285714286
+        },
+        "replay_target": {
+          "both_at_accuracy_ceiling": 1,
+          "fresh_acquisition_accuracy": 1.0,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.08392857142857144,
+          "fresh_guard_baseline": 1.0,
+          "fresh_guard_drop": 0.9160714285714285,
+          "fresh_minus_recovery_guard_drop": 0.18839285714285714,
+          "fresh_utility": 0.08392857142857144,
+          "recovery_accuracy": 1.0,
+          "recovery_baseline": 0.02857142857142857,
+          "recovery_guard": 0.27232142857142855,
+          "recovery_guard_baseline": 1.0,
+          "recovery_guard_drop": 0.7276785714285714,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": -0.02857142857142858,
+          "recovery_minus_fresh_guard_accuracy": 0.18839285714285714,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": 0.15982142857142856,
+          "recovery_utility": 0.24375
+        },
+        "sham": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.0,
+          "fresh_baseline": 0.0,
+          "fresh_guard": 0.9696428571428571,
+          "fresh_guard_baseline": 1.0,
+          "fresh_guard_drop": 0.03035714285714286,
+          "fresh_minus_recovery_guard_drop": -0.002678571428571419,
+          "fresh_utility": -0.03035714285714286,
+          "recovery_accuracy": 0.0,
+          "recovery_baseline": 0.02857142857142857,
+          "recovery_guard": 0.9669642857142857,
+          "recovery_guard_baseline": 1.0,
+          "recovery_guard_drop": 0.03303571428571428,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": -0.02857142857142857,
+          "recovery_minus_fresh_guard_accuracy": -0.002678571428571419,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": -0.03124999999999999,
+          "recovery_utility": -0.06160714285714285
+        }
+      }
+    },
+    "train-b": {
+      "paired_intents": 7,
+      "run_level": {
+        "none": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.02142857142857143,
+          "fresh_baseline": 0.02142857142857143,
+          "fresh_guard": 0.975,
+          "fresh_guard_baseline": 0.975,
+          "fresh_guard_drop": 0.0,
+          "fresh_minus_recovery_guard_drop": 0.0,
+          "fresh_utility": 0.0,
+          "recovery_accuracy": 0.0642857142857143,
+          "recovery_baseline": 0.0642857142857143,
+          "recovery_guard": 0.975,
+          "recovery_guard_baseline": 0.975,
+          "recovery_guard_drop": 0.0,
+          "recovery_minus_fresh_accuracy": 0.04285714285714286,
+          "recovery_minus_fresh_gain": 0.0,
+          "recovery_minus_fresh_guard_accuracy": 0.0,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": 0.0,
+          "recovery_utility": 0.0
+        },
+        "replay_balanced": {
+          "both_at_accuracy_ceiling": 0.7142857142857143,
+          "fresh_acquisition_accuracy": 0.9785714285714285,
+          "fresh_baseline": 0.02142857142857143,
+          "fresh_guard": 0.9785714285714285,
+          "fresh_guard_baseline": 0.975,
+          "fresh_guard_drop": 0.0017857142857142794,
+          "fresh_minus_recovery_guard_drop": -0.0017857142857142794,
+          "fresh_utility": 0.9553571428571429,
+          "recovery_accuracy": 0.9928571428571429,
+          "recovery_baseline": 0.0642857142857143,
+          "recovery_guard": 0.975,
+          "recovery_guard_baseline": 0.975,
+          "recovery_guard_drop": 0.0035714285714285587,
+          "recovery_minus_fresh_accuracy": 0.014285714285714282,
+          "recovery_minus_fresh_gain": -0.028571428571428564,
+          "recovery_minus_fresh_guard_accuracy": -0.0035714285714285587,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": -0.030357142857142843,
+          "recovery_utility": 0.925
+        },
+        "replay_target": {
+          "both_at_accuracy_ceiling": 1,
+          "fresh_acquisition_accuracy": 1.0,
+          "fresh_baseline": 0.02142857142857143,
+          "fresh_guard": 0.048214285714285716,
+          "fresh_guard_baseline": 0.975,
+          "fresh_guard_drop": 0.9267857142857143,
+          "fresh_minus_recovery_guard_drop": 0.08660714285714285,
+          "fresh_utility": 0.05178571428571429,
+          "recovery_accuracy": 1.0,
+          "recovery_baseline": 0.0642857142857143,
+          "recovery_guard": 0.13482142857142856,
+          "recovery_guard_baseline": 0.975,
+          "recovery_guard_drop": 0.8401785714285714,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": -0.04285714285714285,
+          "recovery_minus_fresh_guard_accuracy": 0.08660714285714287,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": 0.043750000000000004,
+          "recovery_utility": 0.0955357142857143
+        },
+        "sham": {
+          "both_at_accuracy_ceiling": 0,
+          "fresh_acquisition_accuracy": 0.0,
+          "fresh_baseline": 0.02142857142857143,
+          "fresh_guard": 0.9723214285714286,
+          "fresh_guard_baseline": 0.975,
+          "fresh_guard_drop": 0.009821428571428552,
+          "fresh_minus_recovery_guard_drop": -0.010714285714285707,
+          "fresh_utility": -0.03124999999999998,
+          "recovery_accuracy": 0.0,
+          "recovery_baseline": 0.0642857142857143,
+          "recovery_guard": 0.9553571428571429,
+          "recovery_guard_baseline": 0.975,
+          "recovery_guard_drop": 0.02053571428571426,
+          "recovery_minus_fresh_accuracy": 0.0,
+          "recovery_minus_fresh_gain": -0.04285714285714286,
+          "recovery_minus_fresh_guard_accuracy": -0.016964285714285734,
+          "recovery_minus_fresh_guard_baseline": 0.0,
+          "recovery_minus_fresh_utility": -0.05357142857142857,
+          "recovery_utility": -0.08482142857142855
+        }
+      }
+    }
+  },
+  "scope": "Exploratory bounded 16-code intent-to-code bindings. Two independently trained TEST source streams contain 6 and 8 dependent intent outcomes; these are not 14 independently trained models.",
+  "status": "pass"
+}
