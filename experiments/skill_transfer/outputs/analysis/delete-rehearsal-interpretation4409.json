@@ -1,0 +1,119 @@
+{
+  "status": "bounded_exposure_control_audit_complete_lane_frozen",
+  "audit_path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/outputs/analysis/delete-rehearsal-audit4409.json",
+  "audit_sha256": "07f7a6075c8df8a736b5030e9ed469e5e2b5524c73d3b4e418422139d1e4ddb0",
+  "source_sha256": "7c339f6cc2fd02fae10e13d9cfea57b0dbdd87e9a989270d56a1ed1a575c17f6",
+  "frozen_deployable_files": 50,
+  "scoring": {
+    "training_native_records": 640,
+    "fresh_audit_native_records": 544,
+    "reference_native_records_rechecked": 1536,
+    "discrepancies": 0,
+    "method": "Independent pinned-tokenizer decoding, native EOS/padding checks, strict whole-JSON duplicate-key/schema/type parsing and separately implemented sandbox execution; no scientific scoring imports.",
+    "initial_complete_dev_records_exact": 160,
+    "final_complete_dev_records_exact_after_new_task_reload": 160,
+    "identity": "Completed exit0/no-timeout receipts, embedded task/config hashes, actual archived source bundles20/33/45/50files, all collected manifests, runtime guards and actual saved checkpoint bytes verified. Distinct supervised audit task/attempt started after training completed."
+  },
+  "score_columns": [
+    "primitive_correct_out_of_256",
+    "familiar_correct_out_of_64",
+    "novel_correct_out_of_64"
+  ],
+  "scores": {
+    "initial": [
+      255,
+      32,
+      8
+    ],
+    "continue": [
+      228,
+      64,
+      18
+    ],
+    "delete_rehearsal": [
+      248,
+      64,
+      61
+    ],
+    "replay": [
+      255,
+      64,
+      63
+    ],
+    "original_sequential_replay": [
+      255,
+      64,
+      64
+    ]
+  },
+  "old_loss_ablation": {
+    "actual_updates": 128,
+    "current_exposures": 256,
+    "unique_current_rows": 113,
+    "old_exposures": 0,
+    "rehearsal_buffer_examples": 0,
+    "row_identity": "Every pair exactly matches the archived replay current_ids and independently reconstructed source schedule; all are TRAIN workflows.",
+    "objective": "Sum of two per-row mean answer-token CE losses including native EOS, divided by4. Source AST verified; logged loss equals0.5*current_mean_loss at all128steps. No old rows enter the update.",
+    "initialization": "Actual compressed checkpoint identity and empty optimizer fingerprint match both prior hybrid arms. Same AdamW parameter groups, rank8/alpha16, learning_rate0.0003, weight_decay0, foreachFalse and clip1.",
+    "optimizer_clocks": "All32saved optimizer states report128steps;2updates exceeded the clip threshold.",
+    "input_tokens": 74171,
+    "answer_tokens_including_eos": 15961,
+    "tokens": "Reconstructed actual prompt and answer token totals for every update; match logs exactly.",
+    "selection": "Exact initial DEV gates before updates; fixed final128; no training-stage TEST generation or score-based checkpoint choice."
+  },
+  "paired_replay_vs_ablation": {
+    "primitive": {
+      "retained": 248,
+      "lost": 0,
+      "gained": 7,
+      "wrong_at_both": 1
+    },
+    "novel": {
+      "retained": 60,
+      "lost": 1,
+      "gained": 3,
+      "wrong_at_both": 0
+    },
+    "interpretation": "Replay gains7primitive answers and loses0; on novel workflows it gains3and loses1, net2. This is a modest net difference in one stream, not an estimate of general superiority."
+  },
+  "failure_traces": {
+    "primitive": "Six cancel requests become rename calls with a valid title argument. Two add calls copy event IDs incorrectly: psvhwp->psvhw and iggmge->igggge. Replay repairs six cancellations and the first ID error; the second ID error is shared.",
+    "novel": "All3ablation failures replace the final cancel in add-shift-cancel with rename, preserving the event instead of removing it. Replay gets all3right but fails1different novel case that the ablation handles correctly.",
+    "format_vs_behavior": "All384ablation TEST responses have native EOS, valid strict JSON and executable calls. The11errors are wrong final states, not format or execution-validation failures.",
+    "initial_retention": "Ablation retains all8initially correct novel workflows and gains53. Across primitives it retains247previously correct, loses8and gains1; all errors are calendar cases."
+  },
+  "capacity_and_ancestry": {
+    "factor_rank": 8,
+    "projections": 16,
+    "dense_offset": null,
+    "factor_bytes": 3670016,
+    "optimizer_bytes": 7340160,
+    "checkpoint_file_bytes": 11041139,
+    "checkpoint_sha256": "5e8d20551259a34a1f959839d6e97e82e3f6d08ac8a4f85624335df9c6dbce54",
+    "shared_history": "Reuse of512expert updates/2048exposures and previous fusion/SVD; these are shared ancestry, not new control training. No fixed-total-memory or end-to-end fixed-capacity expert-bank claim.",
+    "source_dense_factor_and_offset_bytes": 758644736,
+    "retained_expert_factor_bytes": 14680064,
+    "retained_expert_optimizer_bytes": 29360640,
+    "retained_expert_checkpoint_and_metadata_bytes": 44262911,
+    "merge_gradient_updates": 0,
+    "svd_gradient_updates": 0,
+    "reference_replay_memory": "64previously exposed TRAIN examples;16/family;60362JSON bytes. This control uses0rehearsal examples."
+  },
+  "interpretation": [
+    "Removing old-example loss while matching current-example IDs, update count and current loss contribution still yields61/64novel answers. The earlier18->63comparison cannot be attributed mainly to rehearsal: the no-rehearsal matched control closes43ofthat45-answer difference. This arithmetic is descriptive, not a causal percentage decomposition.",
+    "Rehearsal retains a smaller advantage under the matched comparison:7more primitive answers and2net more novel answers. Cancellation-to-renaming errors provide a concrete behavioral difference.",
+    "The large earlier comparison also changed new-example exposure and objective weighting. This bounded control does not separate those two changes or identify the responsible gradients/circuits.",
+    "Original sequential replay remains255/256primitives and64/64familiar/novel, so this hybrid has not demonstrated a superiority benefit."
+  ],
+  "limits": [
+    "Posthoc control on previously observed original TEST; no fresh confirmatory benchmark or test-driven recipe tuning.",
+    "One calendar stream, one optimization seed and fixed synthetic templates. Explicit known-call composition, not autonomous subgoal discovery or long-stream learning.",
+    "Current objective contribution matches before global clipping/AdamW, which are nonlinear. Forward batch2versus4may alter GPU numerical paths; bit-identical gradients are not asserted.",
+    "Same qualified BF16base/FP32adapter path, base and initial-adapter hashes, and exact initial DEV verified on the replacement worker. No teacher qualification or broader transfer result."
+  ],
+  "disposition": "Park further hybrid optimization. Scientific lane and these analysis artifacts are frozen. Parent continues independent memory-recovery and teacher/composition work.",
+  "new_scientific_source_edits": 0,
+  "new_provider_actions": 0,
+  "new_dispatches": 0,
+  "new_optimization_runs": 0
+}

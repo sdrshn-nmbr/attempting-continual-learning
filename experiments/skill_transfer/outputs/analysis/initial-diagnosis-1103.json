@@ -1,0 +1,5175 @@
+{
+  "task_id": "followthrough-20260912-skills-initial-diagnosis1103-atomic",
+  "seed": 1103,
+  "target_family": "records",
+  "source_sha256": "a11b30e89879aeeaec860b018784828405229d298f570aba76320cd996d2143c",
+  "result_sha256": "096f29b2b5842afec871525bf4f100c018d3f4d9225f032351df060b61841ca6",
+  "execution_sha256": "79f6043cd081c95ab9f73deedf15d58c0015c76339755467d39c52744aa2fd87",
+  "manifest_files_verified": 305,
+  "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+  "native_generation_records_checked": 4256,
+  "saved_final_records_checked": 3808,
+  "conditions": {
+    "agent_dice": {
+      "primitive-calendar.test": {
+        "before": 63,
+        "after": 62,
+        "n": 64,
+        "counts": {
+          "retained": 62,
+          "lost": 1,
+          "gained": 0,
+          "wrong_at_both": 1
+        }
+      },
+      "primitive-calendar.validation": {
+        "before": 32,
+        "after": 30,
+        "n": 32,
+        "counts": {
+          "retained": 30,
+          "lost": 2,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-files.test": {
+        "before": 52,
+        "after": 53,
+        "n": 64,
+        "counts": {
+          "retained": 51,
+          "lost": 1,
+          "gained": 2,
+          "wrong_at_both": 10
+        }
+      },
+      "primitive-files.validation": {
+        "before": 26,
+        "after": 25,
+        "n": 32,
+        "counts": {
+          "retained": 25,
+          "lost": 1,
+          "gained": 0,
+          "wrong_at_both": 6
+        }
+      },
+      "primitive-records.test": {
+        "all": {
+          "before": 64,
+          "after": 64,
+          "n": 64,
+          "counts": {
+            "retained": 64,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "filter": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "project": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "project": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "project": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "sort": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "sort": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "sort": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "take": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "take": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "take": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "primitive-records.validation": {
+        "before": 32,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-text.test": {
+        "before": 48,
+        "after": 59,
+        "n": 64,
+        "counts": {
+          "retained": 48,
+          "lost": 0,
+          "gained": 11,
+          "wrong_at_both": 5
+        }
+      },
+      "primitive-text.validation": {
+        "before": 24,
+        "after": 30,
+        "n": 32,
+        "counts": {
+          "retained": 24,
+          "lost": 0,
+          "gained": 6,
+          "wrong_at_both": 2
+        }
+      },
+      "workflow.novel-test": {
+        "all": {
+          "before": 64,
+          "after": 64,
+          "n": 64,
+          "counts": {
+            "retained": 64,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "2": {
+          "before": 32,
+          "after": 32,
+          "n": 32,
+          "counts": {
+            "retained": 32,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>take>project": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>take>project": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "3": {
+          "before": 32,
+          "after": 32,
+          "n": 32,
+          "counts": {
+            "retained": 32,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>take": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>take": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "workflow.test": {
+        "before": 64,
+        "after": 64,
+        "n": 64,
+        "counts": {
+          "retained": 64,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "workflow.validation": {
+        "before": 32,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "fresh.ordinary": {
+        "all": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "0": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "1": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "sort>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "sort>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "fresh.unseen-combinations": {
+        "all": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "2": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "3": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>take": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>take": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      }
+    },
+    "arithmetic": {
+      "primitive-calendar.test": {
+        "before": 62,
+        "after": 61,
+        "n": 64,
+        "counts": {
+          "retained": 61,
+          "lost": 1,
+          "gained": 0,
+          "wrong_at_both": 2
+        }
+      },
+      "primitive-calendar.validation": {
+        "before": 31,
+        "after": 29,
+        "n": 32,
+        "counts": {
+          "retained": 29,
+          "lost": 2,
+          "gained": 0,
+          "wrong_at_both": 1
+        }
+      },
+      "primitive-files.test": {
+        "before": 53,
+        "after": 51,
+        "n": 64,
+        "counts": {
+          "retained": 51,
+          "lost": 2,
+          "gained": 0,
+          "wrong_at_both": 11
+        }
+      },
+      "primitive-files.validation": {
+        "before": 27,
+        "after": 25,
+        "n": 32,
+        "counts": {
+          "retained": 25,
+          "lost": 2,
+          "gained": 0,
+          "wrong_at_both": 5
+        }
+      },
+      "primitive-records.test": {
+        "all": {
+          "before": 64,
+          "after": 64,
+          "n": 64,
+          "counts": {
+            "retained": 64,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "filter": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "project": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "project": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "project": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "sort": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "sort": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "sort": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "take": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "take": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "take": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "primitive-records.validation": {
+        "before": 32,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-text.test": {
+        "before": 48,
+        "after": 59,
+        "n": 64,
+        "counts": {
+          "retained": 48,
+          "lost": 0,
+          "gained": 11,
+          "wrong_at_both": 5
+        }
+      },
+      "primitive-text.validation": {
+        "before": 25,
+        "after": 28,
+        "n": 32,
+        "counts": {
+          "retained": 25,
+          "lost": 0,
+          "gained": 3,
+          "wrong_at_both": 4
+        }
+      },
+      "workflow.novel-test": {
+        "all": {
+          "before": 64,
+          "after": 64,
+          "n": 64,
+          "counts": {
+            "retained": 64,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "2": {
+          "before": 32,
+          "after": 32,
+          "n": 32,
+          "counts": {
+            "retained": 32,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>take>project": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>take>project": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "3": {
+          "before": 32,
+          "after": 32,
+          "n": 32,
+          "counts": {
+            "retained": 32,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>take": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>take": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "workflow.test": {
+        "before": 64,
+        "after": 64,
+        "n": 64,
+        "counts": {
+          "retained": 64,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "workflow.validation": {
+        "before": 32,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "fresh.ordinary": {
+        "all": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "0": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "1": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "sort>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "sort>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "fresh.unseen-combinations": {
+        "all": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "2": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "3": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>take": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>take": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      }
+    },
+    "continue": {
+      "primitive-calendar.test": {
+        "before": 60,
+        "after": 54,
+        "n": 64,
+        "counts": {
+          "retained": 54,
+          "lost": 6,
+          "gained": 0,
+          "wrong_at_both": 4
+        }
+      },
+      "primitive-calendar.validation": {
+        "before": 32,
+        "after": 25,
+        "n": 32,
+        "counts": {
+          "retained": 25,
+          "lost": 7,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-files.test": {
+        "before": 64,
+        "after": 64,
+        "n": 64,
+        "counts": {
+          "retained": 64,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-files.validation": {
+        "before": 32,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-records.test": {
+        "all": {
+          "before": 64,
+          "after": 64,
+          "n": 64,
+          "counts": {
+            "retained": 64,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "filter": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "project": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "project": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "project": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "sort": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "sort": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "sort": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "take": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "take": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "take": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "primitive-records.validation": {
+        "before": 32,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-text.test": {
+        "before": 64,
+        "after": 64,
+        "n": 64,
+        "counts": {
+          "retained": 64,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-text.validation": {
+        "before": 32,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "workflow.novel-test": {
+        "all": {
+          "before": 32,
+          "after": 64,
+          "n": 64,
+          "counts": {
+            "retained": 32,
+            "lost": 0,
+            "gained": 32,
+            "wrong_at_both": 0
+          }
+        },
+        "2": {
+          "before": 32,
+          "after": 32,
+          "n": 32,
+          "counts": {
+            "retained": 32,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>take>project": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>take>project": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "3": {
+          "before": 0,
+          "after": 32,
+          "n": 32,
+          "counts": {
+            "retained": 0,
+            "lost": 0,
+            "gained": 32,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "unparsed": 32
+            },
+            "errors": {
+              "INVALID_JSON: whole response must be a JSON array": 32
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "06f15b55266b39a7c3e7472b86ac9764558b6e171d99b16accdae5092ef458d5",
+                "request": "Keep only records whose team equals amber. Then Sort records by score, largest first. Then Keep only the first two records, in their current order.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    },
+                    "tool": "veno"
+                  },
+                  {
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    },
+                    "tool": "velu"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "xrczyk",
+                    "score": 86,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "ppvqlr",
+                    "score": 71,
+                    "team": "amber"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              },
+              {
+                "id": "230d57fc0e364e9fd38e9ee2b9cac3b53cc2546e71c991e3cd2a9d222b596d0e",
+                "request": "Keep only records whose team equals amber. Then Sort records by score, largest first. Then Keep only the first two records, in their current order.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    },
+                    "tool": "veno"
+                  },
+                  {
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    },
+                    "tool": "velu"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "jaqggc",
+                    "score": 90,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "xdknzd",
+                    "score": 78,
+                    "team": "amber"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "filter>sort>take": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "workflow.test": {
+        "before": 63,
+        "after": 64,
+        "n": 64,
+        "counts": {
+          "retained": 63,
+          "lost": 0,
+          "gained": 1,
+          "wrong_at_both": 0
+        }
+      },
+      "workflow.validation": {
+        "before": 32,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "fresh.ordinary": {
+        "all": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "0": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "1": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "sort>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "sort>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "fresh.unseen-combinations": {
+        "all": {
+          "before": 8,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 8,
+            "wrong_at_both": 0
+          }
+        },
+        "2": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "3": {
+          "before": 0,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 0,
+            "lost": 0,
+            "gained": 8,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "unparsed": 8
+            },
+            "errors": {
+              "INVALID_JSON: whole response must be a JSON array": 8
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "075028eb73b169fc930150936e4393673dbe4689b1380eb1cb25258f940388ca",
+                "request": "Keep only records whose team equals amber. Then Sort records by score, largest first. Then Keep only the first two records, in their current order.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    },
+                    "tool": "veno"
+                  },
+                  {
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    },
+                    "tool": "velu"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "pmxhkj",
+                    "score": 81,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "hhyrcg",
+                    "score": 43,
+                    "team": "amber"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              },
+              {
+                "id": "c4883a9d12d947059e814c6641194fcd50d5e17c373646b91f065a81c83d5b66",
+                "request": "Keep only records whose team equals amber. Then Sort records by score, largest first. Then Keep only the first two records, in their current order.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    },
+                    "tool": "veno"
+                  },
+                  {
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    },
+                    "tool": "velu"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "hakmrv",
+                    "score": 93,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "arqpom",
+                    "score": 80,
+                    "team": "amber"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "filter>sort>take": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      }
+    },
+    "fresh": {
+      "primitive-calendar.test": {
+        "before": 0,
+        "after": 45,
+        "n": 64,
+        "counts": {
+          "retained": 0,
+          "lost": 0,
+          "gained": 45,
+          "wrong_at_both": 19
+        }
+      },
+      "primitive-calendar.validation": {
+        "before": 0,
+        "after": 23,
+        "n": 32,
+        "counts": {
+          "retained": 0,
+          "lost": 0,
+          "gained": 23,
+          "wrong_at_both": 9
+        }
+      },
+      "primitive-files.test": {
+        "before": 16,
+        "after": 43,
+        "n": 64,
+        "counts": {
+          "retained": 15,
+          "lost": 1,
+          "gained": 28,
+          "wrong_at_both": 20
+        }
+      },
+      "primitive-files.validation": {
+        "before": 10,
+        "after": 21,
+        "n": 32,
+        "counts": {
+          "retained": 10,
+          "lost": 0,
+          "gained": 11,
+          "wrong_at_both": 11
+        }
+      },
+      "primitive-records.test": {
+        "all": {
+          "before": 0,
+          "after": 50,
+          "n": 64,
+          "counts": {
+            "retained": 0,
+            "lost": 0,
+            "gained": 50,
+            "wrong_at_both": 14
+          }
+        },
+        "filter": {
+          "before": 0,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 0,
+            "lost": 0,
+            "gained": 16,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "unparsed": 14,
+              "sort": 1,
+              "project": 1
+            },
+            "errors": {
+              "CALL_SCHEMA: exactly tool and args are required": 14,
+              "WRONG_STATE": 1,
+              "ARGUMENT_TYPES": 1
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "a4fd4490c1b5784f1ba8fd293c6329b04ea6721abf7540a07920978fc8f8e9d2",
+                "request": "Keep only records whose team equals amber.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    },
+                    "tool": "veno"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "fxoyml",
+                    "score": 59,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "vzkmdc",
+                    "score": 37,
+                    "team": "amber"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              },
+              {
+                "id": "854430b76935abdc4133258d52b8f125d43724f6ad83c10d42e1fae2001b107c",
+                "request": "Keep only records whose team equals amber.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    },
+                    "tool": "veno"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "oiexcs",
+                    "score": 50,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "qaimag",
+                    "score": 26,
+                    "team": "amber"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "filter": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "project": {
+          "before": 0,
+          "after": 12,
+          "n": 16,
+          "counts": {
+            "retained": 0,
+            "lost": 0,
+            "gained": 12,
+            "wrong_at_both": 4
+          },
+          "initial": {
+            "plans": {
+              "unparsed": 16
+            },
+            "errors": {
+              "CALL_COUNT: require 1..4 calls": 13,
+              "CALL_SCHEMA: exactly tool and args are required": 3
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "b416a95fe8ad624f0bb3e2f1e3817be738817bd2f056fecc3c0e98d0d5a9f085",
+                "request": "Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "ysgvui",
+                    "score": 58
+                  },
+                  {
+                    "id": "zixzyb",
+                    "score": 65
+                  },
+                  {
+                    "id": "tiquzx",
+                    "score": 87
+                  },
+                  {
+                    "id": "carcdx",
+                    "score": 51
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              },
+              {
+                "id": "3e4eb9c8de5d051119252ee540d7a9972bf19a46de7c053bf9f2a621a8ce5922",
+                "request": "Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "cklqux",
+                    "score": 64
+                  },
+                  {
+                    "id": "afpxyf",
+                    "score": 38
+                  },
+                  {
+                    "id": "rnzjkh",
+                    "score": 26
+                  },
+                  {
+                    "id": "mkrveg",
+                    "score": 76
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": false
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "project": 16
+            },
+            "errors": {
+              "ARGUMENT_KEYS": 4
+            },
+            "wrong_same_ops": 4,
+            "wrong_argument_differences": 4,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "3e4eb9c8de5d051119252ee540d7a9972bf19a46de7c053bf9f2a621a8ce5922",
+                "request": "Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "field": [
+                        "id",
+                        "score"
+                      ]
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "cklqux",
+                    "score": 64
+                  },
+                  {
+                    "id": "afpxyf",
+                    "score": 38
+                  },
+                  {
+                    "id": "rnzjkh",
+                    "score": 26
+                  },
+                  {
+                    "id": "mkrveg",
+                    "score": 76
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": false
+              },
+              {
+                "id": "32738466580aa42bb4bbab25836765a5842bab04394cfb108cde1a4bf33e06ef",
+                "request": "Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "field": [
+                        "id",
+                        "score"
+                      ]
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "johiyg",
+                    "score": 62
+                  },
+                  {
+                    "id": "fkkxny",
+                    "score": 80
+                  },
+                  {
+                    "id": "kctohq",
+                    "score": 91
+                  },
+                  {
+                    "id": "ivsrzm",
+                    "score": 98
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": false
+              }
+            ]
+          }
+        },
+        "sort": {
+          "before": 0,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 0,
+            "lost": 0,
+            "gained": 16,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "unparsed": 16
+            },
+            "errors": {
+              "CALL_SCHEMA: exactly tool and args are required": 16
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "509f1a527dd11c4066d92729de8d12c5d23cca3b1b323238eda613d51942fd3a",
+                "request": "Sort records by score, largest first.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    },
+                    "tool": "velu"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "kbdvwd",
+                    "score": 74,
+                    "team": "blue"
+                  },
+                  {
+                    "id": "ghfdvr",
+                    "score": 73,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "mbynig",
+                    "score": 70,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "naitiu",
+                    "score": 52,
+                    "team": "blue"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              },
+              {
+                "id": "83e403d955c77dd1d1ad0cfd4191bb258df93fd75831679aa9c090a03e97fa8b",
+                "request": "Sort records by score, largest first.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    },
+                    "tool": "velu"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "krzxkk",
+                    "score": 76,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "skknbe",
+                    "score": 48,
+                    "team": "blue"
+                  },
+                  {
+                    "id": "omnflq",
+                    "score": 46,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "kydrhb",
+                    "score": 33,
+                    "team": "blue"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "sort": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "take": {
+          "before": 0,
+          "after": 6,
+          "n": 16,
+          "counts": {
+            "retained": 0,
+            "lost": 0,
+            "gained": 6,
+            "wrong_at_both": 10
+          },
+          "initial": {
+            "plans": {
+              "unparsed": 16
+            },
+            "errors": {
+              "CALL_COUNT: require 1..4 calls": 10,
+              "CALL_SCHEMA: exactly tool and args are required": 6
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "6c10f7b0da1f58180c14778393ef3b28c66f38fab00c6e3a261421c8af40e7ba",
+                "request": "Keep only the first two records, in their current order.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "xqbnyw",
+                    "score": 30,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "krfwgq",
+                    "score": 82,
+                    "team": "blue"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": false
+              },
+              {
+                "id": "992c173ae84a521251774da12d3f0d7e92b2cec986f674074f016a4fed5d0d9c",
+                "request": "Keep only the first two records, in their current order.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "lskauo",
+                    "score": 10,
+                    "team": "blue"
+                  },
+                  {
+                    "id": "trmnid",
+                    "score": 85,
+                    "team": "blue"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": false
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "take>project": 16
+            },
+            "errors": {
+              "PROJECT_FIELDS": 10
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "6c10f7b0da1f58180c14778393ef3b28c66f38fab00c6e3a261421c8af40e7ba",
+                "request": "Keep only the first two records, in their current order.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "roti",
+                    "args": {
+                      "count": 2
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": []
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "xqbnyw",
+                    "score": 30,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "krfwgq",
+                    "score": 82,
+                    "team": "blue"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": false
+              },
+              {
+                "id": "992c173ae84a521251774da12d3f0d7e92b2cec986f674074f016a4fed5d0d9c",
+                "request": "Keep only the first two records, in their current order.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "roti",
+                    "args": {
+                      "count": 2
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": []
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "lskauo",
+                    "score": 10,
+                    "team": "blue"
+                  },
+                  {
+                    "id": "trmnid",
+                    "score": 85,
+                    "team": "blue"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": false
+              }
+            ]
+          }
+        }
+      },
+      "primitive-records.validation": {
+        "before": 1,
+        "after": 29,
+        "n": 32,
+        "counts": {
+          "retained": 1,
+          "lost": 0,
+          "gained": 28,
+          "wrong_at_both": 3
+        }
+      },
+      "primitive-text.test": {
+        "before": 32,
+        "after": 48,
+        "n": 64,
+        "counts": {
+          "retained": 31,
+          "lost": 1,
+          "gained": 17,
+          "wrong_at_both": 15
+        }
+      },
+      "primitive-text.validation": {
+        "before": 16,
+        "after": 25,
+        "n": 32,
+        "counts": {
+          "retained": 15,
+          "lost": 1,
+          "gained": 10,
+          "wrong_at_both": 6
+        }
+      },
+      "workflow.novel-test": {
+        "all": {
+          "before": 48,
+          "after": 64,
+          "n": 64,
+          "counts": {
+            "retained": 48,
+            "lost": 0,
+            "gained": 16,
+            "wrong_at_both": 0
+          }
+        },
+        "2": {
+          "before": 22,
+          "after": 32,
+          "n": 32,
+          "counts": {
+            "retained": 22,
+            "lost": 0,
+            "gained": 10,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "project>project>project>project": 4,
+              "project>project>project": 3,
+              "filter>project": 22,
+              "project>project": 3
+            },
+            "errors": {
+              "MISSING_FIELD": 6,
+              "WRONG_STATE": 1,
+              "ARGUMENT_KEYS": 1,
+              "ARGUMENT_TYPES": 2
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 3,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "d100f9d97ddb4f87294ba99dccab219d0d82ba12b22b2e5c144256c7e8ec5420",
+                "request": "Keep only records whose team equals blue. Then Keep only the first two records, in their current order. Then Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "blue"
+                    },
+                    "tool": "veno"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  },
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "team"
+                      ]
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "team"
+                      ]
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "qaclhv",
+                    "score": 91
+                  },
+                  {
+                    "id": "opipcs",
+                    "score": 42
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              },
+              {
+                "id": "304b95d90330b1260f341eb410493f2c73c918138b33616e2af05f90e6d35f65",
+                "request": "Keep only records whose team equals amber. Then Keep only the first two records, in their current order. Then Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    },
+                    "tool": "veno"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  },
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score",
+                        "team"
+                      ]
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "rxzwvq",
+                    "score": 32
+                  },
+                  {
+                    "id": "kspwoe",
+                    "score": 36
+                  }
+                ],
+                "final_state": [
+                  {
+                    "id": "rxzwvq",
+                    "score": 32
+                  },
+                  {
+                    "id": "kspwoe",
+                    "score": 36
+                  },
+                  {
+                    "id": "hcvszu",
+                    "score": 60
+                  },
+                  {
+                    "id": "lfsrio",
+                    "score": 69
+                  }
+                ],
+                "correct_before": false,
+                "correct_after": true
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "filter>take>project": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "3": {
+          "before": 26,
+          "after": 32,
+          "n": 32,
+          "counts": {
+            "retained": 26,
+            "lost": 0,
+            "gained": 6,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>project": 17,
+              "filter>sort>take": 12,
+              "unparsed": 3
+            },
+            "errors": {
+              "INVALID_JSON: whole response must be a JSON array": 3,
+              "MISSING_FIELD": 3
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 3,
+            "examples": [
+              {
+                "id": "a5186139b7a970cbf74c50ebaae4665ed450d9641c3a13280b74c9dc193f08e9",
+                "request": "Keep only records whose team equals amber. Then Sort records by score, largest first. Then Keep only the first two records, in their current order.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    },
+                    "tool": "veno"
+                  },
+                  {
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    },
+                    "tool": "velu"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "xrecvx",
+                    "score": 77,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "dllpli",
+                    "score": 68,
+                    "team": "amber"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              },
+              {
+                "id": "06b610036a51e314d4f402d813979786f40172547aecf2770c300dc1d61a9d79",
+                "request": "Keep only records whose team equals blue. Then Sort records by score, largest first. Then Keep only the first two records, in their current order.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "blue"
+                    },
+                    "tool": "veno"
+                  },
+                  {
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    },
+                    "tool": "velu"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "veno",
+                    "args": {
+                      "field": "team",
+                      "value": "blue"
+                    }
+                  },
+                  {
+                    "tool": "velu",
+                    "args": {
+                      "field": "score",
+                      "descending": true
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "0",
+                        "1"
+                      ]
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "tbmwjf",
+                    "score": 83,
+                    "team": "blue"
+                  },
+                  {
+                    "id": "esinln",
+                    "score": 20,
+                    "team": "blue"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "filter>sort>take": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "workflow.test": {
+        "before": 44,
+        "after": 64,
+        "n": 64,
+        "counts": {
+          "retained": 44,
+          "lost": 0,
+          "gained": 20,
+          "wrong_at_both": 0
+        }
+      },
+      "workflow.validation": {
+        "before": 21,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 21,
+          "lost": 0,
+          "gained": 11,
+          "wrong_at_both": 0
+        }
+      },
+      "fresh.ordinary": {
+        "all": {
+          "before": 11,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 11,
+            "lost": 0,
+            "gained": 5,
+            "wrong_at_both": 0
+          }
+        },
+        "0": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "1": {
+          "before": 3,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 3,
+            "lost": 0,
+            "gained": 5,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "sort>take>project": 3,
+              "sort>project": 4,
+              "sort>take>filter>filter": 1
+            },
+            "errors": {
+              "WRONG_STATE": 5
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "b00b15ad6a1c9fc5b9a9a53d62471c0e8384cd26414b2dbc8ffec894d16031e2",
+                "request": "Sort records by score, largest first. Then Keep only the first two records, in their current order. Then Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    },
+                    "tool": "velu"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  },
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "velu",
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "cwmmoc",
+                    "score": 83
+                  },
+                  {
+                    "id": "gpkkca",
+                    "score": 80
+                  }
+                ],
+                "final_state": [
+                  {
+                    "id": "cwmmoc",
+                    "score": 83
+                  },
+                  {
+                    "id": "gpkkca",
+                    "score": 80
+                  },
+                  {
+                    "id": "nvmqmm",
+                    "score": 69
+                  },
+                  {
+                    "id": "wkkkmb",
+                    "score": 66
+                  }
+                ],
+                "correct_before": false,
+                "correct_after": true
+              },
+              {
+                "id": "c13f97abeb21413ac45f6d2c078e0db314337491e395eda1c63d52050bbc91b0",
+                "request": "Sort records by score, largest first. Then Keep only the first two records, in their current order. Then Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    },
+                    "tool": "velu"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  },
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "velu",
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "renlww",
+                    "score": 75
+                  },
+                  {
+                    "id": "tcspdu",
+                    "score": 52
+                  }
+                ],
+                "final_state": [
+                  {
+                    "id": "renlww",
+                    "score": 75
+                  },
+                  {
+                    "id": "tcspdu",
+                    "score": 52
+                  },
+                  {
+                    "id": "ehghhs",
+                    "score": 42
+                  },
+                  {
+                    "id": "xsfuel",
+                    "score": 34
+                  }
+                ],
+                "correct_before": false,
+                "correct_after": true
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "sort>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "fresh.unseen-combinations": {
+        "all": {
+          "before": 15,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 15,
+            "lost": 0,
+            "gained": 1,
+            "wrong_at_both": 0
+          }
+        },
+        "2": {
+          "before": 7,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 7,
+            "lost": 0,
+            "gained": 1,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>project": 7,
+              "filter>take>sort>project": 1
+            },
+            "errors": {
+              "WRONG_STATE": 1
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "23e55ce97202c9ebc95fc3cd0e2ce7e63bb087d03b02cbed1414faa463012d1a",
+                "request": "Keep only records whose team equals amber. Then Keep only the first two records, in their current order. Then Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    },
+                    "tool": "veno"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  },
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "veno",
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    }
+                  },
+                  {
+                    "tool": "roti",
+                    "args": {
+                      "count": 2
+                    }
+                  },
+                  {
+                    "tool": "velu",
+                    "args": {
+                      "field": "id",
+                      "descending": false
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "yeqbyn",
+                    "score": 39
+                  },
+                  {
+                    "id": "mndrwg",
+                    "score": 59
+                  }
+                ],
+                "final_state": [
+                  {
+                    "id": "mndrwg",
+                    "score": 59
+                  },
+                  {
+                    "id": "yeqbyn",
+                    "score": 39
+                  }
+                ],
+                "correct_before": false,
+                "correct_after": true
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "filter>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "3": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>project": 6,
+              "filter>sort>take": 2
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>take": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      }
+    },
+    "irrelevant": {
+      "primitive-calendar.test": {
+        "before": 32,
+        "after": 32,
+        "n": 64,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 32
+        }
+      },
+      "primitive-calendar.validation": {
+        "before": 17,
+        "after": 17,
+        "n": 32,
+        "counts": {
+          "retained": 16,
+          "lost": 1,
+          "gained": 1,
+          "wrong_at_both": 14
+        }
+      },
+      "primitive-files.test": {
+        "before": 64,
+        "after": 62,
+        "n": 64,
+        "counts": {
+          "retained": 62,
+          "lost": 2,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-files.validation": {
+        "before": 32,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-records.test": {
+        "all": {
+          "before": 47,
+          "after": 58,
+          "n": 64,
+          "counts": {
+            "retained": 41,
+            "lost": 6,
+            "gained": 17,
+            "wrong_at_both": 0
+          }
+        },
+        "filter": {
+          "before": 15,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 15,
+            "lost": 0,
+            "gained": 1,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter": 15,
+              "project": 1
+            },
+            "errors": {
+              "ARGUMENT_KEYS": 1
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "598f7e9a6359e5fd4d8ac54e44e7097ecac07b465ffcbf565c81459af02be3ad",
+                "request": "Keep only records whose team equals blue.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "blue"
+                    },
+                    "tool": "veno"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "team"
+                      ],
+                      "value": "blue"
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "sbzbyl",
+                    "score": 12,
+                    "team": "blue"
+                  },
+                  {
+                    "id": "nelsnu",
+                    "score": 50,
+                    "team": "blue"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "filter": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "project": {
+          "before": 16,
+          "after": 10,
+          "n": 16,
+          "counts": {
+            "retained": 10,
+            "lost": 6,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "project": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "project": 10,
+              "unparsed": 6
+            },
+            "errors": {
+              "INVALID_JSON: whole response must be a JSON array": 6
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "0c9a109182480a62c3db29f302a0135ad9b22b0c8ce165e89676d12e11fc451a",
+                "request": "Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "aevvhs",
+                    "score": 92
+                  },
+                  {
+                    "id": "rnoetq",
+                    "score": 34
+                  },
+                  {
+                    "id": "wxjegi",
+                    "score": 88
+                  },
+                  {
+                    "id": "vjwgrg",
+                    "score": 78
+                  }
+                ],
+                "final_state": null,
+                "correct_before": true,
+                "correct_after": false
+              },
+              {
+                "id": "644378f165d18c305b6a6a13af71b2c760acaa72f358466130957ebe3aa0d948",
+                "request": "Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "cpbbax",
+                    "score": 58
+                  },
+                  {
+                    "id": "arrzxh",
+                    "score": 23
+                  },
+                  {
+                    "id": "hxfwwe",
+                    "score": 90
+                  },
+                  {
+                    "id": "tkakod",
+                    "score": 86
+                  }
+                ],
+                "final_state": null,
+                "correct_before": true,
+                "correct_after": false
+              }
+            ]
+          }
+        },
+        "sort": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "sort": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "sort": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "take": {
+          "before": 0,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 0,
+            "lost": 0,
+            "gained": 16,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "project": 16
+            },
+            "errors": {
+              "WRONG_STATE": 16
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "6c10f7b0da1f58180c14778393ef3b28c66f38fab00c6e3a261421c8af40e7ba",
+                "request": "Keep only the first two records, in their current order.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score",
+                        "team"
+                      ]
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "xqbnyw",
+                    "score": 30,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "krfwgq",
+                    "score": 82,
+                    "team": "blue"
+                  }
+                ],
+                "final_state": [
+                  {
+                    "id": "xqbnyw",
+                    "score": 30,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "krfwgq",
+                    "score": 82,
+                    "team": "blue"
+                  },
+                  {
+                    "id": "zegget",
+                    "score": 55,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "jegsmo",
+                    "score": 12,
+                    "team": "blue"
+                  }
+                ],
+                "correct_before": false,
+                "correct_after": true
+              },
+              {
+                "id": "992c173ae84a521251774da12d3f0d7e92b2cec986f674074f016a4fed5d0d9c",
+                "request": "Keep only the first two records, in their current order.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score",
+                        "team"
+                      ]
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "lskauo",
+                    "score": 10,
+                    "team": "blue"
+                  },
+                  {
+                    "id": "trmnid",
+                    "score": 85,
+                    "team": "blue"
+                  }
+                ],
+                "final_state": [
+                  {
+                    "id": "lskauo",
+                    "score": 10,
+                    "team": "blue"
+                  },
+                  {
+                    "id": "trmnid",
+                    "score": 85,
+                    "team": "blue"
+                  },
+                  {
+                    "id": "nbacep",
+                    "score": 84,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "jzcbnj",
+                    "score": 53,
+                    "team": "amber"
+                  }
+                ],
+                "correct_before": false,
+                "correct_after": true
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "take": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "primitive-records.validation": {
+        "before": 24,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 24,
+          "lost": 0,
+          "gained": 8,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-text.test": {
+        "before": 35,
+        "after": 43,
+        "n": 64,
+        "counts": {
+          "retained": 33,
+          "lost": 2,
+          "gained": 10,
+          "wrong_at_both": 19
+        }
+      },
+      "primitive-text.validation": {
+        "before": 14,
+        "after": 22,
+        "n": 32,
+        "counts": {
+          "retained": 14,
+          "lost": 0,
+          "gained": 8,
+          "wrong_at_both": 10
+        }
+      },
+      "workflow.novel-test": {
+        "all": {
+          "before": 49,
+          "after": 64,
+          "n": 64,
+          "counts": {
+            "retained": 49,
+            "lost": 0,
+            "gained": 15,
+            "wrong_at_both": 0
+          }
+        },
+        "2": {
+          "before": 23,
+          "after": 32,
+          "n": 32,
+          "counts": {
+            "retained": 23,
+            "lost": 0,
+            "gained": 9,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>project": 21,
+              "filter>take>project": 2,
+              "unparsed": 9
+            },
+            "errors": {
+              "INVALID_JSON: whole response must be a JSON array": 9
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "88f3f551979e002b9abe3fb3b6ab620bfa78f0f124f71f5f2dec1249b0ab2786",
+                "request": "Keep only records whose team equals amber. Then Keep only the first two records, in their current order. Then Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    },
+                    "tool": "veno"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  },
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "stsjqg",
+                    "score": 57
+                  },
+                  {
+                    "id": "pdwgqk",
+                    "score": 38
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              },
+              {
+                "id": "4e5d305ff648cfc877a743b673c5759d247f6ca8c2bf90e1c90f6e9334dc3884",
+                "request": "Keep only records whose team equals blue. Then Keep only the first two records, in their current order. Then Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "blue"
+                    },
+                    "tool": "veno"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  },
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "zxjkbz",
+                    "score": 16
+                  },
+                  {
+                    "id": "gfyxwl",
+                    "score": 46
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "filter>take>project": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "3": {
+          "before": 26,
+          "after": 32,
+          "n": 32,
+          "counts": {
+            "retained": 26,
+            "lost": 0,
+            "gained": 6,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>take": 26,
+              "filter>sort>project": 6
+            },
+            "errors": {
+              "ARGUMENT_KEYS": 3,
+              "MISSING_FIELD": 3
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 6,
+            "examples": [
+              {
+                "id": "fef2da1662da6270265aadb44ca2254d3b6aed98ff25c5d4c6e04c23d69cdeac",
+                "request": "Keep only records whose team equals amber. Then Sort records by score, largest first. Then Keep only the first two records, in their current order.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    },
+                    "tool": "veno"
+                  },
+                  {
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    },
+                    "tool": "velu"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "veno",
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    }
+                  },
+                  {
+                    "tool": "velu",
+                    "args": {
+                      "field": "score",
+                      "descending": true
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score",
+                        "team"
+                      ],
+                      "count": 2
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "wtgfih",
+                    "score": 87,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "lqnpya",
+                    "score": 26,
+                    "team": "amber"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              },
+              {
+                "id": "a5186139b7a970cbf74c50ebaae4665ed450d9641c3a13280b74c9dc193f08e9",
+                "request": "Keep only records whose team equals amber. Then Sort records by score, largest first. Then Keep only the first two records, in their current order.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    },
+                    "tool": "veno"
+                  },
+                  {
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    },
+                    "tool": "velu"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "veno",
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    }
+                  },
+                  {
+                    "tool": "velu",
+                    "args": {
+                      "field": "score",
+                      "descending": true
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score",
+                        "team"
+                      ],
+                      "count": 2
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "xrecvx",
+                    "score": 77,
+                    "team": "amber"
+                  },
+                  {
+                    "id": "dllpli",
+                    "score": 68,
+                    "team": "amber"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "filter>sort>take": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "workflow.test": {
+        "before": 40,
+        "after": 64,
+        "n": 64,
+        "counts": {
+          "retained": 40,
+          "lost": 0,
+          "gained": 24,
+          "wrong_at_both": 0
+        }
+      },
+      "workflow.validation": {
+        "before": 16,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 16,
+          "lost": 0,
+          "gained": 16,
+          "wrong_at_both": 0
+        }
+      },
+      "fresh.ordinary": {
+        "all": {
+          "before": 11,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 11,
+            "lost": 0,
+            "gained": 5,
+            "wrong_at_both": 0
+          }
+        },
+        "0": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "1": {
+          "before": 3,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 3,
+            "lost": 0,
+            "gained": 5,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "sort>take>project": 3,
+              "sort>project": 5
+            },
+            "errors": {
+              "WRONG_STATE": 5
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "b00b15ad6a1c9fc5b9a9a53d62471c0e8384cd26414b2dbc8ffec894d16031e2",
+                "request": "Sort records by score, largest first. Then Keep only the first two records, in their current order. Then Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    },
+                    "tool": "velu"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  },
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "velu",
+                    "args": {
+                      "field": "score",
+                      "descending": true
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "cwmmoc",
+                    "score": 83
+                  },
+                  {
+                    "id": "gpkkca",
+                    "score": 80
+                  }
+                ],
+                "final_state": [
+                  {
+                    "id": "cwmmoc",
+                    "score": 83
+                  },
+                  {
+                    "id": "gpkkca",
+                    "score": 80
+                  },
+                  {
+                    "id": "nvmqmm",
+                    "score": 69
+                  },
+                  {
+                    "id": "wkkkmb",
+                    "score": 66
+                  }
+                ],
+                "correct_before": false,
+                "correct_after": true
+              },
+              {
+                "id": "c13f97abeb21413ac45f6d2c078e0db314337491e395eda1c63d52050bbc91b0",
+                "request": "Sort records by score, largest first. Then Keep only the first two records, in their current order. Then Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    },
+                    "tool": "velu"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  },
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "velu",
+                    "args": {
+                      "field": "score",
+                      "descending": true
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "renlww",
+                    "score": 75
+                  },
+                  {
+                    "id": "tcspdu",
+                    "score": 52
+                  }
+                ],
+                "final_state": [
+                  {
+                    "id": "renlww",
+                    "score": 75
+                  },
+                  {
+                    "id": "tcspdu",
+                    "score": 52
+                  },
+                  {
+                    "id": "ehghhs",
+                    "score": 42
+                  },
+                  {
+                    "id": "xsfuel",
+                    "score": 34
+                  }
+                ],
+                "correct_before": false,
+                "correct_after": true
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "sort>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "fresh.unseen-combinations": {
+        "all": {
+          "before": 14,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 14,
+            "lost": 0,
+            "gained": 2,
+            "wrong_at_both": 0
+          }
+        },
+        "2": {
+          "before": 7,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 7,
+            "lost": 0,
+            "gained": 1,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>project": 7,
+              "unparsed": 1
+            },
+            "errors": {
+              "INVALID_JSON: whole response must be a JSON array": 1
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": [
+              {
+                "id": "899ba435645608e5730033e03467069c99f8c88aac4dc31f2172514dfa5cd01d",
+                "request": "Keep only records whose team equals amber. Then Keep only the first two records, in their current order. Then Keep only the id and score fields of each record.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "amber"
+                    },
+                    "tool": "veno"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  },
+                  {
+                    "args": {
+                      "fields": [
+                        "id",
+                        "score"
+                      ]
+                    },
+                    "tool": "kati"
+                  }
+                ],
+                "emitted_calls": [],
+                "expected_state": [
+                  {
+                    "id": "kletcp",
+                    "score": 55
+                  },
+                  {
+                    "id": "lnzttv",
+                    "score": 12
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "filter>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "3": {
+          "before": 7,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 7,
+            "lost": 0,
+            "gained": 1,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>take": 7,
+              "filter>sort>project": 1
+            },
+            "errors": {
+              "MISSING_FIELD": 1
+            },
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 1,
+            "examples": [
+              {
+                "id": "b0b0a1444a984f3d990f97c77af967d1f1461632c0740ea8adbe68f90ceb9de4",
+                "request": "Keep only records whose team equals blue. Then Sort records by score, largest first. Then Keep only the first two records, in their current order.",
+                "expected_calls": [
+                  {
+                    "args": {
+                      "field": "team",
+                      "value": "blue"
+                    },
+                    "tool": "veno"
+                  },
+                  {
+                    "args": {
+                      "descending": true,
+                      "field": "score"
+                    },
+                    "tool": "velu"
+                  },
+                  {
+                    "args": {
+                      "count": 2
+                    },
+                    "tool": "roti"
+                  }
+                ],
+                "emitted_calls": [
+                  {
+                    "tool": "veno",
+                    "args": {
+                      "field": "team",
+                      "value": "blue"
+                    }
+                  },
+                  {
+                    "tool": "velu",
+                    "args": {
+                      "field": "score",
+                      "descending": true
+                    }
+                  },
+                  {
+                    "tool": "kati",
+                    "args": {
+                      "fields": [
+                        "0",
+                        "1"
+                      ]
+                    }
+                  }
+                ],
+                "expected_state": [
+                  {
+                    "id": "wcgbks",
+                    "score": 97,
+                    "team": "blue"
+                  },
+                  {
+                    "id": "ofjnld",
+                    "score": 32,
+                    "team": "blue"
+                  }
+                ],
+                "final_state": null,
+                "correct_before": false,
+                "correct_after": true
+              }
+            ]
+          },
+          "final": {
+            "plans": {
+              "filter>sort>take": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      }
+    },
+    "relevant": {
+      "primitive-calendar.test": {
+        "before": 36,
+        "after": 32,
+        "n": 64,
+        "counts": {
+          "retained": 32,
+          "lost": 4,
+          "gained": 0,
+          "wrong_at_both": 28
+        }
+      },
+      "primitive-calendar.validation": {
+        "before": 20,
+        "after": 16,
+        "n": 32,
+        "counts": {
+          "retained": 16,
+          "lost": 4,
+          "gained": 0,
+          "wrong_at_both": 12
+        }
+      },
+      "primitive-files.test": {
+        "before": 31,
+        "after": 21,
+        "n": 64,
+        "counts": {
+          "retained": 19,
+          "lost": 12,
+          "gained": 2,
+          "wrong_at_both": 31
+        }
+      },
+      "primitive-files.validation": {
+        "before": 18,
+        "after": 11,
+        "n": 32,
+        "counts": {
+          "retained": 10,
+          "lost": 8,
+          "gained": 1,
+          "wrong_at_both": 13
+        }
+      },
+      "primitive-records.test": {
+        "all": {
+          "before": 64,
+          "after": 64,
+          "n": 64,
+          "counts": {
+            "retained": 64,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "filter": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "project": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "project": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "project": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "sort": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "sort": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "sort": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "take": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "take": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "take": 6,
+              "take>project": 6,
+              "take>take": 4
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "primitive-records.validation": {
+        "before": 32,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-text.test": {
+        "before": 48,
+        "after": 49,
+        "n": 64,
+        "counts": {
+          "retained": 48,
+          "lost": 0,
+          "gained": 1,
+          "wrong_at_both": 15
+        }
+      },
+      "primitive-text.validation": {
+        "before": 24,
+        "after": 24,
+        "n": 32,
+        "counts": {
+          "retained": 24,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 8
+        }
+      },
+      "workflow.novel-test": {
+        "all": {
+          "before": 64,
+          "after": 64,
+          "n": 64,
+          "counts": {
+            "retained": 64,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "2": {
+          "before": 32,
+          "after": 32,
+          "n": 32,
+          "counts": {
+            "retained": 32,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>take>project": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>take>project": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "3": {
+          "before": 32,
+          "after": 32,
+          "n": 32,
+          "counts": {
+            "retained": 32,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>take": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>take": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "workflow.test": {
+        "before": 64,
+        "after": 64,
+        "n": 64,
+        "counts": {
+          "retained": 64,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "workflow.validation": {
+        "before": 32,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "fresh.ordinary": {
+        "all": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "0": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "1": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "sort>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "sort>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "fresh.unseen-combinations": {
+        "all": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "2": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "3": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>take": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>take": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      }
+    },
+    "replay": {
+      "primitive-calendar.test": {
+        "before": 64,
+        "after": 64,
+        "n": 64,
+        "counts": {
+          "retained": 64,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-calendar.validation": {
+        "before": 31,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 31,
+          "lost": 0,
+          "gained": 1,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-files.test": {
+        "before": 64,
+        "after": 64,
+        "n": 64,
+        "counts": {
+          "retained": 64,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-files.validation": {
+        "before": 32,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-records.test": {
+        "all": {
+          "before": 64,
+          "after": 64,
+          "n": 64,
+          "counts": {
+            "retained": 64,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "filter": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "project": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "project": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "project": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "sort": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "sort": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "sort": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "take": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "take": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "take": 16
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "primitive-records.validation": {
+        "before": 32,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-text.test": {
+        "before": 64,
+        "after": 64,
+        "n": 64,
+        "counts": {
+          "retained": 64,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "primitive-text.validation": {
+        "before": 32,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "workflow.novel-test": {
+        "all": {
+          "before": 64,
+          "after": 64,
+          "n": 64,
+          "counts": {
+            "retained": 64,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "2": {
+          "before": 32,
+          "after": 32,
+          "n": 32,
+          "counts": {
+            "retained": 32,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>take>project": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>take>project": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "3": {
+          "before": 32,
+          "after": 32,
+          "n": 32,
+          "counts": {
+            "retained": 32,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>take": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>take": 32
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "workflow.test": {
+        "before": 64,
+        "after": 64,
+        "n": 64,
+        "counts": {
+          "retained": 64,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "workflow.validation": {
+        "before": 32,
+        "after": 32,
+        "n": 32,
+        "counts": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        }
+      },
+      "fresh.ordinary": {
+        "all": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "0": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "1": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "sort>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "sort>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      },
+      "fresh.unseen-combinations": {
+        "all": {
+          "before": 16,
+          "after": 16,
+          "n": 16,
+          "counts": {
+            "retained": 16,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          }
+        },
+        "2": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>take>project": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        },
+        "3": {
+          "before": 8,
+          "after": 8,
+          "n": 8,
+          "counts": {
+            "retained": 8,
+            "lost": 0,
+            "gained": 0,
+            "wrong_at_both": 0
+          },
+          "initial": {
+            "plans": {
+              "filter>sort>take": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          },
+          "final": {
+            "plans": {
+              "filter>sort>take": 8
+            },
+            "errors": {},
+            "wrong_same_ops": 0,
+            "wrong_argument_differences": 0,
+            "wrong_training_plan": 0,
+            "examples": []
+          }
+        }
+      }
+    }
+  },
+  "boundary": "Posthoc independent CPU token decoding, strict parsing and separately implemented four-family state executor. No scientific imports, optimizer, generation, TEST selection, recipe changes or checkpoint selection. Fresh scenes remain posthoc diagnostic inputs."
+}

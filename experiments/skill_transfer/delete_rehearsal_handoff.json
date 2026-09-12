@@ -1,0 +1,115 @@
+{
+  "status": "cpu_verified_ready_for_parent_dispatch",
+  "experiment": "skill-transfer-delete-rehearsal",
+  "posthoc_mechanism_control": true,
+  "original_test_previously_observed": true,
+  "modified_preexisting_files": [],
+  "new_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/delete_rehearsal.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/delete_rehearsal_protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/delete_rehearsal_train4409.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/delete_rehearsal_audit4409.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/tests/test_delete_rehearsal.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/delete_rehearsal_handoff.json"
+  ],
+  "ready_jobs": [
+    {
+      "id": "followthrough-20260912-skills-delete-rehearsal4409",
+      "stage": "train",
+      "entrypoint": "delete_rehearsal.py",
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/delete_rehearsal_train4409.json",
+      "depends_on": [
+        "followthrough-20260912-skills-compressed-workflow4409"
+      ],
+      "gpus": 1
+    },
+    {
+      "id": "followthrough-20260912-skills-delete-rehearsal-audit4409",
+      "stage": "audit",
+      "entrypoint": "delete_rehearsal.py",
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/delete_rehearsal_audit4409.json",
+      "depends_on": [
+        "followthrough-20260912-skills-delete-rehearsal4409"
+      ],
+      "gpus": 1
+    }
+  ],
+  "ready_parent_commands": {
+    "cwd": "/Users/sudarshan/Code/attempting-continual-learning",
+    "train": "uv run --no-project --python '/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python' python compute/dispatch.py --lane-dir experiments/skill_transfer --entrypoint delete_rehearsal.py --config experiments/skill_transfer/configs/delete_rehearsal_train4409.json --id followthrough-20260912-skills-delete-rehearsal4409 --gpus 1 --depends-on followthrough-20260912-skills-compressed-workflow4409 --control-pod cl-portfolio-control-20260912 --submit",
+    "audit": "uv run --no-project --python '/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python' python compute/dispatch.py --lane-dir experiments/skill_transfer --entrypoint delete_rehearsal.py --config experiments/skill_transfer/configs/delete_rehearsal_audit4409.json --id followthrough-20260912-skills-delete-rehearsal-audit4409 --gpus 1 --depends-on followthrough-20260912-skills-delete-rehearsal4409 --control-pod cl-portfolio-control-20260912 --submit",
+    "executed": false,
+    "launcher": "Parent supervisor and compute/run_task.py supply the qualified GPU interpreter and task/config/running execution transport. Each command describes a separate task/attempt; direct unbound CLI execution intentionally fails. Parent owns restored worker readiness and dispatch."
+  },
+  "contracts": {
+    "initialization": "Same saved compressed Dice4409 A/B tensors; identical initial adapter and fresh AdamW fingerprints against both archived hybrid arms. Rank8 alpha16, no offset, BF16 frozen base and FP32 factors.",
+    "prerequisites": "Recompute unchanged saved primitive DEV accuracy/per-operation/headroom gates. After a fresh load, require all five initial DEV panels to reproduce complete records exactly against both compression and hybrid archives before constructing an optimizer. Failed eligibility or record mismatch means zero updates.",
+    "schedule": "128 updates of the exact two current TRAIN workflow rows from archived compressed_replay current_ids. Independently regenerate that schedule and verify every step. 256 current exposures, zero old exposures, no rehearsal buffer.",
+    "loss": "Each example contributes mean native answer-token cross-entropy including EOS. Sum the two row losses and divide by4. This equals the current contribution to the archived four-row replay objective, before clipping.",
+    "optimizer": "Frozen original AdamW: learning_rate0.0003, weight_decay0, foreachFalse, global gradient clip1. Log actual losses, current IDs, input/target tokens and gradient norms; require all optimizer step clocks128.",
+    "selection": "DEV curves at0/16/64/128. Only fixed final128 saved. No TEST generation during training, checkpoint selection, extra updates or hyperparameter search.",
+    "audit": "New completed-ancestor-bound standalone task/attempt loads final128 checkpoint. Reuse frozen compressed_replay.audit: all five final DEV records must match exactly before four primitive TEST panels plus familiar and original novel workflow TEST. Same native JSON/EOS/token scorer, no evaluation-time updates.",
+    "process_proof": "Bind actual source directory file hashes, embedded task/config hashes, completed exit0 and timed_outfalse ancestor executions, execution hashes, unique task and attempt IDs, standalone CLI path and start after ancestor completion. Record supervisor, launcher and actual CLI PID roles; numeric PID inequality is not sole fresh-process proof.",
+    "causal_limit": "Current IDs, update count and current objective weight match replay. Global clipping and AdamW are nonlinear; the actual forward batch has2 rather than4 rows, so identical GPU floating-point gradients across batch shapes are not asserted."
+  },
+  "accounting": {
+    "new_control_updates": 128,
+    "new_current_exposures": 256,
+    "new_old_exposures": 0,
+    "rehearsal_buffer_examples": 0,
+    "expected_adapter_tensor_bytes": 3670016,
+    "expected_optimizer_tensor_bytes": 7340160,
+    "ancestral_expert_updates": 512,
+    "ancestral_expert_exposures": 2048,
+    "source_dense_adapter_tensor_bytes": 758644736,
+    "source_expert_factor_archive_bytes": 14680064,
+    "source_expert_checkpoint_archive_bytes": 44262911,
+    "merge_gradient_updates": 0,
+    "svd_gradient_updates": 0,
+    "boundary": "Actual factor, optimizer and checkpoint-file bytes are recorded. Archived replay logs are provenance for current IDs, not old examples used in model updates. Expert history, prior hybrid updates, full base and evaluator archives are separate from this control's resident adapter and zero rehearsal buffer."
+  },
+  "validation": {
+    "cwd": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer",
+    "command": "uv run --no-project --python '/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python' python -m pytest -q tests/test_delete_rehearsal.py",
+    "pytest": "3 passed in4.66s",
+    "ruff": "check and format --check passed for both new Python files",
+    "cli_help": "delete_rehearsal.py --help passed",
+    "module_top_imports": "AST verified for both new Python files; no dynamic import, exec or eval calls",
+    "git_diff_check": "Passed for skill_transfer lane",
+    "checks": [
+      "Real gradients match the current component of a four-row answer loss, including unequal answer lengths and a masked token; old-example contributions differ.",
+      "128 actual CPU AdamW updates, exact archived current IDs,256 current exposures, zero replay rows, /4 loss normalization and all optimizer clocks128.",
+      "Same initial fingerprints, unchanged frozen base, changed finite rank8/no-offset factors, actual checkpoint save/load and exact logits after a separate uv Python process reload.",
+      "New task-bound audit controller covers five DEV and six TEST panels through frozen scoring; raw initial DEV token mismatch forbids optimizer construction and performs zero updates."
+    ],
+    "cpu_boundary": "Native generation is mocked in controller tests; actual tensor updates and child-process checkpoint reload are real. These checks establish implementation readiness, not GPU behavior.",
+    "gpu_control_execution": false,
+    "frozen_dependency_files": 45,
+    "frozen_dependency_source_sha256": "8456e8752d39b1ed9fbfeafe46485d68f4a349e4b607726998629b76449b45ad",
+    "additional_immutable_checks": "All hashes in compressed_replay_handoff prior_frozen_files and file_sha256, plus initial_diagnosis_handoff file_sha256, were verified unchanged.",
+    "protocol_sha256": "82b1d571cc41efd6d7a88afee9d114e52d0f2560c1b3a2776edda8702ca6d7ae",
+    "training_config_canonical_sha256": "70fc43f4a8c33308ffa6fb92dbcb2c351bb3e8a33f66fe89d5a06a3480221f6e",
+    "expected_deployable_file_count_after_seal": 50,
+    "bundle_seal": "Report final bundle SHA externally after sealing this handoff, avoiding a self-referential hash. Tests and outputs are excluded from deployable inventory."
+  },
+  "completed_analysis": {
+    "initial_diagnosis": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/outputs/analysis/initial-diagnosis-interpretation.json",
+    "hybrid_raw_audit": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/outputs/analysis/compressed-hybrid-audit4409.json",
+    "hybrid_interpretation": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/outputs/analysis/compressed-hybrid-interpretation4409.json",
+    "comparison": "Original sequential replay4409 scored255/256 primitives,64/64 familiar and64/64 novel; compressed replay scored255/256,64/64 and63/64. No hybrid superiority claim.",
+    "scope": "One calendar stream, explicit composition of known calls, original TEST already observed. Initial-state diagnoses show both initial merge limitations and novel abilities lost after workflow training in other streams; family/order/mapping confounds remain.",
+    "infrastructure": "Parent reported supervisor abort after these completed jobs were collected. Scientific results and sources are preserved; worker restoration and resource validation are parent-owned."
+  },
+  "stop_rule": "One bounded delete-rehearsal-loss control. Park hybrid optimization after its fixed final audit; prioritize memory recovery and composition separately. No bank distillation, teacher qualification or PorTAL bridge is implemented here.",
+  "teacher_qualified": false,
+  "provider_actions": 0,
+  "dispatches": 0,
+  "commits_or_pushes": 0,
+  "file_sha256": {
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/delete_rehearsal.py": "655e4aa540afb73dda529841883449adc572d976c4242dca9637e15f63a47012",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/delete_rehearsal_protocol.json": "82b1d571cc41efd6d7a88afee9d114e52d0f2560c1b3a2776edda8702ca6d7ae",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/delete_rehearsal_train4409.json": "0072919c06eaf0a6db4e65e040a1c23ea8c5ba731cdca817e43d646cc8d12345",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/delete_rehearsal_audit4409.json": "d2060895b1d02a95e373cfb21455a1a14e61bdc9cb019612742278dfb970f42d",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/tests/test_delete_rehearsal.py": "9090aab57b3df0fab4e376472871e9b5404b26154cdcd4022325de4d409acc9d"
+  }
+}

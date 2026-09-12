@@ -1,0 +1,156 @@
+{
+  "status": "independent_hybrid_audit_and_accounting_complete",
+  "audit_report": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/outputs/analysis/compressed-hybrid-audit4409.json",
+  "audit_report_sha256": "6b1af932ac1e1e407b3f293c045078738a26db8c63b45c3dee74c2ff0fd21c55",
+  "records": {
+    "training_dev": 1120,
+    "new_process_dev_and_test": 1088,
+    "initial_full_dev_reload_exact": 160,
+    "final_full_dev_reload_exact": 320,
+    "discrepancies": 0
+  },
+  "source_and_checkpoint_fidelity": "Verified completed exit0/no-timeout receipts, exact task/config and ancestor links, new supervised audit task/attempt after completed training, archive source8456 with45files, all collected/manifest bytes, native token decoding and separate semantic execution, actual saved FP32 factor/optimizer tensors.",
+  "table": [
+    {
+      "condition": "compressed_initial",
+      "primitive_test": [
+        255,
+        256
+      ],
+      "workflow_test": [
+        32,
+        64
+      ],
+      "novel_test": [
+        8,
+        64
+      ]
+    },
+    {
+      "condition": "compressed_continue",
+      "primitive_test": [
+        228,
+        256
+      ],
+      "workflow_test": [
+        64,
+        64
+      ],
+      "novel_test": [
+        18,
+        64
+      ]
+    },
+    {
+      "condition": "compressed_replay",
+      "primitive_test": [
+        255,
+        256
+      ],
+      "workflow_test": [
+        64,
+        64
+      ],
+      "novel_test": [
+        63,
+        64
+      ]
+    }
+  ],
+  "current_stage_capacity": {
+    "base_included": false,
+    "rank": 8,
+    "projections": 16,
+    "dense_offset": null,
+    "factor_tensor_bytes_per_arm": 3670016,
+    "optimizer_tensor_bytes_per_trained_arm": 7340160,
+    "checkpoint_file_bytes_per_trained_arm": 11041139,
+    "replay_examples": 64,
+    "replay_examples_per_family": 16,
+    "replay_examples_per_operation": 4,
+    "replay_file_bytes": 60362,
+    "buffer_proof": "Reconstructed the exact ordered64 rows from source qualification exposure logs and deterministic family/operation sampling; checked every actual replay draw; only previously exposed primitive TRAIN rows, no growth."
+  },
+  "current_stage_budget": {
+    "per_arm_updates": 128,
+    "batch_size": 4,
+    "total_exposures_per_arm": 512,
+    "continue": {
+      "new_workflow_exposures": 512,
+      "old_primitive_exposures": 0,
+      "target_tokens": 32234,
+      "input_tokens": 148913
+    },
+    "replay": {
+      "new_workflow_exposures": 256,
+      "old_primitive_exposures": 256,
+      "target_tokens": 21098,
+      "input_tokens": 128730
+    },
+    "forks": "Actual compressed initial adapter identity and reconstructed empty optimizer state match both arm receipts; all32 saved optimizer clocks equal128.",
+    "workflow_pairing": "Replay used the first two examples from each identical four-row workflow schedule; every source/new row ID and update total checked.",
+    "token_matched": false
+  },
+  "ancestral_accounting": {
+    "expert_training_updates": 512,
+    "expert_example_exposures": 2048,
+    "expert_by_family": {
+      "records": {
+        "updates": 128,
+        "exposures": 512,
+        "factor_tensor_bytes": 3670016,
+        "optimizer_tensor_bytes": 7340160,
+        "checkpoint_and_metadata_file_bytes": 11065340
+      },
+      "text": {
+        "updates": 128,
+        "exposures": 512,
+        "factor_tensor_bytes": 3670016,
+        "optimizer_tensor_bytes": 7340160,
+        "checkpoint_and_metadata_file_bytes": 11066298
+      },
+      "files": {
+        "updates": 128,
+        "exposures": 512,
+        "factor_tensor_bytes": 3670016,
+        "optimizer_tensor_bytes": 7340160,
+        "checkpoint_and_metadata_file_bytes": 11065561
+      },
+      "calendar": {
+        "updates": 128,
+        "exposures": 512,
+        "factor_tensor_bytes": 3670016,
+        "optimizer_tensor_bytes": 7340160,
+        "checkpoint_and_metadata_file_bytes": 11065712
+      }
+    },
+    "retained_expert_factor_tensor_bytes": 14680064,
+    "retained_expert_optimizer_tensor_bytes": 29360640,
+    "retained_expert_checkpoint_plus_metadata_bytes": 44262911,
+    "merge_gradient_updates": 0,
+    "svd_gradient_updates": 0,
+    "source_dense_factor_plus_offset_bytes": 758644736,
+    "source_dense_offset_bytes": 754974720,
+    "compressed_initial_factor_bytes": 3670016,
+    "compressed_initial_checkpoint_file_bytes": 3678263,
+    "svd_energy_artifact_sha256": "ccded5edd425cb8c635e6491a1de3b065983f6f001dcf9f25b6c597ab387c1d2",
+    "shared_history": "Expert training and fusion/SVD are shared ancestry, not repeated work for each fork. This is not an end-to-end fixed-memory specialist-training recipe. SVD energy is not a behavioral score."
+  },
+  "observed_failures": {
+    "continue": "All16 cancellation primitives become rename calls;10file-copy primitives become move calls;2lowercase primitives violate call schema. All46failed novel workflows use shift or rename instead of cancel and fail argument-key validation.",
+    "replay": "One primitive error copies an event identifier incorrectly: iggmge becomes igggge. One novel workflow uses rename instead of cancel and fails ARGUMENT_KEYS.",
+    "retention_boundary": "Replay keeps the aggregate primitive total255/256 but not the identical set:254previously correct primitives retained,1lost,1gained. All8initially correct novel workflows retained and55gained. Continue loses all8initially correct novel workflows while gaining18others."
+  },
+  "qualification": "Arithmetic failed the unchanged prior DEV operation threshold and received zero updates. Dice passed both saved and fresh-load primitive DEV/headroom gates before either optimizer was constructed. Final128 checkpoints were fixed before TEST; no TEST-based recipe selection.",
+  "supported_claim": "In this predefined calendar stream, a rank8 checkpoint obtained by compressing the DICE-fused expert bank supported further generated workflow learning. Rehearsing64old primitive examples during the fixed128update stage preserved substantially more old behavior and unseen compositions than continue-only training at the same current adapter capacity and total example exposures.",
+  "limits": [
+    "One eligible calendar stream and one optimization seed; no general advantage of DICE, fusion, or this hybrid is established.",
+    "The comparison changes both old-data rehearsal and new-workflow exposure count under a fixed total budget; it does not isolate those effects or match token counts.",
+    "Original dense fusion results have a different parameterization: frozen full offsets plus fresh factors. They are descriptive references, not an identical-capacity control.",
+    "Four prior streams jointly vary task family, order, aliases and scenes; schema clues and explicit requested steps limit transfer and planning claims.",
+    "Unseen workflows combine known calls on fixed synthetic templates. No autonomous subgoal discovery, long-stream robustness, cross-model transfer or teacher qualification is demonstrated.",
+    "No final checkpoint or method was selected using hybrid TEST results."
+  ],
+  "scientific_source_edits": 0,
+  "provider_dispatches": 0
+}

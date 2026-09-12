@@ -1,0 +1,1103 @@
+{
+  "status": "compressed_hybrid_independently_audited",
+  "source_sha256": "8456e8752d39b1ed9fbfeafe46485d68f4a349e4b607726998629b76449b45ad",
+  "train_execution_sha256": "1e10033db6480c1453b281cee726ac3be3c4826c99e987bbf8e840489da03252",
+  "audit_execution_sha256": "e101c6445debe704d123601c551cb5aff421a43f2c7fe6e1ea146b394ca46717",
+  "train_result_sha256": "75fd1a8b4f3ce6b02b0da96c0ab56c1e17dcbff02c5f24e4b89721daed646f45",
+  "audit_result_sha256": "49df67b21b1a678e81924d41341aacc7cb92ccf1bb768d83a04e70679c8c8676",
+  "source_archive_sha256": "24e2c891eb77968729a9d2d589f03ddd04f441bdf04b95f6ca2b560f7364c3d1",
+  "source_files": 45,
+  "gate_methods": {
+    "agent_dice": {
+      "families": {
+        "calendar": {
+          "all_operations_covered": true,
+          "baseline_already_competent": false,
+          "final": 0.90625,
+          "gain": 0.90625,
+          "initial": 0.0,
+          "interpretation": "gain_required_even_if_baseline_competent",
+          "passed": true,
+          "required_gain": 0.25,
+          "sufficient_baseline_headroom": true
+        },
+        "files": {
+          "all_operations_covered": true,
+          "baseline_already_competent": false,
+          "final": 1.0,
+          "gain": 0.90625,
+          "initial": 0.09375,
+          "interpretation": "gain_required_even_if_baseline_competent",
+          "passed": true,
+          "required_gain": 0.2265625,
+          "sufficient_baseline_headroom": true
+        },
+        "records": {
+          "all_operations_covered": true,
+          "baseline_already_competent": false,
+          "final": 1.0,
+          "gain": 0.6875,
+          "initial": 0.3125,
+          "interpretation": "gain_required_even_if_baseline_competent",
+          "passed": true,
+          "required_gain": 0.171875,
+          "sufficient_baseline_headroom": true
+        },
+        "text": {
+          "all_operations_covered": true,
+          "baseline_already_competent": false,
+          "final": 1.0,
+          "gain": 0.78125,
+          "initial": 0.21875,
+          "interpretation": "gain_required_even_if_baseline_competent",
+          "passed": true,
+          "required_gain": 0.1953125,
+          "sufficient_baseline_headroom": true
+        }
+      },
+      "passed": true,
+      "split": "validation"
+    },
+    "arithmetic": {
+      "families": {
+        "calendar": {
+          "all_operations_covered": false,
+          "baseline_already_competent": false,
+          "final": 0.875,
+          "gain": 0.875,
+          "initial": 0.0,
+          "interpretation": "gain_required_even_if_baseline_competent",
+          "passed": false,
+          "required_gain": 0.25,
+          "sufficient_baseline_headroom": true
+        },
+        "files": {
+          "all_operations_covered": true,
+          "baseline_already_competent": false,
+          "final": 1.0,
+          "gain": 0.90625,
+          "initial": 0.09375,
+          "interpretation": "gain_required_even_if_baseline_competent",
+          "passed": true,
+          "required_gain": 0.2265625,
+          "sufficient_baseline_headroom": true
+        },
+        "records": {
+          "all_operations_covered": true,
+          "baseline_already_competent": false,
+          "final": 1.0,
+          "gain": 0.6875,
+          "initial": 0.3125,
+          "interpretation": "gain_required_even_if_baseline_competent",
+          "passed": true,
+          "required_gain": 0.171875,
+          "sufficient_baseline_headroom": true
+        },
+        "text": {
+          "all_operations_covered": true,
+          "baseline_already_competent": false,
+          "final": 1.0,
+          "gain": 0.78125,
+          "initial": 0.21875,
+          "interpretation": "gain_required_even_if_baseline_competent",
+          "passed": true,
+          "required_gain": 0.1953125,
+          "sufficient_baseline_headroom": true
+        }
+      },
+      "passed": false,
+      "split": "validation"
+    }
+  },
+  "training_native_records_verified": 1120,
+  "audit_native_records_verified": 1088,
+  "initial_primitive_reload_records_exact": 128,
+  "final_dev_reload_records_exact": 320,
+  "buffer": {
+    "examples": 64,
+    "per_family": {
+      "records": 16,
+      "text": 16,
+      "files": 16,
+      "calendar": 16
+    },
+    "per_operation": {
+      "records:filter": 4,
+      "records:sort": 4,
+      "records:take": 4,
+      "records:project": 4,
+      "text:lower": 4,
+      "text:keep": 4,
+      "text:replace": 4,
+      "text:join": 4,
+      "files:copy": 4,
+      "files:move": 4,
+      "files:write": 4,
+      "files:delete": 4,
+      "calendar:add": 4,
+      "calendar:shift": 4,
+      "calendar:rename": 4,
+      "calendar:cancel": 4
+    },
+    "bytes": 60362,
+    "only_previously_exposed_train_rows": true,
+    "deterministic_reconstruction_exact": true,
+    "growth": false
+  },
+  "arms": {
+    "compressed_continue": {
+      "scores_initial_to_final": {
+        "primitive-calendar.test": [
+          63,
+          48,
+          64
+        ],
+        "primitive-files.test": [
+          64,
+          54,
+          64
+        ],
+        "primitive-records.test": [
+          64,
+          64,
+          64
+        ],
+        "primitive-text.test": [
+          64,
+          62,
+          64
+        ],
+        "workflow.novel-test": [
+          8,
+          18,
+          64
+        ],
+        "workflow.test": [
+          32,
+          64,
+          64
+        ]
+      },
+      "paired_initial_to_final": {
+        "primitive-calendar.test": {
+          "retained": 47,
+          "lost": 16,
+          "gained": 1,
+          "wrong_at_both": 0
+        },
+        "primitive-files.test": {
+          "retained": 54,
+          "lost": 10,
+          "gained": 0,
+          "wrong_at_both": 0
+        },
+        "primitive-records.test": {
+          "retained": 64,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        },
+        "primitive-text.test": {
+          "retained": 62,
+          "lost": 2,
+          "gained": 0,
+          "wrong_at_both": 0
+        },
+        "workflow.novel-test": {
+          "retained": 0,
+          "lost": 8,
+          "gained": 18,
+          "wrong_at_both": 38
+        },
+        "workflow.test": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 32,
+          "wrong_at_both": 0
+        }
+      },
+      "failure_details": {
+        "primitive-calendar.test": {
+          "errors": {
+            "CORRECT": 48,
+            "WRONG_STATE": 16
+          },
+          "per_pattern": {
+            "add": 1.0,
+            "cancel": 0.0,
+            "rename": 1.0,
+            "shift": 1.0
+          },
+          "emitted_operations_among_failures": {
+            "rename": 16
+          },
+          "examples": [
+            {
+              "id": "bd6b3bc68da0737b2bcbafdfbbf39ceb6a73126ab0bffb3d4372604783ac3319",
+              "pattern": "cancel",
+              "request": "Cancel event jnnmii.",
+              "expected_calls": [
+                {
+                  "args": {
+                    "id": "jnnmii"
+                  },
+                  "tool": "kalu"
+                }
+              ],
+              "emitted_text": "[{\"tool\":\"misa\",\"args\":{\"id\":\"jnnmii\",\"title\":\"fuecvh\"}}]",
+              "expected_state": {
+                "ursjif": {
+                  "start": 480,
+                  "title": "kuvzbh"
+                }
+              },
+              "final_state": {
+                "jnnmii": {
+                  "start": 660,
+                  "title": "fuecvh"
+                },
+                "ursjif": {
+                  "start": 480,
+                  "title": "kuvzbh"
+                }
+              },
+              "error": "WRONG_STATE"
+            },
+            {
+              "id": "1ef48916ef81d29cc7d1930f47f427c6fd0255503e23038bb5cb16e00564cdc3",
+              "pattern": "cancel",
+              "request": "Cancel event eollbb.",
+              "expected_calls": [
+                {
+                  "args": {
+                    "id": "eollbb"
+                  },
+                  "tool": "kalu"
+                }
+              ],
+              "emitted_text": "[{\"tool\":\"misa\",\"args\":{\"id\":\"eollbb\",\"title\":\"Cancel event eollbb\"}}]",
+              "expected_state": {
+                "ejbupk": {
+                  "start": 660,
+                  "title": "nvbejp"
+                }
+              },
+              "final_state": {
+                "ejbupk": {
+                  "start": 660,
+                  "title": "nvbejp"
+                },
+                "eollbb": {
+                  "start": 840,
+                  "title": "Cancel event eollbb"
+                }
+              },
+              "error": "WRONG_STATE"
+            }
+          ]
+        },
+        "primitive-files.test": {
+          "errors": {
+            "CORRECT": 54,
+            "WRONG_STATE": 10
+          },
+          "per_pattern": {
+            "copy": 0.375,
+            "delete": 1.0,
+            "move": 1.0,
+            "write": 1.0
+          },
+          "emitted_operations_among_failures": {
+            "move": 10
+          },
+          "examples": [
+            {
+              "id": "7eea23e796d0275f3508a3b1c269ad7926780fddfbabe4cf64c620d9aeb37c2f",
+              "pattern": "copy",
+              "request": "Copy vbwdcy to the new path mwhfst.",
+              "expected_calls": [
+                {
+                  "args": {
+                    "destination": "mwhfst",
+                    "source": "vbwdcy"
+                  },
+                  "tool": "rosa"
+                }
+              ],
+              "emitted_text": "[{\"tool\":\"rolu\",\"args\":{\"source\":\"vbwdcy\",\"destination\":\"mwhfst\"}}]",
+              "expected_state": {
+                "etlwoz": "note-qzierl",
+                "mwhfst": "draft-qzierl",
+                "vbwdcy": "draft-qzierl"
+              },
+              "final_state": {
+                "etlwoz": "note-qzierl",
+                "mwhfst": "draft-qzierl"
+              },
+              "error": "WRONG_STATE"
+            },
+            {
+              "id": "0667c828ec1e61d8c01c44435259c11a4cfcba81fa203c9d9a4ca6407918c5f9",
+              "pattern": "copy",
+              "request": "Copy rntdpa to the new path usewje.",
+              "expected_calls": [
+                {
+                  "args": {
+                    "destination": "usewje",
+                    "source": "rntdpa"
+                  },
+                  "tool": "rosa"
+                }
+              ],
+              "emitted_text": "[{\"tool\":\"rolu\",\"args\":{\"source\":\"rntdpa\",\"destination\":\"usewje\"}}]",
+              "expected_state": {
+                "axbnhw": "note-wwtdan",
+                "rntdpa": "draft-wwtdan",
+                "usewje": "draft-wwtdan"
+              },
+              "final_state": {
+                "axbnhw": "note-wwtdan",
+                "usewje": "draft-wwtdan"
+              },
+              "error": "WRONG_STATE"
+            }
+          ]
+        },
+        "primitive-records.test": {
+          "errors": {
+            "CORRECT": 64
+          },
+          "per_pattern": {
+            "filter": 1.0,
+            "project": 1.0,
+            "sort": 1.0,
+            "take": 1.0
+          },
+          "emitted_operations_among_failures": {},
+          "examples": []
+        },
+        "primitive-text.test": {
+          "errors": {
+            "CALL_SCHEMA: exactly tool and args are required": 2,
+            "CORRECT": 62
+          },
+          "per_pattern": {
+            "join": 1.0,
+            "keep": 1.0,
+            "lower": 0.875,
+            "replace": 1.0
+          },
+          "emitted_operations_among_failures": {
+            "unparsed": 2
+          },
+          "examples": [
+            {
+              "id": "c7e8df33fc70626f07b4d857eb25304f937dc00bcb9bb20cf98e8bf334e2a9ae",
+              "pattern": "lower",
+              "request": "Convert every message to lowercase.",
+              "expected_calls": [
+                {
+                  "args": {},
+                  "tool": "kati"
+                }
+              ],
+              "emitted_text": "[{\"tool\":\"roti\",\"args\":{\"old\":\"ALERT npjnwu\",\"new\":\"alert npjnwu\"},\"id\":\"0\"},{\"tool\":\"roti\",\"args\":{\"old\":\"Note vftlhk\",\"new\":\"note vftlhk\"},\"id\":\"1\"},{\"tool\":\"roti\",\"args\":{\"old\":\"ALERT ozlvcl\",\"new\":\"alert ozlvcl\"},\"id\":\"2\"}]",
+              "expected_state": [
+                "alert npjnwu",
+                "note vftlhk",
+                "alert ozlvcl"
+              ],
+              "final_state": null,
+              "error": "CALL_SCHEMA: exactly tool and args are required"
+            },
+            {
+              "id": "b4affe5864d61f7ceaea33e2d6274790ca162a4c78ecfb4ad90f0887a438bd57",
+              "pattern": "lower",
+              "request": "Convert every message to lowercase.",
+              "expected_calls": [
+                {
+                  "args": {},
+                  "tool": "kati"
+                }
+              ],
+              "emitted_text": "[{\"tool\":\"roti\",\"args\":{\"old\":\"ALERT kkbefh\",\"new\":\"alert kkbefh\"},\"id\":\"0\"},{\"tool\":\"roti\",\"args\":{\"old\":\"Note pmsbyu\",\"new\":\"note pmsbyu\"},\"id\":\"1\"},{\"tool\":\"roti\",\"args\":{\"old\":\"ALERT mphsms\",\"new\":\"alert mphsms\"},\"id\":\"2\"}]",
+              "expected_state": [
+                "alert kkbefh",
+                "note pmsbyu",
+                "alert mphsms"
+              ],
+              "final_state": null,
+              "error": "CALL_SCHEMA: exactly tool and args are required"
+            }
+          ]
+        },
+        "workflow.novel-test": {
+          "errors": {
+            "ARGUMENT_KEYS": 46,
+            "CORRECT": 18
+          },
+          "per_pattern": {
+            "2": 0.5625,
+            "3": 0.0
+          },
+          "emitted_operations_among_failures": {
+            "add>rename>shift": 14,
+            "add>shift>rename": 32
+          },
+          "examples": [
+            {
+              "id": "f0181c0fe80e18d9fc0fc79676a7028a57e2c6c587a8a09a8ac68d6a4eadac25",
+              "pattern": "2",
+              "request": "Add event jwlkfb at minute 465 titled rayuql. Then Rename event fpapls to ndxbkb. Then Cancel event xrsqhs.",
+              "expected_calls": [
+                {
+                  "args": {
+                    "id": "jwlkfb",
+                    "start": 465,
+                    "title": "rayuql"
+                  },
+                  "tool": "mino"
+                },
+                {
+                  "args": {
+                    "id": "fpapls",
+                    "title": "ndxbkb"
+                  },
+                  "tool": "misa"
+                },
+                {
+                  "args": {
+                    "id": "xrsqhs"
+                  },
+                  "tool": "kalu"
+                }
+              ],
+              "emitted_text": "[{\"tool\":\"mino\",\"args\":{\"id\":\"jwlkfb\",\"start\":465,\"title\":\"rayuql\"}},{\"tool\":\"misa\",\"args\":{\"id\":\"fpapls\",\"title\":\"ndxbkb\"}},{\"tool\":\"rono\",\"args\":{\"id\":\"xrsqhs\"}}]",
+              "expected_state": {
+                "fpapls": {
+                  "start": 375,
+                  "title": "ndxbkb"
+                },
+                "jwlkfb": {
+                  "start": 465,
+                  "title": "rayuql"
+                }
+              },
+              "final_state": null,
+              "error": "ARGUMENT_KEYS"
+            },
+            {
+              "id": "fc91f593da00503e8da9f888291c1d0b4c8ac578d91cdd2e170fe106c620b833",
+              "pattern": "3",
+              "request": "Add event pynaez at minute 705 titled rwxtmb. Then Shift event afpolg later by 30 minutes. Then Cancel event kwnhuq.",
+              "expected_calls": [
+                {
+                  "args": {
+                    "id": "pynaez",
+                    "start": 705,
+                    "title": "rwxtmb"
+                  },
+                  "tool": "mino"
+                },
+                {
+                  "args": {
+                    "id": "afpolg",
+                    "minutes": 30
+                  },
+                  "tool": "rono"
+                },
+                {
+                  "args": {
+                    "id": "kwnhuq"
+                  },
+                  "tool": "kalu"
+                }
+              ],
+              "emitted_text": "[{\"tool\":\"mino\",\"args\":{\"id\":\"pynaez\",\"start\":705,\"title\":\"rwxtmb\"}},{\"tool\":\"rono\",\"args\":{\"id\":\"afpolg\",\"minutes\":30}},{\"tool\":\"misa\",\"args\":{\"id\":\"kwnhuq\"}}]",
+              "expected_state": {
+                "afpolg": {
+                  "start": 645,
+                  "title": "rwxtmb"
+                },
+                "pynaez": {
+                  "start": 705,
+                  "title": "rwxtmb"
+                }
+              },
+              "final_state": null,
+              "error": "ARGUMENT_KEYS"
+            }
+          ]
+        },
+        "workflow.test": {
+          "errors": {
+            "CORRECT": 64
+          },
+          "per_pattern": {
+            "0": 1.0,
+            "1": 1.0
+          },
+          "emitted_operations_among_failures": {},
+          "examples": []
+        }
+      },
+      "exposures": {
+        "current_exposures": 512,
+        "input_tokens": 148913,
+        "old_exposures": 0,
+        "target_tokens": 32234,
+        "updates": 128
+      },
+      "replay_by_family": {},
+      "memory_examples": 0,
+      "adapter_tensor_bytes": 3670016,
+      "optimizer_tensor_bytes": 7340160,
+      "checkpoint_file_bytes": 11041139,
+      "checkpoint_sha256": "7cdf18dc15260b4266e7f49d229033de770733018f81d92217de4c7f9ec24c2b",
+      "all_factor_ranks": 8,
+      "dense_offset": null,
+      "initial_adapter_sha256": "00f5aa5cbd406a312dc5af2cfc4d58ea7b36398f0356ce225fffc434220e1f81",
+      "initial_optimizer_sha256": "9b3398b5d9ec7a68f72cc11d245b22b099021b5bb1a6c0a788ddf10e2f8a9e90",
+      "validation_curve": [
+        {
+          "updates": 0,
+          "workflow": 14,
+          "primitives": 125
+        },
+        {
+          "updates": 16,
+          "workflow": 32,
+          "primitives": 112
+        },
+        {
+          "updates": 64,
+          "workflow": 32,
+          "primitives": 112
+        },
+        {
+          "updates": 128,
+          "workflow": 31,
+          "primitives": 113
+        }
+      ]
+    },
+    "compressed_replay": {
+      "scores_initial_to_final": {
+        "primitive-calendar.test": [
+          63,
+          63,
+          64
+        ],
+        "primitive-files.test": [
+          64,
+          64,
+          64
+        ],
+        "primitive-records.test": [
+          64,
+          64,
+          64
+        ],
+        "primitive-text.test": [
+          64,
+          64,
+          64
+        ],
+        "workflow.novel-test": [
+          8,
+          63,
+          64
+        ],
+        "workflow.test": [
+          32,
+          64,
+          64
+        ]
+      },
+      "paired_initial_to_final": {
+        "primitive-calendar.test": {
+          "retained": 62,
+          "lost": 1,
+          "gained": 1,
+          "wrong_at_both": 0
+        },
+        "primitive-files.test": {
+          "retained": 64,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        },
+        "primitive-records.test": {
+          "retained": 64,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        },
+        "primitive-text.test": {
+          "retained": 64,
+          "lost": 0,
+          "gained": 0,
+          "wrong_at_both": 0
+        },
+        "workflow.novel-test": {
+          "retained": 8,
+          "lost": 0,
+          "gained": 55,
+          "wrong_at_both": 1
+        },
+        "workflow.test": {
+          "retained": 32,
+          "lost": 0,
+          "gained": 32,
+          "wrong_at_both": 0
+        }
+      },
+      "failure_details": {
+        "primitive-calendar.test": {
+          "errors": {
+            "CORRECT": 63,
+            "WRONG_STATE": 1
+          },
+          "per_pattern": {
+            "add": 0.9375,
+            "cancel": 1.0,
+            "rename": 1.0,
+            "shift": 1.0
+          },
+          "emitted_operations_among_failures": {
+            "add": 1
+          },
+          "examples": [
+            {
+              "id": "c041f9b5c1c52b85941a974c1f9db350852563a88445f86611674fef4a392c66",
+              "pattern": "add",
+              "request": "Add event iggmge at minute 270 titled tmocod.",
+              "expected_calls": [
+                {
+                  "args": {
+                    "id": "iggmge",
+                    "start": 270,
+                    "title": "tmocod"
+                  },
+                  "tool": "mino"
+                }
+              ],
+              "emitted_text": "[{\"tool\":\"mino\",\"args\":{\"id\":\"igggge\",\"start\":270,\"title\":\"tmocod\"}}]",
+              "expected_state": {
+                "iggmge": {
+                  "start": 270,
+                  "title": "tmocod"
+                },
+                "prsppj": {
+                  "start": 180,
+                  "title": "tmocod"
+                },
+                "whwcpe": {
+                  "start": 360,
+                  "title": "mvulne"
+                }
+              },
+              "final_state": {
+                "igggge": {
+                  "start": 270,
+                  "title": "tmocod"
+                },
+                "prsppj": {
+                  "start": 180,
+                  "title": "tmocod"
+                },
+                "whwcpe": {
+                  "start": 360,
+                  "title": "mvulne"
+                }
+              },
+              "error": "WRONG_STATE"
+            }
+          ]
+        },
+        "primitive-files.test": {
+          "errors": {
+            "CORRECT": 64
+          },
+          "per_pattern": {
+            "copy": 1.0,
+            "delete": 1.0,
+            "move": 1.0,
+            "write": 1.0
+          },
+          "emitted_operations_among_failures": {},
+          "examples": []
+        },
+        "primitive-records.test": {
+          "errors": {
+            "CORRECT": 64
+          },
+          "per_pattern": {
+            "filter": 1.0,
+            "project": 1.0,
+            "sort": 1.0,
+            "take": 1.0
+          },
+          "emitted_operations_among_failures": {},
+          "examples": []
+        },
+        "primitive-text.test": {
+          "errors": {
+            "CORRECT": 64
+          },
+          "per_pattern": {
+            "join": 1.0,
+            "keep": 1.0,
+            "lower": 1.0,
+            "replace": 1.0
+          },
+          "emitted_operations_among_failures": {},
+          "examples": []
+        },
+        "workflow.novel-test": {
+          "errors": {
+            "ARGUMENT_KEYS": 1,
+            "CORRECT": 63
+          },
+          "per_pattern": {
+            "2": 1.0,
+            "3": 0.96875
+          },
+          "emitted_operations_among_failures": {
+            "add>shift>rename": 1
+          },
+          "examples": [
+            {
+              "id": "25e87aa3e2b0cd2d2234972640483c1a0f56e1b5c45311e1dd8d9d931a40eaaf",
+              "pattern": "3",
+              "request": "Add event dlodml at minute 600 titled tuicbw. Then Shift event erttup later by 30 minutes. Then Cancel event yqrzhe.",
+              "expected_calls": [
+                {
+                  "args": {
+                    "id": "dlodml",
+                    "start": 600,
+                    "title": "tuicbw"
+                  },
+                  "tool": "mino"
+                },
+                {
+                  "args": {
+                    "id": "erttup",
+                    "minutes": 30
+                  },
+                  "tool": "rono"
+                },
+                {
+                  "args": {
+                    "id": "yqrzhe"
+                  },
+                  "tool": "kalu"
+                }
+              ],
+              "emitted_text": "[{\"tool\":\"mino\",\"args\":{\"id\":\"dlodml\",\"start\":600,\"title\":\"tuicbw\"}},{\"tool\":\"rono\",\"args\":{\"id\":\"erttup\",\"minutes\":30}},{\"tool\":\"misa\",\"args\":{\"id\":\"yqrzhe\"}}]",
+              "expected_state": {
+                "dlodml": {
+                  "start": 600,
+                  "title": "tuicbw"
+                },
+                "erttup": {
+                  "start": 540,
+                  "title": "tuicbw"
+                }
+              },
+              "final_state": null,
+              "error": "ARGUMENT_KEYS"
+            }
+          ]
+        },
+        "workflow.test": {
+          "errors": {
+            "CORRECT": 64
+          },
+          "per_pattern": {
+            "0": 1.0,
+            "1": 1.0
+          },
+          "emitted_operations_among_failures": {},
+          "examples": []
+        }
+      },
+      "exposures": {
+        "current_exposures": 256,
+        "input_tokens": 128730,
+        "old_exposures": 256,
+        "target_tokens": 21098,
+        "updates": 128
+      },
+      "replay_by_family": {
+        "calendar": 68,
+        "files": 71,
+        "records": 62,
+        "text": 55
+      },
+      "memory_examples": 64,
+      "adapter_tensor_bytes": 3670016,
+      "optimizer_tensor_bytes": 7340160,
+      "checkpoint_file_bytes": 11041139,
+      "checkpoint_sha256": "ad292b2ae81666d47eac842afaf17b86c524804caddd17b6f6012ce749047ffe",
+      "all_factor_ranks": 8,
+      "dense_offset": null,
+      "initial_adapter_sha256": "00f5aa5cbd406a312dc5af2cfc4d58ea7b36398f0356ce225fffc434220e1f81",
+      "initial_optimizer_sha256": "9b3398b5d9ec7a68f72cc11d245b22b099021b5bb1a6c0a788ddf10e2f8a9e90",
+      "validation_curve": [
+        {
+          "updates": 0,
+          "workflow": 14,
+          "primitives": 125
+        },
+        {
+          "updates": 16,
+          "workflow": 32,
+          "primitives": 113
+        },
+        {
+          "updates": 64,
+          "workflow": 31,
+          "primitives": 128
+        },
+        {
+          "updates": 128,
+          "workflow": 30,
+          "primitives": 128
+        }
+      ]
+    }
+  },
+  "process_boundary": {
+    "train_task_id": "followthrough-20260912-skills-compressed-workflow4409",
+    "audit_task_id": "followthrough-20260912-skills-compressed-workflow-audit4409",
+    "train_attempt_id": "2f4990e4daee462fa442c43cc3e78cae",
+    "audit_attempt_id": "41ad8a324ed04760bf8555192095fbba",
+    "new_audit_started_after_completed_training": true,
+    "numeric_pid_inequality_not_used_as_sole_evidence": true
+  },
+  "ancestral_accounting": {
+    "compressed": {
+      "base_weights_included": false,
+      "dense_offset_bytes": 0,
+      "factor_bytes": 3670016,
+      "factor_ranks": {
+        "model.language_model.layers.11.self_attn.q_proj": 8,
+        "model.language_model.layers.11.self_attn.v_proj": 8,
+        "model.language_model.layers.15.self_attn.q_proj": 8,
+        "model.language_model.layers.15.self_attn.v_proj": 8,
+        "model.language_model.layers.19.self_attn.q_proj": 8,
+        "model.language_model.layers.19.self_attn.v_proj": 8,
+        "model.language_model.layers.23.self_attn.q_proj": 8,
+        "model.language_model.layers.23.self_attn.v_proj": 8,
+        "model.language_model.layers.27.self_attn.q_proj": 8,
+        "model.language_model.layers.27.self_attn.v_proj": 8,
+        "model.language_model.layers.3.self_attn.q_proj": 8,
+        "model.language_model.layers.3.self_attn.v_proj": 8,
+        "model.language_model.layers.31.self_attn.q_proj": 8,
+        "model.language_model.layers.31.self_attn.v_proj": 8,
+        "model.language_model.layers.7.self_attn.q_proj": 8,
+        "model.language_model.layers.7.self_attn.v_proj": 8
+      },
+      "optimizer_bytes": 0,
+      "projection_shapes": {
+        "model.language_model.layers.11.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.11.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.15.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.15.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.19.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.19.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.23.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.23.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.27.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.27.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.3.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.3.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.31.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.31.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.7.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.7.self_attn.v_proj": [
+          1024,
+          2560
+        ]
+      },
+      "resident_adapter_tensor_bytes": 3670016
+    },
+    "compressed_checkpoint_file_bytes": 3678263,
+    "compressed_inference_requires_expert_archive": false,
+    "compression_training_updates": 0,
+    "fixed_memory_sequential_training_claim": false,
+    "original": {
+      "base_weights_included": false,
+      "dense_offset_bytes": 754974720,
+      "factor_bytes": 3670016,
+      "factor_ranks": {
+        "model.language_model.layers.11.self_attn.q_proj": 8,
+        "model.language_model.layers.11.self_attn.v_proj": 8,
+        "model.language_model.layers.15.self_attn.q_proj": 8,
+        "model.language_model.layers.15.self_attn.v_proj": 8,
+        "model.language_model.layers.19.self_attn.q_proj": 8,
+        "model.language_model.layers.19.self_attn.v_proj": 8,
+        "model.language_model.layers.23.self_attn.q_proj": 8,
+        "model.language_model.layers.23.self_attn.v_proj": 8,
+        "model.language_model.layers.27.self_attn.q_proj": 8,
+        "model.language_model.layers.27.self_attn.v_proj": 8,
+        "model.language_model.layers.3.self_attn.q_proj": 8,
+        "model.language_model.layers.3.self_attn.v_proj": 8,
+        "model.language_model.layers.31.self_attn.q_proj": 8,
+        "model.language_model.layers.31.self_attn.v_proj": 8,
+        "model.language_model.layers.7.self_attn.q_proj": 8,
+        "model.language_model.layers.7.self_attn.v_proj": 8
+      },
+      "optimizer_bytes": 0,
+      "projection_shapes": {
+        "model.language_model.layers.11.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.11.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.15.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.15.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.19.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.19.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.23.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.23.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.27.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.27.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.3.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.3.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.31.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.31.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.7.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.7.self_attn.v_proj": [
+          1024,
+          2560
+        ]
+      },
+      "resident_adapter_tensor_bytes": 758644736
+    },
+    "original_checkpoint_file_bytes": 758656231,
+    "retained_source_expert_archive_bytes_fp32": 14680064,
+    "retained_source_expert_checkpoint_files": {
+      "by_family": {
+        "calendar": {
+          "metadata_file_bytes": 24573,
+          "optimizer_state_present": true,
+          "state_file_bytes": 11041139
+        },
+        "files": {
+          "metadata_file_bytes": 24422,
+          "optimizer_state_present": true,
+          "state_file_bytes": 11041139
+        },
+        "records": {
+          "metadata_file_bytes": 24201,
+          "optimizer_state_present": true,
+          "state_file_bytes": 11041139
+        },
+        "text": {
+          "metadata_file_bytes": 25159,
+          "optimizer_state_present": true,
+          "state_file_bytes": 11041139
+        }
+      },
+      "resident_inference_memory": false,
+      "total_file_bytes": 44262911
+    },
+    "source_archive_preserved": true,
+    "source_expert_training_example_exposures": 2048,
+    "source_expert_training_updates": 512,
+    "svd_workspace_measured": false
+  },
+  "boundary": "One fixed calendar stream, fixed128update recipe selected before hybrid TEST; no teacher qualification or general superiority claim. Rank8 factors have no dense offset; full base, optimizer, replay file, source expert archives and SVD history are separately counted.",
+  "total_native_records_verified": 2208,
+  "test_based_selection": false,
+  "scientific_source_edits": 0
+}

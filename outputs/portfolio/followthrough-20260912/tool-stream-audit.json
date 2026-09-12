@@ -1,0 +1,1765 @@
+{
+  "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+  "runs": {
+    "followthrough-20260912-skills-stream1103-placement": {
+      "status": "passed",
+      "source_sha256": "ae7761bfab16b058af946d56847b035989a67e8887ed16483cc5da6731a65397",
+      "execution_sha256": "537da971404073f0eb9eae10af16c630b826ee498404ea2658984884becf0e3e",
+      "result_sha256": "80ee17fdda81c275bf2bc3a5a859a02ee87c4b1740fcea64f926bd1e5f2f5553",
+      "dataset_rows": 2560,
+      "panels": 181,
+      "records": 7776,
+      "data_seed": 1103,
+      "order": [
+        "calendar",
+        "text",
+        "records",
+        "files"
+      ],
+      "target_family": "records",
+      "transfers": {
+        "agent_dice": {
+          "validation_curve": [
+            [
+              0,
+              32,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 1.0,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 62
+            },
+            "files": {
+              "n": 64,
+              "correct": 53
+            },
+            "records": {
+              "n": 64,
+              "correct": 64
+            },
+            "text": {
+              "n": 64,
+              "correct": 59
+            }
+          }
+        },
+        "arithmetic": {
+          "validation_curve": [
+            [
+              0,
+              32,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 1.0,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 61
+            },
+            "files": {
+              "n": 64,
+              "correct": 51
+            },
+            "records": {
+              "n": 64,
+              "correct": 64
+            },
+            "text": {
+              "n": 64,
+              "correct": 59
+            }
+          }
+        },
+        "continue": {
+          "validation_curve": [
+            [
+              0,
+              32,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 1.0,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 54
+            },
+            "files": {
+              "n": 64,
+              "correct": 64
+            },
+            "records": {
+              "n": 64,
+              "correct": 64
+            },
+            "text": {
+              "n": 64,
+              "correct": 64
+            }
+          }
+        },
+        "fresh": {
+          "validation_curve": [
+            [
+              0,
+              21,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 16,
+          "auc": 0.978515625,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 45
+            },
+            "files": {
+              "n": 64,
+              "correct": 43
+            },
+            "records": {
+              "n": 64,
+              "correct": 50
+            },
+            "text": {
+              "n": 64,
+              "correct": 48
+            }
+          }
+        },
+        "irrelevant": {
+          "validation_curve": [
+            [
+              0,
+              16,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 16,
+          "auc": 0.96875,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 32
+            },
+            "files": {
+              "n": 64,
+              "correct": 62
+            },
+            "records": {
+              "n": 64,
+              "correct": 58
+            },
+            "text": {
+              "n": 64,
+              "correct": 43
+            }
+          }
+        },
+        "relevant": {
+          "validation_curve": [
+            [
+              0,
+              32,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 1.0,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 32
+            },
+            "files": {
+              "n": 64,
+              "correct": 21
+            },
+            "records": {
+              "n": 64,
+              "correct": 64
+            },
+            "text": {
+              "n": 64,
+              "correct": 49
+            }
+          }
+        },
+        "replay": {
+          "validation_curve": [
+            [
+              0,
+              32,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 1.0,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 64
+            },
+            "files": {
+              "n": 64,
+              "correct": 64
+            },
+            "records": {
+              "n": 64,
+              "correct": 64
+            },
+            "text": {
+              "n": 64,
+              "correct": 64
+            }
+          }
+        }
+      },
+      "claim_boundary": "Independent saved-token decode, strict JSON/execution rescore, dataset overlap/oracles, and count/curve audit; GPU persistence and causal attribution require separate experiments."
+    },
+    "followthrough-20260912-skills-stream2207": {
+      "status": "passed",
+      "source_sha256": "ae7761bfab16b058af946d56847b035989a67e8887ed16483cc5da6731a65397",
+      "execution_sha256": "d0a799054d90414fc4e7bdc64a4873820e285e0b56c3bdc0c68a856f99a6ae6b",
+      "result_sha256": "a2e98891464ede5ee3c6b32c76c4da1322f092fd6e34221f01a95772feb3e20e",
+      "dataset_rows": 2560,
+      "panels": 181,
+      "records": 7776,
+      "data_seed": 2207,
+      "order": [
+        "records",
+        "calendar",
+        "text",
+        "files"
+      ],
+      "target_family": "text",
+      "transfers": {
+        "agent_dice": {
+          "validation_curve": [
+            [
+              0,
+              32,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 1.0,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 4,
+            "n": 64,
+            "per_pattern": {
+              "2": 0.0,
+              "3": 0.125
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 54
+            },
+            "files": {
+              "n": 64,
+              "correct": 48
+            },
+            "records": {
+              "n": 64,
+              "correct": 64
+            },
+            "text": {
+              "n": 64,
+              "correct": 64
+            }
+          }
+        },
+        "arithmetic": {
+          "validation_curve": [
+            [
+              0,
+              32,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 1.0,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 1,
+            "n": 64,
+            "per_pattern": {
+              "2": 0.0,
+              "3": 0.03125
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 52
+            },
+            "files": {
+              "n": 64,
+              "correct": 48
+            },
+            "records": {
+              "n": 64,
+              "correct": 64
+            },
+            "text": {
+              "n": 64,
+              "correct": 48
+            }
+          }
+        },
+        "continue": {
+          "validation_curve": [
+            [
+              0,
+              32,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 1.0,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 32,
+            "n": 64,
+            "per_pattern": {
+              "2": 0.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 62
+            },
+            "files": {
+              "n": 64,
+              "correct": 61
+            },
+            "records": {
+              "n": 64,
+              "correct": 58
+            },
+            "text": {
+              "n": 64,
+              "correct": 50
+            }
+          }
+        },
+        "fresh": {
+          "validation_curve": [
+            [
+              0,
+              0,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 16,
+          "auc": 0.9375,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 26,
+            "n": 64,
+            "per_pattern": {
+              "2": 0.0,
+              "3": 0.8125
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 32
+            },
+            "files": {
+              "n": 64,
+              "correct": 31
+            },
+            "records": {
+              "n": 64,
+              "correct": 56
+            },
+            "text": {
+              "n": 64,
+              "correct": 37
+            }
+          }
+        },
+        "irrelevant": {
+          "validation_curve": [
+            [
+              0,
+              31,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 0.998046875,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 63,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 0.96875
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 64
+            },
+            "files": {
+              "n": 64,
+              "correct": 48
+            },
+            "records": {
+              "n": 64,
+              "correct": 63
+            },
+            "text": {
+              "n": 64,
+              "correct": 64
+            }
+          }
+        },
+        "relevant": {
+          "validation_curve": [
+            [
+              0,
+              30,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 0.99609375,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 0
+            },
+            "files": {
+              "n": 64,
+              "correct": 14
+            },
+            "records": {
+              "n": 64,
+              "correct": 36
+            },
+            "text": {
+              "n": 64,
+              "correct": 25
+            }
+          }
+        },
+        "replay": {
+          "validation_curve": [
+            [
+              0,
+              32,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 1.0,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 64
+            },
+            "files": {
+              "n": 64,
+              "correct": 63
+            },
+            "records": {
+              "n": 64,
+              "correct": 64
+            },
+            "text": {
+              "n": 64,
+              "correct": 64
+            }
+          }
+        }
+      },
+      "claim_boundary": "Independent saved-token decode, strict JSON/execution rescore, dataset overlap/oracles, and count/curve audit; GPU persistence and causal attribution require separate experiments."
+    },
+    "followthrough-20260912-skills-stream3301": {
+      "status": "passed",
+      "source_sha256": "ae7761bfab16b058af946d56847b035989a67e8887ed16483cc5da6731a65397",
+      "execution_sha256": "7d374bd6928862f0fa04a239938825dafd29003940e9b2a72b40fb9e5629c9b7",
+      "result_sha256": "c1a3b0d55f7f47bf33ee794257f27b213d23474919c8f30de3f077c1efcb6904",
+      "dataset_rows": 2560,
+      "panels": 181,
+      "records": 7776,
+      "data_seed": 3301,
+      "order": [
+        "files",
+        "text",
+        "records",
+        "calendar"
+      ],
+      "target_family": "files",
+      "transfers": {
+        "agent_dice": {
+          "validation_curve": [
+            [
+              0,
+              3,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 16,
+          "auc": 0.943359375,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 27,
+            "n": 64,
+            "per_pattern": {
+              "2": 0.84375,
+              "3": 0.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 63
+            },
+            "files": {
+              "n": 64,
+              "correct": 48
+            },
+            "records": {
+              "n": 64,
+              "correct": 60
+            },
+            "text": {
+              "n": 64,
+              "correct": 64
+            }
+          }
+        },
+        "arithmetic": {
+          "validation_curve": [
+            [
+              0,
+              0,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 16,
+          "auc": 0.9375,
+          "test": {
+            "correct": 63,
+            "n": 64,
+            "per_pattern": {
+              "0": 0.96875,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 31,
+            "n": 64,
+            "per_pattern": {
+              "2": 0.96875,
+              "3": 0.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 63
+            },
+            "files": {
+              "n": 64,
+              "correct": 48
+            },
+            "records": {
+              "n": 64,
+              "correct": 56
+            },
+            "text": {
+              "n": 64,
+              "correct": 64
+            }
+          }
+        },
+        "continue": {
+          "validation_curve": [
+            [
+              0,
+              27,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 0.990234375,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 64
+            },
+            "files": {
+              "n": 64,
+              "correct": 64
+            },
+            "records": {
+              "n": 64,
+              "correct": 64
+            },
+            "text": {
+              "n": 64,
+              "correct": 64
+            }
+          }
+        },
+        "fresh": {
+          "validation_curve": [
+            [
+              0,
+              0,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 16,
+          "auc": 0.9375,
+          "test": {
+            "correct": 63,
+            "n": 64,
+            "per_pattern": {
+              "0": 0.96875,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 0,
+            "n": 64,
+            "per_pattern": {
+              "2": 0.0,
+              "3": 0.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 16
+            },
+            "files": {
+              "n": 64,
+              "correct": 16
+            },
+            "records": {
+              "n": 64,
+              "correct": 32
+            },
+            "text": {
+              "n": 64,
+              "correct": 32
+            }
+          }
+        },
+        "irrelevant": {
+          "validation_curve": [
+            [
+              0,
+              1,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 16,
+          "auc": 0.939453125,
+          "test": {
+            "correct": 62,
+            "n": 64,
+            "per_pattern": {
+              "0": 0.96875,
+              "1": 0.96875
+            }
+          },
+          "novel": {
+            "correct": 22,
+            "n": 64,
+            "per_pattern": {
+              "2": 0.6875,
+              "3": 0.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 23
+            },
+            "files": {
+              "n": 64,
+              "correct": 32
+            },
+            "records": {
+              "n": 64,
+              "correct": 64
+            },
+            "text": {
+              "n": 64,
+              "correct": 51
+            }
+          }
+        },
+        "relevant": {
+          "validation_curve": [
+            [
+              0,
+              32,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              31,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 0.9921875,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 32,
+            "n": 64,
+            "per_pattern": {
+              "2": 0.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 27
+            },
+            "files": {
+              "n": 64,
+              "correct": 64
+            },
+            "records": {
+              "n": 64,
+              "correct": 33
+            },
+            "text": {
+              "n": 64,
+              "correct": 48
+            }
+          }
+        },
+        "replay": {
+          "validation_curve": [
+            [
+              0,
+              28,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 0.9921875,
+          "test": {
+            "correct": 62,
+            "n": 64,
+            "per_pattern": {
+              "0": 0.96875,
+              "1": 0.96875
+            }
+          },
+          "novel": {
+            "correct": 31,
+            "n": 64,
+            "per_pattern": {
+              "2": 0.0,
+              "3": 0.96875
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 64
+            },
+            "files": {
+              "n": 64,
+              "correct": 64
+            },
+            "records": {
+              "n": 64,
+              "correct": 64
+            },
+            "text": {
+              "n": 64,
+              "correct": 64
+            }
+          }
+        }
+      },
+      "claim_boundary": "Independent saved-token decode, strict JSON/execution rescore, dataset overlap/oracles, and count/curve audit; GPU persistence and causal attribution require separate experiments."
+    },
+    "followthrough-20260912-skills-stream4409": {
+      "status": "passed",
+      "source_sha256": "ae7761bfab16b058af946d56847b035989a67e8887ed16483cc5da6731a65397",
+      "execution_sha256": "7caea6517e8f4d236e3a51f4a5d5daea11b8244195ca3e4d99b803eef63ac93f",
+      "result_sha256": "b716b0fa1b98ee3d213fe703fab0659f6be16179200901c3607df8b94f347f2e",
+      "dataset_rows": 2560,
+      "panels": 181,
+      "records": 7776,
+      "data_seed": 4409,
+      "order": [
+        "text",
+        "calendar",
+        "files",
+        "records"
+      ],
+      "target_family": "calendar",
+      "transfers": {
+        "agent_dice": {
+          "validation_curve": [
+            [
+              0,
+              23,
+              32
+            ],
+            [
+              16,
+              31,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              31,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 16,
+          "auc": 0.966796875,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 62
+            },
+            "files": {
+              "n": 64,
+              "correct": 63
+            },
+            "records": {
+              "n": 64,
+              "correct": 64
+            },
+            "text": {
+              "n": 64,
+              "correct": 64
+            }
+          }
+        },
+        "arithmetic": {
+          "validation_curve": [
+            [
+              0,
+              20,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              31,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 16,
+          "auc": 0.96875,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 63,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 0.96875
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 62
+            },
+            "files": {
+              "n": 64,
+              "correct": 64
+            },
+            "records": {
+              "n": 64,
+              "correct": 64
+            },
+            "text": {
+              "n": 64,
+              "correct": 48
+            }
+          }
+        },
+        "continue": {
+          "validation_curve": [
+            [
+              0,
+              14,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 16,
+          "auc": 0.96484375,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 63
+            },
+            "files": {
+              "n": 64,
+              "correct": 64
+            },
+            "records": {
+              "n": 64,
+              "correct": 64
+            },
+            "text": {
+              "n": 64,
+              "correct": 32
+            }
+          }
+        },
+        "fresh": {
+          "validation_curve": [
+            [
+              0,
+              0,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 16,
+          "auc": 0.9375,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 32,
+            "n": 64,
+            "per_pattern": {
+              "2": 0.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 47
+            },
+            "files": {
+              "n": 64,
+              "correct": 46
+            },
+            "records": {
+              "n": 64,
+              "correct": 38
+            },
+            "text": {
+              "n": 64,
+              "correct": 40
+            }
+          }
+        },
+        "irrelevant": {
+          "validation_curve": [
+            [
+              0,
+              0,
+              32
+            ],
+            [
+              16,
+              31,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 16,
+          "auc": 0.9296875,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 48
+            },
+            "files": {
+              "n": 64,
+              "correct": 47
+            },
+            "records": {
+              "n": 64,
+              "correct": 49
+            },
+            "text": {
+              "n": 64,
+              "correct": 50
+            }
+          }
+        },
+        "relevant": {
+          "validation_curve": [
+            [
+              0,
+              25,
+              32
+            ],
+            [
+              16,
+              31,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 0.978515625,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 62,
+            "n": 64,
+            "per_pattern": {
+              "2": 0.9375,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 64
+            },
+            "files": {
+              "n": 64,
+              "correct": 39
+            },
+            "records": {
+              "n": 64,
+              "correct": 48
+            },
+            "text": {
+              "n": 64,
+              "correct": 48
+            }
+          }
+        },
+        "replay": {
+          "validation_curve": [
+            [
+              0,
+              32,
+              32
+            ],
+            [
+              16,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32
+            ],
+            [
+              128,
+              32,
+              32
+            ]
+          ],
+          "first_qualified_checkpoint": 0,
+          "auc": 1.0,
+          "test": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "0": 1.0,
+              "1": 1.0
+            }
+          },
+          "novel": {
+            "correct": 64,
+            "n": 64,
+            "per_pattern": {
+              "2": 1.0,
+              "3": 1.0
+            }
+          },
+          "primitive_after_test": {
+            "calendar": {
+              "n": 64,
+              "correct": 64
+            },
+            "files": {
+              "n": 64,
+              "correct": 64
+            },
+            "records": {
+              "n": 64,
+              "correct": 64
+            },
+            "text": {
+              "n": 64,
+              "correct": 63
+            }
+          }
+        }
+      },
+      "claim_boundary": "Independent saved-token decode, strict JSON/execution rescore, dataset overlap/oracles, and count/curve audit; GPU persistence and causal attribution require separate experiments."
+    }
+  }
+}

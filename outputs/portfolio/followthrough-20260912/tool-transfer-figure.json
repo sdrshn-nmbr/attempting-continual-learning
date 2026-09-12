@@ -1,0 +1,159 @@
+{
+  "source_audit_sha256": "a52dc30b9ed0a5469ca543ee897f1957847abae6997943f45b10d86648d282cc",
+  "matplotlib": "3.11.2",
+  "arms": [
+    "fresh",
+    "relevant",
+    "irrelevant",
+    "continue",
+    "replay",
+    "arithmetic",
+    "agent_dice"
+  ],
+  "streams": [
+    1103,
+    2207,
+    3301,
+    4409
+  ],
+  "counts": {
+    "validation_initial": [
+      [
+        21,
+        0,
+        0,
+        0
+      ],
+      [
+        32,
+        30,
+        32,
+        25
+      ],
+      [
+        16,
+        31,
+        1,
+        0
+      ],
+      [
+        32,
+        32,
+        27,
+        14
+      ],
+      [
+        32,
+        32,
+        28,
+        32
+      ],
+      [
+        32,
+        32,
+        0,
+        20
+      ],
+      [
+        32,
+        32,
+        3,
+        23
+      ]
+    ],
+    "test": [
+      [
+        64,
+        64,
+        63,
+        64
+      ],
+      [
+        64,
+        64,
+        64,
+        64
+      ],
+      [
+        64,
+        64,
+        62,
+        64
+      ],
+      [
+        64,
+        64,
+        64,
+        64
+      ],
+      [
+        64,
+        64,
+        62,
+        64
+      ],
+      [
+        64,
+        64,
+        63,
+        64
+      ],
+      [
+        64,
+        64,
+        64,
+        64
+      ]
+    ],
+    "novel": [
+      [
+        64,
+        26,
+        0,
+        32
+      ],
+      [
+        64,
+        64,
+        32,
+        62
+      ],
+      [
+        64,
+        63,
+        22,
+        64
+      ],
+      [
+        64,
+        32,
+        64,
+        64
+      ],
+      [
+        64,
+        64,
+        31,
+        64
+      ],
+      [
+        64,
+        1,
+        31,
+        63
+      ],
+      [
+        64,
+        4,
+        27,
+        64
+      ]
+    ]
+  },
+  "denominators": {
+    "validation_initial": 32,
+    "test": 64,
+    "novel": 64
+  },
+  "claim_boundary": "Per-stream counts without pooling four distinct task families into a claim of independent model replication."
+}

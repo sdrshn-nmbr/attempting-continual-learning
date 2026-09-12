@@ -1,0 +1,118 @@
+{
+  "id": "skill-transfer-compressed-replay-20260912",
+  "status": "prespecified_before_compressed_workflow_training",
+  "dependency_source_sha256": "9b2c2edeacb75a332751691a50801bbbacfb4453cabd31f0e0e7353c3ecbe788",
+  "dependency_files": {
+    "agent_dice.py": "e975ae90247bd78d85700698bfe7202d1f70f3be681da30f7f83b2bd538b5674",
+    "audit_persistence.py": "57b080b79aef25326e61bd50b91fcadf93689b74181e16d32a029688de1578f6",
+    "compress_fusion.py": "752189481f1ceb2c283cd534ce29c416c29817d24913a1cabc593eef49289c5a",
+    "configs/audit_stream_1103.json": "25415d23513a9c167e3524ca7820d3d526ba31455aabe1ab5592b90255d5f143",
+    "configs/audit_stream_2207.json": "196e6506e314e1036a2e3aaf4422f587f21f1a43e56258b59f0746ae4efdaf86",
+    "configs/audit_stream_3301.json": "c3a685a690b1fa46071b22e746067402969f7ea7066743a8dcf68e5696a0ab28",
+    "configs/audit_stream_4409.json": "ca2cc931f85da8c2307bac57b8047868ad0e76b27b5295ce70666f8ed0424740",
+    "configs/compress_stream_1103.json": "63f4b044a02db41edf88061a7379f48ac482bf52c29517b72a1ca9f5ed0f93c1",
+    "configs/compress_stream_2207.json": "4291f5c8433ceda4d76acc0011cd50a467b6d8a619ccc3eb5cef17c357f3713a",
+    "configs/compress_stream_3301.json": "6123aaa8234bbf735a6924c0dac370775486a356b94c71e42c0fd467b9cd7c6f",
+    "configs/compress_stream_4409.json": "50258af12ede8baedca60ded2c7b4e39d9e274d314c11131608d5a6bd3bf3b29",
+    "configs/prepare_1103.json": "63ea677f6967cfc9c7e1f6986d0fb34fd528417ca13d6ab83cce0c1a5d94dda6",
+    "configs/qualify_1103.json": "0e12e22f4134c95857bc8cffa01db6a529c2e5500e2e78dc5084796fc9f4b4b2",
+    "configs/stream_1103.json": "7458cf7b4a611f7b8e927663055fe0d7c91e54ce02f986eab0618298742416c9",
+    "configs/stream_2207.json": "748fe2a956d23cacbc13fd885c1459138880670a3f7a35e274f848f639c0c863",
+    "configs/stream_3301.json": "f49c397680c19009b556d8460f6be0aecc8519d0587adc750ee2d73c52307386",
+    "configs/stream_4409.json": "8cdf915c3d3de2e29f9f61618e80ff57df05ec0795253cf10cfb1b4b928d401c",
+    "data.py": "089b0b6416e973bfd408f5fdf7ae929ea44619cb6aa41d07fe4e149ab6d93ce1",
+    "followup.py": "122a82edc0a2bcda527421f562b59b0e8a01032355e24e496a5cbcc5f37652ba",
+    "followup_handoff.json": "33169cc916101b4773e6e9c3feaca92d8282ad2d4447c2847979d1d0650c05fe",
+    "followup_protocol.json": "337b203b98fcc59090ac425caf736308bc2026d2d4cdecc31a5dc20cf9766cd8",
+    "handoff.json": "44cb04d4ccef3c643fe5b43cff453fe1d115174d6f7e86c5702f67a3f4ffe06d",
+    "learning.py": "e2920b3644069471f6ad3648b218493f3887b009d0a5a7e6eda9f1b9f0d2c7c5",
+    "protocol.json": "5a09923e8946000a4abcc3abd37d9d707eb400ab2906a8dcbebf113c11e23cb4",
+    "provenance/agent_dice.json": "f1f33c2cf4395882cdd357dccdfc089e14f9de78f8597b5a34ad5b7786b56e97",
+    "provenance/merge_llama3.source.txt": "a11da985261a28296b614f82a216dd9d989dd92cb499bb220cdbd3041c701975",
+    "provenance/merge_qwen3.source.txt": "5e8393a30a41031b5264c36551cf3b51b7d1424c7839815eedea189c4fe52a8f",
+    "provenance/qwen35-4b-hub-metadata.json": "b5b7ed6421d2fb3b47e06376c882141998eb84da264839cdd07f152cf18c3524",
+    "provenance/qwen35-4b-snapshot.json": "ab4e85abbdee4d465f93930921695fcf583d1e7f63d8f674708c72171e004ee4",
+    "provenance/runtime-qualification.json": "d76cbe0a408d8cf04db37b1ff2cc314074549ce46eb62b46e0612ba8844a70fb",
+    "requirements.txt": "e854f90e613e1bbfe0becba22f0366ffab4fc7aacfe7e27686620b2f8e7adb1a",
+    "run.py": "9eea373707d6ee30c888d1cf8315bb91ac78c696562d52890fb83194a3d96982",
+    "sandbox.py": "bc2eb9cd11e30bcd80000bef816f60b5c7727122ca678430ee5dc88f2dd19cf4"
+  },
+  "methods": [
+    "arithmetic",
+    "agent_dice"
+  ],
+  "arms": [
+    "compressed_continue",
+    "compressed_replay"
+  ],
+  "prerequisite": {
+    "checkpoint": "Only saved pre-workflow rank8 SVD checkpoint from the completed compression source.",
+    "dev": "Reuse original fusion_gate / primitive_gate: each family >=0.8, each operation >=0.6, >=0.25 of original fresh-baseline headroom gained, >=0.15 original baseline headroom. Same full generated-answer grading.",
+    "reload": "Before any optimizer construction or update, fresh-load compressed state, require offset=None/rank8/alpha16, repeat all primitive DEV panels, require exact complete record match and the same gates.",
+    "failure": "Record failed method and zero updates; no intervention or TEST generation for it. Continue other prespecified method.",
+    "independence_from_test": "No TEST score, energy-retained statistic, or workflow DEV result selects eligibility, method, checkpoint, rank, replay samples, hyperparameters or updates."
+  },
+  "training": {
+    "updates_per_arm": 128,
+    "batch_size": 4,
+    "workflow_checkpoints": [
+      16,
+      64,
+      128
+    ],
+    "source_training_order": "Same original scheduled_batch seed [optimization_seed, workflow, target_family].",
+    "compressed_continue": {
+      "new_per_update": 4,
+      "old_per_update": 0,
+      "new_exposures": 512,
+      "old_exposures": 0
+    },
+    "compressed_replay": {
+      "new_per_update": 2,
+      "old_per_update": 2,
+      "new_exposures": 256,
+      "old_exposures": 256,
+      "new_rows": "First two rows of the same four-row current schedule."
+    },
+    "initial_state": "Both arms restore identical compressed A/B tensors and fresh identical AdamW. Train A and B, rank8/alpha16, no dense offset. Frozen BF16 base and all snapshot/runtime guards unchanged.",
+    "optimizer": "Original learning_rate=0.0003, weight_decay=0, foreach=False, grad_clip=1, row-mean native-answer CE including EOS; same original learning.py.",
+    "validation": "All five DEV panels at0/16/64/128. Never select an earlier checkpoint or extend training based on scores. Save final128 checkpoint before any TEST generation.",
+    "matching_boundary": "Equal updates and total example exposures. Current-task exposures and answer-token budgets differ and are explicitly counted; not a token-matched comparison."
+  },
+  "memory": {
+    "capacity": 64,
+    "per_family": 16,
+    "per_operation": 4,
+    "admission": "Only unique primitive TRAIN rows proven present in each qualified expert's hashed update logs. Deterministic sampling without replacement of4 per operation; sixteen per family.",
+    "draw": "Two distinct uniformly sampled memory rows each replay update, seeded by optimization_seed, protocol id and update number. Current-family old primitives are valid rehearsal for the new composed workflow.",
+    "growth": false,
+    "selection_inputs": "TRAIN history identities, family/operation labels and fixed RNG only; no DEV/TEST errors or model-based selection.",
+    "reporting": "Save actual64 IDs/rows, admission counts, per-operation counts, JSON file bytes and realized old-family exposures. Continue has zero rehearsal examples.",
+    "boundary": "64 is the learner's fixed rehearsal memory. Frozen base, optimizer tensors, current-task dataset, evaluator/tokenizer cache, original expert/compression archives and evidence files are accounted separately; not a64-example cap on the whole benchmark process or archival storage."
+  },
+  "audit": {
+    "execution": "Separate standalone audit task after train execution completed with exit0 and no timeout. Distinct task and attempt IDs and bound CLI/code; record supervisor/launcher/actual CLI PIDs with their roles, not numeric PID inequality alone.",
+    "reload": "Restore every final eligible arm at128 updates. Verify rank8/nooffset, frozen base hash and exact five-panel final DEV record reproduction before TEST.",
+    "panels": [
+      "All four primitive TEST sets",
+      "Ordinary workflow TEST",
+      "Original unseen-combination workflow TEST"
+    ],
+    "source_references": "After training only, report saved compressed initial TEST and original uncompressed full-fusion final results as descriptive references. Independent original persistence audits are separate.",
+    "comparison_boundary": "Dense reference trained fresh zero-B LoRA factors over a frozen dense offset; compressed A/B train the entire rank8 update. Shared source experts and matching128 continue updates do not make these identical parameterizations.",
+    "no_recipe_selection": true,
+    "teacher_qualified": false
+  },
+  "accounting": {
+    "common_expert_history": "Count original512 expert updates/2048 exposures once as shared actual history and per candidate as logical ancestral training; do not claim independently fused specialists were a fixed-memory sequential learner.",
+    "merge": "Preserve original dense merge state/allocation and source expert archive accounting; zero gradient merge updates.",
+    "svd": "Use existing saved compression; do not rerun SVD. Preserve singular-value/rounding provenance and archival file sizes separately; zero SVD training updates.",
+    "new_training": "Count every actual update/exposure/token for both arms; report optimizer bytes, resident factor bytes, no-offset assertion and saved checkpoint-file bytes.",
+    "proof": "Actual archived source hashes, embedded task/config/receipt hashes, original-compression-training result chain, and consumed artifact hashes are checked and retained."
+  },
+  "limits": [
+    "Single initially qualified stream4409 unless separate fixed config is added before use.",
+    "Explicit synthetic composition, not autonomous planning.",
+    "No TEST-based tuning and no teacher/PorTAL claim."
+  ]
+}

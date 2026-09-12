@@ -1,0 +1,16 @@
+{
+  "task": "followthrough-20260912-qualify-qwen35-4b",
+  "source_sha256": "a50d8e4ecd2812c11a891643d0988e76bfdf9e2bde22cb7d91b023e3bb0396e7",
+  "run_py_sha256": "99d43835130d65c3fa7450558dfd2231739ee664d3e4392e9763d3ae2d95e719",
+  "source_load_dtype": "torch.bfloat16",
+  "source_line": 49,
+  "metrics_status": "passed",
+  "gpu_count": 1,
+  "architecture": "gfx950:sramecc+:xnack-",
+  "torch": "2.10.0+rocm7.2.4.git3d3aa833",
+  "rocm": "7.2.53211",
+  "evidence_directory": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-qualify-qwen35-4b",
+  "scientific_lane_base_load_dtype": "bfloat16",
+  "scientific_lane_adapter_and_dense_offset_dtype": "float32",
+  "boundary": "Same requested base load dtype as qualification; that qualification used PEFT and three updates, so it does not validate this custom dense-offset learner or its research outcomes. FP32 base was briefly edited locally, then restored before dispatch per parent correction."
+}

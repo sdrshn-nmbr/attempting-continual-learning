@@ -1,0 +1,1574 @@
+{
+  "status": "delete_rehearsal_independently_audited",
+  "source_sha256": "7c339f6cc2fd02fae10e13d9cfea57b0dbdd87e9a989270d56a1ed1a575c17f6",
+  "source_files": 50,
+  "execution_bindings": {
+    "train": {
+      "task_id": "followthrough-20260912-skills-delete-rehearsal4409",
+      "attempt_id": "879a77b4215245a3b321634b807a0b76",
+      "result_sha256": "217490b99cfffeae2d5acf6fd32f4923bda11fe43aa3755bb5894bf44e008ffe",
+      "execution_sha256": "57b31e6a72dd05d763f36f27293b98f3845affb70a8bdc898b5164c719d9867d",
+      "manifest_files_verified": 37,
+      "completed_exit0_no_timeout": true
+    },
+    "audit": {
+      "task_id": "followthrough-20260912-skills-delete-rehearsal-audit4409",
+      "attempt_id": "abe294032d124b0c810660a3e182323b",
+      "result_sha256": "e1eb5365458556c3df354a6fbd1d936ad49d906235a1e05bc9a2cfc12d51f54c",
+      "execution_sha256": "1062c982c8146c7d3705de17abbc5e16c7d0bac03376c40f6baa8537bcdc2ef7",
+      "manifest_files_verified": 26,
+      "completed_exit0_no_timeout": true
+    },
+    "hybrid_train": {
+      "task_id": "followthrough-20260912-skills-compressed-workflow4409",
+      "attempt_id": "2f4990e4daee462fa442c43cc3e78cae",
+      "result_sha256": "75fd1a8b4f3ce6b02b0da96c0ab56c1e17dcbff02c5f24e4b89721daed646f45",
+      "execution_sha256": "1e10033db6480c1453b281cee726ac3be3c4826c99e987bbf8e840489da03252",
+      "manifest_files_verified": 55,
+      "completed_exit0_no_timeout": true
+    },
+    "hybrid_audit": {
+      "task_id": "followthrough-20260912-skills-compressed-workflow-audit4409",
+      "attempt_id": "41ad8a324ed04760bf8555192095fbba",
+      "result_sha256": "49df67b21b1a678e81924d41341aacc7cb92ccf1bb768d83a04e70679c8c8676",
+      "execution_sha256": "e101c6445debe704d123601c551cb5aff421a43f2c7fe6e1ea146b394ca46717",
+      "manifest_files_verified": 36,
+      "completed_exit0_no_timeout": true
+    },
+    "source": {
+      "task_id": "followthrough-20260912-skills-stream4409",
+      "attempt_id": "4e91155ea23949ed99f368d5b57180a9",
+      "result_sha256": "b716b0fa1b98ee3d213fe703fab0659f6be16179200901c3607df8b94f347f2e",
+      "execution_sha256": "7caea6517e8f4d236e3a51f4a5d5daea11b8244195ca3e4d99b803eef63ac93f",
+      "manifest_files_verified": 268,
+      "completed_exit0_no_timeout": true
+    },
+    "compression": {
+      "task_id": "followthrough-20260912-skills-compress4409",
+      "attempt_id": "b756db599bb6463a955d7d4a6c8fba06",
+      "result_sha256": "034f0890520418959c54b7965dc9dd54700d4e254f2788002a4f9d308f9f2c28",
+      "execution_sha256": "0dbcb805aa7c69dcf94ff6a7595db60030fbc340d68feb9cc5469e8ee79e9f4b",
+      "manifest_files_verified": 64,
+      "completed_exit0_no_timeout": true
+    }
+  },
+  "source_archives": {
+    "7c339f6cc2fd02fae10e13d9cfea57b0dbdd87e9a989270d56a1ed1a575c17f6": {
+      "files": 50,
+      "archive_sha256": "1eb254e1b007aa01183fa00c8c44047c1f38c63745f9b271155fe0938e9c9d33"
+    },
+    "8456e8752d39b1ed9fbfeafe46485d68f4a349e4b607726998629b76449b45ad": {
+      "files": 45,
+      "archive_sha256": "24e2c891eb77968729a9d2d589f03ddd04f441bdf04b95f6ca2b560f7364c3d1"
+    },
+    "ae7761bfab16b058af946d56847b035989a67e8887ed16483cc5da6731a65397": {
+      "files": 20,
+      "archive_sha256": "7665cc09d5ac7c20777a989e28e0a69427a1c13926d55570b745b7d8a62c12c4"
+    },
+    "9b2c2edeacb75a332751691a50801bbbacfb4453cabd31f0e0e7353c3ecbe788": {
+      "files": 33,
+      "archive_sha256": "81162eb42be413512d7502ab6b06519992ced0b2a3a9272bfdcc82bf4c1ab416"
+    }
+  },
+  "native_records": {
+    "train": 640,
+    "audit": 544,
+    "initial_dev_exact": 160,
+    "final_dev_exact": 160,
+    "total_new_records_verified": 1184,
+    "reference_records_rechecked": 1536,
+    "discrepancies": 0
+  },
+  "independence": "CPU native-token decode, strict whole-JSON duplicate-key/type/schema validation and a separately implemented four-family executor; no scientific scoring imports or model generation. Actual checkpoint tensors loaded on CPU and hashed.",
+  "process_boundary": "Distinct standalone supervised tasks/attempts; actual CLI/runtime PID roles and completed ancestor receipts agree; audit started after training finished. Base fingerprint, BF16/FP32 path, one GPU, finite tensors and no offload/hooks verified. Numeric PID inequality is not sole proof.",
+  "ablation": {
+    "actual_updates": 128,
+    "actual_optimizer_clocks": 32,
+    "current_exposures": 256,
+    "old_exposures": 0,
+    "buffer_examples": 0,
+    "unique_current_rows": 113,
+    "exact_current_ids_match_replay_each_step": true,
+    "deterministic_schedule_independently_reconstructed": true,
+    "loss": "sum(two per-example mean answer-token CE losses including native EOS)/4; logged loss exactly0.5*current_mean_loss at every step.",
+    "source_ast_objective_verified": true,
+    "initial_adapter_sha256": "00f5aa5cbd406a312dc5af2cfc4d58ea7b36398f0356ce225fffc434220e1f81",
+    "initial_optimizer_sha256": "9b3398b5d9ec7a68f72cc11d245b22b099021b5bb1a6c0a788ddf10e2f8a9e90",
+    "optimizer_matches_reference_param_groups": true,
+    "gradient_clip": 1,
+    "steps_above_clip_threshold": 2,
+    "input_tokens": 74171,
+    "target_tokens": 15961,
+    "token_totals_independently_reconstructed": true,
+    "no_train_test_generation": true,
+    "checkpoint_selection": "Fixed final128; DEV0/16/64/128, no TEST selection.",
+    "boundary": "Two-row forward batch rather than replay's four rows; current objective contribution matches before nonlinear clipping/AdamW. GPU gradients across batch shapes are not asserted bit-identical."
+  },
+  "checkpoint": {
+    "path": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio/followthrough-20260912/runs/followthrough-20260912-skills-delete-rehearsal4409/agent_dice/delete_rehearsal/checkpoint",
+    "sha256": "5e8d20551259a34a1f959839d6e97e82e3f6d08ac8a4f85624335df9c6dbce54",
+    "factor_bytes": 3670016,
+    "optimizer_bytes": 7340160,
+    "file_bytes": 11041139,
+    "rank": 8,
+    "projections": 16,
+    "dense_offset": null,
+    "adapter_dtype": "float32",
+    "audit_consumed_exact_saved_state": true,
+    "same_initial_as_both_hybrid_arms": true
+  },
+  "scores": {
+    "primitive-calendar.test": {
+      "n": 64,
+      "initial": 63,
+      "continue": 48,
+      "delete_rehearsal": 56,
+      "replay": 63,
+      "original_sequential_replay": 64
+    },
+    "primitive-files.test": {
+      "n": 64,
+      "initial": 64,
+      "continue": 54,
+      "delete_rehearsal": 64,
+      "replay": 64,
+      "original_sequential_replay": 64
+    },
+    "primitive-records.test": {
+      "n": 64,
+      "initial": 64,
+      "continue": 64,
+      "delete_rehearsal": 64,
+      "replay": 64,
+      "original_sequential_replay": 64
+    },
+    "primitive-text.test": {
+      "n": 64,
+      "initial": 64,
+      "continue": 62,
+      "delete_rehearsal": 64,
+      "replay": 64,
+      "original_sequential_replay": 63
+    },
+    "workflow.novel-test": {
+      "n": 64,
+      "initial": 8,
+      "continue": 18,
+      "delete_rehearsal": 61,
+      "replay": 63,
+      "original_sequential_replay": 64
+    },
+    "workflow.test": {
+      "n": 64,
+      "initial": 32,
+      "continue": 64,
+      "delete_rehearsal": 64,
+      "replay": 64,
+      "original_sequential_replay": 64
+    }
+  },
+  "paired_outcomes": {
+    "primitive-calendar.test": {
+      "initial_to_delete": {
+        "retained": 55,
+        "lost": 8,
+        "gained": 1,
+        "wrong_at_both": 0
+      },
+      "delete_to_replay": {
+        "retained": 56,
+        "lost": 0,
+        "gained": 7,
+        "wrong_at_both": 1
+      },
+      "continue_to_delete": {
+        "retained": 46,
+        "lost": 2,
+        "gained": 10,
+        "wrong_at_both": 6
+      }
+    },
+    "primitive-files.test": {
+      "initial_to_delete": {
+        "retained": 64,
+        "lost": 0,
+        "gained": 0,
+        "wrong_at_both": 0
+      },
+      "delete_to_replay": {
+        "retained": 64,
+        "lost": 0,
+        "gained": 0,
+        "wrong_at_both": 0
+      },
+      "continue_to_delete": {
+        "retained": 54,
+        "lost": 0,
+        "gained": 10,
+        "wrong_at_both": 0
+      }
+    },
+    "primitive-records.test": {
+      "initial_to_delete": {
+        "retained": 64,
+        "lost": 0,
+        "gained": 0,
+        "wrong_at_both": 0
+      },
+      "delete_to_replay": {
+        "retained": 64,
+        "lost": 0,
+        "gained": 0,
+        "wrong_at_both": 0
+      },
+      "continue_to_delete": {
+        "retained": 64,
+        "lost": 0,
+        "gained": 0,
+        "wrong_at_both": 0
+      }
+    },
+    "primitive-text.test": {
+      "initial_to_delete": {
+        "retained": 64,
+        "lost": 0,
+        "gained": 0,
+        "wrong_at_both": 0
+      },
+      "delete_to_replay": {
+        "retained": 64,
+        "lost": 0,
+        "gained": 0,
+        "wrong_at_both": 0
+      },
+      "continue_to_delete": {
+        "retained": 62,
+        "lost": 0,
+        "gained": 2,
+        "wrong_at_both": 0
+      }
+    },
+    "workflow.novel-test": {
+      "initial_to_delete": {
+        "retained": 8,
+        "lost": 0,
+        "gained": 53,
+        "wrong_at_both": 3
+      },
+      "delete_to_replay": {
+        "retained": 60,
+        "lost": 1,
+        "gained": 3,
+        "wrong_at_both": 0
+      },
+      "continue_to_delete": {
+        "retained": 18,
+        "lost": 0,
+        "gained": 43,
+        "wrong_at_both": 3
+      }
+    },
+    "workflow.test": {
+      "initial_to_delete": {
+        "retained": 32,
+        "lost": 0,
+        "gained": 32,
+        "wrong_at_both": 0
+      },
+      "delete_to_replay": {
+        "retained": 64,
+        "lost": 0,
+        "gained": 0,
+        "wrong_at_both": 0
+      },
+      "continue_to_delete": {
+        "retained": 64,
+        "lost": 0,
+        "gained": 0,
+        "wrong_at_both": 0
+      }
+    }
+  },
+  "failure_details": {
+    "primitive-calendar.test": {
+      "errors": {
+        "CORRECT": 56,
+        "WRONG_STATE": 8
+      },
+      "per_pattern": {
+        "add": 0.875,
+        "cancel": 0.625,
+        "rename": 1.0,
+        "shift": 1.0
+      },
+      "failures": [
+        {
+          "id": "bd6b3bc68da0737b2bcbafdfbbf39ceb6a73126ab0bffb3d4372604783ac3319",
+          "pattern": "cancel",
+          "request": "Cancel event jnnmii.",
+          "expected_operations": [
+            "cancel"
+          ],
+          "emitted_operations": [
+            "rename"
+          ],
+          "expected_calls": [
+            {
+              "args": {
+                "id": "jnnmii"
+              },
+              "tool": "kalu"
+            }
+          ],
+          "emitted_calls": [
+            {
+              "tool": "misa",
+              "args": {
+                "id": "jnnmii",
+                "title": "fuecvh"
+              }
+            }
+          ],
+          "expected_state": {
+            "ursjif": {
+              "start": 480,
+              "title": "kuvzbh"
+            }
+          },
+          "actual_state": {
+            "jnnmii": {
+              "start": 660,
+              "title": "fuecvh"
+            },
+            "ursjif": {
+              "start": 480,
+              "title": "kuvzbh"
+            }
+          },
+          "error": "WRONG_STATE",
+          "trace": [
+            {
+              "operation": "rename",
+              "state": {
+                "jnnmii": {
+                  "start": 660,
+                  "title": "fuecvh"
+                },
+                "ursjif": {
+                  "start": 480,
+                  "title": "kuvzbh"
+                }
+              }
+            }
+          ],
+          "correct_initial": true,
+          "correct_replay": true
+        },
+        {
+          "id": "199992bf9e65fd654be290c607258a84789371379cd5f6469bbf2bb3667d6968",
+          "pattern": "add",
+          "request": "Add event psvhwp at minute 780 titled vtefbf.",
+          "expected_operations": [
+            "add"
+          ],
+          "emitted_operations": [
+            "add"
+          ],
+          "expected_calls": [
+            {
+              "args": {
+                "id": "psvhwp",
+                "start": 780,
+                "title": "vtefbf"
+              },
+              "tool": "mino"
+            }
+          ],
+          "emitted_calls": [
+            {
+              "tool": "mino",
+              "args": {
+                "id": "psvhw",
+                "start": 780,
+                "title": "vtefbf"
+              }
+            }
+          ],
+          "expected_state": {
+            "hkujfq": {
+              "start": 870,
+              "title": "ojoudm"
+            },
+            "psvhwp": {
+              "start": 780,
+              "title": "vtefbf"
+            },
+            "xvcdpa": {
+              "start": 690,
+              "title": "vtefbf"
+            }
+          },
+          "actual_state": {
+            "hkujfq": {
+              "start": 870,
+              "title": "ojoudm"
+            },
+            "psvhw": {
+              "start": 780,
+              "title": "vtefbf"
+            },
+            "xvcdpa": {
+              "start": 690,
+              "title": "vtefbf"
+            }
+          },
+          "error": "WRONG_STATE",
+          "trace": [
+            {
+              "operation": "add",
+              "state": {
+                "hkujfq": {
+                  "start": 870,
+                  "title": "ojoudm"
+                },
+                "psvhw": {
+                  "start": 780,
+                  "title": "vtefbf"
+                },
+                "xvcdpa": {
+                  "start": 690,
+                  "title": "vtefbf"
+                }
+              }
+            }
+          ],
+          "correct_initial": true,
+          "correct_replay": true
+        },
+        {
+          "id": "d23ab429d3735637967486993566399d75ffd53f0d6f1ff6e73ea42f005cc50f",
+          "pattern": "cancel",
+          "request": "Cancel event fmjxqv.",
+          "expected_operations": [
+            "cancel"
+          ],
+          "emitted_operations": [
+            "rename"
+          ],
+          "expected_calls": [
+            {
+              "args": {
+                "id": "fmjxqv"
+              },
+              "tool": "kalu"
+            }
+          ],
+          "emitted_calls": [
+            {
+              "tool": "misa",
+              "args": {
+                "id": "fmjxqv",
+                "title": "xmjqne"
+              }
+            }
+          ],
+          "expected_state": {
+            "ooepba": {
+              "start": 375,
+              "title": "oqzvng"
+            }
+          },
+          "actual_state": {
+            "fmjxqv": {
+              "start": 555,
+              "title": "xmjqne"
+            },
+            "ooepba": {
+              "start": 375,
+              "title": "oqzvng"
+            }
+          },
+          "error": "WRONG_STATE",
+          "trace": [
+            {
+              "operation": "rename",
+              "state": {
+                "fmjxqv": {
+                  "start": 555,
+                  "title": "xmjqne"
+                },
+                "ooepba": {
+                  "start": 375,
+                  "title": "oqzvng"
+                }
+              }
+            }
+          ],
+          "correct_initial": true,
+          "correct_replay": true
+        },
+        {
+          "id": "dcc722fb90119f4d883fbf9d0e5c6b3b1640132a4a3621d06b37dc89baf1e5c7",
+          "pattern": "cancel",
+          "request": "Cancel event lsqzjo.",
+          "expected_operations": [
+            "cancel"
+          ],
+          "emitted_operations": [
+            "rename"
+          ],
+          "expected_calls": [
+            {
+              "args": {
+                "id": "lsqzjo"
+              },
+              "tool": "kalu"
+            }
+          ],
+          "emitted_calls": [
+            {
+              "tool": "misa",
+              "args": {
+                "id": "lsqzjo",
+                "title": "nwhagz"
+              }
+            }
+          ],
+          "expected_state": {
+            "xmrnid": {
+              "start": 570,
+              "title": "dkyfck"
+            }
+          },
+          "actual_state": {
+            "lsqzjo": {
+              "start": 750,
+              "title": "nwhagz"
+            },
+            "xmrnid": {
+              "start": 570,
+              "title": "dkyfck"
+            }
+          },
+          "error": "WRONG_STATE",
+          "trace": [
+            {
+              "operation": "rename",
+              "state": {
+                "lsqzjo": {
+                  "start": 750,
+                  "title": "nwhagz"
+                },
+                "xmrnid": {
+                  "start": 570,
+                  "title": "dkyfck"
+                }
+              }
+            }
+          ],
+          "correct_initial": true,
+          "correct_replay": true
+        },
+        {
+          "id": "c041f9b5c1c52b85941a974c1f9db350852563a88445f86611674fef4a392c66",
+          "pattern": "add",
+          "request": "Add event iggmge at minute 270 titled tmocod.",
+          "expected_operations": [
+            "add"
+          ],
+          "emitted_operations": [
+            "add"
+          ],
+          "expected_calls": [
+            {
+              "args": {
+                "id": "iggmge",
+                "start": 270,
+                "title": "tmocod"
+              },
+              "tool": "mino"
+            }
+          ],
+          "emitted_calls": [
+            {
+              "tool": "mino",
+              "args": {
+                "id": "igggge",
+                "start": 270,
+                "title": "tmocod"
+              }
+            }
+          ],
+          "expected_state": {
+            "iggmge": {
+              "start": 270,
+              "title": "tmocod"
+            },
+            "prsppj": {
+              "start": 180,
+              "title": "tmocod"
+            },
+            "whwcpe": {
+              "start": 360,
+              "title": "mvulne"
+            }
+          },
+          "actual_state": {
+            "igggge": {
+              "start": 270,
+              "title": "tmocod"
+            },
+            "prsppj": {
+              "start": 180,
+              "title": "tmocod"
+            },
+            "whwcpe": {
+              "start": 360,
+              "title": "mvulne"
+            }
+          },
+          "error": "WRONG_STATE",
+          "trace": [
+            {
+              "operation": "add",
+              "state": {
+                "igggge": {
+                  "start": 270,
+                  "title": "tmocod"
+                },
+                "prsppj": {
+                  "start": 180,
+                  "title": "tmocod"
+                },
+                "whwcpe": {
+                  "start": 360,
+                  "title": "mvulne"
+                }
+              }
+            }
+          ],
+          "correct_initial": true,
+          "correct_replay": false
+        },
+        {
+          "id": "29e9e82d70476eb38d1b44c4dd8b679cc631c7bdd387bbe707b808145c92aad9",
+          "pattern": "cancel",
+          "request": "Cancel event kzwfso.",
+          "expected_operations": [
+            "cancel"
+          ],
+          "emitted_operations": [
+            "rename"
+          ],
+          "expected_calls": [
+            {
+              "args": {
+                "id": "kzwfso"
+              },
+              "tool": "kalu"
+            }
+          ],
+          "emitted_calls": [
+            {
+              "tool": "misa",
+              "args": {
+                "id": "kzwfso",
+                "title": "gnxwyv"
+              }
+            }
+          ],
+          "expected_state": {
+            "vjvjuo": {
+              "start": 645,
+              "title": "bipnpg"
+            }
+          },
+          "actual_state": {
+            "kzwfso": {
+              "start": 825,
+              "title": "gnxwyv"
+            },
+            "vjvjuo": {
+              "start": 645,
+              "title": "bipnpg"
+            }
+          },
+          "error": "WRONG_STATE",
+          "trace": [
+            {
+              "operation": "rename",
+              "state": {
+                "kzwfso": {
+                  "start": 825,
+                  "title": "gnxwyv"
+                },
+                "vjvjuo": {
+                  "start": 645,
+                  "title": "bipnpg"
+                }
+              }
+            }
+          ],
+          "correct_initial": true,
+          "correct_replay": true
+        },
+        {
+          "id": "43da7a9738bda4c264000f7eb51841f6e78667544af7cd0dae3c4c75613ce3da",
+          "pattern": "cancel",
+          "request": "Cancel event lquwtx.",
+          "expected_operations": [
+            "cancel"
+          ],
+          "emitted_operations": [
+            "rename"
+          ],
+          "expected_calls": [
+            {
+              "args": {
+                "id": "lquwtx"
+              },
+              "tool": "kalu"
+            }
+          ],
+          "emitted_calls": [
+            {
+              "tool": "misa",
+              "args": {
+                "id": "lquwtx",
+                "title": "xdnktc"
+              }
+            }
+          ],
+          "expected_state": {
+            "eufcyd": {
+              "start": 645,
+              "title": "smfsoq"
+            }
+          },
+          "actual_state": {
+            "eufcyd": {
+              "start": 645,
+              "title": "smfsoq"
+            },
+            "lquwtx": {
+              "start": 825,
+              "title": "xdnktc"
+            }
+          },
+          "error": "WRONG_STATE",
+          "trace": [
+            {
+              "operation": "rename",
+              "state": {
+                "eufcyd": {
+                  "start": 645,
+                  "title": "smfsoq"
+                },
+                "lquwtx": {
+                  "start": 825,
+                  "title": "xdnktc"
+                }
+              }
+            }
+          ],
+          "correct_initial": true,
+          "correct_replay": true
+        },
+        {
+          "id": "65d8623e70c03ede8ed37f47a583027f7d8095d693a740920dd16817cd41f37e",
+          "pattern": "cancel",
+          "request": "Cancel event hdpngz.",
+          "expected_operations": [
+            "cancel"
+          ],
+          "emitted_operations": [
+            "rename"
+          ],
+          "expected_calls": [
+            {
+              "args": {
+                "id": "hdpngz"
+              },
+              "tool": "kalu"
+            }
+          ],
+          "emitted_calls": [
+            {
+              "tool": "misa",
+              "args": {
+                "id": "hdpngz",
+                "title": "tlxtap"
+              }
+            }
+          ],
+          "expected_state": {
+            "amrslm": {
+              "start": 675,
+              "title": "xyoqym"
+            }
+          },
+          "actual_state": {
+            "amrslm": {
+              "start": 675,
+              "title": "xyoqym"
+            },
+            "hdpngz": {
+              "start": 855,
+              "title": "tlxtap"
+            }
+          },
+          "error": "WRONG_STATE",
+          "trace": [
+            {
+              "operation": "rename",
+              "state": {
+                "amrslm": {
+                  "start": 675,
+                  "title": "xyoqym"
+                },
+                "hdpngz": {
+                  "start": 855,
+                  "title": "tlxtap"
+                }
+              }
+            }
+          ],
+          "correct_initial": true,
+          "correct_replay": true
+        }
+      ]
+    },
+    "primitive-files.test": {
+      "errors": {
+        "CORRECT": 64
+      },
+      "per_pattern": {
+        "copy": 1.0,
+        "delete": 1.0,
+        "move": 1.0,
+        "write": 1.0
+      },
+      "failures": []
+    },
+    "primitive-records.test": {
+      "errors": {
+        "CORRECT": 64
+      },
+      "per_pattern": {
+        "filter": 1.0,
+        "project": 1.0,
+        "sort": 1.0,
+        "take": 1.0
+      },
+      "failures": []
+    },
+    "primitive-text.test": {
+      "errors": {
+        "CORRECT": 64
+      },
+      "per_pattern": {
+        "join": 1.0,
+        "keep": 1.0,
+        "lower": 1.0,
+        "replace": 1.0
+      },
+      "failures": []
+    },
+    "workflow.novel-test": {
+      "errors": {
+        "CORRECT": 61,
+        "WRONG_STATE": 3
+      },
+      "per_pattern": {
+        "2": 1.0,
+        "3": 0.90625
+      },
+      "failures": [
+        {
+          "id": "bd84848d4e32887a4f519612455755abc20e7230031f63b20b61b9f2002c0348",
+          "pattern": "3",
+          "request": "Add event zfffdo at minute 720 titled cgwkro. Then Shift event ylzflh later by 30 minutes. Then Cancel event zrhnrt.",
+          "expected_operations": [
+            "add",
+            "shift",
+            "cancel"
+          ],
+          "emitted_operations": [
+            "add",
+            "shift",
+            "rename"
+          ],
+          "expected_calls": [
+            {
+              "args": {
+                "id": "zfffdo",
+                "start": 720,
+                "title": "cgwkro"
+              },
+              "tool": "mino"
+            },
+            {
+              "args": {
+                "id": "ylzflh",
+                "minutes": 30
+              },
+              "tool": "rono"
+            },
+            {
+              "args": {
+                "id": "zrhnrt"
+              },
+              "tool": "kalu"
+            }
+          ],
+          "emitted_calls": [
+            {
+              "tool": "mino",
+              "args": {
+                "id": "zfffdo",
+                "start": 720,
+                "title": "cgwkro"
+              }
+            },
+            {
+              "tool": "rono",
+              "args": {
+                "id": "ylzflh",
+                "minutes": 30
+              }
+            },
+            {
+              "tool": "misa",
+              "args": {
+                "id": "zrhnrt",
+                "title": ""
+              }
+            }
+          ],
+          "expected_state": {
+            "ylzflh": {
+              "start": 660,
+              "title": "cgwkro"
+            },
+            "zfffdo": {
+              "start": 720,
+              "title": "cgwkro"
+            }
+          },
+          "actual_state": {
+            "ylzflh": {
+              "start": 660,
+              "title": "cgwkro"
+            },
+            "zfffdo": {
+              "start": 720,
+              "title": "cgwkro"
+            },
+            "zrhnrt": {
+              "start": 810,
+              "title": ""
+            }
+          },
+          "error": "WRONG_STATE",
+          "trace": [
+            {
+              "operation": "add",
+              "state": {
+                "ylzflh": {
+                  "start": 630,
+                  "title": "cgwkro"
+                },
+                "zfffdo": {
+                  "start": 720,
+                  "title": "cgwkro"
+                },
+                "zrhnrt": {
+                  "start": 810,
+                  "title": "spfsbe"
+                }
+              }
+            },
+            {
+              "operation": "shift",
+              "state": {
+                "ylzflh": {
+                  "start": 660,
+                  "title": "cgwkro"
+                },
+                "zfffdo": {
+                  "start": 720,
+                  "title": "cgwkro"
+                },
+                "zrhnrt": {
+                  "start": 810,
+                  "title": "spfsbe"
+                }
+              }
+            },
+            {
+              "operation": "rename",
+              "state": {
+                "ylzflh": {
+                  "start": 660,
+                  "title": "cgwkro"
+                },
+                "zfffdo": {
+                  "start": 720,
+                  "title": "cgwkro"
+                },
+                "zrhnrt": {
+                  "start": 810,
+                  "title": ""
+                }
+              }
+            }
+          ],
+          "correct_initial": false,
+          "correct_replay": true
+        },
+        {
+          "id": "dcc5a35437c433de69eac01a13197bb7524852004acd793417aaeb705a017dea",
+          "pattern": "3",
+          "request": "Add event ragxja at minute 660 titled hqygtd. Then Shift event joeqhg later by 30 minutes. Then Cancel event xmzotp.",
+          "expected_operations": [
+            "add",
+            "shift",
+            "cancel"
+          ],
+          "emitted_operations": [
+            "add",
+            "shift",
+            "rename"
+          ],
+          "expected_calls": [
+            {
+              "args": {
+                "id": "ragxja",
+                "start": 660,
+                "title": "hqygtd"
+              },
+              "tool": "mino"
+            },
+            {
+              "args": {
+                "id": "joeqhg",
+                "minutes": 30
+              },
+              "tool": "rono"
+            },
+            {
+              "args": {
+                "id": "xmzotp"
+              },
+              "tool": "kalu"
+            }
+          ],
+          "emitted_calls": [
+            {
+              "tool": "mino",
+              "args": {
+                "id": "ragxja",
+                "start": 660,
+                "title": "hqygtd"
+              }
+            },
+            {
+              "tool": "rono",
+              "args": {
+                "id": "joeqhg",
+                "minutes": 30
+              }
+            },
+            {
+              "tool": "misa",
+              "args": {
+                "id": "xmzotp",
+                "title": ""
+              }
+            }
+          ],
+          "expected_state": {
+            "joeqhg": {
+              "start": 600,
+              "title": "hqygtd"
+            },
+            "ragxja": {
+              "start": 660,
+              "title": "hqygtd"
+            }
+          },
+          "actual_state": {
+            "joeqhg": {
+              "start": 600,
+              "title": "hqygtd"
+            },
+            "ragxja": {
+              "start": 660,
+              "title": "hqygtd"
+            },
+            "xmzotp": {
+              "start": 750,
+              "title": ""
+            }
+          },
+          "error": "WRONG_STATE",
+          "trace": [
+            {
+              "operation": "add",
+              "state": {
+                "joeqhg": {
+                  "start": 570,
+                  "title": "hqygtd"
+                },
+                "ragxja": {
+                  "start": 660,
+                  "title": "hqygtd"
+                },
+                "xmzotp": {
+                  "start": 750,
+                  "title": "ydwczr"
+                }
+              }
+            },
+            {
+              "operation": "shift",
+              "state": {
+                "joeqhg": {
+                  "start": 600,
+                  "title": "hqygtd"
+                },
+                "ragxja": {
+                  "start": 660,
+                  "title": "hqygtd"
+                },
+                "xmzotp": {
+                  "start": 750,
+                  "title": "ydwczr"
+                }
+              }
+            },
+            {
+              "operation": "rename",
+              "state": {
+                "joeqhg": {
+                  "start": 600,
+                  "title": "hqygtd"
+                },
+                "ragxja": {
+                  "start": 660,
+                  "title": "hqygtd"
+                },
+                "xmzotp": {
+                  "start": 750,
+                  "title": ""
+                }
+              }
+            }
+          ],
+          "correct_initial": false,
+          "correct_replay": true
+        },
+        {
+          "id": "2b5b7abba364e1569e4b440cc140d07a9ca0498f5fecae78295b9feb718e8dab",
+          "pattern": "3",
+          "request": "Add event pvbpob at minute 330 titled hlnoxy. Then Shift event favqyz later by 30 minutes. Then Cancel event ywqaow.",
+          "expected_operations": [
+            "add",
+            "shift",
+            "cancel"
+          ],
+          "emitted_operations": [
+            "add",
+            "shift",
+            "rename"
+          ],
+          "expected_calls": [
+            {
+              "args": {
+                "id": "pvbpob",
+                "start": 330,
+                "title": "hlnoxy"
+              },
+              "tool": "mino"
+            },
+            {
+              "args": {
+                "id": "favqyz",
+                "minutes": 30
+              },
+              "tool": "rono"
+            },
+            {
+              "args": {
+                "id": "ywqaow"
+              },
+              "tool": "kalu"
+            }
+          ],
+          "emitted_calls": [
+            {
+              "tool": "mino",
+              "args": {
+                "id": "pvbpob",
+                "start": 330,
+                "title": "hlnoxy"
+              }
+            },
+            {
+              "tool": "rono",
+              "args": {
+                "id": "favqyz",
+                "minutes": 30
+              }
+            },
+            {
+              "tool": "misa",
+              "args": {
+                "id": "ywqaow",
+                "title": "aajrjg"
+              }
+            }
+          ],
+          "expected_state": {
+            "favqyz": {
+              "start": 270,
+              "title": "hlnoxy"
+            },
+            "pvbpob": {
+              "start": 330,
+              "title": "hlnoxy"
+            }
+          },
+          "actual_state": {
+            "favqyz": {
+              "start": 270,
+              "title": "hlnoxy"
+            },
+            "pvbpob": {
+              "start": 330,
+              "title": "hlnoxy"
+            },
+            "ywqaow": {
+              "start": 420,
+              "title": "aajrjg"
+            }
+          },
+          "error": "WRONG_STATE",
+          "trace": [
+            {
+              "operation": "add",
+              "state": {
+                "favqyz": {
+                  "start": 240,
+                  "title": "hlnoxy"
+                },
+                "pvbpob": {
+                  "start": 330,
+                  "title": "hlnoxy"
+                },
+                "ywqaow": {
+                  "start": 420,
+                  "title": "aajrjg"
+                }
+              }
+            },
+            {
+              "operation": "shift",
+              "state": {
+                "favqyz": {
+                  "start": 270,
+                  "title": "hlnoxy"
+                },
+                "pvbpob": {
+                  "start": 330,
+                  "title": "hlnoxy"
+                },
+                "ywqaow": {
+                  "start": 420,
+                  "title": "aajrjg"
+                }
+              }
+            },
+            {
+              "operation": "rename",
+              "state": {
+                "favqyz": {
+                  "start": 270,
+                  "title": "hlnoxy"
+                },
+                "pvbpob": {
+                  "start": 330,
+                  "title": "hlnoxy"
+                },
+                "ywqaow": {
+                  "start": 420,
+                  "title": "aajrjg"
+                }
+              }
+            }
+          ],
+          "correct_initial": false,
+          "correct_replay": true
+        }
+      ]
+    },
+    "workflow.test": {
+      "errors": {
+        "CORRECT": 64
+      },
+      "per_pattern": {
+        "0": 1.0,
+        "1": 1.0
+      },
+      "failures": []
+    }
+  },
+  "validation_curve": [
+    {
+      "updates": 0,
+      "workflow_correct_out_of_32": 14,
+      "primitive_correct_out_of_128": 125
+    },
+    {
+      "updates": 16,
+      "workflow_correct_out_of_32": 31,
+      "primitive_correct_out_of_128": 128
+    },
+    {
+      "updates": 64,
+      "workflow_correct_out_of_32": 32,
+      "primitive_correct_out_of_128": 121
+    },
+    {
+      "updates": 128,
+      "workflow_correct_out_of_32": 31,
+      "primitive_correct_out_of_128": 122
+    }
+  ],
+  "ancestral_accounting": {
+    "compressed": {
+      "base_weights_included": false,
+      "dense_offset_bytes": 0,
+      "factor_bytes": 3670016,
+      "factor_ranks": {
+        "model.language_model.layers.11.self_attn.q_proj": 8,
+        "model.language_model.layers.11.self_attn.v_proj": 8,
+        "model.language_model.layers.15.self_attn.q_proj": 8,
+        "model.language_model.layers.15.self_attn.v_proj": 8,
+        "model.language_model.layers.19.self_attn.q_proj": 8,
+        "model.language_model.layers.19.self_attn.v_proj": 8,
+        "model.language_model.layers.23.self_attn.q_proj": 8,
+        "model.language_model.layers.23.self_attn.v_proj": 8,
+        "model.language_model.layers.27.self_attn.q_proj": 8,
+        "model.language_model.layers.27.self_attn.v_proj": 8,
+        "model.language_model.layers.3.self_attn.q_proj": 8,
+        "model.language_model.layers.3.self_attn.v_proj": 8,
+        "model.language_model.layers.31.self_attn.q_proj": 8,
+        "model.language_model.layers.31.self_attn.v_proj": 8,
+        "model.language_model.layers.7.self_attn.q_proj": 8,
+        "model.language_model.layers.7.self_attn.v_proj": 8
+      },
+      "optimizer_bytes": 0,
+      "projection_shapes": {
+        "model.language_model.layers.11.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.11.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.15.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.15.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.19.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.19.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.23.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.23.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.27.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.27.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.3.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.3.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.31.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.31.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.7.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.7.self_attn.v_proj": [
+          1024,
+          2560
+        ]
+      },
+      "resident_adapter_tensor_bytes": 3670016
+    },
+    "compressed_checkpoint_file_bytes": 3678263,
+    "compressed_inference_requires_expert_archive": false,
+    "compression_training_updates": 0,
+    "fixed_memory_sequential_training_claim": false,
+    "original": {
+      "base_weights_included": false,
+      "dense_offset_bytes": 754974720,
+      "factor_bytes": 3670016,
+      "factor_ranks": {
+        "model.language_model.layers.11.self_attn.q_proj": 8,
+        "model.language_model.layers.11.self_attn.v_proj": 8,
+        "model.language_model.layers.15.self_attn.q_proj": 8,
+        "model.language_model.layers.15.self_attn.v_proj": 8,
+        "model.language_model.layers.19.self_attn.q_proj": 8,
+        "model.language_model.layers.19.self_attn.v_proj": 8,
+        "model.language_model.layers.23.self_attn.q_proj": 8,
+        "model.language_model.layers.23.self_attn.v_proj": 8,
+        "model.language_model.layers.27.self_attn.q_proj": 8,
+        "model.language_model.layers.27.self_attn.v_proj": 8,
+        "model.language_model.layers.3.self_attn.q_proj": 8,
+        "model.language_model.layers.3.self_attn.v_proj": 8,
+        "model.language_model.layers.31.self_attn.q_proj": 8,
+        "model.language_model.layers.31.self_attn.v_proj": 8,
+        "model.language_model.layers.7.self_attn.q_proj": 8,
+        "model.language_model.layers.7.self_attn.v_proj": 8
+      },
+      "optimizer_bytes": 0,
+      "projection_shapes": {
+        "model.language_model.layers.11.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.11.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.15.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.15.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.19.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.19.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.23.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.23.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.27.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.27.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.3.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.3.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.31.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.31.self_attn.v_proj": [
+          1024,
+          2560
+        ],
+        "model.language_model.layers.7.self_attn.q_proj": [
+          8192,
+          2560
+        ],
+        "model.language_model.layers.7.self_attn.v_proj": [
+          1024,
+          2560
+        ]
+      },
+      "resident_adapter_tensor_bytes": 758644736
+    },
+    "original_checkpoint_file_bytes": 758656231,
+    "retained_source_expert_archive_bytes_fp32": 14680064,
+    "retained_source_expert_checkpoint_files": {
+      "by_family": {
+        "calendar": {
+          "metadata_file_bytes": 24573,
+          "optimizer_state_present": true,
+          "state_file_bytes": 11041139
+        },
+        "files": {
+          "metadata_file_bytes": 24422,
+          "optimizer_state_present": true,
+          "state_file_bytes": 11041139
+        },
+        "records": {
+          "metadata_file_bytes": 24201,
+          "optimizer_state_present": true,
+          "state_file_bytes": 11041139
+        },
+        "text": {
+          "metadata_file_bytes": 25159,
+          "optimizer_state_present": true,
+          "state_file_bytes": 11041139
+        }
+      },
+      "resident_inference_memory": false,
+      "total_file_bytes": 44262911
+    },
+    "source_archive_preserved": true,
+    "source_expert_training_example_exposures": 2048,
+    "source_expert_training_updates": 512,
+    "svd_workspace_measured": false
+  },
+  "test_status": "Posthoc mechanism control; original TEST previously observed. No original TEST-driven tuning or checkpoint selection.",
+  "teacher_qualified": false,
+  "new_optimization_runs": 0,
+  "provider_actions": 0,
+  "scientific_source_edits": 0,
+  "lane_frozen": true
+}

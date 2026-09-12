@@ -1,0 +1,51 @@
+{
+  "experiment": "varied-tool-workflow-transfer",
+  "mode": "study",
+  "model_id": "Qwen/Qwen3.5-4B",
+  "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mnt/shared/cl-smoke/models/Qwen/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "optimization_seed": 17,
+  "rank": 8,
+  "lora_alpha": 16,
+  "target_suffixes": [
+    "q_proj",
+    "v_proj"
+  ],
+  "learning_rate": 0.0003,
+  "batch_size": 4,
+  "eval_batch_size": 8,
+  "qualification_budgets": [
+    128,
+    256,
+    512
+  ],
+  "workflow_checkpoints": [
+    16,
+    64,
+    128
+  ],
+  "buffer_capacity": 64,
+  "replay_per_batch": 2,
+  "primitive_train_examples": 256,
+  "primitive_validation_examples": 32,
+  "primitive_test_examples": 64,
+  "workflow_train_examples": 128,
+  "workflow_validation_examples": 32,
+  "workflow_test_examples": 64,
+  "primitive_min_accuracy": 0.8,
+  "primitive_min_per_operation": 0.6,
+  "headroom_fraction": 0.25,
+  "workflow_min_accuracy": 0.75,
+  "max_length": 768,
+  "max_new_tokens": 192,
+  "generation_use_cache": true,
+  "gradient_checkpointing": false,
+  "grad_clip": 1.0,
+  "device": "cuda:0",
+  "data_seed": 3301,
+  "target_family": "files",
+  "irrelevant_family": "records",
+  "min_baseline_headroom": 0.15,
+  "snapshot_manifest": "provenance/qwen35-4b-snapshot.json",
+  "snapshot_manifest_sha256": "ab4e85abbdee4d465f93930921695fcf583d1e7f63d8f674708c72171e004ee4"
+}

@@ -1,0 +1,162 @@
+{
+  "id": "skill-transfer-varied-tools-20260912",
+  "status": "prespecified_before_any_gpu_result",
+  "primary_questions": [
+    "Does acquiring the relevant local tool convention accelerate an unfamiliar composition compared with equal-budget unrelated training and a fresh learner?",
+    "Does a 64-example fixed-total replay buffer preserve executable primitive skills under independently varied tool conventions and task-family orders?",
+    "Does Agent-Dice coordinate filtering improve over ordinary averaging of the same independently trained experts?"
+  ],
+  "streams": {
+    "data_seeds": [
+      1103,
+      2207,
+      3301,
+      4409
+    ],
+    "target_families": [
+      "records",
+      "text",
+      "files",
+      "calendar"
+    ],
+    "optimization_seed": 17,
+    "variation": [
+      "independent scene generation",
+      "independent opaque API name mapping",
+      "independent family order",
+      "rotating target workflow family"
+    ],
+    "not_optimization_seed_replication": true
+  },
+  "sandbox": {
+    "domains": [
+      "records",
+      "text",
+      "files",
+      "calendar"
+    ],
+    "operations_per_domain": 4,
+    "real_external_tools": false,
+    "state": "in-memory deterministic JSON data; no filesystem, network, exec, eval, or arbitrary code execution",
+    "history": "single-operation examples only",
+    "target": "three-operation workflows, with two additional operation combinations held out from all target training"
+  },
+  "scoring": {
+    "primary": "natural chat EOS, one strict JSON array, executable calls, and exact full final sandbox state",
+    "duplicate_keys": "reject",
+    "non_json_numbers": "reject",
+    "unknown_tools_or_arguments": "execution error",
+    "wrong_argument_types_including_boolean_as_integer": "execution error",
+    "markdown_or_explanatory_suffix": "reject",
+    "json_whitespace_and_object_key_order": "standard JSON accepted; no string stripping or substring extraction",
+    "semantically_equivalent_call_sequences": "accepted if full state is exact and all calls are valid",
+    "max_calls": 4,
+    "max_new_tokens": 192,
+    "forced_or_constrained_generation": false,
+    "additional_metrics": [
+      "native EOS",
+      "format validity",
+      "executability",
+      "wrong final state",
+      "per-operation qualification",
+      "held-out workflow-combination accuracy"
+    ]
+  },
+  "qualification": {
+    "budgets": [
+      128,
+      256,
+      512
+    ],
+    "examples_per_update": 4,
+    "all_four_independent_experts_required": true,
+    "validation_threshold": 0.8,
+    "each_operation_threshold": 0.6,
+    "minimum_gain_fraction_of_baseline_headroom": 0.25,
+    "already_competent_baseline": "Require at least 0.15 headroom and a measured gain even for an initially competent model. Raw primitive and target-workflow validation baselines are measured before training; saturation stops before training and triggers a separate train/dev redesign.",
+    "selection": "first shared update budget where every expert qualifies; all experts reach that same budget",
+    "test_examples_never_select_budget": true,
+    "failure": "save checkpoints and train/validation format-versus-execution diagnostics; execute zero stream, fusion, or workflow comparisons; parent designs a separate prerequisite experiment if needed"
+  },
+  "sequential_controls": {
+    "arms": [
+      "continue",
+      "replay"
+    ],
+    "initial_fork": "same first qualified expert weights and optimizer state",
+    "updates_per_family": "shared expert qualification budget",
+    "optimizer": "continuous AdamW, no stage reset",
+    "memory": "64 unique previously exposed TRAIN examples total, updated at stage boundaries",
+    "replay": "replace two of four current examples, preserving total updates and example exposures; new/old exposures differ and are reported",
+    "eligibility": "current family must qualify after its stage before any later stage or workflow transfer in that arm",
+    "memory_metadata": "One stream counter plus the four-family completion set; no retained unbounded index of old example IDs. Admission deduplicates current-stage exposed rows transiently."
+  },
+  "fusion_controls": {
+    "arms": [
+      "arithmetic",
+      "agent_dice"
+    ],
+    "source_experts": "exact same four independently qualified LoRA experts with a common base and identical initial factor seed",
+    "logical_training_updates_each": "four times the shared qualification budget, fully counted even when experts reused by controls",
+    "formula": "fuse effective dense scaled B@A deltas, then add to original base",
+    "storage": "four archived rank-eight experts plus one dense fused offset; explicitly not fixed-memory sequential learning",
+    "capacity": "both fusions have identical dense allocation, with theoretical rank bounds reported and numerical rank not inferred",
+    "hybrid_with_replay": "not included in this first method-alone comparison",
+    "trainable_factors_during_transfer": "Both dense fusions use the original shared A initialization and zero B. No privileged factor initialization from the first specialist."
+  },
+  "transfer_controls": {
+    "conditions": [
+      "fresh",
+      "relevant",
+      "irrelevant",
+      "continue",
+      "replay",
+      "arithmetic",
+      "agent_dice"
+    ],
+    "source_pretraining": "relevant and irrelevant each get one equally trained expert; fresh has zero history; sequential and fused histories represent four families, separately reported",
+    "matched_target_training": "all conditions receive the same ordered TRAIN row IDs, 128 updates, 512 example exposures, and fresh AdamW state",
+    "measurements": "zero-shot and 16/64/128 update validation curves; final test and separate unseen-combination test",
+    "primary": "relevant versus irrelevant normalized validation AUC, with fresh reference; Agent-Dice versus arithmetic separately",
+    "prerequisite_vs_outcome": "workflow success is measured only after primitives qualify; failure to compose is retained as a result, not treated as evidence of generic learning failure"
+  },
+  "integrity": [
+    "exclusive output directory and JSON writes",
+    "exact corpus identity and no repeated scene/prompt across splits",
+    "complete native generated-answer evaluation for all gates",
+    "all frozen parameter hashes before/after",
+    "exact checkpoint tensors and optimizer roundtrip",
+    "full generation equality after deliberate adapter perturbation and reload in same process",
+    "cached/uncached full output equality before and after primitive training",
+    "raw generated token IDs and semantic execution traces",
+    "no test-based hyperparameter selection"
+  ],
+  "scope": [
+    "synthetic deterministic tools with meaningful execution, not ToolAlpaca or real external-tool performance",
+    "four independent streams; same optimization seed",
+    "dense expert fusion and replay have different state budgets",
+    "same-process behavioral reload only; separate-process GPU reconstruction remains an additional audit",
+    "argument type schemas may reveal operation identity despite opaque names; measured raw and irrelevant-history controls are essential",
+    "requests explicitly state operations and order: tests composition of known calls, not autonomous subgoal discovery"
+  ],
+  "numerical_path": {
+    "base_load_dtype": "bfloat16",
+    "native_fp32_base_components": "allowed; all parameter and buffer dtype counts recorded",
+    "adapter_and_dense_offset_dtype": "float32",
+    "device": "cuda:0 within exactly one visible ROCm GPU",
+    "offload": false,
+    "autocast": false,
+    "tf32": false,
+    "finiteness": "check all floating parameters/buffers after loading; validate checkpoint factors/offsets before restore and adapter parameters after every optimizer update",
+    "qualification": "Archived followthrough-20260912-qualify-qwen35-4b source explicitly loaded BF16. This lane preserves that requested dtype. The qualification does not establish behavior of this custom learner."
+  },
+  "snapshot_identity": {
+    "manifest": "provenance/qwen35-4b-snapshot.json",
+    "manifest_sha256": "ab4e85abbdee4d465f93930921695fcf583d1e7f63d8f674708c72171e004ee4",
+    "required_files": 10,
+    "optional_verified_file": "merges.txt",
+    "expected_content_binding": "All ten existing cached-file digests independently cross-checked against Hub revision 851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a using LFS SHA256 for large files and fetched git-blob-checked small files.",
+    "runtime": "Verify size and streamed SHA256 for all required files before model loading; separately verify tokenizer inputs before tokenizer loading. Reject unknown entries except named nonloading documents and .cache metadata. Check file identity remained unchanged during hash/load.",
+    "directory_basename_is_not_identity_proof": true
+  }
+}

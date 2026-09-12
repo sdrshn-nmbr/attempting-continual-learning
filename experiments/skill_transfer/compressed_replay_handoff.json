@@ -1,0 +1,215 @@
+{
+  "status": "cpu_verified_ready_for_parent_dispatch",
+  "frozen_dependency_source_sha256": "9b2c2edeacb75a332751691a50801bbbacfb4453cabd31f0e0e7353c3ecbe788",
+  "modified_preexisting_files": [],
+  "new_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/compressed_replay.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/compressed_replay_protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compressed_replay_train4409.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compressed_replay_audit4409.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/tests/test_compressed_replay.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/compressed_replay_handoff.json"
+  ],
+  "entrypoint": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/compressed_replay.py",
+  "protocol": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/compressed_replay_protocol.json",
+  "ready_jobs": [
+    {
+      "id": "followthrough-20260912-skills-compressed-workflow4409",
+      "stage": "train",
+      "entrypoint": "compressed_replay.py",
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compressed_replay_train4409.json",
+      "depends_on": [
+        "followthrough-20260912-skills-compress4409"
+      ],
+      "gpus": 1
+    },
+    {
+      "id": "followthrough-20260912-skills-compressed-workflow-audit4409",
+      "stage": "audit",
+      "entrypoint": "compressed_replay.py",
+      "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compressed_replay_audit4409.json",
+      "depends_on": [
+        "followthrough-20260912-skills-compressed-workflow4409"
+      ],
+      "gpus": 1
+    }
+  ],
+  "ready_argv": {
+    "train": [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "<qualified-runtime-python>",
+      "python",
+      "compressed_replay.py",
+      "--config",
+      "configs/compressed_replay_train4409.json",
+      "--output-dir",
+      "/mnt/shared/cl-portfolio/runs/followthrough-20260912-skills-compressed-workflow4409"
+    ],
+    "audit": [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "<qualified-runtime-python>",
+      "python",
+      "compressed_replay.py",
+      "--config",
+      "configs/compressed_replay_audit4409.json",
+      "--output-dir",
+      "/mnt/shared/cl-portfolio/runs/followthrough-20260912-skills-compressed-workflow-audit4409"
+    ]
+  },
+  "launcher": "Parent existing supervisor via compute/run_task.py; requires dispatcher task/config/running execution transport and its own unique task/attempt. Audit config binds the exact training config digest and expected training task ID.",
+  "observed_source": {
+    "task_id": "followthrough-20260912-skills-compress4409",
+    "result_sha256": "034f0890520418959c54b7965dc9dd54700d4e254f2788002a4f9d308f9f2c28",
+    "execution": "Read-only verification: completed, integer exit0, timed_out=false, code9b2.",
+    "eligibility_evidence": {
+      "agent_dice": {
+        "primitive_dev": 125,
+        "denominator": 128,
+        "calendar_add": 5,
+        "calendar_add_n": 8,
+        "other_operations": 1,
+        "interpretation": "Clears original DEV criteria; fresh full-record repetition is still required before training."
+      },
+      "arithmetic": {
+        "primitive_dev": 124,
+        "denominator": 128,
+        "calendar_add": 4,
+        "calendar_add_n": 8,
+        "other_operations": 1,
+        "interpretation": "Fails original per-operation>=0.6; record branch gate failure and zero updates."
+      }
+    },
+    "test_scores_not_used_for_eligibility": true
+  },
+  "decisions": [
+    "Evaluate both saved compressed methods with unchanged original primitive DEV accuracy, operation, gain/headroom gates; never select by TEST or SVD energy.",
+    "Repeat primitive DEV after fresh model load and require exact complete records before constructing an optimizer. No eligible methods means zero model/training work where the saved gate already fails.",
+    "Both arms restore the exact same saved compressed A/B tensors and fresh identical AdamW; train all rank8 A/B factors, alpha16, with no hidden dense offset.",
+    "Each arm performs128 updates and512 total exposures. Continue gets512 workflow examples; replay gets256 workflow plus256 old primitive examples. Token totals are reported; the comparison is not token-matched.",
+    "Replay memory is exactly64 distinct previously exposed primitive TRAIN examples:4 per operation and16 per family. It is fixed, selected from hashed qualification logs with deterministic RNG, and includes target-family old primitives.",
+    "Replay uses2 old examples and the first2 examples from the same original4-row workflow schedule. Continue uses all4. Source evaluation oracles and archives are not learner rehearsal memory.",
+    "Train stage records five-panel DEV curves at0/16/64/128 and saves only final128 checkpoints. It generates no TEST answers.",
+    "Separate audit requires a completed training execution and new task/attempt/standalone CLI. Exact five-panel final DEV reproduction is required before native TEST generation.",
+    "Final audit covers all primitive TEST, ordinary workflow TEST and original novel-combination TEST; retain full JSON/EOS/token/execution records. No eligible arms is explicitly not a successful persistence audit.",
+    "Original uncompressed fusion results are descriptive references with a different parameterization: frozen dense offset plus fresh LoRA, versus updating compressed A/B.",
+    "No teacher, PorTAL bridge, model export, provider dispatch or new SVD is performed."
+  ],
+  "accounting": {
+    "ancestral_expert_updates": 512,
+    "ancestral_expert_exposures": 2048,
+    "shared_expert_history": "The same original expert bank is reused;512 is logical history per candidate, not newly repeated expert training for each arm.",
+    "merge_gradient_updates": 0,
+    "svd_gradient_updates": 0,
+    "source_dense_adapter_tensor_bytes": 758644736,
+    "compressed_adapter_tensor_bytes": 3670016,
+    "source_expert_factor_archive_bytes": 14680064,
+    "source_expert_checkpoint_archive_bytes": 44262911,
+    "expected_new_updates_if_only_dice_qualifies": 256,
+    "expected_new_exposures_if_only_dice_qualifies": 1024,
+    "optimizer": "Actual optimizer tensor bytes, factor tensor bytes and checkpoint-file bytes measured separately for each trained arm.",
+    "replay": "Actual memory IDs, family/operation admission,64-example count, realized replay draws and JSON file bytes retained.",
+    "boundary": "Source archives, full frozen base, current task/evaluator corpus and tokenizer cache are distinct from the learner's64-example rehearsal memory. No total-process fixed-memory claim."
+  },
+  "validation": {
+    "command": "uv run --no-project --python '/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python' python -m pytest -q tests/test_compressed_replay.py",
+    "cwd": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer",
+    "pytest": "11 passed in8.53s",
+    "ruff": "Passed: check and format --check on compressed_replay.py and tests/test_compressed_replay.py",
+    "meaningful_checks": [
+      "Real CPU AdamW/answer-loss updates in both128-step arms; different old/current targets produce different final weights from identical initial adapter and optimizer states.",
+      "Frozen base, finite rank8/no-offset checkpoints, exact exposure counters and optimizer clocks.",
+      "A real independent uv Python process reloads the trained CPU checkpoint and reproduces its logits exactly.",
+      "Fixed64 previously exposed TRAIN examples,4 per operation; deterministic admission/draws and no growth.",
+      "5/8 versus4/8 per-operation qualification boundary.",
+      "Failed saved gates trigger no model loading/optimizer/training/TEST.",
+      "Fresh DEV raw-token mismatch blocks training; audit DEV mismatch blocks TEST for that arm while other arms continue.",
+      "Source completion, configuration and actual archived code tampering checks.",
+      "All failed source branches return no_eligible_compressed_arms, not a vacuous persistent-load success."
+    ],
+    "cpu_boundary": "CPU fixtures exercise saved tensors, actual optimizer mechanics, execution contracts and controllers. Mocked native-generation boundaries are not GPU capability or retention evidence.",
+    "gpu_hybrid_execution": false,
+    "cli_help": "Passed: compressed_replay.py --help",
+    "module_top_imports": "AST verified for both new Python files; no exec/eval/__import__ calls",
+    "git_diff_check": "Passed",
+    "frozen_verification": {
+      "prior_files": 52,
+      "initial_diagnosis_manifest_files": 7,
+      "initial_diagnosis_handoff_sha256": "97d2d51bdf4ea1632fd78679ad985d11447c2575ff231078e8c460023b3e0d0e",
+      "scientific_dependency_files": 33,
+      "scientific_dependency_source_sha256": "9b2c2edeacb75a332751691a50801bbbacfb4453cabd31f0e0e7353c3ecbe788"
+    },
+    "deployable_file_count": 45,
+    "bundle_verification": "Dispatcher deployable_paths inventory matches frozen followup.verify_code_bundle. Final bundle hash is reported externally after this handoff is sealed to avoid self-reference."
+  },
+  "initial_diagnosis_files": "Already CPU verified and dispatched by parent. No diagnosis source/protocol/config/handoff/test files are modified by this work.",
+  "prior_frozen_files": {
+    "agent_dice.py": "e975ae90247bd78d85700698bfe7202d1f70f3be681da30f7f83b2bd538b5674",
+    "audit_persistence.py": "57b080b79aef25326e61bd50b91fcadf93689b74181e16d32a029688de1578f6",
+    "compress_fusion.py": "752189481f1ceb2c283cd534ce29c416c29817d24913a1cabc593eef49289c5a",
+    "configs/audit_stream_1103.json": "25415d23513a9c167e3524ca7820d3d526ba31455aabe1ab5592b90255d5f143",
+    "configs/audit_stream_2207.json": "196e6506e314e1036a2e3aaf4422f587f21f1a43e56258b59f0746ae4efdaf86",
+    "configs/audit_stream_3301.json": "c3a685a690b1fa46071b22e746067402969f7ea7066743a8dcf68e5696a0ab28",
+    "configs/audit_stream_4409.json": "ca2cc931f85da8c2307bac57b8047868ad0e76b27b5295ce70666f8ed0424740",
+    "configs/compress_stream_1103.json": "63f4b044a02db41edf88061a7379f48ac482bf52c29517b72a1ca9f5ed0f93c1",
+    "configs/compress_stream_2207.json": "4291f5c8433ceda4d76acc0011cd50a467b6d8a619ccc3eb5cef17c357f3713a",
+    "configs/compress_stream_3301.json": "6123aaa8234bbf735a6924c0dac370775486a356b94c71e42c0fd467b9cd7c6f",
+    "configs/compress_stream_4409.json": "50258af12ede8baedca60ded2c7b4e39d9e274d314c11131608d5a6bd3bf3b29",
+    "configs/prepare_1103.json": "63ea677f6967cfc9c7e1f6986d0fb34fd528417ca13d6ab83cce0c1a5d94dda6",
+    "configs/qualify_1103.json": "0e12e22f4134c95857bc8cffa01db6a529c2e5500e2e78dc5084796fc9f4b4b2",
+    "configs/stream_1103.json": "7458cf7b4a611f7b8e927663055fe0d7c91e54ce02f986eab0618298742416c9",
+    "configs/stream_2207.json": "748fe2a956d23cacbc13fd885c1459138880670a3f7a35e274f848f639c0c863",
+    "configs/stream_3301.json": "f49c397680c19009b556d8460f6be0aecc8519d0587adc750ee2d73c52307386",
+    "configs/stream_4409.json": "8cdf915c3d3de2e29f9f61618e80ff57df05ec0795253cf10cfb1b4b928d401c",
+    "data.py": "089b0b6416e973bfd408f5fdf7ae929ea44619cb6aa41d07fe4e149ab6d93ce1",
+    "followup.py": "122a82edc0a2bcda527421f562b59b0e8a01032355e24e496a5cbcc5f37652ba",
+    "followup_handoff.json": "33169cc916101b4773e6e9c3feaca92d8282ad2d4447c2847979d1d0650c05fe",
+    "followup_protocol.json": "337b203b98fcc59090ac425caf736308bc2026d2d4cdecc31a5dc20cf9766cd8",
+    "handoff.json": "44cb04d4ccef3c643fe5b43cff453fe1d115174d6f7e86c5702f67a3f4ffe06d",
+    "learning.py": "e2920b3644069471f6ad3648b218493f3887b009d0a5a7e6eda9f1b9f0d2c7c5",
+    "outputs/prepare-1103/config.json": "988c4a56c862ecdae6c8493f94625fd1b473b7d8f6d128f4e1a5edf679f3fe82",
+    "outputs/prepare-1103/dataset-audit.json": "c04dff0e8826e31a148aa6a2ef52d7418f5169b47b60bc063c67b57f158f0b22",
+    "outputs/prepare-1103/dataset.json": "75a0c55796cbedb3bd3921c3191bd5f5e054eb22840fef5a301c1c5d6f519626",
+    "outputs/prepare-1103/dispatcher.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "outputs/prepare-1103/protocol.json": "aa48e98436246e68dbaa643c54cec6860f11d478e448b9a8b46c1e75578a0652",
+    "outputs/prepare-1103/result.json": "4c60cfa433eb528b5e7152a0393dd27bb65d8fa7025e1f1b8727e839e30fa81a",
+    "outputs/prepare-1103/stream.json": "a016e66f2330d6cbdab6d20980a0994b7821199dd28a04da08deffd1423b029b",
+    "outputs/tokenizer/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+    "outputs/tokenizer/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/provenance.json": "5ffe07dbbc7fb52500800228b8d4934392f8d041c9533a9877b8fd476c1b1f38",
+    "outputs/tokenizer/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+    "outputs/tokenizer/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/tokenizer_config.json": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+    "outputs/tokenizer-preflight.json": "f2515576d35f1f37a937af4aa38ec8846870a12e6b0a9fc0e8b8ba19198ad285",
+    "protocol.json": "5a09923e8946000a4abcc3abd37d9d707eb400ab2906a8dcbebf113c11e23cb4",
+    "provenance/agent_dice.json": "f1f33c2cf4395882cdd357dccdfc089e14f9de78f8597b5a34ad5b7786b56e97",
+    "provenance/merge_llama3.source.txt": "a11da985261a28296b614f82a216dd9d989dd92cb499bb220cdbd3041c701975",
+    "provenance/merge_qwen3.source.txt": "5e8393a30a41031b5264c36551cf3b51b7d1424c7839815eedea189c4fe52a8f",
+    "provenance/qwen35-4b-hub-metadata.json": "b5b7ed6421d2fb3b47e06376c882141998eb84da264839cdd07f152cf18c3524",
+    "provenance/qwen35-4b-snapshot.json": "ab4e85abbdee4d465f93930921695fcf583d1e7f63d8f674708c72171e004ee4",
+    "provenance/runtime-qualification.json": "d76cbe0a408d8cf04db37b1ff2cc314074549ce46eb62b46e0612ba8844a70fb",
+    "pyproject.toml": "1c26476af5ca2488b01bbf8499abd79208a8be74b4f3644e8a1696bd3311a45e",
+    "requirements.txt": "e854f90e613e1bbfe0becba22f0366ffab4fc7aacfe7e27686620b2f8e7adb1a",
+    "run.py": "9eea373707d6ee30c888d1cf8315bb91ac78c696562d52890fb83194a3d96982",
+    "sandbox.py": "bc2eb9cd11e30bcd80000bef816f60b5c7727122ca678430ee5dc88f2dd19cf4",
+    "tests/test_agent_dice.py": "0fb346b6ce896198f0b37e2e03d3373af78f405cced1cac341309de648548d8e",
+    "tests/test_data.py": "2a0b27018c66443e9b537e4a4ff1d496d24351b189f66ac11c86ad2c17459ce2",
+    "tests/test_followup.py": "86b0d348f21465f0faa3e15a794f9d6f8b5c244d5b5c2fd125fc75929eb55328",
+    "tests/test_learning.py": "1d41745dda5ad9afeb2baecab3d6e06d05ac94066d845d5a188be4f184c86121",
+    "tests/test_loading.py": "4e781d6581c11c5bfd9b2ecd0d7b6fc56616c90ed31afd73c1f776d28ccfa055",
+    "tests/test_sandbox.py": "150f742ecc465926cc9502618482f811ee8de11a1d8676c62de7d71a51b31abc"
+  },
+  "provider_dispatches": 0,
+  "commits_or_pushes": 0,
+  "file_sha256": {
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/compressed_replay.py": "4d383a31e66984149892ae6a6841efc2f03544e5f0713bee3260ef3b3f5f12b9",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/compressed_replay_protocol.json": "b086e6ddeee45c3c75502176b3d1926df4e5c62ad9e7ddda3e449e59e18831ba",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compressed_replay_train4409.json": "423d488747435b05b99225239562dc0aa6521efd07b86fe73e17efb5a2f14bf2",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compressed_replay_audit4409.json": "fe3f1f1aed67814067a6cad79169091864637a4e3bc129d84167b6ffea026079",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/tests/test_compressed_replay.py": "b87d07cde838f31b848d8b034960dbaf05c4eb9ab5dc1f35821026a55cb99bfe"
+  },
+  "seal": "Hybrid Python/protocol/config/test files complete. Prior scientific dependencies and initial diagnosis files remain frozen; no scientific source edits for the dispatcher staging race."
+}

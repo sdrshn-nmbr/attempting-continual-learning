@@ -1,0 +1,1069 @@
+{
+  "status": "cpu_verified_ready_for_parent_dispatch",
+  "priority_stream": 2207,
+  "frozen_dependency_source_sha256": "9b2c2edeacb75a332751691a50801bbbacfb4453cabd31f0e0e7353c3ecbe788",
+  "modified_preexisting_files": [],
+  "new_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/diagnose_initial.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/diagnosis_protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/tests/test_initial_diagnosis.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/diagnose_initial_2207.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/diagnose_initial_1103.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/diagnose_initial_3301.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/diagnose_initial_4409.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/initial_diagnosis_handoff.json"
+  ],
+  "entrypoint": "diagnose_initial.py",
+  "ready_configs": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/diagnose_initial_2207.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/diagnose_initial_1103.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/diagnose_initial_3301.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/diagnose_initial_4409.json"
+  ],
+  "launcher": "Existing parent queue via compute/run_task.py. Requires its own new task/attempt, source dependency completed, task.json and running execution.json. No bare CLI invocation without supervisor transport.",
+  "ready_argv": [
+    "uv",
+    "run",
+    "--no-project",
+    "--python",
+    "<qualified-runtime-python>",
+    "python",
+    "diagnose_initial.py",
+    "--config",
+    "configs/diagnose_initial_2207.json",
+    "--output-dir",
+    "<new-parent-owned-output-directory>"
+  ],
+  "dispatch_fields": {
+    "entrypoint": "diagnose_initial.py",
+    "depends_on": [
+      "followthrough-20260912-skills-stream2207"
+    ],
+    "gpus": 1
+  },
+  "decisions": [
+    "All seven source initial checkpoints are evaluated at fixed original scoring and generation settings.",
+    "Before novel/TEST diagnosis, require exact initial DEV record replay against all five saved initial DEV panels. A mismatch skips later panels for that condition.",
+    "Original initial records are generated in a standalone process; final original records come from the immutable source. Already dispatched persistence audits establish their independent reload behavior.",
+    "Per-pattern explanations include expected/emitted operations, TRAIN-plan reuse, argument changes, first state divergence and raw failures. Semantic execution alone determines correctness.",
+    "Fresh diagnostic panels are fixed new scenes, 16 ordinary and 16 novel-combination inputs, evaluated at both initial/final states. They are posthoc and do not restore an unbiased held-out claim.",
+    "No reordering of text actions because their order changes the semantic result.",
+    "Zero updates, no optimizer, compression, recipe selection or teacher qualification."
+  ],
+  "validation": {
+    "focused_test_command": "uv run --no-project --python '/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python' python -m pytest -q tests/test_initial_diagnosis.py",
+    "cwd": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer",
+    "pytest": "15 passed in 4.35s",
+    "ruff": "check and format --check passed",
+    "gpu_execution": false,
+    "tests": [
+      "All seven initial and final checkpoint paths, eleven original surfaces and both fresh panels exercised on a small saved CPU model.",
+      "Any initial DEV raw-token mismatch blocks that condition's original TEST and fresh panels while other conditions continue.",
+      "Frozen source file digests and distinct supervised CLI execution required.",
+      "Four deterministic fresh-input streams have no original scene/prompt overlap and valid semantic oracles.",
+      "Paired input loss/gain accounting verified.",
+      "2207 plan substitution versus case-sensitive argument errors differentiated.",
+      "Semantically equivalent alternative calls remain correct."
+    ],
+    "prior_tests": "The prior 37 controller tests were sealed with the 33-file 9b2 dependency snapshot. This new experiment does not modify them.",
+    "ast_imports": "All imports at module top."
+  },
+  "original_review": {
+    "observed": "All four source executions verified completed, exit0 and no timeout via read-only shared artifact inspection; original archived 20-file source hash and final evaluation file hashes checked. Same target-training row schedules verified across all seven conditions.",
+    "native_final_persistence": "Independent queued audits; original metrics alone do not establish their outcome.",
+    "source_code_sha256": "ae7761bfab16b058af946d56847b035989a67e8887ed16483cc5da6731a65397",
+    "streams": [
+      {
+        "seed": 1103,
+        "task_id": "followthrough-20260912-skills-stream1103-placement",
+        "result_sha256": "80ee17fdda81c275bf2bc3a5a859a02ee87c4b1740fcea64f926bd1e5f2f5553",
+        "target": "records",
+        "order": [
+          "calendar",
+          "text",
+          "records",
+          "files"
+        ],
+        "curve_updates": [
+          0,
+          16,
+          64,
+          128
+        ],
+        "curve_denominator": 32,
+        "primary_curves": {
+          "fresh": {
+            "correct": [
+              21,
+              32,
+              32,
+              32
+            ],
+            "normalized_validation_auc": 0.978515625
+          },
+          "relevant": {
+            "correct": [
+              32,
+              32,
+              32,
+              32
+            ],
+            "normalized_validation_auc": 1
+          },
+          "irrelevant": {
+            "correct": [
+              16,
+              32,
+              32,
+              32
+            ],
+            "normalized_validation_auc": 0.96875
+          }
+        },
+        "relevant_auc_gain_vs_irrelevant": 0.03125,
+        "final_workflow_test": {
+          "agent_dice": {
+            "ordinary_correct": 64,
+            "novel_correct": 64,
+            "n_each": 64
+          },
+          "arithmetic": {
+            "ordinary_correct": 64,
+            "novel_correct": 64,
+            "n_each": 64
+          },
+          "continue": {
+            "ordinary_correct": 64,
+            "novel_correct": 64,
+            "n_each": 64
+          },
+          "fresh": {
+            "ordinary_correct": 64,
+            "novel_correct": 64,
+            "n_each": 64
+          },
+          "irrelevant": {
+            "ordinary_correct": 64,
+            "novel_correct": 64,
+            "n_each": 64
+          },
+          "relevant": {
+            "ordinary_correct": 64,
+            "novel_correct": 64,
+            "n_each": 64
+          },
+          "replay": {
+            "ordinary_correct": 64,
+            "novel_correct": 64,
+            "n_each": 64
+          }
+        },
+        "primitive_accuracy": {
+          "agent_dice": {
+            "before_dev": {
+              "calendar": 32,
+              "files": 26,
+              "records": 32,
+              "text": 24
+            },
+            "after_dev": {
+              "calendar": 30,
+              "files": 25,
+              "records": 32,
+              "text": 30
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 62,
+              "files": 53,
+              "records": 64,
+              "text": 59
+            },
+            "test_n_each": 64
+          },
+          "arithmetic": {
+            "before_dev": {
+              "calendar": 31,
+              "files": 27,
+              "records": 32,
+              "text": 25
+            },
+            "after_dev": {
+              "calendar": 29,
+              "files": 25,
+              "records": 32,
+              "text": 28
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 61,
+              "files": 51,
+              "records": 64,
+              "text": 59
+            },
+            "test_n_each": 64
+          },
+          "continue": {
+            "before_dev": {
+              "calendar": 32,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "after_dev": {
+              "calendar": 25,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 54,
+              "files": 64,
+              "records": 64,
+              "text": 64
+            },
+            "test_n_each": 64
+          },
+          "fresh": {
+            "before_dev": {
+              "calendar": 0,
+              "files": 10,
+              "records": 1,
+              "text": 16
+            },
+            "after_dev": {
+              "calendar": 23,
+              "files": 21,
+              "records": 29,
+              "text": 25
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 45,
+              "files": 43,
+              "records": 50,
+              "text": 48
+            },
+            "test_n_each": 64
+          },
+          "irrelevant": {
+            "before_dev": {
+              "calendar": 17,
+              "files": 32,
+              "records": 24,
+              "text": 14
+            },
+            "after_dev": {
+              "calendar": 17,
+              "files": 32,
+              "records": 32,
+              "text": 22
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 32,
+              "files": 62,
+              "records": 58,
+              "text": 43
+            },
+            "test_n_each": 64
+          },
+          "relevant": {
+            "before_dev": {
+              "calendar": 20,
+              "files": 18,
+              "records": 32,
+              "text": 24
+            },
+            "after_dev": {
+              "calendar": 16,
+              "files": 11,
+              "records": 32,
+              "text": 24
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 32,
+              "files": 21,
+              "records": 64,
+              "text": 49
+            },
+            "test_n_each": 64
+          },
+          "replay": {
+            "before_dev": {
+              "calendar": 31,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "after_dev": {
+              "calendar": 32,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 64,
+              "files": 64,
+              "records": 64,
+              "text": 64
+            },
+            "test_n_each": 64
+          }
+        }
+      },
+      {
+        "seed": 2207,
+        "task_id": "followthrough-20260912-skills-stream2207",
+        "result_sha256": "a2e98891464ede5ee3c6b32c76c4da1322f092fd6e34221f01a95772feb3e20e",
+        "target": "text",
+        "order": [
+          "records",
+          "calendar",
+          "text",
+          "files"
+        ],
+        "curve_updates": [
+          0,
+          16,
+          64,
+          128
+        ],
+        "curve_denominator": 32,
+        "primary_curves": {
+          "fresh": {
+            "correct": [
+              0,
+              32,
+              32,
+              32
+            ],
+            "normalized_validation_auc": 0.9375
+          },
+          "relevant": {
+            "correct": [
+              30,
+              32,
+              32,
+              32
+            ],
+            "normalized_validation_auc": 0.99609375
+          },
+          "irrelevant": {
+            "correct": [
+              31,
+              32,
+              32,
+              32
+            ],
+            "normalized_validation_auc": 0.998046875
+          }
+        },
+        "relevant_auc_gain_vs_irrelevant": -0.001953125,
+        "final_workflow_test": {
+          "agent_dice": {
+            "ordinary_correct": 64,
+            "novel_correct": 4,
+            "n_each": 64
+          },
+          "arithmetic": {
+            "ordinary_correct": 64,
+            "novel_correct": 1,
+            "n_each": 64
+          },
+          "continue": {
+            "ordinary_correct": 64,
+            "novel_correct": 32,
+            "n_each": 64
+          },
+          "fresh": {
+            "ordinary_correct": 64,
+            "novel_correct": 26,
+            "n_each": 64
+          },
+          "irrelevant": {
+            "ordinary_correct": 64,
+            "novel_correct": 63,
+            "n_each": 64
+          },
+          "relevant": {
+            "ordinary_correct": 64,
+            "novel_correct": 64,
+            "n_each": 64
+          },
+          "replay": {
+            "ordinary_correct": 64,
+            "novel_correct": 64,
+            "n_each": 64
+          }
+        },
+        "primitive_accuracy": {
+          "agent_dice": {
+            "before_dev": {
+              "calendar": 32,
+              "files": 24,
+              "records": 32,
+              "text": 32
+            },
+            "after_dev": {
+              "calendar": 27,
+              "files": 24,
+              "records": 32,
+              "text": 32
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 54,
+              "files": 48,
+              "records": 64,
+              "text": 64
+            },
+            "test_n_each": 64
+          },
+          "arithmetic": {
+            "before_dev": {
+              "calendar": 32,
+              "files": 24,
+              "records": 32,
+              "text": 32
+            },
+            "after_dev": {
+              "calendar": 25,
+              "files": 24,
+              "records": 32,
+              "text": 24
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 52,
+              "files": 48,
+              "records": 64,
+              "text": 48
+            },
+            "test_n_each": 64
+          },
+          "continue": {
+            "before_dev": {
+              "calendar": 32,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "after_dev": {
+              "calendar": 32,
+              "files": 30,
+              "records": 29,
+              "text": 28
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 62,
+              "files": 61,
+              "records": 58,
+              "text": 50
+            },
+            "test_n_each": 64
+          },
+          "fresh": {
+            "before_dev": {
+              "calendar": 5,
+              "files": 5,
+              "records": 6,
+              "text": 8
+            },
+            "after_dev": {
+              "calendar": 15,
+              "files": 16,
+              "records": 29,
+              "text": 17
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 32,
+              "files": 31,
+              "records": 56,
+              "text": 37
+            },
+            "test_n_each": 64
+          },
+          "irrelevant": {
+            "before_dev": {
+              "calendar": 32,
+              "files": 22,
+              "records": 25,
+              "text": 31
+            },
+            "after_dev": {
+              "calendar": 32,
+              "files": 24,
+              "records": 30,
+              "text": 32
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 64,
+              "files": 48,
+              "records": 63,
+              "text": 64
+            },
+            "test_n_each": 64
+          },
+          "relevant": {
+            "before_dev": {
+              "calendar": 3,
+              "files": 16,
+              "records": 21,
+              "text": 32
+            },
+            "after_dev": {
+              "calendar": 0,
+              "files": 5,
+              "records": 20,
+              "text": 11
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 0,
+              "files": 14,
+              "records": 36,
+              "text": 25
+            },
+            "test_n_each": 64
+          },
+          "replay": {
+            "before_dev": {
+              "calendar": 32,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "after_dev": {
+              "calendar": 32,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 64,
+              "files": 63,
+              "records": 64,
+              "text": 64
+            },
+            "test_n_each": 64
+          }
+        }
+      },
+      {
+        "seed": 3301,
+        "task_id": "followthrough-20260912-skills-stream3301",
+        "result_sha256": "c1a3b0d55f7f47bf33ee794257f27b213d23474919c8f30de3f077c1efcb6904",
+        "target": "files",
+        "order": [
+          "files",
+          "text",
+          "records",
+          "calendar"
+        ],
+        "curve_updates": [
+          0,
+          16,
+          64,
+          128
+        ],
+        "curve_denominator": 32,
+        "primary_curves": {
+          "fresh": {
+            "correct": [
+              0,
+              32,
+              32,
+              32
+            ],
+            "normalized_validation_auc": 0.9375
+          },
+          "relevant": {
+            "correct": [
+              32,
+              32,
+              32,
+              31
+            ],
+            "normalized_validation_auc": 0.9921875
+          },
+          "irrelevant": {
+            "correct": [
+              1,
+              32,
+              32,
+              32
+            ],
+            "normalized_validation_auc": 0.939453125
+          }
+        },
+        "relevant_auc_gain_vs_irrelevant": 0.052734375,
+        "final_workflow_test": {
+          "agent_dice": {
+            "ordinary_correct": 64,
+            "novel_correct": 27,
+            "n_each": 64
+          },
+          "arithmetic": {
+            "ordinary_correct": 63,
+            "novel_correct": 31,
+            "n_each": 64
+          },
+          "continue": {
+            "ordinary_correct": 64,
+            "novel_correct": 64,
+            "n_each": 64
+          },
+          "fresh": {
+            "ordinary_correct": 63,
+            "novel_correct": 0,
+            "n_each": 64
+          },
+          "irrelevant": {
+            "ordinary_correct": 62,
+            "novel_correct": 22,
+            "n_each": 64
+          },
+          "relevant": {
+            "ordinary_correct": 64,
+            "novel_correct": 32,
+            "n_each": 64
+          },
+          "replay": {
+            "ordinary_correct": 62,
+            "novel_correct": 31,
+            "n_each": 64
+          }
+        },
+        "primitive_accuracy": {
+          "agent_dice": {
+            "before_dev": {
+              "calendar": 24,
+              "files": 24,
+              "records": 30,
+              "text": 32
+            },
+            "after_dev": {
+              "calendar": 32,
+              "files": 24,
+              "records": 30,
+              "text": 32
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 63,
+              "files": 48,
+              "records": 60,
+              "text": 64
+            },
+            "test_n_each": 64
+          },
+          "arithmetic": {
+            "before_dev": {
+              "calendar": 23,
+              "files": 24,
+              "records": 30,
+              "text": 32
+            },
+            "after_dev": {
+              "calendar": 32,
+              "files": 24,
+              "records": 27,
+              "text": 32
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 63,
+              "files": 48,
+              "records": 56,
+              "text": 64
+            },
+            "test_n_each": 64
+          },
+          "continue": {
+            "before_dev": {
+              "calendar": 32,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "after_dev": {
+              "calendar": 32,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 64,
+              "files": 64,
+              "records": 64,
+              "text": 64
+            },
+            "test_n_each": 64
+          },
+          "fresh": {
+            "before_dev": {
+              "calendar": 5,
+              "files": 1,
+              "records": 9,
+              "text": 8
+            },
+            "after_dev": {
+              "calendar": 8,
+              "files": 8,
+              "records": 16,
+              "text": 16
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 16,
+              "files": 16,
+              "records": 32,
+              "text": 32
+            },
+            "test_n_each": 64
+          },
+          "irrelevant": {
+            "before_dev": {
+              "calendar": 14,
+              "files": 16,
+              "records": 32,
+              "text": 24
+            },
+            "after_dev": {
+              "calendar": 11,
+              "files": 16,
+              "records": 32,
+              "text": 24
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 23,
+              "files": 32,
+              "records": 64,
+              "text": 51
+            },
+            "test_n_each": 64
+          },
+          "relevant": {
+            "before_dev": {
+              "calendar": 8,
+              "files": 32,
+              "records": 21,
+              "text": 16
+            },
+            "after_dev": {
+              "calendar": 15,
+              "files": 32,
+              "records": 16,
+              "text": 24
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 27,
+              "files": 64,
+              "records": 33,
+              "text": 48
+            },
+            "test_n_each": 64
+          },
+          "replay": {
+            "before_dev": {
+              "calendar": 32,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "after_dev": {
+              "calendar": 32,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 64,
+              "files": 64,
+              "records": 64,
+              "text": 64
+            },
+            "test_n_each": 64
+          }
+        }
+      },
+      {
+        "seed": 4409,
+        "task_id": "followthrough-20260912-skills-stream4409",
+        "result_sha256": "b716b0fa1b98ee3d213fe703fab0659f6be16179200901c3607df8b94f347f2e",
+        "target": "calendar",
+        "order": [
+          "text",
+          "calendar",
+          "files",
+          "records"
+        ],
+        "curve_updates": [
+          0,
+          16,
+          64,
+          128
+        ],
+        "curve_denominator": 32,
+        "primary_curves": {
+          "fresh": {
+            "correct": [
+              0,
+              32,
+              32,
+              32
+            ],
+            "normalized_validation_auc": 0.9375
+          },
+          "relevant": {
+            "correct": [
+              25,
+              31,
+              32,
+              32
+            ],
+            "normalized_validation_auc": 0.978515625
+          },
+          "irrelevant": {
+            "correct": [
+              0,
+              31,
+              32,
+              32
+            ],
+            "normalized_validation_auc": 0.9296875
+          }
+        },
+        "relevant_auc_gain_vs_irrelevant": 0.048828125,
+        "final_workflow_test": {
+          "agent_dice": {
+            "ordinary_correct": 64,
+            "novel_correct": 64,
+            "n_each": 64
+          },
+          "arithmetic": {
+            "ordinary_correct": 64,
+            "novel_correct": 63,
+            "n_each": 64
+          },
+          "continue": {
+            "ordinary_correct": 64,
+            "novel_correct": 64,
+            "n_each": 64
+          },
+          "fresh": {
+            "ordinary_correct": 64,
+            "novel_correct": 32,
+            "n_each": 64
+          },
+          "irrelevant": {
+            "ordinary_correct": 64,
+            "novel_correct": 64,
+            "n_each": 64
+          },
+          "relevant": {
+            "ordinary_correct": 64,
+            "novel_correct": 62,
+            "n_each": 64
+          },
+          "replay": {
+            "ordinary_correct": 64,
+            "novel_correct": 64,
+            "n_each": 64
+          }
+        },
+        "primitive_accuracy": {
+          "agent_dice": {
+            "before_dev": {
+              "calendar": 32,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "after_dev": {
+              "calendar": 31,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 62,
+              "files": 63,
+              "records": 64,
+              "text": 64
+            },
+            "test_n_each": 64
+          },
+          "arithmetic": {
+            "before_dev": {
+              "calendar": 32,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "after_dev": {
+              "calendar": 32,
+              "files": 32,
+              "records": 32,
+              "text": 24
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 62,
+              "files": 64,
+              "records": 64,
+              "text": 48
+            },
+            "test_n_each": 64
+          },
+          "continue": {
+            "before_dev": {
+              "calendar": 30,
+              "files": 32,
+              "records": 32,
+              "text": 16
+            },
+            "after_dev": {
+              "calendar": 31,
+              "files": 32,
+              "records": 32,
+              "text": 16
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 63,
+              "files": 64,
+              "records": 64,
+              "text": 32
+            },
+            "test_n_each": 64
+          },
+          "fresh": {
+            "before_dev": {
+              "calendar": 0,
+              "files": 3,
+              "records": 10,
+              "text": 7
+            },
+            "after_dev": {
+              "calendar": 24,
+              "files": 23,
+              "records": 18,
+              "text": 19
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 47,
+              "files": 46,
+              "records": 38,
+              "text": 40
+            },
+            "test_n_each": 64
+          },
+          "irrelevant": {
+            "before_dev": {
+              "calendar": 14,
+              "files": 19,
+              "records": 32,
+              "text": 32
+            },
+            "after_dev": {
+              "calendar": 24,
+              "files": 23,
+              "records": 24,
+              "text": 24
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 48,
+              "files": 47,
+              "records": 49,
+              "text": 50
+            },
+            "test_n_each": 64
+          },
+          "relevant": {
+            "before_dev": {
+              "calendar": 32,
+              "files": 24,
+              "records": 28,
+              "text": 16
+            },
+            "after_dev": {
+              "calendar": 32,
+              "files": 16,
+              "records": 24,
+              "text": 24
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 64,
+              "files": 39,
+              "records": 48,
+              "text": 48
+            },
+            "test_n_each": 64
+          },
+          "replay": {
+            "before_dev": {
+              "calendar": 32,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "after_dev": {
+              "calendar": 32,
+              "files": 32,
+              "records": 32,
+              "text": 32
+            },
+            "dev_n_each": 32,
+            "after_test": {
+              "calendar": 64,
+              "files": 64,
+              "records": 64,
+              "text": 63
+            },
+            "test_n_each": 64
+          }
+        }
+      }
+    ],
+    "interpretation": [
+      "Every fresh learner reached 32/32 ordinary workflow DEV by update16. Relevant-history AUC advantages often reflect zero-update competence; these sparse curves do not measure learning differences inside the first16 updates.",
+      "2207 irrelevant history starts31/32 versus relevant30/32 and has slightly higher AUC. It does not support a text-specific history advantage over generic formatting/tool adaptation.",
+      "Across four streams, replay-history final primitive TEST is1022/1024 and continue-history956/1024. Original workflow training itself uses no replay; both histories receive the identical512 target exposures.",
+      "2207 relevant achieves64/64 novel workflows while target text primitives fall32/32 to11/32 on the same DEV inputs, with25/64 finalTEST; broad primitive retention is not implied by composition success.",
+      "2207 Dice preserves64/64 text primitives yet fails60/64 novel workflows, all valid and executable. Arithmetic loses replace entirely and fails63/64 novel workflows.",
+      "Both merges substitute keep-lower-join for keep-replace-join on all32 pattern2 requests. Pattern3 predominantly preserves lower-keep-replace operations but reuses uppercase ALERT after lowercasing, yielding empty results. Before/after initial checkpoint diagnosis is required to locate onset.",
+      "3301 is another composition/retention separation: relevant and replay retain64/64 file primitives but novel workflows score32/64 and31/64; continue scores64/64 novel.",
+      "Four streams jointly vary family, order, alias mapping and scenes; there is only one optimization seed. Explicit operation requests and revealing schemas constrain any general skill-transfer claim.",
+      "No TEST-dependent changes were made to training, rank, scoring or checkpoint selection."
+    ]
+  },
+  "next_separate_authorized_line": "Compressed-checkpoint continue versus fixed64 replay is being implemented in separate files. This diagnosis does not select that recipe or its checkpoints.",
+  "provider_dispatches": 0,
+  "commits_or_pushes": 0,
+  "file_sha256": {
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/diagnose_initial.py": "0aed2024090780ad7a0e7a4fa8ac178f67f5a365ced316442bb90fefd271e264",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/diagnosis_protocol.json": "f558dc8cde200d3fe89b7c19de9edb47e9afcec6d01c563b9c57984a619aa092",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/tests/test_initial_diagnosis.py": "34cd9e20afec6d2b6ded2d2583ee9d4e69f9d3ad2dca0e770caaf8c6d3779d5f",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/diagnose_initial_2207.json": "7500aec57829a8d4123e63b4003524fa83de4d6ba55a675f3ae6fed4fbeb2209",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/diagnose_initial_1103.json": "65793cf4a33f130794366ac6a07a5024c833f7d30b29d4ccb99e3fcced8ba5d5",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/diagnose_initial_3301.json": "1694982d2fb402237abd5a52b6ff5c7536b0e060dc863f65fdcf5d20e6cb8f04",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/diagnose_initial_4409.json": "142731246d4987b2821a62b203dbc7dfd9682563362a57a9620b50bb7faf5e49"
+  }
+}

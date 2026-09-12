@@ -1,0 +1,412 @@
+{
+  "followthrough-20260912-skills-audit1103": {
+    "status": "passed",
+    "records": 2688,
+    "panels": 42,
+    "source": "followthrough-20260912-skills-stream1103-placement",
+    "source_sha256": "9b2c2edeacb75a332751691a50801bbbacfb4453cabd31f0e0e7353c3ecbe788",
+    "execution_sha256": "6d5ee4cc0f15fd70fafb5d6294664fda963f84ac5f0dcaa4d919295d3548ae98",
+    "result_sha256": "5af45051764a09e4be4e6f83d906300c854a880c92ba8fe66a983d3464d16680",
+    "details": {
+      "conditions": 7
+    }
+  },
+  "followthrough-20260912-skills-audit2207": {
+    "status": "passed",
+    "records": 2688,
+    "panels": 42,
+    "source": "followthrough-20260912-skills-stream2207",
+    "source_sha256": "9b2c2edeacb75a332751691a50801bbbacfb4453cabd31f0e0e7353c3ecbe788",
+    "execution_sha256": "a0fb807347d764a5855decfe9cf6875549d54585665623dd6fd2174c17924219",
+    "result_sha256": "66ce05e6aa662c326be1adc2048f12ef0032a3d4a5837d91e70d6453e6783a99",
+    "details": {
+      "conditions": 7
+    }
+  },
+  "followthrough-20260912-skills-audit3301": {
+    "status": "passed",
+    "records": 2688,
+    "panels": 42,
+    "source": "followthrough-20260912-skills-stream3301",
+    "source_sha256": "9b2c2edeacb75a332751691a50801bbbacfb4453cabd31f0e0e7353c3ecbe788",
+    "execution_sha256": "62e5903d85cac44022948a071f9b0d6ba0876ce5fbd3b5d29ff777d45a9e00c3",
+    "result_sha256": "803973eefbabf6c771488a96afee74d2bd2daea7591c5aba9f8a0cce80d6f5bf",
+    "details": {
+      "conditions": 7
+    }
+  },
+  "followthrough-20260912-skills-audit4409": {
+    "status": "passed",
+    "records": 2688,
+    "panels": 42,
+    "source": "followthrough-20260912-skills-stream4409",
+    "source_sha256": "9b2c2edeacb75a332751691a50801bbbacfb4453cabd31f0e0e7353c3ecbe788",
+    "execution_sha256": "150e128b22ba9a22b311e2244544719354cb56b14c8162a0abe1bf2c871f439b",
+    "result_sha256": "8ff482584c0ef866aeb5e83e5b02f6e980a41c93e1ac5c6f37d5236be76c97ed",
+    "details": {
+      "conditions": 7
+    }
+  },
+  "followthrough-20260912-skills-compress1103": {
+    "status": "passed",
+    "records": 0,
+    "panels": 0,
+    "source": "followthrough-20260912-skills-stream1103-placement",
+    "source_sha256": "9b2c2edeacb75a332751691a50801bbbacfb4453cabd31f0e0e7353c3ecbe788",
+    "execution_sha256": "c18653f02982297c911b34efdcee4450fc625ac116322e5731914122806abaac",
+    "result_sha256": "d590b94767c504354c88c61b5481a310ecda2b78aa262025edf4ec60aa2e8fd2",
+    "details": {
+      "agent_dice": {
+        "status": "ineligible_before_SVD"
+      },
+      "arithmetic": {
+        "status": "ineligible_before_SVD"
+      }
+    }
+  },
+  "followthrough-20260912-skills-compress2207": {
+    "status": "passed",
+    "records": 0,
+    "panels": 0,
+    "source": "followthrough-20260912-skills-stream2207",
+    "source_sha256": "9b2c2edeacb75a332751691a50801bbbacfb4453cabd31f0e0e7353c3ecbe788",
+    "execution_sha256": "d36e5589d6a326741560471bb545bb71bf3f83fe38da8a21de96de24fb7132bb",
+    "result_sha256": "47220a31d4c1acc7012db0e5805a29c090767dd717f01815edf2e6391ff0a742",
+    "details": {
+      "agent_dice": {
+        "status": "ineligible_before_SVD"
+      },
+      "arithmetic": {
+        "status": "ineligible_before_SVD"
+      }
+    }
+  },
+  "followthrough-20260912-skills-compress3301": {
+    "status": "passed",
+    "records": 0,
+    "panels": 0,
+    "source": "followthrough-20260912-skills-stream3301",
+    "source_sha256": "9b2c2edeacb75a332751691a50801bbbacfb4453cabd31f0e0e7353c3ecbe788",
+    "execution_sha256": "a39aaa6eaa6bb2571f3541ae073992384b1e2710fb2e5de2614815921a3c1ed9",
+    "result_sha256": "12617fc85142ff4c2cd43299b5e2c530d7d27ba332990382cec8fd71abc6a678",
+    "details": {
+      "agent_dice": {
+        "status": "ineligible_before_SVD"
+      },
+      "arithmetic": {
+        "status": "ineligible_before_SVD"
+      }
+    }
+  },
+  "followthrough-20260912-skills-compress4409": {
+    "status": "passed",
+    "records": 2176,
+    "panels": 44,
+    "source": "followthrough-20260912-skills-stream4409",
+    "source_sha256": "9b2c2edeacb75a332751691a50801bbbacfb4453cabd31f0e0e7353c3ecbe788",
+    "execution_sha256": "0dbcb805aa7c69dcf94ff6a7595db60030fbc340d68feb9cc5469e8ee79e9f4b",
+    "result_sha256": "034f0890520418959c54b7965dc9dd54700d4e254f2788002a4f9d308f9f2c28",
+    "details": {
+      "agent_dice": {
+        "status": "audited",
+        "resident_bytes": 3670016,
+        "surfaces_original_compressed_n": {
+          "primitive-calendar.test": [
+            64,
+            63,
+            64
+          ],
+          "primitive-calendar.validation": [
+            32,
+            29,
+            32
+          ],
+          "primitive-files.test": [
+            64,
+            64,
+            64
+          ],
+          "primitive-files.validation": [
+            32,
+            32,
+            32
+          ],
+          "primitive-records.test": [
+            64,
+            64,
+            64
+          ],
+          "primitive-records.validation": [
+            32,
+            32,
+            32
+          ],
+          "primitive-text.test": [
+            64,
+            64,
+            64
+          ],
+          "primitive-text.validation": [
+            32,
+            32,
+            32
+          ],
+          "workflow.novel-test": [
+            11,
+            8,
+            64
+          ],
+          "workflow.test": [
+            48,
+            32,
+            64
+          ],
+          "workflow.validation": [
+            23,
+            14,
+            32
+          ]
+        }
+      },
+      "arithmetic": {
+        "status": "audited",
+        "resident_bytes": 3670016,
+        "surfaces_original_compressed_n": {
+          "primitive-calendar.test": [
+            64,
+            63,
+            64
+          ],
+          "primitive-calendar.validation": [
+            32,
+            28,
+            32
+          ],
+          "primitive-files.test": [
+            64,
+            64,
+            64
+          ],
+          "primitive-files.validation": [
+            32,
+            32,
+            32
+          ],
+          "primitive-records.test": [
+            64,
+            64,
+            64
+          ],
+          "primitive-records.validation": [
+            32,
+            32,
+            32
+          ],
+          "primitive-text.test": [
+            64,
+            64,
+            64
+          ],
+          "primitive-text.validation": [
+            32,
+            32,
+            32
+          ],
+          "workflow.novel-test": [
+            9,
+            4,
+            64
+          ],
+          "workflow.test": [
+            49,
+            22,
+            64
+          ],
+          "workflow.validation": [
+            20,
+            11,
+            32
+          ]
+        }
+      }
+    }
+  },
+  "followthrough-20260912-skills-compressed-workflow-audit4409": {
+    "status": "passed",
+    "stage": "audit",
+    "records": 1088,
+    "panels": 22,
+    "source_sha256": "8456e8752d39b1ed9fbfeafe46485d68f4a349e4b607726998629b76449b45ad",
+    "result_sha256": "49df67b21b1a678e81924d41341aacc7cb92ccf1bb768d83a04e70679c8c8676",
+    "details": {
+      "compressed_continue": {
+        "resident_adapter_bytes": 3670016,
+        "updates": 128,
+        "exposures": {
+          "current_exposures": 512,
+          "input_tokens": 148913,
+          "old_exposures": 0,
+          "target_tokens": 32234,
+          "updates": 128
+        },
+        "replay_capacity": 0,
+        "test": {
+          "primitive-calendar.test": [
+            48,
+            64
+          ],
+          "primitive-files.test": [
+            54,
+            64
+          ],
+          "primitive-records.test": [
+            64,
+            64
+          ],
+          "primitive-text.test": [
+            62,
+            64
+          ],
+          "workflow.novel-test": [
+            18,
+            64
+          ],
+          "workflow.test": [
+            64,
+            64
+          ]
+        }
+      },
+      "compressed_replay": {
+        "resident_adapter_bytes": 3670016,
+        "updates": 128,
+        "exposures": {
+          "current_exposures": 256,
+          "input_tokens": 128730,
+          "old_exposures": 256,
+          "target_tokens": 21098,
+          "updates": 128
+        },
+        "replay_capacity": 64,
+        "test": {
+          "primitive-calendar.test": [
+            63,
+            64
+          ],
+          "primitive-files.test": [
+            64,
+            64
+          ],
+          "primitive-records.test": [
+            64,
+            64
+          ],
+          "primitive-text.test": [
+            64,
+            64
+          ],
+          "workflow.novel-test": [
+            63,
+            64
+          ],
+          "workflow.test": [
+            64,
+            64
+          ]
+        }
+      }
+    },
+    "scope": "One qualified calendar stream; same rank8 factors and128 updates, replay substitutes256 old exposures for256 current exposures. Full base and archival expert weights are excluded from resident adapter bytes."
+  },
+  "followthrough-20260912-skills-compressed-workflow4409": {
+    "status": "passed",
+    "stage": "train",
+    "records": 1120,
+    "panels": 35,
+    "source_sha256": "8456e8752d39b1ed9fbfeafe46485d68f4a349e4b607726998629b76449b45ad",
+    "result_sha256": "75fd1a8b4f3ce6b02b0da96c0ab56c1e17dcbff02c5f24e4b89721daed646f45",
+    "details": {
+      "compressed_continue": {
+        "resident_adapter_bytes": 3670016,
+        "updates": 128,
+        "exposures": {
+          "current_exposures": 512,
+          "input_tokens": 148913,
+          "old_exposures": 0,
+          "target_tokens": 32234,
+          "updates": 128
+        },
+        "replay_capacity": 0
+      },
+      "compressed_replay": {
+        "resident_adapter_bytes": 3670016,
+        "updates": 128,
+        "exposures": {
+          "current_exposures": 256,
+          "input_tokens": 128730,
+          "old_exposures": 256,
+          "target_tokens": 21098,
+          "updates": 128
+        },
+        "replay_capacity": 64
+      }
+    },
+    "scope": "One qualified calendar stream; same rank8 factors and128 updates, replay substitutes256 old exposures for256 current exposures. Full base and archival expert weights are excluded from resident adapter bytes."
+  },
+  "followthrough-20260912-skills-delete-rehearsal-audit4409": {
+    "status": "passed",
+    "stage": "audit",
+    "records": 544,
+    "panels": 11,
+    "source_sha256": "7c339f6cc2fd02fae10e13d9cfea57b0dbdd87e9a989270d56a1ed1a575c17f6",
+    "result_sha256": "e1eb5365458556c3df354a6fbd1d936ad49d906235a1e05bc9a2cfc12d51f54c",
+    "details": {
+      "updates": 128,
+      "current_exposures": 256,
+      "old_exposures": 0,
+      "resident_adapter_bytes": 3670016,
+      "test": {
+        "primitive-calendar.test": [
+          56,
+          64
+        ],
+        "primitive-files.test": [
+          64,
+          64
+        ],
+        "primitive-records.test": [
+          64,
+          64
+        ],
+        "primitive-text.test": [
+          64,
+          64
+        ],
+        "workflow.novel-test": [
+          61,
+          64
+        ],
+        "workflow.test": [
+          64,
+          64
+        ]
+      }
+    },
+    "scope": "Posthoc old-loss ablation on one calendar stream. Current rows, coefficient and update count matched; batch shape, clipping and Adam interactions remain part of the intervention."
+  },
+  "followthrough-20260912-skills-delete-rehearsal4409": {
+    "status": "passed",
+    "stage": "train",
+    "records": 640,
+    "panels": 20,
+    "source_sha256": "7c339f6cc2fd02fae10e13d9cfea57b0dbdd87e9a989270d56a1ed1a575c17f6",
+    "result_sha256": "217490b99cfffeae2d5acf6fd32f4923bda11fe43aa3755bb5894bf44e008ffe",
+    "details": {
+      "updates": 128,
+      "current_exposures": 256,
+      "old_exposures": 0,
+      "resident_adapter_bytes": 3670016
+    },
+    "scope": "Posthoc old-loss ablation on one calendar stream. Current rows, coefficient and update count matched; batch shape, clipping and Adam interactions remain part of the intervention."
+  }
+}

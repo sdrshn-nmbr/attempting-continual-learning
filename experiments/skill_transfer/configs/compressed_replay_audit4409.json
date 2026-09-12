@@ -1,0 +1,16 @@
+{
+  "experiment": "skill-transfer-compressed-replay",
+  "source_run_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-skills-stream4409",
+  "source_task_id": "followthrough-20260912-skills-stream4409",
+  "source_code_sha256": "ae7761bfab16b058af946d56847b035989a67e8887ed16483cc5da6731a65397",
+  "source_config_sha256": "ab87136df5e3c28968661ef205417d192e27096d892a7964e3f389c85593db51",
+  "stage": "audit",
+  "protocol": "compressed_replay_protocol.json",
+  "protocol_sha256": "b086e6ddeee45c3c75502176b3d1926df4e5c62ad9e7ddda3e449e59e18831ba",
+  "compression_run_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-skills-compress4409",
+  "compression_task_id": "followthrough-20260912-skills-compress4409",
+  "compression_config_sha256": "92b8d1cb47aa673ff74bad2499c1f1b79037512986f589e46bd7780a9cab0018",
+  "training_run_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-skills-compressed-workflow4409",
+  "training_task_id": "followthrough-20260912-skills-compressed-workflow4409",
+  "training_config_sha256": "16697c9c1a93ab532978da4646c34ab63f9e5333a4f0b368283d05a87b21228e"
+}

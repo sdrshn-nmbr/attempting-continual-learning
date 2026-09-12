@@ -1,0 +1,42 @@
+{
+  "source_audit_sha256": "8890fe5b59a84594ae4ba230635a58dad2ab2437b01e9985b6e9bcab9cb051d8",
+  "matplotlib": "3.11.2",
+  "conditions": [
+    "Continue\n512 current, 0 old",
+    "Current-only control\n256 current, 0 old",
+    "Replay\n256 current, 256 old"
+  ],
+  "counts": [
+    [
+      [
+        228,
+        256
+      ],
+      [
+        18,
+        64
+      ]
+    ],
+    [
+      [
+        248,
+        256
+      ],
+      [
+        61,
+        64
+      ]
+    ],
+    [
+      [
+        255,
+        256
+      ],
+      [
+        63,
+        64
+      ]
+    ]
+  ],
+  "scope": "Single-stream posthoc old-loss ablation; no claim of general superiority or equal lifetime training history."
+}

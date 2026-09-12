@@ -1,0 +1,607 @@
+{
+  "status": "cpu_verified_gpu_ready_after_completed_source",
+  "priority_stream": 4409,
+  "original_source_sha256": "ae7761bfab16b058af946d56847b035989a67e8887ed16483cc5da6731a65397",
+  "frozen_existing_files_verified": 26,
+  "modified_existing_files": [],
+  "new_files": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/followup.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/audit_persistence.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/compress_fusion.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/followup_protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/tests/test_followup.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/audit_stream_1103.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/audit_stream_2207.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/audit_stream_3301.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/audit_stream_4409.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compress_stream_1103.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compress_stream_2207.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compress_stream_3301.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compress_stream_4409.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/followup_handoff.json"
+  ],
+  "file_sha256": {
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/followup.py": "122a82edc0a2bcda527421f562b59b0e8a01032355e24e496a5cbcc5f37652ba",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/audit_persistence.py": "57b080b79aef25326e61bd50b91fcadf93689b74181e16d32a029688de1578f6",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/compress_fusion.py": "752189481f1ceb2c283cd534ce29c416c29817d24913a1cabc593eef49289c5a",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/followup_protocol.json": "337b203b98fcc59090ac425caf736308bc2026d2d4cdecc31a5dc20cf9766cd8",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/tests/test_followup.py": "86b0d348f21465f0faa3e15a794f9d6f8b5c244d5b5c2fd125fc75929eb55328",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/audit_stream_1103.json": "25415d23513a9c167e3524ca7820d3d526ba31455aabe1ab5592b90255d5f143",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/audit_stream_2207.json": "196e6506e314e1036a2e3aaf4422f587f21f1a43e56258b59f0746ae4efdaf86",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/audit_stream_3301.json": "c3a685a690b1fa46071b22e746067402969f7ea7066743a8dcf68e5696a0ab28",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/audit_stream_4409.json": "ca2cc931f85da8c2307bac57b8047868ad0e76b27b5295ce70666f8ed0424740",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compress_stream_1103.json": "63f4b044a02db41edf88061a7379f48ac482bf52c29517b72a1ca9f5ed0f93c1",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compress_stream_2207.json": "4291f5c8433ceda4d76acc0011cd50a467b6d8a619ccc3eb5cef17c357f3713a",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compress_stream_3301.json": "6123aaa8234bbf735a6924c0dac370775486a356b94c71e42c0fd467b9cd7c6f",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compress_stream_4409.json": "50258af12ede8baedca60ded2c7b4e39d9e274d314c11131608d5a6bd3bf3b29"
+  },
+  "protocol": {
+    "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/followup_protocol.json",
+    "sha256": "337b203b98fcc59090ac425caf736308bc2026d2d4cdecc31a5dc20cf9766cd8"
+  },
+  "entrypoints": {
+    "compression": {
+      "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/compress_fusion.py",
+      "first_config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compress_stream_4409.json",
+      "source_dependency": "followthrough-20260912-skills-stream4409",
+      "argv": [
+        "uv",
+        "run",
+        "--no-project",
+        "--python",
+        "<qualified-runtime-python>",
+        "python",
+        "compress_fusion.py",
+        "--config",
+        "configs/compress_stream_4409.json",
+        "--output-dir",
+        "<new-parent-owned-output-directory>"
+      ],
+      "cwd": "<parent-staged-skill_transfer-directory>",
+      "conditions": [
+        "arithmetic",
+        "agent_dice"
+      ],
+      "checkpoint_scope": "fusion/<method>/checkpoint before workflow training",
+      "gate": "All four original primitive dev gates, including each operation and gain over original baseline; exact fresh-process dev-record agreement before SVD.",
+      "result": "Original and rank8/no-offset whole-answer dev, TEST and novel-workflow evaluation; singular-value energy, FP32 reconstruction error, resident adapter bytes and preserved expert checkpoint-file bytes reported separately.",
+      "launcher": "Parent existing queue supervisor via compute/run_task.py; transport must exist before the standalone CLI starts.",
+      "dispatch_fields": {
+        "entrypoint": "compress_fusion.py",
+        "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compress_stream_4409.json",
+        "depends_on": [
+          "followthrough-20260912-skills-stream4409"
+        ],
+        "gpus": 1,
+        "id": "Parent-chosen new unique task ID, distinct from source and other followups"
+      }
+    },
+    "persistence_audit": {
+      "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/audit_persistence.py",
+      "first_config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/audit_stream_4409.json",
+      "source_dependency": "followthrough-20260912-skills-stream4409",
+      "argv": [
+        "uv",
+        "run",
+        "--no-project",
+        "--python",
+        "<qualified-runtime-python>",
+        "python",
+        "audit_persistence.py",
+        "--config",
+        "configs/audit_stream_4409.json",
+        "--output-dir",
+        "<new-parent-owned-output-directory>"
+      ],
+      "cwd": "<parent-staged-skill_transfer-directory>",
+      "conditions": "Every available final source result.transfer condition; stopped continue/replay arms are explicitly absent.",
+      "result": "Four primitive TEST sets, target workflow TEST and novel workflow TEST per final condition; compare every generated-record field, including raw generation tokens.",
+      "mismatch": "Finish all final conditions and save full evidence, then exit 2 if any original records differ.",
+      "launcher": "Parent existing queue supervisor via compute/run_task.py; transport must exist before the standalone CLI starts.",
+      "dispatch_fields": {
+        "entrypoint": "audit_persistence.py",
+        "config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/audit_stream_4409.json",
+        "depends_on": [
+          "followthrough-20260912-skills-stream4409"
+        ],
+        "gpus": 1,
+        "id": "Parent-chosen new unique task ID, distinct from source and other followups"
+      }
+    }
+  },
+  "ready_configs": {
+    "audit": [
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/audit_stream_4409.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/audit_stream_1103.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/audit_stream_2207.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/audit_stream_3301.json"
+    ],
+    "compression": [
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compress_stream_4409.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compress_stream_1103.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compress_stream_2207.json",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/compress_stream_3301.json"
+    ]
+  },
+  "input_contract": {
+    "requires": "Source result.json and supervisor execution.json must both be completed; execution must have integer exit_code=0, timed_out=false and a finished_at timestamp. Do not launch against an active source process.",
+    "identity": "Verify source task ID/config/code against the embedded execution task and its actual supervisor-format SHA256 digests. Recompute the archived code_dir bundle from its 20 actual deployable files and require the frozen per-file manifest. Verify consumed artifacts and reconstructed datasets; recheck source execution, transport, code and consumed files at completion.",
+    "numerical_runtime": "Same BF16 base, FP32 adapters, one ROCm GPU and exact torch/transformers/HIP runtime as original run; existing loader verifies every snapshot file hash.",
+    "nooffload": "Existing actual tensor placement/no Accelerate hook guard unchanged.",
+    "evaluation": "Original eval batch size, order, EOS, token budget, strict parser and exact semantic execution are reused unchanged.",
+    "outputs": "New directory disjoint from source. Existing queue supervisor must create output task.json and running execution.json for its own new task ID and attempt ID. The selected standalone CLI must match task.entrypoint and the running hashed code directory. Recognized dispatcher transport may preexist; bare CLI invocation without these receipts is rejected."
+  },
+  "validation": {
+    "focused_test_command": "uv run --no-project --python '/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python' python -m pytest -q tests/test_followup.py",
+    "focused_test_cwd": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer",
+    "pytest": "37 passed in 5.44s",
+    "ruff": "check and format --check passed for all new Python files",
+    "ast_import_audit": "passed; all imports at module top, no dynamic execution",
+    "entrypoint_help": "both CLIs verified",
+    "checks": [
+      "Independent uv subprocess reload reproduces saved dense-offset plus factor behavior exactly on a CPU model.",
+      "All seven final conditions and six TEST surfaces audited; token mismatch detected even with identical semantic scores.",
+      "Source tampering, mismatched identity, incomplete results and source/output overlap rejected.",
+      "Failed saved dev gates never load runtime, run SVD or read TEST records.",
+      "Fresh dev mismatch prevents SVD and TEST.",
+      "Rank8 checkpoint saved before any TEST generation; remaining method continues after another gate fails.",
+      "SVD includes offset plus nonzero scaled B@A; known spectra, zero/low/full rank, source immutability and invalid dtype/finiteness tested.",
+      "Resident factor/dense bytes and retained expert checkpoint files accounted separately.",
+      "Reject running, failed, nonzero-exit and timed-out source executions and mismatched embedded task/config/source hashes.",
+      "Reject changed, added or missing archived source files; recompute the original 20-file bundle instead of trusting its path.",
+      "Require new task/attempt IDs, matching standalone entrypoint and new execution after source completion; correctly allow reused numeric launcher PIDs.",
+      "Preserve exact source execution bytes and report their SHA256."
+    ],
+    "original_research_tests": "Not rerun; all 26 preexisting files hash-identical.",
+    "gpu_followup_executed": false,
+    "real_receipt_repl": [
+      {
+        "task_id": "followthrough-20260912-qualify-qwen35-4b",
+        "status": "completed",
+        "execution_sha256": "176ac8c0c6a5266bb93c0bf05bb407a92d74075c764a08d06011276eaa1db8c7",
+        "result": "Accepted; actual embedded task and config digests verified."
+      },
+      {
+        "task_id": "followthrough-20260912-skills-stream1103",
+        "status": "failed",
+        "execution_sha256": "f1fb7ac129d9d51ed8637c23498362c77ae0dd667c798202dc9c0aad9d42d83e",
+        "result": "Actual embedded digests verified; failed source execution rejected."
+      }
+    ]
+  },
+  "live_observation": {
+    "observed_utc": "2026-09-12T05:14:33Z",
+    "collection": "Read-only compact remote file inspection through existing control pod; full source runs not yet completed or collected by this lane.",
+    "fusion_results_present": 8,
+    "stream4409": "Both arithmetic and Agent-Dice: 128/128 primitive dev and 256/256 primitive TEST across four families; dev gate qualifies. TEST did not select the gate, rank or checkpoint.",
+    "failing_dev_branches": {
+      "1103": "Both methods fail text; parent panel identifies complete lower-operation failure.",
+      "2207": "Both methods fail files; parent panel identifies complete move-operation failure.",
+      "3301": "Both methods fail calendar/files; parent panel identifies complete cancel/copy failures."
+    },
+    "capacity_per_fusion": {
+      "expert_training_updates": 512,
+      "expert_training_example_exposures": 2048,
+      "resident_dense_offset_bytes": 754974720,
+      "resident_rank8_factor_bytes": 3670016,
+      "archived_four_expert_factor_bytes": 14680064
+    },
+    "stream1103_partial": "Fresh and relevant final workflow conditions each 64/64 TEST and 64/64 novel TEST; other comparisons pending at observation. No final transfer advantage claimed."
+  },
+  "direction_decision": {
+    "first": "Audit and compress the qualified 4409 fusion states once the parent source completes.",
+    "other_streams": "Preserve strict failed fusion gates. Their original final workflow conditions remain audit candidates.",
+    "teacher": "No teacher or PorTAL bridge qualified or executed here.",
+    "bank_distillation": "Not implemented. Parent requested postponement because 4409 supplies a qualified fusion chain."
+  },
+  "train_only_bank_feasibility": {
+    "status": "Inspection only; no generated teacher training answers and no second-stage implementation.",
+    "local_train_data": {
+      "1103": {
+        "primitive_train_rows": 1024,
+        "workflow_train_rows": 512,
+        "unique_primitive_train_prompts": 1024,
+        "distinct_aliases": 16,
+        "primitive_patterns_by_family": {
+          "records": {
+            "filter": 64,
+            "sort": 64,
+            "take": 64,
+            "project": 64
+          },
+          "text": {
+            "lower": 64,
+            "keep": 64,
+            "replace": 64,
+            "join": 64
+          },
+          "files": {
+            "copy": 64,
+            "move": 64,
+            "write": 64,
+            "delete": 64
+          },
+          "calendar": {
+            "add": 64,
+            "shift": 64,
+            "rename": 64,
+            "cancel": 64
+          }
+        },
+        "all_train_oracles_execute": true,
+        "teacher_generated_training_answers_observed": false
+      },
+      "2207": {
+        "primitive_train_rows": 1024,
+        "workflow_train_rows": 512,
+        "unique_primitive_train_prompts": 1024,
+        "distinct_aliases": 16,
+        "primitive_patterns_by_family": {
+          "records": {
+            "filter": 64,
+            "sort": 64,
+            "take": 64,
+            "project": 64
+          },
+          "text": {
+            "lower": 64,
+            "keep": 64,
+            "replace": 64,
+            "join": 64
+          },
+          "files": {
+            "copy": 64,
+            "move": 64,
+            "write": 64,
+            "delete": 64
+          },
+          "calendar": {
+            "add": 64,
+            "shift": 64,
+            "rename": 64,
+            "cancel": 64
+          }
+        },
+        "all_train_oracles_execute": true,
+        "teacher_generated_training_answers_observed": false
+      },
+      "3301": {
+        "primitive_train_rows": 1024,
+        "workflow_train_rows": 512,
+        "unique_primitive_train_prompts": 1024,
+        "distinct_aliases": 16,
+        "primitive_patterns_by_family": {
+          "records": {
+            "filter": 64,
+            "sort": 64,
+            "take": 64,
+            "project": 64
+          },
+          "text": {
+            "lower": 64,
+            "keep": 64,
+            "replace": 64,
+            "join": 64
+          },
+          "files": {
+            "copy": 64,
+            "move": 64,
+            "write": 64,
+            "delete": 64
+          },
+          "calendar": {
+            "add": 64,
+            "shift": 64,
+            "rename": 64,
+            "cancel": 64
+          }
+        },
+        "all_train_oracles_execute": true,
+        "teacher_generated_training_answers_observed": false
+      },
+      "4409": {
+        "primitive_train_rows": 1024,
+        "workflow_train_rows": 512,
+        "unique_primitive_train_prompts": 1024,
+        "distinct_aliases": 16,
+        "primitive_patterns_by_family": {
+          "records": {
+            "filter": 64,
+            "sort": 64,
+            "take": 64,
+            "project": 64
+          },
+          "text": {
+            "lower": 64,
+            "keep": 64,
+            "replace": 64,
+            "join": 64
+          },
+          "files": {
+            "copy": 64,
+            "move": 64,
+            "write": 64,
+            "delete": 64
+          },
+          "calendar": {
+            "add": 64,
+            "shift": 64,
+            "rename": 64,
+            "cancel": 64
+          }
+        },
+        "all_train_oracles_execute": true,
+        "teacher_generated_training_answers_observed": false
+      }
+    },
+    "remote_training_metadata": [
+      {
+        "seed": 1103,
+        "task_id": "followthrough-20260912-skills-stream1103-placement",
+        "observed_utc": "2026-09-12T05:16:13.011366+00:00",
+        "train_only_bank_inspection": {
+          "calendar": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 24573,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 222,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          },
+          "files": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 24422,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 220,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          },
+          "records": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 24201,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 217,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          },
+          "text": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 25159,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 230,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          }
+        }
+      },
+      {
+        "seed": 2207,
+        "task_id": "followthrough-20260912-skills-stream2207",
+        "observed_utc": "2026-09-12T05:16:13.047774+00:00",
+        "train_only_bank_inspection": {
+          "calendar": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 24573,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 222,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          },
+          "files": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 24422,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 220,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          },
+          "records": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 24201,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 217,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          },
+          "text": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 25159,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 230,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          }
+        }
+      },
+      {
+        "seed": 3301,
+        "task_id": "followthrough-20260912-skills-stream3301",
+        "observed_utc": "2026-09-12T05:16:13.084727+00:00",
+        "train_only_bank_inspection": {
+          "calendar": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 24573,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 222,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          },
+          "files": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 24422,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 220,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          },
+          "records": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 24201,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 217,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          },
+          "text": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 25159,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 230,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          }
+        }
+      },
+      {
+        "seed": 4409,
+        "task_id": "followthrough-20260912-skills-stream4409",
+        "observed_utc": "2026-09-12T05:16:13.123767+00:00",
+        "train_only_bank_inspection": {
+          "calendar": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 24573,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 222,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          },
+          "files": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 24422,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 220,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          },
+          "records": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 24201,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 217,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          },
+          "text": {
+            "updates": 128,
+            "checkpoint_file_bytes": 11041139,
+            "metadata_file_bytes": 25159,
+            "training_exposure_fields": {
+              "current_exposures": 512,
+              "old_exposures": 0,
+              "optimizer_step": 128
+            },
+            "unique_exposed_train_ids": 230,
+            "factor_elements": 917504,
+            "train_generation_diagnostic_present": false
+          }
+        }
+      }
+    ],
+    "mechanism": "Within one stream, four saved family specialists can be routed using explicit family metadata over 1024 primitive TRAIN rows. Do not pool independently rebound conventions from different streams into one bank by default.",
+    "future_prerequisite": "Separately qualify complete native generated bank answers on TRAIN before constructing a joint-distillation run; TRAIN oracle validity and low training loss do not qualify teacher outputs.",
+    "control_needed_if_reopened": "Matched mixed-TRAIN oracle SFT into a fresh rank8 learner to distinguish bank-output supervision from ordinary joint training.",
+    "workflow_boundary": "Primitive-bank competence does not establish useful generated multi-step workflow supervision.",
+    "actual_bank_files_per_stream": {
+      "state_files_total_bytes": 44164556,
+      "metadata_files_total_bytes": 98355,
+      "total_bytes": 44262911,
+      "state_files_include_optimizer": true,
+      "factor_tensor_archive_bytes": 14680064,
+      "inference_requires_optimizer_archive": false
+    }
+  },
+  "limitations": [
+    "Dense SVD is CPU float64, complete reduced spectrum, with FP32 stored factors. It is not exact real arithmetic.",
+    "Weight-space energy is not generated behavior; both are reported independently.",
+    "Compression removes dense offsets from resident inference state, not the original expert-training expenditure or preserved source archive.",
+    "Final workflow-trained fused adapters are audited but are not compression targets in this protocol.",
+    "Compressed checkpoint save/reload is checked in the compression process; a separate GPU process audit of compressed artifacts is not claimed.",
+    "No capability, compressed retention, teacher benefit or persistent GPU reload result is established by these CPU tests."
+  ],
+  "provider_mutations": false,
+  "gpu_dispatches": 0,
+  "commits_or_pushes": 0,
+  "execution_proof": {
+    "source_receipt": "Preserve original execution.json bytes as source-execution.json; record their SHA256 in source.json, process-proof.json and result.json.",
+    "source_code": "source-code.json records recomputed archived original bundle hash and exact per-file hashes; directory basename is not accepted as proof.",
+    "followup": "Require distinct task and attempt IDs, source finished_at no later than followup started_at, matching embedded task/config hashes, correct standalone sys.argv[0] and a recomputed actual new code bundle hash.",
+    "pid_fields": "Record source and followup supervisor objects, launcher PIDs and pod identities, plus actual followup CLI PID and parent PID. Supervisor PID denotes the queue process; receipt PID denotes its launcher and may differ from the final Python child. The same numeric PID or supervisor can appear in separate executions.",
+    "proof_boundary": "Distinct supervised task/attempt identities, successful source completion and bound standalone CLI/code establish the recorded process boundary. Numeric PID inequality alone is not used as proof. Original runtime did not record its actual CLI PID.",
+    "followup_completion": "process-proof.json records the new running execution receipt hash at entry. Parent must independently collect the final new execution receipt; this code cannot mark its own supervisor completed."
+  }
+}

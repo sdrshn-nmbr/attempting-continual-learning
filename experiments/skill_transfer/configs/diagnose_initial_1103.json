@@ -1,0 +1,9 @@
+{
+  "experiment": "skill-transfer-initial-diagnosis",
+  "source_run_dir": "/mnt/shared/cl-portfolio/runs/followthrough-20260912-skills-stream1103-placement",
+  "source_task_id": "followthrough-20260912-skills-stream1103-placement",
+  "source_code_sha256": "ae7761bfab16b058af946d56847b035989a67e8887ed16483cc5da6731a65397",
+  "source_config_sha256": "0741fe9f8a5e33a4be9c05558b5e277920b4fcfe265555e536d5cff565911964",
+  "diagnosis_protocol": "diagnosis_protocol.json",
+  "diagnosis_protocol_sha256": "f558dc8cde200d3fe89b7c19de9edb47e9afcec6d01c563b9c57984a619aa092"
+}

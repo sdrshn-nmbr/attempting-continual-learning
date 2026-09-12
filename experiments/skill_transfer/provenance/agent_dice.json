@@ -1,0 +1,43 @@
+{
+  "method": "Agent-Dice",
+  "paper": "https://arxiv.org/html/2601.03641v2",
+  "paper_version": "2601.03641v2",
+  "repository": "https://github.com/Wuzheng02/Agent-Dice",
+  "revision": "32c0164f945f242a036b6f6876d0e406995cc90e",
+  "inspected_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/Wuzheng02/Agent-Dice/32c0164f945f242a036b6f6876d0e406995cc90e/Code/merge_qwen3.py",
+      "source": "Code/merge_qwen3.py",
+      "git_revision": "32c0164f945f242a036b6f6876d0e406995cc90e",
+      "sha256": "5e8393a30a41031b5264c36551cf3b51b7d1424c7839815eedea189c4fe52a8f",
+      "local_artifact": "merge_qwen3.source.txt"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Wuzheng02/Agent-Dice/32c0164f945f242a036b6f6876d0e406995cc90e/Code/merge_llama3.py",
+      "source": "Code/merge_llama3.py",
+      "git_revision": "32c0164f945f242a036b6f6876d0e406995cc90e",
+      "sha256": "a11da985261a28296b614f82a216dd9d989dd92cb499bb220cdbd3041c701975",
+      "local_artifact": "merge_llama3.source.txt"
+    }
+  ],
+  "implemented": [
+    "Equation 3: base plus elementwise weighted task displacements",
+    "Equation 4: signs use >= 0; strict majority filters opposite signs at each coordinate, ties retain all",
+    "Equation 5: softmax of absolute task-vector magnitude over retained experts; temperature exactly one"
+  ],
+  "source_discrepancy": "The Qwen script chooses contributors using signs[i].any() over the entire parameter tensor. This need not enforce coordinate-wise majority. We implement the paper and the Llama script coordinate-wise semantics; regression test excludes a large minority at each coordinate.",
+  "differences": [
+    "Experts adapt only q_proj and v_proj with rank-eight LoRA instead of full-model fine-tuning.",
+    "Fusion uses FP32 effective B@A matrices, never factor-space averaging; no rank truncation or gauge dependence.",
+    "The Llama source adds 1e-6 to softmax denominators. We use exact normalized softmax as in paper Equation 5.",
+    "Experts are trained independently from identical base and initial factors; this is a specialist-fusion comparator, not online fixed-memory learning.",
+    "Task order variation affects sequential controls; independent expert fusion is permutation invariant by design.",
+    "No curvature is measured; magnitude is the paper's proposed proxy.",
+    "No paper benchmark reproduction or claim of theoretical guarantees."
+  ],
+  "controls": [
+    "Unweighted arithmetic mean of exactly the same expert effective updates in the same dense representation",
+    "Fixed rank-eight continued learning",
+    "Fixed rank-eight replay with a fixed-total 64-example reservoir"
+  ]
+}

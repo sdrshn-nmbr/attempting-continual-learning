@@ -1,0 +1,65 @@
+{
+  "experiment": "skill-transfer-persistence-and-rank8-compression",
+  "source_code_sha256": "ae7761bfab16b058af946d56847b035989a67e8887ed16483cc5da6731a65397",
+  "frozen_source_files": {
+    "agent_dice.py": "e975ae90247bd78d85700698bfe7202d1f70f3be681da30f7f83b2bd538b5674",
+    "configs/prepare_1103.json": "63ea677f6967cfc9c7e1f6986d0fb34fd528417ca13d6ab83cce0c1a5d94dda6",
+    "configs/qualify_1103.json": "0e12e22f4134c95857bc8cffa01db6a529c2e5500e2e78dc5084796fc9f4b4b2",
+    "configs/stream_1103.json": "7458cf7b4a611f7b8e927663055fe0d7c91e54ce02f986eab0618298742416c9",
+    "configs/stream_2207.json": "748fe2a956d23cacbc13fd885c1459138880670a3f7a35e274f848f639c0c863",
+    "configs/stream_3301.json": "f49c397680c19009b556d8460f6be0aecc8519d0587adc750ee2d73c52307386",
+    "configs/stream_4409.json": "8cdf915c3d3de2e29f9f61618e80ff57df05ec0795253cf10cfb1b4b928d401c",
+    "data.py": "089b0b6416e973bfd408f5fdf7ae929ea44619cb6aa41d07fe4e149ab6d93ce1",
+    "handoff.json": "44cb04d4ccef3c643fe5b43cff453fe1d115174d6f7e86c5702f67a3f4ffe06d",
+    "learning.py": "e2920b3644069471f6ad3648b218493f3887b009d0a5a7e6eda9f1b9f0d2c7c5",
+    "protocol.json": "5a09923e8946000a4abcc3abd37d9d707eb400ab2906a8dcbebf113c11e23cb4",
+    "provenance/agent_dice.json": "f1f33c2cf4395882cdd357dccdfc089e14f9de78f8597b5a34ad5b7786b56e97",
+    "provenance/merge_llama3.source.txt": "a11da985261a28296b614f82a216dd9d989dd92cb499bb220cdbd3041c701975",
+    "provenance/merge_qwen3.source.txt": "5e8393a30a41031b5264c36551cf3b51b7d1424c7839815eedea189c4fe52a8f",
+    "provenance/qwen35-4b-hub-metadata.json": "b5b7ed6421d2fb3b47e06376c882141998eb84da264839cdd07f152cf18c3524",
+    "provenance/qwen35-4b-snapshot.json": "ab4e85abbdee4d465f93930921695fcf583d1e7f63d8f674708c72171e004ee4",
+    "provenance/runtime-qualification.json": "d76cbe0a408d8cf04db37b1ff2cc314074549ce46eb62b46e0612ba8844a70fb",
+    "requirements.txt": "e854f90e613e1bbfe0becba22f0366ffab4fc7aacfe7e27686620b2f8e7adb1a",
+    "run.py": "9eea373707d6ee30c888d1cf8315bb91ac78c696562d52890fb83194a3d96982",
+    "sandbox.py": "bc2eb9cd11e30bcd80000bef816f60b5c7727122ca678430ee5dc88f2dd19cf4"
+  },
+  "source_protocol_sha256": "5a09923e8946000a4abcc3abd37d9d707eb400ab2906a8dcbebf113c11e23cb4",
+  "audit": {
+    "conditions": [
+      "fresh",
+      "relevant",
+      "irrelevant",
+      "continue",
+      "replay",
+      "arithmetic",
+      "agent_dice"
+    ],
+    "checkpoint": "transfer/<condition>/checkpoint at the final predefined workflow budget, never best TEST or dev checkpoint",
+    "coverage": "Every condition recorded in completed source result.transfer. Missing stopped stream arms reported explicitly. Four primitive TEST sets, workflow TEST and novel workflow TEST per condition.",
+    "comparison": "Full generated records exactly, with token, format, execution, semantic-result and aggregate-score agreement separately reported.",
+    "process": "Standalone entrypoint loads a fresh base from the hash-pinned snapshot. It restores each complete adapter state using the existing loader. No optimizer construction or updates."
+  },
+  "compression": {
+    "methods": [
+      "arithmetic",
+      "agent_dice"
+    ],
+    "checkpoint": "fusion/<method>/checkpoint before workflow training; no checkpoint search",
+    "rank": 8,
+    "lora_alpha": 16,
+    "eligibility": "Original primitive_gate for every family using original baseline validation and saved fused validation. Repeat fused validation after fresh-process reload; require exact saved-record agreement before SVD.",
+    "failed_gate": "Record branch_gate_failed and skip SVD, TEST evaluation and any teacher designation for that branch. Continue the other prespecified method.",
+    "matrix": "D = offset + (alpha/rank) * B @ A, assembled from stored FP32 tensors in CPU float64.",
+    "svd": "torch.linalg.svd(D, full_matrices=False) on CPU float64: complete reduced spectrum, no randomized or approximate SVD, no gradient updates.",
+    "factors": "A = Vh[:8]; B = U[:,:8] * S[:8] / scaling. Store contiguous FP32 A/B and offset=None, with original rank/alpha/target modules.",
+    "precision_boundary": "Exact means non-randomized dense SVD in floating point; stored FP32 factor reconstruction error is measured separately from ideal singular-value tail energy.",
+    "scoring": "Preserve original native generation/EOS/parser/execution contract and original evaluation batch size/order. Measure all four primitive dev/TEST sets and target workflow dev/TEST/novel-TEST for original and compressed states.",
+    "test_firewall": "Gate and commit fixed rank8 checkpoint before reading any saved TEST prediction records or generating TEST answers. No TEST-dependent rank, checkpoint, compression or teacher selection.",
+    "memory": "Report factor/offset tensor bytes, checkpoint-file bytes and preserved expert archive separately. Base weights are unchanged; source expert training updates/exposures remain counted. SVD workspace is not measured as resident inference memory.",
+    "teacher": "No teacher, bank distillation or PorTAL bridge is started or qualified by this experiment."
+  },
+  "primary_source": {
+    "pytorch_svd": "https://docs.pytorch.org/docs/2.14/generated/torch.linalg.svd.html",
+    "local_inspection": "torch.linalg.svd docstring and CPU float64 reduced-SVD REPL; CPU 2.14.0 inspection, GPU runtime remains parent-qualified vendor ROCm torch."
+  }
+}

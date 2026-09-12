@@ -1,0 +1,349 @@
+{
+  "status": "four_initial_diagnoses_independently_audited",
+  "audited_native_records": 17024,
+  "audited_original_final_records": 15232,
+  "discrepancies": 0,
+  "source_fidelity": {
+    "completed_executions": "All four completed exit0, timed_out=false, bound embedded task/config/source hashes; exact source result/execution links.",
+    "source_archives": {
+      "60b28c301869499949144994503b1edafb85c42dc213d8cfaf547ea950cc62b3": {
+        "files": 44,
+        "archive_sha256": "d69cfedbe004ef359c706544c5d2e53884ff8544c737dcf7a662c0ada260f4ec"
+      },
+      "a11b30e89879aeeaec860b018784828405229d298f570aba76320cd996d2143c": {
+        "files": 44,
+        "archive_sha256": "182e68cc4f2085910e731d5daa0f7fb0a78fbacf73f2dd659d46a337e90a854c"
+      }
+    },
+    "archive_validation": "Recomputed full tar member source hashes and checked all frozen scientific dependencies and diagnosis entrypoint/protocol/config hashes.",
+    "local_collection": "Every collection entry and all305 result manifest artifacts per diagnosis matched actual bytes.",
+    "native_scoring": "Decoded all saved raw token sequences using the pinned tokenizer; checked first native EOS, padding, whole JSON, duplicate keys, strict schemas, separately implemented four-family executor, final state, traces, metrics, pair IDs and transitions.",
+    "no_scientific_scoring_imports": true,
+    "initial_dev": "All five initial DEV panels reproduced exact full records for all seven conditions in every stream.",
+    "1103_failed_attempt": "Original pre-model import failure retained. Same science/config atomic retry has a separate task/attempt ID; failure is infrastructure evidence."
+  },
+  "streams": {
+    "1103": {
+      "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/outputs/analysis/initial-diagnosis-1103.json",
+      "sha256": "7c2804734e89d2d8049f1ffc62195f72f76ae79a880194df3272ddc76f2f0e08",
+      "task_id": "followthrough-20260912-skills-initial-diagnosis1103-atomic",
+      "execution_sha256": "79f6043cd081c95ab9f73deedf15d58c0015c76339755467d39c52744aa2fd87",
+      "result_sha256": "096f29b2b5842afec871525bf4f100c018d3f4d9225f032351df060b61841ca6",
+      "source_sha256": "a11b30e89879aeeaec860b018784828405229d298f570aba76320cd996d2143c",
+      "target_family": "records",
+      "novel_before_after": {
+        "agent_dice": [
+          64,
+          64
+        ],
+        "arithmetic": [
+          64,
+          64
+        ],
+        "continue": [
+          32,
+          64
+        ],
+        "fresh": [
+          48,
+          64
+        ],
+        "irrelevant": [
+          49,
+          64
+        ],
+        "relevant": [
+          64,
+          64
+        ],
+        "replay": [
+          64,
+          64
+        ]
+      },
+      "fresh_diagnostic_before_after": {
+        "agent_dice": [
+          16,
+          16
+        ],
+        "arithmetic": [
+          16,
+          16
+        ],
+        "continue": [
+          8,
+          16
+        ],
+        "fresh": [
+          15,
+          16
+        ],
+        "irrelevant": [
+          14,
+          16
+        ],
+        "relevant": [
+          16,
+          16
+        ],
+        "replay": [
+          16,
+          16
+        ]
+      }
+    },
+    "2207": {
+      "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/outputs/analysis/initial-diagnosis-2207.json",
+      "sha256": "1ca4a26a6e2b8979f2d36ac95830e42793db2d0607af23d09b7b7ccdddcef2f9",
+      "task_id": "followthrough-20260912-skills-initial-diagnosis2207",
+      "execution_sha256": "c429b4fcd1fdfbd4a7e0f6e3b5e5653fa59132d5c1bcc144f5ecc03e93ce0455",
+      "result_sha256": "5375d7ac4e5656ff57906c528399f18bb89029c76ef56e46a23d910c022ff65b",
+      "source_sha256": "60b28c301869499949144994503b1edafb85c42dc213d8cfaf547ea950cc62b3",
+      "target_family": "text",
+      "novel_before_after": {
+        "agent_dice": [
+          51,
+          4
+        ],
+        "arithmetic": [
+          50,
+          1
+        ],
+        "continue": [
+          64,
+          32
+        ],
+        "fresh": [
+          0,
+          26
+        ],
+        "irrelevant": [
+          31,
+          63
+        ],
+        "relevant": [
+          34,
+          64
+        ],
+        "replay": [
+          32,
+          64
+        ]
+      },
+      "fresh_diagnostic_before_after": {
+        "agent_dice": [
+          10,
+          0
+        ],
+        "arithmetic": [
+          9,
+          0
+        ],
+        "continue": [
+          16,
+          8
+        ],
+        "fresh": [
+          0,
+          5
+        ],
+        "irrelevant": [
+          8,
+          16
+        ],
+        "relevant": [
+          9,
+          16
+        ],
+        "replay": [
+          8,
+          16
+        ]
+      }
+    },
+    "3301": {
+      "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/outputs/analysis/initial-diagnosis-3301.json",
+      "sha256": "bb5a02171c057461c8aa3f16c838c9af543d50d103dcb172603495296ac1952d",
+      "task_id": "followthrough-20260912-skills-initial-diagnosis3301",
+      "execution_sha256": "2ab8b2f475c4ed8ee9323d89e9aff26e35bec28ac11e86e012639e95d05f8d58",
+      "result_sha256": "78c103ac6648328cad51323f9a5355714db7a6781385568a1a44929e0ce9929b",
+      "source_sha256": "60b28c301869499949144994503b1edafb85c42dc213d8cfaf547ea950cc62b3",
+      "target_family": "files",
+      "novel_before_after": {
+        "agent_dice": [
+          32,
+          27
+        ],
+        "arithmetic": [
+          32,
+          31
+        ],
+        "continue": [
+          34,
+          64
+        ],
+        "fresh": [
+          4,
+          0
+        ],
+        "irrelevant": [
+          19,
+          22
+        ],
+        "relevant": [
+          60,
+          32
+        ],
+        "replay": [
+          32,
+          31
+        ]
+      },
+      "fresh_diagnostic_before_after": {
+        "agent_dice": [
+          8,
+          6
+        ],
+        "arithmetic": [
+          8,
+          8
+        ],
+        "continue": [
+          8,
+          16
+        ],
+        "fresh": [
+          1,
+          0
+        ],
+        "irrelevant": [
+          4,
+          7
+        ],
+        "relevant": [
+          16,
+          8
+        ],
+        "replay": [
+          8,
+          8
+        ]
+      }
+    },
+    "4409": {
+      "path": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/outputs/analysis/initial-diagnosis-4409.json",
+      "sha256": "5064d61158129964be61206fecb113ac362fe95c71c1395b14af244456b69414",
+      "task_id": "followthrough-20260912-skills-initial-diagnosis4409",
+      "execution_sha256": "181a80dcbbc89e21cf1c77daf43e1d5df021149b838b98231836b019b62910ec",
+      "result_sha256": "f37c18a4fa45b0bd3107ad653e9dd0c1ad4dfab80c5a0c38dc24894724a15adf",
+      "source_sha256": "a11b30e89879aeeaec860b018784828405229d298f570aba76320cd996d2143c",
+      "target_family": "calendar",
+      "novel_before_after": {
+        "agent_dice": [
+          11,
+          64
+        ],
+        "arithmetic": [
+          9,
+          63
+        ],
+        "continue": [
+          2,
+          64
+        ],
+        "fresh": [
+          0,
+          32
+        ],
+        "irrelevant": [
+          0,
+          64
+        ],
+        "relevant": [
+          22,
+          62
+        ],
+        "replay": [
+          64,
+          64
+        ]
+      },
+      "fresh_diagnostic_before_after": {
+        "agent_dice": [
+          2,
+          16
+        ],
+        "arithmetic": [
+          1,
+          16
+        ],
+        "continue": [
+          0,
+          16
+        ],
+        "fresh": [
+          0,
+          8
+        ],
+        "irrelevant": [
+          0,
+          16
+        ],
+        "relevant": [
+          4,
+          16
+        ],
+        "replay": [
+          16,
+          16
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "stream": 2207,
+      "claim": "The large fused-checkpoint text-composition losses occurred during the fixed workflow-training stage; initial merge inability alone cannot explain the final scores.",
+      "evidence": "Dice51/64 to4/64 with47lost and0gained; arithmetic50/64 to1/64 with49lost and0gained. Both familiar workflows remain64/64. Dice text primitives remain64/64; arithmetic replace falls16/16 to0/16.",
+      "program_identity": "On keep-replace-join, Dice had20/32 correct and arithmetic18/32; afterward all32 outputs use the familiar TRAIN keep-lower-join plan. On lower-keep-replace, Dice31/32 to4/32 and arithmetic32/32 to1/32; the operation sequence is correct but failed outputs use uppercase ALERT after lowercasing, yielding empty state.",
+      "fresh_diagnostic_confirmation": "Dice10/16 to0/16, arithmetic9/16 to0/16. Both now emit keep-lower-join on all8 first-pattern inputs; all8 second-pattern inputs have wrong arguments.",
+      "causal_boundary": "Observed losses after128updates are established. Training-template interference is a behavioral interpretation; which training tokens, gradients or internal circuits cause it is not isolated."
+    },
+    {
+      "stream": 3301,
+      "claim": "Nearly unchanged fusion averages conceal a copy/move switch; relevant-history composition loss is separately visible despite retained primitives.",
+      "evidence": "Dice32/64 to27/64 and arithmetic32/64 to31/64 retain0previously correct novel answers. Both lose all32 move-write-delete answers and gain27/31 write-copy-delete answers. Both primitive totals remain48/64 while copy0/16 to16/16 and move16/16 to0/16. Relevant60/64 to32/64 loses28answers while all64file primitives remaincorrect.",
+      "program_identity": "Initial merges substitute move for copy in write-copy-delete, leading to MISSING_PATH when deleting the now-moved source. After training they repair copy but substitute copy for move in move-write-delete, incorrectly retaining the original source. Relevant-history training changes write-copy-delete into write-move-delete.",
+      "fresh_diagnostic_confirmation": "Dice8/16 to6/16 with0retained; arithmetic8/16 to8/16 with0retained; relevant16/16 to8/16. The same operation substitutions recur on the fresh scenes.",
+      "causal_boundary": "Initial copy-binding failure and subsequent loss of move behavior are distinct. The relevant-history composition loss cannot be explained by inability to emit isolated copy/move calls."
+    },
+    {
+      "stream": 4409,
+      "claim": "Workflow training can successfully improve the dense fused representation on this calendar stream; this is not yet evidence of a unique DICE transfer advantage.",
+      "evidence": "Dice11/64 to64/64; arithmetic9/64 to63/64; fresh0/64 to32/64; irrelevant0/64 to64/64; relevant22/64 to62/64; original replay64/64 to64/64. Dice primitive total256/256 to253/256.",
+      "program_identity": "Initial fused failures predominantly substitute shift or rename for cancel in unseen compositions, often causing ARGUMENT_KEYS. Training produces add-rename-cancel and add-shift-cancel correctly in Dice.",
+      "fresh_diagnostic_confirmation": "Dice2/16 to16/16, arithmetic1/16 to16/16, irrelevant0/16 to16/16; fresh0/16 to8/16.",
+      "causal_boundary": "Irrelevant history reaches the same novel score. Dense fused offsets plus trainable factors differ from the dispatched rank8-only compressed hybrid."
+    },
+    {
+      "stream": 1103,
+      "claim": "Records composition provides limited evidence for an acquisition or transfer advantage because much behavior already works before workflow training.",
+      "evidence": "Fresh novel48/64 to64/64 and irrelevant49/64 to64/64; relevant, replay and both fusion conditions already64/64. Continue32/64 to64/64.",
+      "fresh_diagnostic_confirmation": "Fresh15/16 to16/16; relevant/replay/fusions16/16 to16/16.",
+      "causal_boundary": "High final accuracy is real, but saturation and operation clues in schemas limit attribution to learned history."
+    }
+  ],
+  "limitations": [
+    "Posthoc diagnosis of failures already observed on original TEST; no new confirmatory held-out claim.",
+    "Fresh diagnostic scenes preserve original request templates, operation parameters and task mappings; sixteen inputs per panel are diagnostic replication, not a broad benchmark.",
+    "One optimization seed. Four streams jointly change task family, order, aliases and scene seed; these effects are not independently identified.",
+    "Explicit three-step requests test composition of known sandbox calls, not autonomous subgoal discovery.",
+    "Argument schemas often disclose operation identity; copy/move share schemas but other operations may be inferred from structure.",
+    "Original replay labels describe prior primitive history. All original workflow arms trained512new examples without workflow-stage replay; the new hybrid explicitly introduces rehearsal during workflow updates.",
+    "No general superiority of fusion over replay or of relevant history over irrelevant history is established.",
+    "No TEST-based recipe, rank, budget, threshold or checkpoint changes were made."
+  ],
+  "hybrid_boundary": "Dispatched hybrid source8456 is frozen. Its separate-process audit remains pending at the time this analysis artifact is written; no hybrid TEST outcome is included here.",
+  "scientific_source_edits": 0,
+  "provider_dispatches": 0
+}

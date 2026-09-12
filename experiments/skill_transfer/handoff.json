@@ -1,0 +1,248 @@
+{
+  "status": "startup_guard_corrected_cpu_verified_ready_for_parent_sealing",
+  "gpu_dispatched_by_this_lane": false,
+  "branch": "research/resume-20260911",
+  "lane_directory": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer",
+  "entrypoint": "run.py",
+  "recommended_first_config": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/stream_1103.json",
+  "independent_stream_configs": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/stream_1103.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/stream_2207.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/stream_3301.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/stream_4409.json"
+  ],
+  "mode_notes": {
+    "study": "Runs baseline premise checks, bounded primitive qualification, then eligible comparisons. Reuses qualified expert checkpoints within that run.",
+    "qualify": "Stops after qualification. Available for a prerequisite-only pilot; a later study does not automatically import an earlier qualification directory.",
+    "prepare": "CPU corpus construction, oracle execution and leakage audit only."
+  },
+  "parent_dispatch_contract": {
+    "gpus": 1,
+    "entrypoint": "run.py",
+    "requires": "parent qualified BF16 Qwen3.5-4B ROCm runtime; skill loader additionally enforces single GPU, no offload, finite tensors and hash-verified snapshot",
+    "requirements_file": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/requirements.txt",
+    "output_directory": "empty or containing only dispatcher config/packages/execution/task/log/attempts transport entries; no prior experiment artifacts",
+    "no_provider_or_kubernetes_actions_performed": true
+  },
+  "commands": {
+    "cpu_tests": {
+      "cwd": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer",
+      "argv": [
+        "uv",
+        "run",
+        "--no-project",
+        "--python",
+        "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python",
+        "python",
+        "-m",
+        "pytest",
+        "-q"
+      ]
+    },
+    "cpu_prepare": {
+      "cwd": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer",
+      "argv": [
+        "uv",
+        "run",
+        "--no-project",
+        "--python",
+        "/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python",
+        "python",
+        "run.py",
+        "--config",
+        "configs/prepare_1103.json",
+        "--output-dir",
+        "<new-unused-output-directory>"
+      ]
+    },
+    "gpu_entrypoint": {
+      "cwd": "<parent-staged-lane-directory>",
+      "argv": [
+        "uv",
+        "run",
+        "--no-project",
+        "--python",
+        "<qualified-runtime-python>",
+        "python",
+        "run.py",
+        "--config",
+        "configs/stream_1103.json",
+        "--output-dir",
+        "<new-owned-run-output-directory>"
+      ]
+    }
+  },
+  "validation": {
+    "pytest": "37 passed",
+    "ruff": "passed",
+    "ast_import_and_dynamic_execution_audit": "passed",
+    "native_model_cpu_check": "tiny random Qwen3.5 model: adapter target installation, retained-logit forward, gradient flow, cached/uncached generation equality",
+    "native_tokenizer": "all 10240 examples over four streams roundtrip and fit without truncation; maximum prompt 259 tokens, answer including EOS 74 tokens, total 316 tokens",
+    "tokenizer_preflight": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/outputs/tokenizer-preflight.json",
+    "tokenizer_snapshot_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "tokenizer_eos": 248046,
+    "no_gpu_capability_result": true,
+    "latest_focused_revision": {
+      "pytest": "39 passed",
+      "command": "uv run --no-project --python '/Users/sudarshan/Documents/Codex/2026-09-05/i-want-you-to-run-extensive/experiments/portability/.venv/bin/python' python -m pytest -q tests/test_loading.py",
+      "ruff": "check and format --check passed for learning.py and tests/test_loading.py",
+      "ast_import_and_dynamic_execution_audit": "passed for changed Python files",
+      "checks": [
+        "real tiny Qwen3.5 uniform-device from_pretrained load without optional metadata",
+        "absent, None, empty and torch.device-valued optional maps",
+        "actual misplaced parameters/buffers irrespective of metadata, including GPU map hiding CPU tensors",
+        "invalid optional map values and types, root and nested Accelerate hooks",
+        "placement/type/map diagnostics in success logs and exceptions",
+        "existing precision/finiteness, ROCm isolation, snapshot hashes and restore rejection tests"
+      ],
+      "previous_focused_revision": "29 tests/test_loading.py and tests/test_learning.py tests passed before this metadata correction",
+      "earlier_full_lane_suite": "37 passed before loader hardening; unrelated research tests were not rerun for this guard-only correction"
+    }
+  },
+  "method_choice": {
+    "name": "Agent-Dice paper-equation implementation on dense effective LoRA deltas",
+    "paper": "https://arxiv.org/html/2601.03641v2",
+    "official_repository_commit": "32c0164f945f242a036b6f6876d0e406995cc90e",
+    "provenance": "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/provenance/agent_dice.json",
+    "critical_difference": "coordinate-wise majority follows paper and Llama script, not Qwen script tensor-wide any() selection",
+    "control": "arithmetic mean of identical expert deltas with identical dense storage",
+    "capacity_boundary": "independent specialist fusion stores four expert factor pairs plus dense projection offsets; neither fusion is labeled fixed-memory sequential LoRA8"
+  },
+  "main_comparisons": [
+    "relevant vs equal-budget irrelevant history, with fresh reference",
+    "continued learning vs 64-total-example replay, replacing two of four exposures without increasing update count",
+    "Agent-Dice vs arithmetic fusion of the same four qualified specialists"
+  ],
+  "checkpoint_format": {
+    "file": "checkpoint/state.pt",
+    "metadata": "checkpoint/metadata.json",
+    "reader": "torch.load(path, map_location=\"cpu\", weights_only=True)",
+    "schema": {
+      "adapter": {
+        "<original Qwen text projection module path>": {
+          "A": "FP32 [rank,in_features]",
+          "B": "FP32 [out_features,rank]",
+          "offset": "None or FP32 [out_features,in_features]"
+        }
+      },
+      "optimizer": "AdamW state_dict or None"
+    },
+    "effective_delta": "offset + (config.lora_alpha/config.rank) * B @ A; treat None offset as zero",
+    "fusion_payload": "B is exactly zero, A is original shared random initialization, offset holds the complete uncompressed fused update",
+    "forward": "base_linear(x) + float32 effective-delta application cast to base output dtype; offsets stay separate from frozen bfloat16 base weights",
+    "dense_rank": "shape and theoretical rank upper bound recorded per projection. No claim that numerical rank has been measured.",
+    "checked_loader": "learning.load_model(config) requires one visible ROCm GPU, verifies the pinned snapshot file hashes, loads BF16 base weights and installs FP32 adapters. learning.load_checkpoint(model, checkpoint_directory) validates checkpoint tensor/optimizer manifests and finite FP32 factors/offsets, restores them, and returns the saved optimizer state or None.",
+    "behavior_reconstruction": "Build spec/corpus with data.build_corpus(config); encoded=learning.load_tokenizer(config,spec[\"conventions\"]); call learning.generate(model,encoded,rows) and learning.score(records).",
+    "cpu_delta_extraction": "state=torch.load(checkpoint/\"state.pt\",map_location=\"cpu\",weights_only=True)[\"adapter\"]; delta=agent_dice.effective_delta(state,projection_name,config[\"lora_alpha\"]/config[\"rank\"])",
+    "fusion_locations": [
+      "fusion/agent_dice/checkpoint",
+      "fusion/arithmetic/checkpoint"
+    ],
+    "transfer_locations": "transfer/<condition>/checkpoint",
+    "same_process_behavioral_reload_verified_by_runner": true,
+    "separate_process_behavioral_reload": "not implemented as a standalone CLI; the exposed loader/generation functions support a parent-owned fresh-process audit",
+    "load_metadata": "runtime.json load_proof records requested base dtype, actual parameter/buffer dtype counts, ROCm/GPU identity, model-placement guard and every checked snapshot file hash."
+  },
+  "direction_gates": {
+    "saturated_raw_baseline": "stop before training; preserve predictions and design a new ambiguity-controlled binding experiment on train/dev only",
+    "primitive_acquisition_failure": "bounded shared 128/256/512 update ladder; save training-fit/format/EOS/execution diagnostics, and perform zero transfer/fusion/stream work",
+    "stream_new_family_failure": "stop only that arm before next task or workflow training; retain other qualified directions",
+    "fusion_or_composition_failure": "retain full outcome and continue remaining predefined controls; do not search hyperparameters using TEST",
+    "next_parent_owned_experiment": "conditionally compress a qualified fused effective update by SVD, re-evaluate generated behavior, then consider teacher or PorTAL bridge; none implemented here"
+  },
+  "limits": [
+    "synthetic in-memory tool execution, not external service use",
+    "argument schemas can reveal operation roles, so measured baselines and irrelevant-history controls are necessary",
+    "requests state operations and order: composition of known calls, not autonomous subgoal discovery",
+    "varied data, mappings, family orders and targets with one optimization seed; not an optimization-seed sweep",
+    "fusion expert-training and state budgets differ from fixed-rank sequential learning and are reported separately"
+  ],
+  "modified_paths": [
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/agent_dice.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/prepare_1103.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/qualify_1103.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/stream_1103.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/stream_2207.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/stream_3301.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/configs/stream_4409.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/data.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/handoff.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/learning.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/protocol.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/provenance/agent_dice.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/provenance/merge_llama3.source.txt",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/provenance/merge_qwen3.source.txt",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/provenance/qwen35-4b-hub-metadata.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/provenance/qwen35-4b-snapshot.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/provenance/runtime-qualification.json",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/pyproject.toml",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/requirements.txt",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/run.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/sandbox.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/tests/test_agent_dice.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/tests/test_data.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/tests/test_learning.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/tests/test_loading.py",
+    "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/tests/test_sandbox.py"
+  ],
+  "protocol_sha256": "5a09923e8946000a4abcc3abd37d9d707eb400ab2906a8dcbebf113c11e23cb4",
+  "numerical_path": {
+    "base_load_dtype": "bfloat16",
+    "native_fp32_base_components": "allowed; all parameter and buffer dtype counts recorded",
+    "adapter_and_dense_offset_dtype": "float32",
+    "device": "cuda:0 within exactly one visible ROCm GPU",
+    "offload": false,
+    "autocast": false,
+    "tf32": false,
+    "finiteness": "check all floating parameters/buffers after loading; validate checkpoint factors/offsets before restore and adapter parameters after every optimizer update",
+    "qualification": "Archived followthrough-20260912-qualify-qwen35-4b source explicitly loaded BF16. This lane preserves that requested dtype. The qualification does not establish behavior of this custom learner.",
+    "placement_proof": "Actual parameter/buffer placement plus absence of Accelerate hooks; optional hf_device_map validated when present"
+  },
+  "snapshot_identity": {
+    "manifest": "provenance/qwen35-4b-snapshot.json",
+    "manifest_sha256": "ab4e85abbdee4d465f93930921695fcf583d1e7f63d8f674708c72171e004ee4",
+    "required_files": 10,
+    "optional_verified_file": "merges.txt",
+    "expected_content_binding": "All ten existing cached-file digests independently cross-checked against Hub revision 851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a using LFS SHA256 for large files and fetched git-blob-checked small files.",
+    "runtime": "Verify size and streamed SHA256 for all required files before model loading; separately verify tokenizer inputs before tokenizer loading. Reject unknown entries except named nonloading documents and .cache metadata. Check file identity remained unchanged during hash/load.",
+    "directory_basename_is_not_identity_proof": true,
+    "runtime_cache_verified_in_this_cpu_revision": false,
+    "boundary": "Expected file hashes are verified against the exact Hub revision now; the loader will hash the actual GPU-side cached bytes at dispatch. No remote cache or provider action performed by this lane."
+  },
+  "startup_guard_correction": {
+    "failed_parent_attempt": "followthrough-20260912-skills-stream1103",
+    "failed_source_sha256": "36054cc8ec7a1d6d28db5c5fbc7e2efe0b2fc17ca15759ba9432df250a4c5b49",
+    "reported_failure": "MODEL_OFFLOAD before baseline; old guard incorrectly required optional hf_device_map metadata",
+    "source_diagnosis": {
+      "transformers_version": "5.16.1",
+      "accelerate_version": "1.14.0",
+      "modeling_utils_sha256": "f103dc66dd3f08e7842c3624c586b281250349e1c0707f394f98db992ec3cd8f",
+      "dispatch_condition_local_line": [
+        4412
+      ],
+      "accelerate_big_modeling_sha256": "4dac1453445a5998a949031ccacd8f2a91561a7152a00fc5e183c445ae38eb1f",
+      "official_source": "https://github.com/huggingface/transformers/blob/v5.16.1/src/transformers/modeling_utils.py",
+      "finding": "from_pretrained calls accelerate_dispatch only for multiple distinct devices or disk; single-device loading bypasses the code that sets hf_device_map",
+      "reproduction": "CPU tiny Qwen3.5 save_pretrained/from_pretrained with explicit root device_map and BF16 produces no hf_device_map and no Accelerate hooks; all parameters and buffers reside on CPU",
+      "boundary": "CPU reproduction verifies SDK metadata behavior, not the GPU placement of the failed parent attempt; old exception did not capture actual map/tensor devices"
+    },
+    "guard": {
+      "primary_evidence": "Every named parameter and buffer must physically reside on the assigned device; attached Accelerate _hf_hook objects are forbidden at root or nested modules",
+      "optional_metadata": "Absent, None or empty hf_device_map is accepted; a present map must have the expected mapping type and only assigned-device entries",
+      "diagnostics": "MODEL_PLACEMENT_AUDIT and all guard failures include expected device, actual tensor device counts, hf_device_map presence/type/repr and hook module/type/repr; successful load_proof retains the same record",
+      "unchanged_checks": "one visible ROCm GPU; BF16 base, FP32 adapters/offsets, finite tensors, no autocast/TF32, pinned snapshot file hashes"
+    },
+    "changed_paths": [
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/learning.py",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/tests/test_loading.py",
+      "/Users/sudarshan/Code/attempting-continual-learning/experiments/skill_transfer/handoff.json"
+    ],
+    "python_sha256": {
+      "learning.py": "e2920b3644069471f6ad3648b218493f3887b009d0a5a7e6eda9f1b9f0d2c7c5",
+      "tests/test_loading.py": "4e781d6581c11c5bfd9b2ecd0d7b6fc56616c90ed31afd73c1f776d28ccfa055"
+    },
+    "configs_and_protocol_changed": false,
+    "research_training_or_scoring_changed": false,
+    "dispatch_performed": false
+  }
+}
