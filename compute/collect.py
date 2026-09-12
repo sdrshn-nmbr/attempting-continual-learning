@@ -236,7 +236,7 @@ def main():
         {
             name: state
             for name, state in states.items()
-            if state in {"completed", "failed"}
+            if state in {"completed", "failed", "interrupted"}
         },
         destination,
         args.control_pod,
