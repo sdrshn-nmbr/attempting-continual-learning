@@ -1,0 +1,7 @@
+{
+  "arm": "A_chain",
+  "protocol": "configs/device4_sufficiency_protocol.json",
+  "protocol_sha256": "4495ab6e736a98aed7ef99dda1e3751f304bc6edd70fe1347d586c0babe06ba6",
+  "stage": "evaluate",
+  "training_dir": "/mnt/shared/cl-portfolio/runs/distillation-device4-sufficiency-a-chain-20260912"
+}

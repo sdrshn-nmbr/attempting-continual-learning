@@ -1,0 +1,1515 @@
+{
+  "audit_kind": "persistent_family_composition_learner_read_only_audit",
+  "boundary": "TEST is read only after fixed-final128 fresh-process evaluation completes; all conditions are reported. No checkpoint selection or new optimization. Oracle-only B/C outcomes are not teacher distillation.",
+  "families": {
+    "C": {
+      "checks": {
+        "all_final_and_intermediate_adapter_payload_hashes_recomputed": true,
+        "all_optimizer_files_hash_verified": true,
+        "fresh_process_reload_parity_runtime_assertion": true,
+        "full_schedule_targets_prompts_and_updates_verified": true,
+        "gpu_inference_by_auditor": false,
+        "optimizer_moment_mapping_cpu_torch_audit_pending_collection": true,
+        "source_or_receipt_mutations": false,
+        "teacher_absent_in_frozen_execution_path_and_runtime_assertions": true
+      },
+      "evaluation_pid": 5175,
+      "evaluation_sha256": "1898a29e6cd0ecb147d392b091314e9e212bd55a1c4ba6eb1ae2513d8eca6078",
+      "execution_sha256": "2caeca8b05ee60068291edc707d1b449bbbb4a347ef1126a6caa05b8f0a15fb8",
+      "initial": {
+        "dtype": "F32",
+        "file_sha256": "fbb32350350fdfe80dec7b6196f4afc0cab61d586f6f8d6300430bb201c526cb",
+        "tensor_count": 128,
+        "tensor_sha256": "c564aed5ded07d2b70e61420ae60e2b92c759ab6a0031b541e1356c63c40a9cf",
+        "trainable_parameters": 8519680
+      },
+      "methods": {
+        "oracle_sft": {
+          "checkpoints": {
+            "128": {
+              "dtype": "F32",
+              "file_sha256": "41363251b371442d374d40dfcd65f6d53467e2455351d07f2c4ffa25844f4069",
+              "tensor_count": 128,
+              "tensor_sha256": "88fb0de1fa96a5d7235caa8eca7a85a5120ddbaf4e8f3d68c9b861a902980f97",
+              "trainable_parameters": 8519680
+            },
+            "32": {
+              "dtype": "F32",
+              "file_sha256": "78cfdb17d4fc4f2cf64d8c4fe9fa5e7efe151865c143427478bc18b365124e55",
+              "tensor_count": 128,
+              "tensor_sha256": "eb4fe6216c6417ea1db48d596a749dd3945265861a170b304e6210b926b95fa6",
+              "trainable_parameters": 8519680
+            },
+            "96": {
+              "dtype": "F32",
+              "file_sha256": "ee604e87baf316a5ea85d8530c8af48c81221c5044d07a26a7917465ffc89628",
+              "tensor_count": 128,
+              "tensor_sha256": "06491e16ea83cc970ba5ebfbd44f02aca40f7fd3b52b35ab55ff793ad3b39e4d",
+              "trainable_parameters": 8519680
+            }
+          },
+          "examples": 512,
+          "full_train": {
+            "all": {
+              "correct": 50,
+              "format_valid": 128,
+              "literal_position_correct": [
+                78,
+                79,
+                74,
+                71
+              ],
+              "n": 128,
+              "terminated": 128
+            },
+            "depth3": {
+              "correct": 29,
+              "format_valid": 64,
+              "literal_position_correct": [
+                42,
+                43,
+                39,
+                35
+              ],
+              "n": 64,
+              "terminated": 64
+            },
+            "depth4": {
+              "correct": 21,
+              "format_valid": 64,
+              "literal_position_correct": [
+                36,
+                36,
+                35,
+                36
+              ],
+              "n": 64,
+              "terminated": 64
+            },
+            "program/dax,dax,dax,dax": {
+              "correct": 1,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/dax,dax,wug,wug": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/dax,dax,wug,zup": {
+              "correct": 0,
+              "format_valid": 2,
+              "literal_position_correct": [
+                0,
+                1,
+                0,
+                0
+              ],
+              "n": 2,
+              "terminated": 2
+            },
+            "program/dax,dax,zup": {
+              "correct": 1,
+              "format_valid": 4,
+              "literal_position_correct": [
+                1,
+                2,
+                3,
+                2
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/dax,dax,zup,wug": {
+              "correct": 1,
+              "format_valid": 2,
+              "literal_position_correct": [
+                1,
+                2,
+                1,
+                1
+              ],
+              "n": 2,
+              "terminated": 2
+            },
+            "program/dax,dax,zup,zup": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/dax,wug,dax": {
+              "correct": 1,
+              "format_valid": 3,
+              "literal_position_correct": [
+                1,
+                2,
+                3,
+                1
+              ],
+              "n": 3,
+              "terminated": 3
+            },
+            "program/dax,wug,dax,dax": {
+              "correct": 2,
+              "format_valid": 2,
+              "literal_position_correct": [
+                2,
+                2,
+                2,
+                2
+              ],
+              "n": 2,
+              "terminated": 2
+            },
+            "program/dax,wug,dax,wug": {
+              "correct": 1,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/dax,wug,wug,dax": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                1,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/dax,wug,wug,wug": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/dax,wug,zup": {
+              "correct": 1,
+              "format_valid": 4,
+              "literal_position_correct": [
+                1,
+                2,
+                1,
+                1
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/dax,wug,zup,dax": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/dax,wug,zup,wug": {
+              "correct": 0,
+              "format_valid": 2,
+              "literal_position_correct": [
+                0,
+                0,
+                1,
+                1
+              ],
+              "n": 2,
+              "terminated": 2
+            },
+            "program/dax,wug,zup,zup": {
+              "correct": 1,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/dax,zup,dax": {
+              "correct": 0,
+              "format_valid": 3,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                2
+              ],
+              "n": 3,
+              "terminated": 3
+            },
+            "program/dax,zup,dax,dax": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                0,
+                1,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/dax,zup,dax,zup": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/dax,zup,wug,dax": {
+              "correct": 0,
+              "format_valid": 2,
+              "literal_position_correct": [
+                2,
+                0,
+                0,
+                2
+              ],
+              "n": 2,
+              "terminated": 2
+            },
+            "program/dax,zup,wug,wug": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/dax,zup,zup": {
+              "correct": 2,
+              "format_valid": 4,
+              "literal_position_correct": [
+                4,
+                2,
+                2,
+                2
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/dax,zup,zup,dax": {
+              "correct": 1,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/dax,zup,zup,zup": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,dax,dax": {
+              "correct": 3,
+              "format_valid": 4,
+              "literal_position_correct": [
+                4,
+                3,
+                3,
+                3
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/wug,dax,dax,wug": {
+              "correct": 1,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,dax,dax,zup": {
+              "correct": 1,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,dax,wug": {
+              "correct": 1,
+              "format_valid": 3,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 3,
+              "terminated": 3
+            },
+            "program/wug,dax,wug,dax": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                1,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,dax,wug,wug": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,dax,zup": {
+              "correct": 0,
+              "format_valid": 3,
+              "literal_position_correct": [
+                1,
+                2,
+                0,
+                0
+              ],
+              "n": 3,
+              "terminated": 3
+            },
+            "program/wug,dax,zup,dax": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,dax,zup,wug": {
+              "correct": 1,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,dax,zup,zup": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,wug,dax": {
+              "correct": 2,
+              "format_valid": 4,
+              "literal_position_correct": [
+                4,
+                3,
+                2,
+                3
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/wug,wug,dax,zup": {
+              "correct": 0,
+              "format_valid": 2,
+              "literal_position_correct": [
+                0,
+                1,
+                0,
+                1
+              ],
+              "n": 2,
+              "terminated": 2
+            },
+            "program/wug,wug,wug": {
+              "correct": 1,
+              "format_valid": 3,
+              "literal_position_correct": [
+                2,
+                2,
+                2,
+                2
+              ],
+              "n": 3,
+              "terminated": 3
+            },
+            "program/wug,wug,wug,dax": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,wug,wug,wug": {
+              "correct": 1,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,wug,wug,zup": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                0,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,wug,zup": {
+              "correct": 3,
+              "format_valid": 4,
+              "literal_position_correct": [
+                4,
+                4,
+                3,
+                3
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/wug,wug,zup,wug": {
+              "correct": 1,
+              "format_valid": 2,
+              "literal_position_correct": [
+                2,
+                2,
+                1,
+                1
+              ],
+              "n": 2,
+              "terminated": 2
+            },
+            "program/wug,wug,zup,zup": {
+              "correct": 1,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,zup,dax": {
+              "correct": 1,
+              "format_valid": 3,
+              "literal_position_correct": [
+                2,
+                1,
+                2,
+                2
+              ],
+              "n": 3,
+              "terminated": 3
+            },
+            "program/wug,zup,dax,dax": {
+              "correct": 1,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,zup,dax,wug": {
+              "correct": 1,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,zup,dax,zup": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,zup,wug,dax": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                0,
+                0,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,zup,wug,zup": {
+              "correct": 1,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/wug,zup,zup": {
+              "correct": 2,
+              "format_valid": 3,
+              "literal_position_correct": [
+                2,
+                2,
+                3,
+                2
+              ],
+              "n": 3,
+              "terminated": 3
+            },
+            "program/wug,zup,zup,wug": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/zup,dax,dax,dax": {
+              "correct": 0,
+              "format_valid": 2,
+              "literal_position_correct": [
+                0,
+                0,
+                1,
+                1
+              ],
+              "n": 2,
+              "terminated": 2
+            },
+            "program/zup,dax,dax,wug": {
+              "correct": 1,
+              "format_valid": 2,
+              "literal_position_correct": [
+                1,
+                2,
+                1,
+                2
+              ],
+              "n": 2,
+              "terminated": 2
+            },
+            "program/zup,dax,dax,zup": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                0,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/zup,dax,wug,zup": {
+              "correct": 1,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/zup,dax,zup,dax": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                0,
+                1,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/zup,dax,zup,wug": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/zup,dax,zup,zup": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/zup,wug,dax": {
+              "correct": 1,
+              "format_valid": 4,
+              "literal_position_correct": [
+                2,
+                3,
+                2,
+                1
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/zup,wug,dax,dax": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                0,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/zup,wug,dax,zup": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/zup,wug,wug": {
+              "correct": 3,
+              "format_valid": 4,
+              "literal_position_correct": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/zup,wug,wug,wug": {
+              "correct": 1,
+              "format_valid": 2,
+              "literal_position_correct": [
+                1,
+                1,
+                2,
+                2
+              ],
+              "n": 2,
+              "terminated": 2
+            },
+            "program/zup,wug,wug,zup": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/zup,wug,zup": {
+              "correct": 2,
+              "format_valid": 4,
+              "literal_position_correct": [
+                4,
+                4,
+                3,
+                2
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/zup,wug,zup,dax": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/zup,wug,zup,wug": {
+              "correct": 1,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/zup,zup,dax": {
+              "correct": 1,
+              "format_valid": 3,
+              "literal_position_correct": [
+                1,
+                2,
+                1,
+                1
+              ],
+              "n": 3,
+              "terminated": 3
+            },
+            "program/zup,zup,dax,wug": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/zup,zup,dax,zup": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/zup,zup,zup": {
+              "correct": 4,
+              "format_valid": 4,
+              "literal_position_correct": [
+                4,
+                4,
+                4,
+                4
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/zup,zup,zup,dax": {
+              "correct": 0,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                0,
+                0
+              ],
+              "n": 1,
+              "terminated": 1
+            },
+            "program/zup,zup,zup,zup": {
+              "correct": 1,
+              "format_valid": 1,
+              "literal_position_correct": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "n": 1,
+              "terminated": 1
+            }
+          },
+          "ledger_sha256": "90f429930fb56b46803ffba6a88c5362c5f39906697c17029641b2ab830fd436",
+          "loss_tokens": 4096,
+          "paired_comparisons": {
+            "oracle_sft": {
+              "losses": 0,
+              "same_generated_tokens": 96,
+              "wins": 0
+            },
+            "untouched": {
+              "losses": 1,
+              "same_generated_tokens": 29,
+              "wins": 0
+            }
+          },
+          "per_uid_exposures": 4,
+          "rows_sha256": "a9d848174deb1c0176b19dfaab16c4450383992c3920fac41914fcfd7b8a3049",
+          "test": {
+            "all": {
+              "correct": 4,
+              "format_valid": 96,
+              "literal_position_correct": [
+                29,
+                41,
+                34,
+                17
+              ],
+              "n": 96,
+              "terminated": 96
+            },
+            "depth3": {
+              "correct": 3,
+              "format_valid": 48,
+              "literal_position_correct": [
+                10,
+                22,
+                14,
+                9
+              ],
+              "n": 48,
+              "terminated": 48
+            },
+            "depth4": {
+              "correct": 1,
+              "format_valid": 48,
+              "literal_position_correct": [
+                19,
+                19,
+                20,
+                8
+              ],
+              "n": 48,
+              "terminated": 48
+            },
+            "program/dax,dax,dax": {
+              "correct": 0,
+              "format_valid": 10,
+              "literal_position_correct": [
+                0,
+                4,
+                2,
+                0
+              ],
+              "n": 10,
+              "terminated": 10
+            },
+            "program/dax,dax,dax,wug": {
+              "correct": 0,
+              "format_valid": 4,
+              "literal_position_correct": [
+                1,
+                0,
+                2,
+                2
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/dax,dax,wug,dax": {
+              "correct": 0,
+              "format_valid": 4,
+              "literal_position_correct": [
+                1,
+                1,
+                2,
+                1
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/dax,wug,dax,zup": {
+              "correct": 0,
+              "format_valid": 3,
+              "literal_position_correct": [
+                1,
+                1,
+                0,
+                0
+              ],
+              "n": 3,
+              "terminated": 3
+            },
+            "program/dax,wug,wug": {
+              "correct": 2,
+              "format_valid": 9,
+              "literal_position_correct": [
+                3,
+                4,
+                3,
+                4
+              ],
+              "n": 9,
+              "terminated": 9
+            },
+            "program/dax,zup,wug": {
+              "correct": 0,
+              "format_valid": 10,
+              "literal_position_correct": [
+                1,
+                3,
+                2,
+                3
+              ],
+              "n": 10,
+              "terminated": 10
+            },
+            "program/dax,zup,wug,zup": {
+              "correct": 0,
+              "format_valid": 4,
+              "literal_position_correct": [
+                2,
+                2,
+                1,
+                0
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/dax,zup,zup,wug": {
+              "correct": 0,
+              "format_valid": 3,
+              "literal_position_correct": [
+                2,
+                3,
+                1,
+                0
+              ],
+              "n": 3,
+              "terminated": 3
+            },
+            "program/wug,dax,dax,dax": {
+              "correct": 0,
+              "format_valid": 3,
+              "literal_position_correct": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "n": 3,
+              "terminated": 3
+            },
+            "program/wug,dax,wug,zup": {
+              "correct": 0,
+              "format_valid": 4,
+              "literal_position_correct": [
+                0,
+                0,
+                2,
+                1
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/wug,zup,zup,dax": {
+              "correct": 0,
+              "format_valid": 3,
+              "literal_position_correct": [
+                1,
+                1,
+                2,
+                1
+              ],
+              "n": 3,
+              "terminated": 3
+            },
+            "program/zup,dax,wug,dax": {
+              "correct": 0,
+              "format_valid": 3,
+              "literal_position_correct": [
+                1,
+                3,
+                0,
+                0
+              ],
+              "n": 3,
+              "terminated": 3
+            },
+            "program/zup,dax,wug,wug": {
+              "correct": 0,
+              "format_valid": 4,
+              "literal_position_correct": [
+                1,
+                1,
+                2,
+                0
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/zup,dax,zup": {
+              "correct": 0,
+              "format_valid": 10,
+              "literal_position_correct": [
+                0,
+                5,
+                3,
+                1
+              ],
+              "n": 10,
+              "terminated": 10
+            },
+            "program/zup,wug,wug,dax": {
+              "correct": 0,
+              "format_valid": 3,
+              "literal_position_correct": [
+                2,
+                1,
+                1,
+                0
+              ],
+              "n": 3,
+              "terminated": 3
+            },
+            "program/zup,zup,dax,dax": {
+              "correct": 0,
+              "format_valid": 3,
+              "literal_position_correct": [
+                1,
+                0,
+                2,
+                0
+              ],
+              "n": 3,
+              "terminated": 3
+            },
+            "program/zup,zup,wug": {
+              "correct": 1,
+              "format_valid": 9,
+              "literal_position_correct": [
+                6,
+                6,
+                4,
+                1
+              ],
+              "n": 9,
+              "terminated": 9
+            },
+            "program/zup,zup,wug,zup": {
+              "correct": 1,
+              "format_valid": 4,
+              "literal_position_correct": [
+                4,
+                4,
+                4,
+                1
+              ],
+              "n": 4,
+              "terminated": 4
+            },
+            "program/zup,zup,zup,wug": {
+              "correct": 0,
+              "format_valid": 3,
+              "literal_position_correct": [
+                2,
+                2,
+                1,
+                1
+              ],
+              "n": 3,
+              "terminated": 3
+            }
+          },
+          "updates": 128,
+          "wrong_cached_target_exposures": 0
+        }
+      },
+      "oracle_only": true,
+      "panels_sha256": "6db8d5c07104289751a7881872cc00926d09fd5f4270ce26d70cd7b8c35cfeda",
+      "status": "independently_audited_completed",
+      "training_pid": 4922,
+      "training_sha256": "fbd606c13caebed017f35a05306501f287615d3d82394e4fc1027ec643721068",
+      "untouched_test": {
+        "all": {
+          "correct": 5,
+          "format_valid": 95,
+          "literal_position_correct": [
+            28,
+            32,
+            26,
+            25
+          ],
+          "n": 96,
+          "terminated": 95
+        },
+        "depth3": {
+          "correct": 4,
+          "format_valid": 48,
+          "literal_position_correct": [
+            13,
+            21,
+            11,
+            9
+          ],
+          "n": 48,
+          "terminated": 48
+        },
+        "depth4": {
+          "correct": 1,
+          "format_valid": 47,
+          "literal_position_correct": [
+            15,
+            11,
+            15,
+            16
+          ],
+          "n": 48,
+          "terminated": 47
+        },
+        "program/dax,dax,dax": {
+          "correct": 0,
+          "format_valid": 10,
+          "literal_position_correct": [
+            0,
+            3,
+            2,
+            0
+          ],
+          "n": 10,
+          "terminated": 10
+        },
+        "program/dax,dax,dax,wug": {
+          "correct": 0,
+          "format_valid": 4,
+          "literal_position_correct": [
+            1,
+            0,
+            3,
+            0
+          ],
+          "n": 4,
+          "terminated": 4
+        },
+        "program/dax,dax,wug,dax": {
+          "correct": 0,
+          "format_valid": 4,
+          "literal_position_correct": [
+            2,
+            1,
+            1,
+            2
+          ],
+          "n": 4,
+          "terminated": 4
+        },
+        "program/dax,wug,dax,zup": {
+          "correct": 0,
+          "format_valid": 3,
+          "literal_position_correct": [
+            3,
+            2,
+            1,
+            1
+          ],
+          "n": 3,
+          "terminated": 3
+        },
+        "program/dax,wug,wug": {
+          "correct": 2,
+          "format_valid": 9,
+          "literal_position_correct": [
+            3,
+            5,
+            4,
+            4
+          ],
+          "n": 9,
+          "terminated": 9
+        },
+        "program/dax,zup,wug": {
+          "correct": 0,
+          "format_valid": 10,
+          "literal_position_correct": [
+            2,
+            6,
+            0,
+            2
+          ],
+          "n": 10,
+          "terminated": 10
+        },
+        "program/dax,zup,wug,zup": {
+          "correct": 0,
+          "format_valid": 4,
+          "literal_position_correct": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "n": 4,
+          "terminated": 4
+        },
+        "program/dax,zup,zup,wug": {
+          "correct": 0,
+          "format_valid": 3,
+          "literal_position_correct": [
+            0,
+            0,
+            0,
+            3
+          ],
+          "n": 3,
+          "terminated": 3
+        },
+        "program/wug,dax,dax,dax": {
+          "correct": 0,
+          "format_valid": 3,
+          "literal_position_correct": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "n": 3,
+          "terminated": 3
+        },
+        "program/wug,dax,wug,zup": {
+          "correct": 0,
+          "format_valid": 4,
+          "literal_position_correct": [
+            1,
+            0,
+            1,
+            3
+          ],
+          "n": 4,
+          "terminated": 4
+        },
+        "program/wug,zup,zup,dax": {
+          "correct": 0,
+          "format_valid": 3,
+          "literal_position_correct": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "n": 3,
+          "terminated": 3
+        },
+        "program/zup,dax,wug,dax": {
+          "correct": 0,
+          "format_valid": 3,
+          "literal_position_correct": [
+            2,
+            3,
+            0,
+            0
+          ],
+          "n": 3,
+          "terminated": 3
+        },
+        "program/zup,dax,wug,wug": {
+          "correct": 0,
+          "format_valid": 4,
+          "literal_position_correct": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "n": 4,
+          "terminated": 4
+        },
+        "program/zup,dax,zup": {
+          "correct": 0,
+          "format_valid": 10,
+          "literal_position_correct": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "n": 10,
+          "terminated": 10
+        },
+        "program/zup,wug,wug,dax": {
+          "correct": 0,
+          "format_valid": 3,
+          "literal_position_correct": [
+            1,
+            0,
+            1,
+            2
+          ],
+          "n": 3,
+          "terminated": 3
+        },
+        "program/zup,zup,dax,dax": {
+          "correct": 0,
+          "format_valid": 3,
+          "literal_position_correct": [
+            2,
+            1,
+            2,
+            0
+          ],
+          "n": 3,
+          "terminated": 3
+        },
+        "program/zup,zup,wug": {
+          "correct": 2,
+          "format_valid": 9,
+          "literal_position_correct": [
+            7,
+            7,
+            5,
+            2
+          ],
+          "n": 9,
+          "terminated": 9
+        },
+        "program/zup,zup,wug,zup": {
+          "correct": 1,
+          "format_valid": 4,
+          "literal_position_correct": [
+            1,
+            1,
+            4,
+            1
+          ],
+          "n": 4,
+          "terminated": 4
+        },
+        "program/zup,zup,zup,wug": {
+          "correct": 0,
+          "format_valid": 2,
+          "literal_position_correct": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "n": 3,
+          "terminated": 2
+        }
+      }
+    }
+  },
+  "observed_at": "2026-09-12T07:28:18.975089+00:00",
+  "qualification_sha256": "6ae1fef4d69e70341c63ff4b1ac1cb4edaee19923757af474802fb56460b54ae"
+}

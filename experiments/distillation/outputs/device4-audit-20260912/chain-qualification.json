@@ -1,0 +1,2729 @@
+{
+  "audit_kind": "independent_external_chain_qualification_state_and_cache_audit",
+  "cache": {
+    "caches/A/flat_mixed.json": {
+      "all_final_emitted_targets_exact": true,
+      "rows": 128,
+      "sha256": "15785d5a215af210bdf002f2793b5bd4467536a24b6cfee7e981343f02608bc4",
+      "token_identical_to_oracle": false,
+      "wrong_targets_retained": [
+        {
+          "cached_body": "8 6 6 0",
+          "cached_token_ids": [
+            23,
+            220,
+            21,
+            220,
+            21,
+            220,
+            15,
+            248046
+          ],
+          "gold": [
+            8,
+            6,
+            0,
+            6
+          ],
+          "initial": [
+            6,
+            0,
+            6,
+            8
+          ],
+          "program": [
+            "zup",
+            "zup",
+            "zup"
+          ],
+          "uid": "870b35ae791e4e6281922beee8f2da7667cf5c0568aecffc28a8695d07ff4d98"
+        },
+        {
+          "cached_body": "0 9 9 0",
+          "cached_token_ids": [
+            15,
+            220,
+            24,
+            220,
+            24,
+            220,
+            15,
+            248046
+          ],
+          "gold": [
+            9,
+            9,
+            0,
+            0
+          ],
+          "initial": [
+            9,
+            0,
+            9,
+            0
+          ],
+          "program": [
+            "wug",
+            "wug",
+            "zup",
+            "wug"
+          ],
+          "uid": "1ad97001f35643eda43f3a416d4859562cef6b875e61e05a382ce2ea3927b6d9"
+        }
+      ]
+    }
+  },
+  "chain": {
+    "A/flat_mixed": {
+      "splits": {
+        "train": {
+          "final_correct_despite_wrong_single_command_steps": 0,
+          "first_incorrect_single_command_position": {
+            "1": 1,
+            "3": 1
+          },
+          "gates": {
+            "depth3": {
+              "correct": 63,
+              "gate": {
+                "gain": 0.96875,
+                "losses": 0,
+                "n": 64,
+                "paired_one_sided_p": 2.168404344971009e-19,
+                "passed": true,
+                "student_accuracy": 0.015625,
+                "teacher_accuracy": 0.984375,
+                "wins": 62
+              },
+              "n": 64,
+              "raw_correct": 1
+            },
+            "depth4": {
+              "correct": 63,
+              "gate": {
+                "gain": 0.8125,
+                "losses": 0,
+                "n": 64,
+                "paired_one_sided_p": 2.220446049250313e-16,
+                "passed": true,
+                "student_accuracy": 0.171875,
+                "teacher_accuracy": 0.984375,
+                "wins": 52
+              },
+              "n": 64,
+              "raw_correct": 11
+            }
+          },
+          "single_command_steps": {
+            "dax": {
+              "correct": 144,
+              "n": 144
+            },
+            "wug": {
+              "correct": 154,
+              "n": 154
+            },
+            "zup": {
+              "correct": 148,
+              "n": 150
+            }
+          },
+          "wrong_chains": [
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "zup",
+                "zup",
+                "zup"
+              ],
+              "uid": "870b35ae791e4e6281922beee8f2da7667cf5c0568aecffc28a8695d07ff4d98",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "wug",
+                "wug",
+                "zup",
+                "wug"
+              ],
+              "uid": "1ad97001f35643eda43f3a416d4859562cef6b875e61e05a382ce2ea3927b6d9",
+              "wrong_single_command_indices": [
+                3
+              ]
+            }
+          ]
+        },
+        "validation": {
+          "final_correct_despite_wrong_single_command_steps": 0,
+          "first_incorrect_single_command_position": {
+            "4": 1
+          },
+          "gates": {
+            "depth3": {
+              "correct": 24,
+              "gate": {
+                "gain": 1,
+                "losses": 0,
+                "n": 24,
+                "paired_one_sided_p": 5.960464477539063e-08,
+                "passed": true,
+                "student_accuracy": 0,
+                "teacher_accuracy": 1,
+                "wins": 24
+              },
+              "n": 24,
+              "raw_correct": 0
+            },
+            "depth4": {
+              "correct": 23,
+              "gate": {
+                "gain": 0.875,
+                "losses": 0,
+                "n": 24,
+                "paired_one_sided_p": 4.76837158203125e-07,
+                "passed": true,
+                "student_accuracy": 0.08333333333333333,
+                "teacher_accuracy": 0.9583333333333334,
+                "wins": 21
+              },
+              "n": 24,
+              "raw_correct": 2
+            }
+          },
+          "single_command_steps": {
+            "dax": {
+              "correct": 57,
+              "n": 57
+            },
+            "wug": {
+              "correct": 63,
+              "n": 63
+            },
+            "zup": {
+              "correct": 47,
+              "n": 48
+            }
+          },
+          "wrong_chains": [
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 4,
+              "program": [
+                "zup",
+                "wug",
+                "zup",
+                "zup"
+              ],
+              "uid": "c3301eb35f4636e1034f11a0d4a0f5a24934ec5aa825eeaa6fd05a3cb0741cff",
+              "wrong_single_command_indices": [
+                4
+              ]
+            }
+          ]
+        }
+      },
+      "status": "qualified"
+    },
+    "B/flat_mixed": {
+      "splits": {
+        "train": {
+          "final_correct_despite_wrong_single_command_steps": 0,
+          "first_incorrect_single_command_position": {
+            "1": 8,
+            "2": 7,
+            "3": 8,
+            "4": 1
+          },
+          "gates": {
+            "depth3": {
+              "correct": 56,
+              "gate": {
+                "gain": 0.875,
+                "losses": 0,
+                "n": 64,
+                "paired_one_sided_p": 1.3877787807814457e-17,
+                "passed": true,
+                "student_accuracy": 0,
+                "teacher_accuracy": 0.875,
+                "wins": 56
+              },
+              "n": 64,
+              "raw_correct": 0
+            },
+            "depth4": {
+              "correct": 48,
+              "gate": {
+                "gain": 0.703125,
+                "losses": 2,
+                "n": 64,
+                "paired_one_sided_p": 2.177813485104707e-12,
+                "passed": false,
+                "student_accuracy": 0.046875,
+                "teacher_accuracy": 0.75,
+                "wins": 47
+              },
+              "n": 64,
+              "raw_correct": 3
+            }
+          },
+          "single_command_steps": {
+            "dax": {
+              "correct": 128,
+              "n": 144
+            },
+            "wug": {
+              "correct": 153,
+              "n": 154
+            },
+            "zup": {
+              "correct": 139,
+              "n": 150
+            }
+          },
+          "wrong_chains": [
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "wug",
+                "dax",
+                "wug"
+              ],
+              "uid": "c76a97c86ba239e407c74a5a374ed3a982e6d7f39c827fe59b4b1b965f7a320e",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "dax",
+                "zup",
+                "zup"
+              ],
+              "uid": "fad6e20b83af4d403be5559a3ddfe4052a7783169633ef9a7fb9fe804428afc5",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "zup",
+                "zup",
+                "dax"
+              ],
+              "uid": "517144559a4bfbb71a180b6a4ebecf54a7ded6bc502e37bb7267e02681d2af52",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "dax",
+                "wug",
+                "zup"
+              ],
+              "uid": "202588b0e2ac675c519b7c40a39b1672c685b07cd1c1f1a9d0ebf7d62dd9c753",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "zup",
+                "wug",
+                "wug"
+              ],
+              "uid": "2010bbbff10ea95236003f8daa462d94342d361cf1181f7262cf2970174f7a7f",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "zup",
+                "zup",
+                "zup"
+              ],
+              "uid": "28373c5c893313314bc0480e1d1af0d41a9a2498bd29305b4a0245fa6dd622f0",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "wug",
+                "dax",
+                "zup"
+              ],
+              "uid": "ac45c10708b52f67333676069f6514c8a9bd1492b6ec7c55b0f3528a98f4cf54",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "dax",
+                "wug",
+                "dax"
+              ],
+              "uid": "48618282c3c2e14a91a57b34208e1aaf5bbee1f9733027ec51b9454a0c79a48f",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "dax",
+                "zup",
+                "wug",
+                "wug"
+              ],
+              "uid": "ae2d194dd6fe4b9cdcbc76b3e1238275f76b1fc6a88f1b89ee3588fc77733063",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "dax",
+                "dax",
+                "zup",
+                "wug"
+              ],
+              "uid": "090b508d0426a42ecb79296afbc94c677170b09840a6f5e29b41446c77db46c2",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "zup",
+                "dax",
+                "zup",
+                "wug"
+              ],
+              "uid": "e9070006f49321e817159d6c5132bd06108dcc0f868a3eb9acafe69c7eb2344f",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "zup",
+                "dax",
+                "dax",
+                "dax"
+              ],
+              "uid": "691015bf2a245095263b855e5bac96338e5b226c5ad60a2629e7341d94286a2e",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "dax",
+                "zup",
+                "dax",
+                "zup"
+              ],
+              "uid": "c93ebdc238ca4747bb96adbedb02057c9c68ec7aedbc8e84987241b53177269e",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "zup",
+                "dax",
+                "dax",
+                "zup"
+              ],
+              "uid": "97314c5661f0e8633bea0c5c35ce6c39899a60e46b665cff774e9f257e1a826f",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "wug",
+                "zup",
+                "wug",
+                "zup"
+              ],
+              "uid": "68619df7a0d235f6e58783875a072e6c33b51cd36e1de8af60d114025e937b1a",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "zup",
+                "wug",
+                "dax",
+                "dax"
+              ],
+              "uid": "f93e003a7ee62432992d9b954ec5a9fec2003ae488b69fffa09e2f257b7e3fd9",
+              "wrong_single_command_indices": [
+                3,
+                4
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "wug",
+                "wug",
+                "dax",
+                "zup"
+              ],
+              "uid": "ec7fa3895f9b2f55a1e34160130f751013bd605946af58854b4540fb90d03d96",
+              "wrong_single_command_indices": [
+                3,
+                4
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "dax",
+                "wug",
+                "dax",
+                "wug"
+              ],
+              "uid": "91485a4a5b4accbd80c0364483f0d7ba9a78970a4b0f7b9bc73c444e455fd6fc",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "zup",
+                "dax",
+                "zup",
+                "dax"
+              ],
+              "uid": "4fca17d4153a853882731ac332510a586faa1df78ad78cb704ae9f0e74440ead",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "dax",
+                "wug",
+                "zup",
+                "dax"
+              ],
+              "uid": "91ee925299c192ad06646a593cfe3de04cea33f339519b35f2d3d2d702d66d08",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "dax",
+                "zup",
+                "wug",
+                "dax"
+              ],
+              "uid": "7bd68ea73997f2c87c067baece99a94e6287478cbcdb7c9b7c5033756d0c1be0",
+              "wrong_single_command_indices": [
+                2,
+                4
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 4,
+              "program": [
+                "wug",
+                "wug",
+                "wug",
+                "zup"
+              ],
+              "uid": "d9adb191f9c73683ab7c483e93cf9c4d9185dda1e00e84062853191732a90cc2",
+              "wrong_single_command_indices": [
+                4
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "dax",
+                "wug",
+                "wug",
+                "dax"
+              ],
+              "uid": "0263571e26ed032299f36181bb3018e34278dc95fed8810e29349e905d737d95",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "zup",
+                "dax",
+                "dax",
+                "wug"
+              ],
+              "uid": "bb3ae4626874f61726d6d76db5730692c2d47855dcad9376a57e33ee327d8368",
+              "wrong_single_command_indices": [
+                2,
+                3
+              ]
+            }
+          ]
+        },
+        "validation": {
+          "final_correct_despite_wrong_single_command_steps": 0,
+          "first_incorrect_single_command_position": {
+            "1": 2,
+            "2": 3,
+            "3": 5,
+            "4": 1
+          },
+          "gates": {
+            "depth3": {
+              "correct": 20,
+              "gate": {
+                "gain": 0.8333333333333334,
+                "losses": 0,
+                "n": 24,
+                "paired_one_sided_p": 9.5367431640625e-07,
+                "passed": false,
+                "student_accuracy": 0,
+                "teacher_accuracy": 0.8333333333333334,
+                "wins": 20
+              },
+              "n": 24,
+              "raw_correct": 0
+            },
+            "depth4": {
+              "correct": 17,
+              "gate": {
+                "gain": 0.7083333333333334,
+                "losses": 0,
+                "n": 24,
+                "paired_one_sided_p": 7.62939453125e-06,
+                "passed": false,
+                "student_accuracy": 0,
+                "teacher_accuracy": 0.7083333333333334,
+                "wins": 17
+              },
+              "n": 24,
+              "raw_correct": 0
+            }
+          },
+          "single_command_steps": {
+            "dax": {
+              "correct": 46,
+              "n": 57
+            },
+            "wug": {
+              "correct": 63,
+              "n": 63
+            },
+            "zup": {
+              "correct": 45,
+              "n": 48
+            }
+          },
+          "wrong_chains": [
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "dax",
+                "dax",
+                "wug"
+              ],
+              "uid": "eb8829580d9b35c296404b649fffb7c96c72c9f8aafa4c779d31390de1f87013",
+              "wrong_single_command_indices": [
+                1,
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "zup",
+                "dax",
+                "dax"
+              ],
+              "uid": "024c1b9c41d075faf7226b1b6a58a03cbeaa73d2a2a4bd861560a160714c0dfa",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "zup",
+                "dax",
+                "wug"
+              ],
+              "uid": "75f1fe905147684abfed14da8e770a8e0e38574209eab2ab71ac194a572b6016",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "zup",
+                "dax",
+                "dax"
+              ],
+              "uid": "a7d712096ec15b398d963d27dc0a40302722a1700dac57c56a02b5d95eff247b",
+              "wrong_single_command_indices": [
+                2,
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "zup",
+                "wug",
+                "zup",
+                "zup"
+              ],
+              "uid": "3c8690f3d8669bbb56df4b017b85d07781d3c7509f553d00e12306022792c4ed",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "dax",
+                "zup",
+                "dax",
+                "wug"
+              ],
+              "uid": "f4522399ba0a5201f84da94c53ef9ced381259223f386872e13a7792b7d3ee83",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "dax",
+                "dax",
+                "zup",
+                "dax"
+              ],
+              "uid": "90a0e0d17c80c8b83169cd9a85a2ec6b9fcf82d0c7687bb21e2b7dc8257b1089",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 4,
+              "program": [
+                "wug",
+                "wug",
+                "dax",
+                "dax"
+              ],
+              "uid": "9197fa89fcc222a009afe1d2339fb31d2e51eced7febfab20094c87a4cdf9d82",
+              "wrong_single_command_indices": [
+                4
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "dax",
+                "dax",
+                "dax",
+                "zup"
+              ],
+              "uid": "86e026feb04df5c3adc0cd05f67fa5ee410cb646af34d775ab7a4941c92cdfcc",
+              "wrong_single_command_indices": [
+                2,
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "wug",
+                "wug",
+                "dax",
+                "wug"
+              ],
+              "uid": "c2e390e3c549012c789ae84e3c109245a459b25b1b4fd633b680d01e20234394",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "dax",
+                "dax",
+                "zup",
+                "dax"
+              ],
+              "uid": "e3aa732dc99e2beb4aacb1e7a1d520918ab68d7c3a8bb051b1c5baec51d88151",
+              "wrong_single_command_indices": [
+                3
+              ]
+            }
+          ]
+        }
+      },
+      "status": "rejected_whole_chain_gate"
+    },
+    "C/flat_mixed": {
+      "splits": {
+        "train": {
+          "final_correct_despite_wrong_single_command_steps": 9,
+          "first_incorrect_single_command_position": {
+            "1": 28,
+            "2": 17,
+            "3": 6
+          },
+          "gates": {
+            "depth3": {
+              "correct": 40,
+              "gate": {
+                "gain": 0.5625,
+                "losses": 1,
+                "n": 64,
+                "paired_one_sided_p": 1.418811734765768e-10,
+                "passed": false,
+                "student_accuracy": 0.0625,
+                "teacher_accuracy": 0.625,
+                "wins": 37
+              },
+              "n": 64,
+              "raw_correct": 4
+            },
+            "depth4": {
+              "correct": 46,
+              "gate": {
+                "gain": 0.625,
+                "losses": 0,
+                "n": 64,
+                "paired_one_sided_p": 9.094947017729282e-13,
+                "passed": false,
+                "student_accuracy": 0.09375,
+                "teacher_accuracy": 0.71875,
+                "wins": 40
+              },
+              "n": 64,
+              "raw_correct": 6
+            }
+          },
+          "single_command_steps": {
+            "dax": {
+              "correct": 143,
+              "n": 144
+            },
+            "wug": {
+              "correct": 74,
+              "n": 154
+            },
+            "zup": {
+              "correct": 149,
+              "n": 150
+            }
+          },
+          "wrong_chains": [
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "zup",
+                "wug",
+                "dax"
+              ],
+              "uid": "09241d44208556c576c076cfa3245be98e77730773e27a3d34012b51e0393da3",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "zup",
+                "zup"
+              ],
+              "uid": "6c70f8362c6fe36a08c5f72d2b59a0c813c8f8b6a4d935397bd3a3c70dff38e9",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "zup",
+                "zup"
+              ],
+              "uid": "f06789abd262806d5100fa971ea60ce3714506a07726c884a3e6b17a22f23ed0",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "wug",
+                "wug"
+              ],
+              "uid": "9f6079fc186f35946cd5f6ca59ab9d44bf85ae21955cbebd757a87d0ddaadd64",
+              "wrong_single_command_indices": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "zup",
+                "wug",
+                "zup"
+              ],
+              "uid": "25296c61a1ed42a94d048ae014195be6000ae216c55414ad17c6db27d61aa60a",
+              "wrong_single_command_indices": [
+                1,
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "dax",
+                "wug"
+              ],
+              "uid": "d56d13e00cbae77b3296cdc218fa31aa00ee1651ed2573ff19cf8cdf9e41717e",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "zup",
+                "wug",
+                "zup"
+              ],
+              "uid": "a5b581e68ba5bea2f2e98541d1fc876fdc6646eef5057def327d7b55de294883",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "dax",
+                "wug",
+                "zup"
+              ],
+              "uid": "cc88326d1c7f350e1b1840eabaa00161a5e29d69ed4f19ebc1ca771c5bac92b0",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "zup",
+                "wug",
+                "zup"
+              ],
+              "uid": "271115bd7bf9e265162b8ef1e36ef8be3a0cae3e36d7f4487d437b8167536356",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "dax",
+                "wug",
+                "dax"
+              ],
+              "uid": "dfc9394ca4999e3f046b4938c5250e8d1615de12a25d61a074ebf698077a9de7",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "dax",
+                "zup"
+              ],
+              "uid": "46b64f12ab8df69195c570360eecbc973bf5d7ead24d9cc0f631bee28caf78a6",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "wug",
+                "wug"
+              ],
+              "uid": "cb8a36ddc369c1a23ee67b08115828c62b0450bfdb9414ed28ec66b137ac4955",
+              "wrong_single_command_indices": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "dax",
+                "dax"
+              ],
+              "uid": "f805c7302432fdd7cc031297cf75ed040f0d2565254714bcc7ba9fe6132acee7",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "zup",
+                "wug",
+                "dax"
+              ],
+              "uid": "16ef12515d92ecba3752eb1865677e0b92abe276e8cd5a859f77d539d06058c2",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "zup",
+                "wug",
+                "zup"
+              ],
+              "uid": "46b9b34d698eabd7ccf4b9730ece41fb1047647e15f3963ff2ec0fea8c8a3d0b",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "dax",
+                "wug"
+              ],
+              "uid": "3fba3f57ae07b00c5773a60e35cd25a179e9680bf1a0ea010819d0cb9bed70f1",
+              "wrong_single_command_indices": [
+                1,
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "wug",
+                "dax"
+              ],
+              "uid": "535ac7262a7f4c07fd7d398ec034f3fcfdc72b3ec939ff440d42bb01f602a864",
+              "wrong_single_command_indices": [
+                1,
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "dax",
+                "wug",
+                "zup"
+              ],
+              "uid": "686aa4782e06f86b37753cd7975f0a4d459700cbfa331011067b483d08ee32cb",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "dax",
+                "wug",
+                "dax"
+              ],
+              "uid": "7382221726682bb930aec7e2ed107615c916a664b9d49ac2c2a7bb33d9751ee8",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "wug",
+                "dax"
+              ],
+              "uid": "44f32e4fe23329adf7b070afb4afaf420a1543beb8442a93c0b37002fb1669ef",
+              "wrong_single_command_indices": [
+                1,
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "dax",
+                "dax"
+              ],
+              "uid": "16784352b6efc938f180cfe2a0a76e7be57b4fe971ec911b78fa15c1afdd0a27",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "dax",
+                "dax"
+              ],
+              "uid": "ebd885183cb753606bca1a3dca9d02ac08de7df4907a8f2424c1a24087af0f08",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "zup",
+                "dax"
+              ],
+              "uid": "6f9eb2df9b225a92f32b66327300576b8b63eaf92e68074ef49651d18574d9ae",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "zup",
+                "wug",
+                "wug"
+              ],
+              "uid": "a3e9da8e63a86b8ccb46dd3c4b5af87d2500fcda09d15dc23a2fc18478a60286",
+              "wrong_single_command_indices": [
+                2,
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "dax",
+                "wug",
+                "dax",
+                "dax"
+              ],
+              "uid": "7fa86ce0c031573dcb15dd605eac24922b88047bb26026575df13d8bb428f7f9",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "dax",
+                "wug",
+                "zup",
+                "zup"
+              ],
+              "uid": "a6e44642b60754892909699c9aa96a108ef2d6e3e088e7843e928587e9f7c14c",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "wug",
+                "zup",
+                "wug"
+              ],
+              "uid": "9c603d96809d536a3adb718b2b931aac3f7b8b696ed4213017efd3eddeee7846",
+              "wrong_single_command_indices": [
+                1,
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "dax",
+                "dax",
+                "wug",
+                "zup"
+              ],
+              "uid": "504eda4c9306f922e79957f11a763d5ab02ca33c6228d5f1f6186249f6e9c4c2",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "dax",
+                "wug",
+                "zup",
+                "wug"
+              ],
+              "uid": "74130cc4c022fbf860903312014716cdfa2743e879c586e90bb7652d745d29cd",
+              "wrong_single_command_indices": [
+                2,
+                4
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "zup",
+                "dax",
+                "wug",
+                "zup"
+              ],
+              "uid": "3e6c0b8aaa25aaa779a47a0751f6b6a822e8ffc1866a822780fede8ee808d931",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "zup",
+                "wug",
+                "zup"
+              ],
+              "uid": "28caf6baac80138ab27a20b8afe13aa760c54f3df87414216e8920d31d7830ec",
+              "wrong_single_command_indices": [
+                1,
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "zup",
+                "wug",
+                "zup",
+                "wug"
+              ],
+              "uid": "ccf262fccdcfcf9661255239d4167e1e69597733a55c4116cf14996a028695fa",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "dax",
+                "wug",
+                "dax",
+                "wug"
+              ],
+              "uid": "7b21fe7224995184d16645941055f9d3663e47c2b7922d0af9e63fc458410524",
+              "wrong_single_command_indices": [
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "dax",
+                "zup",
+                "wug",
+                "dax"
+              ],
+              "uid": "3e1bd7d22e8ad280ad5b28b698d5fc22a0143c14951a502e5e149cd8e3945c16",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "zup",
+                "wug",
+                "wug",
+                "wug"
+              ],
+              "uid": "f8ac3a8f119c6d2e70358a579b01b058031104e06327b2aa2dd7f71e7fa5a350",
+              "wrong_single_command_indices": [
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "dax",
+                "zup",
+                "wug",
+                "dax"
+              ],
+              "uid": "ea04473349cf332ed79f2cc2a45f89d5e3158db69dcdea553f59bdcfb7c15227",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "dax",
+                "wug",
+                "dax"
+              ],
+              "uid": "aec61e3361d0c153e097ba6b91f364b7e0aa02e8ad5a825a9de807ab23483378",
+              "wrong_single_command_indices": [
+                1,
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "zup",
+                "dax",
+                "dax"
+              ],
+              "uid": "15b4aa21bb6d32db5992361e86f91bb5642fe92ff3ef54a4d7e839953e0048ee",
+              "wrong_single_command_indices": [
+                1,
+                4
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "dax",
+                "zup",
+                "dax"
+              ],
+              "uid": "bef1a6e1d97dbf57d216abb54bfb873d89c5a796306dc4f947e09bb9c2163070",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "wug",
+                "wug",
+                "dax"
+              ],
+              "uid": "1998825e6c40390ad3489c76113c083c9520f03a94400cda8ec8eb4fec46836b",
+              "wrong_single_command_indices": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "dax",
+                "wug",
+                "wug"
+              ],
+              "uid": "6e75082f416b94606d93e692654a411009aeadc25a46ea95deaa53fa2321f248",
+              "wrong_single_command_indices": [
+                1,
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "zup",
+                "wug",
+                "dax"
+              ],
+              "uid": "c1d63e6959e8e7a7fe7c64d476f845d86b8a4dc6f48e5cec65f909413a7b1414",
+              "wrong_single_command_indices": [
+                1,
+                3
+              ]
+            }
+          ]
+        },
+        "validation": {
+          "final_correct_despite_wrong_single_command_steps": 3,
+          "first_incorrect_single_command_position": {
+            "1": 10,
+            "2": 2,
+            "3": 11,
+            "4": 3
+          },
+          "gates": {
+            "depth3": {
+              "correct": 14,
+              "gate": {
+                "gain": 0.5416666666666666,
+                "losses": 0,
+                "n": 24,
+                "paired_one_sided_p": 0.0001220703125,
+                "passed": false,
+                "student_accuracy": 0.041666666666666664,
+                "teacher_accuracy": 0.5833333333333334,
+                "wins": 13
+              },
+              "n": 24,
+              "raw_correct": 1
+            },
+            "depth4": {
+              "correct": 11,
+              "gate": {
+                "gain": 0.4583333333333333,
+                "losses": 0,
+                "n": 24,
+                "paired_one_sided_p": 0.00048828125,
+                "passed": false,
+                "student_accuracy": 0,
+                "teacher_accuracy": 0.4583333333333333,
+                "wins": 11
+              },
+              "n": 24,
+              "raw_correct": 0
+            }
+          },
+          "single_command_steps": {
+            "dax": {
+              "correct": 57,
+              "n": 57
+            },
+            "wug": {
+              "correct": 24,
+              "n": 63
+            },
+            "zup": {
+              "correct": 48,
+              "n": 48
+            }
+          },
+          "wrong_chains": [
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "wug",
+                "zup",
+                "wug"
+              ],
+              "uid": "76a88a48e6919b8cf81cc7b8e7e69e7b808b86c90ba78dadba5242938593633a",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "wug",
+                "zup",
+                "wug"
+              ],
+              "uid": "70ef63632474729278e1114d59529c6b0ab921e22f4a23b972b49308b3be921c",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "wug",
+                "zup",
+                "wug"
+              ],
+              "uid": "0a3f56c11ffc4433e1322c8b597fac05d46d7ea7d8cd3dfe896d7e9c23873ce5",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "zup",
+                "wug"
+              ],
+              "uid": "02ebf6d1a44b754f330ab5f8e8c7d0e174bbe4cb79f995b95650ea7b0f9b4325",
+              "wrong_single_command_indices": [
+                1,
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "zup",
+                "dax",
+                "wug"
+              ],
+              "uid": "da0628d292ff47d09a84681ad3a6e59430d08157b3bf75d1b0c065871d16f482",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "dax",
+                "dax",
+                "wug"
+              ],
+              "uid": "3b82cdd01bd8f0a8724c673d7fb81260fbe5fcf58022e6380fdb582f590c8ed7",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "dax",
+                "dax",
+                "wug"
+              ],
+              "uid": "92e6b36aca0bd1d5721ddc22a1882a609faf481f9ab7421f6251c7ba80d5f2db",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "zup",
+                "wug"
+              ],
+              "uid": "0b3b184ef63555871d76add30264474ed8d826b66cfafc3b0f6481eeca7f3298",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "zup",
+                "dax",
+                "wug"
+              ],
+              "uid": "5e5ef06f38b1cbe1071eec0283dad5e740a924cd0da6b5dd5c9769254ea85670",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "wug",
+                "zup",
+                "wug"
+              ],
+              "uid": "371b3b423e16035b084721a1a84ff909f1a1550278ad63ac17baddfbc1fc6983",
+              "wrong_single_command_indices": [
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "zup",
+                "zup",
+                "wug",
+                "wug"
+              ],
+              "uid": "7c222eae7150444b7db37de11a786487b2c6ef79f10edc6af42679c42c00617a",
+              "wrong_single_command_indices": [
+                3,
+                4
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "wug",
+                "dax",
+                "dax"
+              ],
+              "uid": "edcca267d20019965550cbf498515fdb21c11e996e6d230092bbae6821366f59",
+              "wrong_single_command_indices": [
+                1,
+                2
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 4,
+              "program": [
+                "zup",
+                "wug",
+                "dax",
+                "wug"
+              ],
+              "uid": "394ea5767c70ef0d158309e3cd4722d1ab0ea062220b12fc725ecd5ee007f2a3",
+              "wrong_single_command_indices": [
+                4
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 4,
+              "program": [
+                "zup",
+                "wug",
+                "dax",
+                "wug"
+              ],
+              "uid": "2f616172799368b6c96631e5eabbe6b2ae83cae1186b01804143a11a16797a26",
+              "wrong_single_command_indices": [
+                4
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "dax",
+                "wug",
+                "wug",
+                "zup"
+              ],
+              "uid": "55cb748a23a7802b4a1708aafe4651494daf3b6a69e99ba425e5fb8d0b657e1e",
+              "wrong_single_command_indices": [
+                2,
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "wug",
+                "dax",
+                "wug"
+              ],
+              "uid": "fa1c992e4d6887fde920b7da864e619c9800d9d24f385139cb73847166d17169",
+              "wrong_single_command_indices": [
+                1,
+                4
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "zup",
+                "zup",
+                "zup"
+              ],
+              "uid": "97fbfa5bb4fd08a20f5a5402fcff092df55a12485d6a2e5b8be5a55385f87c20",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "wug",
+                "dax",
+                "wug"
+              ],
+              "uid": "9a7fc8459a0d2a932ba95ca0a2e6e181fd7fb04342b31111d90872767586d845",
+              "wrong_single_command_indices": [
+                1,
+                2,
+                4
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 2,
+              "program": [
+                "dax",
+                "wug",
+                "wug",
+                "zup"
+              ],
+              "uid": "555fd2e43e5bd5206df8acc704bb4bb66fe28bbe85fd140fc2dd02f4b4962e15",
+              "wrong_single_command_indices": [
+                2,
+                3
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "zup",
+                "wug",
+                "wug"
+              ],
+              "uid": "a2633d6493b0c0e3974363b7fe8cafa4f82ae799a8f89803c805b406b6287ee1",
+              "wrong_single_command_indices": [
+                1
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 4,
+              "program": [
+                "dax",
+                "zup",
+                "dax",
+                "wug"
+              ],
+              "uid": "dda4ca23bc4c16058ee58fc2cfa921475c75203c61693227b16ae6670f6acbde",
+              "wrong_single_command_indices": [
+                4
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 1,
+              "program": [
+                "wug",
+                "zup",
+                "wug",
+                "wug"
+              ],
+              "uid": "301f73efef4c0c5df3ed11ab320b5d14f22cca12430e11e6943bb93b8b0435f3",
+              "wrong_single_command_indices": [
+                1,
+                3,
+                4
+              ]
+            },
+            {
+              "aborted": null,
+              "first_wrong_single_command_index": 3,
+              "program": [
+                "zup",
+                "zup",
+                "wug",
+                "dax"
+              ],
+              "uid": "654e2a3f530997feb29b27ff8346052b75731aa7a43875e3a6aed10b1ab3a7ee",
+              "wrong_single_command_indices": [
+                3
+              ]
+            }
+          ]
+        }
+      },
+      "status": "rejected_whole_chain_gate"
+    }
+  },
+  "checks": {
+    "actual_emitted_state_links_checked": 1848,
+    "all_cached_emissions_retained_exactly": true,
+    "chain_prompt_tokens": 598149,
+    "chain_response_tokens": 14784,
+    "decoded_generation_records": 2826,
+    "every_qualifier_and_rejection_recomputed": true,
+    "gpu_inference_performed": false,
+    "no_gold_replacement_on_next_step": true,
+    "source_or_original_receipt_mutations": false,
+    "test_predictions_inspected": 0
+  },
+  "dataset_file_sha256": "f164c8ff65e6b24e859602a12b5923f794dcb4fff25d7d35d0bab5a50163be0c",
+  "design_sha256": "fc39cb5bdf3c79a08bf21b566baf6004ee3688e9e4a133ebd91a199d1d7c9327",
+  "eligible": {
+    "A": [
+      "flat_mixed"
+    ],
+    "B": [],
+    "C": []
+  },
+  "execution_sha256": "002a674aa076de44f709d814387a16d4cefe284f95910b8701ba503361113301",
+  "execution_status": "completed",
+  "interpretation_limits": [
+    "Single-command step errors are measured on the actual propagated input; final-state errors can compound or cancel. This identifies behavioral rule failures, not a neural circuit or internal causal mechanism.",
+    "Primitive TRAIN/validation gates use all original primitive rows and their original strict nativeEOS scoring. Matched privileged raw baseline is reported separately from the unprivileged primary gap.",
+    "Lowest TRAIN digit cells are descriptive diagnostics only. They do not select an adapter, training recipe or additional optimization.",
+    "A teacher-output learning remains gated and retains both incorrect final TRAIN targets. B and C oracle-only jobs remain mandatory composition learnability references, not consolidation from rejected teachers."
+  ],
+  "observed_at": "2026-09-12T07:22:29.948949+00:00",
+  "panels_sha256": "81bbef000a7f94477ec9e0908380b24dfb74f1b5427e5534c06fb475251685db",
+  "primitive": {
+    "flat_mixed": {
+      "A": {
+        "fallback_validation": {
+          "gate": {
+            "gain": 1,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.015625,
+            "passed": true,
+            "student_accuracy": 0,
+            "teacher_accuracy": 1,
+            "wins": 6
+          },
+          "matched_context_gate": {
+            "gain": 0.8333333333333334,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.03125,
+            "passed": true,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 1,
+            "wins": 5
+          },
+          "n": 6,
+          "raw_privileged_correct": 1,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 6
+        },
+        "train": {
+          "gate": {
+            "gain": 0.9166666666666666,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 2.384185791015625e-07,
+            "passed": true,
+            "student_accuracy": 0.08333333333333333,
+            "teacher_accuracy": 1,
+            "wins": 22
+          },
+          "matched_context_gate": {
+            "gain": 0.75,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 3.814697265625e-06,
+            "passed": true,
+            "student_accuracy": 0.25,
+            "teacher_accuracy": 1,
+            "wins": 18
+          },
+          "n": 24,
+          "raw_privileged_correct": 6,
+          "raw_unprivileged_correct": 2,
+          "teacher_correct": 24
+        }
+      },
+      "B": {
+        "fallback_validation": {
+          "gate": {
+            "gain": 1,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.015625,
+            "passed": true,
+            "student_accuracy": 0,
+            "teacher_accuracy": 1,
+            "wins": 6
+          },
+          "matched_context_gate": {
+            "gain": 0.8333333333333334,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.03125,
+            "passed": true,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 1,
+            "wins": 5
+          },
+          "n": 6,
+          "raw_privileged_correct": 1,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 6
+        },
+        "train": {
+          "gate": {
+            "gain": 1,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 5.960464477539063e-08,
+            "passed": true,
+            "student_accuracy": 0,
+            "teacher_accuracy": 1,
+            "wins": 24
+          },
+          "matched_context_gate": {
+            "gain": 0.875,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 4.76837158203125e-07,
+            "passed": true,
+            "student_accuracy": 0.125,
+            "teacher_accuracy": 1,
+            "wins": 21
+          },
+          "n": 24,
+          "raw_privileged_correct": 3,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 24
+        }
+      },
+      "C": {
+        "fallback_validation": {
+          "gate": {
+            "gain": 1,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.015625,
+            "passed": true,
+            "student_accuracy": 0,
+            "teacher_accuracy": 1,
+            "wins": 6
+          },
+          "matched_context_gate": {
+            "gain": 0.8333333333333334,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.03125,
+            "passed": true,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 1,
+            "wins": 5
+          },
+          "n": 6,
+          "raw_privileged_correct": 1,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 6
+        },
+        "train": {
+          "gate": {
+            "gain": 0.875,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 4.76837158203125e-07,
+            "passed": true,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.875,
+            "wins": 21
+          },
+          "matched_context_gate": {
+            "gain": 0.7083333333333334,
+            "losses": 1,
+            "n": 24,
+            "paired_one_sided_p": 3.814697265625e-05,
+            "passed": true,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 0.875,
+            "wins": 18
+          },
+          "n": 24,
+          "raw_privileged_correct": 4,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 21
+        }
+      }
+    },
+    "legacy96_budget": {
+      "A": {
+        "fallback_validation": {
+          "gate": {
+            "gain": 0.8333333333333334,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.03125,
+            "passed": false,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.8333333333333334,
+            "wins": 5
+          },
+          "matched_context_gate": {
+            "gain": 0.6666666666666666,
+            "losses": 1,
+            "n": 6,
+            "paired_one_sided_p": 0.109375,
+            "passed": false,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 0.8333333333333334,
+            "wins": 5
+          },
+          "n": 6,
+          "raw_privileged_correct": 1,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 5
+        },
+        "train": {
+          "gate": {
+            "gain": 0.7916666666666666,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 1.9073486328125e-06,
+            "passed": true,
+            "student_accuracy": 0.08333333333333333,
+            "teacher_accuracy": 0.875,
+            "wins": 19
+          },
+          "matched_context_gate": {
+            "gain": 0.625,
+            "losses": 1,
+            "n": 24,
+            "paired_one_sided_p": 0.0001373291015625,
+            "passed": true,
+            "student_accuracy": 0.25,
+            "teacher_accuracy": 0.875,
+            "wins": 16
+          },
+          "n": 24,
+          "raw_privileged_correct": 6,
+          "raw_unprivileged_correct": 2,
+          "teacher_correct": 21
+        }
+      },
+      "B": {
+        "fallback_validation": {
+          "gate": {
+            "gain": 0.5,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.125,
+            "passed": false,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.5,
+            "wins": 3
+          },
+          "matched_context_gate": {
+            "gain": 0.3333333333333333,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.25,
+            "passed": false,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 0.5,
+            "wins": 2
+          },
+          "n": 6,
+          "raw_privileged_correct": 1,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 3
+        },
+        "train": {
+          "gate": {
+            "gain": 0.875,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 4.76837158203125e-07,
+            "passed": true,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.875,
+            "wins": 21
+          },
+          "matched_context_gate": {
+            "gain": 0.75,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 3.814697265625e-06,
+            "passed": true,
+            "student_accuracy": 0.125,
+            "teacher_accuracy": 0.875,
+            "wins": 18
+          },
+          "n": 24,
+          "raw_privileged_correct": 3,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 21
+        }
+      },
+      "C": {
+        "fallback_validation": {
+          "gate": {
+            "gain": 0.6666666666666666,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.0625,
+            "passed": false,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.6666666666666666,
+            "wins": 4
+          },
+          "matched_context_gate": {
+            "gain": 0.5,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.125,
+            "passed": false,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 0.6666666666666666,
+            "wins": 3
+          },
+          "n": 6,
+          "raw_privileged_correct": 1,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 4
+        },
+        "train": {
+          "gate": {
+            "gain": 0.75,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 3.814697265625e-06,
+            "passed": false,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.75,
+            "wins": 18
+          },
+          "matched_context_gate": {
+            "gain": 0.5833333333333334,
+            "losses": 1,
+            "n": 24,
+            "paired_one_sided_p": 0.0002593994140625,
+            "passed": false,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 0.75,
+            "wins": 15
+          },
+          "n": 24,
+          "raw_privileged_correct": 4,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 18
+        }
+      }
+    },
+    "primitive_first": {
+      "A": {
+        "fallback_validation": {
+          "gate": {
+            "gain": 0.8333333333333334,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.03125,
+            "passed": false,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.8333333333333334,
+            "wins": 5
+          },
+          "matched_context_gate": {
+            "gain": 0.6666666666666666,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.0625,
+            "passed": false,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 0.8333333333333334,
+            "wins": 4
+          },
+          "n": 6,
+          "raw_privileged_correct": 1,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 5
+        },
+        "train": {
+          "gate": {
+            "gain": 0.875,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 4.76837158203125e-07,
+            "passed": true,
+            "student_accuracy": 0.08333333333333333,
+            "teacher_accuracy": 0.9583333333333334,
+            "wins": 21
+          },
+          "matched_context_gate": {
+            "gain": 0.7083333333333334,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 7.62939453125e-06,
+            "passed": true,
+            "student_accuracy": 0.25,
+            "teacher_accuracy": 0.9583333333333334,
+            "wins": 17
+          },
+          "n": 24,
+          "raw_privileged_correct": 6,
+          "raw_unprivileged_correct": 2,
+          "teacher_correct": 23
+        }
+      },
+      "B": {
+        "fallback_validation": {
+          "gate": {
+            "gain": 0.6666666666666666,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.0625,
+            "passed": false,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.6666666666666666,
+            "wins": 4
+          },
+          "matched_context_gate": {
+            "gain": 0.5,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.125,
+            "passed": false,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 0.6666666666666666,
+            "wins": 3
+          },
+          "n": 6,
+          "raw_privileged_correct": 1,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 4
+        },
+        "train": {
+          "gate": {
+            "gain": 0.9583333333333334,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 1.1920928955078125e-07,
+            "passed": true,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.9583333333333334,
+            "wins": 23
+          },
+          "matched_context_gate": {
+            "gain": 0.8333333333333334,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 9.5367431640625e-07,
+            "passed": true,
+            "student_accuracy": 0.125,
+            "teacher_accuracy": 0.9583333333333334,
+            "wins": 20
+          },
+          "n": 24,
+          "raw_privileged_correct": 3,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 23
+        }
+      },
+      "C": {
+        "fallback_validation": {
+          "gate": {
+            "gain": 0.6666666666666666,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.0625,
+            "passed": false,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.6666666666666666,
+            "wins": 4
+          },
+          "matched_context_gate": {
+            "gain": 0.5,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.125,
+            "passed": false,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 0.6666666666666666,
+            "wins": 3
+          },
+          "n": 6,
+          "raw_privileged_correct": 1,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 4
+        },
+        "train": {
+          "gate": {
+            "gain": 0.9583333333333334,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 1.1920928955078125e-07,
+            "passed": true,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.9583333333333334,
+            "wins": 23
+          },
+          "matched_context_gate": {
+            "gain": 0.7916666666666666,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 1.9073486328125e-06,
+            "passed": true,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 0.9583333333333334,
+            "wins": 19
+          },
+          "n": 24,
+          "raw_privileged_correct": 4,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 23
+        }
+      }
+    },
+    "raw_privileged": {
+      "A": {
+        "fallback_validation": {
+          "gate": {
+            "gain": 0.16666666666666666,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.5,
+            "passed": false,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.16666666666666666,
+            "wins": 1
+          },
+          "matched_context_gate": {
+            "gain": 0,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 1,
+            "passed": false,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 0.16666666666666666,
+            "wins": 0
+          },
+          "n": 6,
+          "raw_privileged_correct": 1,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 1
+        },
+        "train": {
+          "gate": {
+            "gain": 0.16666666666666666,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 0.0625,
+            "passed": false,
+            "student_accuracy": 0.08333333333333333,
+            "teacher_accuracy": 0.25,
+            "wins": 4
+          },
+          "matched_context_gate": {
+            "gain": 0,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 1,
+            "passed": false,
+            "student_accuracy": 0.25,
+            "teacher_accuracy": 0.25,
+            "wins": 0
+          },
+          "n": 24,
+          "raw_privileged_correct": 6,
+          "raw_unprivileged_correct": 2,
+          "teacher_correct": 6
+        }
+      },
+      "B": {
+        "fallback_validation": {
+          "gate": {
+            "gain": 0.16666666666666666,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.5,
+            "passed": false,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.16666666666666666,
+            "wins": 1
+          },
+          "matched_context_gate": {
+            "gain": 0,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 1,
+            "passed": false,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 0.16666666666666666,
+            "wins": 0
+          },
+          "n": 6,
+          "raw_privileged_correct": 1,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 1
+        },
+        "train": {
+          "gate": {
+            "gain": 0.125,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 0.125,
+            "passed": false,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.125,
+            "wins": 3
+          },
+          "matched_context_gate": {
+            "gain": 0,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 1,
+            "passed": false,
+            "student_accuracy": 0.125,
+            "teacher_accuracy": 0.125,
+            "wins": 0
+          },
+          "n": 24,
+          "raw_privileged_correct": 3,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 3
+        }
+      },
+      "C": {
+        "fallback_validation": {
+          "gate": {
+            "gain": 0.16666666666666666,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 0.5,
+            "passed": false,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.16666666666666666,
+            "wins": 1
+          },
+          "matched_context_gate": {
+            "gain": 0,
+            "losses": 0,
+            "n": 6,
+            "paired_one_sided_p": 1,
+            "passed": false,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 0.16666666666666666,
+            "wins": 0
+          },
+          "n": 6,
+          "raw_privileged_correct": 1,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 1
+        },
+        "train": {
+          "gate": {
+            "gain": 0.16666666666666666,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 0.0625,
+            "passed": false,
+            "student_accuracy": 0,
+            "teacher_accuracy": 0.16666666666666666,
+            "wins": 4
+          },
+          "matched_context_gate": {
+            "gain": 0,
+            "losses": 0,
+            "n": 24,
+            "paired_one_sided_p": 1,
+            "passed": false,
+            "student_accuracy": 0.16666666666666666,
+            "teacher_accuracy": 0.16666666666666666,
+            "wins": 0
+          },
+          "n": 24,
+          "raw_privileged_correct": 4,
+          "raw_unprivileged_correct": 0,
+          "teacher_correct": 4
+        }
+      }
+    }
+  },
+  "qualification_sha256": "6ae1fef4d69e70341c63ff4b1ac1cb4edaee19923757af474802fb56460b54ae",
+  "source_files_verified": 13,
+  "train_step_digit_cells_with_lowest_observed_accuracy_n_at_least_8": {
+    "A": [
+      {
+        "accuracy": 0.9285714285714286,
+        "cell": "A/train/zup/position4/input8",
+        "correct": 13,
+        "n": 14
+      },
+      {
+        "accuracy": 0.9333333333333333,
+        "cell": "A/train/zup/position3/input9",
+        "correct": 14,
+        "n": 15
+      },
+      {
+        "accuracy": 0.9375,
+        "cell": "A/train/zup/position4/input0",
+        "correct": 15,
+        "n": 16
+      },
+      {
+        "accuracy": 0.9444444444444444,
+        "cell": "A/train/zup/position3/input6",
+        "correct": 17,
+        "n": 18
+      }
+    ],
+    "B": [
+      {
+        "accuracy": 0,
+        "cell": "B/train/dax/position1/input9",
+        "correct": 0,
+        "n": 15
+      },
+      {
+        "accuracy": 0.8,
+        "cell": "B/train/zup/position2/input4",
+        "correct": 12,
+        "n": 15
+      },
+      {
+        "accuracy": 0.8461538461538461,
+        "cell": "B/train/dax/position2/input7",
+        "correct": 11,
+        "n": 13
+      },
+      {
+        "accuracy": 0.8461538461538461,
+        "cell": "B/train/zup/position4/input7",
+        "correct": 11,
+        "n": 13
+      },
+      {
+        "accuracy": 0.8666666666666667,
+        "cell": "B/train/dax/position2/input9",
+        "correct": 13,
+        "n": 15
+      },
+      {
+        "accuracy": 0.8666666666666667,
+        "cell": "B/train/zup/position4/input6",
+        "correct": 13,
+        "n": 15
+      },
+      {
+        "accuracy": 0.8947368421052632,
+        "cell": "B/train/zup/position4/input3",
+        "correct": 17,
+        "n": 19
+      },
+      {
+        "accuracy": 0.9,
+        "cell": "B/train/zup/position4/input8",
+        "correct": 18,
+        "n": 20
+      },
+      {
+        "accuracy": 0.9090909090909091,
+        "cell": "B/train/dax/position4/input8",
+        "correct": 10,
+        "n": 11
+      },
+      {
+        "accuracy": 0.9090909090909091,
+        "cell": "B/train/zup/position3/input0",
+        "correct": 10,
+        "n": 11
+      },
+      {
+        "accuracy": 0.9411764705882353,
+        "cell": "B/train/zup/position3/input1",
+        "correct": 16,
+        "n": 17
+      },
+      {
+        "accuracy": 0.9411764705882353,
+        "cell": "B/train/zup/position3/input4",
+        "correct": 16,
+        "n": 17
+      }
+    ],
+    "C": [
+      {
+        "accuracy": 0,
+        "cell": "C/train/wug/position4/input9",
+        "correct": 0,
+        "n": 21
+      },
+      {
+        "accuracy": 0.07692307692307693,
+        "cell": "C/train/wug/position4/input1",
+        "correct": 1,
+        "n": 13
+      },
+      {
+        "accuracy": 0.125,
+        "cell": "C/train/wug/position4/input3",
+        "correct": 1,
+        "n": 8
+      },
+      {
+        "accuracy": 0.13043478260869565,
+        "cell": "C/train/wug/position4/input5",
+        "correct": 3,
+        "n": 23
+      },
+      {
+        "accuracy": 0.2857142857142857,
+        "cell": "C/train/wug/position2/input1",
+        "correct": 4,
+        "n": 14
+      },
+      {
+        "accuracy": 0.3125,
+        "cell": "C/train/wug/position2/input4",
+        "correct": 5,
+        "n": 16
+      },
+      {
+        "accuracy": 0.35714285714285715,
+        "cell": "C/train/wug/position2/input5",
+        "correct": 5,
+        "n": 14
+      },
+      {
+        "accuracy": 0.38461538461538464,
+        "cell": "C/train/wug/position1/input5",
+        "correct": 5,
+        "n": 13
+      },
+      {
+        "accuracy": 0.3888888888888889,
+        "cell": "C/train/wug/position2/input9",
+        "correct": 7,
+        "n": 18
+      },
+      {
+        "accuracy": 0.4,
+        "cell": "C/train/wug/position1/input4",
+        "correct": 6,
+        "n": 15
+      },
+      {
+        "accuracy": 0.4,
+        "cell": "C/train/wug/position4/input7",
+        "correct": 6,
+        "n": 15
+      },
+      {
+        "accuracy": 0.4444444444444444,
+        "cell": "C/train/wug/position3/input3",
+        "correct": 4,
+        "n": 9
+      }
+    ]
+  },
+  "upstream_qualification_sha256": "f26d5916481b7467019d35c05f1e462b79b0cd9003fcbd01412b00793c96cf80"
+}

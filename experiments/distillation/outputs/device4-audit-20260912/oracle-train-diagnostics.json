@@ -1,0 +1,1202 @@
+{
+  "audit_kind": "train_only_oracle_composition_fit_diagnostics",
+  "families": {
+    "B": {
+      "all_128_final_train_by_program_and_depth": {
+        "depth3": {
+          "correct": 4,
+          "format_valid": 64,
+          "n": 64,
+          "native_eos": 64
+        },
+        "depth4": {
+          "correct": 8,
+          "format_valid": 64,
+          "n": 64,
+          "native_eos": 64
+        },
+        "program/dax,dax,dax,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,dax,wug,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,dax,wug,zup": {
+          "correct": 0,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/dax,dax,zup": {
+          "correct": 1,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/dax,dax,zup,wug": {
+          "correct": 0,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/dax,dax,zup,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,wug,dax": {
+          "correct": 0,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/dax,wug,dax,dax": {
+          "correct": 0,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/dax,wug,dax,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,wug,wug,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,wug,wug,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,wug,zup": {
+          "correct": 1,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/dax,wug,zup,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,wug,zup,wug": {
+          "correct": 0,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/dax,wug,zup,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,zup,dax": {
+          "correct": 0,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/dax,zup,dax,dax": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,zup,dax,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,zup,wug,dax": {
+          "correct": 0,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/dax,zup,wug,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,zup,zup": {
+          "correct": 0,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/dax,zup,zup,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,zup,zup,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,dax,dax": {
+          "correct": 0,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/wug,dax,dax,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,dax,dax,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,dax,wug": {
+          "correct": 1,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/wug,dax,wug,dax": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,dax,wug,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,dax,zup": {
+          "correct": 0,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/wug,dax,zup,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,dax,zup,wug": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,dax,zup,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,wug,dax": {
+          "correct": 0,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/wug,wug,dax,zup": {
+          "correct": 0,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/wug,wug,wug": {
+          "correct": 0,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/wug,wug,wug,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,wug,wug,wug": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,wug,wug,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,wug,zup": {
+          "correct": 1,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/wug,wug,zup,wug": {
+          "correct": 0,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/wug,wug,zup,zup": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,zup,dax": {
+          "correct": 0,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/wug,zup,dax,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,zup,dax,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,zup,dax,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,zup,wug,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,zup,wug,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,zup,zup": {
+          "correct": 0,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/wug,zup,zup,wug": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,dax,dax,dax": {
+          "correct": 0,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/zup,dax,dax,wug": {
+          "correct": 0,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/zup,dax,dax,zup": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,dax,wug,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,dax,zup,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,dax,zup,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,dax,zup,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,wug,dax": {
+          "correct": 0,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/zup,wug,dax,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,wug,dax,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,wug,wug": {
+          "correct": 0,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/zup,wug,wug,wug": {
+          "correct": 0,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/zup,wug,wug,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,wug,zup": {
+          "correct": 0,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/zup,wug,zup,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,wug,zup,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,zup,dax": {
+          "correct": 0,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/zup,zup,dax,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,zup,dax,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,zup,zup": {
+          "correct": 0,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/zup,zup,zup,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,zup,zup,zup": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        }
+      },
+      "same_eight_train_probe_uids_all_checkpoints": [
+        "39839fa472da4e32ca598239a746346a81eae8db7eb1dd71712d0efa98f37324",
+        "c76a97c86ba239e407c74a5a374ed3a982e6d7f39c827fe59b4b1b965f7a320e",
+        "23d506dac10cad4ce9b4c6597dfafc616d94d255c650a61afa8aeed75a006c47",
+        "316d5bb43f8491d291761d0a4bc882caf68d9492d9e2f18ed2d98b1cecc085c1",
+        "e5f199051b707bd0d6495e631fbba3681692e2be7ac99d8afa90fab6a75fc0dc",
+        "d15270532703c4efce09ab9e2ab959a86e0e43e1396713ed5c0ca791c30edee9",
+        "23a885ed163b82ed613f7dcab24574671b554fcd4796a429a04b7ca978a1a52f",
+        "ae2d194dd6fe4b9cdcbc76b3e1238275f76b1fc6a88f1b89ee3588fc77733063"
+      ],
+      "train_probes": {
+        "128": {
+          "correct": 1,
+          "depths": {
+            "3": {
+              "correct": 0,
+              "n": 4
+            },
+            "4": {
+              "correct": 1,
+              "n": 4
+            }
+          },
+          "format_valid": 8,
+          "n": 8,
+          "native_eos": 8,
+          "sha256": "1aa3926e6dd72d9f478f2ac25ba79233b9e0e261d92ee32a835f113be45dbc06"
+        },
+        "32": {
+          "correct": 0,
+          "depths": {
+            "3": {
+              "correct": 0,
+              "n": 4
+            },
+            "4": {
+              "correct": 0,
+              "n": 4
+            }
+          },
+          "format_valid": 8,
+          "n": 8,
+          "native_eos": 8,
+          "sha256": "870151b5b7f332166575ff7c2f0d4521430a6ebe34371967749c17f198bc5713"
+        },
+        "96": {
+          "correct": 1,
+          "depths": {
+            "3": {
+              "correct": 0,
+              "n": 4
+            },
+            "4": {
+              "correct": 1,
+              "n": 4
+            }
+          },
+          "format_valid": 8,
+          "n": 8,
+          "native_eos": 8,
+          "sha256": "3285616fcab1506737cec9aa107f51c494367691db7331cef7162d0ebb30100d"
+        },
+        "initial": {
+          "correct": 0,
+          "depths": {
+            "3": {
+              "correct": 0,
+              "n": 4
+            },
+            "4": {
+              "correct": 0,
+              "n": 4
+            }
+          },
+          "format_valid": 8,
+          "n": 8,
+          "native_eos": 8,
+          "sha256": "fc1c79f13d02073b5889b692645f2cd7c919bf572d13bfdd61ed978aaf7ab539"
+        }
+      },
+      "training_loss_windows": {
+        "1-16": {
+          "examples": 64,
+          "max_gradient_norm": 3.800016164779663,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.004770502811687879,
+          "mean_pre_clip_gradient_norm": 2.504011146724224,
+          "mean_target_token_cross_entropy": 0.9051855313591659,
+          "min_gradient_norm": 1.4239081144332886
+        },
+        "113-128": {
+          "examples": 64,
+          "max_gradient_norm": 7.338855266571045,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.04247444899425922,
+          "mean_pre_clip_gradient_norm": 2.633815262466669,
+          "mean_target_token_cross_entropy": 0.4973245377186686,
+          "min_gradient_norm": 0.6861372590065002
+        },
+        "17-32": {
+          "examples": 64,
+          "max_gradient_norm": 5.728837490081787,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.008940998739909133,
+          "mean_pre_clip_gradient_norm": 3.011807441711426,
+          "mean_target_token_cross_entropy": 0.7186753642745316,
+          "min_gradient_norm": 1.4884527921676636
+        },
+        "33-48": {
+          "examples": 64,
+          "max_gradient_norm": 67.94001007080078,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.009489175716455729,
+          "mean_pre_clip_gradient_norm": 11.6188899949193,
+          "mean_target_token_cross_entropy": 0.6922544315457344,
+          "min_gradient_norm": 1.6915346384048462
+        },
+        "49-64": {
+          "examples": 64,
+          "max_gradient_norm": 5.250900745391846,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.01591468916834647,
+          "mean_pre_clip_gradient_norm": 2.747901067137718,
+          "mean_target_token_cross_entropy": 0.6558223571628332,
+          "min_gradient_norm": 1.6621568202972412
+        },
+        "65-80": {
+          "examples": 64,
+          "max_gradient_norm": 7.619909286499023,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.026815333218506262,
+          "mean_pre_clip_gradient_norm": 2.8870227709412575,
+          "mean_target_token_cross_entropy": 0.5995565797202289,
+          "min_gradient_norm": 0.9173979759216309
+        },
+        "81-96": {
+          "examples": 64,
+          "max_gradient_norm": 3.6842591762542725,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.021956766640771615,
+          "mean_pre_clip_gradient_norm": 2.177766554057598,
+          "mean_target_token_cross_entropy": 0.5743256448768079,
+          "min_gradient_norm": 1.430570363998413
+        },
+        "97-112": {
+          "examples": 64,
+          "max_gradient_norm": 5.160025119781494,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.0334372200895912,
+          "mean_pre_clip_gradient_norm": 2.250418409705162,
+          "mean_target_token_cross_entropy": 0.5249659661203623,
+          "min_gradient_norm": 1.198677659034729
+        }
+      },
+      "training_sha256": "b5b66fcc4a5e892a898788d115293cc969ec1c6bd022113413903815a57683c3"
+    },
+    "C": {
+      "all_128_final_train_by_program_and_depth": {
+        "depth3": {
+          "correct": 29,
+          "format_valid": 64,
+          "n": 64,
+          "native_eos": 64
+        },
+        "depth4": {
+          "correct": 21,
+          "format_valid": 64,
+          "n": 64,
+          "native_eos": 64
+        },
+        "program/dax,dax,dax,dax": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,dax,wug,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,dax,wug,zup": {
+          "correct": 0,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/dax,dax,zup": {
+          "correct": 1,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/dax,dax,zup,wug": {
+          "correct": 1,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/dax,dax,zup,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,wug,dax": {
+          "correct": 1,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/dax,wug,dax,dax": {
+          "correct": 2,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/dax,wug,dax,wug": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,wug,wug,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,wug,wug,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,wug,zup": {
+          "correct": 1,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/dax,wug,zup,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,wug,zup,wug": {
+          "correct": 0,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/dax,wug,zup,zup": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,zup,dax": {
+          "correct": 0,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/dax,zup,dax,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,zup,dax,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,zup,wug,dax": {
+          "correct": 0,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/dax,zup,wug,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,zup,zup": {
+          "correct": 2,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/dax,zup,zup,dax": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/dax,zup,zup,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,dax,dax": {
+          "correct": 3,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/wug,dax,dax,wug": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,dax,dax,zup": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,dax,wug": {
+          "correct": 1,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/wug,dax,wug,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,dax,wug,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,dax,zup": {
+          "correct": 0,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/wug,dax,zup,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,dax,zup,wug": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,dax,zup,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,wug,dax": {
+          "correct": 2,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/wug,wug,dax,zup": {
+          "correct": 0,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/wug,wug,wug": {
+          "correct": 1,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/wug,wug,wug,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,wug,wug,wug": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,wug,wug,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,wug,zup": {
+          "correct": 3,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/wug,wug,zup,wug": {
+          "correct": 1,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/wug,wug,zup,zup": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,zup,dax": {
+          "correct": 1,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/wug,zup,dax,dax": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,zup,dax,wug": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,zup,dax,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,zup,wug,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,zup,wug,zup": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/wug,zup,zup": {
+          "correct": 2,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/wug,zup,zup,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,dax,dax,dax": {
+          "correct": 0,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/zup,dax,dax,wug": {
+          "correct": 1,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/zup,dax,dax,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,dax,wug,zup": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,dax,zup,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,dax,zup,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,dax,zup,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,wug,dax": {
+          "correct": 1,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/zup,wug,dax,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,wug,dax,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,wug,wug": {
+          "correct": 3,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/zup,wug,wug,wug": {
+          "correct": 1,
+          "format_valid": 2,
+          "n": 2,
+          "native_eos": 2
+        },
+        "program/zup,wug,wug,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,wug,zup": {
+          "correct": 2,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/zup,wug,zup,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,wug,zup,wug": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,zup,dax": {
+          "correct": 1,
+          "format_valid": 3,
+          "n": 3,
+          "native_eos": 3
+        },
+        "program/zup,zup,dax,wug": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,zup,dax,zup": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,zup,zup": {
+          "correct": 4,
+          "format_valid": 4,
+          "n": 4,
+          "native_eos": 4
+        },
+        "program/zup,zup,zup,dax": {
+          "correct": 0,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        },
+        "program/zup,zup,zup,zup": {
+          "correct": 1,
+          "format_valid": 1,
+          "n": 1,
+          "native_eos": 1
+        }
+      },
+      "same_eight_train_probe_uids_all_checkpoints": [
+        "49a90f576eb6a610f8055e9bdd49740b700a21e8bd13835e84c5b67e450d00e1",
+        "09241d44208556c576c076cfa3245be98e77730773e27a3d34012b51e0393da3",
+        "4281361342d1e7a1f836c6d006fbcb66fa1b96f69e155c997575286ce239a6a0",
+        "6c70f8362c6fe36a08c5f72d2b59a0c813c8f8b6a4d935397bd3a3c70dff38e9",
+        "fdfbd895b94daa8356f9f60ec7b922cc9a391767a01306614d569a65f72b0382",
+        "1bf64ad3abf6b2719e170d8d2fb756b756d34dbef77b411beece9907bf2117e8",
+        "40a13c8984fae81a8387582cdcb6e263a5e69f16bb1d4ea578706a63bba2bd7d",
+        "435a0ccc588db8520c0756eb13760672af554bba1e93cc091d8d22fbab88e65d"
+      ],
+      "train_probes": {
+        "128": {
+          "correct": 4,
+          "depths": {
+            "3": {
+              "correct": 2,
+              "n": 4
+            },
+            "4": {
+              "correct": 2,
+              "n": 4
+            }
+          },
+          "format_valid": 8,
+          "n": 8,
+          "native_eos": 8,
+          "sha256": "890b5bf5b0fdd633aadffbd8a2bad30e87cc29d9fafff94158c0f7a07afc18fc"
+        },
+        "32": {
+          "correct": 1,
+          "depths": {
+            "3": {
+              "correct": 1,
+              "n": 4
+            },
+            "4": {
+              "correct": 0,
+              "n": 4
+            }
+          },
+          "format_valid": 8,
+          "n": 8,
+          "native_eos": 8,
+          "sha256": "00fdd4638545a928d5d90543676bbc3f9bbead6a2d59111d16a84bf3e4fba4d3"
+        },
+        "96": {
+          "correct": 1,
+          "depths": {
+            "3": {
+              "correct": 1,
+              "n": 4
+            },
+            "4": {
+              "correct": 0,
+              "n": 4
+            }
+          },
+          "format_valid": 8,
+          "n": 8,
+          "native_eos": 8,
+          "sha256": "cf7c4ea0cd90eb768f53a8f9f5acef7885d64978f792f1c214135205bc914286"
+        },
+        "initial": {
+          "correct": 0,
+          "depths": {
+            "3": {
+              "correct": 0,
+              "n": 4
+            },
+            "4": {
+              "correct": 0,
+              "n": 4
+            }
+          },
+          "format_valid": 8,
+          "n": 8,
+          "native_eos": 8,
+          "sha256": "49472d75e7056f7e6a37af907b04eca18e8558b0628ea91b697e86f0b22d6644"
+        }
+      },
+      "training_loss_windows": {
+        "1-16": {
+          "examples": 64,
+          "max_gradient_norm": 4.059107780456543,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.013402912138233164,
+          "mean_pre_clip_gradient_norm": 2.129874810576439,
+          "mean_target_token_cross_entropy": 0.7921709408983588,
+          "min_gradient_norm": 1.0291334390640259
+        },
+        "113-128": {
+          "examples": 64,
+          "max_gradient_norm": 6.404062271118164,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.14227773951659314,
+          "mean_pre_clip_gradient_norm": 4.135157227516174,
+          "mean_target_token_cross_entropy": 0.43366944760782644,
+          "min_gradient_norm": 1.535767912864685
+        },
+        "17-32": {
+          "examples": 64,
+          "max_gradient_norm": 3.655616521835327,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.012857361584115443,
+          "mean_pre_clip_gradient_norm": 1.9465465545654297,
+          "mean_target_token_cross_entropy": 0.7492746687494218,
+          "min_gradient_norm": 1.2267932891845703
+        },
+        "33-48": {
+          "examples": 64,
+          "max_gradient_norm": 3.5826833248138428,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.03467048478267276,
+          "mean_pre_clip_gradient_norm": 2.1373744308948517,
+          "mean_target_token_cross_entropy": 0.6315572494640946,
+          "min_gradient_norm": 1.3276453018188477
+        },
+        "49-64": {
+          "examples": 64,
+          "max_gradient_norm": 2.935671329498291,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.024936977561296727,
+          "mean_pre_clip_gradient_norm": 1.8310111202299595,
+          "mean_target_token_cross_entropy": 0.6312628057785332,
+          "min_gradient_norm": 0.85979825258255
+        },
+        "65-80": {
+          "examples": 64,
+          "max_gradient_norm": 3.5423977375030518,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.061139764044661815,
+          "mean_pre_clip_gradient_norm": 2.5092861875891685,
+          "mean_target_token_cross_entropy": 0.5033519284334034,
+          "min_gradient_norm": 1.1517295837402344
+        },
+        "81-96": {
+          "examples": 64,
+          "max_gradient_norm": 6.090814590454102,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.06880261180910904,
+          "mean_pre_clip_gradient_norm": 3.2394878268241882,
+          "mean_target_token_cross_entropy": 0.5280531312455423,
+          "min_gradient_norm": 1.5506515502929688
+        },
+        "97-112": {
+          "examples": 64,
+          "max_gradient_norm": 4.911355495452881,
+          "mean_logged_gold_whole_answer_probability_including_eos": 0.11085778395448823,
+          "mean_pre_clip_gradient_norm": 2.9549839049577713,
+          "mean_target_token_cross_entropy": 0.4148463566962164,
+          "min_gradient_norm": 1.2980351448059082
+        }
+      },
+      "training_sha256": "fbd606c13caebed017f35a05306501f287615d3d82394e4fc1027ec643721068"
+    }
+  },
+  "interpretation_limits": [
+    "All inputs here are TRAIN records. No TEST predictions were consulted for these diagnostics or any tuning.",
+    "Logged cross entropy averages eight target tokens: four digits, three spaces and nativeEOS. Whole-answer probability is reconstructed as exp(-8*loss) on each pre-update logged example, then averaged; windows contain changing model weights and are not final-checkpoint probability estimates.",
+    "Eight fixed TRAIN probes are too small to establish fit; the final full128 TRAIN generated-answer scores are primary for diagnosis.",
+    "No new model inference, optimization, recipe or source change."
+  ],
+  "observed_at": "2026-09-12T07:31:03.876265+00:00"
+}

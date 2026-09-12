@@ -1,0 +1,6 @@
+{
+  "arm": "B_oracle",
+  "protocol": "configs/device4_sufficiency_protocol.json",
+  "protocol_sha256": "4495ab6e736a98aed7ef99dda1e3751f304bc6edd70fe1347d586c0babe06ba6",
+  "stage": "learn"
+}

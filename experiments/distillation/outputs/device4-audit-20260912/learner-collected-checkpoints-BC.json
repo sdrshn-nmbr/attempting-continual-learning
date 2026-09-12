@@ -1,0 +1,90 @@
+{
+  "audit_kind": "collected_persistent_composition_learner_optimizer_integrity",
+  "families": {
+    "B": {
+      "bytes_verified": 372072313,
+      "can_restore_final_optimizer_and_adapter": true,
+      "checkpoints": {
+        "oracle_sft/128": {
+          "adapter_tensor_sha256": "4a9904e9744e32abfae0847c3f4a576dc5b2de1112374e6e702d270b71df8c98",
+          "exact_parameter_order_shapes_and_adamw_recipe": true,
+          "moment_elements": 17039360,
+          "moments_fp32_finite": true,
+          "optimizer_sha256": "31f53007dba2bc2dba69da04d8dea4c17347ba97e1403127af5dec27d8eeeaa8",
+          "optimizer_step": 128,
+          "parameter_moment_pairs": 128,
+          "second_moments_nonnegative": true
+        },
+        "oracle_sft/32": {
+          "adapter_tensor_sha256": "658f850a2dd528b24d616e288803216396a1e9158c9225e5ae41f216437d9d4c",
+          "exact_parameter_order_shapes_and_adamw_recipe": true,
+          "moment_elements": 17039360,
+          "moments_fp32_finite": true,
+          "optimizer_sha256": "ba8dbf330e536fc923b282f3c9e1f1d3fd1e01a33035c12351cbd0167462fb75",
+          "optimizer_step": 32,
+          "parameter_moment_pairs": 128,
+          "second_moments_nonnegative": true
+        },
+        "oracle_sft/96": {
+          "adapter_tensor_sha256": "438219c0b2909d83afd7682f1528bc7258a5141d360af0bf8c5f2065e513de51",
+          "exact_parameter_order_shapes_and_adamw_recipe": true,
+          "moment_elements": 17039360,
+          "moments_fp32_finite": true,
+          "optimizer_sha256": "835c4ecbb56e29a55c01e523f8324754f640a99cde7b91feb0287a74809a2236",
+          "optimizer_step": 96,
+          "parameter_moment_pairs": 128,
+          "second_moments_nonnegative": true
+        }
+      },
+      "collection_sha256": "5fbb2eec18163ee86fef08f16572355eca4f12811f8b394b97e0d97793f85b9f",
+      "evaluation_pid": 5158,
+      "files_verified": 46,
+      "training_pid": 4916
+    },
+    "C": {
+      "bytes_verified": 372073776,
+      "can_restore_final_optimizer_and_adapter": true,
+      "checkpoints": {
+        "oracle_sft/128": {
+          "adapter_tensor_sha256": "88fb0de1fa96a5d7235caa8eca7a85a5120ddbaf4e8f3d68c9b861a902980f97",
+          "exact_parameter_order_shapes_and_adamw_recipe": true,
+          "moment_elements": 17039360,
+          "moments_fp32_finite": true,
+          "optimizer_sha256": "6d0b88f5869e94672d02bf58c3ba2115b885e6f643a995df3264a43572a76868",
+          "optimizer_step": 128,
+          "parameter_moment_pairs": 128,
+          "second_moments_nonnegative": true
+        },
+        "oracle_sft/32": {
+          "adapter_tensor_sha256": "eb4fe6216c6417ea1db48d596a749dd3945265861a170b304e6210b926b95fa6",
+          "exact_parameter_order_shapes_and_adamw_recipe": true,
+          "moment_elements": 17039360,
+          "moments_fp32_finite": true,
+          "optimizer_sha256": "31771ea7566f031b3d10f999f0ab07a52303005c915e5b7627233805f72b36d8",
+          "optimizer_step": 32,
+          "parameter_moment_pairs": 128,
+          "second_moments_nonnegative": true
+        },
+        "oracle_sft/96": {
+          "adapter_tensor_sha256": "06491e16ea83cc970ba5ebfbd44f02aca40f7fd3b52b35ab55ff793ad3b39e4d",
+          "exact_parameter_order_shapes_and_adamw_recipe": true,
+          "moment_elements": 17039360,
+          "moments_fp32_finite": true,
+          "optimizer_sha256": "266bffa3f1b2ce155e058fd1527a8b815644f53df475d22102ed22b0137f4435",
+          "optimizer_step": 96,
+          "parameter_moment_pairs": 128,
+          "second_moments_nonnegative": true
+        }
+      },
+      "collection_sha256": "492797e2b90c6efb9bc42dce13098debaee6fde4d5241be33e02275d957d9697",
+      "evaluation_pid": 5175,
+      "files_verified": 46,
+      "training_pid": 4922
+    }
+  },
+  "gpu_used": false,
+  "model_loaded": false,
+  "observed_at": "2026-09-12T07:32:41.721668+00:00",
+  "original_receipt_or_source_mutations": false,
+  "torch_version": "2.14.0"
+}

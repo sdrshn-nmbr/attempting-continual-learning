@@ -1,0 +1,4136 @@
+{
+  "status": "all_six_completed_runs_independently_audited",
+  "protocol_digest": "31ec528d68e04062d7be72c3b8d0c8d1c5b915b7670c3be4be5af0a69f13a2be",
+  "source_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b",
+  "training": {
+    "cached_teacher_sft": {
+      "status": "passed_collected_training_audit",
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-sft-train",
+      "method": "cached_teacher_sft",
+      "source_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b",
+      "source_archive_sha256": "9a9d1955c2664e9c9dede7b3015f2ba95bb2d57898e613b3c2258431232d0a71",
+      "source_files_checked": 130,
+      "scientific_closure_files_checked": 25,
+      "collection_files_checked": 53,
+      "collection_sha256": "d260601ccdd62564509b5ee109b47e83e1c4942dc8a54709e664282e3d49de37",
+      "execution_sha256": "dd740d773008ef91e23a1f468f6a051ac0ed53898fe3c8cdc4156cbe8e6cd0e7",
+      "training_sha256": "4015e562b09fb85cccbd3ca7b2617720f8dee2b024f53ec9c176e77512b7f5ae",
+      "native_teacher_before_first_update": {
+        "train": {
+          "correct": 384,
+          "count": 384,
+          "families": {
+            "sequence_a": {
+              "correct": 128,
+              "count": 128
+            },
+            "sequence_b": {
+              "correct": 128,
+              "count": 128
+            },
+            "sequence_c": {
+              "correct": 128,
+              "count": 128
+            }
+          }
+        },
+        "validation": {
+          "correct": 96,
+          "count": 96,
+          "families": {
+            "sequence_a": {
+              "correct": 32,
+              "count": 32
+            },
+            "sequence_b": {
+              "correct": 32,
+              "count": 32
+            },
+            "sequence_c": {
+              "correct": 32,
+              "count": 32
+            }
+          }
+        }
+      },
+      "trajectories": {
+        "rows": 1536,
+        "complete_updates_represented": 384,
+        "partial_update_rows": 0,
+        "exposures_per_family": {
+          "sequence_c": 512,
+          "sequence_b": 512,
+          "sequence_a": 512
+        },
+        "loss_tokens_per_family": {
+          "sequence_c": 3584,
+          "sequence_b": 3584,
+          "sequence_a": 3584
+        },
+        "prefix_diagnostics": {
+          "trajectory_correct": 1536,
+          "trajectory_format_valid": 1536,
+          "trajectory_native_eos": 1536,
+          "trajectory_cap_without_eos": 0
+        },
+        "cached_trajectory_grades_are_not_student_generated_performance": true
+      },
+      "checkpoint_capacity_and_bytes": {
+        "status": "passed",
+        "checkpoints": [
+          {
+            "label": "initial",
+            "file_tensor_sha256": "73b8732f0f593fe14df9d0dc22c289c383d80fde80d464e664c3ea754a36fc23",
+            "resident_tensor_bytes": 15335424,
+            "rank": 8,
+            "parameter_count": 3833856
+          },
+          {
+            "label": "final",
+            "file_tensor_sha256": "89347967995c315d526e3c70ac79d122986907b153c1d5165ffad46a372f4bc5",
+            "resident_tensor_bytes": 15335424,
+            "rank": 8,
+            "parameter_count": 3833856
+          }
+        ]
+      },
+      "optimizer_checkpoints": {
+        "32": {
+          "states": 144,
+          "actual_clock": 32,
+          "finite_moments": true
+        },
+        "128": {
+          "states": 144,
+          "actual_clock": 128,
+          "finite_moments": true
+        },
+        "384": {
+          "states": 144,
+          "actual_clock": 384,
+          "finite_moments": true
+        }
+      },
+      "complete_prefix_sampling_diagnostics": {
+        "panels": {
+          "1-32/sequence_c": {
+            "trajectory_rows": 49,
+            "loss_tokens": 343,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 49,
+            "trajectory_format_valid": 49,
+            "trajectory_native_eos": 49,
+            "qualified_prefix_positions": 0,
+            "teacher_agrees_on_qualified_prefix_positions": 0,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 0.0,
+            "kl_positions": 0
+          },
+          "1-32/sequence_b": {
+            "trajectory_rows": 41,
+            "loss_tokens": 287,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 41,
+            "trajectory_format_valid": 41,
+            "trajectory_native_eos": 41,
+            "qualified_prefix_positions": 0,
+            "teacher_agrees_on_qualified_prefix_positions": 0,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 0.0,
+            "kl_positions": 0
+          },
+          "1-32/sequence_a": {
+            "trajectory_rows": 38,
+            "loss_tokens": 266,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 38,
+            "trajectory_format_valid": 38,
+            "trajectory_native_eos": 38,
+            "qualified_prefix_positions": 0,
+            "teacher_agrees_on_qualified_prefix_positions": 0,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 0.0,
+            "kl_positions": 0
+          },
+          "33-128/sequence_a": {
+            "trajectory_rows": 140,
+            "loss_tokens": 980,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 140,
+            "trajectory_format_valid": 140,
+            "trajectory_native_eos": 140,
+            "qualified_prefix_positions": 0,
+            "teacher_agrees_on_qualified_prefix_positions": 0,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 0.0,
+            "kl_positions": 0
+          },
+          "33-128/sequence_c": {
+            "trajectory_rows": 114,
+            "loss_tokens": 798,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 114,
+            "trajectory_format_valid": 114,
+            "trajectory_native_eos": 114,
+            "qualified_prefix_positions": 0,
+            "teacher_agrees_on_qualified_prefix_positions": 0,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 0.0,
+            "kl_positions": 0
+          },
+          "33-128/sequence_b": {
+            "trajectory_rows": 130,
+            "loss_tokens": 910,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 130,
+            "trajectory_format_valid": 130,
+            "trajectory_native_eos": 130,
+            "qualified_prefix_positions": 0,
+            "teacher_agrees_on_qualified_prefix_positions": 0,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 0.0,
+            "kl_positions": 0
+          },
+          "129-384/sequence_c": {
+            "trajectory_rows": 349,
+            "loss_tokens": 2443,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 349,
+            "trajectory_format_valid": 349,
+            "trajectory_native_eos": 349,
+            "qualified_prefix_positions": 0,
+            "teacher_agrees_on_qualified_prefix_positions": 0,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 0.0,
+            "kl_positions": 0
+          },
+          "129-384/sequence_b": {
+            "trajectory_rows": 341,
+            "loss_tokens": 2387,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 341,
+            "trajectory_format_valid": 341,
+            "trajectory_native_eos": 341,
+            "qualified_prefix_positions": 0,
+            "teacher_agrees_on_qualified_prefix_positions": 0,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 0.0,
+            "kl_positions": 0
+          },
+          "129-384/sequence_a": {
+            "trajectory_rows": 334,
+            "loss_tokens": 2338,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 334,
+            "trajectory_format_valid": 334,
+            "trajectory_native_eos": 334,
+            "qualified_prefix_positions": 0,
+            "teacher_agrees_on_qualified_prefix_positions": 0,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 0.0,
+            "kl_positions": 0
+          }
+        },
+        "response_length_histograms": {
+          "1-32/sequence_c": {
+            "7": 49
+          },
+          "1-32/sequence_b": {
+            "7": 41
+          },
+          "1-32/sequence_a": {
+            "7": 38
+          },
+          "33-128/sequence_a": {
+            "7": 140
+          },
+          "33-128/sequence_c": {
+            "7": 114
+          },
+          "33-128/sequence_b": {
+            "7": 130
+          },
+          "129-384/sequence_c": {
+            "7": 349
+          },
+          "129-384/sequence_b": {
+            "7": 341
+          },
+          "129-384/sequence_a": {
+            "7": 334
+          }
+        },
+        "minimum_observed_vocabulary_probability": null,
+        "off_answer_prefix_competence_certified": false
+      },
+      "native_train_probes": {
+        "32": {
+          "correct": 1,
+          "count": 24,
+          "families": {
+            "sequence_a": {
+              "correct": 0,
+              "count": 8
+            },
+            "sequence_b": {
+              "correct": 0,
+              "count": 8
+            },
+            "sequence_c": {
+              "correct": 1,
+              "count": 8
+            }
+          }
+        },
+        "128": {
+          "correct": 17,
+          "count": 24,
+          "families": {
+            "sequence_a": {
+              "correct": 6,
+              "count": 8
+            },
+            "sequence_b": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_c": {
+              "correct": 3,
+              "count": 8
+            }
+          }
+        },
+        "384": {
+          "correct": 24,
+          "count": 24,
+          "families": {
+            "sequence_a": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_b": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_c": {
+              "correct": 8,
+              "count": 8
+            }
+          }
+        }
+      },
+      "coverage_sft_final_tensors_equal": true,
+      "coverage_sft_final_optimizer_tensors_equal": true,
+      "generic_retention": {
+        "initial": {
+          "correct": 97,
+          "count": 128,
+          "families": {
+            "boolq": {
+              "correct": 29,
+              "count": 32
+            },
+            "commonsense_qa": {
+              "correct": 25,
+              "count": 32
+            },
+            "hellaswag": {
+              "correct": 24,
+              "count": 32
+            },
+            "winogrande": {
+              "correct": 19,
+              "count": 32
+            }
+          },
+          "scoring": "original multiple-choice likelihood; separate from native generation"
+        },
+        "final": {
+          "correct": 96,
+          "count": 128,
+          "families": {
+            "boolq": {
+              "correct": 28,
+              "count": 32
+            },
+            "commonsense_qa": {
+              "correct": 23,
+              "count": 32
+            },
+            "hellaswag": {
+              "correct": 25,
+              "count": 32
+            },
+            "winogrande": {
+              "correct": 20,
+              "count": 32
+            }
+          },
+          "scoring": "original multiple-choice likelihood; separate from native generation"
+        }
+      },
+      "fixed_teacher_and_base_immutability": {
+        "recorded_training_assertions": {
+          "sft_teacher_released_after_native_qualification": true,
+          "student_base_sha256_before_and_after": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31",
+          "teacher_adapter_sha256_before_and_after": "fab63ae6d7c27209cde004c1fae57cc7758a9fc360fafd791ea8ad3045884f21",
+          "teacher_base_sha256_before_and_after": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31",
+          "teacher_versions_and_gradients_checked_every_kl_update": false
+        },
+        "independent_process_memory_remeasurement": false
+      },
+      "fresh_process_native_heldout_evaluation_audited": false,
+      "limitations": "Completed training artifact and independent tokenizer rescore audit. No repeated GPU inference or independent access to live teacher weights. Native final heldout persistence awaits separate queued evaluation. Generic retention remains multiple-choice."
+    },
+    "cached_teacher_kl": {
+      "status": "passed_collected_training_audit",
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-kl-train",
+      "method": "cached_teacher_kl",
+      "source_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b",
+      "source_archive_sha256": "9a9d1955c2664e9c9dede7b3015f2ba95bb2d57898e613b3c2258431232d0a71",
+      "source_files_checked": 130,
+      "scientific_closure_files_checked": 25,
+      "collection_files_checked": 53,
+      "collection_sha256": "b57d2c5e5ad1bf7ff8a9c7afdd601724a5659246b1491c38bd558791f3f7a8c8",
+      "execution_sha256": "3c04ed47daf5399c6b3724e36c0146ba62a421ddc049cf8166df7fad1ad2cf69",
+      "training_sha256": "0aa69650b08cd2349fa4349c6bbebcb3be62defd8a8b082ce91eb13d6f2b3c88",
+      "native_teacher_before_first_update": {
+        "train": {
+          "correct": 384,
+          "count": 384,
+          "families": {
+            "sequence_a": {
+              "correct": 128,
+              "count": 128
+            },
+            "sequence_b": {
+              "correct": 128,
+              "count": 128
+            },
+            "sequence_c": {
+              "correct": 128,
+              "count": 128
+            }
+          }
+        },
+        "validation": {
+          "correct": 96,
+          "count": 96,
+          "families": {
+            "sequence_a": {
+              "correct": 32,
+              "count": 32
+            },
+            "sequence_b": {
+              "correct": 32,
+              "count": 32
+            },
+            "sequence_c": {
+              "correct": 32,
+              "count": 32
+            }
+          }
+        }
+      },
+      "trajectories": {
+        "rows": 1536,
+        "complete_updates_represented": 384,
+        "partial_update_rows": 0,
+        "exposures_per_family": {
+          "sequence_c": 512,
+          "sequence_b": 512,
+          "sequence_a": 512
+        },
+        "loss_tokens_per_family": {
+          "sequence_c": 3584,
+          "sequence_b": 3584,
+          "sequence_a": 3584
+        },
+        "prefix_diagnostics": {
+          "trajectory_correct": 1536,
+          "trajectory_format_valid": 1536,
+          "trajectory_native_eos": 1536,
+          "trajectory_cap_without_eos": 0,
+          "qualified_prefix_tokens": 10752,
+          "divergent_prefix_tokens": 0,
+          "teacher_agrees_on_qualified_prefix": 10752
+        },
+        "cached_trajectory_grades_are_not_student_generated_performance": true
+      },
+      "checkpoint_capacity_and_bytes": {
+        "status": "passed",
+        "checkpoints": [
+          {
+            "label": "initial",
+            "file_tensor_sha256": "73b8732f0f593fe14df9d0dc22c289c383d80fde80d464e664c3ea754a36fc23",
+            "resident_tensor_bytes": 15335424,
+            "rank": 8,
+            "parameter_count": 3833856
+          },
+          {
+            "label": "final",
+            "file_tensor_sha256": "da90c3bc94a8dc73b5ac2cff28a7d591ffa20839c056ac1f82a089cd3aed2342",
+            "resident_tensor_bytes": 15335424,
+            "rank": 8,
+            "parameter_count": 3833856
+          }
+        ]
+      },
+      "optimizer_checkpoints": {
+        "32": {
+          "states": 144,
+          "actual_clock": 32,
+          "finite_moments": true
+        },
+        "128": {
+          "states": 144,
+          "actual_clock": 128,
+          "finite_moments": true
+        },
+        "384": {
+          "states": 144,
+          "actual_clock": 384,
+          "finite_moments": true
+        }
+      },
+      "complete_prefix_sampling_diagnostics": {
+        "panels": {
+          "1-32/sequence_c": {
+            "trajectory_rows": 49,
+            "loss_tokens": 343,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 49,
+            "trajectory_format_valid": 49,
+            "trajectory_native_eos": 49,
+            "qualified_prefix_positions": 343,
+            "teacher_agrees_on_qualified_prefix_positions": 343,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 526.7102783708251,
+            "kl_positions": 343
+          },
+          "1-32/sequence_b": {
+            "trajectory_rows": 41,
+            "loss_tokens": 287,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 41,
+            "trajectory_format_valid": 41,
+            "trajectory_native_eos": 41,
+            "qualified_prefix_positions": 287,
+            "teacher_agrees_on_qualified_prefix_positions": 287,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 496.60141287980514,
+            "kl_positions": 287
+          },
+          "1-32/sequence_a": {
+            "trajectory_rows": 38,
+            "loss_tokens": 266,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 38,
+            "trajectory_format_valid": 38,
+            "trajectory_native_eos": 38,
+            "qualified_prefix_positions": 266,
+            "teacher_agrees_on_qualified_prefix_positions": 266,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 470.4895296814939,
+            "kl_positions": 266
+          },
+          "33-128/sequence_a": {
+            "trajectory_rows": 140,
+            "loss_tokens": 980,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 140,
+            "trajectory_format_valid": 140,
+            "trajectory_native_eos": 140,
+            "qualified_prefix_positions": 980,
+            "teacher_agrees_on_qualified_prefix_positions": 980,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 417.04102460194696,
+            "kl_positions": 980
+          },
+          "33-128/sequence_c": {
+            "trajectory_rows": 114,
+            "loss_tokens": 798,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 114,
+            "trajectory_format_valid": 114,
+            "trajectory_native_eos": 114,
+            "qualified_prefix_positions": 798,
+            "teacher_agrees_on_qualified_prefix_positions": 798,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 469.1617852298888,
+            "kl_positions": 798
+          },
+          "33-128/sequence_b": {
+            "trajectory_rows": 130,
+            "loss_tokens": 910,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 130,
+            "trajectory_format_valid": 130,
+            "trajectory_native_eos": 130,
+            "qualified_prefix_positions": 910,
+            "teacher_agrees_on_qualified_prefix_positions": 910,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 423.5128112397388,
+            "kl_positions": 910
+          },
+          "129-384/sequence_c": {
+            "trajectory_rows": 349,
+            "loss_tokens": 2443,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 349,
+            "trajectory_format_valid": 349,
+            "trajectory_native_eos": 349,
+            "qualified_prefix_positions": 2443,
+            "teacher_agrees_on_qualified_prefix_positions": 2443,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 34.89165670019938,
+            "kl_positions": 2443
+          },
+          "129-384/sequence_b": {
+            "trajectory_rows": 341,
+            "loss_tokens": 2387,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 341,
+            "trajectory_format_valid": 341,
+            "trajectory_native_eos": 341,
+            "qualified_prefix_positions": 2387,
+            "teacher_agrees_on_qualified_prefix_positions": 2387,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 28.804936751720113,
+            "kl_positions": 2387
+          },
+          "129-384/sequence_a": {
+            "trajectory_rows": 334,
+            "loss_tokens": 2338,
+            "student_sampled_rows": 0,
+            "trajectory_whole_answer_correct": 334,
+            "trajectory_format_valid": 334,
+            "trajectory_native_eos": 334,
+            "qualified_prefix_positions": 2338,
+            "teacher_agrees_on_qualified_prefix_positions": 2338,
+            "divergent_prefix_positions": 0,
+            "divergent_teacher_entropy_sum": 0.0,
+            "divergent_teacher_eos_probability_sum": 0.0,
+            "divergent_teacher_sampled_token_logp_sum": 0.0,
+            "full_vocabulary_forward_kl_sum": 15.987598481934114,
+            "kl_positions": 2338
+          }
+        },
+        "response_length_histograms": {
+          "1-32/sequence_c": {
+            "7": 49
+          },
+          "1-32/sequence_b": {
+            "7": 41
+          },
+          "1-32/sequence_a": {
+            "7": 38
+          },
+          "33-128/sequence_a": {
+            "7": 140
+          },
+          "33-128/sequence_c": {
+            "7": 114
+          },
+          "33-128/sequence_b": {
+            "7": 130
+          },
+          "129-384/sequence_c": {
+            "7": 349
+          },
+          "129-384/sequence_b": {
+            "7": 341
+          },
+          "129-384/sequence_a": {
+            "7": 334
+          }
+        },
+        "minimum_observed_vocabulary_probability": null,
+        "off_answer_prefix_competence_certified": false
+      },
+      "native_train_probes": {
+        "32": {
+          "correct": 1,
+          "count": 24,
+          "families": {
+            "sequence_a": {
+              "correct": 0,
+              "count": 8
+            },
+            "sequence_b": {
+              "correct": 0,
+              "count": 8
+            },
+            "sequence_c": {
+              "correct": 1,
+              "count": 8
+            }
+          }
+        },
+        "128": {
+          "correct": 17,
+          "count": 24,
+          "families": {
+            "sequence_a": {
+              "correct": 6,
+              "count": 8
+            },
+            "sequence_b": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_c": {
+              "correct": 3,
+              "count": 8
+            }
+          }
+        },
+        "384": {
+          "correct": 24,
+          "count": 24,
+          "families": {
+            "sequence_a": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_b": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_c": {
+              "correct": 8,
+              "count": 8
+            }
+          }
+        }
+      },
+      "coverage_sft_final_tensors_equal": false,
+      "coverage_sft_final_optimizer_tensors_equal": null,
+      "generic_retention": {
+        "initial": {
+          "correct": 97,
+          "count": 128,
+          "families": {
+            "boolq": {
+              "correct": 29,
+              "count": 32
+            },
+            "commonsense_qa": {
+              "correct": 25,
+              "count": 32
+            },
+            "hellaswag": {
+              "correct": 24,
+              "count": 32
+            },
+            "winogrande": {
+              "correct": 19,
+              "count": 32
+            }
+          },
+          "scoring": "original multiple-choice likelihood; separate from native generation"
+        },
+        "final": {
+          "correct": 97,
+          "count": 128,
+          "families": {
+            "boolq": {
+              "correct": 29,
+              "count": 32
+            },
+            "commonsense_qa": {
+              "correct": 23,
+              "count": 32
+            },
+            "hellaswag": {
+              "correct": 25,
+              "count": 32
+            },
+            "winogrande": {
+              "correct": 20,
+              "count": 32
+            }
+          },
+          "scoring": "original multiple-choice likelihood; separate from native generation"
+        }
+      },
+      "fixed_teacher_and_base_immutability": {
+        "recorded_training_assertions": {
+          "sft_teacher_released_after_native_qualification": false,
+          "student_base_sha256_before_and_after": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31",
+          "teacher_adapter_sha256_before_and_after": "fab63ae6d7c27209cde004c1fae57cc7758a9fc360fafd791ea8ad3045884f21",
+          "teacher_base_sha256_before_and_after": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31",
+          "teacher_versions_and_gradients_checked_every_kl_update": true
+        },
+        "independent_process_memory_remeasurement": false
+      },
+      "fresh_process_native_heldout_evaluation_audited": false,
+      "limitations": "Completed training artifact and independent tokenizer rescore audit. No repeated GPU inference or independent access to live teacher weights. Native final heldout persistence awaits separate queued evaluation. Generic retention remains multiple-choice."
+    },
+    "onpolicy_kl": {
+      "status": "passed_collected_training_audit",
+      "task_id": "followthrough-20260912-onpolicy303-onpolicy-kl-train",
+      "method": "onpolicy_kl",
+      "source_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b",
+      "source_archive_sha256": "9a9d1955c2664e9c9dede7b3015f2ba95bb2d57898e613b3c2258431232d0a71",
+      "source_files_checked": 130,
+      "scientific_closure_files_checked": 25,
+      "collection_files_checked": 53,
+      "collection_sha256": "df9827727893f6b8e8b781e7679a9bfa4c8ae8ae5768ae014a542e860696233e",
+      "execution_sha256": "4130cc5325b867086f804e2df65d3424b4ad04f7b05c1d8d3963e3bc33c2476c",
+      "training_sha256": "2ec82629cf95e6e1bb2d27d01bf1fbd75b515dd99fa185b2f7f1753dd6b257a8",
+      "native_teacher_before_first_update": {
+        "train": {
+          "correct": 384,
+          "count": 384,
+          "families": {
+            "sequence_a": {
+              "correct": 128,
+              "count": 128
+            },
+            "sequence_b": {
+              "correct": 128,
+              "count": 128
+            },
+            "sequence_c": {
+              "correct": 128,
+              "count": 128
+            }
+          }
+        },
+        "validation": {
+          "correct": 96,
+          "count": 96,
+          "families": {
+            "sequence_a": {
+              "correct": 32,
+              "count": 32
+            },
+            "sequence_b": {
+              "correct": 32,
+              "count": 32
+            },
+            "sequence_c": {
+              "correct": 32,
+              "count": 32
+            }
+          }
+        }
+      },
+      "trajectories": {
+        "rows": 1536,
+        "complete_updates_represented": 384,
+        "partial_update_rows": 0,
+        "exposures_per_family": {
+          "sequence_c": 512,
+          "sequence_b": 512,
+          "sequence_a": 512
+        },
+        "loss_tokens_per_family": {
+          "sequence_c": 3787,
+          "sequence_b": 3766,
+          "sequence_a": 3761
+        },
+        "prefix_diagnostics": {
+          "trajectory_correct": 1178,
+          "trajectory_format_valid": 1451,
+          "trajectory_native_eos": 1472,
+          "trajectory_cap_without_eos": 64,
+          "qualified_prefix_tokens": 9231,
+          "divergent_prefix_tokens": 2083,
+          "teacher_agrees_on_qualified_prefix": 9231,
+          "maximum_sampling_vs_recomputed_logp_gap": 0.0002683130324347971
+        },
+        "cached_trajectory_grades_are_not_student_generated_performance": false
+      },
+      "checkpoint_capacity_and_bytes": {
+        "status": "passed",
+        "checkpoints": [
+          {
+            "label": "initial",
+            "file_tensor_sha256": "73b8732f0f593fe14df9d0dc22c289c383d80fde80d464e664c3ea754a36fc23",
+            "resident_tensor_bytes": 15335424,
+            "rank": 8,
+            "parameter_count": 3833856
+          },
+          {
+            "label": "final",
+            "file_tensor_sha256": "3d70144d8faba4ffdcea7d0a558bffdbb99c3705fdeeed19dc6d5d6753d09f21",
+            "resident_tensor_bytes": 15335424,
+            "rank": 8,
+            "parameter_count": 3833856
+          }
+        ]
+      },
+      "optimizer_checkpoints": {
+        "32": {
+          "states": 144,
+          "actual_clock": 32,
+          "finite_moments": true
+        },
+        "128": {
+          "states": 144,
+          "actual_clock": 128,
+          "finite_moments": true
+        },
+        "384": {
+          "states": 144,
+          "actual_clock": 384,
+          "finite_moments": true
+        }
+      },
+      "complete_prefix_sampling_diagnostics": {
+        "panels": {
+          "1-32/sequence_c": {
+            "trajectory_rows": 49,
+            "loss_tokens": 546,
+            "student_sampled_rows": 49,
+            "trajectory_whole_answer_correct": 0,
+            "trajectory_format_valid": 19,
+            "trajectory_native_eos": 25,
+            "qualified_prefix_positions": 105,
+            "teacher_agrees_on_qualified_prefix_positions": 105,
+            "divergent_prefix_positions": 441,
+            "divergent_teacher_entropy_sum": 327.46591351218683,
+            "divergent_teacher_eos_probability_sum": 67.66540718175952,
+            "divergent_teacher_sampled_token_logp_sum": -3731.7860593013447,
+            "full_vocabulary_forward_kl_sum": 1165.107012049848,
+            "kl_positions": 546
+          },
+          "1-32/sequence_b": {
+            "trajectory_rows": 41,
+            "loss_tokens": 467,
+            "student_sampled_rows": 41,
+            "trajectory_whole_answer_correct": 0,
+            "trajectory_format_valid": 16,
+            "trajectory_native_eos": 21,
+            "qualified_prefix_positions": 79,
+            "teacher_agrees_on_qualified_prefix_positions": 79,
+            "divergent_prefix_positions": 388,
+            "divergent_teacher_entropy_sum": 198.6075297212435,
+            "divergent_teacher_eos_probability_sum": 48.55974278062403,
+            "divergent_teacher_sampled_token_logp_sum": -2831.7514797178374,
+            "full_vocabulary_forward_kl_sum": 959.4002409008572,
+            "kl_positions": 467
+          },
+          "1-32/sequence_a": {
+            "trajectory_rows": 38,
+            "loss_tokens": 443,
+            "student_sampled_rows": 38,
+            "trajectory_whole_answer_correct": 0,
+            "trajectory_format_valid": 11,
+            "trajectory_native_eos": 18,
+            "qualified_prefix_positions": 75,
+            "teacher_agrees_on_qualified_prefix_positions": 75,
+            "divergent_prefix_positions": 368,
+            "divergent_teacher_entropy_sum": 212.93797296805818,
+            "divergent_teacher_eos_probability_sum": 51.94384071891626,
+            "divergent_teacher_sampled_token_logp_sum": -2621.5299781331764,
+            "full_vocabulary_forward_kl_sum": 1091.4185595082254,
+            "kl_positions": 443
+          },
+          "33-128/sequence_a": {
+            "trajectory_rows": 140,
+            "loss_tokens": 980,
+            "student_sampled_rows": 140,
+            "trajectory_whole_answer_correct": 68,
+            "trajectory_format_valid": 140,
+            "trajectory_native_eos": 140,
+            "qualified_prefix_positions": 708,
+            "teacher_agrees_on_qualified_prefix_positions": 708,
+            "divergent_prefix_positions": 272,
+            "divergent_teacher_entropy_sum": 2.9137353847696206,
+            "divergent_teacher_eos_probability_sum": 71.99958956313412,
+            "divergent_teacher_sampled_token_logp_sum": -848.6326971642955,
+            "full_vocabulary_forward_kl_sum": 323.14244337182674,
+            "kl_positions": 980
+          },
+          "33-128/sequence_c": {
+            "trajectory_rows": 114,
+            "loss_tokens": 798,
+            "student_sampled_rows": 114,
+            "trajectory_whole_answer_correct": 50,
+            "trajectory_format_valid": 112,
+            "trajectory_native_eos": 114,
+            "qualified_prefix_positions": 544,
+            "teacher_agrees_on_qualified_prefix_positions": 544,
+            "divergent_prefix_positions": 254,
+            "divergent_teacher_entropy_sum": 3.9871558306370756,
+            "divergent_teacher_eos_probability_sum": 63.99972511502922,
+            "divergent_teacher_sampled_token_logp_sum": -955.3960090690754,
+            "full_vocabulary_forward_kl_sum": 275.4723381148633,
+            "kl_positions": 798
+          },
+          "33-128/sequence_b": {
+            "trajectory_rows": 130,
+            "loss_tokens": 910,
+            "student_sampled_rows": 130,
+            "trajectory_whole_answer_correct": 53,
+            "trajectory_format_valid": 130,
+            "trajectory_native_eos": 130,
+            "qualified_prefix_positions": 611,
+            "teacher_agrees_on_qualified_prefix_positions": 611,
+            "divergent_prefix_positions": 299,
+            "divergent_teacher_entropy_sum": 1.0198625551187788,
+            "divergent_teacher_eos_probability_sum": 76.9981232881706,
+            "divergent_teacher_sampled_token_logp_sum": -1055.4617395666414,
+            "full_vocabulary_forward_kl_sum": 319.5237396650828,
+            "kl_positions": 910
+          },
+          "129-384/sequence_c": {
+            "trajectory_rows": 349,
+            "loss_tokens": 2443,
+            "student_sampled_rows": 349,
+            "trajectory_whole_answer_correct": 343,
+            "trajectory_format_valid": 349,
+            "trajectory_native_eos": 349,
+            "qualified_prefix_positions": 2419,
+            "teacher_agrees_on_qualified_prefix_positions": 2419,
+            "divergent_prefix_positions": 24,
+            "divergent_teacher_entropy_sum": 0.0005679176541408175,
+            "divergent_teacher_eos_probability_sum": 5.999976992608235,
+            "divergent_teacher_sampled_token_logp_sum": -12.156675100280296,
+            "full_vocabulary_forward_kl_sum": 43.29787072160567,
+            "kl_positions": 2443
+          },
+          "129-384/sequence_b": {
+            "trajectory_rows": 341,
+            "loss_tokens": 2389,
+            "student_sampled_rows": 341,
+            "trajectory_whole_answer_correct": 332,
+            "trajectory_format_valid": 340,
+            "trajectory_native_eos": 341,
+            "qualified_prefix_positions": 2356,
+            "teacher_agrees_on_qualified_prefix_positions": 2356,
+            "divergent_prefix_positions": 33,
+            "divergent_teacher_entropy_sum": 0.10429479821783429,
+            "divergent_teacher_eos_probability_sum": 8.999698877334655,
+            "divergent_teacher_sampled_token_logp_sum": -0.014520336541494316,
+            "full_vocabulary_forward_kl_sum": 35.69992360115425,
+            "kl_positions": 2389
+          },
+          "129-384/sequence_a": {
+            "trajectory_rows": 334,
+            "loss_tokens": 2338,
+            "student_sampled_rows": 334,
+            "trajectory_whole_answer_correct": 332,
+            "trajectory_format_valid": 334,
+            "trajectory_native_eos": 334,
+            "qualified_prefix_positions": 2334,
+            "teacher_agrees_on_qualified_prefix_positions": 2334,
+            "divergent_prefix_positions": 4,
+            "divergent_teacher_entropy_sum": 0.00808443129914238,
+            "divergent_teacher_eos_probability_sum": 1.9999912977221406,
+            "divergent_teacher_sampled_token_logp_sum": -0.0007927919891699275,
+            "full_vocabulary_forward_kl_sum": 0.9776021026589813,
+            "kl_positions": 2338
+          }
+        },
+        "response_length_histograms": {
+          "1-32/sequence_c": {
+            "16": 24,
+            "1": 1,
+            "7": 20,
+            "9": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1
+          },
+          "1-32/sequence_b": {
+            "16": 20,
+            "7": 21
+          },
+          "1-32/sequence_a": {
+            "16": 20,
+            "10": 1,
+            "4": 1,
+            "1": 1,
+            "7": 13,
+            "8": 1,
+            "9": 1
+          },
+          "33-128/sequence_a": {
+            "7": 140
+          },
+          "33-128/sequence_c": {
+            "7": 114
+          },
+          "33-128/sequence_b": {
+            "7": 130
+          },
+          "129-384/sequence_c": {
+            "7": 349
+          },
+          "129-384/sequence_b": {
+            "7": 340,
+            "9": 1
+          },
+          "129-384/sequence_a": {
+            "7": 334
+          }
+        },
+        "minimum_observed_vocabulary_probability": 7.1801582664331175e-34,
+        "off_answer_prefix_competence_certified": false
+      },
+      "native_train_probes": {
+        "32": {
+          "correct": 0,
+          "count": 24,
+          "families": {
+            "sequence_a": {
+              "correct": 0,
+              "count": 8
+            },
+            "sequence_b": {
+              "correct": 0,
+              "count": 8
+            },
+            "sequence_c": {
+              "correct": 0,
+              "count": 8
+            }
+          }
+        },
+        "128": {
+          "correct": 24,
+          "count": 24,
+          "families": {
+            "sequence_a": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_b": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_c": {
+              "correct": 8,
+              "count": 8
+            }
+          }
+        },
+        "384": {
+          "correct": 24,
+          "count": 24,
+          "families": {
+            "sequence_a": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_b": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_c": {
+              "correct": 8,
+              "count": 8
+            }
+          }
+        }
+      },
+      "coverage_sft_final_tensors_equal": false,
+      "coverage_sft_final_optimizer_tensors_equal": null,
+      "generic_retention": {
+        "initial": {
+          "correct": 97,
+          "count": 128,
+          "families": {
+            "boolq": {
+              "correct": 29,
+              "count": 32
+            },
+            "commonsense_qa": {
+              "correct": 25,
+              "count": 32
+            },
+            "hellaswag": {
+              "correct": 24,
+              "count": 32
+            },
+            "winogrande": {
+              "correct": 19,
+              "count": 32
+            }
+          },
+          "scoring": "original multiple-choice likelihood; separate from native generation"
+        },
+        "final": {
+          "correct": 96,
+          "count": 128,
+          "families": {
+            "boolq": {
+              "correct": 29,
+              "count": 32
+            },
+            "commonsense_qa": {
+              "correct": 23,
+              "count": 32
+            },
+            "hellaswag": {
+              "correct": 24,
+              "count": 32
+            },
+            "winogrande": {
+              "correct": 20,
+              "count": 32
+            }
+          },
+          "scoring": "original multiple-choice likelihood; separate from native generation"
+        }
+      },
+      "fixed_teacher_and_base_immutability": {
+        "recorded_training_assertions": {
+          "sft_teacher_released_after_native_qualification": false,
+          "student_base_sha256_before_and_after": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31",
+          "teacher_adapter_sha256_before_and_after": "fab63ae6d7c27209cde004c1fae57cc7758a9fc360fafd791ea8ad3045884f21",
+          "teacher_base_sha256_before_and_after": "2b6f0c5ec0aeac9eb1ee6f7e9e3fc38d764bd5341b033634740505a8ee3d0f31",
+          "teacher_versions_and_gradients_checked_every_kl_update": true
+        },
+        "independent_process_memory_remeasurement": false
+      },
+      "fresh_process_native_heldout_evaluation_audited": false,
+      "limitations": "Completed training artifact and independent tokenizer rescore audit. No repeated GPU inference or independent access to live teacher weights. Native final heldout persistence awaits separate queued evaluation. Generic retention remains multiple-choice."
+    }
+  },
+  "evaluation": {
+    "cached_teacher_sft": {
+      "status": "passed_collected_fresh_process_evaluation",
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-sft-evaluate",
+      "method": "cached_teacher_sft",
+      "collection_files_checked": 18,
+      "collection_sha256": "cae48362b456718f9327c5b3f145c8d7abf45a53f6d0d0a2cac6e43e21a0086d",
+      "execution_sha256": "81295d9abc259de330c976bb83185939cbc1b45c3e303d421b417cd489094c5e",
+      "result_sha256": "c470a2bf8bb17020bf8cd08b2556b9001109556f4ea071536e68602b39185a42",
+      "panels_sha256": "40a83278e3981881385ff1882057cfd1e97692817cd20f232b73cd72a8b85739",
+      "source_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b",
+      "native": {
+        "test": {
+          "correct": 187,
+          "count": 192,
+          "families": {
+            "sequence_a": {
+              "correct": 64,
+              "count": 64
+            },
+            "sequence_b": {
+              "correct": 61,
+              "count": 64
+            },
+            "sequence_c": {
+              "correct": 62,
+              "count": 64
+            }
+          }
+        },
+        "unused288": {
+          "correct": 854,
+          "count": 864,
+          "families": {
+            "sequence_a": {
+              "correct": 288,
+              "count": 288
+            },
+            "sequence_b": {
+              "correct": 284,
+              "count": 288
+            },
+            "sequence_c": {
+              "correct": 282,
+              "count": 288
+            }
+          }
+        }
+      },
+      "native_reload_panels": {
+        "initial": {
+          "correct": 0,
+          "count": 24,
+          "families": {
+            "sequence_a": {
+              "correct": 0,
+              "count": 8
+            },
+            "sequence_b": {
+              "correct": 0,
+              "count": 8
+            },
+            "sequence_c": {
+              "correct": 0,
+              "count": 8
+            }
+          }
+        },
+        "final": {
+          "correct": 24,
+          "count": 24,
+          "families": {
+            "sequence_a": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_b": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_c": {
+              "correct": 8,
+              "count": 8
+            }
+          }
+        }
+      },
+      "generic_retention": {
+        "initial": {
+          "correct": 97,
+          "count": 128,
+          "families": {
+            "boolq": {
+              "correct": 29,
+              "count": 32
+            },
+            "commonsense_qa": {
+              "correct": 25,
+              "count": 32
+            },
+            "hellaswag": {
+              "correct": 24,
+              "count": 32
+            },
+            "winogrande": {
+              "correct": 19,
+              "count": 32
+            }
+          },
+          "scoring": "original multiple-choice likelihood; separate from native generation"
+        },
+        "final": {
+          "correct": 96,
+          "count": 128,
+          "families": {
+            "boolq": {
+              "correct": 28,
+              "count": 32
+            },
+            "commonsense_qa": {
+              "correct": 23,
+              "count": 32
+            },
+            "hellaswag": {
+              "correct": 25,
+              "count": 32
+            },
+            "winogrande": {
+              "correct": 20,
+              "count": 32
+            }
+          },
+          "scoring": "original multiple-choice likelihood; separate from native generation"
+        }
+      },
+      "process_proof": {
+        "distinct_attempt_ids": true,
+        "distinct_task_ids": true,
+        "evaluation_parent_pid": 6391,
+        "evaluation_pid": 6397,
+        "numeric_pid_inequality_is_not_the_process_proof": true,
+        "standalone_cli": true,
+        "training_pid": 5256
+      },
+      "teacher_absent": true,
+      "optimizer_updates": 0,
+      "teacher_absence_evidence": "Completed distinct task/attempt, frozen evaluator code, learner-only checkpoint load assertions and exact saved behavior. Independent audit does not rerun model inference or inspect arbitrary process memory."
+    },
+    "cached_teacher_kl": {
+      "status": "passed_collected_fresh_process_evaluation",
+      "task_id": "followthrough-20260912-onpolicy303-cached-teacher-kl-evaluate",
+      "method": "cached_teacher_kl",
+      "collection_files_checked": 18,
+      "collection_sha256": "38d0b6e67ac64e3192205c415d13904d1a9cbe9bcd6e308b51a72a03265dec29",
+      "execution_sha256": "79d66b7cfd8bacab0a2dbc4360d98c76dbf0f1086ecdda0bd97a8d2e0dea8c8c",
+      "result_sha256": "f54eb85c42a432ed9b41e37c5b2bb4bee3ba3705217b267bd0a9ebb5880b0ad8",
+      "panels_sha256": "4dcf887274b7126220b11a581fe16eb065eedeb818221e581870b8dd80f99e37",
+      "source_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b",
+      "native": {
+        "test": {
+          "correct": 191,
+          "count": 192,
+          "families": {
+            "sequence_a": {
+              "correct": 64,
+              "count": 64
+            },
+            "sequence_b": {
+              "correct": 63,
+              "count": 64
+            },
+            "sequence_c": {
+              "correct": 64,
+              "count": 64
+            }
+          }
+        },
+        "unused288": {
+          "correct": 862,
+          "count": 864,
+          "families": {
+            "sequence_a": {
+              "correct": 288,
+              "count": 288
+            },
+            "sequence_b": {
+              "correct": 288,
+              "count": 288
+            },
+            "sequence_c": {
+              "correct": 286,
+              "count": 288
+            }
+          }
+        }
+      },
+      "native_reload_panels": {
+        "initial": {
+          "correct": 0,
+          "count": 24,
+          "families": {
+            "sequence_a": {
+              "correct": 0,
+              "count": 8
+            },
+            "sequence_b": {
+              "correct": 0,
+              "count": 8
+            },
+            "sequence_c": {
+              "correct": 0,
+              "count": 8
+            }
+          }
+        },
+        "final": {
+          "correct": 24,
+          "count": 24,
+          "families": {
+            "sequence_a": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_b": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_c": {
+              "correct": 8,
+              "count": 8
+            }
+          }
+        }
+      },
+      "generic_retention": {
+        "initial": {
+          "correct": 97,
+          "count": 128,
+          "families": {
+            "boolq": {
+              "correct": 29,
+              "count": 32
+            },
+            "commonsense_qa": {
+              "correct": 25,
+              "count": 32
+            },
+            "hellaswag": {
+              "correct": 24,
+              "count": 32
+            },
+            "winogrande": {
+              "correct": 19,
+              "count": 32
+            }
+          },
+          "scoring": "original multiple-choice likelihood; separate from native generation"
+        },
+        "final": {
+          "correct": 97,
+          "count": 128,
+          "families": {
+            "boolq": {
+              "correct": 29,
+              "count": 32
+            },
+            "commonsense_qa": {
+              "correct": 23,
+              "count": 32
+            },
+            "hellaswag": {
+              "correct": 25,
+              "count": 32
+            },
+            "winogrande": {
+              "correct": 20,
+              "count": 32
+            }
+          },
+          "scoring": "original multiple-choice likelihood; separate from native generation"
+        }
+      },
+      "process_proof": {
+        "distinct_attempt_ids": true,
+        "distinct_task_ids": true,
+        "evaluation_parent_pid": 6364,
+        "evaluation_pid": 6370,
+        "numeric_pid_inequality_is_not_the_process_proof": true,
+        "standalone_cli": true,
+        "training_pid": 5237
+      },
+      "teacher_absent": true,
+      "optimizer_updates": 0,
+      "teacher_absence_evidence": "Completed distinct task/attempt, frozen evaluator code, learner-only checkpoint load assertions and exact saved behavior. Independent audit does not rerun model inference or inspect arbitrary process memory."
+    },
+    "onpolicy_kl": {
+      "status": "passed_collected_fresh_process_evaluation",
+      "task_id": "followthrough-20260912-onpolicy303-onpolicy-kl-evaluate",
+      "method": "onpolicy_kl",
+      "collection_files_checked": 18,
+      "collection_sha256": "f8b4c329c64daf9b4c37405cd6403491a930d182cf966bb6aa0db9de93fd4adf",
+      "execution_sha256": "1939324001de460c09b2e5c0941f5a06d0d4228f92e037338c7837d86bec04a8",
+      "result_sha256": "1f9e86719cf0269738878d475123225c3b259f0ab07af48dc79f16e67b355472",
+      "panels_sha256": "bbbe0beb1a62f2c349a936be6a2c02c08152c65ee5ab35d88d495e04371da622",
+      "source_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b",
+      "native": {
+        "test": {
+          "correct": 192,
+          "count": 192,
+          "families": {
+            "sequence_a": {
+              "correct": 64,
+              "count": 64
+            },
+            "sequence_b": {
+              "correct": 64,
+              "count": 64
+            },
+            "sequence_c": {
+              "correct": 64,
+              "count": 64
+            }
+          }
+        },
+        "unused288": {
+          "correct": 864,
+          "count": 864,
+          "families": {
+            "sequence_a": {
+              "correct": 288,
+              "count": 288
+            },
+            "sequence_b": {
+              "correct": 288,
+              "count": 288
+            },
+            "sequence_c": {
+              "correct": 288,
+              "count": 288
+            }
+          }
+        }
+      },
+      "native_reload_panels": {
+        "initial": {
+          "correct": 0,
+          "count": 24,
+          "families": {
+            "sequence_a": {
+              "correct": 0,
+              "count": 8
+            },
+            "sequence_b": {
+              "correct": 0,
+              "count": 8
+            },
+            "sequence_c": {
+              "correct": 0,
+              "count": 8
+            }
+          }
+        },
+        "final": {
+          "correct": 24,
+          "count": 24,
+          "families": {
+            "sequence_a": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_b": {
+              "correct": 8,
+              "count": 8
+            },
+            "sequence_c": {
+              "correct": 8,
+              "count": 8
+            }
+          }
+        }
+      },
+      "generic_retention": {
+        "initial": {
+          "correct": 97,
+          "count": 128,
+          "families": {
+            "boolq": {
+              "correct": 29,
+              "count": 32
+            },
+            "commonsense_qa": {
+              "correct": 25,
+              "count": 32
+            },
+            "hellaswag": {
+              "correct": 24,
+              "count": 32
+            },
+            "winogrande": {
+              "correct": 19,
+              "count": 32
+            }
+          },
+          "scoring": "original multiple-choice likelihood; separate from native generation"
+        },
+        "final": {
+          "correct": 96,
+          "count": 128,
+          "families": {
+            "boolq": {
+              "correct": 29,
+              "count": 32
+            },
+            "commonsense_qa": {
+              "correct": 23,
+              "count": 32
+            },
+            "hellaswag": {
+              "correct": 24,
+              "count": 32
+            },
+            "winogrande": {
+              "correct": 20,
+              "count": 32
+            }
+          },
+          "scoring": "original multiple-choice likelihood; separate from native generation"
+        }
+      },
+      "process_proof": {
+        "distinct_attempt_ids": true,
+        "distinct_task_ids": true,
+        "evaluation_parent_pid": 6414,
+        "evaluation_pid": 6420,
+        "numeric_pid_inequality_is_not_the_process_proof": true,
+        "standalone_cli": true,
+        "training_pid": 5272
+      },
+      "teacher_absent": true,
+      "optimizer_updates": 0,
+      "teacher_absence_evidence": "Completed distinct task/attempt, frozen evaluator code, learner-only checkpoint load assertions and exact saved behavior. Independent audit does not rerun model inference or inspect arbitrary process memory."
+    }
+  },
+  "paired_native_outcomes": {
+    "cached_teacher_kl_versus_cached_teacher_sft": {
+      "test": {
+        "gained": [
+          {
+            "id": "f84cf66b4bff9ba9ed6c93ad5e842ebd58ed5f4ff9fadea0e15ec69d83452991",
+            "task": "sequence_b",
+            "input": "7 1 3",
+            "gold": " 1 6 2",
+            "before": {
+              "body_text": " 4 6 2",
+              "token_ids": [
+                220,
+                19,
+                220,
+                21,
+                220,
+                17,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 6 2",
+              "token_ids": [
+                220,
+                16,
+                220,
+                21,
+                220,
+                17,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "83b826cd18ed2b73e59928f6be74b665112284bd0da173c0bedd92d6b6cbd8a1",
+            "task": "sequence_b",
+            "input": "1 7 1",
+            "gold": " 6 1 6",
+            "before": {
+              "body_text": " 6 4 6",
+              "token_ids": [
+                220,
+                21,
+                220,
+                19,
+                220,
+                21,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                false,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 6 1 6",
+              "token_ids": [
+                220,
+                21,
+                220,
+                16,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "faf957393ff9dff5ebde47056f7a53cb878a5fbaa31425eb4bc83b33662957f6",
+            "task": "sequence_b",
+            "input": "7 5 1",
+            "gold": " 1 7 6",
+            "before": {
+              "body_text": " 2 7 6",
+              "token_ids": [
+                220,
+                17,
+                220,
+                22,
+                220,
+                21,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 7 6",
+              "token_ids": [
+                220,
+                16,
+                220,
+                22,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "c542de0c47b66cd4674f7905583792982fedbbd5921e285957b420a7dfdd6e12",
+            "task": "sequence_c",
+            "input": "1 3 5",
+            "gold": " 1 3 2",
+            "before": {
+              "body_text": " 3 3 2",
+              "token_ids": [
+                220,
+                18,
+                220,
+                18,
+                220,
+                17,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 3 2",
+              "token_ids": [
+                220,
+                16,
+                220,
+                18,
+                220,
+                17,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "857fc10c213c2850855320b5082983730dd98e817b5e7318ae6e12dba1693c44",
+            "task": "sequence_c",
+            "input": "1 1 2",
+            "gold": " 1 1 0",
+            "before": {
+              "body_text": " 2 2 0",
+              "token_ids": [
+                220,
+                17,
+                220,
+                17,
+                220,
+                15,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                false,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 1 0",
+              "token_ids": [
+                220,
+                16,
+                220,
+                16,
+                220,
+                15,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          }
+        ],
+        "lost": [
+          {
+            "id": "ea37f3aa0a0d4d31cbb1d4a09d975091edab3dc34f712b44b55697de8f99c16f",
+            "task": "sequence_b",
+            "input": "6 6 1",
+            "gold": " 3 3 6",
+            "before": {
+              "body_text": " 3 3 6",
+              "token_ids": [
+                220,
+                18,
+                220,
+                18,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 3 3 7",
+              "token_ids": [
+                220,
+                18,
+                220,
+                18,
+                220,
+                22,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                false
+              ]
+            }
+          }
+        ],
+        "still_wrong": [],
+        "unchanged_correct": 186,
+        "counts": {
+          "gained": 5,
+          "lost": 1,
+          "still_wrong": 0,
+          "net_gain": 4
+        },
+        "per_family": {
+          "sequence_a": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_b": {
+            "gained": 3,
+            "lost": 1,
+            "still_wrong": 0
+          },
+          "sequence_c": {
+            "gained": 2,
+            "lost": 0,
+            "still_wrong": 0
+          }
+        }
+      },
+      "unused288": {
+        "gained": [
+          {
+            "id": "a75e2a19e8e22b7f223e2ab5c6aa736dff3b0d2b3fe51fd06b001e1f4b1bf384",
+            "task": "sequence_b",
+            "input": "7 2 1",
+            "gold": " 1 5 6",
+            "before": {
+              "body_text": " 4 5 6",
+              "token_ids": [
+                220,
+                19,
+                220,
+                20,
+                220,
+                21,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 5 6",
+              "token_ids": [
+                220,
+                16,
+                220,
+                20,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "5e1a1bbbf21be3348c5198236fe11f8b4c5257715c20f81d8c51494f707708ac",
+            "task": "sequence_b",
+            "input": "5 1 7",
+            "gold": " 7 6 1",
+            "before": {
+              "body_text": " 7 6 2",
+              "token_ids": [
+                220,
+                22,
+                220,
+                21,
+                220,
+                17,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                false
+              ]
+            },
+            "after": {
+              "body_text": " 7 6 1",
+              "token_ids": [
+                220,
+                22,
+                220,
+                21,
+                220,
+                16,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "9b0763bf62fc1764a80446349246343f695240e5260f6d69b416a7d855178e5b",
+            "task": "sequence_b",
+            "input": "4 1 7",
+            "gold": " 0 6 1",
+            "before": {
+              "body_text": " 0 6 2",
+              "token_ids": [
+                220,
+                15,
+                220,
+                21,
+                220,
+                17,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                false
+              ]
+            },
+            "after": {
+              "body_text": " 0 6 1",
+              "token_ids": [
+                220,
+                15,
+                220,
+                21,
+                220,
+                16,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "21b327a3ae3d105ca17ac41b7a27957fccfb74777570a1c3dfe72359d91bb76e",
+            "task": "sequence_b",
+            "input": "7 5 2",
+            "gold": " 1 7 5",
+            "before": {
+              "body_text": " 8 7 5",
+              "token_ids": [
+                220,
+                23,
+                220,
+                22,
+                220,
+                20,
+                151645
+              ],
+              "correct": false,
+              "format_valid": false,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 7 5",
+              "token_ids": [
+                220,
+                16,
+                220,
+                22,
+                220,
+                20,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "8d1ece07c1a7f4f85700a4bc0f9ecb4c8f4e7fa589a353626d9f5c8a90e8e76e",
+            "task": "sequence_c",
+            "input": "1 2 0",
+            "gold": " 1 0 5",
+            "before": {
+              "body_text": " 2 0 5",
+              "token_ids": [
+                220,
+                17,
+                220,
+                15,
+                220,
+                20,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 0 5",
+              "token_ids": [
+                220,
+                16,
+                220,
+                15,
+                220,
+                20,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "3c7d27effcf1d170230e269eb80abe0c0bd8c40de07157e791425c945fda6ed4",
+            "task": "sequence_c",
+            "input": "1 2 4",
+            "gold": " 1 0 6",
+            "before": {
+              "body_text": " 2 0 6",
+              "token_ids": [
+                220,
+                17,
+                220,
+                15,
+                220,
+                21,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 0 6",
+              "token_ids": [
+                220,
+                16,
+                220,
+                15,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "11dd124affd61ab8878955dae950dbe994b239b9b32c9116179fee4caf5a5483",
+            "task": "sequence_c",
+            "input": "1 1 1",
+            "gold": " 1 1 1",
+            "before": {
+              "body_text": " 2 2 2",
+              "token_ids": [
+                220,
+                17,
+                220,
+                17,
+                220,
+                17,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                false,
+                false
+              ]
+            },
+            "after": {
+              "body_text": " 1 1 1",
+              "token_ids": [
+                220,
+                16,
+                220,
+                16,
+                220,
+                16,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "52b5caaefd4ab1aee0a6cb72c9a242475dc37cd37e079b1fc0e4a4f02d1c464f",
+            "task": "sequence_c",
+            "input": "1 2 2",
+            "gold": " 1 0 0",
+            "before": {
+              "body_text": " 2 0 0",
+              "token_ids": [
+                220,
+                17,
+                220,
+                15,
+                220,
+                15,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 0 0",
+              "token_ids": [
+                220,
+                16,
+                220,
+                15,
+                220,
+                15,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "c8415959e7ddf8277ff2d24522963628a47c3d1d3ff1ef71751df9abd9a92c32",
+            "task": "sequence_c",
+            "input": "2 3 4",
+            "gold": " 0 3 6",
+            "before": {
+              "body_text": " 0 3 5",
+              "token_ids": [
+                220,
+                15,
+                220,
+                18,
+                220,
+                20,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                false
+              ]
+            },
+            "after": {
+              "body_text": " 0 3 6",
+              "token_ids": [
+                220,
+                15,
+                220,
+                18,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "aa838d82c8547d9daa92c84e306505985d95b391874992624faaa64e96ae107c",
+            "task": "sequence_c",
+            "input": "1 2 6",
+            "gold": " 1 0 4",
+            "before": {
+              "body_text": " 2 0 4",
+              "token_ids": [
+                220,
+                17,
+                220,
+                15,
+                220,
+                19,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 0 4",
+              "token_ids": [
+                220,
+                16,
+                220,
+                15,
+                220,
+                19,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          }
+        ],
+        "lost": [
+          {
+            "id": "2a27dcc4234f01298244822966ed2bdf898b0fabc42ffa1854d5a4878c39901c",
+            "task": "sequence_c",
+            "input": "0 0 4",
+            "gold": " 5 5 6",
+            "before": {
+              "body_text": " 5 5 6",
+              "token_ids": [
+                220,
+                20,
+                220,
+                20,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 5 5 0",
+              "token_ids": [
+                220,
+                20,
+                220,
+                20,
+                220,
+                15,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                false
+              ]
+            }
+          },
+          {
+            "id": "cae013ea131c573fd7c2ef4b3829216d0680cbb0feb725be7d8f0d232ec29bcf",
+            "task": "sequence_c",
+            "input": "4 0 4",
+            "gold": " 6 5 6",
+            "before": {
+              "body_text": " 6 5 6",
+              "token_ids": [
+                220,
+                21,
+                220,
+                20,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 6 5 0",
+              "token_ids": [
+                220,
+                21,
+                220,
+                20,
+                220,
+                15,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                false
+              ]
+            }
+          }
+        ],
+        "still_wrong": [],
+        "unchanged_correct": 852,
+        "counts": {
+          "gained": 10,
+          "lost": 2,
+          "still_wrong": 0,
+          "net_gain": 8
+        },
+        "per_family": {
+          "sequence_a": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_b": {
+            "gained": 4,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_c": {
+            "gained": 6,
+            "lost": 2,
+            "still_wrong": 0
+          }
+        }
+      }
+    },
+    "onpolicy_kl_versus_cached_teacher_sft": {
+      "test": {
+        "gained": [
+          {
+            "id": "f84cf66b4bff9ba9ed6c93ad5e842ebd58ed5f4ff9fadea0e15ec69d83452991",
+            "task": "sequence_b",
+            "input": "7 1 3",
+            "gold": " 1 6 2",
+            "before": {
+              "body_text": " 4 6 2",
+              "token_ids": [
+                220,
+                19,
+                220,
+                21,
+                220,
+                17,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 6 2",
+              "token_ids": [
+                220,
+                16,
+                220,
+                21,
+                220,
+                17,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "83b826cd18ed2b73e59928f6be74b665112284bd0da173c0bedd92d6b6cbd8a1",
+            "task": "sequence_b",
+            "input": "1 7 1",
+            "gold": " 6 1 6",
+            "before": {
+              "body_text": " 6 4 6",
+              "token_ids": [
+                220,
+                21,
+                220,
+                19,
+                220,
+                21,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                false,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 6 1 6",
+              "token_ids": [
+                220,
+                21,
+                220,
+                16,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "faf957393ff9dff5ebde47056f7a53cb878a5fbaa31425eb4bc83b33662957f6",
+            "task": "sequence_b",
+            "input": "7 5 1",
+            "gold": " 1 7 6",
+            "before": {
+              "body_text": " 2 7 6",
+              "token_ids": [
+                220,
+                17,
+                220,
+                22,
+                220,
+                21,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 7 6",
+              "token_ids": [
+                220,
+                16,
+                220,
+                22,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "c542de0c47b66cd4674f7905583792982fedbbd5921e285957b420a7dfdd6e12",
+            "task": "sequence_c",
+            "input": "1 3 5",
+            "gold": " 1 3 2",
+            "before": {
+              "body_text": " 3 3 2",
+              "token_ids": [
+                220,
+                18,
+                220,
+                18,
+                220,
+                17,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 3 2",
+              "token_ids": [
+                220,
+                16,
+                220,
+                18,
+                220,
+                17,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "857fc10c213c2850855320b5082983730dd98e817b5e7318ae6e12dba1693c44",
+            "task": "sequence_c",
+            "input": "1 1 2",
+            "gold": " 1 1 0",
+            "before": {
+              "body_text": " 2 2 0",
+              "token_ids": [
+                220,
+                17,
+                220,
+                17,
+                220,
+                15,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                false,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 1 0",
+              "token_ids": [
+                220,
+                16,
+                220,
+                16,
+                220,
+                15,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          }
+        ],
+        "lost": [],
+        "still_wrong": [],
+        "unchanged_correct": 187,
+        "counts": {
+          "gained": 5,
+          "lost": 0,
+          "still_wrong": 0,
+          "net_gain": 5
+        },
+        "per_family": {
+          "sequence_a": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_b": {
+            "gained": 3,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_c": {
+            "gained": 2,
+            "lost": 0,
+            "still_wrong": 0
+          }
+        }
+      },
+      "unused288": {
+        "gained": [
+          {
+            "id": "a75e2a19e8e22b7f223e2ab5c6aa736dff3b0d2b3fe51fd06b001e1f4b1bf384",
+            "task": "sequence_b",
+            "input": "7 2 1",
+            "gold": " 1 5 6",
+            "before": {
+              "body_text": " 4 5 6",
+              "token_ids": [
+                220,
+                19,
+                220,
+                20,
+                220,
+                21,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 5 6",
+              "token_ids": [
+                220,
+                16,
+                220,
+                20,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "5e1a1bbbf21be3348c5198236fe11f8b4c5257715c20f81d8c51494f707708ac",
+            "task": "sequence_b",
+            "input": "5 1 7",
+            "gold": " 7 6 1",
+            "before": {
+              "body_text": " 7 6 2",
+              "token_ids": [
+                220,
+                22,
+                220,
+                21,
+                220,
+                17,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                false
+              ]
+            },
+            "after": {
+              "body_text": " 7 6 1",
+              "token_ids": [
+                220,
+                22,
+                220,
+                21,
+                220,
+                16,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "9b0763bf62fc1764a80446349246343f695240e5260f6d69b416a7d855178e5b",
+            "task": "sequence_b",
+            "input": "4 1 7",
+            "gold": " 0 6 1",
+            "before": {
+              "body_text": " 0 6 2",
+              "token_ids": [
+                220,
+                15,
+                220,
+                21,
+                220,
+                17,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                false
+              ]
+            },
+            "after": {
+              "body_text": " 0 6 1",
+              "token_ids": [
+                220,
+                15,
+                220,
+                21,
+                220,
+                16,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "21b327a3ae3d105ca17ac41b7a27957fccfb74777570a1c3dfe72359d91bb76e",
+            "task": "sequence_b",
+            "input": "7 5 2",
+            "gold": " 1 7 5",
+            "before": {
+              "body_text": " 8 7 5",
+              "token_ids": [
+                220,
+                23,
+                220,
+                22,
+                220,
+                20,
+                151645
+              ],
+              "correct": false,
+              "format_valid": false,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 7 5",
+              "token_ids": [
+                220,
+                16,
+                220,
+                22,
+                220,
+                20,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "8d1ece07c1a7f4f85700a4bc0f9ecb4c8f4e7fa589a353626d9f5c8a90e8e76e",
+            "task": "sequence_c",
+            "input": "1 2 0",
+            "gold": " 1 0 5",
+            "before": {
+              "body_text": " 2 0 5",
+              "token_ids": [
+                220,
+                17,
+                220,
+                15,
+                220,
+                20,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 0 5",
+              "token_ids": [
+                220,
+                16,
+                220,
+                15,
+                220,
+                20,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "3c7d27effcf1d170230e269eb80abe0c0bd8c40de07157e791425c945fda6ed4",
+            "task": "sequence_c",
+            "input": "1 2 4",
+            "gold": " 1 0 6",
+            "before": {
+              "body_text": " 2 0 6",
+              "token_ids": [
+                220,
+                17,
+                220,
+                15,
+                220,
+                21,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 0 6",
+              "token_ids": [
+                220,
+                16,
+                220,
+                15,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "11dd124affd61ab8878955dae950dbe994b239b9b32c9116179fee4caf5a5483",
+            "task": "sequence_c",
+            "input": "1 1 1",
+            "gold": " 1 1 1",
+            "before": {
+              "body_text": " 2 2 2",
+              "token_ids": [
+                220,
+                17,
+                220,
+                17,
+                220,
+                17,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                false,
+                false
+              ]
+            },
+            "after": {
+              "body_text": " 1 1 1",
+              "token_ids": [
+                220,
+                16,
+                220,
+                16,
+                220,
+                16,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "52b5caaefd4ab1aee0a6cb72c9a242475dc37cd37e079b1fc0e4a4f02d1c464f",
+            "task": "sequence_c",
+            "input": "1 2 2",
+            "gold": " 1 0 0",
+            "before": {
+              "body_text": " 2 0 0",
+              "token_ids": [
+                220,
+                17,
+                220,
+                15,
+                220,
+                15,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 0 0",
+              "token_ids": [
+                220,
+                16,
+                220,
+                15,
+                220,
+                15,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "c8415959e7ddf8277ff2d24522963628a47c3d1d3ff1ef71751df9abd9a92c32",
+            "task": "sequence_c",
+            "input": "2 3 4",
+            "gold": " 0 3 6",
+            "before": {
+              "body_text": " 0 3 5",
+              "token_ids": [
+                220,
+                15,
+                220,
+                18,
+                220,
+                20,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                false
+              ]
+            },
+            "after": {
+              "body_text": " 0 3 6",
+              "token_ids": [
+                220,
+                15,
+                220,
+                18,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "aa838d82c8547d9daa92c84e306505985d95b391874992624faaa64e96ae107c",
+            "task": "sequence_c",
+            "input": "1 2 6",
+            "gold": " 1 0 4",
+            "before": {
+              "body_text": " 2 0 4",
+              "token_ids": [
+                220,
+                17,
+                220,
+                15,
+                220,
+                19,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                false,
+                true,
+                true
+              ]
+            },
+            "after": {
+              "body_text": " 1 0 4",
+              "token_ids": [
+                220,
+                16,
+                220,
+                15,
+                220,
+                19,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          }
+        ],
+        "lost": [],
+        "still_wrong": [],
+        "unchanged_correct": 854,
+        "counts": {
+          "gained": 10,
+          "lost": 0,
+          "still_wrong": 0,
+          "net_gain": 10
+        },
+        "per_family": {
+          "sequence_a": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_b": {
+            "gained": 4,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_c": {
+            "gained": 6,
+            "lost": 0,
+            "still_wrong": 0
+          }
+        }
+      }
+    },
+    "onpolicy_kl_versus_cached_teacher_kl": {
+      "test": {
+        "gained": [
+          {
+            "id": "ea37f3aa0a0d4d31cbb1d4a09d975091edab3dc34f712b44b55697de8f99c16f",
+            "task": "sequence_b",
+            "input": "6 6 1",
+            "gold": " 3 3 6",
+            "before": {
+              "body_text": " 3 3 7",
+              "token_ids": [
+                220,
+                18,
+                220,
+                18,
+                220,
+                22,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                false
+              ]
+            },
+            "after": {
+              "body_text": " 3 3 6",
+              "token_ids": [
+                220,
+                18,
+                220,
+                18,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          }
+        ],
+        "lost": [],
+        "still_wrong": [],
+        "unchanged_correct": 191,
+        "counts": {
+          "gained": 1,
+          "lost": 0,
+          "still_wrong": 0,
+          "net_gain": 1
+        },
+        "per_family": {
+          "sequence_a": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_b": {
+            "gained": 1,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_c": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          }
+        }
+      },
+      "unused288": {
+        "gained": [
+          {
+            "id": "2a27dcc4234f01298244822966ed2bdf898b0fabc42ffa1854d5a4878c39901c",
+            "task": "sequence_c",
+            "input": "0 0 4",
+            "gold": " 5 5 6",
+            "before": {
+              "body_text": " 5 5 0",
+              "token_ids": [
+                220,
+                20,
+                220,
+                20,
+                220,
+                15,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                false
+              ]
+            },
+            "after": {
+              "body_text": " 5 5 6",
+              "token_ids": [
+                220,
+                20,
+                220,
+                20,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          },
+          {
+            "id": "cae013ea131c573fd7c2ef4b3829216d0680cbb0feb725be7d8f0d232ec29bcf",
+            "task": "sequence_c",
+            "input": "4 0 4",
+            "gold": " 6 5 6",
+            "before": {
+              "body_text": " 6 5 0",
+              "token_ids": [
+                220,
+                21,
+                220,
+                20,
+                220,
+                15,
+                151645
+              ],
+              "correct": false,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                false
+              ]
+            },
+            "after": {
+              "body_text": " 6 5 6",
+              "token_ids": [
+                220,
+                21,
+                220,
+                20,
+                220,
+                21,
+                151645
+              ],
+              "correct": true,
+              "format_valid": true,
+              "terminated": true,
+              "digit_position_correct": [
+                true,
+                true,
+                true
+              ]
+            }
+          }
+        ],
+        "lost": [],
+        "still_wrong": [],
+        "unchanged_correct": 862,
+        "counts": {
+          "gained": 2,
+          "lost": 0,
+          "still_wrong": 0,
+          "net_gain": 2
+        },
+        "per_family": {
+          "sequence_a": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_b": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_c": {
+            "gained": 2,
+            "lost": 0,
+            "still_wrong": 0
+          }
+        }
+      }
+    }
+  },
+  "paired_generic_before_after": {
+    "cached_teacher_sft": {
+      "gained": [
+        {
+          "row_index": 58,
+          "task": "hellaswag",
+          "row_sha256": "79f2ed4865167fbce49fc7ef013bbd1e2e1d61724d5e85ea9ac0acccab19b5c1",
+          "prompt_excerpt": "Removing curlers: A girl is standing in the bathroom wearing a robe. She holds up a pink hair curler. She then demonstrates how to place the rollers in her hair. She",
+          "choices": [
+            " examines her hair one last time before putting a ponytail.",
+            " then style and twists her hair into the style it was previously in.",
+            " shows how she does the rollers and how they go onto her hair.",
+            " continues talking with two rollers in her hair."
+          ],
+          "gold_idx": 3,
+          "before_prediction": 2,
+          "after_prediction": 3,
+          "before_scores": [
+            -0.7203528194104211,
+            -0.7250900268554688,
+            -0.6373065210157826,
+            -0.6655236085255941
+          ],
+          "after_scores": [
+            -0.7475532273114738,
+            -0.7254436717313879,
+            -0.7066219083724483,
+            -0.6215188503265381
+          ]
+        },
+        {
+          "row_index": 81,
+          "task": "winogrande",
+          "row_sha256": "1b8100ea91c5ddbaf053e1c07586e78a8412365abb46518fd9494d3436587e34",
+          "prompt_excerpt": "Kayla was always thinner than Rachel because",
+          "choices": [
+            " Kayla enjoyed eating brioche and butter every morning.",
+            " Rachel enjoyed eating brioche and butter every morning."
+          ],
+          "gold_idx": 1,
+          "before_prediction": 0,
+          "after_prediction": 1,
+          "before_scores": [
+            -0.8500242059881037,
+            -0.878288813999721
+          ],
+          "after_scores": [
+            -0.8512054443359375,
+            -0.832200459071568
+          ]
+        },
+        {
+          "row_index": 86,
+          "task": "winogrande",
+          "row_sha256": "a5d36a87a8e85a985e375152024735d4f98a5943fed5f133ca13f69044138cdf",
+          "prompt_excerpt": "Cynthia was happy to give Patricia the politics section of the newspaper, because",
+          "choices": [
+            " Cynthia had little interest in the election results.",
+            " Patricia had little interest in the election results."
+          ],
+          "gold_idx": 0,
+          "before_prediction": 1,
+          "after_prediction": 0,
+          "before_scores": [
+            -0.6453726426610407,
+            -0.6400865625452112
+          ],
+          "after_scores": [
+            -0.4955246403532208,
+            -0.5664419244836878
+          ]
+        }
+      ],
+      "lost": [
+        {
+          "row_index": 24,
+          "task": "boolq",
+          "row_sha256": "f7f778afc34631272e0a70f087ffff19824b9ef79dfd4f62a3e9f655b7e61664",
+          "prompt_excerpt": "The John F. Kennedy Space Center (KSC, originally known as the NASA Launch Operations Center) is one of ten National Aeronautics and Space Administration field centers. Since Decem",
+          "choices": [
+            " no",
+            " yes"
+          ],
+          "gold_idx": 0,
+          "before_prediction": 0,
+          "after_prediction": 1,
+          "before_scores": [
+            -1.3955955505371094,
+            -1.5945606231689453
+          ],
+          "after_scores": [
+            -3.1094748179117837,
+            -2.7720892429351807
+          ]
+        },
+        {
+          "row_index": 67,
+          "task": "winogrande",
+          "row_sha256": "8e35bb33364eebb9aaf814c26825f4babea5de7bb530377cd63868002a8d9eff",
+          "prompt_excerpt": "James wanted to wear the corsage but it wouldn't fit around his wrist because the",
+          "choices": [
+            " wrist was too big.",
+            " corsage was too big."
+          ],
+          "gold_idx": 0,
+          "before_prediction": 0,
+          "after_prediction": 1,
+          "before_scores": [
+            -0.16066335376940274,
+            -0.24815130233764648
+          ],
+          "after_scores": [
+            -0.2379463095414011,
+            -0.15466690063476562
+          ]
+        },
+        {
+          "row_index": 108,
+          "task": "commonsense_qa",
+          "row_sha256": "eca6b2776e061392ca6d3fbffb491ddf6e22f19ecc1cb03ba7885e84fe78e992",
+          "prompt_excerpt": "Question: Billy was an astronaut.  When he looked at the world from space, how did it look?\nAnswer:",
+          "choices": [
+            " diverse",
+            " round",
+            " square",
+            " orange",
+            " complicated"
+          ],
+          "gold_idx": 1,
+          "before_prediction": 1,
+          "after_prediction": 4,
+          "before_scores": [
+            -3.160552740097046,
+            -2.0402746200561523,
+            -3.7954109736851285,
+            -2.929868425641741,
+            -2.1289738019307456
+          ],
+          "after_scores": [
+            -3.045318841934204,
+            -3.2973852157592773,
+            -4.017568588256836,
+            -3.3753664834158763,
+            -1.958910624186198
+          ]
+        },
+        {
+          "row_index": 124,
+          "task": "commonsense_qa",
+          "row_sha256": "a913722ba0557f00cb14e5be7be468befa757e081a12e2f65c2b1c87f92d341b",
+          "prompt_excerpt": "Question: If you are committing perjury you have done what while under oath?\nAnswer:",
+          "choices": [
+            " crime",
+            " disrespect judge",
+            " embarrassment",
+            " lie",
+            " indictment"
+          ],
+          "gold_idx": 3,
+          "before_prediction": 3,
+          "after_prediction": 2,
+          "before_scores": [
+            -3.9709742863972983,
+            -3.069823321174173,
+            -2.201523644583566,
+            -1.7254713773727417,
+            -2.5498652024702593
+          ],
+          "after_scores": [
+            -2.112760543823242,
+            -2.065648247213925,
+            -1.4336652755737305,
+            -1.4426525831222534,
+            -1.5386300520463423
+          ]
+        }
+      ],
+      "counts": {
+        "gained": 3,
+        "lost": 4,
+        "net_gain": -1
+      },
+      "per_family": {
+        "boolq": {
+          "gained": 0,
+          "lost": 1
+        },
+        "commonsense_qa": {
+          "gained": 0,
+          "lost": 2
+        },
+        "hellaswag": {
+          "gained": 1,
+          "lost": 0
+        },
+        "winogrande": {
+          "gained": 2,
+          "lost": 1
+        }
+      }
+    },
+    "cached_teacher_kl": {
+      "gained": [
+        {
+          "row_index": 30,
+          "task": "boolq",
+          "row_sha256": "5cae9df0094afbd19f456ca23a8250b2fa07205723fa685ed1e20a6d5a09be6b",
+          "prompt_excerpt": "Gerard Marenghi (January 24, 1920 -- May 24, 2018), known as Jerry Maren, was an American actor who played a Munchkin member of the Lollipop Guild in the 1939 Metro-Goldwyn-Mayer f",
+          "choices": [
+            " no",
+            " yes"
+          ],
+          "gold_idx": 0,
+          "before_prediction": 1,
+          "after_prediction": 0,
+          "before_scores": [
+            -1.7408939997355144,
+            -0.9569293856620789
+          ],
+          "after_scores": [
+            -2.01622740427653,
+            -2.037870168685913
+          ]
+        },
+        {
+          "row_index": 58,
+          "task": "hellaswag",
+          "row_sha256": "79f2ed4865167fbce49fc7ef013bbd1e2e1d61724d5e85ea9ac0acccab19b5c1",
+          "prompt_excerpt": "Removing curlers: A girl is standing in the bathroom wearing a robe. She holds up a pink hair curler. She then demonstrates how to place the rollers in her hair. She",
+          "choices": [
+            " examines her hair one last time before putting a ponytail.",
+            " then style and twists her hair into the style it was previously in.",
+            " shows how she does the rollers and how they go onto her hair.",
+            " continues talking with two rollers in her hair."
+          ],
+          "gold_idx": 3,
+          "before_prediction": 2,
+          "after_prediction": 3,
+          "before_scores": [
+            -0.7203528194104211,
+            -0.7250900268554688,
+            -0.6373065210157826,
+            -0.6655236085255941
+          ],
+          "after_scores": [
+            -0.7539028232380495,
+            -0.7433839685776654,
+            -0.7302359304120464,
+            -0.6100301345189413
+          ]
+        },
+        {
+          "row_index": 68,
+          "task": "winogrande",
+          "row_sha256": "315252c6a873d644dd6e3430a97ce86340ba2d560532385a3514555608dc18fc",
+          "prompt_excerpt": "Donald was chosen to be a model while Dennis was passed over, because",
+          "choices": [
+            " Donald was exceptionally tall.",
+            " Dennis was exceptionally tall."
+          ],
+          "gold_idx": 0,
+          "before_prediction": 1,
+          "after_prediction": 0,
+          "before_scores": [
+            -0.5184724869266633,
+            -0.46867293696249684
+          ],
+          "after_scores": [
+            -0.43381617146153606,
+            -0.4427820636380103
+          ]
+        },
+        {
+          "row_index": 86,
+          "task": "winogrande",
+          "row_sha256": "a5d36a87a8e85a985e375152024735d4f98a5943fed5f133ca13f69044138cdf",
+          "prompt_excerpt": "Cynthia was happy to give Patricia the politics section of the newspaper, because",
+          "choices": [
+            " Cynthia had little interest in the election results.",
+            " Patricia had little interest in the election results."
+          ],
+          "gold_idx": 0,
+          "before_prediction": 1,
+          "after_prediction": 0,
+          "before_scores": [
+            -0.6453726426610407,
+            -0.6400865625452112
+          ],
+          "after_scores": [
+            -0.5793372100254275,
+            -0.6212613141095197
+          ]
+        }
+      ],
+      "lost": [
+        {
+          "row_index": 24,
+          "task": "boolq",
+          "row_sha256": "f7f778afc34631272e0a70f087ffff19824b9ef79dfd4f62a3e9f655b7e61664",
+          "prompt_excerpt": "The John F. Kennedy Space Center (KSC, originally known as the NASA Launch Operations Center) is one of ten National Aeronautics and Space Administration field centers. Since Decem",
+          "choices": [
+            " no",
+            " yes"
+          ],
+          "gold_idx": 0,
+          "before_prediction": 0,
+          "after_prediction": 1,
+          "before_scores": [
+            -1.3955955505371094,
+            -1.5945606231689453
+          ],
+          "after_scores": [
+            -3.0604066848754883,
+            -2.7612898349761963
+          ]
+        },
+        {
+          "row_index": 67,
+          "task": "winogrande",
+          "row_sha256": "8e35bb33364eebb9aaf814c26825f4babea5de7bb530377cd63868002a8d9eff",
+          "prompt_excerpt": "James wanted to wear the corsage but it wouldn't fit around his wrist because the",
+          "choices": [
+            " wrist was too big.",
+            " corsage was too big."
+          ],
+          "gold_idx": 0,
+          "before_prediction": 0,
+          "after_prediction": 1,
+          "before_scores": [
+            -0.16066335376940274,
+            -0.24815130233764648
+          ],
+          "after_scores": [
+            -0.2073194980621338,
+            -0.1366810230981736
+          ]
+        },
+        {
+          "row_index": 108,
+          "task": "commonsense_qa",
+          "row_sha256": "eca6b2776e061392ca6d3fbffb491ddf6e22f19ecc1cb03ba7885e84fe78e992",
+          "prompt_excerpt": "Question: Billy was an astronaut.  When he looked at the world from space, how did it look?\nAnswer:",
+          "choices": [
+            " diverse",
+            " round",
+            " square",
+            " orange",
+            " complicated"
+          ],
+          "gold_idx": 1,
+          "before_prediction": 1,
+          "after_prediction": 4,
+          "before_scores": [
+            -3.160552740097046,
+            -2.0402746200561523,
+            -3.7954109736851285,
+            -2.929868425641741,
+            -2.1289738019307456
+          ],
+          "after_scores": [
+            -3.29247784614563,
+            -3.1695737838745117,
+            -4.1789591653006415,
+            -3.2885739462716237,
+            -2.1755754152933755
+          ]
+        },
+        {
+          "row_index": 124,
+          "task": "commonsense_qa",
+          "row_sha256": "a913722ba0557f00cb14e5be7be468befa757e081a12e2f65c2b1c87f92d341b",
+          "prompt_excerpt": "Question: If you are committing perjury you have done what while under oath?\nAnswer:",
+          "choices": [
+            " crime",
+            " disrespect judge",
+            " embarrassment",
+            " lie",
+            " indictment"
+          ],
+          "gold_idx": 3,
+          "before_prediction": 3,
+          "after_prediction": 2,
+          "before_scores": [
+            -3.9709742863972983,
+            -3.069823321174173,
+            -2.201523644583566,
+            -1.7254713773727417,
+            -2.5498652024702593
+          ],
+          "after_scores": [
+            -2.680609703063965,
+            -2.3716423932243798,
+            -1.6433040073939733,
+            -1.6857211589813232,
+            -1.8792450644753196
+          ]
+        }
+      ],
+      "counts": {
+        "gained": 4,
+        "lost": 4,
+        "net_gain": 0
+      },
+      "per_family": {
+        "boolq": {
+          "gained": 1,
+          "lost": 1
+        },
+        "commonsense_qa": {
+          "gained": 0,
+          "lost": 2
+        },
+        "hellaswag": {
+          "gained": 1,
+          "lost": 0
+        },
+        "winogrande": {
+          "gained": 2,
+          "lost": 1
+        }
+      }
+    },
+    "onpolicy_kl": {
+      "gained": [
+        {
+          "row_index": 58,
+          "task": "hellaswag",
+          "row_sha256": "79f2ed4865167fbce49fc7ef013bbd1e2e1d61724d5e85ea9ac0acccab19b5c1",
+          "prompt_excerpt": "Removing curlers: A girl is standing in the bathroom wearing a robe. She holds up a pink hair curler. She then demonstrates how to place the rollers in her hair. She",
+          "choices": [
+            " examines her hair one last time before putting a ponytail.",
+            " then style and twists her hair into the style it was previously in.",
+            " shows how she does the rollers and how they go onto her hair.",
+            " continues talking with two rollers in her hair."
+          ],
+          "gold_idx": 3,
+          "before_prediction": 2,
+          "after_prediction": 3,
+          "before_scores": [
+            -0.7203528194104211,
+            -0.7250900268554688,
+            -0.6373065210157826,
+            -0.6655236085255941
+          ],
+          "after_scores": [
+            -0.6908052088850636,
+            -0.7405323140761432,
+            -0.6979596537928427,
+            -0.6208719412485758
+          ]
+        },
+        {
+          "row_index": 86,
+          "task": "winogrande",
+          "row_sha256": "a5d36a87a8e85a985e375152024735d4f98a5943fed5f133ca13f69044138cdf",
+          "prompt_excerpt": "Cynthia was happy to give Patricia the politics section of the newspaper, because",
+          "choices": [
+            " Cynthia had little interest in the election results.",
+            " Patricia had little interest in the election results."
+          ],
+          "gold_idx": 0,
+          "before_prediction": 1,
+          "after_prediction": 0,
+          "before_scores": [
+            -0.6453726426610407,
+            -0.6400865625452112
+          ],
+          "after_scores": [
+            -0.5153167652633955,
+            -0.5446800655788846
+          ]
+        }
+      ],
+      "lost": [
+        {
+          "row_index": 36,
+          "task": "hellaswag",
+          "row_sha256": "62f38da38bbbee6ec9ae2087da60dea7f50dc44b653676a54216bab797ab2e72",
+          "prompt_excerpt": "Personal Care and Style: How to make a brown sugar scrub. Fill a clean bowl with 1 cup (200 grams) of brown sugar. Like other types of sugar, brown sugar makes an excellent exfolia",
+          "choices": [
+            " Add \u00bd cup (120 milliliters) of a food-grade oil of your choice. Almond, avocado, coconut, or olive oil all work great in sugar scrubs as they are all beneficial to the skin.",
+            " Add 1 teaspoon of the sugar to a small bowl. Stir in enough to make a soft-ish scrub with no added drops of any essential essential oils.",
+            " Make sure you use rich brown sugar for your homemade scrub so you get the right type for your scrub. Brown sugar is a natural exfoliant that you can use to treat your skin as well as covering blemishes.",
+            " Focus on picking brown sugar that is specifically formulated for sensitive skin. Like other types of sugar, brown sugar does not contain any additives."
+          ],
+          "gold_idx": 0,
+          "before_prediction": 0,
+          "after_prediction": 3,
+          "before_scores": [
+            -0.46284134086521195,
+            -0.7663446509319803,
+            -0.5691187816300416,
+            -0.47476126018323395
+          ],
+          "after_scores": [
+            -0.45032944076362696,
+            -0.7415339152018229,
+            -0.5750869224811422,
+            -0.44763379347951787
+          ]
+        },
+        {
+          "row_index": 108,
+          "task": "commonsense_qa",
+          "row_sha256": "eca6b2776e061392ca6d3fbffb491ddf6e22f19ecc1cb03ba7885e84fe78e992",
+          "prompt_excerpt": "Question: Billy was an astronaut.  When he looked at the world from space, how did it look?\nAnswer:",
+          "choices": [
+            " diverse",
+            " round",
+            " square",
+            " orange",
+            " complicated"
+          ],
+          "gold_idx": 1,
+          "before_prediction": 1,
+          "after_prediction": 4,
+          "before_scores": [
+            -3.160552740097046,
+            -2.0402746200561523,
+            -3.7954109736851285,
+            -2.929868425641741,
+            -2.1289738019307456
+          ],
+          "after_scores": [
+            -2.2765603065490723,
+            -1.903444766998291,
+            -2.875284194946289,
+            -2.1296664646693637,
+            -1.6187891960144043
+          ]
+        },
+        {
+          "row_index": 124,
+          "task": "commonsense_qa",
+          "row_sha256": "a913722ba0557f00cb14e5be7be468befa757e081a12e2f65c2b1c87f92d341b",
+          "prompt_excerpt": "Question: If you are committing perjury you have done what while under oath?\nAnswer:",
+          "choices": [
+            " crime",
+            " disrespect judge",
+            " embarrassment",
+            " lie",
+            " indictment"
+          ],
+          "gold_idx": 3,
+          "before_prediction": 3,
+          "after_prediction": 2,
+          "before_scores": [
+            -3.9709742863972983,
+            -3.069823321174173,
+            -2.201523644583566,
+            -1.7254713773727417,
+            -2.5498652024702593
+          ],
+          "after_scores": [
+            -2.8443428675333657,
+            -2.2871446048512176,
+            -1.7865907124110632,
+            -2.0378634929656982,
+            -1.983959891579368
+          ]
+        }
+      ],
+      "counts": {
+        "gained": 2,
+        "lost": 3,
+        "net_gain": -1
+      },
+      "per_family": {
+        "boolq": {
+          "gained": 0,
+          "lost": 0
+        },
+        "commonsense_qa": {
+          "gained": 0,
+          "lost": 2
+        },
+        "hellaswag": {
+          "gained": 1,
+          "lost": 1
+        },
+        "winogrande": {
+          "gained": 1,
+          "lost": 0
+        }
+      }
+    }
+  },
+  "scope": "One fixed-expert full-vocabulary forward-KL hybrid, one Sequence303 mapping and learner seed, reused historical heldouts. Frozen rank8 q/v learner, no native-base weight updates. Actual on-policy KL updates and teacher-absent persistence demonstrated; not full SDFT/SDPO, general continual learning, composition or a superiority guarantee across tasks/seeds.",
+  "exposure_boundary": {
+    "updates_per_arm": 384,
+    "row_exposures_per_arm": 1536,
+    "cached_loss_tokens_per_arm": 10752,
+    "onpolicy_loss_tokens": 11314,
+    "additional_sampled_loss_tokens": 562,
+    "all_arms_equal_token_or_compute_budget": false,
+    "interpretation": "Cached KL versus cached SFT holds target trajectories and token exposures fixed. On-policy versus cached KL changes prefix distribution and sampled response lengths; this comparison does not isolate prefix sampling at equal token/compute exposure."
+  },
+  "recipe_changes": [],
+  "gpu_or_provider_mutations_by_auditor": [],
+  "audit_source_sha256": "3a1109bd272d51ab309b80c663cbaaf42a414c94c8049635a6619f81c74b17a2",
+  "independent_scorer_source_sha256": "915b4b707311e13adac56b8fc2018fd46d5bdf090e3645a111b02089be87fdf6"
+}

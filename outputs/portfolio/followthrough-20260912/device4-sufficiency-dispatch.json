@@ -1,0 +1,46 @@
+{
+  "handoff_sha256": "8ca2ffb174f964581599fa8cba02f271b71497f68723548d579859d403b49556",
+  "protocol_sha256": "4495ab6e736a98aed7ef99dda1e3751f304bc6edd70fe1347d586c0babe06ba6",
+  "jobs": [
+    {
+      "task_id": "distillation-device4-sufficiency-a-oracle-20260912",
+      "arm": "A_oracle",
+      "config": "configs/device4_sufficiency_learn_A_oracle.json",
+      "depends_on": [
+        "distillation-device4-chain-a-20260912",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f\", \"source_files\": 143, \"source_installation\": \"atomically_installed\"}\n{\"submitted\": \"distillation-device4-sufficiency-a-oracle-20260912\", \"source_sha256\": \"03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f\", \"source_files\": 143}\n"
+    },
+    {
+      "task_id": "distillation-device4-sufficiency-a-chain-20260912",
+      "arm": "A_chain",
+      "config": "configs/device4_sufficiency_learn_A_chain.json",
+      "depends_on": [
+        "distillation-device4-chain-a-20260912",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f\", \"source_files\": 143, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"distillation-device4-sufficiency-a-chain-20260912\", \"source_sha256\": \"03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f\", \"source_files\": 143}\n"
+    },
+    {
+      "task_id": "distillation-device4-sufficiency-b-oracle-20260912",
+      "arm": "B_oracle",
+      "config": "configs/device4_sufficiency_learn_B_oracle.json",
+      "depends_on": [
+        "distillation-device4-chain-b-20260912",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f\", \"source_files\": 143, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"distillation-device4-sufficiency-b-oracle-20260912\", \"source_sha256\": \"03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f\", \"source_files\": 143}\n"
+    },
+    {
+      "task_id": "distillation-device4-sufficiency-c-oracle-20260912",
+      "arm": "C_oracle",
+      "config": "configs/device4_sufficiency_learn_C_oracle.json",
+      "depends_on": [
+        "distillation-device4-chain-c-20260912",
+        "followthrough-20260912-recovery-worker-qualify-qwen35-4b"
+      ],
+      "dispatch_stdout": "{\"source_sha256\": \"03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f\", \"source_files\": 143, \"source_installation\": \"reused_without_writes\"}\n{\"submitted\": \"distillation-device4-sufficiency-c-oracle-20260912\", \"source_sha256\": \"03be8802757d655e38af692a4c0435801aa16394368109134f7d7dd3cae73e9f\", \"source_files\": 143}\n"
+    }
+  ]
+}

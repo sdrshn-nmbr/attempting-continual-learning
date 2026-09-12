@@ -1,0 +1,5761 @@
+{
+  "audit_kind": "device4_chain_observed_operator_failure_states",
+  "boundaries": [
+    "All saved actual wrong single-command states are included, not just illustrative examples. Counts are model calls, with distinct propagated-input counts also given; repeated calls are not independent trials.",
+    "Opposite-branch equality is an observed response pattern. It does not by itself prove how the model implemented a conditional.",
+    "This analysis neither changes qualification nor selects extra optimization. No new model inference or TEST output inspection."
+  ],
+  "chain": {
+    "A": {
+      "flat_mixed": {
+        "train": {
+          "all_incorrect_step_states": [
+            {
+              "command": "zup",
+              "emitted": [
+                8,
+                6,
+                6,
+                0
+              ],
+              "expected": [
+                8,
+                6,
+                0,
+                6
+              ],
+              "input": [
+                6,
+                0,
+                6,
+                8
+              ],
+              "step": 1,
+              "uid": "870b35ae791e4e6281922beee8f2da7667cf5c0568aecffc28a8695d07ff4d98"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                0,
+                9,
+                9,
+                0
+              ],
+              "expected": [
+                0,
+                9,
+                0,
+                9
+              ],
+              "input": [
+                9,
+                0,
+                9,
+                0
+              ],
+              "step": 3,
+              "uid": "1ad97001f35643eda43f3a416d4859562cef6b875e61e05a382ce2ea3927b6d9"
+            }
+          ],
+          "counts": {
+            "chains_with_single_command_errors": {
+              "chains": 2,
+              "final_correct": 0,
+              "zup": 2
+            }
+          }
+        },
+        "validation": {
+          "all_incorrect_step_states": [
+            {
+              "command": "zup",
+              "emitted": [
+                0,
+                8,
+                8,
+                0
+              ],
+              "expected": [
+                0,
+                8,
+                0,
+                8
+              ],
+              "input": [
+                8,
+                0,
+                8,
+                0
+              ],
+              "step": 4,
+              "uid": "c3301eb35f4636e1034f11a0d4a0f5a24934ec5aa825eeaa6fd05a3cb0741cff"
+            }
+          ],
+          "counts": {
+            "chains_with_single_command_errors": {
+              "chains": 1,
+              "final_correct": 0,
+              "zup": 1
+            }
+          }
+        }
+      }
+    },
+    "B": {
+      "flat_mixed": {
+        "train": {
+          "all_incorrect_step_states": [
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                9,
+                7,
+                8
+              ],
+              "expected": [
+                1,
+                1,
+                7,
+                8
+              ],
+              "input": [
+                9,
+                9,
+                5,
+                6
+              ],
+              "step": 2,
+              "uid": "c76a97c86ba239e407c74a5a374ed3a982e6d7f39c827fe59b4b1b965f7a320e"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                2,
+                4,
+                2
+              ],
+              "expected": [
+                1,
+                2,
+                4,
+                2
+              ],
+              "input": [
+                9,
+                0,
+                2,
+                0
+              ],
+              "step": 1,
+              "uid": "fad6e20b83af4d403be5559a3ddfe4052a7783169633ef9a7fb9fe804428afc5"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                7,
+                8,
+                0,
+                5
+              ],
+              "expected": [
+                7,
+                8,
+                0,
+                3
+              ],
+              "input": [
+                2,
+                1,
+                9,
+                6
+              ],
+              "step": 1,
+              "uid": "517144559a4bfbb71a180b6a4ebecf54a7ded6bc502e37bb7267e02681d2af52"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                5,
+                7,
+                5,
+                8
+              ],
+              "expected": [
+                5,
+                7,
+                5,
+                6
+              ],
+              "input": [
+                4,
+                2,
+                4,
+                3
+              ],
+              "step": 3,
+              "uid": "202588b0e2ac675c519b7c40a39b1672c685b07cd1c1f1a9d0ebf7d62dd9c753"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                2,
+                8,
+                2,
+                8
+              ],
+              "expected": [
+                2,
+                8,
+                2,
+                2
+              ],
+              "input": [
+                4,
+                6,
+                4,
+                4
+              ],
+              "step": 3,
+              "uid": "2010bbbff10ea95236003f8daa462d94342d361cf1181f7262cf2970174f7a7f"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                1,
+                7,
+                0,
+                9
+              ],
+              "expected": [
+                1,
+                5,
+                8,
+                9
+              ],
+              "input": [
+                8,
+                4,
+                1,
+                0
+              ],
+              "step": 2,
+              "uid": "28373c5c893313314bc0480e1d1af0d41a9a2498bd29305b4a0245fa6dd622f0"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                7,
+                2,
+                8
+              ],
+              "expected": [
+                9,
+                4,
+                2,
+                8
+              ],
+              "input": [
+                7,
+                2,
+                0,
+                6
+              ],
+              "step": 2,
+              "uid": "ac45c10708b52f67333676069f6514c8a9bd1492b6ec7c55b0f3528a98f4cf54"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                4,
+                9,
+                6
+              ],
+              "expected": [
+                1,
+                4,
+                9,
+                6
+              ],
+              "input": [
+                9,
+                2,
+                7,
+                4
+              ],
+              "step": 3,
+              "uid": "48618282c3c2e14a91a57b34208e1aaf5bbee1f9733027ec51b9454a0c79a48f"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                7,
+                6,
+                5
+              ],
+              "expected": [
+                1,
+                7,
+                6,
+                5
+              ],
+              "input": [
+                9,
+                5,
+                4,
+                3
+              ],
+              "step": 1,
+              "uid": "ae2d194dd6fe4b9cdcbc76b3e1238275f76b1fc6a88f1b89ee3588fc77733063"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                7,
+                5,
+                8
+              ],
+              "expected": [
+                1,
+                9,
+                7,
+                0
+              ],
+              "input": [
+                9,
+                7,
+                5,
+                8
+              ],
+              "step": 2,
+              "uid": "090b508d0426a42ecb79296afbc94c677170b09840a6f5e29b41446c77db46c2"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                4,
+                1,
+                5,
+                8
+              ],
+              "expected": [
+                4,
+                1,
+                5,
+                6
+              ],
+              "input": [
+                5,
+                8,
+                4,
+                3
+              ],
+              "step": 3,
+              "uid": "e9070006f49321e817159d6c5132bd06108dcc0f868a3eb9acafe69c7eb2344f"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                6,
+                3,
+                9,
+                5
+              ],
+              "expected": [
+                6,
+                3,
+                5,
+                1
+              ],
+              "input": [
+                3,
+                6,
+                4,
+                8
+              ],
+              "step": 1,
+              "uid": "691015bf2a245095263b855e5bac96338e5b226c5ad60a2629e7341d94286a2e"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                5,
+                3,
+                2
+              ],
+              "expected": [
+                1,
+                5,
+                3,
+                2
+              ],
+              "input": [
+                9,
+                3,
+                1,
+                0
+              ],
+              "step": 3,
+              "uid": "c93ebdc238ca4747bb96adbedb02057c9c68ec7aedbc8e84987241b53177269e"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                3,
+                3,
+                7,
+                9
+              ],
+              "expected": [
+                3,
+                3,
+                7,
+                1
+              ],
+              "input": [
+                6,
+                6,
+                2,
+                8
+              ],
+              "step": 1,
+              "uid": "97314c5661f0e8633bea0c5c35ce6c39899a60e46b665cff774e9f257e1a826f"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                0,
+                6,
+                8,
+                4
+              ],
+              "expected": [
+                0,
+                6,
+                8,
+                2
+              ],
+              "input": [
+                9,
+                3,
+                1,
+                7
+              ],
+              "step": 2,
+              "uid": "68619df7a0d235f6e58783875a072e6c33b51cd36e1de8af60d114025e937b1a"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                3,
+                8,
+                7
+              ],
+              "expected": [
+                1,
+                3,
+                8,
+                7
+              ],
+              "input": [
+                9,
+                1,
+                6,
+                5
+              ],
+              "step": 3,
+              "uid": "f93e003a7ee62432992d9b954ec5a9fec2003ae488b69fffa09e2f257b7e3fd9"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                5,
+                0,
+                9
+              ],
+              "expected": [
+                1,
+                5,
+                0,
+                9
+              ],
+              "input": [
+                9,
+                3,
+                8,
+                7
+              ],
+              "step": 4,
+              "uid": "f93e003a7ee62432992d9b954ec5a9fec2003ae488b69fffa09e2f257b7e3fd9"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                9,
+                8,
+                7
+              ],
+              "expected": [
+                1,
+                1,
+                8,
+                7
+              ],
+              "input": [
+                9,
+                9,
+                6,
+                5
+              ],
+              "step": 3,
+              "uid": "ec7fa3895f9b2f55a1e34160130f751013bd605946af58854b4540fb90d03d96"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                0,
+                0,
+                3,
+                4
+              ],
+              "expected": [
+                0,
+                0,
+                1,
+                2
+              ],
+              "input": [
+                9,
+                9,
+                8,
+                7
+              ],
+              "step": 4,
+              "uid": "ec7fa3895f9b2f55a1e34160130f751013bd605946af58854b4540fb90d03d96"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                3,
+                9,
+                5
+              ],
+              "expected": [
+                1,
+                3,
+                9,
+                5
+              ],
+              "input": [
+                9,
+                1,
+                7,
+                3
+              ],
+              "step": 3,
+              "uid": "91485a4a5b4accbd80c0364483f0d7ba9a78970a4b0f7b9bc73c444e455fd6fc"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                3,
+                9,
+                5,
+                1
+              ],
+              "expected": [
+                3,
+                5,
+                9,
+                1
+              ],
+              "input": [
+                6,
+                4,
+                0,
+                8
+              ],
+              "step": 1,
+              "uid": "4fca17d4153a853882731ac332510a586faa1df78ad78cb704ae9f0e74440ead"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                4,
+                7,
+                9
+              ],
+              "expected": [
+                1,
+                4,
+                7,
+                9
+              ],
+              "input": [
+                9,
+                2,
+                5,
+                7
+              ],
+              "step": 1,
+              "uid": "91ee925299c192ad06646a593cfe3de04cea33f339519b35f2d3d2d702d66d08"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                3,
+                9,
+                2,
+                6
+              ],
+              "expected": [
+                3,
+                5,
+                2,
+                6
+              ],
+              "input": [
+                6,
+                4,
+                7,
+                3
+              ],
+              "step": 2,
+              "uid": "7bd68ea73997f2c87c067baece99a94e6287478cbcdb7c9b7c5033756d0c1be0"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                7,
+                8,
+                0
+              ],
+              "expected": [
+                1,
+                9,
+                8,
+                0
+              ],
+              "input": [
+                9,
+                7,
+                6,
+                8
+              ],
+              "step": 4,
+              "uid": "7bd68ea73997f2c87c067baece99a94e6287478cbcdb7c9b7c5033756d0c1be0"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                7,
+                2,
+                0,
+                5
+              ],
+              "expected": [
+                7,
+                2,
+                0,
+                3
+              ],
+              "input": [
+                2,
+                7,
+                9,
+                6
+              ],
+              "step": 4,
+              "uid": "d9adb191f9c73683ab7c483e93cf9c4d9185dda1e00e84062853191732a90cc2"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                3,
+                6,
+                3
+              ],
+              "expected": [
+                1,
+                3,
+                6,
+                3
+              ],
+              "input": [
+                9,
+                1,
+                4,
+                1
+              ],
+              "step": 1,
+              "uid": "0263571e26ed032299f36181bb3018e34278dc95fed8810e29349e905d737d95"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                0,
+                2,
+                0
+              ],
+              "expected": [
+                1,
+                0,
+                2,
+                0
+              ],
+              "input": [
+                9,
+                8,
+                0,
+                8
+              ],
+              "step": 2,
+              "uid": "bb3ae4626874f61726d6d76db5730692c2d47855dcad9376a57e33ee327d8368"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                2,
+                4,
+                2
+              ],
+              "expected": [
+                1,
+                2,
+                4,
+                2
+              ],
+              "input": [
+                9,
+                0,
+                2,
+                0
+              ],
+              "step": 3,
+              "uid": "bb3ae4626874f61726d6d76db5730692c2d47855dcad9376a57e33ee327d8368"
+            }
+          ],
+          "counts": {
+            "chains_with_single_command_errors": {
+              "chains": 24,
+              "dax": 12,
+              "dax,zup": 2,
+              "final_correct": 0,
+              "wug": 1,
+              "zup": 9
+            },
+            "dax_first_digit_0": {
+              "calls": 13,
+              "distinct_emitted_input_states": 13,
+              "emitted_first_digit_2": 13,
+              "first_digit_correct": 13,
+              "whole_answer_correct": 13
+            },
+            "dax_first_digit_1": {
+              "calls": 16,
+              "distinct_emitted_input_states": 16,
+              "emitted_first_digit_3": 16,
+              "first_digit_correct": 16,
+              "whole_answer_correct": 16
+            },
+            "dax_first_digit_2": {
+              "calls": 15,
+              "distinct_emitted_input_states": 14,
+              "emitted_first_digit_4": 15,
+              "first_digit_correct": 15,
+              "whole_answer_correct": 15
+            },
+            "dax_first_digit_3": {
+              "calls": 14,
+              "distinct_emitted_input_states": 13,
+              "emitted_first_digit_5": 14,
+              "first_digit_correct": 14,
+              "whole_answer_correct": 14
+            },
+            "dax_first_digit_4": {
+              "calls": 15,
+              "distinct_emitted_input_states": 15,
+              "emitted_first_digit_6": 15,
+              "first_digit_correct": 15,
+              "whole_answer_correct": 15
+            },
+            "dax_first_digit_5": {
+              "calls": 12,
+              "distinct_emitted_input_states": 12,
+              "emitted_first_digit_7": 12,
+              "first_digit_correct": 12,
+              "whole_answer_correct": 12
+            },
+            "dax_first_digit_6": {
+              "calls": 17,
+              "distinct_emitted_input_states": 17,
+              "emitted_first_digit_8": 17,
+              "first_digit_correct": 17,
+              "whole_answer_correct": 17
+            },
+            "dax_first_digit_7": {
+              "calls": 14,
+              "distinct_emitted_input_states": 14,
+              "emitted_first_digit_9": 14,
+              "first_digit_correct": 14,
+              "whole_answer_correct": 13
+            },
+            "dax_first_digit_8": {
+              "calls": 13,
+              "distinct_emitted_input_states": 13,
+              "emitted_first_digit_0": 13,
+              "first_digit_correct": 13,
+              "whole_answer_correct": 13
+            },
+            "dax_first_digit_9": {
+              "calls": 15,
+              "distinct_emitted_input_states": 14,
+              "emitted_first_digit_9": 15,
+              "first_digit_correct": 0,
+              "whole_answer_correct": 0
+            }
+          }
+        },
+        "validation": {
+          "all_incorrect_step_states": [
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                0,
+                4,
+                3
+              ],
+              "expected": [
+                1,
+                0,
+                4,
+                3
+              ],
+              "input": [
+                9,
+                8,
+                2,
+                1
+              ],
+              "step": 1,
+              "uid": "eb8829580d9b35c296404b649fffb7c96c72c9f8aafa4c779d31390de1f87013"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                2,
+                6,
+                5
+              ],
+              "expected": [
+                1,
+                2,
+                6,
+                5
+              ],
+              "input": [
+                9,
+                0,
+                4,
+                3
+              ],
+              "step": 2,
+              "uid": "eb8829580d9b35c296404b649fffb7c96c72c9f8aafa4c779d31390de1f87013"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                0,
+                0,
+                0
+              ],
+              "expected": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "input": [
+                9,
+                8,
+                8,
+                8
+              ],
+              "step": 3,
+              "uid": "024c1b9c41d075faf7226b1b6a58a03cbeaa73d2a2a4bd861560a160714c0dfa"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                3,
+                8,
+                3,
+                9
+              ],
+              "expected": [
+                3,
+                8,
+                3,
+                1
+              ],
+              "input": [
+                6,
+                1,
+                6,
+                8
+              ],
+              "step": 1,
+              "uid": "75f1fe905147684abfed14da8e770a8e0e38574209eab2ab71ac194a572b6016"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                9,
+                2,
+                8
+              ],
+              "expected": [
+                1,
+                1,
+                2,
+                8
+              ],
+              "input": [
+                9,
+                9,
+                0,
+                6
+              ],
+              "step": 2,
+              "uid": "a7d712096ec15b398d963d27dc0a40302722a1700dac57c56a02b5d95eff247b"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                9,
+                4,
+                0
+              ],
+              "expected": [
+                1,
+                1,
+                4,
+                0
+              ],
+              "input": [
+                9,
+                9,
+                2,
+                8
+              ],
+              "step": 3,
+              "uid": "a7d712096ec15b398d963d27dc0a40302722a1700dac57c56a02b5d95eff247b"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                9,
+                0,
+                0,
+                7
+              ],
+              "expected": [
+                9,
+                0,
+                0,
+                5
+              ],
+              "input": [
+                0,
+                9,
+                9,
+                4
+              ],
+              "step": 3,
+              "uid": "3c8690f3d8669bbb56df4b017b85d07781d3c7509f553d00e12306022792c4ed"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                7,
+                1,
+                6
+              ],
+              "expected": [
+                9,
+                4,
+                1,
+                6
+              ],
+              "input": [
+                7,
+                2,
+                9,
+                4
+              ],
+              "step": 3,
+              "uid": "f4522399ba0a5201f84da94c53ef9ced381259223f386872e13a7792b7d3ee83"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                4,
+                9,
+                0
+              ],
+              "expected": [
+                1,
+                4,
+                1,
+                0
+              ],
+              "input": [
+                9,
+                2,
+                9,
+                8
+              ],
+              "step": 2,
+              "uid": "90a0e0d17c80c8b83169cd9a85a2ec6b9fcf82d0c7687bb21e2b7dc8257b1089"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                0,
+                5,
+                9
+              ],
+              "expected": [
+                1,
+                0,
+                5,
+                1
+              ],
+              "input": [
+                9,
+                8,
+                3,
+                9
+              ],
+              "step": 4,
+              "uid": "9197fa89fcc222a009afe1d2339fb31d2e51eced7febfab20094c87a4cdf9d82"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                0,
+                1,
+                1
+              ],
+              "expected": [
+                1,
+                0,
+                9,
+                9
+              ],
+              "input": [
+                9,
+                8,
+                7,
+                7
+              ],
+              "step": 2,
+              "uid": "86e026feb04df5c3adc0cd05f67fa5ee410cb646af34d775ab7a4941c92cdfcc"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                2,
+                3,
+                3
+              ],
+              "expected": [
+                1,
+                2,
+                3,
+                3
+              ],
+              "input": [
+                9,
+                0,
+                1,
+                1
+              ],
+              "step": 3,
+              "uid": "86e026feb04df5c3adc0cd05f67fa5ee410cb646af34d775ab7a4941c92cdfcc"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                9,
+                5,
+                7,
+                4
+              ],
+              "expected": [
+                1,
+                5,
+                7,
+                4
+              ],
+              "input": [
+                9,
+                3,
+                5,
+                2
+              ],
+              "step": 3,
+              "uid": "c2e390e3c549012c789ae84e3c109245a459b25b1b4fd633b680d01e20234394"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                0,
+                0,
+                3,
+                4
+              ],
+              "expected": [
+                0,
+                0,
+                1,
+                2
+              ],
+              "input": [
+                9,
+                9,
+                8,
+                7
+              ],
+              "step": 3,
+              "uid": "e3aa732dc99e2beb4aacb1e7a1d520918ab68d7c3a8bb051b1c5baec51d88151"
+            }
+          ],
+          "counts": {
+            "chains_with_single_command_errors": {
+              "chains": 11,
+              "dax": 8,
+              "final_correct": 0,
+              "zup": 3
+            },
+            "dax_first_digit_0": {
+              "calls": 6,
+              "distinct_emitted_input_states": 6,
+              "emitted_first_digit_2": 6,
+              "first_digit_correct": 6,
+              "whole_answer_correct": 6
+            },
+            "dax_first_digit_1": {
+              "calls": 2,
+              "distinct_emitted_input_states": 2,
+              "emitted_first_digit_3": 2,
+              "first_digit_correct": 2,
+              "whole_answer_correct": 2
+            },
+            "dax_first_digit_2": {
+              "calls": 5,
+              "distinct_emitted_input_states": 5,
+              "emitted_first_digit_4": 5,
+              "first_digit_correct": 5,
+              "whole_answer_correct": 5
+            },
+            "dax_first_digit_3": {
+              "calls": 3,
+              "distinct_emitted_input_states": 3,
+              "emitted_first_digit_5": 3,
+              "first_digit_correct": 3,
+              "whole_answer_correct": 3
+            },
+            "dax_first_digit_4": {
+              "calls": 4,
+              "distinct_emitted_input_states": 4,
+              "emitted_first_digit_6": 4,
+              "first_digit_correct": 4,
+              "whole_answer_correct": 4
+            },
+            "dax_first_digit_5": {
+              "calls": 9,
+              "distinct_emitted_input_states": 9,
+              "emitted_first_digit_7": 9,
+              "first_digit_correct": 9,
+              "whole_answer_correct": 9
+            },
+            "dax_first_digit_6": {
+              "calls": 7,
+              "distinct_emitted_input_states": 7,
+              "emitted_first_digit_8": 7,
+              "first_digit_correct": 7,
+              "whole_answer_correct": 7
+            },
+            "dax_first_digit_7": {
+              "calls": 7,
+              "distinct_emitted_input_states": 7,
+              "emitted_first_digit_9": 7,
+              "first_digit_correct": 7,
+              "whole_answer_correct": 6
+            },
+            "dax_first_digit_8": {
+              "calls": 4,
+              "distinct_emitted_input_states": 4,
+              "emitted_first_digit_0": 4,
+              "first_digit_correct": 4,
+              "whole_answer_correct": 4
+            },
+            "dax_first_digit_9": {
+              "calls": 10,
+              "distinct_emitted_input_states": 10,
+              "emitted_first_digit_9": 10,
+              "first_digit_correct": 0,
+              "whole_answer_correct": 0
+            }
+          }
+        }
+      }
+    },
+    "C": {
+      "flat_mixed": {
+        "train": {
+          "all_incorrect_step_states": [
+            {
+              "command": "wug",
+              "emitted": [
+                2,
+                1,
+                8,
+                7
+              ],
+              "expected": [
+                1,
+                2,
+                7,
+                8
+              ],
+              "input": [
+                1,
+                2,
+                8,
+                7
+              ],
+              "step": 2,
+              "uid": "09241d44208556c576c076cfa3245be98e77730773e27a3d34012b51e0393da3"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                5,
+                4,
+                3,
+                7
+              ],
+              "expected": [
+                4,
+                5,
+                7,
+                3
+              ],
+              "input": [
+                4,
+                5,
+                3,
+                7
+              ],
+              "step": 1,
+              "uid": "6c70f8362c6fe36a08c5f72d2b59a0c813c8f8b6a4d935397bd3a3c70dff38e9"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                1,
+                5,
+                6,
+                3
+              ],
+              "expected": [
+                5,
+                1,
+                3,
+                6
+              ],
+              "input": [
+                5,
+                1,
+                6,
+                3
+              ],
+              "step": 1,
+              "uid": "f06789abd262806d5100fa971ea60ce3714506a07726c884a3e6b17a22f23ed0"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                3,
+                4,
+                5
+              ],
+              "expected": [
+                3,
+                4,
+                5,
+                4
+              ],
+              "input": [
+                3,
+                4,
+                4,
+                5
+              ],
+              "step": 1,
+              "uid": "9f6079fc186f35946cd5f6ca59ab9d44bf85ae21955cbebd757a87d0ddaadd64"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                3,
+                4,
+                4,
+                5
+              ],
+              "expected": [
+                4,
+                3,
+                5,
+                4
+              ],
+              "input": [
+                4,
+                3,
+                4,
+                5
+              ],
+              "step": 2,
+              "uid": "9f6079fc186f35946cd5f6ca59ab9d44bf85ae21955cbebd757a87d0ddaadd64"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                3,
+                4,
+                5
+              ],
+              "expected": [
+                3,
+                4,
+                5,
+                4
+              ],
+              "input": [
+                3,
+                4,
+                4,
+                5
+              ],
+              "step": 3,
+              "uid": "9f6079fc186f35946cd5f6ca59ab9d44bf85ae21955cbebd757a87d0ddaadd64"
+            },
+            {
+              "command": "zup",
+              "emitted": [
+                4,
+                3,
+                9,
+                5
+              ],
+              "expected": [
+                4,
+                3,
+                9,
+                3
+              ],
+              "input": [
+                4,
+                3,
+                9,
+                9
+              ],
+              "step": 1,
+              "uid": "25296c61a1ed42a94d048ae014195be6000ae216c55414ad17c6db27d61aa60a"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                3,
+                4,
+                9,
+                5
+              ],
+              "expected": [
+                4,
+                3,
+                5,
+                9
+              ],
+              "input": [
+                4,
+                3,
+                9,
+                5
+              ],
+              "step": 2,
+              "uid": "25296c61a1ed42a94d048ae014195be6000ae216c55414ad17c6db27d61aa60a"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                0,
+                6,
+                1
+              ],
+              "expected": [
+                0,
+                4,
+                1,
+                6
+              ],
+              "input": [
+                0,
+                4,
+                6,
+                1
+              ],
+              "step": 1,
+              "uid": "d56d13e00cbae77b3296cdc218fa31aa00ee1651ed2573ff19cf8cdf9e41717e"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                9,
+                9,
+                8,
+                9
+              ],
+              "expected": [
+                9,
+                9,
+                9,
+                8
+              ],
+              "input": [
+                9,
+                9,
+                8,
+                9
+              ],
+              "step": 2,
+              "uid": "a5b581e68ba5bea2f2e98541d1fc876fdc6646eef5057def327d7b55de294883"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                0,
+                3,
+                9,
+                5
+              ],
+              "expected": [
+                3,
+                0,
+                5,
+                9
+              ],
+              "input": [
+                3,
+                0,
+                9,
+                5
+              ],
+              "step": 1,
+              "uid": "f45b3345c09de93d62d5eacb56ffe3e125ce1a5a9510c45f97eca542391b28e6"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                3,
+                0,
+                9,
+                5
+              ],
+              "expected": [
+                0,
+                3,
+                5,
+                9
+              ],
+              "input": [
+                0,
+                3,
+                9,
+                5
+              ],
+              "step": 2,
+              "uid": "f45b3345c09de93d62d5eacb56ffe3e125ce1a5a9510c45f97eca542391b28e6"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                9,
+                6,
+                4,
+                1
+              ],
+              "expected": [
+                6,
+                9,
+                1,
+                4
+              ],
+              "input": [
+                6,
+                9,
+                4,
+                1
+              ],
+              "step": 2,
+              "uid": "cc88326d1c7f350e1b1840eabaa00161a5e29d69ed4f19ebc1ca771c5bac92b0"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                0,
+                5,
+                7
+              ],
+              "expected": [
+                0,
+                4,
+                7,
+                5
+              ],
+              "input": [
+                0,
+                4,
+                5,
+                7
+              ],
+              "step": 1,
+              "uid": "47555f050d0447f9f139f82e27635b52be746d9eb1237b966a4f01df4b86b1be"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                0,
+                4,
+                5,
+                7
+              ],
+              "expected": [
+                4,
+                0,
+                7,
+                5
+              ],
+              "input": [
+                4,
+                0,
+                5,
+                7
+              ],
+              "step": 2,
+              "uid": "47555f050d0447f9f139f82e27635b52be746d9eb1237b966a4f01df4b86b1be"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                0,
+                7,
+                1,
+                8
+              ],
+              "expected": [
+                7,
+                0,
+                1,
+                8
+              ],
+              "input": [
+                0,
+                7,
+                1,
+                8
+              ],
+              "step": 2,
+              "uid": "271115bd7bf9e265162b8ef1e36ef8be3a0cae3e36d7f4487d437b8167536356"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                3,
+                2,
+                4,
+                7
+              ],
+              "expected": [
+                2,
+                3,
+                7,
+                4
+              ],
+              "input": [
+                2,
+                3,
+                4,
+                7
+              ],
+              "step": 2,
+              "uid": "dfc9394ca4999e3f046b4938c5250e8d1615de12a25d61a074ebf698077a9de7"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                9,
+                5,
+                4,
+                3
+              ],
+              "expected": [
+                5,
+                9,
+                3,
+                4
+              ],
+              "input": [
+                5,
+                9,
+                4,
+                3
+              ],
+              "step": 1,
+              "uid": "46b64f12ab8df69195c570360eecbc973bf5d7ead24d9cc0f631bee28caf78a6"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                1,
+                9,
+                5,
+                5
+              ],
+              "expected": [
+                9,
+                1,
+                5,
+                5
+              ],
+              "input": [
+                9,
+                1,
+                5,
+                5
+              ],
+              "step": 1,
+              "uid": "cb8a36ddc369c1a23ee67b08115828c62b0450bfdb9414ed28ec66b137ac4955"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                9,
+                1,
+                5,
+                5
+              ],
+              "expected": [
+                1,
+                9,
+                5,
+                5
+              ],
+              "input": [
+                1,
+                9,
+                5,
+                5
+              ],
+              "step": 2,
+              "uid": "cb8a36ddc369c1a23ee67b08115828c62b0450bfdb9414ed28ec66b137ac4955"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                1,
+                9,
+                5,
+                5
+              ],
+              "expected": [
+                9,
+                1,
+                5,
+                5
+              ],
+              "input": [
+                9,
+                1,
+                5,
+                5
+              ],
+              "step": 3,
+              "uid": "cb8a36ddc369c1a23ee67b08115828c62b0450bfdb9414ed28ec66b137ac4955"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                7,
+                2,
+                9
+              ],
+              "expected": [
+                7,
+                4,
+                9,
+                2
+              ],
+              "input": [
+                7,
+                4,
+                2,
+                9
+              ],
+              "step": 1,
+              "uid": "f805c7302432fdd7cc031297cf75ed040f0d2565254714bcc7ba9fe6132acee7"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                3,
+                8,
+                0,
+                1
+              ],
+              "expected": [
+                8,
+                3,
+                1,
+                0
+              ],
+              "input": [
+                8,
+                3,
+                0,
+                1
+              ],
+              "step": 2,
+              "uid": "16ef12515d92ecba3752eb1865677e0b92abe276e8cd5a859f77d539d06058c2"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                5,
+                9,
+                3,
+                9
+              ],
+              "expected": [
+                9,
+                5,
+                9,
+                3
+              ],
+              "input": [
+                9,
+                5,
+                3,
+                9
+              ],
+              "step": 2,
+              "uid": "46b9b34d698eabd7ccf4b9730ece41fb1047647e15f3963ff2ec0fea8c8a3d0b"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                1,
+                5,
+                1,
+                3
+              ],
+              "expected": [
+                5,
+                1,
+                3,
+                1
+              ],
+              "input": [
+                5,
+                1,
+                1,
+                3
+              ],
+              "step": 1,
+              "uid": "3fba3f57ae07b00c5773a60e35cd25a179e9680bf1a0ea010819d0cb9bed70f1"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                1,
+                5,
+                3,
+                1
+              ],
+              "expected": [
+                5,
+                1,
+                1,
+                3
+              ],
+              "input": [
+                5,
+                1,
+                3,
+                1
+              ],
+              "step": 3,
+              "uid": "3fba3f57ae07b00c5773a60e35cd25a179e9680bf1a0ea010819d0cb9bed70f1"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                2,
+                9,
+                8,
+                5
+              ],
+              "expected": [
+                9,
+                2,
+                5,
+                8
+              ],
+              "input": [
+                9,
+                2,
+                8,
+                5
+              ],
+              "step": 1,
+              "uid": "535ac7262a7f4c07fd7d398ec034f3fcfdc72b3ec939ff440d42bb01f602a864"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                9,
+                2,
+                8,
+                5
+              ],
+              "expected": [
+                2,
+                9,
+                5,
+                8
+              ],
+              "input": [
+                2,
+                9,
+                8,
+                5
+              ],
+              "step": 2,
+              "uid": "535ac7262a7f4c07fd7d398ec034f3fcfdc72b3ec939ff440d42bb01f602a864"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                0,
+                5,
+                0,
+                7
+              ],
+              "expected": [
+                5,
+                0,
+                7,
+                0
+              ],
+              "input": [
+                5,
+                0,
+                0,
+                7
+              ],
+              "step": 2,
+              "uid": "686aa4782e06f86b37753cd7975f0a4d459700cbfa331011067b483d08ee32cb"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                5,
+                6,
+                2,
+                9
+              ],
+              "expected": [
+                6,
+                5,
+                9,
+                2
+              ],
+              "input": [
+                6,
+                5,
+                2,
+                9
+              ],
+              "step": 2,
+              "uid": "7382221726682bb930aec7e2ed107615c916a664b9d49ac2c2a7bb33d9751ee8"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                5,
+                7,
+                0,
+                9
+              ],
+              "expected": [
+                7,
+                5,
+                9,
+                0
+              ],
+              "input": [
+                7,
+                5,
+                0,
+                9
+              ],
+              "step": 1,
+              "uid": "44f32e4fe23329adf7b070afb4afaf420a1543beb8442a93c0b37002fb1669ef"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                7,
+                5,
+                0,
+                9
+              ],
+              "expected": [
+                5,
+                7,
+                9,
+                0
+              ],
+              "input": [
+                5,
+                7,
+                0,
+                9
+              ],
+              "step": 2,
+              "uid": "44f32e4fe23329adf7b070afb4afaf420a1543beb8442a93c0b37002fb1669ef"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                5,
+                8,
+                6,
+                1
+              ],
+              "expected": [
+                8,
+                5,
+                1,
+                6
+              ],
+              "input": [
+                8,
+                5,
+                6,
+                1
+              ],
+              "step": 1,
+              "uid": "16784352b6efc938f180cfe2a0a76e7be57b4fe971ec911b78fa15c1afdd0a27"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                0,
+                7,
+                8,
+                3
+              ],
+              "expected": [
+                7,
+                0,
+                3,
+                8
+              ],
+              "input": [
+                7,
+                0,
+                8,
+                3
+              ],
+              "step": 1,
+              "uid": "ebd885183cb753606bca1a3dca9d02ac08de7df4907a8f2424c1a24087af0f08"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                8,
+                7,
+                1,
+                1
+              ],
+              "expected": [
+                7,
+                8,
+                1,
+                1
+              ],
+              "input": [
+                7,
+                8,
+                1,
+                1
+              ],
+              "step": 1,
+              "uid": "6f9eb2df9b225a92f32b66327300576b8b63eaf92e68074ef49651d18574d9ae"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                9,
+                4,
+                9
+              ],
+              "expected": [
+                9,
+                4,
+                9,
+                4
+              ],
+              "input": [
+                9,
+                4,
+                4,
+                9
+              ],
+              "step": 2,
+              "uid": "a3e9da8e63a86b8ccb46dd3c4b5af87d2500fcda09d15dc23a2fc18478a60286"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                9,
+                4,
+                4,
+                9
+              ],
+              "expected": [
+                4,
+                9,
+                9,
+                4
+              ],
+              "input": [
+                4,
+                9,
+                4,
+                9
+              ],
+              "step": 3,
+              "uid": "a3e9da8e63a86b8ccb46dd3c4b5af87d2500fcda09d15dc23a2fc18478a60286"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                8,
+                2,
+                9,
+                5
+              ],
+              "expected": [
+                2,
+                8,
+                5,
+                9
+              ],
+              "input": [
+                2,
+                8,
+                9,
+                5
+              ],
+              "step": 1,
+              "uid": "1fe704252c68784d6c3f9328f5994ee2510e3fb325990b53f6e4734005f59075"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                2,
+                8,
+                9,
+                5
+              ],
+              "expected": [
+                8,
+                2,
+                5,
+                9
+              ],
+              "input": [
+                8,
+                2,
+                9,
+                5
+              ],
+              "step": 2,
+              "uid": "1fe704252c68784d6c3f9328f5994ee2510e3fb325990b53f6e4734005f59075"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                9,
+                1,
+                7,
+                1
+              ],
+              "expected": [
+                1,
+                9,
+                1,
+                7
+              ],
+              "input": [
+                1,
+                9,
+                7,
+                1
+              ],
+              "step": 2,
+              "uid": "7fa86ce0c031573dcb15dd605eac24922b88047bb26026575df13d8bb428f7f9"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                9,
+                3,
+                6,
+                5
+              ],
+              "expected": [
+                3,
+                9,
+                5,
+                6
+              ],
+              "input": [
+                3,
+                9,
+                6,
+                5
+              ],
+              "step": 2,
+              "uid": "a6e44642b60754892909699c9aa96a108ef2d6e3e088e7843e928587e9f7c14c"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                2,
+                2,
+                1,
+                5
+              ],
+              "expected": [
+                2,
+                2,
+                5,
+                1
+              ],
+              "input": [
+                2,
+                2,
+                1,
+                5
+              ],
+              "step": 1,
+              "uid": "6ab28a940ceaa25623f36902be8ba666ecdbfff5067c5931d0260ba1e2ec4df1"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                2,
+                2,
+                1,
+                5
+              ],
+              "expected": [
+                2,
+                2,
+                5,
+                1
+              ],
+              "input": [
+                2,
+                2,
+                1,
+                5
+              ],
+              "step": 2,
+              "uid": "6ab28a940ceaa25623f36902be8ba666ecdbfff5067c5931d0260ba1e2ec4df1"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                7,
+                3,
+                6,
+                5
+              ],
+              "expected": [
+                3,
+                7,
+                5,
+                6
+              ],
+              "input": [
+                3,
+                7,
+                6,
+                5
+              ],
+              "step": 1,
+              "uid": "9c603d96809d536a3adb718b2b931aac3f7b8b696ed4213017efd3eddeee7846"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                3,
+                7,
+                6,
+                5
+              ],
+              "expected": [
+                7,
+                3,
+                5,
+                6
+              ],
+              "input": [
+                7,
+                3,
+                6,
+                5
+              ],
+              "step": 2,
+              "uid": "9c603d96809d536a3adb718b2b931aac3f7b8b696ed4213017efd3eddeee7846"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                9,
+                0,
+                5,
+                7
+              ],
+              "expected": [
+                0,
+                9,
+                7,
+                5
+              ],
+              "input": [
+                0,
+                9,
+                5,
+                7
+              ],
+              "step": 3,
+              "uid": "504eda4c9306f922e79957f11a763d5ab02ca33c6228d5f1f6186249f6e9c4c2"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                2,
+                6,
+                2,
+                5
+              ],
+              "expected": [
+                6,
+                2,
+                5,
+                2
+              ],
+              "input": [
+                6,
+                2,
+                2,
+                5
+              ],
+              "step": 2,
+              "uid": "74130cc4c022fbf860903312014716cdfa2743e879c586e90bb7652d745d29cd"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                6,
+                2,
+                2,
+                7
+              ],
+              "expected": [
+                2,
+                6,
+                7,
+                2
+              ],
+              "input": [
+                2,
+                6,
+                2,
+                7
+              ],
+              "step": 4,
+              "uid": "74130cc4c022fbf860903312014716cdfa2743e879c586e90bb7652d745d29cd"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                5,
+                1,
+                0,
+                3
+              ],
+              "expected": [
+                1,
+                5,
+                3,
+                0
+              ],
+              "input": [
+                1,
+                5,
+                0,
+                3
+              ],
+              "step": 3,
+              "uid": "3e6c0b8aaa25aaa779a47a0751f6b6a822e8ffc1866a822780fede8ee808d931"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                0,
+                8,
+                3,
+                9
+              ],
+              "expected": [
+                8,
+                0,
+                9,
+                3
+              ],
+              "input": [
+                8,
+                0,
+                3,
+                9
+              ],
+              "step": 1,
+              "uid": "28caf6baac80138ab27a20b8afe13aa760c54f3df87414216e8920d31d7830ec"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                8,
+                0,
+                3,
+                9
+              ],
+              "expected": [
+                0,
+                8,
+                9,
+                3
+              ],
+              "input": [
+                0,
+                8,
+                3,
+                9
+              ],
+              "step": 3,
+              "uid": "28caf6baac80138ab27a20b8afe13aa760c54f3df87414216e8920d31d7830ec"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                3,
+                8,
+                6,
+                1
+              ],
+              "expected": [
+                8,
+                3,
+                1,
+                6
+              ],
+              "input": [
+                8,
+                3,
+                6,
+                1
+              ],
+              "step": 2,
+              "uid": "ccf262fccdcfcf9661255239d4167e1e69597733a55c4116cf14996a028695fa"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                1,
+                0,
+                3
+              ],
+              "expected": [
+                1,
+                4,
+                3,
+                0
+              ],
+              "input": [
+                1,
+                4,
+                0,
+                3
+              ],
+              "step": 2,
+              "uid": "7b21fe7224995184d16645941055f9d3663e47c2b7922d0af9e63fc458410524"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                5,
+                0,
+                7,
+                9
+              ],
+              "expected": [
+                0,
+                5,
+                9,
+                7
+              ],
+              "input": [
+                0,
+                5,
+                7,
+                9
+              ],
+              "step": 3,
+              "uid": "3e1bd7d22e8ad280ad5b28b698d5fc22a0143c14951a502e5e149cd8e3945c16"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                5,
+                0,
+                5,
+                9
+              ],
+              "expected": [
+                0,
+                5,
+                9,
+                5
+              ],
+              "input": [
+                0,
+                5,
+                5,
+                9
+              ],
+              "step": 1,
+              "uid": "7ee42bcc2048a55b204d840029f03cde167a0dd05cc94def6a85c534016ac607"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                0,
+                5,
+                5,
+                9
+              ],
+              "expected": [
+                5,
+                0,
+                9,
+                5
+              ],
+              "input": [
+                5,
+                0,
+                5,
+                9
+              ],
+              "step": 2,
+              "uid": "7ee42bcc2048a55b204d840029f03cde167a0dd05cc94def6a85c534016ac607"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                1,
+                6,
+                9,
+                1
+              ],
+              "expected": [
+                6,
+                1,
+                1,
+                9
+              ],
+              "input": [
+                6,
+                1,
+                9,
+                1
+              ],
+              "step": 2,
+              "uid": "f8ac3a8f119c6d2e70358a579b01b058031104e06327b2aa2dd7f71e7fa5a350"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                6,
+                1,
+                9,
+                1
+              ],
+              "expected": [
+                1,
+                6,
+                1,
+                9
+              ],
+              "input": [
+                1,
+                6,
+                9,
+                1
+              ],
+              "step": 3,
+              "uid": "f8ac3a8f119c6d2e70358a579b01b058031104e06327b2aa2dd7f71e7fa5a350"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                1,
+                6,
+                9,
+                1
+              ],
+              "expected": [
+                6,
+                1,
+                1,
+                9
+              ],
+              "input": [
+                6,
+                1,
+                9,
+                1
+              ],
+              "step": 4,
+              "uid": "f8ac3a8f119c6d2e70358a579b01b058031104e06327b2aa2dd7f71e7fa5a350"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                9,
+                6,
+                7,
+                7
+              ],
+              "expected": [
+                6,
+                9,
+                7,
+                7
+              ],
+              "input": [
+                6,
+                9,
+                7,
+                7
+              ],
+              "step": 3,
+              "uid": "4dc874f30cc62ea645be0805fb476736480584390d420391bc1f11d8c7f28285"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                6,
+                9,
+                7,
+                7
+              ],
+              "expected": [
+                9,
+                6,
+                7,
+                7
+              ],
+              "input": [
+                9,
+                6,
+                7,
+                7
+              ],
+              "step": 4,
+              "uid": "4dc874f30cc62ea645be0805fb476736480584390d420391bc1f11d8c7f28285"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                9,
+                0,
+                7,
+                5
+              ],
+              "expected": [
+                0,
+                9,
+                5,
+                7
+              ],
+              "input": [
+                0,
+                9,
+                7,
+                5
+              ],
+              "step": 3,
+              "uid": "ea04473349cf332ed79f2cc2a45f89d5e3158db69dcdea553f59bdcfb7c15227"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                9,
+                9,
+                4,
+                5
+              ],
+              "expected": [
+                9,
+                9,
+                5,
+                4
+              ],
+              "input": [
+                9,
+                9,
+                5,
+                4
+              ],
+              "step": 1,
+              "uid": "aec61e3361d0c153e097ba6b91f364b7e0aa02e8ad5a825a9de807ab23483378"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                9,
+                5,
+                9
+              ],
+              "expected": [
+                9,
+                4,
+                9,
+                5
+              ],
+              "input": [
+                9,
+                4,
+                5,
+                9
+              ],
+              "step": 3,
+              "uid": "aec61e3361d0c153e097ba6b91f364b7e0aa02e8ad5a825a9de807ab23483378"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                0,
+                5,
+                7,
+                7
+              ],
+              "expected": [
+                5,
+                0,
+                7,
+                7
+              ],
+              "input": [
+                5,
+                0,
+                7,
+                7
+              ],
+              "step": 2,
+              "uid": "1319a1f1e51d62eb8cab27d9d3f185acdc02376d2e182434e979f9cfedf90a63"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                5,
+                0,
+                7,
+                7
+              ],
+              "expected": [
+                0,
+                5,
+                7,
+                7
+              ],
+              "input": [
+                0,
+                5,
+                7,
+                7
+              ],
+              "step": 3,
+              "uid": "1319a1f1e51d62eb8cab27d9d3f185acdc02376d2e182434e979f9cfedf90a63"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                1,
+                4,
+                2,
+                3
+              ],
+              "expected": [
+                4,
+                1,
+                3,
+                2
+              ],
+              "input": [
+                4,
+                1,
+                2,
+                3
+              ],
+              "step": 1,
+              "uid": "15b4aa21bb6d32db5992361e86f91bb5642fe92ff3ef54a4d7e839953e0048ee"
+            },
+            {
+              "command": "dax",
+              "emitted": [
+                1,
+                4,
+                4,
+                2
+              ],
+              "expected": [
+                1,
+                4,
+                2,
+                4
+              ],
+              "input": [
+                4,
+                2,
+                4,
+                1
+              ],
+              "step": 4,
+              "uid": "15b4aa21bb6d32db5992361e86f91bb5642fe92ff3ef54a4d7e839953e0048ee"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                1,
+                4,
+                5,
+                9
+              ],
+              "expected": [
+                4,
+                1,
+                9,
+                5
+              ],
+              "input": [
+                4,
+                1,
+                5,
+                9
+              ],
+              "step": 1,
+              "uid": "a51c0b8e90b819708d50a91f6050dcbe4e9684d13f34aeabfbd11da3491f9786"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                1,
+                5,
+                9
+              ],
+              "expected": [
+                1,
+                4,
+                9,
+                5
+              ],
+              "input": [
+                1,
+                4,
+                5,
+                9
+              ],
+              "step": 2,
+              "uid": "a51c0b8e90b819708d50a91f6050dcbe4e9684d13f34aeabfbd11da3491f9786"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                1,
+                4,
+                5,
+                9
+              ],
+              "expected": [
+                4,
+                1,
+                9,
+                5
+              ],
+              "input": [
+                4,
+                1,
+                5,
+                9
+              ],
+              "step": 3,
+              "uid": "a51c0b8e90b819708d50a91f6050dcbe4e9684d13f34aeabfbd11da3491f9786"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                1,
+                5,
+                9
+              ],
+              "expected": [
+                1,
+                4,
+                9,
+                5
+              ],
+              "input": [
+                1,
+                4,
+                5,
+                9
+              ],
+              "step": 4,
+              "uid": "a51c0b8e90b819708d50a91f6050dcbe4e9684d13f34aeabfbd11da3491f9786"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                8,
+                7,
+                8,
+                1
+              ],
+              "expected": [
+                7,
+                8,
+                1,
+                8
+              ],
+              "input": [
+                7,
+                8,
+                8,
+                1
+              ],
+              "step": 1,
+              "uid": "bef1a6e1d97dbf57d216abb54bfb873d89c5a796306dc4f947e09bb9c2163070"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                7,
+                4,
+                7,
+                9
+              ],
+              "expected": [
+                4,
+                7,
+                9,
+                7
+              ],
+              "input": [
+                4,
+                7,
+                7,
+                9
+              ],
+              "step": 3,
+              "uid": "1b2eabb39420cd8513c6e1582e8f84ddc5b2b2eca6e0ff66dd64307c42a2083d"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                7,
+                7,
+                9
+              ],
+              "expected": [
+                7,
+                4,
+                9,
+                7
+              ],
+              "input": [
+                7,
+                4,
+                7,
+                9
+              ],
+              "step": 4,
+              "uid": "1b2eabb39420cd8513c6e1582e8f84ddc5b2b2eca6e0ff66dd64307c42a2083d"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                6,
+                0,
+                4,
+                5
+              ],
+              "expected": [
+                0,
+                6,
+                5,
+                4
+              ],
+              "input": [
+                0,
+                6,
+                4,
+                5
+              ],
+              "step": 1,
+              "uid": "1998825e6c40390ad3489c76113c083c9520f03a94400cda8ec8eb4fec46836b"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                0,
+                6,
+                4,
+                5
+              ],
+              "expected": [
+                6,
+                0,
+                5,
+                4
+              ],
+              "input": [
+                6,
+                0,
+                4,
+                5
+              ],
+              "step": 2,
+              "uid": "1998825e6c40390ad3489c76113c083c9520f03a94400cda8ec8eb4fec46836b"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                6,
+                0,
+                4,
+                5
+              ],
+              "expected": [
+                0,
+                6,
+                5,
+                4
+              ],
+              "input": [
+                0,
+                6,
+                4,
+                5
+              ],
+              "step": 3,
+              "uid": "1998825e6c40390ad3489c76113c083c9520f03a94400cda8ec8eb4fec46836b"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                7,
+                2,
+                7,
+                9
+              ],
+              "expected": [
+                2,
+                7,
+                9,
+                7
+              ],
+              "input": [
+                2,
+                7,
+                7,
+                9
+              ],
+              "step": 1,
+              "uid": "6e75082f416b94606d93e692654a411009aeadc25a46ea95deaa53fa2321f248"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                7,
+                7,
+                9,
+                2
+              ],
+              "expected": [
+                2,
+                7,
+                7,
+                9
+              ],
+              "input": [
+                2,
+                7,
+                9,
+                7
+              ],
+              "step": 3,
+              "uid": "6e75082f416b94606d93e692654a411009aeadc25a46ea95deaa53fa2321f248"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                6,
+                9,
+                7,
+                1
+              ],
+              "expected": [
+                9,
+                6,
+                1,
+                7
+              ],
+              "input": [
+                9,
+                6,
+                7,
+                1
+              ],
+              "step": 1,
+              "uid": "c1d63e6959e8e7a7fe7c64d476f845d86b8a4dc6f48e5cec65f909413a7b1414"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                9,
+                6,
+                7,
+                7
+              ],
+              "expected": [
+                6,
+                9,
+                7,
+                7
+              ],
+              "input": [
+                6,
+                9,
+                7,
+                7
+              ],
+              "step": 3,
+              "uid": "c1d63e6959e8e7a7fe7c64d476f845d86b8a4dc6f48e5cec65f909413a7b1414"
+            }
+          ],
+          "counts": {
+            "chains_with_single_command_errors": {
+              "chains": 51,
+              "dax,wug": 1,
+              "final_correct": 9,
+              "wug": 49,
+              "wug,zup": 1
+            },
+            "wug_last_even": {
+              "calls": 74,
+              "correct": 72,
+              "distinct_emitted_input_states": 67,
+              "equals_first_two_swap": 72,
+              "equals_last_two_swap": 2,
+              "wrong_equals_opposite_branch": 1
+            },
+            "wug_last_odd": {
+              "calls": 80,
+              "correct": 2,
+              "distinct_emitted_input_states": 72,
+              "equals_first_two_swap": 77,
+              "equals_last_two_swap": 2,
+              "wrong_equals_opposite_branch": 77
+            }
+          }
+        },
+        "validation": {
+          "all_incorrect_step_states": [
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                9,
+                4,
+                1
+              ],
+              "expected": [
+                9,
+                4,
+                1,
+                4
+              ],
+              "input": [
+                9,
+                4,
+                4,
+                1
+              ],
+              "step": 3,
+              "uid": "76a88a48e6919b8cf81cc7b8e7e69e7b808b86c90ba78dadba5242938593633a"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                7,
+                1,
+                6,
+                7
+              ],
+              "expected": [
+                1,
+                7,
+                7,
+                6
+              ],
+              "input": [
+                1,
+                7,
+                6,
+                7
+              ],
+              "step": 3,
+              "uid": "70ef63632474729278e1114d59529c6b0ab921e22f4a23b972b49308b3be921c"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                0,
+                9,
+                0,
+                7
+              ],
+              "expected": [
+                9,
+                0,
+                7,
+                0
+              ],
+              "input": [
+                9,
+                0,
+                0,
+                7
+              ],
+              "step": 3,
+              "uid": "0a3f56c11ffc4433e1322c8b597fac05d46d7ea7d8cd3dfe896d7e9c23873ce5"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                0,
+                4,
+                0,
+                9
+              ],
+              "expected": [
+                4,
+                0,
+                9,
+                0
+              ],
+              "input": [
+                4,
+                0,
+                0,
+                9
+              ],
+              "step": 1,
+              "uid": "02ebf6d1a44b754f330ab5f8e8c7d0e174bbe4cb79f995b95650ea7b0f9b4325"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                0,
+                0,
+                9
+              ],
+              "expected": [
+                0,
+                4,
+                9,
+                0
+              ],
+              "input": [
+                0,
+                4,
+                0,
+                9
+              ],
+              "step": 3,
+              "uid": "02ebf6d1a44b754f330ab5f8e8c7d0e174bbe4cb79f995b95650ea7b0f9b4325"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                6,
+                2,
+                1,
+                7
+              ],
+              "expected": [
+                2,
+                6,
+                7,
+                1
+              ],
+              "input": [
+                2,
+                6,
+                1,
+                7
+              ],
+              "step": 3,
+              "uid": "da0628d292ff47d09a84681ad3a6e59430d08157b3bf75d1b0c065871d16f482"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                8,
+                6,
+                4,
+                3
+              ],
+              "expected": [
+                6,
+                8,
+                3,
+                4
+              ],
+              "input": [
+                6,
+                8,
+                4,
+                3
+              ],
+              "step": 3,
+              "uid": "3b82cdd01bd8f0a8724c673d7fb81260fbe5fcf58022e6380fdb582f590c8ed7"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                0,
+                2,
+                7,
+                1
+              ],
+              "expected": [
+                2,
+                0,
+                1,
+                7
+              ],
+              "input": [
+                2,
+                0,
+                7,
+                1
+              ],
+              "step": 3,
+              "uid": "92e6b36aca0bd1d5721ddc22a1882a609faf481f9ab7421f6251c7ba80d5f2db"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                7,
+                5,
+                4,
+                9
+              ],
+              "expected": [
+                5,
+                7,
+                9,
+                4
+              ],
+              "input": [
+                5,
+                7,
+                4,
+                9
+              ],
+              "step": 1,
+              "uid": "0b3b184ef63555871d76add30264474ed8d826b66cfafc3b0f6481eeca7f3298"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                1,
+                2,
+                0,
+                7
+              ],
+              "expected": [
+                2,
+                1,
+                7,
+                0
+              ],
+              "input": [
+                2,
+                1,
+                0,
+                7
+              ],
+              "step": 3,
+              "uid": "5e5ef06f38b1cbe1071eec0283dad5e740a924cd0da6b5dd5c9769254ea85670"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                1,
+                5,
+                2,
+                5
+              ],
+              "expected": [
+                5,
+                1,
+                5,
+                2
+              ],
+              "input": [
+                5,
+                1,
+                2,
+                5
+              ],
+              "step": 3,
+              "uid": "371b3b423e16035b084721a1a84ff909f1a1550278ad63ac17baddfbc1fc6983"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                6,
+                3,
+                0,
+                9
+              ],
+              "expected": [
+                3,
+                6,
+                9,
+                0
+              ],
+              "input": [
+                3,
+                6,
+                0,
+                9
+              ],
+              "step": 3,
+              "uid": "7c222eae7150444b7db37de11a786487b2c6ef79f10edc6af42679c42c00617a"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                3,
+                6,
+                0,
+                9
+              ],
+              "expected": [
+                6,
+                3,
+                9,
+                0
+              ],
+              "input": [
+                6,
+                3,
+                0,
+                9
+              ],
+              "step": 4,
+              "uid": "7c222eae7150444b7db37de11a786487b2c6ef79f10edc6af42679c42c00617a"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                5,
+                7,
+                2,
+                1
+              ],
+              "expected": [
+                7,
+                5,
+                1,
+                2
+              ],
+              "input": [
+                7,
+                5,
+                2,
+                1
+              ],
+              "step": 1,
+              "uid": "edcca267d20019965550cbf498515fdb21c11e996e6d230092bbae6821366f59"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                7,
+                5,
+                2,
+                1
+              ],
+              "expected": [
+                5,
+                7,
+                1,
+                2
+              ],
+              "input": [
+                5,
+                7,
+                2,
+                1
+              ],
+              "step": 2,
+              "uid": "edcca267d20019965550cbf498515fdb21c11e996e6d230092bbae6821366f59"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                6,
+                8,
+                3
+              ],
+              "expected": [
+                6,
+                4,
+                3,
+                8
+              ],
+              "input": [
+                6,
+                4,
+                8,
+                3
+              ],
+              "step": 4,
+              "uid": "394ea5767c70ef0d158309e3cd4722d1ab0ea062220b12fc725ecd5ee007f2a3"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                7,
+                8,
+                0,
+                1
+              ],
+              "expected": [
+                8,
+                7,
+                1,
+                0
+              ],
+              "input": [
+                8,
+                7,
+                0,
+                1
+              ],
+              "step": 4,
+              "uid": "2f616172799368b6c96631e5eabbe6b2ae83cae1186b01804143a11a16797a26"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                1,
+                0,
+                4,
+                9
+              ],
+              "expected": [
+                0,
+                1,
+                9,
+                4
+              ],
+              "input": [
+                0,
+                1,
+                4,
+                9
+              ],
+              "step": 2,
+              "uid": "55cb748a23a7802b4a1708aafe4651494daf3b6a69e99ba425e5fb8d0b657e1e"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                0,
+                1,
+                4,
+                9
+              ],
+              "expected": [
+                1,
+                0,
+                9,
+                4
+              ],
+              "input": [
+                1,
+                0,
+                4,
+                9
+              ],
+              "step": 3,
+              "uid": "55cb748a23a7802b4a1708aafe4651494daf3b6a69e99ba425e5fb8d0b657e1e"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                1,
+                1,
+                8,
+                7
+              ],
+              "expected": [
+                1,
+                1,
+                7,
+                8
+              ],
+              "input": [
+                1,
+                1,
+                7,
+                8
+              ],
+              "step": 1,
+              "uid": "fa1c992e4d6887fde920b7da864e619c9800d9d24f385139cb73847166d17169"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                7,
+                1,
+                8,
+                1
+              ],
+              "expected": [
+                1,
+                7,
+                1,
+                8
+              ],
+              "input": [
+                1,
+                7,
+                8,
+                1
+              ],
+              "step": 4,
+              "uid": "fa1c992e4d6887fde920b7da864e619c9800d9d24f385139cb73847166d17169"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                2,
+                5,
+                5,
+                7
+              ],
+              "expected": [
+                5,
+                2,
+                7,
+                5
+              ],
+              "input": [
+                5,
+                2,
+                5,
+                7
+              ],
+              "step": 1,
+              "uid": "97fbfa5bb4fd08a20f5a5402fcff092df55a12485d6a2e5b8be5a55385f87c20"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                2,
+                8,
+                5,
+                1
+              ],
+              "expected": [
+                8,
+                2,
+                1,
+                5
+              ],
+              "input": [
+                8,
+                2,
+                5,
+                1
+              ],
+              "step": 1,
+              "uid": "e5eac464cf6f2f58a11e21c44bf101c272a0c47992865834301deb9e1dccd6d9"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                8,
+                2,
+                5,
+                1
+              ],
+              "expected": [
+                2,
+                8,
+                1,
+                5
+              ],
+              "input": [
+                2,
+                8,
+                5,
+                1
+              ],
+              "step": 2,
+              "uid": "e5eac464cf6f2f58a11e21c44bf101c272a0c47992865834301deb9e1dccd6d9"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                8,
+                1,
+                4,
+                1
+              ],
+              "expected": [
+                1,
+                8,
+                1,
+                4
+              ],
+              "input": [
+                1,
+                8,
+                4,
+                1
+              ],
+              "step": 1,
+              "uid": "9a7fc8459a0d2a932ba95ca0a2e6e181fd7fb04342b31111d90872767586d845"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                1,
+                8,
+                4,
+                1
+              ],
+              "expected": [
+                8,
+                1,
+                1,
+                4
+              ],
+              "input": [
+                8,
+                1,
+                4,
+                1
+              ],
+              "step": 2,
+              "uid": "9a7fc8459a0d2a932ba95ca0a2e6e181fd7fb04342b31111d90872767586d845"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                8,
+                1,
+                1
+              ],
+              "expected": [
+                8,
+                4,
+                1,
+                1
+              ],
+              "input": [
+                8,
+                4,
+                1,
+                1
+              ],
+              "step": 4,
+              "uid": "9a7fc8459a0d2a932ba95ca0a2e6e181fd7fb04342b31111d90872767586d845"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                5,
+                6,
+                0,
+                3
+              ],
+              "expected": [
+                6,
+                5,
+                3,
+                0
+              ],
+              "input": [
+                6,
+                5,
+                0,
+                3
+              ],
+              "step": 2,
+              "uid": "555fd2e43e5bd5206df8acc704bb4bb66fe28bbe85fd140fc2dd02f4b4962e15"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                6,
+                5,
+                0,
+                3
+              ],
+              "expected": [
+                5,
+                6,
+                3,
+                0
+              ],
+              "input": [
+                5,
+                6,
+                0,
+                3
+              ],
+              "step": 3,
+              "uid": "555fd2e43e5bd5206df8acc704bb4bb66fe28bbe85fd140fc2dd02f4b4962e15"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                5,
+                6,
+                3,
+                5
+              ],
+              "expected": [
+                6,
+                5,
+                5,
+                3
+              ],
+              "input": [
+                6,
+                5,
+                3,
+                5
+              ],
+              "step": 1,
+              "uid": "a2633d6493b0c0e3974363b7fe8cafa4f82ae799a8f89803c805b406b6287ee1"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                0,
+                8,
+                0,
+                9
+              ],
+              "expected": [
+                8,
+                0,
+                9,
+                0
+              ],
+              "input": [
+                8,
+                0,
+                0,
+                9
+              ],
+              "step": 4,
+              "uid": "dda4ca23bc4c16058ee58fc2cfa921475c75203c61693227b16ae6670f6acbde"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                2,
+                8,
+                2,
+                7
+              ],
+              "expected": [
+                8,
+                2,
+                7,
+                2
+              ],
+              "input": [
+                8,
+                2,
+                2,
+                7
+              ],
+              "step": 1,
+              "uid": "301f73efef4c0c5df3ed11ab320b5d14f22cca12430e11e6943bb93b8b0435f3"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                8,
+                2,
+                2,
+                9
+              ],
+              "expected": [
+                2,
+                8,
+                9,
+                2
+              ],
+              "input": [
+                2,
+                8,
+                2,
+                9
+              ],
+              "step": 3,
+              "uid": "301f73efef4c0c5df3ed11ab320b5d14f22cca12430e11e6943bb93b8b0435f3"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                2,
+                8,
+                2,
+                9
+              ],
+              "expected": [
+                8,
+                2,
+                9,
+                2
+              ],
+              "input": [
+                8,
+                2,
+                2,
+                9
+              ],
+              "step": 4,
+              "uid": "301f73efef4c0c5df3ed11ab320b5d14f22cca12430e11e6943bb93b8b0435f3"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                6,
+                2,
+                3,
+                3
+              ],
+              "expected": [
+                2,
+                6,
+                3,
+                3
+              ],
+              "input": [
+                2,
+                6,
+                3,
+                3
+              ],
+              "step": 1,
+              "uid": "b69078fb8ce135bd71f55335ef6c60ab09dd7bf88b489b1b8a9e63d2349d2684"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                2,
+                6,
+                3,
+                3
+              ],
+              "expected": [
+                6,
+                2,
+                3,
+                3
+              ],
+              "input": [
+                6,
+                2,
+                3,
+                3
+              ],
+              "step": 2,
+              "uid": "b69078fb8ce135bd71f55335ef6c60ab09dd7bf88b489b1b8a9e63d2349d2684"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                3,
+                4,
+                1,
+                7
+              ],
+              "expected": [
+                4,
+                3,
+                7,
+                1
+              ],
+              "input": [
+                4,
+                3,
+                1,
+                7
+              ],
+              "step": 3,
+              "uid": "385e46238823dad2c808c3e2468f8ce4b739bb88fae94096a15c50c0561c660d"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                3,
+                1,
+                7
+              ],
+              "expected": [
+                3,
+                4,
+                7,
+                1
+              ],
+              "input": [
+                3,
+                4,
+                1,
+                7
+              ],
+              "step": 4,
+              "uid": "385e46238823dad2c808c3e2468f8ce4b739bb88fae94096a15c50c0561c660d"
+            },
+            {
+              "command": "wug",
+              "emitted": [
+                4,
+                7,
+                7,
+                3
+              ],
+              "expected": [
+                7,
+                4,
+                3,
+                7
+              ],
+              "input": [
+                7,
+                4,
+                7,
+                3
+              ],
+              "step": 3,
+              "uid": "654e2a3f530997feb29b27ff8346052b75731aa7a43875e3a6aed10b1ab3a7ee"
+            }
+          ],
+          "counts": {
+            "chains_with_single_command_errors": {
+              "chains": 26,
+              "final_correct": 3,
+              "wug": 26
+            },
+            "wug_last_even": {
+              "calls": 21,
+              "correct": 20,
+              "distinct_emitted_input_states": 21,
+              "equals_first_two_swap": 20,
+              "equals_last_two_swap": 1,
+              "wrong_equals_opposite_branch": 1
+            },
+            "wug_last_odd": {
+              "calls": 42,
+              "correct": 4,
+              "distinct_emitted_input_states": 42,
+              "equals_first_two_swap": 38,
+              "equals_last_two_swap": 4,
+              "wrong_equals_opposite_branch": 38
+            }
+          }
+        }
+      }
+    }
+  },
+  "observed_at": "2026-09-12T07:23:44.330134+00:00",
+  "original_primitive_cells": {
+    "flat_mixed": {
+      "fallback_validation": {
+        "counts": {
+          "B/dax/first_digit_0": {
+            "correct": 1,
+            "n": 1
+          },
+          "B/dax/first_digit_5": {
+            "correct": 1,
+            "n": 1
+          },
+          "C/wug/last_even": {
+            "correct": 2,
+            "n": 2
+          }
+        },
+        "rows": [
+          {
+            "cell": "B/dax/first_digit_0",
+            "correct": true,
+            "emitted": "2 1 4 7",
+            "gold": [
+              2,
+              1,
+              4,
+              7
+            ],
+            "input": [
+              0,
+              9,
+              2,
+              5
+            ],
+            "uid": "457682bbd4e8cdb0b11cfb2cc7a0691a86862c1c86bb1fe1186b709d99bafafd"
+          },
+          {
+            "cell": "B/dax/first_digit_5",
+            "correct": true,
+            "emitted": "7 9 6 5",
+            "gold": [
+              7,
+              9,
+              6,
+              5
+            ],
+            "input": [
+              5,
+              7,
+              4,
+              3
+            ],
+            "uid": "a94230bf540c90c7fc03f8066dd96dc9f03cfe6e3a7c101ee15f04ab093cfd4a"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": true,
+            "emitted": "5 9 8 0",
+            "gold": [
+              5,
+              9,
+              8,
+              0
+            ],
+            "input": [
+              9,
+              5,
+              8,
+              0
+            ],
+            "uid": "3c6cc3589151681115087eb51936a9bf1a2799ebe5dfcf20e7b1aa98ddb8d4bc"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": true,
+            "emitted": "3 2 1 0",
+            "gold": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "input": [
+              2,
+              3,
+              1,
+              0
+            ],
+            "uid": "b1fe32834bb55d194ba2e8e41df55e3e2dca2c3f9864aea107e4dfb48dc0852b"
+          }
+        ]
+      },
+      "train": {
+        "counts": {
+          "B/dax/first_digit_0": {
+            "correct": 1,
+            "n": 1
+          },
+          "B/dax/first_digit_1": {
+            "correct": 1,
+            "n": 1
+          },
+          "B/dax/first_digit_2": {
+            "correct": 2,
+            "n": 2
+          },
+          "B/dax/first_digit_4": {
+            "correct": 2,
+            "n": 2
+          },
+          "B/dax/first_digit_6": {
+            "correct": 1,
+            "n": 1
+          },
+          "B/dax/first_digit_7": {
+            "correct": 1,
+            "n": 1
+          },
+          "C/wug/last_even": {
+            "correct": 4,
+            "n": 4
+          },
+          "C/wug/last_odd": {
+            "correct": 1,
+            "n": 4
+          }
+        },
+        "rows": [
+          {
+            "cell": "B/dax/first_digit_2",
+            "correct": true,
+            "emitted": "4 6 1 9",
+            "gold": [
+              4,
+              6,
+              1,
+              9
+            ],
+            "input": [
+              2,
+              4,
+              9,
+              7
+            ],
+            "uid": "5a54b66873a09550eae4acf55ed85530e994bf9c1dfd65c4085078cdb2726d42"
+          },
+          {
+            "cell": "B/dax/first_digit_7",
+            "correct": true,
+            "emitted": "9 2 3 1",
+            "gold": [
+              9,
+              2,
+              3,
+              1
+            ],
+            "input": [
+              7,
+              0,
+              1,
+              9
+            ],
+            "uid": "800f849eb27b67d982ad8bf7703037bcab6075cd2c92deb48f12272e720c964c"
+          },
+          {
+            "cell": "B/dax/first_digit_4",
+            "correct": true,
+            "emitted": "6 8 1 1",
+            "gold": [
+              6,
+              8,
+              1,
+              1
+            ],
+            "input": [
+              4,
+              6,
+              9,
+              9
+            ],
+            "uid": "d68912d0c3d098f4da1b414d870b7035aa2a463ae0b27748b3fa632c54f21024"
+          },
+          {
+            "cell": "B/dax/first_digit_4",
+            "correct": true,
+            "emitted": "6 6 5 9",
+            "gold": [
+              6,
+              6,
+              5,
+              9
+            ],
+            "input": [
+              4,
+              4,
+              3,
+              7
+            ],
+            "uid": "3c77b88fc6be175eecf9db93c80c572647272b3923d2efd97ea6fee9015b519d"
+          },
+          {
+            "cell": "B/dax/first_digit_6",
+            "correct": true,
+            "emitted": "8 1 2 7",
+            "gold": [
+              8,
+              1,
+              2,
+              7
+            ],
+            "input": [
+              6,
+              9,
+              0,
+              5
+            ],
+            "uid": "e2552c6852850ae26217ef73485267253346032eb70ead35aa88c74552dbd593"
+          },
+          {
+            "cell": "B/dax/first_digit_1",
+            "correct": true,
+            "emitted": "3 5 0 4",
+            "gold": [
+              3,
+              5,
+              0,
+              4
+            ],
+            "input": [
+              1,
+              3,
+              8,
+              2
+            ],
+            "uid": "23a32f434e0897b27f1302b21c2b2935aaac82c40c5d2e7db3525cffa50b66d4"
+          },
+          {
+            "cell": "B/dax/first_digit_2",
+            "correct": true,
+            "emitted": "4 7 1 2",
+            "gold": [
+              4,
+              7,
+              1,
+              2
+            ],
+            "input": [
+              2,
+              5,
+              9,
+              0
+            ],
+            "uid": "e8fd25c0a04e75adbca618c60441d6a69217c7264b63a937dab352f1405379a7"
+          },
+          {
+            "cell": "B/dax/first_digit_0",
+            "correct": true,
+            "emitted": "2 9 7 8",
+            "gold": [
+              2,
+              9,
+              7,
+              8
+            ],
+            "input": [
+              0,
+              7,
+              5,
+              6
+            ],
+            "uid": "1a7f8f4f30ef0a94eb9865f4eb5c0f443a31937ce97b238b20f9441c52c3bb4f"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": false,
+            "emitted": "9 1 2 1",
+            "gold": [
+              1,
+              9,
+              1,
+              2
+            ],
+            "input": [
+              1,
+              9,
+              2,
+              1
+            ],
+            "uid": "e8879022f086496a6b3cfbf99ab66676adc5adb0d0678b0293301b17a5598f5c"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": true,
+            "emitted": "7 4 6 0",
+            "gold": [
+              7,
+              4,
+              6,
+              0
+            ],
+            "input": [
+              4,
+              7,
+              6,
+              0
+            ],
+            "uid": "1ab77f7021b369c5af9192baa7784ab3a5eda5b79aef65f949523d0c1724ec17"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": false,
+            "emitted": "1 8 2 1",
+            "gold": [
+              8,
+              1,
+              1,
+              2
+            ],
+            "input": [
+              8,
+              1,
+              2,
+              1
+            ],
+            "uid": "de55edb182968892467a3c6d0fbf4c792822b4b712f529c8891a8b19733b3265"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": true,
+            "emitted": "4 7 0 0",
+            "gold": [
+              4,
+              7,
+              0,
+              0
+            ],
+            "input": [
+              7,
+              4,
+              0,
+              0
+            ],
+            "uid": "57faaff46bbb42d07c7e5177b8a36ba250406d2db389d81881c7800e20532e7d"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": false,
+            "emitted": "0 1 8 3",
+            "gold": [
+              1,
+              0,
+              3,
+              8
+            ],
+            "input": [
+              1,
+              0,
+              8,
+              3
+            ],
+            "uid": "9443fae518ec02c6a5df7f3337a6ee54e324302ab31a2724003d9ec82067b0f4"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": true,
+            "emitted": "0 9 5 2",
+            "gold": [
+              0,
+              9,
+              5,
+              2
+            ],
+            "input": [
+              9,
+              0,
+              5,
+              2
+            ],
+            "uid": "6705c87d7f4fd9c83e18856c56b56c2f6147bd905f69f423939bf28d0a559b5d"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": true,
+            "emitted": "0 0 1 9",
+            "gold": [
+              0,
+              0,
+              1,
+              9
+            ],
+            "input": [
+              0,
+              0,
+              9,
+              1
+            ],
+            "uid": "57e5a9ed3c9119f9a5dc09d26a5e0069d58fec60ef504e7b1fc039eec4666af2"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": true,
+            "emitted": "8 7 9 4",
+            "gold": [
+              8,
+              7,
+              9,
+              4
+            ],
+            "input": [
+              7,
+              8,
+              9,
+              4
+            ],
+            "uid": "974d5e427a95c18f47a25eff00edb3cb25427f0a682bfa2bfdb0133c4eb2b3da"
+          }
+        ]
+      }
+    },
+    "legacy96_budget": {
+      "fallback_validation": {
+        "counts": {
+          "B/dax/first_digit_0": {
+            "correct": 1,
+            "n": 1
+          },
+          "B/dax/first_digit_5": {
+            "correct": 1,
+            "n": 1
+          },
+          "C/wug/last_even": {
+            "correct": 1,
+            "n": 2
+          }
+        },
+        "rows": [
+          {
+            "cell": "B/dax/first_digit_0",
+            "correct": true,
+            "emitted": "2 1 4 7",
+            "gold": [
+              2,
+              1,
+              4,
+              7
+            ],
+            "input": [
+              0,
+              9,
+              2,
+              5
+            ],
+            "uid": "457682bbd4e8cdb0b11cfb2cc7a0691a86862c1c86bb1fe1186b709d99bafafd"
+          },
+          {
+            "cell": "B/dax/first_digit_5",
+            "correct": true,
+            "emitted": "7 9 6 5",
+            "gold": [
+              7,
+              9,
+              6,
+              5
+            ],
+            "input": [
+              5,
+              7,
+              4,
+              3
+            ],
+            "uid": "a94230bf540c90c7fc03f8066dd96dc9f03cfe6e3a7c101ee15f04ab093cfd4a"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": true,
+            "emitted": "5 9 8 0",
+            "gold": [
+              5,
+              9,
+              8,
+              0
+            ],
+            "input": [
+              9,
+              5,
+              8,
+              0
+            ],
+            "uid": "3c6cc3589151681115087eb51936a9bf1a2799ebe5dfcf20e7b1aa98ddb8d4bc"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": false,
+            "emitted": "2 3 0 1",
+            "gold": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "input": [
+              2,
+              3,
+              1,
+              0
+            ],
+            "uid": "b1fe32834bb55d194ba2e8e41df55e3e2dca2c3f9864aea107e4dfb48dc0852b"
+          }
+        ]
+      },
+      "train": {
+        "counts": {
+          "B/dax/first_digit_0": {
+            "correct": 1,
+            "n": 1
+          },
+          "B/dax/first_digit_1": {
+            "correct": 1,
+            "n": 1
+          },
+          "B/dax/first_digit_2": {
+            "correct": 2,
+            "n": 2
+          },
+          "B/dax/first_digit_4": {
+            "correct": 2,
+            "n": 2
+          },
+          "B/dax/first_digit_6": {
+            "correct": 1,
+            "n": 1
+          },
+          "B/dax/first_digit_7": {
+            "correct": 1,
+            "n": 1
+          },
+          "C/wug/last_even": {
+            "correct": 3,
+            "n": 4
+          },
+          "C/wug/last_odd": {
+            "correct": 3,
+            "n": 4
+          }
+        },
+        "rows": [
+          {
+            "cell": "B/dax/first_digit_2",
+            "correct": true,
+            "emitted": "4 6 1 9",
+            "gold": [
+              4,
+              6,
+              1,
+              9
+            ],
+            "input": [
+              2,
+              4,
+              9,
+              7
+            ],
+            "uid": "5a54b66873a09550eae4acf55ed85530e994bf9c1dfd65c4085078cdb2726d42"
+          },
+          {
+            "cell": "B/dax/first_digit_7",
+            "correct": true,
+            "emitted": "9 2 3 1",
+            "gold": [
+              9,
+              2,
+              3,
+              1
+            ],
+            "input": [
+              7,
+              0,
+              1,
+              9
+            ],
+            "uid": "800f849eb27b67d982ad8bf7703037bcab6075cd2c92deb48f12272e720c964c"
+          },
+          {
+            "cell": "B/dax/first_digit_4",
+            "correct": true,
+            "emitted": "6 8 1 1",
+            "gold": [
+              6,
+              8,
+              1,
+              1
+            ],
+            "input": [
+              4,
+              6,
+              9,
+              9
+            ],
+            "uid": "d68912d0c3d098f4da1b414d870b7035aa2a463ae0b27748b3fa632c54f21024"
+          },
+          {
+            "cell": "B/dax/first_digit_4",
+            "correct": true,
+            "emitted": "6 6 5 9",
+            "gold": [
+              6,
+              6,
+              5,
+              9
+            ],
+            "input": [
+              4,
+              4,
+              3,
+              7
+            ],
+            "uid": "3c77b88fc6be175eecf9db93c80c572647272b3923d2efd97ea6fee9015b519d"
+          },
+          {
+            "cell": "B/dax/first_digit_6",
+            "correct": true,
+            "emitted": "8 1 2 7",
+            "gold": [
+              8,
+              1,
+              2,
+              7
+            ],
+            "input": [
+              6,
+              9,
+              0,
+              5
+            ],
+            "uid": "e2552c6852850ae26217ef73485267253346032eb70ead35aa88c74552dbd593"
+          },
+          {
+            "cell": "B/dax/first_digit_1",
+            "correct": true,
+            "emitted": "3 5 0 4",
+            "gold": [
+              3,
+              5,
+              0,
+              4
+            ],
+            "input": [
+              1,
+              3,
+              8,
+              2
+            ],
+            "uid": "23a32f434e0897b27f1302b21c2b2935aaac82c40c5d2e7db3525cffa50b66d4"
+          },
+          {
+            "cell": "B/dax/first_digit_2",
+            "correct": true,
+            "emitted": "4 7 1 2",
+            "gold": [
+              4,
+              7,
+              1,
+              2
+            ],
+            "input": [
+              2,
+              5,
+              9,
+              0
+            ],
+            "uid": "e8fd25c0a04e75adbca618c60441d6a69217c7264b63a937dab352f1405379a7"
+          },
+          {
+            "cell": "B/dax/first_digit_0",
+            "correct": true,
+            "emitted": "2 9 7 8",
+            "gold": [
+              2,
+              9,
+              7,
+              8
+            ],
+            "input": [
+              0,
+              7,
+              5,
+              6
+            ],
+            "uid": "1a7f8f4f30ef0a94eb9865f4eb5c0f443a31937ce97b238b20f9441c52c3bb4f"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": true,
+            "emitted": "1 9 1 2",
+            "gold": [
+              1,
+              9,
+              1,
+              2
+            ],
+            "input": [
+              1,
+              9,
+              2,
+              1
+            ],
+            "uid": "e8879022f086496a6b3cfbf99ab66676adc5adb0d0678b0293301b17a5598f5c"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": true,
+            "emitted": "7 4 6 0",
+            "gold": [
+              7,
+              4,
+              6,
+              0
+            ],
+            "input": [
+              4,
+              7,
+              6,
+              0
+            ],
+            "uid": "1ab77f7021b369c5af9192baa7784ab3a5eda5b79aef65f949523d0c1724ec17"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": true,
+            "emitted": "8 1 1 2",
+            "gold": [
+              8,
+              1,
+              1,
+              2
+            ],
+            "input": [
+              8,
+              1,
+              2,
+              1
+            ],
+            "uid": "de55edb182968892467a3c6d0fbf4c792822b4b712f529c8891a8b19733b3265"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": true,
+            "emitted": "4 7 0 0",
+            "gold": [
+              4,
+              7,
+              0,
+              0
+            ],
+            "input": [
+              7,
+              4,
+              0,
+              0
+            ],
+            "uid": "57faaff46bbb42d07c7e5177b8a36ba250406d2db389d81881c7800e20532e7d"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": false,
+            "emitted": "0 1 8 3",
+            "gold": [
+              1,
+              0,
+              3,
+              8
+            ],
+            "input": [
+              1,
+              0,
+              8,
+              3
+            ],
+            "uid": "9443fae518ec02c6a5df7f3337a6ee54e324302ab31a2724003d9ec82067b0f4"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": true,
+            "emitted": "0 9 5 2",
+            "gold": [
+              0,
+              9,
+              5,
+              2
+            ],
+            "input": [
+              9,
+              0,
+              5,
+              2
+            ],
+            "uid": "6705c87d7f4fd9c83e18856c56b56c2f6147bd905f69f423939bf28d0a559b5d"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": true,
+            "emitted": "0 0 1 9",
+            "gold": [
+              0,
+              0,
+              1,
+              9
+            ],
+            "input": [
+              0,
+              0,
+              9,
+              1
+            ],
+            "uid": "57e5a9ed3c9119f9a5dc09d26a5e0069d58fec60ef504e7b1fc039eec4666af2"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": false,
+            "emitted": "7 8 4 9",
+            "gold": [
+              8,
+              7,
+              9,
+              4
+            ],
+            "input": [
+              7,
+              8,
+              9,
+              4
+            ],
+            "uid": "974d5e427a95c18f47a25eff00edb3cb25427f0a682bfa2bfdb0133c4eb2b3da"
+          }
+        ]
+      }
+    },
+    "primitive_first": {
+      "fallback_validation": {
+        "counts": {
+          "B/dax/first_digit_0": {
+            "correct": 1,
+            "n": 1
+          },
+          "B/dax/first_digit_5": {
+            "correct": 1,
+            "n": 1
+          },
+          "C/wug/last_even": {
+            "correct": 0,
+            "n": 2
+          }
+        },
+        "rows": [
+          {
+            "cell": "B/dax/first_digit_0",
+            "correct": true,
+            "emitted": "2 1 4 7",
+            "gold": [
+              2,
+              1,
+              4,
+              7
+            ],
+            "input": [
+              0,
+              9,
+              2,
+              5
+            ],
+            "uid": "457682bbd4e8cdb0b11cfb2cc7a0691a86862c1c86bb1fe1186b709d99bafafd"
+          },
+          {
+            "cell": "B/dax/first_digit_5",
+            "correct": true,
+            "emitted": "7 9 6 5",
+            "gold": [
+              7,
+              9,
+              6,
+              5
+            ],
+            "input": [
+              5,
+              7,
+              4,
+              3
+            ],
+            "uid": "a94230bf540c90c7fc03f8066dd96dc9f03cfe6e3a7c101ee15f04ab093cfd4a"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": false,
+            "emitted": "9 5 0 8",
+            "gold": [
+              5,
+              9,
+              8,
+              0
+            ],
+            "input": [
+              9,
+              5,
+              8,
+              0
+            ],
+            "uid": "3c6cc3589151681115087eb51936a9bf1a2799ebe5dfcf20e7b1aa98ddb8d4bc"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": false,
+            "emitted": "2 3 0 1",
+            "gold": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "input": [
+              2,
+              3,
+              1,
+              0
+            ],
+            "uid": "b1fe32834bb55d194ba2e8e41df55e3e2dca2c3f9864aea107e4dfb48dc0852b"
+          }
+        ]
+      },
+      "train": {
+        "counts": {
+          "B/dax/first_digit_0": {
+            "correct": 1,
+            "n": 1
+          },
+          "B/dax/first_digit_1": {
+            "correct": 1,
+            "n": 1
+          },
+          "B/dax/first_digit_2": {
+            "correct": 2,
+            "n": 2
+          },
+          "B/dax/first_digit_4": {
+            "correct": 2,
+            "n": 2
+          },
+          "B/dax/first_digit_6": {
+            "correct": 1,
+            "n": 1
+          },
+          "B/dax/first_digit_7": {
+            "correct": 1,
+            "n": 1
+          },
+          "C/wug/last_even": {
+            "correct": 4,
+            "n": 4
+          },
+          "C/wug/last_odd": {
+            "correct": 4,
+            "n": 4
+          }
+        },
+        "rows": [
+          {
+            "cell": "B/dax/first_digit_2",
+            "correct": true,
+            "emitted": "4 6 1 9",
+            "gold": [
+              4,
+              6,
+              1,
+              9
+            ],
+            "input": [
+              2,
+              4,
+              9,
+              7
+            ],
+            "uid": "5a54b66873a09550eae4acf55ed85530e994bf9c1dfd65c4085078cdb2726d42"
+          },
+          {
+            "cell": "B/dax/first_digit_7",
+            "correct": true,
+            "emitted": "9 2 3 1",
+            "gold": [
+              9,
+              2,
+              3,
+              1
+            ],
+            "input": [
+              7,
+              0,
+              1,
+              9
+            ],
+            "uid": "800f849eb27b67d982ad8bf7703037bcab6075cd2c92deb48f12272e720c964c"
+          },
+          {
+            "cell": "B/dax/first_digit_4",
+            "correct": true,
+            "emitted": "6 8 1 1",
+            "gold": [
+              6,
+              8,
+              1,
+              1
+            ],
+            "input": [
+              4,
+              6,
+              9,
+              9
+            ],
+            "uid": "d68912d0c3d098f4da1b414d870b7035aa2a463ae0b27748b3fa632c54f21024"
+          },
+          {
+            "cell": "B/dax/first_digit_4",
+            "correct": true,
+            "emitted": "6 6 5 9",
+            "gold": [
+              6,
+              6,
+              5,
+              9
+            ],
+            "input": [
+              4,
+              4,
+              3,
+              7
+            ],
+            "uid": "3c77b88fc6be175eecf9db93c80c572647272b3923d2efd97ea6fee9015b519d"
+          },
+          {
+            "cell": "B/dax/first_digit_6",
+            "correct": true,
+            "emitted": "8 1 2 7",
+            "gold": [
+              8,
+              1,
+              2,
+              7
+            ],
+            "input": [
+              6,
+              9,
+              0,
+              5
+            ],
+            "uid": "e2552c6852850ae26217ef73485267253346032eb70ead35aa88c74552dbd593"
+          },
+          {
+            "cell": "B/dax/first_digit_1",
+            "correct": true,
+            "emitted": "3 5 0 4",
+            "gold": [
+              3,
+              5,
+              0,
+              4
+            ],
+            "input": [
+              1,
+              3,
+              8,
+              2
+            ],
+            "uid": "23a32f434e0897b27f1302b21c2b2935aaac82c40c5d2e7db3525cffa50b66d4"
+          },
+          {
+            "cell": "B/dax/first_digit_2",
+            "correct": true,
+            "emitted": "4 7 1 2",
+            "gold": [
+              4,
+              7,
+              1,
+              2
+            ],
+            "input": [
+              2,
+              5,
+              9,
+              0
+            ],
+            "uid": "e8fd25c0a04e75adbca618c60441d6a69217c7264b63a937dab352f1405379a7"
+          },
+          {
+            "cell": "B/dax/first_digit_0",
+            "correct": true,
+            "emitted": "2 9 7 8",
+            "gold": [
+              2,
+              9,
+              7,
+              8
+            ],
+            "input": [
+              0,
+              7,
+              5,
+              6
+            ],
+            "uid": "1a7f8f4f30ef0a94eb9865f4eb5c0f443a31937ce97b238b20f9441c52c3bb4f"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": true,
+            "emitted": "1 9 1 2",
+            "gold": [
+              1,
+              9,
+              1,
+              2
+            ],
+            "input": [
+              1,
+              9,
+              2,
+              1
+            ],
+            "uid": "e8879022f086496a6b3cfbf99ab66676adc5adb0d0678b0293301b17a5598f5c"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": true,
+            "emitted": "7 4 6 0",
+            "gold": [
+              7,
+              4,
+              6,
+              0
+            ],
+            "input": [
+              4,
+              7,
+              6,
+              0
+            ],
+            "uid": "1ab77f7021b369c5af9192baa7784ab3a5eda5b79aef65f949523d0c1724ec17"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": true,
+            "emitted": "8 1 1 2",
+            "gold": [
+              8,
+              1,
+              1,
+              2
+            ],
+            "input": [
+              8,
+              1,
+              2,
+              1
+            ],
+            "uid": "de55edb182968892467a3c6d0fbf4c792822b4b712f529c8891a8b19733b3265"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": true,
+            "emitted": "4 7 0 0",
+            "gold": [
+              4,
+              7,
+              0,
+              0
+            ],
+            "input": [
+              7,
+              4,
+              0,
+              0
+            ],
+            "uid": "57faaff46bbb42d07c7e5177b8a36ba250406d2db389d81881c7800e20532e7d"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": true,
+            "emitted": "1 0 3 8",
+            "gold": [
+              1,
+              0,
+              3,
+              8
+            ],
+            "input": [
+              1,
+              0,
+              8,
+              3
+            ],
+            "uid": "9443fae518ec02c6a5df7f3337a6ee54e324302ab31a2724003d9ec82067b0f4"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": true,
+            "emitted": "0 9 5 2",
+            "gold": [
+              0,
+              9,
+              5,
+              2
+            ],
+            "input": [
+              9,
+              0,
+              5,
+              2
+            ],
+            "uid": "6705c87d7f4fd9c83e18856c56b56c2f6147bd905f69f423939bf28d0a559b5d"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": true,
+            "emitted": "0 0 1 9",
+            "gold": [
+              0,
+              0,
+              1,
+              9
+            ],
+            "input": [
+              0,
+              0,
+              9,
+              1
+            ],
+            "uid": "57e5a9ed3c9119f9a5dc09d26a5e0069d58fec60ef504e7b1fc039eec4666af2"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": true,
+            "emitted": "8 7 9 4",
+            "gold": [
+              8,
+              7,
+              9,
+              4
+            ],
+            "input": [
+              7,
+              8,
+              9,
+              4
+            ],
+            "uid": "974d5e427a95c18f47a25eff00edb3cb25427f0a682bfa2bfdb0133c4eb2b3da"
+          }
+        ]
+      }
+    },
+    "raw_privileged": {
+      "fallback_validation": {
+        "counts": {
+          "B/dax/first_digit_0": {
+            "correct": 0,
+            "n": 1
+          },
+          "B/dax/first_digit_5": {
+            "correct": 0,
+            "n": 1
+          },
+          "C/wug/last_even": {
+            "correct": 0,
+            "n": 2
+          }
+        },
+        "rows": [
+          {
+            "cell": "B/dax/first_digit_0",
+            "correct": false,
+            "emitted": "4 1 4 7",
+            "gold": [
+              2,
+              1,
+              4,
+              7
+            ],
+            "input": [
+              0,
+              9,
+              2,
+              5
+            ],
+            "uid": "457682bbd4e8cdb0b11cfb2cc7a0691a86862c1c86bb1fe1186b709d99bafafd"
+          },
+          {
+            "cell": "B/dax/first_digit_5",
+            "correct": false,
+            "emitted": "5 9 6 5",
+            "gold": [
+              7,
+              9,
+              6,
+              5
+            ],
+            "input": [
+              5,
+              7,
+              4,
+              3
+            ],
+            "uid": "a94230bf540c90c7fc03f8066dd96dc9f03cfe6e3a7c101ee15f04ab093cfd4a"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": false,
+            "emitted": "9 5 8 0",
+            "gold": [
+              5,
+              9,
+              8,
+              0
+            ],
+            "input": [
+              9,
+              5,
+              8,
+              0
+            ],
+            "uid": "3c6cc3589151681115087eb51936a9bf1a2799ebe5dfcf20e7b1aa98ddb8d4bc"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": false,
+            "emitted": "2 3 0 1",
+            "gold": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "input": [
+              2,
+              3,
+              1,
+              0
+            ],
+            "uid": "b1fe32834bb55d194ba2e8e41df55e3e2dca2c3f9864aea107e4dfb48dc0852b"
+          }
+        ]
+      },
+      "train": {
+        "counts": {
+          "B/dax/first_digit_0": {
+            "correct": 0,
+            "n": 1
+          },
+          "B/dax/first_digit_1": {
+            "correct": 0,
+            "n": 1
+          },
+          "B/dax/first_digit_2": {
+            "correct": 2,
+            "n": 2
+          },
+          "B/dax/first_digit_4": {
+            "correct": 0,
+            "n": 2
+          },
+          "B/dax/first_digit_6": {
+            "correct": 0,
+            "n": 1
+          },
+          "B/dax/first_digit_7": {
+            "correct": 0,
+            "n": 1
+          },
+          "C/wug/last_even": {
+            "correct": 0,
+            "n": 4
+          },
+          "C/wug/last_odd": {
+            "correct": 2,
+            "n": 4
+          }
+        },
+        "rows": [
+          {
+            "cell": "B/dax/first_digit_2",
+            "correct": true,
+            "emitted": "4 6 1 9",
+            "gold": [
+              4,
+              6,
+              1,
+              9
+            ],
+            "input": [
+              2,
+              4,
+              9,
+              7
+            ],
+            "uid": "5a54b66873a09550eae4acf55ed85530e994bf9c1dfd65c4085078cdb2726d42"
+          },
+          {
+            "cell": "B/dax/first_digit_7",
+            "correct": false,
+            "emitted": "7 2 3 1",
+            "gold": [
+              9,
+              2,
+              3,
+              1
+            ],
+            "input": [
+              7,
+              0,
+              1,
+              9
+            ],
+            "uid": "800f849eb27b67d982ad8bf7703037bcab6075cd2c92deb48f12272e720c964c"
+          },
+          {
+            "cell": "B/dax/first_digit_4",
+            "correct": false,
+            "emitted": "4 8 1 1",
+            "gold": [
+              6,
+              8,
+              1,
+              1
+            ],
+            "input": [
+              4,
+              6,
+              9,
+              9
+            ],
+            "uid": "d68912d0c3d098f4da1b414d870b7035aa2a463ae0b27748b3fa632c54f21024"
+          },
+          {
+            "cell": "B/dax/first_digit_4",
+            "correct": false,
+            "emitted": "4 6 5 9",
+            "gold": [
+              6,
+              6,
+              5,
+              9
+            ],
+            "input": [
+              4,
+              4,
+              3,
+              7
+            ],
+            "uid": "3c77b88fc6be175eecf9db93c80c572647272b3923d2efd97ea6fee9015b519d"
+          },
+          {
+            "cell": "B/dax/first_digit_6",
+            "correct": false,
+            "emitted": "6 1 2 7",
+            "gold": [
+              8,
+              1,
+              2,
+              7
+            ],
+            "input": [
+              6,
+              9,
+              0,
+              5
+            ],
+            "uid": "e2552c6852850ae26217ef73485267253346032eb70ead35aa88c74552dbd593"
+          },
+          {
+            "cell": "B/dax/first_digit_1",
+            "correct": false,
+            "emitted": "4 5 0 4",
+            "gold": [
+              3,
+              5,
+              0,
+              4
+            ],
+            "input": [
+              1,
+              3,
+              8,
+              2
+            ],
+            "uid": "23a32f434e0897b27f1302b21c2b2935aaac82c40c5d2e7db3525cffa50b66d4"
+          },
+          {
+            "cell": "B/dax/first_digit_2",
+            "correct": true,
+            "emitted": "4 7 1 2",
+            "gold": [
+              4,
+              7,
+              1,
+              2
+            ],
+            "input": [
+              2,
+              5,
+              9,
+              0
+            ],
+            "uid": "e8fd25c0a04e75adbca618c60441d6a69217c7264b63a937dab352f1405379a7"
+          },
+          {
+            "cell": "B/dax/first_digit_0",
+            "correct": false,
+            "emitted": "4 9 7 8",
+            "gold": [
+              2,
+              9,
+              7,
+              8
+            ],
+            "input": [
+              0,
+              7,
+              5,
+              6
+            ],
+            "uid": "1a7f8f4f30ef0a94eb9865f4eb5c0f443a31937ce97b238b20f9441c52c3bb4f"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": false,
+            "emitted": "1 9 2 8",
+            "gold": [
+              1,
+              9,
+              1,
+              2
+            ],
+            "input": [
+              1,
+              9,
+              2,
+              1
+            ],
+            "uid": "e8879022f086496a6b3cfbf99ab66676adc5adb0d0678b0293301b17a5598f5c"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": false,
+            "emitted": "4 7 6 3",
+            "gold": [
+              7,
+              4,
+              6,
+              0
+            ],
+            "input": [
+              4,
+              7,
+              6,
+              0
+            ],
+            "uid": "1ab77f7021b369c5af9192baa7784ab3a5eda5b79aef65f949523d0c1724ec17"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": false,
+            "emitted": "8 1 2 1",
+            "gold": [
+              8,
+              1,
+              1,
+              2
+            ],
+            "input": [
+              8,
+              1,
+              2,
+              1
+            ],
+            "uid": "de55edb182968892467a3c6d0fbf4c792822b4b712f529c8891a8b19733b3265"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": false,
+            "emitted": "7 4 0 0",
+            "gold": [
+              4,
+              7,
+              0,
+              0
+            ],
+            "input": [
+              7,
+              4,
+              0,
+              0
+            ],
+            "uid": "57faaff46bbb42d07c7e5177b8a36ba250406d2db389d81881c7800e20532e7d"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": true,
+            "emitted": "1 0 3 8",
+            "gold": [
+              1,
+              0,
+              3,
+              8
+            ],
+            "input": [
+              1,
+              0,
+              8,
+              3
+            ],
+            "uid": "9443fae518ec02c6a5df7f3337a6ee54e324302ab31a2724003d9ec82067b0f4"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": false,
+            "emitted": "9 0 5 2",
+            "gold": [
+              0,
+              9,
+              5,
+              2
+            ],
+            "input": [
+              9,
+              0,
+              5,
+              2
+            ],
+            "uid": "6705c87d7f4fd9c83e18856c56b56c2f6147bd905f69f423939bf28d0a559b5d"
+          },
+          {
+            "cell": "C/wug/last_odd",
+            "correct": true,
+            "emitted": "0 0 1 9",
+            "gold": [
+              0,
+              0,
+              1,
+              9
+            ],
+            "input": [
+              0,
+              0,
+              9,
+              1
+            ],
+            "uid": "57e5a9ed3c9119f9a5dc09d26a5e0069d58fec60ef504e7b1fc039eec4666af2"
+          },
+          {
+            "cell": "C/wug/last_even",
+            "correct": false,
+            "emitted": "7 8 3 4",
+            "gold": [
+              8,
+              7,
+              9,
+              4
+            ],
+            "input": [
+              7,
+              8,
+              9,
+              4
+            ],
+            "uid": "974d5e427a95c18f47a25eff00edb3cb25427f0a682bfa2bfdb0133c4eb2b3da"
+          }
+        ]
+      }
+    }
+  },
+  "panels_sha256": "81bbef000a7f94477ec9e0908380b24dfb74f1b5427e5534c06fb475251685db",
+  "qualification_sha256": "6ae1fef4d69e70341c63ff4b1ac1cb4edaee19923757af474802fb56460b54ae"
+}

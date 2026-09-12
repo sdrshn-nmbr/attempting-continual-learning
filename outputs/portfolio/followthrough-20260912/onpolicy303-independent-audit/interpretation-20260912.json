@@ -1,0 +1,1112 @@
+{
+  "status": "completed_independent_audit_lane_frozen",
+  "created_at_utc": "2026-09-12T07:53:00.372411+00:00",
+  "analysis_designation": "Descriptive post-run audit; no panel used for new checkpoint, recipe, hyperparameter or task selection.",
+  "evidence": {
+    "complete_six_run_audit": {
+      "path": "outputs/portfolio/followthrough-20260912/onpolicy303-independent-audit/final-audit-20260912T074811993684Z.json",
+      "sha256": "43867c405c8276c0daec0c047bc039c31f8246f69a35bad787036cebffa96d8e",
+      "bytes": 124476
+    },
+    "audit_program": {
+      "path": "outputs/portfolio/followthrough-20260912/audit_onpolicy303.py",
+      "sha256": "3a1109bd272d51ab309b80c663cbaaf42a414c94c8049635a6619f81c74b17a2",
+      "bytes": 60273
+    },
+    "independent_native_scorer": {
+      "path": "outputs/portfolio/followthrough-20260912/audit_consolidation.py",
+      "sha256": "915b4b707311e13adac56b8fc2018fd46d5bdf090e3645a111b02089be87fdf6",
+      "bytes": 14461
+    },
+    "frozen_handoff": {
+      "path": "experiments/distillation/onpolicy303_handoff.json",
+      "sha256": "a243da639966b0094df210ca546e91813481851c99e78d5cf1acc4931d22139b",
+      "bytes": 30859
+    },
+    "source_archive": {
+      "path": "outputs/portfolio/followthrough-20260912/code/85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b.tar",
+      "sha256": "9a9d1955c2664e9c9dede7b3015f2ba95bb2d57898e613b3c2258431232d0a71",
+      "bytes": 3031040
+    },
+    "live_observation_binding_model_vocabulary_and_original_source": {
+      "path": "outputs/portfolio/followthrough-20260912/onpolicy303-independent-audit/raw-20260912T074517092608Z.json",
+      "sha256": "ecd5b55a4f248fd65c2df2dc51a2b8105328a6c2072b3d4b69abc4f0bfba41eb",
+      "bytes": 35002204
+    },
+    "source_sha256": "85c375eef798c920ef3c89d3fbb08b4b55bcb6481fe281b0403bcc277cbc3a9b",
+    "protocol_digest": "31ec528d68e04062d7be72c3b8d0c8d1c5b915b7670c3be4be5af0a69f13a2be",
+    "scientific_closure_files_unchanged": 25
+  },
+  "audit_coverage": {
+    "completed_training_jobs": 3,
+    "completed_standalone_evaluation_jobs": 3,
+    "collected_files_hashed": 213,
+    "archived_source_files_hashed": 130,
+    "raw_training_trajectory_records": 4608,
+    "raw_teacher_generation_records_regraded_before_updates": 1440,
+    "raw_native_final_heldout_records_regraded": 3168,
+    "native_train_reload_records_regraded_and_compared_exactly": 144,
+    "intermediate_training_probe_records_regraded": 216,
+    "generic_before_after_records_regraded_from_choice_scores": 768,
+    "generic_score_vectors_exactly_equal_across_training_and_fresh_evaluation": true,
+    "actual_saved_optimizer_states_per_checkpoint": 144,
+    "optimizer_checkpoints_examined_per_arm": [
+      32,
+      128,
+      384
+    ],
+    "teacher_native_qualification_each_job": {
+      "train_correct": 384,
+      "validation_correct": 96,
+      "completed_before_first_update": true
+    },
+    "all_evaluations_teacher_absent_and_teacher_artifacts_unread": true,
+    "evaluation_optimizer_updates": 0,
+    "proof_boundary": "Independent audit checks decoded saved tokens, prompt/row identity, strict grading, ledgers, parameter/optimizer tensors, hashes, execution receipts and archived source. It does not repeat GPU inference, reread arbitrary process memory, or reconstruct full-vocabulary KL from independently saved full logits. Full-vocabulary direction/detachment and immutability rely on inspected frozen executable code plus bound run diagnostics and assertions. Generic probes are rescored from recorded option likelihoods, separate from native answer generation."
+  },
+  "results": {
+    "cached_teacher_sft": {
+      "test": {
+        "correct": 187,
+        "count": 192,
+        "families": {
+          "sequence_a": {
+            "correct": 64,
+            "count": 64
+          },
+          "sequence_b": {
+            "correct": 61,
+            "count": 64
+          },
+          "sequence_c": {
+            "correct": 62,
+            "count": 64
+          }
+        }
+      },
+      "additional_historical_heldout_864": {
+        "correct": 854,
+        "count": 864,
+        "families": {
+          "sequence_a": {
+            "correct": 288,
+            "count": 288
+          },
+          "sequence_b": {
+            "correct": 284,
+            "count": 288
+          },
+          "sequence_c": {
+            "correct": 282,
+            "count": 288
+          }
+        }
+      },
+      "generic_initial": {
+        "correct": 97,
+        "count": 128,
+        "families": {
+          "boolq": {
+            "correct": 29,
+            "count": 32
+          },
+          "commonsense_qa": {
+            "correct": 25,
+            "count": 32
+          },
+          "hellaswag": {
+            "correct": 24,
+            "count": 32
+          },
+          "winogrande": {
+            "correct": 19,
+            "count": 32
+          }
+        },
+        "scoring": "original multiple-choice likelihood; separate from native generation"
+      },
+      "generic_final": {
+        "correct": 96,
+        "count": 128,
+        "families": {
+          "boolq": {
+            "correct": 28,
+            "count": 32
+          },
+          "commonsense_qa": {
+            "correct": 23,
+            "count": 32
+          },
+          "hellaswag": {
+            "correct": 25,
+            "count": 32
+          },
+          "winogrande": {
+            "correct": 20,
+            "count": 32
+          }
+        },
+        "scoring": "original multiple-choice likelihood; separate from native generation"
+      },
+      "train_probe_initial": 0,
+      "train_probe_final": 24,
+      "train_probe_count": 24,
+      "fresh_evaluation_task_id": "followthrough-20260912-onpolicy303-cached-teacher-sft-evaluate"
+    },
+    "cached_teacher_kl": {
+      "test": {
+        "correct": 191,
+        "count": 192,
+        "families": {
+          "sequence_a": {
+            "correct": 64,
+            "count": 64
+          },
+          "sequence_b": {
+            "correct": 63,
+            "count": 64
+          },
+          "sequence_c": {
+            "correct": 64,
+            "count": 64
+          }
+        }
+      },
+      "additional_historical_heldout_864": {
+        "correct": 862,
+        "count": 864,
+        "families": {
+          "sequence_a": {
+            "correct": 288,
+            "count": 288
+          },
+          "sequence_b": {
+            "correct": 288,
+            "count": 288
+          },
+          "sequence_c": {
+            "correct": 286,
+            "count": 288
+          }
+        }
+      },
+      "generic_initial": {
+        "correct": 97,
+        "count": 128,
+        "families": {
+          "boolq": {
+            "correct": 29,
+            "count": 32
+          },
+          "commonsense_qa": {
+            "correct": 25,
+            "count": 32
+          },
+          "hellaswag": {
+            "correct": 24,
+            "count": 32
+          },
+          "winogrande": {
+            "correct": 19,
+            "count": 32
+          }
+        },
+        "scoring": "original multiple-choice likelihood; separate from native generation"
+      },
+      "generic_final": {
+        "correct": 97,
+        "count": 128,
+        "families": {
+          "boolq": {
+            "correct": 29,
+            "count": 32
+          },
+          "commonsense_qa": {
+            "correct": 23,
+            "count": 32
+          },
+          "hellaswag": {
+            "correct": 25,
+            "count": 32
+          },
+          "winogrande": {
+            "correct": 20,
+            "count": 32
+          }
+        },
+        "scoring": "original multiple-choice likelihood; separate from native generation"
+      },
+      "train_probe_initial": 0,
+      "train_probe_final": 24,
+      "train_probe_count": 24,
+      "fresh_evaluation_task_id": "followthrough-20260912-onpolicy303-cached-teacher-kl-evaluate"
+    },
+    "onpolicy_kl": {
+      "test": {
+        "correct": 192,
+        "count": 192,
+        "families": {
+          "sequence_a": {
+            "correct": 64,
+            "count": 64
+          },
+          "sequence_b": {
+            "correct": 64,
+            "count": 64
+          },
+          "sequence_c": {
+            "correct": 64,
+            "count": 64
+          }
+        }
+      },
+      "additional_historical_heldout_864": {
+        "correct": 864,
+        "count": 864,
+        "families": {
+          "sequence_a": {
+            "correct": 288,
+            "count": 288
+          },
+          "sequence_b": {
+            "correct": 288,
+            "count": 288
+          },
+          "sequence_c": {
+            "correct": 288,
+            "count": 288
+          }
+        }
+      },
+      "generic_initial": {
+        "correct": 97,
+        "count": 128,
+        "families": {
+          "boolq": {
+            "correct": 29,
+            "count": 32
+          },
+          "commonsense_qa": {
+            "correct": 25,
+            "count": 32
+          },
+          "hellaswag": {
+            "correct": 24,
+            "count": 32
+          },
+          "winogrande": {
+            "correct": 19,
+            "count": 32
+          }
+        },
+        "scoring": "original multiple-choice likelihood; separate from native generation"
+      },
+      "generic_final": {
+        "correct": 96,
+        "count": 128,
+        "families": {
+          "boolq": {
+            "correct": 29,
+            "count": 32
+          },
+          "commonsense_qa": {
+            "correct": 23,
+            "count": 32
+          },
+          "hellaswag": {
+            "correct": 24,
+            "count": 32
+          },
+          "winogrande": {
+            "correct": 20,
+            "count": 32
+          }
+        },
+        "scoring": "original multiple-choice likelihood; separate from native generation"
+      },
+      "train_probe_initial": 0,
+      "train_probe_final": 24,
+      "train_probe_count": 24,
+      "fresh_evaluation_task_id": "followthrough-20260912-onpolicy303-onpolicy-kl-evaluate"
+    }
+  },
+  "paired_native_against_controls": {
+    "cached_teacher_kl_versus_cached_teacher_sft": {
+      "test": {
+        "counts": {
+          "gained": 5,
+          "lost": 1,
+          "still_wrong": 0,
+          "net_gain": 4
+        },
+        "per_family": {
+          "sequence_a": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_b": {
+            "gained": 3,
+            "lost": 1,
+            "still_wrong": 0
+          },
+          "sequence_c": {
+            "gained": 2,
+            "lost": 0,
+            "still_wrong": 0
+          }
+        }
+      },
+      "unused288": {
+        "counts": {
+          "gained": 10,
+          "lost": 2,
+          "still_wrong": 0,
+          "net_gain": 8
+        },
+        "per_family": {
+          "sequence_a": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_b": {
+            "gained": 4,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_c": {
+            "gained": 6,
+            "lost": 2,
+            "still_wrong": 0
+          }
+        }
+      }
+    },
+    "onpolicy_kl_versus_cached_teacher_sft": {
+      "test": {
+        "counts": {
+          "gained": 5,
+          "lost": 0,
+          "still_wrong": 0,
+          "net_gain": 5
+        },
+        "per_family": {
+          "sequence_a": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_b": {
+            "gained": 3,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_c": {
+            "gained": 2,
+            "lost": 0,
+            "still_wrong": 0
+          }
+        }
+      },
+      "unused288": {
+        "counts": {
+          "gained": 10,
+          "lost": 0,
+          "still_wrong": 0,
+          "net_gain": 10
+        },
+        "per_family": {
+          "sequence_a": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_b": {
+            "gained": 4,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_c": {
+            "gained": 6,
+            "lost": 0,
+            "still_wrong": 0
+          }
+        }
+      }
+    },
+    "onpolicy_kl_versus_cached_teacher_kl": {
+      "test": {
+        "counts": {
+          "gained": 1,
+          "lost": 0,
+          "still_wrong": 0,
+          "net_gain": 1
+        },
+        "per_family": {
+          "sequence_a": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_b": {
+            "gained": 1,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_c": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          }
+        }
+      },
+      "unused288": {
+        "counts": {
+          "gained": 2,
+          "lost": 0,
+          "still_wrong": 0,
+          "net_gain": 2
+        },
+        "per_family": {
+          "sequence_a": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_b": {
+            "gained": 0,
+            "lost": 0,
+            "still_wrong": 0
+          },
+          "sequence_c": {
+            "gained": 2,
+            "lost": 0,
+            "still_wrong": 0
+          }
+        }
+      }
+    }
+  },
+  "native_error_details": {
+    "counts": {
+      "cached_teacher_sft": {
+        "test": {
+          "wrong": 5,
+          "wrong_with_valid_format": 5,
+          "wrong_with_native_eos": 5,
+          "ids": [
+            "f84cf66b4bff9ba9ed6c93ad5e842ebd58ed5f4ff9fadea0e15ec69d83452991",
+            "83b826cd18ed2b73e59928f6be74b665112284bd0da173c0bedd92d6b6cbd8a1",
+            "faf957393ff9dff5ebde47056f7a53cb878a5fbaa31425eb4bc83b33662957f6",
+            "c542de0c47b66cd4674f7905583792982fedbbd5921e285957b420a7dfdd6e12",
+            "857fc10c213c2850855320b5082983730dd98e817b5e7318ae6e12dba1693c44"
+          ]
+        },
+        "unused288": {
+          "wrong": 10,
+          "wrong_with_valid_format": 9,
+          "wrong_with_native_eos": 10,
+          "ids": [
+            "a75e2a19e8e22b7f223e2ab5c6aa736dff3b0d2b3fe51fd06b001e1f4b1bf384",
+            "5e1a1bbbf21be3348c5198236fe11f8b4c5257715c20f81d8c51494f707708ac",
+            "9b0763bf62fc1764a80446349246343f695240e5260f6d69b416a7d855178e5b",
+            "21b327a3ae3d105ca17ac41b7a27957fccfb74777570a1c3dfe72359d91bb76e",
+            "8d1ece07c1a7f4f85700a4bc0f9ecb4c8f4e7fa589a353626d9f5c8a90e8e76e",
+            "3c7d27effcf1d170230e269eb80abe0c0bd8c40de07157e791425c945fda6ed4",
+            "11dd124affd61ab8878955dae950dbe994b239b9b32c9116179fee4caf5a5483",
+            "52b5caaefd4ab1aee0a6cb72c9a242475dc37cd37e079b1fc0e4a4f02d1c464f",
+            "c8415959e7ddf8277ff2d24522963628a47c3d1d3ff1ef71751df9abd9a92c32",
+            "aa838d82c8547d9daa92c84e306505985d95b391874992624faaa64e96ae107c"
+          ]
+        }
+      },
+      "cached_teacher_kl": {
+        "test": {
+          "wrong": 1,
+          "wrong_with_valid_format": 1,
+          "wrong_with_native_eos": 1,
+          "ids": [
+            "ea37f3aa0a0d4d31cbb1d4a09d975091edab3dc34f712b44b55697de8f99c16f"
+          ]
+        },
+        "unused288": {
+          "wrong": 2,
+          "wrong_with_valid_format": 2,
+          "wrong_with_native_eos": 2,
+          "ids": [
+            "2a27dcc4234f01298244822966ed2bdf898b0fabc42ffa1854d5a4878c39901c",
+            "cae013ea131c573fd7c2ef4b3829216d0680cbb0feb725be7d8f0d232ec29bcf"
+          ]
+        }
+      },
+      "onpolicy_kl": {
+        "test": {
+          "wrong": 0,
+          "wrong_with_valid_format": 0,
+          "wrong_with_native_eos": 0,
+          "ids": []
+        },
+        "unused288": {
+          "wrong": 0,
+          "wrong_with_valid_format": 0,
+          "wrong_with_native_eos": 0,
+          "ids": []
+        }
+      }
+    },
+    "cached_kl_new_errors_against_sft": {
+      "test": [
+        {
+          "id": "ea37f3aa0a0d4d31cbb1d4a09d975091edab3dc34f712b44b55697de8f99c16f",
+          "task": "sequence_b",
+          "input": "6 6 1",
+          "gold": " 3 3 6",
+          "before": {
+            "body_text": " 3 3 6",
+            "token_ids": [
+              220,
+              18,
+              220,
+              18,
+              220,
+              21,
+              151645
+            ],
+            "correct": true,
+            "format_valid": true,
+            "terminated": true,
+            "digit_position_correct": [
+              true,
+              true,
+              true
+            ]
+          },
+          "after": {
+            "body_text": " 3 3 7",
+            "token_ids": [
+              220,
+              18,
+              220,
+              18,
+              220,
+              22,
+              151645
+            ],
+            "correct": false,
+            "format_valid": true,
+            "terminated": true,
+            "digit_position_correct": [
+              true,
+              true,
+              false
+            ]
+          }
+        }
+      ],
+      "unused288": [
+        {
+          "id": "2a27dcc4234f01298244822966ed2bdf898b0fabc42ffa1854d5a4878c39901c",
+          "task": "sequence_c",
+          "input": "0 0 4",
+          "gold": " 5 5 6",
+          "before": {
+            "body_text": " 5 5 6",
+            "token_ids": [
+              220,
+              20,
+              220,
+              20,
+              220,
+              21,
+              151645
+            ],
+            "correct": true,
+            "format_valid": true,
+            "terminated": true,
+            "digit_position_correct": [
+              true,
+              true,
+              true
+            ]
+          },
+          "after": {
+            "body_text": " 5 5 0",
+            "token_ids": [
+              220,
+              20,
+              220,
+              20,
+              220,
+              15,
+              151645
+            ],
+            "correct": false,
+            "format_valid": true,
+            "terminated": true,
+            "digit_position_correct": [
+              true,
+              true,
+              false
+            ]
+          }
+        },
+        {
+          "id": "cae013ea131c573fd7c2ef4b3829216d0680cbb0feb725be7d8f0d232ec29bcf",
+          "task": "sequence_c",
+          "input": "4 0 4",
+          "gold": " 6 5 6",
+          "before": {
+            "body_text": " 6 5 6",
+            "token_ids": [
+              220,
+              21,
+              220,
+              20,
+              220,
+              21,
+              151645
+            ],
+            "correct": true,
+            "format_valid": true,
+            "terminated": true,
+            "digit_position_correct": [
+              true,
+              true,
+              true
+            ]
+          },
+          "after": {
+            "body_text": " 6 5 0",
+            "token_ids": [
+              220,
+              21,
+              220,
+              20,
+              220,
+              15,
+              151645
+            ],
+            "correct": false,
+            "format_valid": true,
+            "terminated": true,
+            "digit_position_correct": [
+              true,
+              true,
+              false
+            ]
+          }
+        }
+      ]
+    },
+    "interpretation": "Cached KL corrects all 15 SFT native errors across the 192 and 864 panels and introduces three different last-digit errors, each with valid format and native EOS. On-policy KL corrects all SFT and cached-KL errors with no new error on either observed panel. SFT errors cluster on sequence_b input digit7 and sequence_c digit1; these are descriptive error patterns, not an established internal mechanism. Fourteen SFT errors preserve valid format; its remaining error emits forbidden digit8. All final native errors terminate with EOS."
+  },
+  "paired_generic_before_after": {
+    "cached_teacher_sft": {
+      "counts": {
+        "gained": 3,
+        "lost": 4,
+        "net_gain": -1
+      },
+      "per_task": {
+        "boolq": {
+          "gained": 0,
+          "lost": 1
+        },
+        "commonsense_qa": {
+          "gained": 0,
+          "lost": 2
+        },
+        "hellaswag": {
+          "gained": 1,
+          "lost": 0
+        },
+        "winogrande": {
+          "gained": 2,
+          "lost": 1
+        }
+      },
+      "gained_row_indices": [
+        58,
+        81,
+        86
+      ],
+      "lost_cases": [
+        {
+          "row_index": 24,
+          "row_sha256": "f7f778afc34631272e0a70f087ffff19824b9ef79dfd4f62a3e9f655b7e61664",
+          "task": "boolq",
+          "prompt_excerpt": "The John F. Kennedy Space Center (KSC, originally known as the NASA Launch Operations Center) is one of ten National Aeronautics and Space Administration field centers. Since Decem",
+          "initial_correct_choice": " no",
+          "final_wrong_choice": " yes",
+          "initial_gold_margin": 0.19896507263183594,
+          "final_gold_margin": -0.33738557497660304
+        },
+        {
+          "row_index": 67,
+          "row_sha256": "8e35bb33364eebb9aaf814c26825f4babea5de7bb530377cd63868002a8d9eff",
+          "task": "winogrande",
+          "prompt_excerpt": "James wanted to wear the corsage but it wouldn't fit around his wrist because the",
+          "initial_correct_choice": " wrist was too big.",
+          "final_wrong_choice": " corsage was too big.",
+          "initial_gold_margin": 0.08748794856824374,
+          "final_gold_margin": -0.08327940890663549
+        },
+        {
+          "row_index": 108,
+          "row_sha256": "eca6b2776e061392ca6d3fbffb491ddf6e22f19ecc1cb03ba7885e84fe78e992",
+          "task": "commonsense_qa",
+          "prompt_excerpt": "Question: Billy was an astronaut.  When he looked at the world from space, how did it look?\nAnswer:",
+          "initial_correct_choice": " round",
+          "final_wrong_choice": " complicated",
+          "initial_gold_margin": 0.08869918187459325,
+          "final_gold_margin": -1.3384745915730794
+        },
+        {
+          "row_index": 124,
+          "row_sha256": "a913722ba0557f00cb14e5be7be468befa757e081a12e2f65c2b1c87f92d341b",
+          "task": "commonsense_qa",
+          "prompt_excerpt": "Question: If you are committing perjury you have done what while under oath?\nAnswer:",
+          "initial_correct_choice": " lie",
+          "final_wrong_choice": " embarrassment",
+          "initial_gold_margin": 0.4760522672108243,
+          "final_gold_margin": -0.00898730754852295
+        }
+      ],
+      "total_prediction_flips_including_wrong_to_wrong": 8
+    },
+    "cached_teacher_kl": {
+      "counts": {
+        "gained": 4,
+        "lost": 4,
+        "net_gain": 0
+      },
+      "per_task": {
+        "boolq": {
+          "gained": 1,
+          "lost": 1
+        },
+        "commonsense_qa": {
+          "gained": 0,
+          "lost": 2
+        },
+        "hellaswag": {
+          "gained": 1,
+          "lost": 0
+        },
+        "winogrande": {
+          "gained": 2,
+          "lost": 1
+        }
+      },
+      "gained_row_indices": [
+        30,
+        58,
+        68,
+        86
+      ],
+      "lost_cases": [
+        {
+          "row_index": 24,
+          "row_sha256": "f7f778afc34631272e0a70f087ffff19824b9ef79dfd4f62a3e9f655b7e61664",
+          "task": "boolq",
+          "prompt_excerpt": "The John F. Kennedy Space Center (KSC, originally known as the NASA Launch Operations Center) is one of ten National Aeronautics and Space Administration field centers. Since Decem",
+          "initial_correct_choice": " no",
+          "final_wrong_choice": " yes",
+          "initial_gold_margin": 0.19896507263183594,
+          "final_gold_margin": -0.299116849899292
+        },
+        {
+          "row_index": 67,
+          "row_sha256": "8e35bb33364eebb9aaf814c26825f4babea5de7bb530377cd63868002a8d9eff",
+          "task": "winogrande",
+          "prompt_excerpt": "James wanted to wear the corsage but it wouldn't fit around his wrist because the",
+          "initial_correct_choice": " wrist was too big.",
+          "final_wrong_choice": " corsage was too big.",
+          "initial_gold_margin": 0.08748794856824374,
+          "final_gold_margin": -0.0706384749639602
+        },
+        {
+          "row_index": 108,
+          "row_sha256": "eca6b2776e061392ca6d3fbffb491ddf6e22f19ecc1cb03ba7885e84fe78e992",
+          "task": "commonsense_qa",
+          "prompt_excerpt": "Question: Billy was an astronaut.  When he looked at the world from space, how did it look?\nAnswer:",
+          "initial_correct_choice": " round",
+          "final_wrong_choice": " complicated",
+          "initial_gold_margin": 0.08869918187459325,
+          "final_gold_margin": -0.9939983685811362
+        },
+        {
+          "row_index": 124,
+          "row_sha256": "a913722ba0557f00cb14e5be7be468befa757e081a12e2f65c2b1c87f92d341b",
+          "task": "commonsense_qa",
+          "prompt_excerpt": "Question: If you are committing perjury you have done what while under oath?\nAnswer:",
+          "initial_correct_choice": " lie",
+          "final_wrong_choice": " embarrassment",
+          "initial_gold_margin": 0.4760522672108243,
+          "final_gold_margin": -0.04241715158734993
+        }
+      ],
+      "total_prediction_flips_including_wrong_to_wrong": 9
+    },
+    "onpolicy_kl": {
+      "counts": {
+        "gained": 2,
+        "lost": 3,
+        "net_gain": -1
+      },
+      "per_task": {
+        "boolq": {
+          "gained": 0,
+          "lost": 0
+        },
+        "commonsense_qa": {
+          "gained": 0,
+          "lost": 2
+        },
+        "hellaswag": {
+          "gained": 1,
+          "lost": 1
+        },
+        "winogrande": {
+          "gained": 1,
+          "lost": 0
+        }
+      },
+      "gained_row_indices": [
+        58,
+        86
+      ],
+      "lost_cases": [
+        {
+          "row_index": 36,
+          "row_sha256": "62f38da38bbbee6ec9ae2087da60dea7f50dc44b653676a54216bab797ab2e72",
+          "task": "hellaswag",
+          "prompt_excerpt": "Personal Care and Style: How to make a brown sugar scrub. Fill a clean bowl with 1 cup (200 grams) of brown sugar. Like other types of sugar, brown sugar makes an excellent exfolia",
+          "initial_correct_choice": " Add \u00bd cup (120 milliliters) of a food-grade oil of your choice. Almond, avocado, coconut, or olive oil all work great in sugar scrubs as they are all beneficial to the skin.",
+          "final_wrong_choice": " Focus on picking brown sugar that is specifically formulated for sensitive skin. Like other types of sugar, brown sugar does not contain any additives.",
+          "initial_gold_margin": 0.011919919318021999,
+          "final_gold_margin": -0.002695647284109093
+        },
+        {
+          "row_index": 108,
+          "row_sha256": "eca6b2776e061392ca6d3fbffb491ddf6e22f19ecc1cb03ba7885e84fe78e992",
+          "task": "commonsense_qa",
+          "prompt_excerpt": "Question: Billy was an astronaut.  When he looked at the world from space, how did it look?\nAnswer:",
+          "initial_correct_choice": " round",
+          "final_wrong_choice": " complicated",
+          "initial_gold_margin": 0.08869918187459325,
+          "final_gold_margin": -0.2846555709838867
+        },
+        {
+          "row_index": 124,
+          "row_sha256": "a913722ba0557f00cb14e5be7be468befa757e081a12e2f65c2b1c87f92d341b",
+          "task": "commonsense_qa",
+          "prompt_excerpt": "Question: If you are committing perjury you have done what while under oath?\nAnswer:",
+          "initial_correct_choice": " lie",
+          "final_wrong_choice": " embarrassment",
+          "initial_gold_margin": 0.4760522672108243,
+          "final_gold_margin": -0.2512727805546351
+        }
+      ],
+      "total_prediction_flips_including_wrong_to_wrong": 5
+    }
+  },
+  "generic_interpretation": {
+    "common_lost_row_indices_all_three_arms": [
+      108,
+      124
+    ],
+    "common_loss_identity": "CommonsenseQA astronaut/Earth appearance: round becomes complicated; perjury-under-oath: lie becomes embarrassment. Exact row hashes and original score vectors are in the complete audit.",
+    "cached_kl_unchanged_total_is_not_unchanged_behavior": "97/128 before and after hides four gains and four losses. BoolQ itself has one gain and one loss despite 29/32 before and after.",
+    "onpolicy_unchanged_hellaswag_total_is_not_unchanged_behavior": "24/32 before and after hides one gain and one loss. Its other two losses are the shared CommonsenseQA rows; one Winogrande gain yields net -1 overall.",
+    "all_three_do_not_establish_general_retention": true,
+    "scoring": "Frozen original option-likelihood scorer and original choice cardinalities; no generic-probe training, no native-generation interpretation."
+  },
+  "training_and_capacity_accounting": {
+    "cached_teacher_sft": {
+      "optimizer_updates": 384,
+      "example_exposures": 1536,
+      "unique_train_rows": 384,
+      "per_row_exposure_histogram": {
+        "4": 384
+      },
+      "exposures_per_family": {
+        "sequence_c": 512,
+        "sequence_b": 512,
+        "sequence_a": 512
+      },
+      "loss_tokens_per_family": {
+        "sequence_c": 3584,
+        "sequence_b": 3584,
+        "sequence_a": 3584
+      },
+      "loss_tokens": 10752,
+      "resident_rank": 8,
+      "resident_adapter_parameters": 3833856,
+      "resident_adapter_tensor_bytes": 15335424,
+      "resident_state": "FP32 rank8 q_proj/v_proj A/B factors; frozen native base; no dense offset",
+      "teacher_optimizer_updates": 0
+    },
+    "cached_teacher_kl": {
+      "optimizer_updates": 384,
+      "example_exposures": 1536,
+      "unique_train_rows": 384,
+      "per_row_exposure_histogram": {
+        "4": 384
+      },
+      "exposures_per_family": {
+        "sequence_c": 512,
+        "sequence_b": 512,
+        "sequence_a": 512
+      },
+      "loss_tokens_per_family": {
+        "sequence_c": 3584,
+        "sequence_b": 3584,
+        "sequence_a": 3584
+      },
+      "loss_tokens": 10752,
+      "resident_rank": 8,
+      "resident_adapter_parameters": 3833856,
+      "resident_adapter_tensor_bytes": 15335424,
+      "resident_state": "FP32 rank8 q_proj/v_proj A/B factors; frozen native base; no dense offset",
+      "teacher_optimizer_updates": 0
+    },
+    "onpolicy_kl": {
+      "optimizer_updates": 384,
+      "example_exposures": 1536,
+      "unique_train_rows": 384,
+      "per_row_exposure_histogram": {
+        "4": 384
+      },
+      "exposures_per_family": {
+        "sequence_c": 512,
+        "sequence_b": 512,
+        "sequence_a": 512
+      },
+      "loss_tokens_per_family": {
+        "sequence_c": 3787,
+        "sequence_b": 3766,
+        "sequence_a": 3761
+      },
+      "loss_tokens": 11314,
+      "resident_rank": 8,
+      "resident_adapter_parameters": 3833856,
+      "resident_adapter_tensor_bytes": 15335424,
+      "resident_state": "FP32 rank8 q_proj/v_proj A/B factors; frozen native base; no dense offset",
+      "teacher_optimizer_updates": 0
+    }
+  },
+  "sampled_prefix_evidence": {
+    "vocabulary_size": 151936,
+    "sampling": "Fresh full-support categorical at temperature1, float64 softmax, native EOS or cap16, no forced termination or vocabulary filtering.",
+    "loss": "Teacher||student forward KL over every vocabulary entry at response predictions, including sampled EOS, excluding prompt and post-EOS; token-mean within each row then four-row mean. Fixed detached teacher, detached sampled identities, no teacher EMA or score-function term.",
+    "overall": {
+      "trajectory_correct": 1178,
+      "trajectory_format_valid": 1451,
+      "trajectory_native_eos": 1472,
+      "trajectory_cap_without_eos": 64,
+      "qualified_prefix_tokens": 9231,
+      "divergent_prefix_tokens": 2083,
+      "teacher_agrees_on_qualified_prefix": 9231,
+      "maximum_sampling_vs_recomputed_logp_gap": 0.0002683130324347971
+    },
+    "response_length_histogram": {
+      "1": 2,
+      "3": 1,
+      "4": 2,
+      "5": 1,
+      "7": 1461,
+      "8": 1,
+      "9": 3,
+      "10": 1,
+      "16": 64
+    },
+    "intervals": {
+      "1-32": {
+        "trajectory_rows": 128,
+        "loss_tokens": 1456,
+        "student_sampled_rows": 128,
+        "trajectory_whole_answer_correct": 0,
+        "trajectory_format_valid": 46,
+        "trajectory_native_eos": 64,
+        "qualified_prefix_positions": 259,
+        "teacher_agrees_on_qualified_prefix_positions": 259,
+        "divergent_prefix_positions": 1197,
+        "divergent_teacher_entropy_sum": 739.0114162014885,
+        "divergent_teacher_eos_probability_sum": 168.16899068129982,
+        "divergent_teacher_sampled_token_logp_sum": -9185.067517152358,
+        "full_vocabulary_forward_kl_sum": 3215.9258124589305,
+        "kl_positions": 1456,
+        "trajectory_cap_without_eos": 64
+      },
+      "33-128": {
+        "trajectory_rows": 384,
+        "loss_tokens": 2688,
+        "student_sampled_rows": 384,
+        "trajectory_whole_answer_correct": 171,
+        "trajectory_format_valid": 382,
+        "trajectory_native_eos": 384,
+        "qualified_prefix_positions": 1863,
+        "teacher_agrees_on_qualified_prefix_positions": 1863,
+        "divergent_prefix_positions": 825,
+        "divergent_teacher_entropy_sum": 7.920753770525476,
+        "divergent_teacher_eos_probability_sum": 212.99743796633393,
+        "divergent_teacher_sampled_token_logp_sum": -2859.4904458000124,
+        "full_vocabulary_forward_kl_sum": 918.1385211517729,
+        "kl_positions": 2688,
+        "trajectory_cap_without_eos": 0
+      },
+      "129-384": {
+        "trajectory_rows": 1024,
+        "loss_tokens": 7170,
+        "student_sampled_rows": 1024,
+        "trajectory_whole_answer_correct": 1007,
+        "trajectory_format_valid": 1023,
+        "trajectory_native_eos": 1024,
+        "qualified_prefix_positions": 7109,
+        "teacher_agrees_on_qualified_prefix_positions": 7109,
+        "divergent_prefix_positions": 61,
+        "divergent_teacher_entropy_sum": 0.11294714717111748,
+        "divergent_teacher_eos_probability_sum": 16.99966716766503,
+        "divergent_teacher_sampled_token_logp_sum": -12.17198822881096,
+        "full_vocabulary_forward_kl_sum": 79.9753964254189,
+        "kl_positions": 7170,
+        "trajectory_cap_without_eos": 0
+      }
+    },
+    "minimum_observed_vocabulary_probability": 7.1801582664331175e-34,
+    "matched_prefix_teacher_agreement": "9231/9231 recorded matched-prefix positions; greedy native qualification does not give valid labels at the other 2083 divergent-prefix positions.",
+    "off_answer_prefix_competence_certified": false,
+    "interpretation": "Sampled TRAIN correctness increases from 0/128 trajectories in updates1-32 to 171/384 in updates33-128 and 1007/1024 in updates129-384. All 64 capped non-EOS trajectories occur in the first32 updates. These are descriptions of the actual training distribution and do not select checkpoints or independently certify recovery from arbitrary incorrect prefixes."
+  },
+  "matched_control": {
+    "same_initial_adapter": true,
+    "independent_optimizers": true,
+    "sft_final_adapter_and_adamw_tensors_bitwise_equal_original_coverage_control": true,
+    "sft_final_native_records_exactly_equal_original_coverage_control": true,
+    "cached_kl_vs_sft": "Same 384x4 row schedule, exact cached target tokens, 10752 loss tokens, rank, initialization and optimizer; the distinction is the full-vocabulary forward-KL objective versus hard-target SFT.",
+    "onpolicy_vs_cached_kl": "Same row/update budget and learner setup; prefix distribution and response lengths both change. Sampled arm uses11314 loss tokens, 562 more than10752 (5.2269345 percent). No matched-token or matched-compute attribution.",
+    "numeric_path": "Experimental teacher/student/evaluation preserve frozen FP32 coverage path. Completed BF16 Qwen3-8B runtime job is a load prerequisite, not evidence of FP32/BF16 numerical equivalence."
+  },
+  "claim_scope": {
+    "supported": "Actual fixed-expert on-policy forward-KL updates produce a persistent fresh rank8 learner that generates every answer correctly on these two historical Sequence303 panels after teacher-absent standalone reload.",
+    "limits": [
+      "One existing Sequence303 mapping and learner seed.",
+      "Historical heldouts reused; no new broad benchmark or independent seed replication.",
+      "Persistent learned adapter; native base weights remain frozen.",
+      "No general continual-learning or composition result.",
+      "Fixed qualified expert hybrid; not full SDFT or SDPO reproduction.",
+      "Small multiple-choice retention panel has observed individual losses.",
+      "On-policy/cached comparison has unequal loss-token exposures.",
+      "Greedy teacher qualification does not establish off-answer prefix competence."
+    ]
+  },
+  "final_disposition": {
+    "frozen": true,
+    "additional_training": false,
+    "scientific_source_changes": [],
+    "gpu_or_provider_mutations": [],
+    "commit_or_push": false
+  }
+}
