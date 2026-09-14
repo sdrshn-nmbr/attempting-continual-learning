@@ -1,0 +1,964 @@
+{
+  "schema_version": 1,
+  "status": "verified",
+  "bucket": "continual-learning-archives",
+  "prefix": "portfolio/2026-09-13",
+  "endpoint": "https://d1236c0762602db757c07d291cc3c4fa.r2.cloudflarestorage.com",
+  "source_repo": "https://github.com/sdrshn-nmbr/attempting-continual-learning",
+  "source_relative_path": "outputs/portfolio",
+  "created_utc": "2026-09-14T05:24:00Z",
+  "regular_files": 274879,
+  "entries": 284605,
+  "source_file_bytes": 237617003911,
+  "archive_bytes": 174674095953,
+  "verification": "Every archive: local SHA-256 and independently computed multipart MD5 ETag; R2 HEAD size, ETag and SHA-256 metadata matched. Source path/size/mtime/mode inventory unchanged before and after packing. Local source retained.",
+  "file_index": {
+    "key": "portfolio/2026-09-13/files.jsonl.zst",
+    "bytes": 8649142,
+    "sha256": "9e4960b596ccce3f798a1d790e440f6034af9f82dc5185c0bf58ce98c6c1d135",
+    "etag": "69b6c4a0f8d7f3eff27f2f38518b6c50"
+  },
+  "archives": [
+    {
+      "key": "portfolio/2026-09-13/parts/part-0000.tar.zst",
+      "bytes": 1635686371,
+      "sha256": "7b20867f2107ca3e16deffc9f86d6d7e38475bcae867b87e9b29dc87b3209384",
+      "etag": "8d2488e4040eb7c061bc7ce23d86a662-25",
+      "entries": 761,
+      "source_file_bytes": 2134781358
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0001.tar.zst",
+      "bytes": 1807754730,
+      "sha256": "4e7e41800a9f28de84f8f7d3278f9eb9cf6c591cca0a0cf8ed91c658a5ccc72a",
+      "etag": "42229dcde9e300bb2b65a29f5ead23fa-27",
+      "entries": 302,
+      "source_file_bytes": 2128937504
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0002.tar.zst",
+      "bytes": 1779325403,
+      "sha256": "3f43c0f201b44146946cd8d3baede3fa6f83e617823ac38247d5a6cb8c84a578",
+      "etag": "aaba0b97b10fe6b2d0a70a8957a9ec17-27",
+      "entries": 692,
+      "source_file_bytes": 2040852551
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0003.tar.zst",
+      "bytes": 1837706050,
+      "sha256": "c91bf108961b12e117259a827a3453a302b03a13c42b7bfc821d509611ae3d22",
+      "etag": "86c10fef5d76012e70e3fff52107feb4-28",
+      "entries": 114,
+      "source_file_bytes": 2088879171
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0004.tar.zst",
+      "bytes": 1858357157,
+      "sha256": "15199aa48d3c6af978de8693396e6e9465a2438f3e2af6b1426743c69025a478",
+      "etag": "ffae8081027193f40faf3b371b7c5b52-28",
+      "entries": 112,
+      "source_file_bytes": 2093255062
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0005.tar.zst",
+      "bytes": 1853001706,
+      "sha256": "e0c4e411442237813367e4365916a7e732a936efddc65c94b1d777487fc106b0",
+      "etag": "60bcb6f0cb760ca00cc3b15a7c45817f-28",
+      "entries": 116,
+      "source_file_bytes": 2093244976
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0006.tar.zst",
+      "bytes": 1833244480,
+      "sha256": "8ef1fe4e65f1a7d1867b3425561ba7b97865416019729052275d4e7eeaf4e5ce",
+      "etag": "d56e7ea8ab3d116a6143c5daa08394c6-28",
+      "entries": 96,
+      "source_file_bytes": 2057536637
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0007.tar.zst",
+      "bytes": 1812047535,
+      "sha256": "d454aea45252ed06e2420517a6052ad9d7cbff03ec4119c47ce040d6fe453e45",
+      "etag": "eaaaf0319a5a25f9b74baac80602adc3-28",
+      "entries": 35,
+      "source_file_bytes": 1981265014
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0008.tar.zst",
+      "bytes": 1801207914,
+      "sha256": "18d4fdf19bb35afbaae1dc84a83e06abd3ae927a4b0b66471f3ba0d7898b3489",
+      "etag": "526a248c7db8cfe629e31db4b6035f04-27",
+      "entries": 35,
+      "source_file_bytes": 1970064892
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0009.tar.zst",
+      "bytes": 1818804856,
+      "sha256": "fa5b43f874f44816cc58efc207450037b45e143c67a639a03c741e54f2704bb2",
+      "etag": "a20453898481dc14c3ce73efa6bf0da2-28",
+      "entries": 145,
+      "source_file_bytes": 2035414423
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0010.tar.zst",
+      "bytes": 1845706723,
+      "sha256": "05340cac56dbbee78875421f46ae3400753be8f183d8e7a1d1905025024cad5d",
+      "etag": "7b747dadb9f02e8ca03fc2378e590370-28",
+      "entries": 48,
+      "source_file_bytes": 2111114207
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0011.tar.zst",
+      "bytes": 1838873416,
+      "sha256": "7844aacd0939d7896e72b2d1a5bfc7e985a558bbd6e69806eef2f7e9daf5865c",
+      "etag": "835e15bdd78fa635e2dc8b8c3cba1eae-28",
+      "entries": 78,
+      "source_file_bytes": 2023430176
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0012.tar.zst",
+      "bytes": 1858668128,
+      "sha256": "19989ec16ce6c6112add86c922bb7f7fd7b23a866638e721c5e155038228cd14",
+      "etag": "a6bd544fea140e62b1ad6b6aafae22c5-28",
+      "entries": 41,
+      "source_file_bytes": 2039845682
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0013.tar.zst",
+      "bytes": 1956470506,
+      "sha256": "11bc91ac733de929d0cec3491689b03615eb985d3bc83f3065ab71d6c17ee56d",
+      "etag": "7442566396389ea707af79921a9cf4e9-30",
+      "entries": 240,
+      "source_file_bytes": 2143162046
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0014.tar.zst",
+      "bytes": 1949921634,
+      "sha256": "50c0f17bf6f7df3269d4823cabf4d74374d1227fc9471a0162a0ad57050c9421",
+      "etag": "19ea053698df90b573ce91c165b48957-30",
+      "entries": 280,
+      "source_file_bytes": 2138598804
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0015.tar.zst",
+      "bytes": 1929194710,
+      "sha256": "92aa6d6f9c040361fc9f091a11e44f2adb559685d91c2f26cd6c68d01429ad4e",
+      "etag": "29425f5bb107e6d1967ac9e6262b7eca-29",
+      "entries": 334,
+      "source_file_bytes": 2141022506
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0016.tar.zst",
+      "bytes": 1804818392,
+      "sha256": "a28f0b0349c4c1285bf5c743bcf612c924f4cf7385a339d00135324aa656cb01",
+      "etag": "d8058b8bc6bd1d1485350c7463a07761-27",
+      "entries": 299,
+      "source_file_bytes": 2117463991
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0017.tar.zst",
+      "bytes": 1986582205,
+      "sha256": "392b6f8336e81f7e6cb774045a3209d8fdff9b2e8ec23b1480be4ce5a99d7902",
+      "etag": "c41d859dce23622c34bb9b80a460d875-30",
+      "entries": 182,
+      "source_file_bytes": 2143668628
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0018.tar.zst",
+      "bytes": 1987234270,
+      "sha256": "577c27ae0a5e51fce8b216143f38f2415baf496115a1a799704e3a89b73db95b",
+      "etag": "d9c3d7eddfee888c9646b7b6b291477c-30",
+      "entries": 176,
+      "source_file_bytes": 2142566650
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0019.tar.zst",
+      "bytes": 1955734220,
+      "sha256": "cef717e1a009801147701d4b4f358bc74f8ebe4236e882515428071c8702a75f",
+      "etag": "e7886935c18d3c724f0ae458ab0da58d-30",
+      "entries": 206,
+      "source_file_bytes": 2122858907
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0020.tar.zst",
+      "bytes": 1986657947,
+      "sha256": "605d594aa8c58c9f5909232e24766d213cc5628a1ded1a0ec0e9e86149a57e8c",
+      "etag": "35ca9bff5c0905c0fafd0ace88e779ec-30",
+      "entries": 180,
+      "source_file_bytes": 2143674708
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0021.tar.zst",
+      "bytes": 1955501698,
+      "sha256": "109a1d167a0cc1a598cc1c9484f95352148a104629daa1a29c65882fb6de1c17",
+      "etag": "539a187cb7b75e410a5d23b66eff4f5f-30",
+      "entries": 209,
+      "source_file_bytes": 2120760016
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0022.tar.zst",
+      "bytes": 1987226018,
+      "sha256": "ae5b0eca30ffcb5f948db1aac824f74e70b12675cc54c1f085c4c8e10a0a60a6",
+      "etag": "6848bf95b5be70b8adcbecf64ca0439f-30",
+      "entries": 177,
+      "source_file_bytes": 2142995800
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0023.tar.zst",
+      "bytes": 1956140019,
+      "sha256": "03a2c2457a80e5613abeb4a52216b0b5e91a5d1d794479392a96956b359b3b0d",
+      "etag": "6e44dad2662b7342d2c66ad334f3526b-30",
+      "entries": 206,
+      "source_file_bytes": 2122934913
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0024.tar.zst",
+      "bytes": 1986948314,
+      "sha256": "1e9613e56371865b487f6331d018c4d8576ae16dec5258677c1abb9b1cddf7a4",
+      "etag": "7661d75629feb824fad2643fc347e16a-30",
+      "entries": 182,
+      "source_file_bytes": 2143674458
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0025.tar.zst",
+      "bytes": 1954973722,
+      "sha256": "3864f0a4f65a3770664804c21b0c45b78a70d9f7df6958e7a6518f5058cdc696",
+      "etag": "69a04936e27521a71f9906311a46261d-30",
+      "entries": 202,
+      "source_file_bytes": 2120332997
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0026.tar.zst",
+      "bytes": 1985846309,
+      "sha256": "a3f03675324297545bfa2d42cb0c82fb5961416eda9e61f33abe557ccbc8838a",
+      "etag": "b6d276b8326ad8545d7f64b5f872512c-30",
+      "entries": 177,
+      "source_file_bytes": 2143343333
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0027.tar.zst",
+      "bytes": 1954815300,
+      "sha256": "60a2b3e0a05a7d14aee9d8dcdbee31517eafbf87a066921cddafa2e0baea1498",
+      "etag": "0ec1b2be384de09004db89ca31907bcd-30",
+      "entries": 206,
+      "source_file_bytes": 2122991764
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0028.tar.zst",
+      "bytes": 1987404331,
+      "sha256": "07bf5597a08dd7d46637cd71a91b813146d3c6019a855a83febbf0fc07b8abee",
+      "etag": "4d3aebc8b7207d09418d65bcd608a5f8-30",
+      "entries": 180,
+      "source_file_bytes": 2143673225
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0029.tar.zst",
+      "bytes": 1955413139,
+      "sha256": "d9518ccbd3fbc25b0d6c81c46c5732cf3a001b5093f93da96e6054eaaee2bb14",
+      "etag": "30cd2421d26a57838aaf0fae6bb2b8f2-30",
+      "entries": 207,
+      "source_file_bytes": 2120730820
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0030.tar.zst",
+      "bytes": 1986614203,
+      "sha256": "bd26918044fae59c459dc582c9c69c07ba066adcaefb15aefd723753b73b7fee",
+      "etag": "2d45797032c7cc60b070080f475d6914-30",
+      "entries": 182,
+      "source_file_bytes": 2143666290
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0031.tar.zst",
+      "bytes": 1986038458,
+      "sha256": "1602f884b76bff35a2f6ab98dc694346aff16fb29480ee9e87ed0ae46c8412db",
+      "etag": "dc8d62a4645f2bc5a293398b158d7179-30",
+      "entries": 182,
+      "source_file_bytes": 2143672497
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0032.tar.zst",
+      "bytes": 1955514470,
+      "sha256": "4d00952bc6e575348b1591fe03278d535c10d27769e171ddcd6c5c60bc4546f8",
+      "etag": "6c493c861d4f9194465c6f84a76b3046-30",
+      "entries": 202,
+      "source_file_bytes": 2121971294
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0033.tar.zst",
+      "bytes": 1986689231,
+      "sha256": "e78ed8f1e71de6d9f1d49680cc2fca2bb38b680ee891656a40db8cb4a301190e",
+      "etag": "c56e891bf7d4ecc0ca3f2c08e28a9bfb-30",
+      "entries": 180,
+      "source_file_bytes": 2143689163
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0034.tar.zst",
+      "bytes": 1866240397,
+      "sha256": "54f474c89118d325ce8703e6f4045cb23d14b4ff6f58a5f30c48056bcbde58fc",
+      "etag": "3cbf558c3ec9ff15552904a2c15f6b99-28",
+      "entries": 261,
+      "source_file_bytes": 2122348177
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0035.tar.zst",
+      "bytes": 1952026891,
+      "sha256": "ff37c7a5bf94a3ab2a6b36038378481d1a18a19b41e53abd8243c69499052b90",
+      "etag": "e153196e1d6abddfd73fdb934f4ee3ea-30",
+      "entries": 264,
+      "source_file_bytes": 2131298520
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0036.tar.zst",
+      "bytes": 1929460782,
+      "sha256": "671cac763b1974800a7553cede38de0fae73c0ddbb167d8a57d7b64854678fc7",
+      "etag": "b344e688ea7dceff7232ab5bac3d26fe-29",
+      "entries": 284,
+      "source_file_bytes": 2135636843
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0037.tar.zst",
+      "bytes": 1900343476,
+      "sha256": "09c11d8c50ff6df0eccdf12356721035499310eb25bf7e68414e8baa345700f9",
+      "etag": "1b17d4695f45dcff1b490460b42738f5-29",
+      "entries": 396,
+      "source_file_bytes": 2115314311
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0038.tar.zst",
+      "bytes": 1875611780,
+      "sha256": "0414fa1804a8904118d5492720280514e6be1bef1c6ebaab39c1391cd7ed74c3",
+      "etag": "424e170e16cd9801d454c66ac2c8f495-28",
+      "entries": 342,
+      "source_file_bytes": 2119884306
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0039.tar.zst",
+      "bytes": 1948027860,
+      "sha256": "26a11cb92450e4501dffa6916d141ff83c56da3ad1f61278d851fa78e4ba1e57",
+      "etag": "b2db5505afbc8f375d06824292191d5c-30",
+      "entries": 280,
+      "source_file_bytes": 2127690286
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0040.tar.zst",
+      "bytes": 1947638826,
+      "sha256": "0705ac4a7ed8737f0c393acb80b058e101e4a5fa6aedaa371bbed30cc5fe637e",
+      "etag": "7ad129bd086b435c18a765381e18977f-30",
+      "entries": 275,
+      "source_file_bytes": 2124263055
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0041.tar.zst",
+      "bytes": 1948834671,
+      "sha256": "4a472dcd7a057043770e27f4ca3879336295e77ecbd6aff6c7342ecc805df31c",
+      "etag": "48f50decc56b94641cfa3f908d0f0bc7-30",
+      "entries": 277,
+      "source_file_bytes": 2127679702
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0042.tar.zst",
+      "bytes": 1947013470,
+      "sha256": "546b457208bc0f47d6704566543da6e0e809bcd65a53049ec578839eed0cf04a",
+      "etag": "b6991872a800d2cce9ef8425de28206e-30",
+      "entries": 352,
+      "source_file_bytes": 2125300457
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0043.tar.zst",
+      "bytes": 1943834083,
+      "sha256": "df7c57cfd75c24f800e8317305da6ea9ca56ee195cc1ca19e5c5ebbe6f3a96ec",
+      "etag": "4e268c2e9fe6f175ed5750e7aa412b33-29",
+      "entries": 305,
+      "source_file_bytes": 2116589637
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0044.tar.zst",
+      "bytes": 1946750854,
+      "sha256": "a99af766a8a55c172106e3bd24ebac007f0d200c0c8b54ed299c5f0c3aa5746d",
+      "etag": "7f03edf0cd6e7f44f6eecbc6ab683b78-30",
+      "entries": 302,
+      "source_file_bytes": 2134300659
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0045.tar.zst",
+      "bytes": 1682724199,
+      "sha256": "707b1cb7c21e44b493db1c4957392c8461b535678079ad23e1d8cceb42d78d6a",
+      "etag": "e7bf70522f06e442f549c65c8985be9c-26",
+      "entries": 2473,
+      "source_file_bytes": 1982826979
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0046.tar.zst",
+      "bytes": 1469045840,
+      "sha256": "8e96fb5a4efada211275a25fbfb7d4bdeb6e014c4a7335df0fd06333e5c9c017",
+      "etag": "29f9fd0c83b79c50baed87f7d5bdb13b-22",
+      "entries": 229,
+      "source_file_bytes": 1607537674
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0047.tar.zst",
+      "bytes": 1502310089,
+      "sha256": "20594d3b79001169c3183d02253ca418d578c7fa8a68bae06a200caaf5eb24da",
+      "etag": "18ddda2243f359546bd1c33996fc0f70-23",
+      "entries": 135,
+      "source_file_bytes": 1638693993
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0048.tar.zst",
+      "bytes": 1468748891,
+      "sha256": "856cb4e2a4cc48bbfd952f251c8cdd76fe51ad74f42260c7e14306a41ee56e54",
+      "etag": "098919fba6a9651cfb3044e8a9f5b87d-22",
+      "entries": 212,
+      "source_file_bytes": 1603388411
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0049.tar.zst",
+      "bytes": 1502723912,
+      "sha256": "3182c7ef630a3a5a7e871fc8384ecf03842c7e8202ab150935842b54c0a4159c",
+      "etag": "3a072d42d1d265ae10c6ee8f26edd452-23",
+      "entries": 135,
+      "source_file_bytes": 1638629037
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0050.tar.zst",
+      "bytes": 1469179845,
+      "sha256": "3f87c01c0d6c4e4191767c78ebafff6bf3b2c8f44f061a3fdca260af743bec89",
+      "etag": "d0b97041b8f0b9e2bda75621ce1e0a3f-22",
+      "entries": 212,
+      "source_file_bytes": 1603994044
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0051.tar.zst",
+      "bytes": 1502647350,
+      "sha256": "b414a7a76e6eb04db4cc4ce432b2af3e274d50ae051c02d764e8ff2a50942c6d",
+      "etag": "6601299a73fd393064c1bb5eb3847aae-23",
+      "entries": 135,
+      "source_file_bytes": 1638631353
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0052.tar.zst",
+      "bytes": 1516145643,
+      "sha256": "3a35424f7fc323a233ac118c66892f5ebe3232f9d466c787b3c2354ad1da239e",
+      "etag": "715cb781ce0e1c98324f9fcc9cd02568-23",
+      "entries": 1326,
+      "source_file_bytes": 2125683167
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0053.tar.zst",
+      "bytes": 163721633,
+      "sha256": "a01579ef5baeb52ea9701dc700d19d85dc53056b352610562d49db582082e091",
+      "etag": "d9ab0a523f4f00b9fa90ae4a67576676-3",
+      "entries": 280,
+      "source_file_bytes": 2123054839
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0054.tar.zst",
+      "bytes": 162159592,
+      "sha256": "fc392ab0e66bb5a3105710bbe5a599c842a11bd9ef2e70d3a7ef629b77fc281c",
+      "etag": "0eb2a7101bd52bad123dbb64050736d1-3",
+      "entries": 280,
+      "source_file_bytes": 2142234441
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0055.tar.zst",
+      "bytes": 1198531776,
+      "sha256": "1aed0f655fcc5f420b31cbe1aa0dd1b1482383958b8682aa5c958b97d040ac43",
+      "etag": "d7836aab1a0e9c67147d887ccb876b79-18",
+      "entries": 401,
+      "source_file_bytes": 1911091595
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0056.tar.zst",
+      "bytes": 1641244376,
+      "sha256": "d0f1f9f39e672fc37c3e064638d634d0a3d2b75d7e7796c204dbb89bdf71041d",
+      "etag": "1180f8ecd6727ac2a092bf8e36806f10-25",
+      "entries": 324,
+      "source_file_bytes": 2124934338
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0057.tar.zst",
+      "bytes": 1725272330,
+      "sha256": "6b561b320d816758ac0906c79a8e94e0640d7abe8660383b504094c114101b69",
+      "etag": "e6e5fe414b150e0e7f6ab6c7a946681e-26",
+      "entries": 323,
+      "source_file_bytes": 2099726917
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0058.tar.zst",
+      "bytes": 1704160925,
+      "sha256": "5486e7877043ace1c0ea435ee963ad99b8f2b891a1048602d455a85b3f02041a",
+      "etag": "45c0f605aa2f2ad950762d48ad56e1be-26",
+      "entries": 306,
+      "source_file_bytes": 2030214554
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0059.tar.zst",
+      "bytes": 1723609878,
+      "sha256": "28c2f48ffdd716e8d54c271b2923c3c3c70021b82502361c9b4f9d1f49e7fd51",
+      "etag": "7ed8c47d88a2ed394725cc453dec2580-26",
+      "entries": 336,
+      "source_file_bytes": 2082512776
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0060.tar.zst",
+      "bytes": 1842472888,
+      "sha256": "30c1a62f5e4189372cade0478ead930958b605e2b1f6da271ffac859c64fd9b4",
+      "etag": "3e62dcdb021334b2b9c178cf479d8e76-28",
+      "entries": 275,
+      "source_file_bytes": 2143076090
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0061.tar.zst",
+      "bytes": 1724990122,
+      "sha256": "7c2458477349a6a34fb9d9cb52c20d2acca732f8ca4be511edbde7e3704ed54c",
+      "etag": "686935fd9714327a6a6dbe34903d7024-26",
+      "entries": 324,
+      "source_file_bytes": 2142069249
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0062.tar.zst",
+      "bytes": 1478358424,
+      "sha256": "ef1ce4dfe264ba0c79877f467e60cee44288ddc50f8bb0b29a6ca2f21d9b0d4b",
+      "etag": "91fb177d7d665f023b89977aa2e572ff-23",
+      "entries": 514,
+      "source_file_bytes": 2093411827
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0063.tar.zst",
+      "bytes": 1598751820,
+      "sha256": "30664757c6fd7921141b72c1f9442ba1d1d66c359b1debe96b8ac4645d1278aa",
+      "etag": "b4fbb2403624aeb8341681b80b4f7eb1-24",
+      "entries": 323,
+      "source_file_bytes": 2061378406
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0064.tar.zst",
+      "bytes": 1712817397,
+      "sha256": "747ff169c0bb2297f51feb73bec723fb357e3ce7a875391069e430cda5ee4287",
+      "etag": "93c10d440a29fbd4fc11b72169b755ee-26",
+      "entries": 258,
+      "source_file_bytes": 2023908613
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0065.tar.zst",
+      "bytes": 1713089201,
+      "sha256": "8757ed898a3994a86824d248dba8d6c1b38b5b5be611f5872f242e5471270619",
+      "etag": "017d53bf71b9393c9a29b720eb8b74a6-26",
+      "entries": 258,
+      "source_file_bytes": 2023806440
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0066.tar.zst",
+      "bytes": 1713150431,
+      "sha256": "3ceccbcb7c17113a91c4f424a59f054ed9020299618eb2476df4c82d9b863437",
+      "etag": "93269c9bb51e31a473668b4e9aa8d2d7-26",
+      "entries": 258,
+      "source_file_bytes": 2024000516
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0067.tar.zst",
+      "bytes": 1730281535,
+      "sha256": "0c2f9698228993e9276bcf7adfffec8f42e167a81aad0e70473e8fd0b68260d8",
+      "etag": "78182cacbe8a1d66e2f7020aa09b8b25-26",
+      "entries": 280,
+      "source_file_bytes": 2100072517
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0068.tar.zst",
+      "bytes": 461872847,
+      "sha256": "a845ae3abc3c8ab77b39ef0d7511709a8059b6144c36795c023d04d080ab242d",
+      "etag": "3be8f937df2913c283212330558cbc1e-7",
+      "entries": 20054,
+      "source_file_bytes": 2137096480
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0069.tar.zst",
+      "bytes": 1161622217,
+      "sha256": "cecf47be3a715eaf7098cfd7f1f09fa7e6951ff7f4358cdf5743900cb97c9737",
+      "etag": "9b423168ca40a2fc8c1a71fe8a883dab-18",
+      "entries": 11089,
+      "source_file_bytes": 2108592882
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0070.tar.zst",
+      "bytes": 910886402,
+      "sha256": "8a5fd888bd8c1c6757c9c80f67e4f16fc95b0ab936f458d8952ed62e44bf519e",
+      "etag": "ae97b7b19900efc18d20552a733f53b6-14",
+      "entries": 8832,
+      "source_file_bytes": 2054199736
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0071.tar.zst",
+      "bytes": 874664889,
+      "sha256": "c671c038dc3fcdae9ce4045687be1643a41ae5f16700917823fe4219558731f3",
+      "etag": "a1ecb57a43f24a9579063e3d8d92591b-14",
+      "entries": 8468,
+      "source_file_bytes": 1892368728
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0072.tar.zst",
+      "bytes": 1139244530,
+      "sha256": "1baa0c5eced5bc2efa676592ef56bf07a2e60d97d099f7b669c4b918092b1442",
+      "etag": "3eaf2a224c7dc3dc5b77be044f9652c2-17",
+      "entries": 8641,
+      "source_file_bytes": 2147478665
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0073.tar.zst",
+      "bytes": 1135269345,
+      "sha256": "8cd35913beb3c729c3111be1f1e5218a11d00065317d2ffc41f9145531f9919b",
+      "etag": "32810c5678e08a1bd7f20b0ad12da913-17",
+      "entries": 10736,
+      "source_file_bytes": 2100113221
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0074.tar.zst",
+      "bytes": 907725803,
+      "sha256": "543f19f4f987aba5d65caf22d97b9a735322c84902508a1e94f89ea481011374",
+      "etag": "1632957d00c94b14bc4ee9c71fddf7e1-14",
+      "entries": 10975,
+      "source_file_bytes": 2147319046
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0075.tar.zst",
+      "bytes": 1829159313,
+      "sha256": "1d48186221fce0ab725d86b54b30e419ced70ef187523761ef5739c506fb42cf",
+      "etag": "296512ab1372b78700240fae1db15984-28",
+      "entries": 203,
+      "source_file_bytes": 2064974718
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0076.tar.zst",
+      "bytes": 1808872080,
+      "sha256": "460cd6e6a76d8acbb7dba4ce93c822fd91133a77d8a512257266cca2a8935d18",
+      "etag": "0ebca33637fb0084f0e9999c3659ec9b-27",
+      "entries": 151,
+      "source_file_bytes": 2081868550
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0077.tar.zst",
+      "bytes": 1393840526,
+      "sha256": "4f5fdfa4525b5051503c1929dee7b0be265918216ca01abe5a284488cd6acb6a",
+      "etag": "b10ab36ca06694738a96e3c6ae8de571-21",
+      "entries": 438,
+      "source_file_bytes": 2124162649
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0078.tar.zst",
+      "bytes": 1393712074,
+      "sha256": "80e921bf58116577cdc8b4d2e88e5da9aeedbc5e73aa2dbfc1aecee4efb2bc76",
+      "etag": "71147d72e3c49581d77fd235345148bd-21",
+      "entries": 437,
+      "source_file_bytes": 2118591129
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0079.tar.zst",
+      "bytes": 1256952141,
+      "sha256": "fc4afe9f108a4a0a21d996bd159566b43f3f1de519e05c8f9e8b1a9399f8f91f",
+      "etag": "f463cd04b9d6adb8d9f8bae0595b4dd6-19",
+      "entries": 4523,
+      "source_file_bytes": 2147433496
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0080.tar.zst",
+      "bytes": 304549561,
+      "sha256": "5f2f16a2f40ae8c9b74378975d4ae613669bcefd44b99a28173496b8e5520376",
+      "etag": "8a9688b217430e26f19149559824ea99-5",
+      "entries": 13054,
+      "source_file_bytes": 2110463544
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0081.tar.zst",
+      "bytes": 1397352636,
+      "sha256": "495f9193306b9d9a52b36ac377c1574dbeb5904aa4520f711e0ca551045db40d",
+      "etag": "d3b50312271605bc83f37d0ecb19801c-21",
+      "entries": 1097,
+      "source_file_bytes": 2109896776
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0082.tar.zst",
+      "bytes": 1372535535,
+      "sha256": "a5c64ce767f6168a373ca2b7cb0b4ee01e9ed6411538861be35fed86ff164b79",
+      "etag": "5c1d580f891dea3bbd9205ed90e32d8a-21",
+      "entries": 1380,
+      "source_file_bytes": 2121246155
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0083.tar.zst",
+      "bytes": 1184023797,
+      "sha256": "fd15ab4dc63dd4a2a4b250def893d19115794d5883c603c3527054a8c373441c",
+      "etag": "e400099c9e6514105356d2671e915d4c-18",
+      "entries": 1705,
+      "source_file_bytes": 2066961209
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0084.tar.zst",
+      "bytes": 1225037076,
+      "sha256": "544f4c583a92c4d55fd11461a65bfce88e87f7680f804a6ac0a6bd871c2021bb",
+      "etag": "750515544a837e1030b23b8ebd69e25f-19",
+      "entries": 1875,
+      "source_file_bytes": 2147457259
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0085.tar.zst",
+      "bytes": 1055914266,
+      "sha256": "c4e4ea20c60d334875ab593971b9c9c8d742289649cc07ebaaff10bdca6b91e1",
+      "etag": "b88d0a3ca51d913dcaad6d5f5b6c1b0a-16",
+      "entries": 2095,
+      "source_file_bytes": 2138694197
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0086.tar.zst",
+      "bytes": 1246422225,
+      "sha256": "498d594b305045daa46869c3dd254b349a1ebeacb57448da5f24d0b2ca12b5da",
+      "etag": "1e545c4bf857fac73f8081ab6d3288e3-19",
+      "entries": 1430,
+      "source_file_bytes": 2087030092
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0087.tar.zst",
+      "bytes": 1121873974,
+      "sha256": "b612fac5560f617d30d17263f29a4da62607d09edb22197f7c27a84ea017deb5",
+      "etag": "e01dffdecfcf37a620730431e6981269-17",
+      "entries": 852,
+      "source_file_bytes": 2087259852
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0088.tar.zst",
+      "bytes": 622765706,
+      "sha256": "30fa42e8c7153374a717b82ea64d5a69535bf0cc46dfc45b5256b888770ed9a4",
+      "etag": "5b85bfffbf61928b85e2854cbb42ad84-10",
+      "entries": 1433,
+      "source_file_bytes": 2018513169
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0089.tar.zst",
+      "bytes": 1167670611,
+      "sha256": "4a18b9112efc1f279d359319ea0bc03b6dbe19be906841e8afb1fe8434ab8f4b",
+      "etag": "181fd85f3a4de3df504dac3e27f0a93e-18",
+      "entries": 11813,
+      "source_file_bytes": 2147449926
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0090.tar.zst",
+      "bytes": 643041190,
+      "sha256": "3e3321825bf5a4a585b8936cf3ecab329d6a09fa4efb5bdd6704b9b76669e3ef",
+      "etag": "359d780901863609be877a865106e2c1-10",
+      "entries": 19169,
+      "source_file_bytes": 2147474284
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0091.tar.zst",
+      "bytes": 749342182,
+      "sha256": "a7c879d82edad6a542619d247b3b6d25f29534ac56314b69b1567db7d914c8bc",
+      "etag": "7e208b4e9824ace389eb52ca2917d52a-12",
+      "entries": 15075,
+      "source_file_bytes": 2147344493
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0092.tar.zst",
+      "bytes": 761499931,
+      "sha256": "90102cbb69dacbcc87cca58b56cd0b0d45df61bb01b6e19650fe73235a913c7f",
+      "etag": "70e16f21c7aee950f0abd201f3c2f7a5-12",
+      "entries": 15619,
+      "source_file_bytes": 2147458509
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0093.tar.zst",
+      "bytes": 561004839,
+      "sha256": "cde86ac33ea7f307f415390d1fe506bcc725ec37df838ac00a81e338575655d5",
+      "etag": "14caccdea1d4117da6716f23450b4c64-9",
+      "entries": 19966,
+      "source_file_bytes": 2146989335
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0094.tar.zst",
+      "bytes": 1727565811,
+      "sha256": "3e4f0eb760820ce53ce72099c8038e3fd31e05d62c75d9f90df47c6c98c07636",
+      "etag": "754e2353c9ec707d74ed4a68c8114572-26",
+      "entries": 309,
+      "source_file_bytes": 2145495665
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0095.tar.zst",
+      "bytes": 1727919714,
+      "sha256": "e8cdb2bac6ff4d21587115f0a0fa16dc63bee7c1309ab689d4762d817606bc3f",
+      "etag": "1f815a892b57661c66a0e2bd5ef38d1c-26",
+      "entries": 349,
+      "source_file_bytes": 2146179422
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0096.tar.zst",
+      "bytes": 1669421289,
+      "sha256": "3d8095c560c247719c332db9e563754ed323361bff8b3a39c35c4074ccf3267e",
+      "etag": "39dba079b3241f4ae0dd86d0c39d7c86-25",
+      "entries": 379,
+      "source_file_bytes": 2134533728
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0097.tar.zst",
+      "bytes": 1669015089,
+      "sha256": "3c5acd81531b6820b35474084126dcb1703900b62043db720102f451ff59e3dd",
+      "etag": "322fd03a2381b02b15199e60bf9a1057-25",
+      "entries": 377,
+      "source_file_bytes": 2128218431
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0098.tar.zst",
+      "bytes": 1614114981,
+      "sha256": "b6a5c49b8ce6770f231f84fb1c1e9f6a21fb2f1c2e5190fa732c5262106d691d",
+      "etag": "bba622705fbfa872faa474eda13e6fb5-25",
+      "entries": 3586,
+      "source_file_bytes": 2147482964
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0099.tar.zst",
+      "bytes": 507108164,
+      "sha256": "9c50371853e84b30e713095680ea85cfd9cee58c0022a4732667ce767fc99054",
+      "etag": "d7baf7dac7cdf25e32a92d591959015f-8",
+      "entries": 22678,
+      "source_file_bytes": 2147301348
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0100.tar.zst",
+      "bytes": 538910807,
+      "sha256": "4fb93ec7b0346f18a7f5050a7d66919e9b9586e29bc98a5c4103aa8a7452564d",
+      "etag": "40ab1e1f10a4c8cd9815b624cb9ec6fb-9",
+      "entries": 20356,
+      "source_file_bytes": 2147482491
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0101.tar.zst",
+      "bytes": 864730862,
+      "sha256": "7525800c48aea6466fbc30a9860b3ecec3f540d4e0af30558480b69feb643123",
+      "etag": "30eedad2a699f48391f946fcd0577da5-13",
+      "entries": 12859,
+      "source_file_bytes": 2123397351
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0102.tar.zst",
+      "bytes": 1393808900,
+      "sha256": "47b8f640266966958c211d7ff835616cdeac83ed3766e41fcab0a8f99d944fd9",
+      "etag": "0c8387f673240198f15392fdf5128a60-21",
+      "entries": 438,
+      "source_file_bytes": 2124283767
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0103.tar.zst",
+      "bytes": 1393676569,
+      "sha256": "3f95ecc4de9bfae99e07a85e8f248c68899a4c9f4754838c3a364f63b83be5ae",
+      "etag": "84fecc133d1049f9b86d97a7975f1a29-21",
+      "entries": 434,
+      "source_file_bytes": 2116608225
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0104.tar.zst",
+      "bytes": 1394063511,
+      "sha256": "3ebeec5f63a8bbda010104894a1d471cf1c7dcfe0422c54ad5a9d53a08932b04",
+      "etag": "160b754dbc8898821abcb182efcd3ab8-21",
+      "entries": 440,
+      "source_file_bytes": 2124222085
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0105.tar.zst",
+      "bytes": 1394378206,
+      "sha256": "96cf793c43ca7e25a98534bd28855c04056a3e821894552367eaed508a2cbc6c",
+      "etag": "05df8d5b1c28e7aa648fbb9046e806c0-21",
+      "entries": 443,
+      "source_file_bytes": 2126305877
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0106.tar.zst",
+      "bytes": 1394065587,
+      "sha256": "1ede6d0886e354339516fbe59ce48db5036a8edaba015acc7699e11cf06ee191",
+      "etag": "fe1d9b354b20092e4ca29f13faa18a51-21",
+      "entries": 440,
+      "source_file_bytes": 2124280287
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0107.tar.zst",
+      "bytes": 1393991930,
+      "sha256": "a6457159c77db83e9bf86dc2dc54336fd0cde1aabde6f4666115cd98fe3224d5",
+      "etag": "be03060fbc9295517fe1aa0eaf08b1ae-21",
+      "entries": 440,
+      "source_file_bytes": 2124276102
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0108.tar.zst",
+      "bytes": 1394071711,
+      "sha256": "14f9a1868776b8d37ae8cff2524c14433d9be3023fe70431e84817471864bec8",
+      "etag": "4e35cea4f371c19448d167f77a180a0c-21",
+      "entries": 440,
+      "source_file_bytes": 2124210820
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0109.tar.zst",
+      "bytes": 1394251800,
+      "sha256": "62b4ffa4d576a28e191eee182116b37889558047545b4f22260b8bc2e775a92f",
+      "etag": "dfb725e57c94948248e8da109c6f6394-21",
+      "entries": 440,
+      "source_file_bytes": 2124210916
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0110.tar.zst",
+      "bytes": 1747199360,
+      "sha256": "076826a6426cbc46512ec6467fe24f71ecf4e0a82c8ae268c8e65c8a976605fb",
+      "etag": "478fa07127d58bb94b0cd9f44025a446-27",
+      "entries": 596,
+      "source_file_bytes": 2122319753
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0111.tar.zst",
+      "bytes": 168470009,
+      "sha256": "830caf9845d211535ecf5276a599846d075a06404f504e9f941f35da899c1f02",
+      "etag": "3256019904f8f70d575498e1b18fd4b6-3",
+      "entries": 2851,
+      "source_file_bytes": 2147379215
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0112.tar.zst",
+      "bytes": 1681105103,
+      "sha256": "c9c62e66c0bbcf1984a4ed0aefa3f482e65535f9b7ed22634766082ef94e7bd5",
+      "etag": "93b6904dd6fd155cfac99db7ef1cdcc0-26",
+      "entries": 1922,
+      "source_file_bytes": 2139725907
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0113.tar.zst",
+      "bytes": 1848534656,
+      "sha256": "058b1d6b26ab81bb8b53542c01bd0e6eed56487eb28096332dc932416205cbc3",
+      "etag": "e6fadc307f3f7249331e0b9cdc1e091b-28",
+      "entries": 2485,
+      "source_file_bytes": 2117161390
+    },
+    {
+      "key": "portfolio/2026-09-13/parts/part-0114.tar.zst",
+      "bytes": 142791446,
+      "sha256": "24b2151194464f469723bc4de2847f0bac64778d08b52740d31abcc7f943fb21",
+      "etag": "c0f9b5bdccb9bd6256015924ea9e717a-3",
+      "entries": 1334,
+      "source_file_bytes": 262231875
+    }
+  ],
+  "source_absolute_path": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio",
+  "archive_manifest": {
+    "key": "portfolio/2026-09-13/manifest.json",
+    "bytes": 35268,
+    "sha256": "d62769ef87dbce82d8072fc88d35fd63ae3bd887364a6cb25cc6255f14aa6be4",
+    "etag": "dd3fa1f13b884fbc33a85a0acad1845e"
+  },
+  "restore_smoke_test": {
+    "status": "passed",
+    "archive": "parts/part-0000.tar.zst",
+    "path": "analyses/active-evidence-confirmation-seed43.json",
+    "bytes": 3167,
+    "restored_sha256": "034d429e27e79215af1726654f3d62aad0a45c9e09f79cd283a2b402c6cc0421",
+    "checks": [
+      "downloaded whole archive from R2",
+      "verified archive SHA-256",
+      "restored selected result",
+      "compared restored bytes with original"
+    ]
+  },
+  "local_source_retained": true
+}

@@ -30,6 +30,35 @@ uv run --no-project --python 3.12 python tools/verify.py --artifacts
 
 The Git manifest maps every included original file to its storage location. [releases.json](releases.json) records archive hashes, exact sizes, and direct download links. A normal clone is sufficient to read the guide, inspect all experiment code, verify the curated evidence, and use the interactive explainer.
 
+## Full portfolio R2 archive
+
+The private bucket `continual-learning-archives`, prefix `portfolio/2026-09-13/`, holds the verified full local `outputs/portfolio` snapshot, including later harness and followthrough results. [r2-portfolio.json](r2-portfolio.json) is the machine-readable reference: 274,879 regular files, 221.3 GiB of logical file contents, and 162.7 GiB of compressed archives. All 115 archive objects matched their expected sizes and checksums; a downloaded archive passed SHA-256 verification and a selected restored result matched its original bytes. The source inventory was unchanged at completion. The archive does not change the curated release's scientific claims.
+
+The bucket has no public URL. Its S3 endpoint is recorded in the reference. On the owner's Mac, existing R2 credentials are in `~/.config/axport/r2.env`; do not commit or print them. Other machines require authorized R2 credentials with object-read access to this bucket, supplied using the same `R2_ACCESS_KEY_ID` and `R2_SECRET_ACCESS_KEY` keys in a protected file.
+
+Archives are independently compressed `tar.zst` parts, with paths relative to `outputs/portfolio`. `files.jsonl.zst` maps every original path to its archive. Each part has a SHA-256 digest and verified R2 size/ETag. Downloading a subset may require its containing part, but never requires downloading every part.
+
+Use Python 3.13+, `uv`, and the `zstd` command. First list the exact paths you need:
+
+```sh
+uv run --no-project --python 3.13 --with boto3==1.43.93 python tools/restore_portfolio.py \
+  --list --prefix followthrough-20260912/runs/
+```
+
+Restore a selected prefix into a **new directory**:
+
+```sh
+uv run --no-project --python 3.13 --with boto3==1.43.93 python tools/restore_portfolio.py \
+  --prefix followthrough-20260912/runs/EXACT-RUN-NAME/ \
+  --destination /path/to/new-restored-portfolio
+```
+
+The destination receives the original portfolio-relative paths. Pass `--credentials /path/to/r2.env` on another machine. Omitting `--prefix` restores everything and requires enough free disk space for the entire collection plus one temporary compressed part. Prefer selective restoration on a laptop. The tool verifies each downloaded archive's SHA-256 before extracting it and refuses to overwrite an existing destination. For hard-linked members, select a prefix that also includes the referenced target.
+
+The raw archives preserve original symbolic links. The restore helper relocates absolute links pointing inside the original portfolio root so they point inside the new destination; links outside that root are rejected. File contents are unchanged.
+
+The local source collection was retained during upload. This reference does not authorize deleting it or prove that the original remote compute volume still exists. New experiment runs after the snapshot need a new archive; they are not automatically uploaded here.
+
 ## Run the portability CPU suite
 
 Restore the evidence archive first: some tests inspect real saved receipts and the frozen data generator. These tests use tiny models and local fixtures rather than launching the original GPU jobs.
