@@ -6,7 +6,7 @@ This repository collects two research tasks conducted in September 2026: their c
 
 [Read the plain-language guide](research/guide.md) · [Browse the research](research/reading-map.md) · [Download the experiment artifacts](https://github.com/sdrshn-nmbr/attempting-continual-learning/releases/tag/research-snapshot-2026-09-11)
 
-**Verified full portfolio archive (September 13 snapshot):** [R2 location and verification manifest](research/r2-portfolio.json) · [restore instructions](research/reproducing.md#full-portfolio-r2-archive). This private archive preserves all 274,879 files from the later `outputs/portfolio` collection, including the September 12 harness and followthrough runs, in 115 independently restorable parts. It is separate from the curated September 11 GitHub release. Agents should consult this reference before recollecting remote runs or assuming missing local checkpoints were lost.
+**Verified full portfolio archive (September 13 snapshot):** [R2 location and verification manifest](research/r2-portfolio.json) · [restore instructions](research/reproducing.md#full-portfolio-r2-archive). This private archive preserves all 274,879 files from the later `outputs/portfolio` collection, including the September 12 harness and followthrough runs, in 115 independently restorable parts. It is separate from the curated September 11 GitHub release. Agents should consult this reference before recollecting remote runs or assuming missing local checkpoints were lost. The archived bulk data was removed locally on September 15; only small Git-tracked scripts and reports remain. Restore needed artifacts from R2.
 
 ## Start with the evidence
 

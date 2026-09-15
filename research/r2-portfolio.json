@@ -11,7 +11,7 @@
   "entries": 284605,
   "source_file_bytes": 237617003911,
   "archive_bytes": 174674095953,
-  "verification": "Every archive: local SHA-256 and independently computed multipart MD5 ETag; R2 HEAD size, ETag and SHA-256 metadata matched. Source path/size/mtime/mode inventory unchanged before and after packing. Local source retained.",
+  "verification": "Every archive: local SHA-256 and independently computed multipart MD5 ETag; R2 HEAD size, ETag and SHA-256 metadata matched. Source path/size/mtime/mode inventory unchanged before and after packing. Local source retained during upload; archived bulk files removed after subsequent R2 re-verification. See local_cleanup for retained Git-tracked files.",
   "file_index": {
     "key": "portfolio/2026-09-13/files.jsonl.zst",
     "bytes": 8649142,
@@ -960,5 +960,16 @@
       "compared restored bytes with original"
     ]
   },
-  "local_source_retained": true
+  "local_source_retained": false,
+  "local_cleanup": {
+    "deleted_at": "2026-09-15T17:21:06Z",
+    "source": "/Users/sudarshan/Code/attempting-continual-learning/outputs/portfolio",
+    "removed_files_and_symlinks": 274839,
+    "preserved_changed_paths": [],
+    "retained_tracked_files": 78,
+    "retained_tracked_file_bytes": 10463838,
+    "free_bytes_before": 70001266688,
+    "free_bytes_after": 302444654592,
+    "remote_reverified": true
+  }
 }

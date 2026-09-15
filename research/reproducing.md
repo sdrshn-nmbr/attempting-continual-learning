@@ -57,7 +57,7 @@ The destination receives the original portfolio-relative paths. Pass `--credenti
 
 The raw archives preserve original symbolic links. The restore helper relocates absolute links pointing inside the original portfolio root so they point inside the new destination; links outside that root are rejected. File contents are unchanged.
 
-The local source collection was retained during upload. This reference does not authorize deleting it or prove that the original remote compute volume still exists. New experiment runs after the snapshot need a new archive; they are not automatically uploaded here.
+The archived bulk collection was deleted locally on September 15, 2026, after re-verifying the R2 manifest and all 115 archive objects and confirming the local inventory still matched. Only 78 Git-tracked scripts and reports (about 10 MB) remain under `outputs/portfolio`; restore any other needed files from R2. The cleanup receipt is in `r2-portfolio.json`. This archive does not prove that the original remote compute volume still exists. New experiment runs after the snapshot need a new archive; they are not automatically uploaded here.
 
 ## Run the portability CPU suite
 
