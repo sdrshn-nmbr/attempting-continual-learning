@@ -114,11 +114,12 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(args.model)
     model = AutoModelForCausalLM.from_pretrained(args.model, dtype=torch.bfloat16,
                                                  attn_implementation="sdpa").to(device).eval()
-    compactor = StillCompactor(model.config, args.slots).to(device).eval()
+    untrained = StillCompactor(model.config, args.slots).to(device).eval()
+    trained = StillCompactor(model.config, args.slots).to(device).eval()
     if "still" in args.modes:
         if args.checkpoint is None:
             raise ValueError("EVAL_STILL_REQUIRES_CHECKPOINT")
-        compactor.load_state_dict(torch.load(args.checkpoint, map_location=device))
+        trained.load_state_dict(torch.load(args.checkpoint, map_location=device))
     windows = {d: np.load(args.corpus / f"eval-{d}.npy", mmap_mode="r") for d in DOMAINS}
     with args.items.open() as handle:
         items = [json.loads(line) for line in handle]
@@ -130,6 +131,7 @@ def main():
         for mode in args.modes:
             for start in range(0, len(mine), args.batch):
                 batch = mine[start:start + args.batch]
+                compactor = trained if mode == "still" else untrained
                 pairs, logical = prefix_state(model, compactor, tokenizer, mode, windows, batch, device, args.slots)
                 texts = generate(model, tokenizer, pairs, logical, batch, device, args.max_new)
                 for item, text in zip(batch, texts, strict=True):
