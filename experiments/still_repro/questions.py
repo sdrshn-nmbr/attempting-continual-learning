@@ -177,7 +177,10 @@ def merge(args):
     if args.split == "eval":
         capped = []
         for domain in DOMAINS:
-            capped.extend([i for i in items if i["domain"] == domain][:args.eval_per_domain])
+            pools = [[i for i in items if i["domain"] == domain and i["gold"] == letter] for letter in layout.LETTERS]
+            per_letter = min(args.eval_per_domain // 4, *(len(pool) for pool in pools))
+            for pool in pools:
+                capped.extend(pool[:per_letter])
         items = capped
     with (args.out / f"items-{args.split}.jsonl").open("w") as handle:
         for item in items:
