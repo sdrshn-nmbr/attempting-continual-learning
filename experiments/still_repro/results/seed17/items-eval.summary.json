@@ -1,0 +1,23 @@
+{
+  "stats": {
+    "candidates": 1920,
+    "malformed": 106,
+    "judge_rejected": 99,
+    "answerable_without_context": 908,
+    "kept": 807
+  },
+  "items": 584,
+  "by_domain": {
+    "financial": 148,
+    "gutenberg": 140,
+    "legal": 148,
+    "code": 148
+  },
+  "gold_letters": {
+    "A": 146,
+    "B": 146,
+    "C": 146,
+    "D": 146
+  },
+  "teacher_accuracy": 0.946917808219178
+}
