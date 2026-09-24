@@ -115,9 +115,10 @@ def windows(tokenizer, texts, budget, per_source, skip):
 def build_domain(name, spec, tokenizer, budget, raw, want_train, want_eval, seed):
     rng = random.Random(f"{seed}:{name}")
     train, evaluation = [], []
+    used = set()
     for entry in shard_urls(spec["dataset"], spec["configs"]):
         path = download(entry, raw)
-        sources = list(READERS[name](path))
+        sources = [(source, text) for source, text in READERS[name](path) if source not in used]
         rng.shuffle(sources)
         for start in range(0, len(sources), 64):
             if len(train) >= want_train and len(evaluation) >= want_eval:
@@ -127,6 +128,7 @@ def build_domain(name, spec, tokenizer, budget, raw, want_train, want_eval, seed
             per_source = 1 if target is evaluation else spec["per_source"]
             taken = windows(tokenizer, [text for _, text in batch], budget, per_source, spec["skip"])
             for (source, _), source_windows in zip(batch, taken, strict=True):
+                used.add(source)
                 target.extend((source, offset, ids) for offset, ids in source_windows)
         log(f"{name}: shard {entry['filename']} -> train={len(train)} eval={len(evaluation)}")
         if len(train) >= want_train and len(evaluation) >= want_eval:
@@ -164,9 +166,12 @@ def main():
         save(args.out, "train", name, train)
         save(args.out, "eval", name, evaluation)
         log(f"{name}: saved train={len(train)} eval={len(evaluation)} budget={budget}")
+    path = args.out / "manifest.json"
+    built = json.loads(path.read_text())["domains"] if path.exists() else {}
+    built.update({n: DOMAINS[n] for n in args.domains})
     manifest = {"tokenizer": args.tokenizer, "document_budget": budget, "prefix_tokens": layout.PREFIX_TOKENS,
-                "header": layout.HEADER, "seed": args.seed, "domains": {n: DOMAINS[n] for n in args.domains}}
-    (args.out / "manifest.json").write_text(json.dumps(manifest, indent=2))
+                "header": layout.HEADER, "seed": args.seed, "domains": built}
+    path.write_text(json.dumps(manifest, indent=2))
 
 
 if __name__ == "__main__":

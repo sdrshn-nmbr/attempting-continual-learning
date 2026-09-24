@@ -139,3 +139,13 @@ def test_training_targets_align_logits_with_next_token():
     assert prefixes.shape == (2, 5)
     assert torch.equal(ids[rows, columns + 1], gold)
     assert gold.tolist() == [20, 21, 22, 23, 24]
+
+
+def test_question_parser_accepts_fenced_json_and_rejects_duplicate_options():
+    from questions import parse_mcq
+    fenced = '```json\n{"question": "What was Acme net revenue in 1998?", "correct": "$4.2M", ' \
+             '"distractors": ["$3.1M", "$5.0M", "$4.8M"]}\n```'
+    assert parse_mcq(fenced) == ("What was Acme net revenue in 1998?", "$4.2M", ["$3.1M", "$5.0M", "$4.8M"])
+    duplicate = '{"question": "Which year was the filing made?", "correct": "1998", "distractors": ["1998", "1999", "2000"]}'
+    assert parse_mcq(duplicate) is None
+    assert parse_mcq("no json here") is None
