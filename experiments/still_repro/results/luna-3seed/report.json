@@ -1,0 +1,123 @@
+{
+  "modes": {
+    "am": {
+      "n": 592,
+      "all": 0.2449,
+      "by_type": {
+        "connect": 0.2625,
+        "detail": 0.2268
+      },
+      "by_domain": {
+        "code": 0.2703,
+        "financial": 0.1824,
+        "gutenberg": 0.2635,
+        "legal": 0.2635
+      }
+    },
+    "full": {
+      "n": 592,
+      "all": 0.9578,
+      "by_type": {
+        "connect": 0.9236,
+        "detail": 0.9931
+      },
+      "by_domain": {
+        "code": 0.9324,
+        "financial": 0.9595,
+        "gutenberg": 0.9595,
+        "legal": 0.9797
+      }
+    },
+    "none": {
+      "n": 592,
+      "all": 0.1943,
+      "by_type": {
+        "connect": 0.2259,
+        "detail": 0.1615
+      },
+      "by_domain": {
+        "code": 0.1757,
+        "financial": 0.1757,
+        "gutenberg": 0.2635,
+        "legal": 0.1622
+      }
+    },
+    "streaming": {
+      "n": 592,
+      "all": 0.2399,
+      "by_type": {
+        "connect": 0.2791,
+        "detail": 0.1993
+      },
+      "by_domain": {
+        "code": 0.2365,
+        "financial": 0.2027,
+        "gutenberg": 0.3041,
+        "legal": 0.2162
+      }
+    },
+    "untrained": {
+      "n": 592,
+      "all": 0.2551,
+      "by_type": {
+        "connect": 0.3056,
+        "detail": 0.2027
+      },
+      "by_domain": {
+        "code": 0.2973,
+        "financial": 0.1959,
+        "gutenberg": 0.277,
+        "legal": 0.25
+      }
+    }
+  },
+  "seeds": {
+    "seed17": {
+      "n": 592,
+      "all": 0.5693,
+      "by_type": {
+        "connect": 0.6213,
+        "detail": 0.5155
+      },
+      "by_domain": {
+        "code": 0.4865,
+        "financial": 0.5946,
+        "gutenberg": 0.5608,
+        "legal": 0.6351
+      }
+    },
+    "seed23": {
+      "n": 592,
+      "all": 0.5693,
+      "by_type": {
+        "connect": 0.6213,
+        "detail": 0.5155
+      },
+      "by_domain": {
+        "code": 0.4662,
+        "financial": 0.5946,
+        "gutenberg": 0.5743,
+        "legal": 0.6419
+      }
+    },
+    "seed29": {
+      "n": 592,
+      "all": 0.5541,
+      "by_type": {
+        "connect": 0.608,
+        "detail": 0.4983
+      },
+      "by_domain": {
+        "code": 0.5135,
+        "financial": 0.5946,
+        "gutenberg": 0.5068,
+        "legal": 0.6014
+      }
+    }
+  },
+  "still": {
+    "mean": 0.5642,
+    "sd": 0.0088,
+    "utilization": 0.4845
+  }
+}

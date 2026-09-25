@@ -1,0 +1,25 @@
+{
+  "stats": {
+    "candidates": 1924,
+    "answerable_without_context": 888,
+    "kept": 1036
+  },
+  "items": 592,
+  "by_domain": {
+    "financial": 148,
+    "gutenberg": 148,
+    "legal": 148,
+    "code": 148
+  },
+  "by_type": {
+    "detail": 291,
+    "connect": 301
+  },
+  "gold_letters": {
+    "A": 148,
+    "B": 148,
+    "C": 148,
+    "D": 148
+  },
+  "teacher_accuracy": 0.956081081081081
+}

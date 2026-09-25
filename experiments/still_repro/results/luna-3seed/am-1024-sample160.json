@@ -1,0 +1,55 @@
+{
+  "am": {
+    "n": 160,
+    "accuracy": 0.39375,
+    "ci95": [
+      0.31875,
+      0.475
+    ],
+    "by_domain": {
+      "financial": {
+        "n": 148,
+        "accuracy": 0.3716216216216216
+      },
+      "gutenberg": {
+        "n": 12,
+        "accuracy": 0.6666666666666666
+      }
+    },
+    "unparsed": 15,
+    "predicted_letters": {
+      "A": 30,
+      "C": 37,
+      "D": 59,
+      "B": 19,
+      "null": 15
+    }
+  },
+  "streaming": {
+    "n": 160,
+    "accuracy": 0.2375,
+    "ci95": [
+      0.16875,
+      0.3
+    ],
+    "by_domain": {
+      "financial": {
+        "n": 148,
+        "accuracy": 0.24324324324324326
+      },
+      "gutenberg": {
+        "n": 12,
+        "accuracy": 0.16666666666666666
+      }
+    },
+    "unparsed": 53,
+    "predicted_letters": {
+      "D": 62,
+      "A": 14,
+      "null": 53,
+      "C": 23,
+      "B": 8
+    }
+  },
+  "checkpoint": null
+}

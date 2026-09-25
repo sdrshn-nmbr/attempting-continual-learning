@@ -1,0 +1,26 @@
+{
+  "stats": {
+    "candidates": 66637,
+    "answerable_without_context": 30610,
+    "teacher_wrong_or_unfinished": 2185,
+    "kept": 33842
+  },
+  "items": 33842,
+  "by_domain": {
+    "code": 7015,
+    "financial": 9598,
+    "gutenberg": 9517,
+    "legal": 7712
+  },
+  "by_type": {
+    "detail": 16845,
+    "connect": 16997
+  },
+  "gold_letters": {
+    "B": 9875,
+    "A": 9072,
+    "D": 7618,
+    "C": 7277
+  },
+  "teacher_accuracy": 1.0
+}
