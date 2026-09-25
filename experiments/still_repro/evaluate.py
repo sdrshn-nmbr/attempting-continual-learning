@@ -13,6 +13,7 @@ import torch.distributed as dist
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import attention_matching
 import layout
 from still import StillCompactor, build_cache, prefill, streaming_pairs
 
@@ -23,7 +24,14 @@ def prefix_state(model, compactor, tokenizer, mode, windows, items, device, slot
     if mode == "none":
         header = torch.tensor([layout.header_ids(tokenizer)], device=device)
         pairs = [(k.expand(len(items), -1, -1, -1), v.expand(len(items), -1, -1, -1)) for k, v in prefill(model, header)]
-        return pairs, header.shape[1]
+        return pairs, header.shape[1], None
+    if mode == "am":
+        fitted = [attention_matching.compact(model, tokenizer, windows[i["domain"]][i["row"]].tolist(), slots)
+                  for i in items]
+        pairs = [(torch.cat([f[0][layer][0] for f in fitted]), torch.cat([f[0][layer][1] for f in fitted]))
+                 for layer in range(len(fitted[0][0]))]
+        betas = [torch.cat([f[1][layer] for f in fitted]) for layer in range(len(fitted[0][1]))]
+        return pairs, layout.PREFIX_TOKENS, betas
     prefixes = torch.tensor([layout.prefix_ids(tokenizer, windows[i["domain"]][i["row"]].tolist()) for i in items],
                             device=device)
     pairs = prefill(model, prefixes)
@@ -34,7 +42,7 @@ def prefix_state(model, compactor, tokenizer, mode, windows, items, device, slot
             pairs = compactor(model, pairs)
     elif mode != "full":
         raise ValueError(f"EVAL_MODE {mode}")
-    return pairs, layout.PREFIX_TOKENS
+    return pairs, layout.PREFIX_TOKENS, None
 
 
 @torch.no_grad()
@@ -113,7 +121,7 @@ def main():
     args.out.mkdir(parents=True, exist_ok=True)
     tokenizer = AutoTokenizer.from_pretrained(args.model)
     model = AutoModelForCausalLM.from_pretrained(args.model, dtype=torch.bfloat16,
-                                                 attn_implementation="sdpa").to(device).eval()
+                                                 attn_implementation=attention_matching.NAME).to(device).eval()
     untrained = StillCompactor(model.config, args.slots).to(device).eval()
     trained = StillCompactor(model.config, args.slots).to(device).eval()
     if "still" in args.modes:
@@ -132,8 +140,13 @@ def main():
             for start in range(0, len(mine), args.batch):
                 batch = mine[start:start + args.batch]
                 compactor = trained if mode == "still" else untrained
-                pairs, logical = prefix_state(model, compactor, tokenizer, mode, windows, batch, device, args.slots)
-                texts = generate(model, tokenizer, pairs, logical, batch, device, args.max_new)
+                pairs, logical, betas = prefix_state(model, compactor, tokenizer, mode, windows, batch, device,
+                                                     args.slots)
+                attention_matching.STATE.bias = betas
+                try:
+                    texts = generate(model, tokenizer, pairs, logical, batch, device, args.max_new)
+                finally:
+                    attention_matching.STATE.bias = None
                 for item, text in zip(batch, texts, strict=True):
                     handle.write(json.dumps({"id": item["id"], "domain": item["domain"], "mode": mode,
                                              "gold": item["gold"], "prediction": layout.parse_letter(text),

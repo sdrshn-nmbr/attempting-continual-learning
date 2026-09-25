@@ -81,6 +81,7 @@ def main():
     parser.add_argument("--validation", type=int, default=256)
     parser.add_argument("--checkpoint-every", type=int, default=250)
     parser.add_argument("--seed", type=int, default=17)
+    parser.add_argument("--data-seed", type=int, default=17)
     args = parser.parse_args()
 
     dist.init_process_group("nccl")
@@ -106,7 +107,7 @@ def main():
                                   lr=args.lr, betas=(0.9, 0.95))
     data = Examples(args.corpus, args.items, tokenizer, "train")
     order = list(range(len(data)))
-    random.Random(args.seed).shuffle(order)
+    random.Random(args.data_seed).shuffle(order)
     validation, training = order[:args.validation], order[args.validation:]
     global_batch = args.micro * world
     log(f"items={len(data)} train={len(training)} validation={len(validation)} world={world} "

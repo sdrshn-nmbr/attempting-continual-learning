@@ -141,11 +141,93 @@ def test_training_targets_align_logits_with_next_token():
     assert gold.tolist() == [20, 21, 22, 23, 24]
 
 
-def test_question_parser_accepts_fenced_json_and_rejects_duplicate_options():
-    from questions import parse_mcq
-    fenced = '```json\n{"question": "What was Acme net revenue in 1998?", "correct": "$4.2M", ' \
-             '"distractors": ["$3.1M", "$5.0M", "$4.8M"]}\n```'
-    assert parse_mcq(fenced) == ("What was Acme net revenue in 1998?", "$4.2M", ["$3.1M", "$5.0M", "$4.8M"])
-    duplicate = '{"question": "Which year was the filing made?", "correct": "1998", "distractors": ["1998", "1999", "2000"]}'
-    assert parse_mcq(duplicate) is None
-    assert parse_mcq("no json here") is None
+def test_written_questions_are_validated():
+    from write_questions import extract_json, validate
+    good = {"type": "connect", "sections": [2, 6], "question": "Which firm paid Acme in 1998?",
+            "correct": "Beta Corp", "distractors": ["Gamma LLC", "Delta Inc", "Omega Co"]}
+    assert validate(good)["sections"] == [2, 6]
+    assert validate({**good, "sections": [2, 3]}) is None
+    assert validate({**good, "question": "What did S4 say Acme paid?"}) is None
+    assert validate({**good, "question": "What does the document say Acme paid?"}) is None
+    assert validate({**good, "distractors": ["Beta Corp", "Delta Inc", "Omega Co"]}) is None
+    assert validate({**good, "type": "detail", "sections": [9]}) is None
+    assert extract_json('```json\n{"questions": []}\n```') == {"questions": []}
+    assert extract_json("no json here") is None
+
+
+def test_candidate_items_balance_letters_and_keep_provenance(tmp_path):
+    import json
+    from questions import balance, candidate_items
+    rows = [{"domain": domain, "row": row, "writer": "gpt-6-luna",
+             "questions": [{"type": "detail", "sections": [1], "question": f"Q{row}-{n}?", "correct": "yes",
+                            "distractors": ["a", "b", "c"]} for n in range(5)]}
+            for domain in ["financial", "gutenberg", "legal", "code"] for row in range(8)]
+    path = tmp_path / "candidates.jsonl"
+    path.write_text("".join(json.dumps(r) + "\n" for r in rows))
+    items = candidate_items(path, "eval", 17)
+    assert len(items) == 160 and len({i["id"] for i in items}) == 160
+    assert all(i["options"]["ABCD".index(i["gold"])] == "yes" and i["writer"] == "gpt-6-luna" for i in items)
+    chosen = balance(items, 20)
+    assert len(chosen) == 80
+    assert Counter(i["gold"] for i in chosen) == Counter({letter: 20 for letter in "ABCD"})
+
+
+def test_bias_attention_matches_sdpa_with_and_without_cache():
+    import attention_matching
+    torch.manual_seed(0)
+    config = Qwen3Config(vocab_size=97, hidden_size=64, intermediate_size=128, num_hidden_layers=2,
+                         num_attention_heads=4, num_key_value_heads=2, head_dim=16, max_position_embeddings=4096)
+    reference = Qwen3ForCausalLM(config).float().eval()
+    custom = Qwen3ForCausalLM(config).float().eval()
+    custom.load_state_dict(reference.state_dict())
+    reference.set_attn_implementation("sdpa")
+    custom.set_attn_implementation(attention_matching.NAME)
+    ids = torch.randint(0, 97, (2, 30))
+    with torch.no_grad():
+        assert torch.allclose(reference(input_ids=ids).logits, custom(input_ids=ids).logits, atol=1e-5)
+        base = continue_from(reference, prefill(reference, ids[:, :20]), ids[:, 20:], 20).logits
+        mine = continue_from(custom, prefill(custom, ids[:, :20]), ids[:, 20:], 20).logits
+    assert torch.allclose(base, mine, atol=1e-5)
+
+
+def test_bias_is_added_to_compact_prefix_columns_only():
+    import attention_matching
+
+    class Module:
+        layer_idx = 0
+
+    torch.manual_seed(0)
+    query, key, value = torch.randn(1, 2, 3, 8), torch.randn(1, 1, 7, 8), torch.randn(1, 1, 7, 8)
+    beta = torch.tensor([[[0.5, -1.0]]])
+    attention_matching.STATE.bias = [beta]
+    try:
+        output, _ = attention_matching.attention(Module(), query, key, value, None, scaling=0.3)
+    finally:
+        attention_matching.STATE.bias = None
+    logits = query @ key.transpose(-1, -2) * 0.3
+    logits[..., :2] += beta.view(1, 1, 1, 2)
+    logits = logits + attention_matching.causal_bias(3, 7, logits.device, logits.dtype)
+    expected = torch.softmax(logits, -1) @ value
+    assert torch.allclose(output.transpose(1, 2), expected, atol=1e-5)
+
+
+def test_attention_matching_fit_is_exact_when_budget_covers_all_keys():
+    from attention_matching import fit_head
+    torch.manual_seed(0)
+    queries, keys, values = torch.randn(64, 16), torch.randn(12, 16), torch.randn(12, 16)
+    selected, compact_values, beta = fit_head(queries, keys, values, 12, 0.25, 64)
+    assert selected.tolist() == list(range(12))
+    assert beta.abs().max() < 1e-3
+    assert torch.allclose(compact_values, values, atol=1e-2)
+
+
+def test_attention_matching_beats_plain_selection_at_small_budget():
+    from attention_matching import fit_head
+    torch.manual_seed(0)
+    queries, keys, values = torch.randn(256, 16), torch.randn(96, 16), torch.randn(96, 16)
+    logits = queries @ keys.T * 0.25
+    target = torch.softmax(logits, -1) @ values
+    selected, compact_values, beta = fit_head(queries, keys, values, 12, 0.25, 256)
+    fitted = torch.softmax(queries @ keys[selected].T * 0.25 + beta, -1) @ compact_values
+    plain = torch.softmax(logits[:, selected], -1) @ values[selected]
+    assert (fitted - target).square().mean() < 0.5 * (plain - target).square().mean()
