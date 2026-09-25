@@ -109,6 +109,7 @@ def main():
     order = list(range(len(data)))
     random.Random(args.data_seed).shuffle(order)
     validation, training = order[:args.validation], order[args.validation:]
+    random.Random(args.seed).shuffle(training)
     global_batch = args.micro * world
     log(f"items={len(data)} train={len(training)} validation={len(validation)} world={world} "
         f"global_batch={global_batch} slots={args.slots} parameters={sum(p.numel() for p in compactor.parameters())}")
