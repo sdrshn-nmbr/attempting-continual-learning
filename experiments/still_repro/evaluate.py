@@ -18,6 +18,15 @@ import layout
 from still import StillCompactor, build_cache, prefill, streaming_pairs
 
 DOMAINS = ["financial", "gutenberg", "legal", "code"]
+AM_CACHE = {}
+
+
+def am_fit(model, tokenizer, windows, item, slots):
+    key = (item["domain"], item["row"])
+    if key not in AM_CACHE:
+        AM_CACHE.clear()
+        AM_CACHE[key] = attention_matching.compact(model, tokenizer, windows[key[0]][key[1]].tolist(), slots)
+    return AM_CACHE[key]
 
 
 def prefix_state(model, compactor, tokenizer, mode, windows, items, device, slots):
@@ -26,8 +35,7 @@ def prefix_state(model, compactor, tokenizer, mode, windows, items, device, slot
         pairs = [(k.expand(len(items), -1, -1, -1), v.expand(len(items), -1, -1, -1)) for k, v in prefill(model, header)]
         return pairs, header.shape[1], None
     if mode == "am":
-        fitted = [attention_matching.compact(model, tokenizer, windows[i["domain"]][i["row"]].tolist(), slots)
-                  for i in items]
+        fitted = [am_fit(model, tokenizer, windows, i, slots) for i in items]
         pairs = [(torch.cat([f[0][layer][0] for f in fitted]), torch.cat([f[0][layer][1] for f in fitted]))
                  for layer in range(len(fitted[0][0]))]
         betas = [torch.cat([f[1][layer] for f in fitted]) for layer in range(len(fitted[0][1]))]
@@ -132,7 +140,9 @@ def main():
     with args.items.open() as handle:
         items = [json.loads(line) for line in handle]
     items = items[:args.limit] if args.limit else items
-    mine = items[rank::world]
+    documents = sorted({(i["domain"], i["row"]) for i in items})[rank::world]
+    mine = sorted((i for i in items if (i["domain"], i["row"]) in set(documents)),
+                  key=lambda i: (i["domain"], i["row"], i["id"]))
     shard = args.out / f"predictions-rank{rank}.jsonl"
     started = time.time()
     with shard.open("w") as handle:
