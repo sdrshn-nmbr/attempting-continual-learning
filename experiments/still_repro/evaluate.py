@@ -18,27 +18,16 @@ import layout
 from still import StillCompactor, build_cache, prefill, streaming_pairs
 
 DOMAINS = ["financial", "gutenberg", "legal", "code"]
-AM_CACHE = {}
 
 
-def am_fit(model, tokenizer, windows, item, slots):
-    key = (item["domain"], item["row"])
-    if key not in AM_CACHE:
-        AM_CACHE.clear()
-        AM_CACHE[key] = attention_matching.compact(model, tokenizer, windows[key[0]][key[1]].tolist(), slots)
-    return AM_CACHE[key]
-
-
-def prefix_state(model, compactor, tokenizer, mode, windows, items, device, slots):
+def prefix_state(model, compactor, tokenizer, mode, windows, items, device, slots, am_dir):
     if mode == "none":
         header = torch.tensor([layout.header_ids(tokenizer)], device=device)
         pairs = [(k.expand(len(items), -1, -1, -1), v.expand(len(items), -1, -1, -1)) for k, v in prefill(model, header)]
         return pairs, header.shape[1], None
     if mode == "am":
-        fitted = [am_fit(model, tokenizer, windows, i, slots) for i in items]
-        pairs = [(torch.cat([f[0][layer][0] for f in fitted]), torch.cat([f[0][layer][1] for f in fitted]))
-                 for layer in range(len(fitted[0][0]))]
-        betas = [torch.cat([f[1][layer] for f in fitted]) for layer in range(len(fitted[0][1]))]
+        compacted = [attention_matching.load(am_dir, i["domain"], i["row"], device) for i in items]
+        pairs, betas = attention_matching.batch(compacted, model.dtype)
         return pairs, layout.PREFIX_TOKENS, betas
     prefixes = torch.tensor([layout.prefix_ids(tokenizer, windows[i["domain"]][i["row"]].tolist()) for i in items],
                             device=device)
@@ -116,6 +105,7 @@ def main():
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--modes", nargs="+", default=["full", "none", "streaming", "untrained"])
     parser.add_argument("--checkpoint", type=Path)
+    parser.add_argument("--am-dir", type=Path)
     parser.add_argument("--slots", type=int, default=164)
     parser.add_argument("--batch", type=int, default=16)
     parser.add_argument("--max-new", type=int, default=320)
@@ -136,6 +126,8 @@ def main():
         if args.checkpoint is None:
             raise ValueError("EVAL_STILL_REQUIRES_CHECKPOINT")
         trained.load_state_dict(torch.load(args.checkpoint, map_location=device))
+    if "am" in args.modes and args.am_dir is None:
+        raise ValueError("EVAL_AM_REQUIRES_AM_DIR")
     windows = {d: np.load(args.corpus / f"eval-{d}.npy", mmap_mode="r") for d in DOMAINS}
     with args.items.open() as handle:
         items = [json.loads(line) for line in handle]
@@ -151,7 +143,7 @@ def main():
                 batch = mine[start:start + args.batch]
                 compactor = trained if mode == "still" else untrained
                 pairs, logical, betas = prefix_state(model, compactor, tokenizer, mode, windows, batch, device,
-                                                     args.slots)
+                                                     args.slots, args.am_dir)
                 attention_matching.STATE.bias = betas
                 try:
                     texts = generate(model, tokenizer, pairs, logical, batch, device, args.max_new)
@@ -172,6 +164,7 @@ def main():
                 records.extend(json.loads(line) for line in handle)
         summary = summarize(records)
         summary["checkpoint"] = str(args.checkpoint) if args.checkpoint else None
+        summary["am_dir"] = str(args.am_dir) if args.am_dir else None
         (args.out / "summary.json").write_text(json.dumps(summary, indent=2))
         print(json.dumps({m: {"accuracy": s["accuracy"], "ci95": s["ci95"]} for m, s in summary.items()
                           if isinstance(s, dict)}), flush=True)
