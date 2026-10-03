@@ -22,16 +22,16 @@ ARGS_4B='{"api_base":"http://127.0.0.1:8001/v1","temperature":0.7,"top_p":0.8}'
 ARGS_32B='{"api_base":"http://127.0.0.1:8002/v1","temperature":0.6,"top_p":0.95}'
 
 cell() {
-  local name=$1 llm=$2 llm_args=$3 condition=$4 trials=$5
+  local name=$1 llm=$2 llm_args=$3 condition=$4 trials=$5 concurrency=$6
   (cd "$TAU2_DIR" && uv run tau2 run --domain banking_knowledge --retrieval-config "$condition" \
     --agent-llm "$llm" --agent-llm-args "$llm_args" --user-llm gpt-5.2 --user-llm-args "$USER_ARGS" \
-    --num-trials "$trials" --max-concurrency 24 --auto-resume --save-to "$name-$condition") \
+    --num-trials "$trials" --max-concurrency "$concurrency" --auto-resume --save-to "$name-$condition") \
     > "$LOGS/$name-$condition.log" 2>&1 && log "done $name-$condition" || log "CELL_FAILED $name-$condition"
 }
 
-cell qwen3-4b-instruct-2507 hosted_vllm/qwen3-4b-instruct-2507 "$ARGS_4B" no_knowledge 2 &
-cell qwen3-4b-instruct-2507 hosted_vllm/qwen3-4b-instruct-2507 "$ARGS_4B" golden_retrieval 4 &
-cell qwen3-32b hosted_vllm/qwen3-32b "$ARGS_32B" no_knowledge 2 &
-cell qwen3-32b hosted_vllm/qwen3-32b "$ARGS_32B" golden_retrieval 4 &
+cell qwen3-4b-instruct-2507 hosted_vllm/qwen3-4b-instruct-2507 "$ARGS_4B" no_knowledge 2 24 &
+cell qwen3-4b-instruct-2507 hosted_vllm/qwen3-4b-instruct-2507 "$ARGS_4B" golden_retrieval 4 24 &
+cell qwen3-32b hosted_vllm/qwen3-32b "$ARGS_32B" no_knowledge 2 64 &
+cell qwen3-32b hosted_vllm/qwen3-32b "$ARGS_32B" golden_retrieval 4 64 &
 wait
 log "all cells finished"
