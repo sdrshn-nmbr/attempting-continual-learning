@@ -1,0 +1,41 @@
+{
+  "tokenizer": "Qwen/Qwen3-4B-Instruct-2507",
+  "slots": 164,
+  "sinks": 4,
+  "max_prefix": 8192,
+  "conditions": [
+    "none",
+    "full",
+    "still",
+    "am",
+    "streaming"
+  ],
+  "decisions_source_sha256": "d64277f2abdf6e96376846bc51f6c66ac07e23bc352fb98e9d3206f830124666",
+  "tasks": 62,
+  "tasks_excluded_prefix_tokens": {
+    "task_071": 11277,
+    "task_075": 8761,
+    "task_076": 8441,
+    "task_080": 8719,
+    "task_088": 8956,
+    "task_101": 8331,
+    "task_102": 8331
+  },
+  "decisions": 520,
+  "decisions_excluded": 66,
+  "prefix_tokens": {
+    "min": 242,
+    "median": 3499,
+    "max": 7884
+  },
+  "compression_at_median": 21.3,
+  "values_by_label": {
+    "copy": 1496,
+    "documents_only": 182,
+    "derived": 99
+  },
+  "values_with_exact_token_boundaries": 1711,
+  "values": 1777,
+  "prefixes_sha256": "dbf1b1e2ceb6065750ab1f7910be53f934016c1e14ce9521c4b48afd09fd8220",
+  "inputs_sha256": "4885cca4efc7b90a96e1fc03a50a7f9e9725263fa0f136625674a481ce1782a5"
+}
