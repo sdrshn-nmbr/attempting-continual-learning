@@ -1,0 +1,165 @@
+{
+  "gate_tasks": 15,
+  "task_count": 97,
+  "models": {
+    "qwen3-32b": {
+      "no_knowledge": {
+        "tasks": 97,
+        "trials": 2,
+        "pass_hat": {
+          "1": 1.03,
+          "2": 1.03
+        },
+        "action_recall": 11.5,
+        "terminations": {
+          "user_stop": 194
+        },
+        "formats": {
+          "agent_tool_calls": 883,
+          "unparsed_tool_calls": 0,
+          "unknown_tool_calls": 13
+        },
+        "agent": {
+          "implementation": "llm_agent",
+          "llm": "hosted_vllm/qwen3-32b",
+          "llm_args": {
+            "api_base": "http://127.0.0.1:8002/v1",
+            "temperature": 0.6,
+            "top_p": 0.95
+          },
+          "voice_settings": null
+        },
+        "user_llm": "gpt-5.2",
+        "user_args": {
+          "reasoning_effort": "low"
+        },
+        "tau2_commit": "fc0055dc4e0a316c3f83133267fbd6faaa770992"
+      },
+      "golden_retrieval": {
+        "tasks": 97,
+        "trials": 4,
+        "pass_hat": {
+          "1": 14.18,
+          "2": 9.11,
+          "3": 6.96,
+          "4": 6.19
+        },
+        "action_recall": 38.88,
+        "terminations": {
+          "user_stop": 387,
+          "too_many_errors": 1
+        },
+        "formats": {
+          "agent_tool_calls": 3685,
+          "unparsed_tool_calls": 1,
+          "unknown_tool_calls": 58
+        },
+        "agent": {
+          "implementation": "llm_agent",
+          "llm": "hosted_vllm/qwen3-32b",
+          "llm_args": {
+            "api_base": "http://127.0.0.1:8002/v1",
+            "temperature": 0.6,
+            "top_p": 0.95
+          },
+          "voice_settings": null
+        },
+        "user_llm": "gpt-5.2",
+        "user_args": {
+          "reasoning_effort": "low"
+        },
+        "tau2_commit": "fc0055dc4e0a316c3f83133267fbd6faaa770992"
+      },
+      "gap": {
+        "pass1_points": 13.14,
+        "ci95": [
+          7.99,
+          18.81
+        ],
+        "task_equivalents": 12.8,
+        "shared_tasks": 97,
+        "decision": "stop"
+      }
+    },
+    "qwen3-4b-instruct-2507": {
+      "no_knowledge": {
+        "tasks": 97,
+        "trials": 2,
+        "pass_hat": {
+          "1": 1.03,
+          "2": 0.0
+        },
+        "action_recall": 4.75,
+        "terminations": {
+          "user_stop": 189,
+          "infrastructure_error": 5
+        },
+        "formats": {
+          "agent_tool_calls": 1102,
+          "unparsed_tool_calls": 0,
+          "unknown_tool_calls": 32
+        },
+        "agent": {
+          "implementation": "llm_agent",
+          "llm": "hosted_vllm/qwen3-4b-instruct-2507",
+          "llm_args": {
+            "api_base": "http://127.0.0.1:8001/v1",
+            "temperature": 0.7,
+            "top_p": 0.8
+          },
+          "voice_settings": null
+        },
+        "user_llm": "gpt-5.2",
+        "user_args": {
+          "reasoning_effort": "low"
+        },
+        "tau2_commit": "fc0055dc4e0a316c3f83133267fbd6faaa770992"
+      },
+      "golden_retrieval": {
+        "tasks": 97,
+        "trials": 4,
+        "pass_hat": {
+          "1": 5.41,
+          "2": 4.64,
+          "3": 4.38,
+          "4": 4.12
+        },
+        "action_recall": 17.2,
+        "terminations": {
+          "user_stop": 381,
+          "infrastructure_error": 7
+        },
+        "formats": {
+          "agent_tool_calls": 3143,
+          "unparsed_tool_calls": 5,
+          "unknown_tool_calls": 57
+        },
+        "agent": {
+          "implementation": "llm_agent",
+          "llm": "hosted_vllm/qwen3-4b-instruct-2507",
+          "llm_args": {
+            "api_base": "http://127.0.0.1:8001/v1",
+            "temperature": 0.7,
+            "top_p": 0.8
+          },
+          "voice_settings": null
+        },
+        "user_llm": "gpt-5.2",
+        "user_args": {
+          "reasoning_effort": "low"
+        },
+        "tau2_commit": "fc0055dc4e0a316c3f83133267fbd6faaa770992"
+      },
+      "gap": {
+        "pass1_points": 4.38,
+        "ci95": [
+          0.26,
+          9.28
+        ],
+        "task_equivalents": 4.2,
+        "shared_tasks": 97,
+        "decision": "stop"
+      }
+    }
+  }
+}
