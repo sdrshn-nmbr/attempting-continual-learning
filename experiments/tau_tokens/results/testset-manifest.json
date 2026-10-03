@@ -1,0 +1,101 @@
+{
+  "tau2_commit": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+  "retrieval_variant": "no_knowledge",
+  "tokenizer": "Qwen/Qwen3-4B-Instruct-2507",
+  "tokenizer_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "trajectories": {
+    "qwen3-8-max_sierra_2026-08-04": "8c8191c43dfb2d21c1322cc154740e5e6044151837ab817c2cbbcd13ffeb626e",
+    "claude-opus-5_sierra_2026-08-04": "80bd60cd0dc19855e685b85ef2c40efcbc2dabae1ffa16988b40b781cbeee2a3",
+    "grok-4-5_sierra_2026-08-04": "f6a9327bdcd8df56a71ba9f59d23ce6a0ef844eac7753cad5ce0d04b87e849b5",
+    "gpt-5-6-sol_sierra_2026-08-04": "614cdc47ae910fb97936c839e59cf43ec087f9c3c548af395159ea751759c292"
+  },
+  "tasks": 97,
+  "tasks_covered": 78,
+  "tasks_uncovered": [
+    "task_026",
+    "task_027",
+    "task_039",
+    "task_053",
+    "task_060",
+    "task_061",
+    "task_065",
+    "task_066",
+    "task_067",
+    "task_068",
+    "task_069",
+    "task_082",
+    "task_083",
+    "task_084",
+    "task_085",
+    "task_086",
+    "task_087",
+    "task_091",
+    "task_092"
+  ],
+  "runs_chosen_by_source": {
+    "qwen3-8-max_sierra_2026-08-04": 68,
+    "claude-opus-5_sierra_2026-08-04": 5,
+    "gpt-5-6-sol_sierra_2026-08-04": 2,
+    "grok-4-5_sierra_2026-08-04": 3
+  },
+  "gold_agent_actions_in_covered_tasks": 617,
+  "decisions": 586,
+  "gold_agent_actions_unmatched": [
+    "task_015:015_0",
+    "task_017:017_1",
+    "task_018:018_1",
+    "task_019:019_1",
+    "task_020:020_1",
+    "task_021:021_1",
+    "task_022:022_1",
+    "task_028:028_1",
+    "task_029:029_1",
+    "task_031:031_1",
+    "task_031:031_4",
+    "task_037:037_3a",
+    "task_038:038_1",
+    "task_038:038_6",
+    "task_038:038_7",
+    "task_038:038_8",
+    "task_040:040_3",
+    "task_041:041_3",
+    "task_049:049_14",
+    "task_055:055_6",
+    "task_057:057_5",
+    "task_077:077_4b",
+    "task_077:077_6",
+    "task_078:078_5b",
+    "task_088:088_16"
+  ],
+  "matched_without_specified_values": [
+    "task_005:005_0",
+    "task_032:032_4",
+    "task_033:033_4",
+    "task_034:034_9",
+    "task_035:035_2",
+    "task_081:081_26"
+  ],
+  "values_by_label": {
+    "copy": 1695,
+    "documents_only": 203,
+    "derived": 113
+  },
+  "values_by_label_and_action": {
+    "call_discoverable_agent_tool/copy": 1251,
+    "call_discoverable_agent_tool/derived": 111,
+    "call_discoverable_agent_tool/documents_only": 10,
+    "change_user_email/copy": 2,
+    "get_credit_card_accounts_by_user/copy": 1,
+    "get_referrals_by_user/copy": 4,
+    "log_verification/copy": 433,
+    "transfer_to_human_agents/copy": 4,
+    "unlock_discoverable_agent_tool/derived": 2,
+    "unlock_discoverable_agent_tool/documents_only": 193
+  },
+  "removed_tool_calls": {
+    "KB_search_bm25": 328,
+    "KB_search_dense": 302,
+    "shell": 993
+  },
+  "decisions_sha256": "d64277f2abdf6e96376846bc51f6c66ac07e23bc352fb98e9d3206f830124666"
+}
