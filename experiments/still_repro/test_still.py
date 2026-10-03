@@ -211,23 +211,33 @@ def test_bias_is_added_to_compact_prefix_columns_only():
     assert torch.allclose(output.transpose(1, 2), expected, atol=1e-5)
 
 
-def test_attention_matching_fit_is_exact_when_budget_covers_all_keys():
-    from attention_matching import fit_head
-    torch.manual_seed(0)
-    queries, keys, values = torch.randn(64, 16), torch.randn(12, 16), torch.randn(12, 16)
-    selected, compact_values, beta = fit_head(queries, keys, values, 12, 0.25, 64)
-    assert selected.tolist() == list(range(12))
-    assert beta.abs().max() < 1e-3
-    assert torch.allclose(compact_values, values, atol=1e-2)
-
-
-def test_attention_matching_beats_plain_selection_at_small_budget():
-    from attention_matching import fit_head
-    torch.manual_seed(0)
-    queries, keys, values = torch.randn(256, 16), torch.randn(96, 16), torch.randn(96, 16)
-    logits = queries @ keys.T * 0.25
-    target = torch.softmax(logits, -1) @ values
-    selected, compact_values, beta = fit_head(queries, keys, values, 12, 0.25, 256)
-    fitted = torch.softmax(queries @ keys[selected].T * 0.25 + beta, -1) @ compact_values
-    plain = torch.softmax(logits[:, selected], -1) @ values[selected]
-    assert (fitted - target).square().mean() < 0.5 * (plain - target).square().mean()
+def test_saved_official_caches_batch_with_padding_and_reproduce_full_cache(tmp_path):
+    import attention_matching
+    model = tiny_model()
+    model.set_attn_implementation(attention_matching.NAME)
+    ids = torch.randint(0, 97, (2, 26))
+    prefix, continuation = ids[:, :20], ids[:, 20:]
+    full = prefill(model, prefix)
+    for row in range(2):
+        keys = torch.stack([k[row] for k, _ in full])
+        values = torch.stack([v[row] for _, v in full])
+        beta = torch.zeros(keys.shape[:3])
+        if row == 1:
+            keys = torch.cat((keys, torch.randn(*keys.shape[:2], 3, keys.shape[-1])), dim=2)
+            values = torch.cat((values, torch.randn(*values.shape[:2], 3, values.shape[-1])), dim=2)
+            beta = torch.cat((beta, torch.full((*beta.shape[:2], 3), float("-inf"))), dim=2)
+        torch.save({"keys": keys, "beta": beta, "values": values}, attention_matching.cache_path(tmp_path, "code", row))
+    compacted = [attention_matching.load(tmp_path, "code", row, "cpu") for row in (0, 1)]
+    pairs, betas = attention_matching.batch(compacted, torch.float32)
+    assert pairs[0][0].shape[2] == 23 and torch.isinf(betas[0][0, :, 20:]).all()
+    attention_matching.STATE.bias = betas
+    try:
+        with torch.no_grad():
+            loaded = continue_from(model, pairs, continuation, 20).logits
+    finally:
+        attention_matching.STATE.bias = None
+    with torch.no_grad():
+        expected = continue_from(model, full, continuation, 20).logits
+    assert torch.allclose(loaded, expected, atol=1e-5)
+    with pytest.raises(FileNotFoundError, match="AM_CACHE_MISSING"):
+        attention_matching.load(tmp_path, "code", 5, "cpu")
