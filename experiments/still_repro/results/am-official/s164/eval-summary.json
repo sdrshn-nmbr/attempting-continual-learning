@@ -1,0 +1,72 @@
+{
+  "am": {
+    "n": 592,
+    "accuracy": 0.3597972972972973,
+    "ci95": [
+      0.32263513513513514,
+      0.40033783783783783
+    ],
+    "by_domain": {
+      "financial": {
+        "n": 148,
+        "accuracy": 0.28378378378378377
+      },
+      "gutenberg": {
+        "n": 148,
+        "accuracy": 0.38513513513513514
+      },
+      "legal": {
+        "n": 148,
+        "accuracy": 0.43243243243243246
+      },
+      "code": {
+        "n": 148,
+        "accuracy": 0.33783783783783783
+      }
+    },
+    "unparsed": 42,
+    "predicted_letters": {
+      "B": 50,
+      "A": 61,
+      "D": 361,
+      "null": 42,
+      "C": 78
+    }
+  },
+  "streaming": {
+    "n": 592,
+    "accuracy": 0.23986486486486486,
+    "ci95": [
+      0.20608108108108109,
+      0.2719594594594595
+    ],
+    "by_domain": {
+      "financial": {
+        "n": 148,
+        "accuracy": 0.20270270270270271
+      },
+      "gutenberg": {
+        "n": 148,
+        "accuracy": 0.30405405405405406
+      },
+      "legal": {
+        "n": 148,
+        "accuracy": 0.21621621621621623
+      },
+      "code": {
+        "n": 148,
+        "accuracy": 0.23648648648648649
+      }
+    },
+    "unparsed": 31,
+    "predicted_letters": {
+      "D": 323,
+      "C": 121,
+      "A": 53,
+      "B": 64,
+      "null": 31
+    }
+  },
+  "checkpoint": null,
+  "am_dir": "/mnt/shared/still-repro/am-official-caches/s164"
+}
