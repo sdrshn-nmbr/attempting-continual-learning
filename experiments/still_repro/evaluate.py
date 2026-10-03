@@ -54,9 +54,9 @@ def prefix_state(model, compactor, tokenizer, mode, windows, items, device, slot
 
 
 @torch.no_grad()
-def generate(model, tokenizer, pairs, logical, items, device, max_new):
+def generate(model, tokenizer, pairs, logical, items, device, max_new, suffix=""):
     end_id = tokenizer.convert_tokens_to_ids("<|im_end|>")
-    questions = [layout.encode(tokenizer, layout.question_text(i)) for i in items]
+    questions = [layout.encode(tokenizer, layout.question_text(i) + suffix) for i in items]
     width = max(len(q) for q in questions)
     ids = torch.full((len(items), width), tokenizer.pad_token_id, dtype=torch.long, device=device)
     real = torch.zeros((len(items), width), dtype=torch.long, device=device)
