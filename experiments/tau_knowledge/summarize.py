@@ -20,12 +20,27 @@ def success(reward):
     return reward is not None and abs(reward - 1.0) <= 1e-6
 
 
+def unparsed_tool_call(message):
+    if message["role"] != "assistant" or message.get("tool_calls"):
+        return False
+    try:
+        payload = json.loads((message.get("content") or "").strip())
+    except json.JSONDecodeError:
+        return False
+    return isinstance(payload, dict) and "name" in payload and "arguments" in payload
+
+
+def unknown_tool(message):
+    return message["role"] == "tool" and (message.get("content") or "").startswith("Error: Tool '") \
+        and "not found" in message.get("content", "")
+
+
 def load(path):
     data = json.loads(path.read_text())
     simulations = data["simulations"]
     if not simulations:
         raise SystemExit(f"NO_SIMULATIONS {path}")
-    outcomes, recalls, terminations = defaultdict(list), [], Counter()
+    outcomes, recalls, terminations, formats = defaultdict(list), [], Counter(), Counter()
     for simulation in simulations:
         reward_info = simulation.get("reward_info") or {}
         outcomes[simulation["task_id"]].append(success(reward_info.get("reward")))
@@ -33,7 +48,11 @@ def load(path):
         if checks:
             recalls.append(sum(c["action_match"] for c in checks) / len(checks))
         terminations[str(simulation.get("termination_reason"))] += 1
-    return {"outcomes": dict(outcomes), "recalls": recalls, "terminations": dict(terminations),
+        messages = simulation.get("messages") or []
+        formats["agent_tool_calls"] += sum(len(m.get("tool_calls") or []) for m in messages if m["role"] == "assistant")
+        formats["unparsed_tool_calls"] += sum(unparsed_tool_call(m) for m in messages)
+        formats["unknown_tool_calls"] += sum(unknown_tool(m) for m in messages)
+    return {"outcomes": dict(outcomes), "recalls": recalls, "terminations": dict(terminations), "formats": dict(formats),
             "agent": data["info"]["agent_info"], "user_llm": data["info"]["user_info"]["llm"],
             "user_args": data["info"]["user_info"]["llm_args"], "commit": data["info"].get("git_commit")}
 
@@ -62,7 +81,8 @@ def summarize_cell(cell):
     return {"tasks": len(outcomes), "trials": trials,
             "pass_hat": {k: round(100 * pass_hat(outcomes, k), 2) for k in range(1, trials + 1)},
             "action_recall": round(100 * sum(cell["recalls"]) / len(cell["recalls"]), 2) if cell["recalls"] else None,
-            "terminations": cell["terminations"], "agent": cell["agent"], "user_llm": cell["user_llm"],
+            "terminations": cell["terminations"], "formats": cell["formats"], "agent": cell["agent"],
+            "user_llm": cell["user_llm"],
             "user_args": cell["user_args"], "tau2_commit": cell["commit"]}
 
 
@@ -102,7 +122,7 @@ def main():
             if condition in entry:
                 cell = entry[condition]
                 log(f"{model:>28} {condition:<17} tasks={cell['tasks']} trials={cell['trials']} "
-                    f"pass^k={cell['pass_hat']} action_recall={cell['action_recall']}")
+                    f"pass^k={cell['pass_hat']} action_recall={cell['action_recall']} formats={cell['formats']}")
         if "gap" in entry:
             gap = entry["gap"]
             log(f"{model:>28} gap={gap['pass1_points']} pts ci95={gap['ci95']} "

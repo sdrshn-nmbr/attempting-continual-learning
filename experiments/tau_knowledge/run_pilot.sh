@@ -2,6 +2,7 @@
 # Run the four pilot cells concurrently against the local vLLM servers. Results land in
 # $PILOT_ROOT/tau2-bench/data/simulations/<model>-<condition>/results.json.
 set -euo pipefail
+export UV_PYTHON=3.12
 TAU2_REF=v1.0.1
 TAU2_DIR="$PILOT_ROOT/tau2-bench"
 LOGS="$PILOT_ROOT/logs"
@@ -13,7 +14,7 @@ if [ ! -d "$TAU2_DIR" ]; then
 fi
 git -C "$TAU2_DIR" fetch -q --tags
 git -C "$TAU2_DIR" checkout -q "$TAU2_REF"
-(cd "$TAU2_DIR" && uv sync -q --python 3.13 --extra knowledge)
+(cd "$TAU2_DIR" && uv sync -q --extra knowledge)
 log "tau2 at $(git -C "$TAU2_DIR" rev-parse --short HEAD)"
 
 USER_ARGS='{"reasoning_effort":"low"}'
