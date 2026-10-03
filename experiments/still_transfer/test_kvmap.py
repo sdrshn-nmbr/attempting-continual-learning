@@ -7,7 +7,8 @@ from transformers import Qwen3Config, Qwen3ForCausalLM
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "still_repro"))
 import kvmap
-from still import continue_from, prefill
+from refit import Mapper, step_loss
+from still import StillCompactor, continue_from, prefill
 
 PREFIX = 24
 
@@ -88,3 +89,26 @@ def test_selection_follows_predictive_layer():
     stats = kvmap.statistics(stats_moments, 16, 1e-3)
     assert stats["scores"][0, 1] > 0.99 and stats["scores"][0, 0] < 0.1
     assert kvmap.fit(stats, 1)["selections"] == [[1]]
+
+
+def test_refit_lowers_loss_on_a_fixed_batch():
+    source, receiver = tiny(5_000_000.0, seed=0), tiny(1_000_000.0, seed=1)
+    compactor = StillCompactor(source.config, 6).eval().requires_grad_(False)
+    for model in (source, receiver):
+        model.requires_grad_(False)
+    mapper = Mapper(identity_mapper(2, 2, 16))
+    optimizer = torch.optim.Adam(mapper.parameters(), lr=1e-2)
+    torch.manual_seed(3)
+    prefixes = torch.randint(0, 97, (2, PREFIX))
+    ids = torch.randint(0, 97, (2, 6))
+    rows = torch.arange(2).repeat_interleave(5)
+    columns = torch.arange(5).repeat(2)
+    batch = (prefixes, ids, (rows, columns), ids[:, 1:].reshape(-1))
+    losses = []
+    for _ in range(30):
+        loss = step_loss(source, compactor, receiver, mapper, batch, PREFIX, 6, top_k=20)
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        losses.append(loss.item())
+    assert losses[-1] < 0.5 * losses[0]
