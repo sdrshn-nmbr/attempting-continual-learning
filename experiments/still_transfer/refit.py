@@ -79,7 +79,7 @@ def main():
     parser.add_argument("--slots", type=int, default=164)
     parser.add_argument("--steps", type=int, default=300)
     parser.add_argument("--batch", type=int, default=4)
-    parser.add_argument("--lr", type=float, default=2e-5)
+    parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--warmup", type=int, default=20)
     parser.add_argument("--seed", type=int, default=17)
     args = parser.parse_args()
