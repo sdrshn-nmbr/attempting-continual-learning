@@ -56,7 +56,7 @@ def main():
     parser.add_argument("--heldout", type=int, default=64)
     parser.add_argument("--length", type=int, default=1024)
     parser.add_argument("--prefix", type=int, default=768)
-    parser.add_argument("--ks", type=int, nargs="+", default=[1, 2, 4, 8, 12, 16])
+    parser.add_argument("--ks", type=int, nargs="+", default=[1, 2, 4, 8, 12, 16, 24, 36])
     parser.add_argument("--lam", type=float, default=0.01)
     parser.add_argument("--batch", type=int, default=4)
     args = parser.parse_args()
