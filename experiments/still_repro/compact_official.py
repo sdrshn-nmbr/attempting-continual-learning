@@ -1,9 +1,9 @@
 """Compact evaluation documents with the official Attention Matching code (github.com/adamzweiger/compaction).
 Run from the official checkout in its pinned environment (transformers==4.57.1), for example:
     cd <checkout> && PYTHONPATH=. torchrun --standalone --nproc-per-node 8 <this dir>/compact_official.py ...
-The chat header stays uncompacted, as in the official evaluator, and header plus compacted document fill exactly
---slots positions, the budget STILL gets. Each document is saved as {domain}-{row}.pt with keys/values [L,H,t,D]
-and beta [L,H,t] for evaluate.py --modes am."""
+The chat header stays uncompacted, as in the official evaluator, and header plus compacted document fill --slots
+positions per head on average, the budget STILL gets. Each document is saved as {domain}-{row}.pt in the packed
+format of cache_format.py for evaluate.py --modes am."""
 import argparse
 import json
 import os
@@ -12,9 +12,9 @@ from pathlib import Path
 
 import numpy as np
 import torch
-import torch.nn.functional as F
 from transformers import AutoTokenizer
 
+import cache_format
 import layout
 # The official package only imports cleanly with evaluation before compaction (evaluation -> compaction -> evaluation).
 from evaluation.configs.utils import load_algorithm_config, load_query_config
@@ -24,14 +24,8 @@ from models.qwen3 import Qwen3ForCausalLM
 DOMAINS = ["financial", "gutenberg", "legal", "code"]
 
 
-def stack(compacted):
-    """Stack per-layer (C1, beta, C2) into [L,H,t,D] / [L,H,t]. With per-head budgets each layer is padded to its
-    longest head, so layers differ in length; pad them to the longest layer with zeros and beta=-inf."""
-    length = max(c1.shape[2] for c1, _, _ in compacted)
-    keys = torch.stack([F.pad(c1[0], (0, 0, 0, length - c1.shape[2])) for c1, _, _ in compacted])
-    beta = torch.stack([F.pad(b[0].float(), (0, length - b.shape[2]), value=float("-inf")) for _, b, _ in compacted])
-    values = torch.stack([F.pad(c2[0], (0, 0, 0, length - c2.shape[2])) for _, _, c2 in compacted])
-    return keys, beta, values
+def pack(compacted):
+    return cache_format.pack([(c1[0].cpu(), beta[0].cpu(), c2[0].cpu()) for c1, beta, c2 in compacted])
 
 
 def main():
@@ -83,17 +77,18 @@ def main():
                 compacted, _ = method.compact_kv_cache(past_key_values=cache, target_size=args.slots,
                                                        indices=range(header, len(prefix)), query_config=query_config,
                                                        model=model, tokenizer=tokenizer, formatted_context=formatted)
-            keys, beta, values = stack(compacted)
-            if args.budget_path is None and keys.shape[2] != args.slots:
-                raise ValueError(f"AM_LENGTH_MISMATCH {domain}-{row} physical={keys.shape[2]} slots={args.slots}")
-            finite = beta[torch.isfinite(beta)]
-            torch.save({"keys": keys.cpu(), "beta": beta.float().cpu(), "values": values.cpu(),
-                        "method": args.method, "kwargs": method_kwargs, "slots": args.slots, "header": header},
-                       path.with_suffix(".tmp"))
+            packed = pack(compacted)
+            lengths = packed["lengths"]
+            if args.budget_path is None and not (lengths == args.slots).all():
+                raise ValueError(f"AM_LENGTH_MISMATCH {domain}-{row} lengths={lengths.unique().tolist()} "
+                                 f"slots={args.slots}")
+            torch.save({**packed, "method": args.method, "kwargs": method_kwargs, "slots": args.slots,
+                        "header": header}, path.with_suffix(".tmp"))
             path.with_suffix(".tmp").rename(path)
             record = {"domain": domain, "row": row, "seconds": round(time.time() - started, 1),
-                      "physical": keys.shape[2], "effective": finite.numel() / (beta.shape[0] * beta.shape[1]),
-                      "beta_min": finite.min().item(), "beta_max": finite.max().item()}
+                      "head_min": int(lengths.min()), "head_max": int(lengths.max()),
+                      "effective": lengths.float().mean().item(), "beta_min": packed["beta"].min().item(),
+                      "beta_max": packed["beta"].max().item()}
             log.write(json.dumps(record) + "\n")
             log.flush()
             print(f"[am {time.strftime('%H:%M:%S')}] rank {rank} {number}/{len(documents)} {json.dumps(record)}",
