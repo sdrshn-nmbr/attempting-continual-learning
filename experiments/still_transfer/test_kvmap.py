@@ -7,7 +7,7 @@ from transformers import Qwen3Config, Qwen3ForCausalLM
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "still_repro"))
 import kvmap
-from refit import Mapper, step_loss
+from refit import Mapper, identity_map, step_loss
 from still import StillCompactor, continue_from, prefill
 
 PREFIX = 24
@@ -112,3 +112,34 @@ def test_refit_lowers_loss_on_a_fixed_batch():
         optimizer.step()
         losses.append(loss.item())
     assert losses[-1] < 0.5 * losses[0]
+
+
+def test_low_rank_refit_starts_at_saved_map_and_trains_only_the_correction():
+    saved = identity_map(2, 2, 16)
+    mapper = Mapper(saved, rank=4)
+    content = [(torch.randn(1, 2, 5, 16), torch.randn(1, 2, 5, 16)) for _ in range(2)]
+    for (mk, mv), (ck, cv) in zip(mapper(content), content, strict=True):
+        assert torch.allclose(mk, ck) and torch.allclose(mv, cv)
+    trainable = {name for name, p in mapper.named_parameters() if p.requires_grad}
+    assert trainable and all("down" in name or "up" in name for name in trainable)
+    assert mapper.trainable() == 2 * 2 * (2 * 16 * 4 + 2 * 4 * 16)
+
+
+def test_low_rank_refit_lowers_loss_on_a_fixed_batch():
+    source, receiver = tiny(5_000_000.0, seed=0), tiny(1_000_000.0, seed=1)
+    compactor = StillCompactor(source.config, 6).eval().requires_grad_(False)
+    for model in (source, receiver):
+        model.requires_grad_(False)
+    mapper = Mapper(identity_map(2, 2, 16), rank=4)
+    optimizer = torch.optim.Adam([p for p in mapper.parameters() if p.requires_grad], lr=1e-2)
+    torch.manual_seed(3)
+    prefixes, ids = torch.randint(0, 97, (2, PREFIX)), torch.randint(0, 97, (2, 6))
+    batch = (prefixes, ids, (torch.arange(2).repeat_interleave(5), torch.arange(5).repeat(2)), ids[:, 1:].reshape(-1))
+    losses = []
+    for _ in range(30):
+        loss = step_loss(source, compactor, receiver, mapper, batch, PREFIX, 6, top_k=20)
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        losses.append(loss.item())
+    assert losses[-1] < 0.7 * losses[0]

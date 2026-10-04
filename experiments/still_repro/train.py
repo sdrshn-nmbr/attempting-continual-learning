@@ -18,14 +18,16 @@ import layout
 from still import StillCompactor, continue_from, prefill, support_kl
 
 DOMAINS = ["financial", "gutenberg", "legal", "code"]
+THINK_OFF = "<think>\n\n</think>\n\n"
 
 
 class Examples:
-    def __init__(self, corpus, items_path, tokenizer, split):
+    def __init__(self, corpus, items_path, tokenizer, split, suffix=""):
         with open(items_path) as handle:
             self.items = [json.loads(line) for line in handle]
         self.windows = {d: np.load(corpus / f"{split}-{d}.npy", mmap_mode="r") for d in DOMAINS}
         self.tokenizer = tokenizer
+        self.suffix = suffix
 
     def __len__(self):
         return len(self.items)
@@ -33,7 +35,7 @@ class Examples:
     def get(self, index):
         item = self.items[index]
         prefix = layout.prefix_ids(self.tokenizer, self.windows[item["domain"]][item["row"]].tolist())
-        return prefix, layout.encode(self.tokenizer, layout.question_text(item)), item["answer_ids"]
+        return prefix, layout.encode(self.tokenizer, layout.question_text(item) + self.suffix), item["answer_ids"]
 
 
 def collate(examples, pad_id, device):
@@ -82,6 +84,7 @@ def main():
     parser.add_argument("--checkpoint-every", type=int, default=250)
     parser.add_argument("--seed", type=int, default=17)
     parser.add_argument("--data-seed", type=int, default=17)
+    parser.add_argument("--think-off", action="store_true")
     args = parser.parse_args()
 
     dist.init_process_group("nccl")
@@ -105,7 +108,7 @@ def main():
     other = [p for p in compactor.parameters() if p.ndim < 2]
     optimizer = torch.optim.AdamW([{"params": decay, "weight_decay": 0.01}, {"params": other, "weight_decay": 0.0}],
                                   lr=args.lr, betas=(0.9, 0.95))
-    data = Examples(args.corpus, args.items, tokenizer, "train")
+    data = Examples(args.corpus, args.items, tokenizer, "train", THINK_OFF if args.think_off else "")
     order = list(range(len(data)))
     random.Random(args.data_seed).shuffle(order)
     validation, training = order[:args.validation], order[args.validation:]

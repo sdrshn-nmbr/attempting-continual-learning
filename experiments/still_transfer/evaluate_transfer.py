@@ -22,6 +22,7 @@ from still import StillCompactor, prefill
 
 NATIVE = ("none", "full", "streaming")
 MAPPED = ("mapped_full", "mapped_still")
+OWN_COMPACTOR = "still_native"
 THINK_OFF = "<think>\n\n</think>\n\n"
 
 
@@ -46,8 +47,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", required=True)
     parser.add_argument("--receiver", required=True)
-    parser.add_argument("--checkpoint", type=Path, required=True)
-    parser.add_argument("--mapper", type=Path, required=True)
+    parser.add_argument("--checkpoint", type=Path, help="STILL compactor trained on the source model")
+    parser.add_argument("--mapper", type=Path)
+    parser.add_argument("--native-checkpoint", type=Path, help="STILL compactor trained on the receiver itself")
     parser.add_argument("--corpus", type=Path, required=True)
     parser.add_argument("--items", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
@@ -68,8 +70,10 @@ def main():
     load = lambda name: AutoModelForCausalLM.from_pretrained(
         name, dtype=torch.bfloat16, attn_implementation=attention_matching.NAME).to(device).eval()
     receiver = load(args.receiver)
-    source = compactor = mapper = None
+    source = compactor = mapper = native = None
     if any(m in MAPPED for m in args.modes):
+        if args.checkpoint is None or args.mapper is None:
+            raise SystemExit("MAPPED_MODES_NEED_CHECKPOINT_AND_MAPPER")
         source = load(args.source)
         compactor = StillCompactor(source.config, args.slots).to(device).eval()
         compactor.load_state_dict(torch.load(args.checkpoint, map_location=device))
@@ -77,6 +81,11 @@ def main():
         mapper = {"keys": saved["keys"], "values": saved["values"]}
         if len(mapper["keys"]["selections"]) != receiver.config.num_hidden_layers:
             raise SystemExit(f"MAPPER_RECEIVER_MISMATCH layers={len(mapper['keys']['selections'])}")
+    if OWN_COMPACTOR in args.modes:
+        if args.native_checkpoint is None:
+            raise SystemExit("STILL_NATIVE_NEEDS_NATIVE_CHECKPOINT")
+        native = StillCompactor(receiver.config, args.slots).to(device).eval()
+        native.load_state_dict(torch.load(args.native_checkpoint, map_location=device))
     suffix = THINK_OFF if args.think_off else ""
     windows = {d: np.load(args.corpus / f"eval-{d}.npy", mmap_mode="r") for d in DOMAINS}
     with args.items.open() as handle:
@@ -94,6 +103,9 @@ def main():
                 if mode in NATIVE:
                     pairs, logical, _ = prefix_state(receiver, None, tokenizer, mode, windows, batch, device,
                                                      args.slots)
+                elif mode == OWN_COMPACTOR:
+                    pairs, logical, _ = prefix_state(receiver, native, tokenizer, "still", windows, batch, device,
+                                                     args.slots)
                 elif mode in MAPPED:
                     pairs = mapped_state(source, receiver, compactor, mapper, tokenizer, mode, windows, batch,
                                          device, args.slots)
@@ -102,7 +114,8 @@ def main():
                     raise SystemExit(f"TRANSFER_MODE {mode}")
                 texts = generate(receiver, tokenizer, pairs, logical, batch, device, args.max_new, suffix)
                 for item, text in zip(batch, texts, strict=True):
-                    handle.write(json.dumps({"id": item["id"], "domain": item["domain"], "type": item["type"],
+                    handle.write(json.dumps({"id": item["id"], "domain": item["domain"],
+                                             "type": item.get("type", "untyped"),
                                              "mode": mode, "gold": item["gold"],
                                              "prediction": layout.parse_letter(text),
                                              "physical_prefix": pairs[0][0].shape[-2], "text": text}) + "\n")
