@@ -1,0 +1,379 @@
+{"id": "task_008:q0", "kind": "eligibility", "question": "What minimum credit score is required for the Silver Rewards Card?", "original": "$680", "edited": "$1000"}
+{"id": "task_008:q1", "kind": "rate", "question": "What is the Silver Rewards Card APR for carried balances after any promotional period?", "original": "18.99%", "edited": "26.00%"}
+{"id": "task_008:q2", "kind": "limit", "question": "What is the low end of the typical initial credit limit range for the Silver Rewards Card?", "original": "$10,000", "edited": "$7,000"}
+{"id": "task_008:q3", "kind": "time", "question": "For how many days after purchase does Silver Rewards Card purchase protection cover eligible items?", "original": "90", "edited": "120"}
+{"id": "task_008:q4", "kind": "rate", "question": "What is the Platinum Rewards Card purchase APR?", "original": "16.99%", "edited": "12.00%"}
+{"id": "task_008:q5", "kind": "fee", "question": "What annual fee does the Platinum Rewards Card charge?", "original": "$200.00", "edited": "$107.00"}
+{"id": "task_008:q6", "kind": "eligibility", "question": "What minimum credit score is required to apply for the Platinum Rewards Card?", "original": "$750", "edited": "$1200"}
+{"id": "task_008:q7", "kind": "other", "question": "How many sustainability points does the EcoCard sign-up bonus award when the qualifying spending threshold is met?", "original": "$2,000", "edited": "$1,400"}
+{"id": "task_014:q0", "kind": "other", "question": "For the Silver Rewards Card referral program, how much is the bonus for each successful referral?", "original": "75", "edited": "58"}
+{"id": "task_014:q1", "kind": "other", "question": "For the Platinum Rewards Card referral program, what bonus does the cardholder earn for each qualifying referral?", "original": "$100", "edited": "$67"}
+{"id": "task_016:q0", "kind": "other", "question": "For the Silver Rewards Card referral program, how much does the referrer receive for each successful referral?", "original": "75", "edited": "110"}
+{"id": "task_017:q0", "kind": "eligibility", "question": "What minimum credit score is required for the Silver Rewards Card?", "original": "$680", "edited": "$1100"}
+{"id": "task_017:q1", "kind": "rate", "question": "What is the standard APR on the Silver Rewards Card for carried balances after any promotional period?", "original": "18.99%", "edited": "14.00%"}
+{"id": "task_017:q2", "kind": "fee", "question": "What foreign transaction fee applies to the Silver Rewards Card without a premium subscription?", "original": "2.75%", "edited": "4.25%"}
+{"id": "task_017:q3", "kind": "limit", "question": "What is the upper end of the typical initial credit limit range for the Silver Rewards Card, subject to approval?", "original": "$100,000", "edited": "$160,000"}
+{"id": "task_017:q4", "kind": "time", "question": "For how long after purchase are eligible items protected under the Silver Rewards Card's purchase protection?", "original": "90", "edited": "64"}
+{"id": "task_017:q5", "kind": "limit", "question": "What is the maximum purchase protection amount per claim for the Silver Rewards Card?", "original": "$3,000", "edited": "$4,800"}
+{"id": "task_017:q6", "kind": "rate", "question": "What cash back rate does the Silver Rewards Card earn on purchases outside the top categories?", "original": "1.0%", "edited": "1.6%"}
+{"id": "task_017:q7", "kind": "rate", "question": "What cash back rate does the Silver Rewards Card earn on eligible travel and software transactions?", "original": "4.0%", "edited": "3.2%"}
+{"id": "task_018:q0", "kind": "rate", "question": "For the Business Platinum Rewards Card, what cash back rate applies to purchases outside travel, software, and media advertising?", "original": "1.5%", "edited": "2.6%"}
+{"id": "task_018:q1", "kind": "rate", "question": "For the EcoCard, what is the purchase APR on carried balances?", "original": "19.99%", "edited": "32.00%"}
+{"id": "task_018:q2", "kind": "fee", "question": "What annual fee does an EcoCard customer agree to pay?", "original": "$50.00", "edited": "$68.00"}
+{"id": "task_018:q3", "kind": "fee", "question": "What late payment fee applies to the EcoCard?", "original": "$32.50", "edited": "$61.00"}
+{"id": "task_018:q4", "kind": "eligibility", "question": "What minimum credit score is required for the Silver Rewards Card?", "original": "$680", "edited": "$950"}
+{"id": "task_018:q5", "kind": "rate", "question": "For the Silver Rewards Card, what standard APR applies to carried balances after the introductory period?", "original": "18.99%", "edited": "26.00%"}
+{"id": "task_018:q6", "kind": "fee", "question": "Without a premium subscription, what foreign transaction fee applies to the Silver Rewards Card?", "original": "2.75%", "edited": "3.50%"}
+{"id": "task_018:q7", "kind": "time", "question": "For how many days after purchase does Silver Rewards Card purchase protection cover eligible items?", "original": "90", "edited": "130"}
+{"id": "task_019:q0", "kind": "limit", "question": "What is the typical upper end of the EcoCard initial credit line upon approval?", "original": "$50,000", "edited": "$80,000"}
+{"id": "task_019:q1", "kind": "rate", "question": "What purchase APR applies to carried balances on the EcoCard?", "original": "19.99%", "edited": "13.00%"}
+{"id": "task_019:q2", "kind": "fee", "question": "What annual fee applies to the EcoCard?", "original": "$50.00", "edited": "$93.00"}
+{"id": "task_019:q3", "kind": "fee", "question": "What foreign transaction fee applies to EcoCard international purchases?", "original": "1.0%", "edited": "1.5%"}
+{"id": "task_019:q4", "kind": "other", "question": "How many sustainability points does an EcoCard new customer earn after meeting the sign-up bonus spending requirement?", "original": "$2,000", "edited": "$1,300"}
+{"id": "task_020:q0", "kind": "fee", "question": "What is the annual fee for the Business Silver Rewards Card after the first-year promotion?", "original": "$122.50", "edited": "$97.00"}
+{"id": "task_020:q1", "kind": "eligibility", "question": "What minimum credit score is required for the Silver Rewards Card?", "original": "$680", "edited": "$870"}
+{"id": "task_020:q2", "kind": "fee", "question": "What foreign transaction fee applies to the Silver Rewards Card without a premium subscription?", "original": "2.75%", "edited": "4.00%"}
+{"id": "task_020:q3", "kind": "limit", "question": "What is the typical minimum initial credit limit for the Silver Rewards Card?", "original": "$10,000", "edited": "$7,600"}
+{"id": "task_020:q4", "kind": "time", "question": "For how many days after purchase does Silver Rewards Card purchase protection cover eligible items?", "original": "90", "edited": "130"}
+{"id": "task_020:q5", "kind": "limit", "question": "What is the maximum purchase protection amount per claim for the Silver Rewards Card?", "original": "$3,000", "edited": "$4,400"}
+{"id": "task_020:q6", "kind": "rate", "question": "What cash back rate does the Silver Rewards Card earn on eligible travel and software transactions?", "original": "4.0%", "edited": "3.2%"}
+{"id": "task_020:q7", "kind": "limit", "question": "What is the typical minimum approved credit limit for the Business Silver Rewards Card?", "original": "$17,500", "edited": "$31,000"}
+{"id": "task_021:q0", "kind": "rate", "question": "What variable APR applies to carried balances on the Business Bronze Rewards Card?", "original": "20.49%", "edited": "14.00%"}
+{"id": "task_021:q1", "kind": "other", "question": "What statement credit does a new Business Bronze Rewards Card customer earn after spending the required amount within the promo period?", "original": "$500", "edited": "$340"}
+{"id": "task_021:q2", "kind": "limit", "question": "What minimum available rewards balance is required to redeem rewards on the Business Bronze Rewards Card?", "original": "$37", "edited": "$27"}
+{"id": "task_021:q3", "kind": "limit", "question": "What is the maximum typical initial credit line for an approved EcoCard account?", "original": "$50,000", "edited": "$63,000"}
+{"id": "task_021:q4", "kind": "rate", "question": "What purchase APR applies to carried balances on the EcoCard?", "original": "19.99%", "edited": "28.00%"}
+{"id": "task_021:q5", "kind": "fee", "question": "What annual fee does the EcoCard charge?", "original": "$50.00", "edited": "$63.00"}
+{"id": "task_021:q6", "kind": "fee", "question": "What late payment fee applies to an EcoCard account when a payment is missed?", "original": "$32.50", "edited": "$51.00"}
+{"id": "task_021:q7", "kind": "other", "question": "How many sustainability points does a new EcoCard customer earn after meeting the sign-up spending requirement during the qualifying period?", "original": "$2,000", "edited": "$1,300"}
+{"id": "task_022:q0", "kind": "rate", "question": "What cash back rate does the Diamond Elite Card earn on eligible purchases?", "original": "5%", "edited": "8%"}
+{"id": "task_022:q1", "kind": "rate", "question": "What rate does the Business Platinum Rewards Card earn on eligible travel, software, and media advertising purchases?", "original": "4%", "edited": "6%"}
+{"id": "task_022:q2", "kind": "rate", "question": "What cash back rate does the Business Platinum Rewards Card earn on purchases outside its enhanced categories?", "original": "1.5%", "edited": "2.1%"}
+{"id": "task_022:q3", "kind": "fee", "question": "What is the standard annual fee for the Business Silver Rewards Card?", "original": "$122.50", "edited": "$225.00"}
+{"id": "task_022:q4", "kind": "rate", "question": "What APR applies to carried balances on the Business Silver Rewards Card?", "original": "18.99%", "edited": "11.00%"}
+{"id": "task_022:q5", "kind": "rate", "question": "What cash back rate does the Business Silver Rewards Card earn on eligible travel and software purchases?", "original": "10%", "edited": "7%"}
+{"id": "task_022:q6", "kind": "limit", "question": "What is the typical maximum initial credit line for the EcoCard upon approval?", "original": "$50,000", "edited": "$66,000"}
+{"id": "task_022:q7", "kind": "rate", "question": "What purchase APR applies to carried balances on the EcoCard?", "original": "19.99%", "edited": "15.00%"}
+{"id": "task_023:q0", "kind": "rate", "question": "What variable purchase APR does the Platinum Rewards Card have?", "original": "16.99%", "edited": "22.00%"}
+{"id": "task_023:q1", "kind": "limit", "question": "What is the upper end of the typical approved credit limit range for a Platinum Rewards Card?", "original": "$150,000", "edited": "$84,000"}
+{"id": "task_023:q2", "kind": "other", "question": "What percentage of the outstanding balance is the Platinum Rewards Card minimum monthly payment?", "original": "2.5%", "edited": "2.0%"}
+{"id": "task_023:q3", "kind": "fee", "question": "What late payment fee applies to the Platinum Rewards Card?", "original": "$32.50", "edited": "$51.00"}
+{"id": "task_023:q4", "kind": "rate", "question": "What cash back rate does the Platinum Rewards Card earn on eligible purchases?", "original": "10%", "edited": "14%"}
+{"id": "task_023:q5", "kind": "other", "question": "How much is the annual fee rebate for the Platinum Rewards Card?", "original": "$150.00", "edited": "$94.00"}
+{"id": "task_023:q6", "kind": "eligibility", "question": "What monthly spend threshold must a Platinum Rewards Card customer meet to qualify for the annual fee rebate?", "original": "$7500.00", "edited": "$4770.00"}
+{"id": "task_023:q7", "kind": "time", "question": "For how many days after purchase can eligible Platinum Rewards Card items have purchase protection?", "original": "135", "edited": "87"}
+{"id": "task_028:q0", "kind": "rate", "question": "On the Business Platinum Rewards Card, what cash back rate applies to purchases outside travel, software, and media advertising?", "original": "1.5%", "edited": "2.7%"}
+{"id": "task_028:q1", "kind": "limit", "question": "For an approved EcoCard account, what is the typical maximum initial credit line?", "original": "$50,000", "edited": "$35,000"}
+{"id": "task_028:q2", "kind": "rate", "question": "What purchase APR applies to EcoCard balances carried past the due date?", "original": "19.99%", "edited": "10.00%"}
+{"id": "task_028:q3", "kind": "fee", "question": "What annual fee does an EcoCard customer pay?", "original": "$50.00", "edited": "$88.00"}
+{"id": "task_028:q4", "kind": "eligibility", "question": "What minimum credit score is required to apply for the Silver Rewards Card?", "original": "$680", "edited": "$540"}
+{"id": "task_028:q5", "kind": "fee", "question": "What foreign transaction fee applies to Silver Rewards Card purchases without a premium subscription?", "original": "2.75%", "edited": "4.50%"}
+{"id": "task_028:q6", "kind": "time", "question": "For how many days after purchase does Silver Rewards Card purchase protection cover eligible items?", "original": "90", "edited": "58"}
+{"id": "task_028:q7", "kind": "limit", "question": "What is the maximum purchase protection amount per claim on the Silver Rewards Card?", "original": "$3,000", "edited": "$4,800"}
+{"id": "task_029:q0", "kind": "rate", "question": "On the Business Platinum Rewards Card, what cash back rate applies to purchases outside travel, software, and media advertising?", "original": "1.5%", "edited": "2.6%"}
+{"id": "task_029:q1", "kind": "fee", "question": "What annual fee does the EcoCard charge?", "original": "$50.00", "edited": "$89.00"}
+{"id": "task_029:q2", "kind": "fee", "question": "What late payment fee does the EcoCard charge if a customer misses the due date?", "original": "$32.50", "edited": "$43.00"}
+{"id": "task_029:q3", "kind": "eligibility", "question": "What minimum credit score is required for the Silver Rewards Card?", "original": "$680", "edited": "$1200"}
+{"id": "task_029:q4", "kind": "fee", "question": "Without a premium subscription, what foreign transaction fee applies to the Silver Rewards Card?", "original": "2.75%", "edited": "1.50%"}
+{"id": "task_029:q5", "kind": "time", "question": "For how many days after purchase does the Silver Rewards Card's purchase protection apply?", "original": "90", "edited": "130"}
+{"id": "task_029:q6", "kind": "limit", "question": "What is the typical minimum initial credit limit for the Silver Rewards Card, subject to approval?", "original": "$10,000", "edited": "$19,000"}
+{"id": "task_029:q7", "kind": "rate", "question": "What purchase APR applies to EcoCard balances carried past the due date?", "original": "19.99%", "edited": "13.00%"}
+{"id": "task_031:q0", "kind": "limit", "question": "What is the maximum provisional credit limit for an Entry Tier card, such as the EcoCard?", "original": "$2500.00", "edited": "$3840.00"}
+{"id": "task_031:q1", "kind": "limit", "question": "What is the maximum provisional credit limit for a Mid Tier card, such as the Green Rewards Card?", "original": "$5000.00", "edited": "$6510.00"}
+{"id": "task_031:q2", "kind": "limit", "question": "What is the maximum provisional credit limit for a Premium Tier card, such as the Gold Rewards Card?", "original": "$10000.00", "edited": "$14040.00"}
+{"id": "task_031:q3", "kind": "limit", "question": "What is the maximum provisional credit limit for an Elite Tier card, such as the Platinum Rewards Card?", "original": "$15000.00", "edited": "$9615.00"}
+{"id": "task_031:q4", "kind": "limit", "question": "What is the maximum provisional credit limit for an Invitation Tier Diamond Elite Card?", "original": "$25000.00", "edited": "$18475.00"}
+{"id": "task_036:q0", "kind": "fee", "question": "What expedited shipping fee applies to a replacement credit card for an Entry-tier customer, such as a Bronze Rewards customer?", "original": "$15.00", "edited": "$27.00"}
+{"id": "task_036:q1", "kind": "fee", "question": "What expedited shipping fee applies to a replacement credit card for a Mid-tier customer, such as a Silver Rewards customer?", "original": "$10.00", "edited": "$13.00"}
+{"id": "task_037:q0", "kind": "fee", "question": "What is the expedited shipping fee for a replacement Bronze Rewards card?", "original": "$15.00", "edited": "$23.00"}
+{"id": "task_037:q1", "kind": "fee", "question": "What is the expedited shipping fee for a replacement Silver Rewards card?", "original": "$10.00", "edited": "$13.00"}
+{"id": "task_037:q2", "kind": "limit", "question": "What is the maximum provisional credit for a Bronze Rewards Card?", "original": "$2500.00", "edited": "$4590.00"}
+{"id": "task_037:q3", "kind": "limit", "question": "What is the maximum provisional credit for a Silver Rewards Card?", "original": "$5000.00", "edited": "$8950.00"}
+{"id": "task_037:q4", "kind": "limit", "question": "What is the maximum provisional credit for a Gold Rewards Card?", "original": "$10000.00", "edited": "$18530.00"}
+{"id": "task_037:q5", "kind": "limit", "question": "What is the maximum provisional credit for a Platinum Rewards Card?", "original": "$15000.00", "edited": "$27330.00"}
+{"id": "task_037:q6", "kind": "limit", "question": "What is the maximum provisional credit for a Diamond Elite Card?", "original": "$25000.00", "edited": "$34550.00"}
+{"id": "task_038:q0", "kind": "fee", "question": "For a Bronze Rewards card replacement, what fee applies to expedited shipping?", "original": "$15.00", "edited": "$9.50"}
+{"id": "task_038:q1", "kind": "fee", "question": "For a Silver Rewards card replacement, what fee applies to expedited shipping?", "original": "$10.00", "edited": "$5.25"}
+{"id": "task_038:q2", "kind": "limit", "question": "What is the maximum provisional credit for an eligible dispute on an Entry Tier card, such as a Bronze Rewards Card?", "original": "$2500.00", "edited": "$1963.00"}
+{"id": "task_038:q3", "kind": "limit", "question": "What is the maximum provisional credit for an eligible dispute on a Mid Tier card, such as a Silver Rewards Card?", "original": "$5000.00", "edited": "$3275.00"}
+{"id": "task_038:q4", "kind": "limit", "question": "What is the maximum provisional credit for an eligible dispute on a Premium Tier Gold Rewards Card?", "original": "$10000.00", "edited": "$7050.00"}
+{"id": "task_038:q5", "kind": "limit", "question": "What is the maximum provisional credit for an eligible dispute on an Elite Tier Platinum Rewards Card?", "original": "$15000.00", "edited": "$22710.00"}
+{"id": "task_038:q6", "kind": "limit", "question": "What is the maximum provisional credit for an eligible dispute on a Diamond Elite Card?", "original": "$25000.00", "edited": "$19750.00"}
+{"id": "task_040:q0", "kind": "limit", "question": "What is the maximum provisional credit for an Entry Tier Bronze Rewards Card dispute?", "original": "$2500.00", "edited": "$3760.00"}
+{"id": "task_040:q1", "kind": "limit", "question": "What is the maximum provisional credit for a Mid Tier Silver Rewards Card dispute?", "original": "$5000.00", "edited": "$6750.00"}
+{"id": "task_040:q2", "kind": "limit", "question": "What is the maximum provisional credit for a Premium Tier Gold Rewards Card dispute?", "original": "$10000.00", "edited": "$7380.00"}
+{"id": "task_040:q3", "kind": "limit", "question": "What is the maximum provisional credit for an Elite Tier Platinum Rewards Card dispute?", "original": "$15000.00", "edited": "$11310.00"}
+{"id": "task_040:q4", "kind": "limit", "question": "What is the maximum provisional credit for an Invitation Tier Diamond Elite Card dispute?", "original": "$25000.00", "edited": "$17050.00"}
+{"id": "task_041:q0", "kind": "limit", "question": "For an Entry Tier card, such as a Bronze Rewards Card, what is the maximum provisional credit limit for a dispute?", "original": "$2500.00", "edited": "$4205.00"}
+{"id": "task_041:q1", "kind": "limit", "question": "For a Mid Tier card, such as a Silver Rewards Card, what is the maximum provisional credit limit for a dispute?", "original": "$5000.00", "edited": "$2935.00"}
+{"id": "task_041:q2", "kind": "limit", "question": "For a Premium Tier card, such as a Gold Rewards Card, what is the maximum provisional credit limit for a dispute?", "original": "$10000.00", "edited": "$15480.00"}
+{"id": "task_041:q3", "kind": "limit", "question": "For an Elite Tier card, such as a Platinum Rewards Card, what is the maximum provisional credit limit for a dispute?", "original": "$15000.00", "edited": "$10410.00"}
+{"id": "task_041:q4", "kind": "limit", "question": "For an Invitation Tier Diamond Elite Card, what is the maximum provisional credit limit for a dispute?", "original": "$25000.00", "edited": "$35350.00"}
+{"id": "task_043:q0", "kind": "other", "question": "For an entry-tier credit card, how many bonus points can an agent offer as a retention offer?", "original": "500", "edited": "390"}
+{"id": "task_043:q1", "kind": "rate", "question": "What is the Platinum Rewards Card\u2019s variable purchase APR?", "original": "16.99%", "edited": "13.00%"}
+{"id": "task_043:q2", "kind": "limit", "question": "What is the low end of the typical approved credit limit range for the Platinum Rewards Card?", "original": "$25,000", "edited": "$15,000"}
+{"id": "task_043:q3", "kind": "limit", "question": "What is the high end of the typical approved credit limit range for the Platinum Rewards Card?", "original": "$150,000", "edited": "$210,000"}
+{"id": "task_043:q4", "kind": "other", "question": "What percentage of the outstanding balance is the Platinum Rewards Card\u2019s minimum monthly payment?", "original": "2.5%", "edited": "1.6%"}
+{"id": "task_043:q5", "kind": "fee", "question": "What late payment fee applies to the Platinum Rewards Card?", "original": "$32.50", "edited": "$58.00"}
+{"id": "task_043:q6", "kind": "fee", "question": "What is the Platinum Rewards Card\u2019s annual fee?", "original": "$200.00", "edited": "$115.00"}
+{"id": "task_043:q7", "kind": "eligibility", "question": "What minimum credit score is required to apply for the Platinum Rewards Card?", "original": "$750", "edited": "$1200"}
+{"id": "task_044:q0", "kind": "other", "question": "For an eligible entry-tier cardholder who still wants to close, how many bonus points can the agent offer?", "original": "500", "edited": "290"}
+{"id": "task_044:q1", "kind": "other", "question": "For an eligible entry-tier cardholder who still wants to close, what statement credit can the agent offer?", "original": "$5", "edited": "$9"}
+{"id": "task_044:q2", "kind": "other", "question": "For an eligible mid-tier cardholder who still wants to close, what statement credit can the agent offer?", "original": "$20", "edited": "$28"}
+{"id": "task_044:q3", "kind": "other", "question": "For an eligible premium-tier cardholder who still wants to close, how many bonus points can the agent offer?", "original": "5,000", "edited": "3,900"}
+{"id": "task_044:q4", "kind": "other", "question": "For an eligible premium-tier cardholder who still wants to close, what statement credit can the agent offer?", "original": "$50", "edited": "$27"}
+{"id": "task_044:q5", "kind": "rate", "question": "What is the Platinum Rewards Card's variable purchase APR?", "original": "16.99%", "edited": "9.75%"}
+{"id": "task_044:q6", "kind": "limit", "question": "What percentage of the outstanding balance is the Platinum Rewards Card minimum monthly payment?", "original": "2.5%", "edited": "3.3%"}
+{"id": "task_044:q7", "kind": "fee", "question": "What late payment fee applies to the Platinum Rewards Card?", "original": "$32.50", "edited": "$18.00"}
+{"id": "task_045:q0", "kind": "other", "question": "For an entry-tier card, how many bonus points can an agent offer as a retention offer?", "original": "500", "edited": "680"}
+{"id": "task_045:q1", "kind": "fee", "question": "For a mid-tier card, what statement credit can an agent offer as a retention offer?", "original": "$20", "edited": "$14"}
+{"id": "task_045:q2", "kind": "other", "question": "For a premium-and-above card, how many bonus points can an agent offer as a retention offer?", "original": "5,000", "edited": "2,900"}
+{"id": "task_045:q3", "kind": "fee", "question": "What is the standard annual fee for the Business Platinum Rewards Card?", "original": "$450.00", "edited": "$563.00"}
+{"id": "task_045:q4", "kind": "rate", "question": "What cash-back rate does the Business Platinum Rewards Card earn on eligible travel, software, and media advertising purchases?", "original": "4%", "edited": "7%"}
+{"id": "task_045:q5", "kind": "rate", "question": "What cash-back rate does the Business Platinum Rewards Card earn on purchases outside its enhanced categories?", "original": "1.5%", "edited": "0.9%"}
+{"id": "task_045:q6", "kind": "fee", "question": "What is the expedited shipping fee for an entry-tier replacement card?", "original": "$15.00", "edited": "$11.00"}
+{"id": "task_045:q7", "kind": "fee", "question": "What is the expedited shipping fee for a mid-tier replacement card?", "original": "$10.00", "edited": "$13.00"}
+{"id": "task_046:q0", "kind": "eligibility", "question": "How many days must a credit card account be open before it is eligible for closure?", "original": "60", "edited": "100"}
+{"id": "task_046:q1", "kind": "limit", "question": "For an entry-tier credit card, how many bonus points can an agent offer as a retention incentive?", "original": "500", "edited": "390"}
+{"id": "task_046:q2", "kind": "fee", "question": "For an entry-tier credit card, what statement credit can an agent offer as a retention incentive?", "original": "$5", "edited": "$4"}
+{"id": "task_046:q3", "kind": "fee", "question": "For a mid-tier credit card, what statement credit can an agent offer as a retention incentive?", "original": "$20", "edited": "$37"}
+{"id": "task_046:q4", "kind": "limit", "question": "For a premium-and-above credit card, how many bonus points can an agent offer as a retention incentive?", "original": "5,000", "edited": "3,700"}
+{"id": "task_046:q5", "kind": "fee", "question": "For a premium-and-above credit card, what statement credit can an agent offer as a retention incentive?", "original": "$50", "edited": "$78"}
+{"id": "task_046:q6", "kind": "time", "question": "How many days after submitting a credit card closure request does a customer have to redeem unredeemed rewards?", "original": "45", "edited": "73"}
+{"id": "task_046:q7", "kind": "time", "question": "If a credit card annual fee posted recently, within how many days of the fee being charged may a full refund be available after closure?", "original": "37", "edited": "57"}
+{"id": "task_047:q0", "kind": "fee", "question": "What is the expedited shipping fee for a replacement Bronze Rewards Card?", "original": "$15.00", "edited": "$7.75"}
+{"id": "task_047:q1", "kind": "fee", "question": "What is the expedited shipping fee for a replacement Silver Rewards Card?", "original": "$10.00", "edited": "$7.00"}
+{"id": "task_047:q2", "kind": "limit", "question": "What is the typical minimum approved credit limit for the Platinum Rewards Card?", "original": "$25,000", "edited": "$34,000"}
+{"id": "task_047:q3", "kind": "limit", "question": "What is the typical maximum approved credit limit for the Platinum Rewards Card?", "original": "$150,000", "edited": "$200,000"}
+{"id": "task_047:q4", "kind": "rate", "question": "What percentage of the outstanding balance is the minimum monthly payment for the Platinum Rewards Card?", "original": "2.5%", "edited": "4.5%"}
+{"id": "task_047:q5", "kind": "fee", "question": "What late payment fee does the Platinum Rewards Card charge?", "original": "$32.50", "edited": "$50.00"}
+{"id": "task_047:q6", "kind": "fee", "question": "What is the annual fee for the Platinum Rewards Card?", "original": "$200.00", "edited": "$261.00"}
+{"id": "task_047:q7", "kind": "eligibility", "question": "What minimum credit score is required if someone is still applying for the Platinum Rewards Card?", "original": "$750", "edited": "$1100"}
+{"id": "task_048:q0", "kind": "limit", "question": "For an eligible entry-tier credit card, what statement credit can an agent offer as a retention offer?", "original": "$5", "edited": "$9"}
+{"id": "task_048:q1", "kind": "limit", "question": "For an eligible mid-tier credit card, what statement credit can an agent offer as a retention offer?", "original": "$20", "edited": "$13"}
+{"id": "task_048:q2", "kind": "limit", "question": "For an eligible premium-tier credit card, what statement credit can an agent offer as a retention offer?", "original": "$50", "edited": "$26"}
+{"id": "task_048:q3", "kind": "limit", "question": "What is the maximum provisional credit for an Entry Tier card, such as the Bronze Rewards Card?", "original": "$2500.00", "edited": "$3160.00"}
+{"id": "task_048:q4", "kind": "limit", "question": "What is the maximum provisional credit for a Mid Tier card, such as the Silver Rewards Card?", "original": "$5000.00", "edited": "$6565.00"}
+{"id": "task_048:q5", "kind": "eligibility", "question": "What minimum credit score is required for the Silver Rewards Card?", "original": "$680", "edited": "$530"}
+{"id": "task_048:q6", "kind": "fee", "question": "What foreign transaction fee applies to the Silver Rewards Card without a premium subscription?", "original": "2.75%", "edited": "4.50%"}
+{"id": "task_048:q7", "kind": "time", "question": "For how many days after purchase does the Silver Rewards Card purchase protection cover eligible items?", "original": "90", "edited": "48"}
+{"id": "task_049:q0", "kind": "other", "question": "For an entry-tier credit card, how many bonus points can an agent offer as a retention offer?", "original": "500", "edited": "250"}
+{"id": "task_049:q1", "kind": "fee", "question": "For an entry-tier credit card, what statement credit can an agent offer to retain a customer?", "original": "$5", "edited": "$7"}
+{"id": "task_049:q2", "kind": "fee", "question": "For a mid-tier credit card, what statement credit can an agent offer as a retention offer?", "original": "$20", "edited": "$30"}
+{"id": "task_049:q3", "kind": "other", "question": "For a premium-or-higher credit card, how many bonus points can an agent offer as a retention offer?", "original": "5,000", "edited": "7,700"}
+{"id": "task_049:q4", "kind": "fee", "question": "For a premium-or-higher credit card, what statement credit can an agent offer as a retention offer?", "original": "$50", "edited": "$92"}
+{"id": "task_049:q5", "kind": "time", "question": "When checking provisional credit eligibility, over what period must an agent count the customer's previous disputes?", "original": "12", "edited": "8"}
+{"id": "task_049:q6", "kind": "limit", "question": "What is the maximum provisional credit for an Entry Tier card, such as a Bronze Rewards Card?", "original": "$2500.00", "edited": "$1720.00"}
+{"id": "task_049:q7", "kind": "eligibility", "question": "What is the minimum transaction amount for provisional credit eligibility?", "original": "$25", "edited": "$46"}
+{"id": "task_050:q0", "kind": "limit", "question": "For an Entry-tier Rho-Bank credit card CLI request, what is the maximum increase as a share of the current credit limit?", "original": "25%", "edited": "13%"}
+{"id": "task_051:q0", "kind": "limit", "question": "What is the maximum increase per request for an Entry-tier credit card CLI?", "original": "25%", "edited": "18%"}
+{"id": "task_051:q1", "kind": "time", "question": "How many months are used to count previous disputes when checking provisional credit eligibility?", "original": "12", "edited": "9"}
+{"id": "task_051:q2", "kind": "limit", "question": "What is the maximum provisional credit for an Entry Tier card?", "original": "$2500.00", "edited": "$1718.00"}
+{"id": "task_051:q3", "kind": "limit", "question": "What is the maximum provisional credit for a Mid Tier card?", "original": "$5000.00", "edited": "$3055.00"}
+{"id": "task_051:q4", "kind": "limit", "question": "What is the maximum provisional credit for a Premium Tier card?", "original": "$10000.00", "edited": "$18660.00"}
+{"id": "task_051:q5", "kind": "limit", "question": "What is the maximum provisional credit for an Elite Tier card?", "original": "$15000.00", "edited": "$22665.00"}
+{"id": "task_051:q6", "kind": "limit", "question": "What is the maximum provisional credit for an Invitation Tier card?", "original": "$25000.00", "edited": "$14625.00"}
+{"id": "task_052:q0", "kind": "limit", "question": "For an Entry-tier card, what is the maximum CLI increase per request as a percentage of the current credit limit?", "original": "25%", "edited": "15%"}
+{"id": "task_052:q1", "kind": "time", "question": "When checking provisional credit eligibility, how far back do you review the customer's dispute history?", "original": "12", "edited": "8"}
+{"id": "task_052:q2", "kind": "limit", "question": "What is the maximum provisional credit for an Entry Tier card, such as the Bronze Rewards Card?", "original": "$2500.00", "edited": "$3710.00"}
+{"id": "task_052:q3", "kind": "limit", "question": "What is the maximum provisional credit for a Mid Tier card, such as the Silver Rewards Card?", "original": "$5000.00", "edited": "$3235.00"}
+{"id": "task_052:q4", "kind": "limit", "question": "What is the maximum provisional credit for a Premium Tier card, such as the Gold Rewards Card?", "original": "$10000.00", "edited": "$7720.00"}
+{"id": "task_052:q5", "kind": "limit", "question": "What is the maximum provisional credit for an Elite Tier card, such as the Platinum Rewards Card?", "original": "$15000.00", "edited": "$9630.00"}
+{"id": "task_052:q6", "kind": "limit", "question": "What is the maximum provisional credit for an Invitation Tier Diamond Elite Card?", "original": "$25000.00", "edited": "$18225.00"}
+{"id": "task_054:q0", "kind": "limit", "question": "For an Entry-tier Rho-Bank credit card CLI, what is the maximum increase as a percentage of the current credit limit per request?", "original": "25%", "edited": "14%"}
+{"id": "task_054:q1", "kind": "limit", "question": "What is the maximum provisional credit for an Entry Tier Rho-Bank card dispute?", "original": "$2500.00", "edited": "$1418.00"}
+{"id": "task_054:q2", "kind": "limit", "question": "What is the maximum provisional credit for a Mid Tier Rho-Bank card dispute?", "original": "$5000.00", "edited": "$2975.00"}
+{"id": "task_054:q3", "kind": "limit", "question": "What is the maximum provisional credit for a Premium Tier Rho-Bank card dispute?", "original": "$10000.00", "edited": "$5030.00"}
+{"id": "task_054:q4", "kind": "limit", "question": "What is the maximum provisional credit for an Elite Tier Rho-Bank card dispute?", "original": "$15000.00", "edited": "$23940.00"}
+{"id": "task_054:q5", "kind": "limit", "question": "What is the maximum provisional credit for an Invitation Tier Diamond Elite Card dispute?", "original": "$25000.00", "edited": "$37675.00"}
+{"id": "task_054:q6", "kind": "fee", "question": "What is the expedited shipping fee for an Entry-tier replacement credit card?", "original": "$15.00", "edited": "$26.00"}
+{"id": "task_054:q7", "kind": "fee", "question": "What is the expedited shipping fee for a Mid-tier replacement credit card?", "original": "$10.00", "edited": "$16.00"}
+{"id": "task_055:q0", "kind": "eligibility", "question": "What is the minimum age to open a personal checking account?", "original": "18", "edited": "10"}
+{"id": "task_055:q1", "kind": "rate", "question": "What Tier 1 APY does a Silver Plus Account pay below the Tier 2 balance threshold?", "original": "3.0%", "edited": "1.9%"}
+{"id": "task_055:q2", "kind": "rate", "question": "What Tier 2 APY does a Silver Plus Account pay at or above the Tier 2 balance threshold?", "original": "4.5%", "edited": "7.1%"}
+{"id": "task_055:q3", "kind": "limit", "question": "What is the monthly maximum for ATM fee rebates on a Silver Plus Account?", "original": "25", "edited": "34"}
+{"id": "task_055:q4", "kind": "rate", "question": "What additional relationship APY bonus can a qualifying Silver Plus Account holder earn?", "original": "0.025%", "edited": "0.034%"}
+{"id": "task_056:q0", "kind": "eligibility", "question": "What minimum balance must an existing checking account have to qualify a customer to open a business checking account?", "original": "$500", "edited": "$920"}
+{"id": "task_056:q1", "kind": "fee", "question": "What is the monthly maintenance fee for a Cobalt Blue business checking account?", "original": "$20.00", "edited": "$30.00"}
+{"id": "task_056:q2", "kind": "other", "question": "How much does a business earn for each successful referral to Cobalt Blue?", "original": "$150", "edited": "$260"}
+{"id": "task_056:q3", "kind": "other", "question": "What welcome bonus does a referred business receive for Cobalt Blue?", "original": "$100", "edited": "$70"}
+{"id": "task_056:q4", "kind": "limit", "question": "What is the maximum number of successful Cobalt Blue referrals a customer can make per calendar year?", "original": "10", "edited": "16"}
+{"id": "task_056:q5", "kind": "rate", "question": "What total APY does a Silver Plus Saver balance below the tier 2 threshold earn with a Business Silver Rewards Card bonus?", "original": "2.68%", "edited": "4.25%"}
+{"id": "task_056:q6", "kind": "limit", "question": "How many free withdrawals per month does Silver Plus Saver provide?", "original": "20", "edited": "11"}
+{"id": "task_056:q7", "kind": "eligibility", "question": "What balance makes a Silver Plus Saver account eligible for its higher APY tier?", "original": "$25,000", "edited": "$13,000"}
+{"id": "task_057:q0", "kind": "eligibility", "question": "What is the minimum age to open a personal checking account?", "original": "18", "edited": "27"}
+{"id": "task_057:q1", "kind": "fee", "question": "What is the monthly maintenance fee for a Blue Account?", "original": "$20.00", "edited": "$13.00"}
+{"id": "task_057:q2", "kind": "fee", "question": "What is the maximum fee for an out-of-network ATM withdrawal from a Blue Account?", "original": "$3.00", "edited": "$4.75"}
+{"id": "task_058:q0", "kind": "limit", "question": "What is the typical upper end of the initial credit line range for the EcoCard upon approval?", "original": "$50,000", "edited": "$39,000"}
+{"id": "task_058:q1", "kind": "rate", "question": "What purchase APR applies to carried balances on the EcoCard?", "original": "19.99%", "edited": "15.00%"}
+{"id": "task_058:q2", "kind": "fee", "question": "What annual fee does the EcoCard charge?", "original": "$50.00", "edited": "$32.00"}
+{"id": "task_058:q3", "kind": "fee", "question": "What foreign transaction fee applies to international EcoCard purchases?", "original": "1.0%", "edited": "0.6%"}
+{"id": "task_058:q4", "kind": "fee", "question": "What late payment fee applies to the EcoCard if a customer misses the due date?", "original": "$32.50", "edited": "$56.00"}
+{"id": "task_058:q5", "kind": "other", "question": "How many sustainability points does an EcoCard customer earn after meeting the eligible-purchase threshold during the first month?", "original": "$2,000", "edited": "$1,600"}
+{"id": "task_058:q6", "kind": "rate", "question": "What is the lower APY tier for a Silver Account?", "original": "2.5%", "edited": "1.3%"}
+{"id": "task_058:q7", "kind": "rate", "question": "What is the higher APY tier for a Silver Account?", "original": "4.0%", "edited": "7.0%"}
+{"id": "task_059:q0", "kind": "eligibility", "question": "What minimum credit score is required to qualify for the Silver Rewards Card?", "original": "$680", "edited": "$1000"}
+{"id": "task_059:q1", "kind": "rate", "question": "What is the standard APR on the Silver Rewards Card for carried balances after the promotional period?", "original": "18.99%", "edited": "13.00%"}
+{"id": "task_059:q2", "kind": "fee", "question": "What foreign transaction fee applies to the Silver Rewards Card without a premium subscription?", "original": "2.75%", "edited": "4.75%"}
+{"id": "task_059:q3", "kind": "limit", "question": "What is the lower end of the typical initial credit limit range for the Silver Rewards Card?", "original": "$10,000", "edited": "$5,800"}
+{"id": "task_059:q4", "kind": "limit", "question": "What is the upper end of the typical initial credit limit range for the Silver Rewards Card?", "original": "$100,000", "edited": "$140,000"}
+{"id": "task_059:q5", "kind": "time", "question": "For how many days after purchase does the Silver Rewards Card's purchase protection cover eligible items?", "original": "90", "edited": "130"}
+{"id": "task_059:q6", "kind": "limit", "question": "What is the maximum purchase protection amount per claim on the Silver Rewards Card?", "original": "$3,000", "edited": "$2,000"}
+{"id": "task_059:q7", "kind": "rate", "question": "What APY bonus does the Silver Rewards Card provide on a Green Account (savings)?", "original": "0.45%", "edited": "0.25%"}
+{"id": "task_062:q0", "kind": "eligibility", "question": "For a customer applying for a business checking account, what minimum balance must their existing checking account have?", "original": "$500", "edited": "$260"}
+{"id": "task_062:q1", "kind": "fee", "question": "What early closure fee applies to an ENTRY TIER personal checking account closed within 30 days?", "original": "$15", "edited": "$19"}
+{"id": "task_062:q2", "kind": "fee", "question": "What early closure fee applies to an Evergreen Account closed within 90 days?", "original": "$50", "edited": "$85"}
+{"id": "task_062:q4", "kind": "fee", "question": "What early closure fee applies to a Silver Plus Account closed within 90 days?", "original": "$35", "edited": "$24"}
+{"id": "task_062:q5", "kind": "rate", "question": "What Tier 1 APY does a Silver Plus Account earn on balances below the Tier 2 threshold?", "original": "3.0%", "edited": "2.3%"}
+{"id": "task_062:q6", "kind": "fee", "question": "What is the monthly maintenance fee for Cobalt Blue Business Checking?", "original": "$20.00", "edited": "$27.00"}
+{"id": "task_062:q7", "kind": "rate", "question": "What APY does True Blue Business Checking earn on balances?", "original": "2.0%", "edited": "3.5%"}
+{"id": "task_063:q0", "kind": "rate", "question": "What Tier 1 APY applies to a Silver Plus Account balance below the Tier 2 threshold?", "original": "3.0%", "edited": "4.6%"}
+{"id": "task_063:q1", "kind": "rate", "question": "What Tier 2 APY applies to a Silver Plus Account balance at or above its Tier 2 threshold?", "original": "4.5%", "edited": "6.1%"}
+{"id": "task_063:q2", "kind": "rate", "question": "What relationship APY bonus can a qualifying Silver Plus Account holder earn?", "original": "0.025%", "edited": "0.017%"}
+{"id": "task_063:q3", "kind": "rate", "question": "What APY bonus does a Gold Rewards Card provide on a Silver Plus Account?", "original": "0.2%", "edited": "0.3%"}
+{"id": "task_063:q5", "kind": "rate", "question": "What APY bonus does a Platinum Rewards Card provide on a Green Account (savings)?", "original": "0.35%", "edited": "0.25%"}
+{"id": "task_063:q6", "kind": "rate", "question": "What APY bonus does a Diamond Elite Card provide on a Green Account (savings)?", "original": "0.6%", "edited": "0.8%"}
+{"id": "task_063:q7", "kind": "eligibility", "question": "What minimum credit score is required to apply for the Silver Rewards Card?", "original": "$680", "edited": "$1200"}
+{"id": "task_064:q0", "kind": "rate", "question": "What APY bonus does the Diamond Elite Card add to a Gold Plus Account?", "original": "0.25%", "edited": "0.50%"}
+{"id": "task_064:q1", "kind": "rate", "question": "What APY bonus does the Gold Rewards Card add to a Gold Account?", "original": "0.025%", "edited": "0.040%"}
+{"id": "task_064:q2", "kind": "rate", "question": "What APY bonus does the Diamond Elite Card add to a Silver Plus Account?", "original": "0.4%", "edited": "0.7%"}
+{"id": "task_064:q3", "kind": "eligibility", "question": "What minimum credit score is required for the Silver Rewards Card?", "original": "$680", "edited": "$360"}
+{"id": "task_064:q4", "kind": "rate", "question": "What is the standard APR on carried balances for the Silver Rewards Card after its introductory period?", "original": "18.99%", "edited": "14.00%"}
+{"id": "task_064:q5", "kind": "limit", "question": "What is the typical upper end of the initial credit limit range for the Silver Rewards Card?", "original": "$100,000", "edited": "$130,000"}
+{"id": "task_064:q6", "kind": "rate", "question": "What purchase APR applies to carried balances on the EcoCard?", "original": "19.99%", "edited": "12.00%"}
+{"id": "task_064:q7", "kind": "fee", "question": "What annual fee does the EcoCard charge?", "original": "$50.00", "edited": "$29.00"}
+{"id": "task_070:q0", "kind": "eligibility", "question": "When checking eligibility to open a business checking account, what minimum balance must the customer's existing checking account have?", "original": "$500", "edited": "$380"}
+{"id": "task_070:q1", "kind": "other", "question": "Under the Sky Blue Startup Referral Program, what welcome bonus does the referred startup receive?", "original": "$250", "edited": "$350"}
+{"id": "task_070:q2", "kind": "limit", "question": "What is the annual referral limit for the Sky Blue Startup Referral Program?", "original": "8", "edited": "13"}
+{"id": "task_070:q3", "kind": "rate", "question": "What APY does a Sky Blue account earn on balances?", "original": "1.25%", "edited": "0.75%"}
+{"id": "task_070:q4", "kind": "other", "question": "Under the Hunter Green referral program, what bonus does the new member receive?", "original": "$125", "edited": "$86"}
+{"id": "task_070:q5", "kind": "other", "question": "What welcome bonus does a referred business receive under the Navy Blue Business Checking referral program?", "original": "$75", "edited": "$41"}
+{"id": "task_070:q6", "kind": "fee", "question": "What is the monthly maintenance fee for True Blue Business Checking?", "original": "$75.00", "edited": "$43.00"}
+{"id": "task_070:q7", "kind": "rate", "question": "What APY does True Blue Business Checking earn on balances?", "original": "2.0%", "edited": "2.6%"}
+{"id": "task_072:q0", "kind": "limit", "question": "What is the minimum opening deposit for a Bluest Account?", "original": "$75,000", "edited": "$100,000"}
+{"id": "task_072:q1", "kind": "eligibility", "question": "What minimum daily balance must a Bluest Account keep to maintain its benefits?", "original": "$112,500", "edited": "$77,000"}
+{"id": "task_072:q2", "kind": "fee", "question": "What is the fee for an outbound international wire from a Bluest Account?", "original": "$12.50", "edited": "$21.00"}
+{"id": "task_072:q3", "kind": "limit", "question": "What is the daily mobile check deposit limit for a Bluest Account?", "original": "$10,000", "edited": "$7,500"}
+{"id": "task_072:q4", "kind": "eligibility", "question": "How much must a person referred to Bluest deposit to qualify for the referral reward?", "original": "$2,000", "edited": "$1,200"}
+{"id": "task_072:q5", "kind": "time", "question": "How long does a person referred to Bluest have to make the qualifying deposit?", "original": "90", "edited": "56"}
+{"id": "task_072:q6", "kind": "time", "question": "How long must a referrer have had a Rho-Bank checking relationship before they are eligible for Bluest referral rewards?", "original": "60", "edited": "110"}
+{"id": "task_072:q7", "kind": "limit", "question": "What is the daily ATM withdrawal limit for a Bluest Account debit card?", "original": "$1,500", "edited": "$2,600"}
+{"id": "task_073:q0", "kind": "fee", "question": "What is the Blue Account monthly maintenance fee?", "original": "$20.00", "edited": "$14.00"}
+{"id": "task_073:q2", "kind": "fee", "question": "What is the Green Account monthly maintenance fee?", "original": "$22.50", "edited": "$13.00"}
+{"id": "task_073:q3", "kind": "limit", "question": "What is the Green Account debit card\u2019s daily ATM withdrawal limit?", "original": "$600", "edited": "$980"}
+{"id": "task_073:q4", "kind": "fee", "question": "What does the Green Account charge to receive an incoming domestic wire?", "original": "$15", "edited": "$27"}
+{"id": "task_073:q5", "kind": "eligibility", "question": "What welcome bonus does a new customer receive for a successful Light Green referral?", "original": "$25", "edited": "$35"}
+{"id": "task_073:q6", "kind": "time", "question": "How many days does a Green referral have to make the qualifying deposit?", "original": "60", "edited": "37"}
+{"id": "task_073:q7", "kind": "time", "question": "How long is the cooldown after a credit is applied to a checking account?", "original": "14", "edited": "18"}
+{"id": "task_074:q0", "kind": "limit", "question": "What is the Purple Account debit card\u2019s daily ATM withdrawal limit worldwide?", "original": "$1,000", "edited": "$710"}
+{"id": "task_074:q1", "kind": "limit", "question": "What is the Dark Green Account\u2019s daily ATM withdrawal limit?", "original": "$300", "edited": "$220"}
+{"id": "task_074:q2", "kind": "fee", "question": "What fee does the Evergreen Account charge for an incoming domestic wire transfer?", "original": "$12.50", "edited": "$8.75"}
+{"id": "task_074:q3", "kind": "limit", "question": "What is the Evergreen Account\u2019s daily debit card purchase limit?", "original": "$4,500", "edited": "$7,200"}
+{"id": "task_074:q4", "kind": "time", "question": "How long is the cooldown before another credit can be applied to the same checking account?", "original": "14", "edited": "23"}
+{"id": "task_077:q0", "kind": "time", "question": "For a Light Green Account, how many days after opening does the $15 early closure fee apply?", "original": "30", "edited": "19"}
+{"id": "task_077:q1", "kind": "fee", "question": "What early closure fee applies to a Bluest Account closed within its fee period?", "original": "$100", "edited": "$170"}
+{"id": "task_077:q2", "kind": "time", "question": "After an Entry-tier debit card is closed, how long must the customer wait before ordering a replacement?", "original": "48", "edited": "35"}
+{"id": "task_077:q3", "kind": "fee", "question": "For a Premium-tier debit card replacement, what is the rush shipping fee?", "original": "$35", "edited": "$23"}
+{"id": "task_077:q4", "kind": "eligibility", "question": "What is the minimum opening deposit for a Bluest Account?", "original": "$75,000", "edited": "$52,000"}
+{"id": "task_077:q5", "kind": "limit", "question": "What minimum daily balance must a Bluest Account maintain to keep its benefits?", "original": "$112,500", "edited": "$190,000"}
+{"id": "task_077:q6", "kind": "rate", "question": "What APY does the Bluest Account offer?", "original": "2.25%", "edited": "1.25%"}
+{"id": "task_077:q7", "kind": "limit", "question": "What is the Bluest Account's daily mobile check deposit limit?", "original": "$10,000", "edited": "$5,500"}
+{"id": "task_078:q0", "kind": "fee", "question": "For an Evergreen Account closed within 90 days, what early closure fee applies?", "original": "$50", "edited": "$78"}
+{"id": "task_078:q2", "kind": "fee", "question": "What early closure fee applies to a Bluest Account closed within its fee period?", "original": "$100", "edited": "$71"}
+{"id": "task_078:q3", "kind": "time", "question": "Within how many days does the early closure fee period apply to a Bluest Account?", "original": "180", "edited": "250"}
+{"id": "task_078:q4", "kind": "time", "question": "After an Entry Tier debit card is closed, how long must the customer wait before ordering a replacement?", "original": "48", "edited": "81"}
+{"id": "task_078:q5", "kind": "fee", "question": "What is the rush shipping fee for a replacement card on a Premium Tier account?", "original": "$35", "edited": "$62"}
+{"id": "task_078:q6", "kind": "fee", "question": "What is the monthly maintenance fee for a Green Account (checking)?", "original": "$22.50", "edited": "$37.00"}
+{"id": "task_078:q7", "kind": "other", "question": "How much does a customer earn for each successful referral to open a Green Account?", "original": "$20", "edited": "$34"}
+{"id": "task_079:q0", "kind": "fee", "question": "What early closure fee applies to a Bluest Account closed within its fee period?", "original": "$100", "edited": "$75"}
+{"id": "task_079:q1", "kind": "time", "question": "Within how many days of opening does the Bluest Account early closure fee apply?", "original": "180", "edited": "330"}
+{"id": "task_079:q2", "kind": "time", "question": "After closing an ENTRY TIER debit card, how many hours must the customer wait before ordering a replacement?", "original": "48", "edited": "29"}
+{"id": "task_079:q3", "kind": "eligibility", "question": "What is the minimum transaction amount for filing a debit card dispute?", "original": "$1.00", "edited": "$0.75"}
+{"id": "task_079:q4", "kind": "fee", "question": "What is the monthly maintenance fee for a Green Account (checking)?", "original": "$22.50", "edited": "$12.00"}
+{"id": "task_079:q5", "kind": "other", "question": "How much does a customer earn for each successful referral to open a Green Account?", "original": "$20", "edited": "$28"}
+{"id": "task_079:q6", "kind": "other", "question": "What welcome bonus does a new Green Account referral receive?", "original": "$30", "edited": "$16"}
+{"id": "task_079:q7", "kind": "fee", "question": "What is the fee for each cashier\u2019s check with a Light Blue Account?", "original": "10", "edited": "18"}
+{"id": "task_081:q0", "kind": "fee", "question": "What early closure fee applies to an Evergreen Account closed within 90 days?", "original": "$50", "edited": "$38"}
+{"id": "task_081:q1", "kind": "fee", "question": "What early closure fee applies to a Bluest Account closed within 180 days?", "original": "$100", "edited": "$61"}
+{"id": "task_081:q2", "kind": "time", "question": "How many days is the early closure period for a Bluest Account?", "original": "180", "edited": "340"}
+{"id": "task_081:q3", "kind": "time", "question": "After an ENTRY TIER debit card is closed, how long must the customer wait before ordering a replacement?", "original": "48", "edited": "76"}
+{"id": "task_081:q4", "kind": "eligibility", "question": "What is the minimum age to order a debit card for a checking account?", "original": "18", "edited": "23"}
+{"id": "task_081:q5", "kind": "limit", "question": "What is the maximum provisional credit for an eligible dispute on an Entry Tier credit card?", "original": "$2500.00", "edited": "$1473.00"}
+{"id": "task_081:q6", "kind": "limit", "question": "What is the maximum provisional credit for an eligible dispute on a Mid Tier credit card?", "original": "$5000.00", "edited": "$3910.00"}
+{"id": "task_081:q7", "kind": "limit", "question": "What is the maximum provisional credit for an eligible dispute on a Premium Tier credit card?", "original": "$10000.00", "edited": "$6460.00"}
+{"id": "task_089:q0", "kind": "time", "question": "For Error 903, how long should a customer wait before trying to close the account again?", "original": "48", "edited": "25"}
+{"id": "task_089:q1", "kind": "eligibility", "question": "How many days old must a checking account be to qualify for a temporary debit card limit increase?", "original": "60", "edited": "42"}
+{"id": "task_089:q2", "kind": "limit", "question": "What is the maximum new limit allowed for a temporary debit card limit increase, as a percentage of the current limit?", "original": "150%", "edited": "92%"}
+{"id": "task_089:q3", "kind": "limit", "question": "What is the daily card-purchase cap for minors?", "original": "$300", "edited": "$160"}
+{"id": "task_089:q4", "kind": "fee", "question": "What is the returned deposit fee per item for a Light Green Account?", "original": "$12.50", "edited": "$7.50"}
+{"id": "task_089:q5", "kind": "fee", "question": "What fee does a Light Green Account charge for an incoming domestic wire transfer?", "original": "$10.00", "edited": "$7.00"}
+{"id": "task_089:q7", "kind": "limit", "question": "What is the daily ATM withdrawal limit for a Green Account checking debit card?", "original": "$600", "edited": "$1000"}
+{"id": "task_090:q0", "kind": "time", "question": "For the PIN lock risk score, how many hours or less since the last successful PIN use earns 0 points?", "original": "24", "edited": "35"}
+{"id": "task_090:q1", "kind": "eligibility", "question": "What minimum balance does the Green Account (savings) require?", "original": "$500", "edited": "$300"}
+{"id": "task_090:q2", "kind": "limit", "question": "For the PIN lock risk score, what percentage of the daily ATM limit begins the 1-point amount flag range?", "original": "80", "edited": "140"}
+{"id": "task_090:q3", "kind": "limit", "question": "At what total PIN lock risk score does the VERY HIGH risk protocol begin?", "original": "11", "edited": "19"}
+{"id": "task_090:q4", "kind": "eligibility", "question": "What is the minimum customer age for ordering a debit card?", "original": "18", "edited": "32"}
+{"id": "task_090:q5", "kind": "time", "question": "How long must an ENTRY TIER customer wait after card closure before ordering a replacement?", "original": "48", "edited": "31"}
+{"id": "task_090:q6", "kind": "time", "question": "Within how many days does the MID TIER checking account early closure fee apply?", "original": "60", "edited": "41"}
+{"id": "task_090:q7", "kind": "time", "question": "Within how many days does the ELITE TIER checking account early closure fee apply?", "original": "180", "edited": "230"}
+{"id": "task_093:q0", "kind": "fee", "question": "What monthly maintenance fee applies to a Silver Account when the customer misses the minimum balance requirement for a statement cycle?", "original": "$5.00", "edited": "$3.75"}
+{"id": "task_093:q1", "kind": "fee", "question": "What fee applies to each Silver Account withdrawal beyond the monthly withdrawal limit?", "original": "$2.00", "edited": "$1.25"}
+{"id": "task_093:q2", "kind": "rate", "question": "What APY bonus does the Silver Rewards Card add to a Silver Account?", "original": "0.1%", "edited": "0.2%"}
+{"id": "task_093:q3", "kind": "rate", "question": "What APY bonus does the EcoCard add to a Silver Account?", "original": "2.2%", "edited": "1.7%"}
+{"id": "task_093:q4", "kind": "fee", "question": "What monthly maintenance fee applies to a Green Account?", "original": "$22.50", "edited": "$13.00"}
+{"id": "task_093:q5", "kind": "other", "question": "How much does a Green Account customer earn for each successful referral?", "original": "$20", "edited": "$14"}
+{"id": "task_093:q6", "kind": "other", "question": "What welcome bonus does a referred customer receive when they open a Green Account?", "original": "$30", "edited": "$21"}
+{"id": "task_093:q7", "kind": "time", "question": "Within how many days must a referred Green Account customer make the qualifying deposit?", "original": "60", "edited": "77"}
+{"id": "task_094:q0", "kind": "rate", "question": "What APY bonus does a Silver Rewards Card add to a Gold Account?", "original": "0.2%", "edited": "0.1%"}
+{"id": "task_094:q1", "kind": "rate", "question": "What APY bonus does a Diamond Elite Card add to a Gold Account?", "original": "0.3%", "edited": "0.5%"}
+{"id": "task_094:q2", "kind": "rate", "question": "What APY bonus does a Green Rewards Card add to a Gold Account?", "original": "0.35%", "edited": "0.50%"}
+{"id": "task_094:q3", "kind": "fee", "question": "What monthly maintenance fee applies to a Green Account?", "original": "$22.50", "edited": "$42.00"}
+{"id": "task_094:q4", "kind": "other", "question": "How much does a Green Account customer earn for each successful referral?", "original": "$20", "edited": "$29"}
+{"id": "task_094:q5", "kind": "eligibility", "question": "What qualifying deposit must a referred customer make for the Green Account referral program?", "original": "$500", "edited": "$300"}
+{"id": "task_094:q6", "kind": "time", "question": "Within how many days must the referred Green Account customer make the qualifying deposit?", "original": "60", "edited": "110"}
+{"id": "task_094:q7", "kind": "eligibility", "question": "Above what goodwill credit amount does the savings-account credit policy typically require supervisor approval?", "original": "$25", "edited": "$13"}
+{"id": "task_095:q0", "kind": "fee", "question": "What monthly maintenance fee does a Green Account charge?", "original": "$22.50", "edited": "$12.00"}
+{"id": "task_095:q1", "kind": "other", "question": "How much does a Green Account customer earn for each successful referral?", "original": "$20", "edited": "$31"}
+{"id": "task_095:q2", "kind": "eligibility", "question": "What qualifying deposit must a referred customer make to receive the Green Account referral reward?", "original": "$500", "edited": "$680"}
+{"id": "task_095:q3", "kind": "time", "question": "Within how many days must the referred customer make the qualifying deposit?", "original": "60", "edited": "83"}
+{"id": "task_095:q4", "kind": "rate", "question": "What APY bonus does the Silver Rewards Card provide on a Gold Account?", "original": "0.2%", "edited": "0.4%"}
+{"id": "task_095:q5", "kind": "eligibility", "question": "Above what amount does a goodwill credit typically require supervisor approval?", "original": "$25", "edited": "$18"}
+{"id": "task_095:q6", "kind": "rate", "question": "What APY bonus does the Green Rewards Card provide on a Gold Account?", "original": "0.35%", "edited": "0.50%"}
+{"id": "task_096:q0", "kind": "rate", "question": "What APY bonus does a Platinum Rewards Card provide on a Bronze Savings Account?", "original": "0.55%", "edited": "0.50%"}
+{"id": "task_096:q2", "kind": "eligibility", "question": "What is the minimum opening deposit for a Bluest Account?", "original": "$75,000", "edited": "$41,000"}
+{"id": "task_096:q3", "kind": "limit", "question": "What minimum daily balance must a Bluest Account maintain to keep its benefits?", "original": "$112,500", "edited": "$190,000"}
+{"id": "task_096:q4", "kind": "other", "question": "How much does a Bluest Account referrer earn for a successful referral?", "original": "$75", "edited": "$53"}
+{"id": "task_096:q5", "kind": "time", "question": "Within how many days must a referred person deposit the qualifying amount to earn the Bluest referral reward?", "original": "90", "edited": "140"}
+{"id": "task_096:q6", "kind": "eligibility", "question": "How long must a referrer have had a Rho-Bank checking relationship before qualifying for Bluest referral rewards?", "original": "60", "edited": "40"}
+{"id": "task_096:q7", "kind": "eligibility", "question": "What is the minimum age to qualify for a Gold Years Account?", "original": "62", "edited": "45"}
+{"id": "task_097:q0", "kind": "rate", "question": "What APY does a Platinum Savings Account earn on its maintained balance?", "original": "6.5%", "edited": "3.6%"}
+{"id": "task_097:q1", "kind": "rate", "question": "What is the Silver Plus Account Tier 2 APY?", "original": "4.5%", "edited": "3.3%"}
+{"id": "task_097:q2", "kind": "rate", "question": "What APY boost does a Blue Account provide when linked to a Platinum Savings Account?", "original": "0.8%", "edited": "1.4%"}
+{"id": "task_097:q3", "kind": "eligibility", "question": "What minimum daily balance must a Bluest Account maintain to keep its benefits?", "original": "$112,500", "edited": "$210,000"}
+{"id": "task_097:q4", "kind": "eligibility", "question": "How much must a person referred to a Bluest Account deposit within the qualifying period?", "original": "$2,000", "edited": "$1,300"}
+{"id": "task_097:q5", "kind": "fee", "question": "What fee applies to each returned deposit in a Light Green Account?", "original": "$15.00", "edited": "$26.00"}
+{"id": "task_097:q6", "kind": "limit", "question": "What is the Light Green Account debit card's daily purchase limit?", "original": "$250", "edited": "$190"}
+{"id": "task_097:q7", "kind": "rate", "question": "What APY bonus does the EcoCard provide on a Silver Account?", "original": "2.2%", "edited": "1.5%"}
+{"id": "task_098:q0", "kind": "eligibility", "question": "For a checking account referral, what is the minimum age for the person being referred, except for Light Green Account referrals?", "original": "18", "edited": "11"}
+{"id": "task_098:q1", "kind": "limit", "question": "What minimum daily balance waives the Purple Account monthly maintenance fee?", "original": "$3,750", "edited": "$4,800"}
+{"id": "task_098:q2", "kind": "other", "question": "How much does the referrer earn for a successful Purple Account referral?", "original": "$45", "edited": "$82"}
+{"id": "task_098:q3", "kind": "eligibility", "question": "What is the minimum opening deposit for a Bluest Account?", "original": "$75,000", "edited": "$56,000"}
+{"id": "task_098:q4", "kind": "limit", "question": "What minimum daily balance must a Bluest Account holder maintain to keep its benefits?", "original": "$112,500", "edited": "$82,000"}
+{"id": "task_098:q5", "kind": "limit", "question": "What is the Bluest Account's daily mobile check deposit limit?", "original": "$10,000", "edited": "$16,000"}
+{"id": "task_098:q6", "kind": "limit", "question": "How many referral bonuses can a Bluest Account holder earn per calendar year?", "original": "8", "edited": "13"}
+{"id": "task_098:q7", "kind": "fee", "question": "What is the Green Account's monthly maintenance fee?", "original": "$22.50", "edited": "$12.00"}
+{"id": "task_099:q0", "kind": "eligibility", "question": "For a referral to an account other than Light Green, what is the minimum age for the referred person?", "original": "18", "edited": "32"}
+{"id": "task_099:q1", "kind": "fee", "question": "What monthly maintenance fee does a True Blue account charge if the balance does not meet the waiver threshold?", "original": "$75", "edited": "$94"}
+{"id": "task_099:q2", "kind": "fee", "question": "What is the monthly maintenance fee for a Cobalt Blue Business Checking account?", "original": "$20.00", "edited": "$33.00"}
+{"id": "task_099:q3", "kind": "other", "question": "What welcome bonus does a business receive when referred to Hunter Green Business Checking?", "original": "$125", "edited": "$160"}
+{"id": "task_099:q4", "kind": "other", "question": "What bonus does a World Blue member earn for each successful referral?", "original": "$300", "edited": "$540"}
+{"id": "task_099:q6", "kind": "eligibility", "question": "How much must a business deposit within 90 days to qualify for a Lime Green referral?", "original": "$15,000", "edited": "$20,000"}
+{"id": "task_099:q7", "kind": "limit", "question": "What is the annual referral limit for the Sky Blue Startup Account?", "original": "8", "edited": "13"}
+{"id": "task_100:q0", "kind": "other", "question": "For a successful Navy Blue Business Checking referral, how much is the referrer bonus?", "original": "$100", "edited": "$59"}
+{"id": "task_100:q1", "kind": "fee", "question": "What is the outgoing domestic wire transfer fee for Cobalt Blue?", "original": "$20.00", "edited": "$27.00"}
+{"id": "task_100:q2", "kind": "eligibility", "question": "What qualifying deposit must a referred business make for a Cobalt Blue referral?", "original": "$7,500", "edited": "$3,900"}
+{"id": "task_100:q3", "kind": "other", "question": "How much is the referrer reward for each successful Hunter Green Business Checking referral?", "original": "$175", "edited": "$230"}
+{"id": "task_100:q4", "kind": "eligibility", "question": "What deposit must a referred business make to qualify for a Lime Green referral?", "original": "$15,000", "edited": "$12,000"}
+{"id": "task_100:q5", "kind": "fee", "question": "What monthly maintenance fee applies to a True Blue Account when the waiver threshold is not met?", "original": "$75", "edited": "$60"}
+{"id": "task_100:q6", "kind": "eligibility", "question": "What is the minimum age for a referred person in the general checking referral rules, except for the Light Green Account?", "original": "18", "edited": "11"}
+{"id": "task_100:q7", "kind": "limit", "question": "What is the annual referral limit for the Sky Blue Startup Account?", "original": "8", "edited": "14"}

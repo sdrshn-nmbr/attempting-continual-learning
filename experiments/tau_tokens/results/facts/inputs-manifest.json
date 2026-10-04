@@ -1,0 +1,37 @@
+{
+  "tau2_commit": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+  "tokenizer": "Qwen/Qwen3-4B-Instruct-2507",
+  "slots": 164,
+  "edit_seed": 17,
+  "ask": "Reply with only the value, written exactly as it appears in the bank's documents.",
+  "questions_sha256": "95c141dc2eb4fb1b17f78264c040c115846d16731767c0e623eb2d79b079e53a",
+  "tasks": 55,
+  "questions": 379,
+  "dropped": {
+    "answer_in_system_prompt": 10,
+    "no_edited_value": 5,
+    "task_without_questions": 7
+  },
+  "questions_by_kind": {
+    "eligibility": 47,
+    "rate": 66,
+    "limit": 105,
+    "time": 36,
+    "fee": 86,
+    "other": 39
+  },
+  "original": {
+    "decisions": 379,
+    "prefix_tokens_median": 3550,
+    "values_with_exact_token_boundaries": 379,
+    "prefixes_sha256": "1ccaba982d0b29144252a1251fab67ae3a91ec8fec8a377c2d05a0062b6ccce7",
+    "inputs_sha256": "fcc26ef78a624b39d8f5d753ba50e3be90707ae5ea8fc62a825f19e5800b1a09"
+  },
+  "edited": {
+    "decisions": 758,
+    "prefix_tokens_median": 3550,
+    "values_with_exact_token_boundaries": 758,
+    "prefixes_sha256": "7f43e773348d388bdf65337e220b1397ad172f932785d61a5521b7d8f8a10ddb",
+    "inputs_sha256": "ce986854d4b24b644a85462ea8ffe3bfde950a7299547b491cb8540ee375bfe7"
+  }
+}
