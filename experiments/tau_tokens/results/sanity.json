@@ -1,7 +1,7 @@
 {
   "bootstrap": 4000,
   "seed": 0,
-  "scores_sha256": "88f4456e73dfe0e6c2ba7e8d2e5dbb2c5e204059930ddeaf999a4eae0c5c51af",
+  "scores_sha256": "1b57f500a1701ea6049ec712d412ed82edf1852e1e659dbfe690e5a8261c49c9",
   "pilot_gold_sha256": "9ae7a3531bdede01d746a9af28c6c1b4a32a8252fa5f0e82207536de9c77cb7b",
   "pilot_none_sha256": "cca37b7ba0ea0531e7391034815456e6d0843337d3642628f5b251dac9ab365c",
   "check1_documents_only_full_beats_none": {
@@ -11,6 +11,7 @@
       "full": 73.6264,
       "streaming": 2.1978,
       "am": 6.044,
+      "am-budgets": 48.3516,
       "still-17": 3.8462,
       "still-23": 4.3956,
       "still-29": 3.8462
@@ -20,6 +21,7 @@
       "full": -0.3846,
       "streaming": -3.1416,
       "am": -1.5557,
+      "am-budgets": -0.6501,
       "still-17": -1.3686,
       "still-23": -1.4061,
       "still-29": -1.3483
@@ -51,6 +53,7 @@
       "full": 93.8503,
       "streaming": 93.7166,
       "am": 93.5829,
+      "am-budgets": 94.9866,
       "still-17": 96.3904,
       "still-23": 96.0561,
       "still-29": 95.5882
@@ -60,6 +63,7 @@
       "full": -0.0694,
       "streaming": -0.0786,
       "am": -0.0671,
+      "am-budgets": -0.0492,
       "still-17": -0.0278,
       "still-23": -0.0332,
       "still-29": -0.0317
@@ -92,11 +96,20 @@
         "values": 1496,
         "tasks": 62
       },
+      "am-budgets": {
+        "mean": 1.1364,
+        "ci95": [
+          0.5295,
+          1.9266
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
       "still-17": {
         "mean": 2.5401,
         "ci95": [
-          1.6017,
-          3.8582
+          1.6207,
+          3.8627
         ],
         "values": 1496,
         "tasks": 62
@@ -104,8 +117,8 @@
       "still-23": {
         "mean": 2.2059,
         "ci95": [
-          1.0,
-          3.876
+          1.019,
+          3.8728
         ],
         "values": 1496,
         "tasks": 62
@@ -113,8 +126,8 @@
       "still-29": {
         "mean": 1.738,
         "ci95": [
-          0.5758,
-          3.2462
+          0.5389,
+          3.3032
         ],
         "values": 1496,
         "tasks": 62
@@ -124,8 +137,8 @@
       "none": {
         "mean": -0.0108,
         "ci95": [
-          -0.041,
-          0.0126
+          -0.0406,
+          0.0129
         ],
         "values": 1496,
         "tasks": 62
@@ -133,8 +146,8 @@
       "streaming": {
         "mean": -0.0091,
         "ci95": [
-          -0.0378,
-          0.013
+          -0.0362,
+          0.0132
         ],
         "values": 1496,
         "tasks": 62
@@ -142,8 +155,17 @@
       "am": {
         "mean": 0.0024,
         "ci95": [
-          -0.0169,
-          0.0193
+          -0.0152,
+          0.0183
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "am-budgets": {
+        "mean": 0.0202,
+        "ci95": [
+          0.0057,
+          0.0399
         ],
         "values": 1496,
         "tasks": 62
@@ -151,8 +173,8 @@
       "still-17": {
         "mean": 0.0417,
         "ci95": [
-          0.0282,
-          0.0609
+          0.028,
+          0.0612
         ],
         "values": 1496,
         "tasks": 62
@@ -160,8 +182,8 @@
       "still-23": {
         "mean": 0.0362,
         "ci95": [
-          0.02,
-          0.0592
+          0.0199,
+          0.0583
         ],
         "values": 1496,
         "tasks": 62
@@ -169,8 +191,8 @@
       "still-29": {
         "mean": 0.0378,
         "ci95": [
-          0.0244,
-          0.0564
+          0.0243,
+          0.0554
         ],
         "values": 1496,
         "tasks": 62
@@ -180,6 +202,7 @@
       "none": true,
       "streaming": true,
       "am": true,
+      "am-budgets": true,
       "still-17": true,
       "still-23": true,
       "still-29": true
@@ -193,16 +216,16 @@
     "full_exact_vs_gold_recall": {
       "spearman": 0.5059,
       "ci95": [
-        0.2735,
-        0.6962
+        0.2665,
+        0.7053
       ],
       "tasks": 62
     },
     "full_logprob_vs_gold_recall": {
       "spearman": 0.4088,
       "ci95": [
-        0.1627,
-        0.6195
+        0.1675,
+        0.6194
       ],
       "tasks": 62
     },
@@ -210,15 +233,15 @@
       "spearman": 0.194,
       "ci95": [
         0.1798,
-        0.356
+        0.3698
       ],
       "tasks": 62
     },
     "token_gain_vs_pilot_recall_gain": {
       "spearman": 0.4021,
       "ci95": [
-        0.1455,
-        0.6165
+        0.1581,
+        0.621
       ],
       "tasks": 60
     },

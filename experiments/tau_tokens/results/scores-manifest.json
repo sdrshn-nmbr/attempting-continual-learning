@@ -9,6 +9,7 @@
     "full",
     "streaming",
     "am",
+    "am-budgets",
     "still-17",
     "still-23",
     "still-29"
@@ -47,17 +48,39 @@
     "chunk_tokens": 2048,
     "gpus": "8x MI355X (one node)"
   },
-  "records": 3640,
+  "records": 4160,
   "decisions": 520,
-  "values_scored": 12439,
+  "values_scored": 14216,
   "records_by_condition": {
     "none": 520,
     "full": 520,
     "streaming": 520,
     "am": 520,
+    "am-budgets": 520,
     "still-17": 520,
     "still-23": 520,
     "still-29": 520
   },
-  "scores_sha256": "88f4456e73dfe0e6c2ba7e8d2e5dbb2c5e204059930ddeaf999a4eae0c5c51af"
+  "scores_sha256": "1b57f500a1701ea6049ec712d412ed82edf1852e1e659dbfe690e5a8261c49c9",
+  "am_budgets": {
+    "code_commit": "5845178",
+    "method": "AM-HighestAttnKeys",
+    "algorithm_config": "default",
+    "query_config": "repeat",
+    "per_head_budgets": "head_budget_optimization/head_budgets/Qwen3-4B/optimized_agnostic.json",
+    "official_commit": "2020f6d",
+    "transformers": "4.57.1",
+    "slots_average_per_head": 164,
+    "header_kept_tokens": 3,
+    "tasks": 62,
+    "effective_per_head": [
+      163.27,
+      163.97
+    ],
+    "head_length_range": [
+      24,
+      1462
+    ],
+    "seconds_total": 1142.2
+  }
 }
