@@ -1,0 +1,56 @@
+{
+  "am": {
+    "n": 160,
+    "accuracy": 0.80625,
+    "ci95": [
+      0.74375,
+      0.8625
+    ],
+    "by_domain": {
+      "financial": {
+        "n": 148,
+        "accuracy": 0.8175675675675675
+      },
+      "gutenberg": {
+        "n": 12,
+        "accuracy": 0.6666666666666666
+      }
+    },
+    "unparsed": 3,
+    "predicted_letters": {
+      "A": 45,
+      "B": 36,
+      "D": 40,
+      "C": 36,
+      "null": 3
+    }
+  },
+  "streaming": {
+    "n": 160,
+    "accuracy": 0.2375,
+    "ci95": [
+      0.16875,
+      0.3
+    ],
+    "by_domain": {
+      "financial": {
+        "n": 148,
+        "accuracy": 0.24324324324324326
+      },
+      "gutenberg": {
+        "n": 12,
+        "accuracy": 0.16666666666666666
+      }
+    },
+    "unparsed": 53,
+    "predicted_letters": {
+      "D": 62,
+      "A": 14,
+      "null": 53,
+      "C": 23,
+      "B": 8
+    }
+  },
+  "checkpoint": null,
+  "am_dir": "/mnt/shared/still-repro/am-official-caches/s1024"
+}

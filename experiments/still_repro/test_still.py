@@ -213,21 +213,28 @@ def test_bias_is_added_to_compact_prefix_columns_only():
 
 def test_saved_official_caches_batch_with_padding_and_reproduce_full_cache(tmp_path):
     import attention_matching
+    import cache_format
     model = tiny_model()
     model.set_attn_implementation(attention_matching.NAME)
     ids = torch.randint(0, 97, (2, 26))
     prefix, continuation = ids[:, :20], ids[:, 20:]
     full = prefill(model, prefix)
     for row in range(2):
-        keys = torch.stack([k[row] for k, _ in full])
-        values = torch.stack([v[row] for _, v in full])
-        beta = torch.zeros(keys.shape[:3])
-        if row == 1:
-            keys = torch.cat((keys, torch.randn(*keys.shape[:2], 3, keys.shape[-1])), dim=2)
-            values = torch.cat((values, torch.randn(*values.shape[:2], 3, values.shape[-1])), dim=2)
-            beta = torch.cat((beta, torch.full((*beta.shape[:2], 3), float("-inf"))), dim=2)
-        torch.save({"keys": keys, "beta": beta, "values": values}, attention_matching.cache_path(tmp_path, "code", row))
+        layers = []
+        for keys, values in full:
+            keys, values, beta = keys[row], values[row], torch.zeros(keys.shape[1:3])
+            if row == 1:
+                keys = torch.cat((keys, torch.randn(keys.shape[0], 3, keys.shape[-1])), dim=1)
+                values = torch.cat((values, torch.randn(values.shape[0], 3, values.shape[-1])), dim=1)
+                beta = torch.cat((beta, torch.full((beta.shape[0], 3), float("-inf"))), dim=1)
+            layers.append((keys, beta, values))
+        torch.save(cache_format.pack(layers), attention_matching.cache_path(tmp_path, "code", row))
     compacted = [attention_matching.load(tmp_path, "code", row, "cpu") for row in (0, 1)]
+    assert all(keys.shape[2] == 20 for keys, _, _ in compacted)
+    keys, beta, values = compacted[1]
+    compacted[1] = (torch.cat((keys, torch.randn(*keys.shape[:2], 3, keys.shape[-1])), dim=2), torch.cat(
+        (beta, torch.full((*beta.shape[:2], 3), float("-inf"))), dim=2),
+        torch.cat((values, torch.randn(*values.shape[:2], 3, values.shape[-1])), dim=2))
     pairs, betas = attention_matching.batch(compacted, torch.float32)
     assert pairs[0][0].shape[2] == 23 and torch.isinf(betas[0][0, :, 20:]).all()
     attention_matching.STATE.bias = betas

@@ -8,6 +8,8 @@ import torch.nn.functional as F
 from transformers import AttentionInterface, AttentionMaskInterface
 from transformers.masking_utils import eager_mask
 
+import cache_format
+
 NAME = "still_bias_sdpa"
 
 
@@ -54,7 +56,7 @@ def load(directory, domain, row, device):
     if not path.exists():
         raise FileNotFoundError(f"AM_CACHE_MISSING {path}")
     saved = torch.load(path, map_location=device)
-    return saved["keys"], saved["beta"], saved["values"]
+    return cache_format.unpack(saved)
 
 
 def batch(compacted, dtype):
