@@ -4,7 +4,8 @@ then the conversation up to and including the gold call. Only the documents bloc
   none       no block
   full       the task's required documents as text, in tau2's gold-documents wording and format
   still      header plus block compressed by the trained STILL compactor into SLOTS positions
-  am         header kept, block compressed by the official Attention Matching code; SLOTS positions in total
+  am         header kept, block compressed by the official Attention Matching code; SLOTS positions per head, exactly
+             with equal budgets or on average with per-head budgets
   streaming  the first SINKS and last SLOTS - SINKS positions of header plus block
 The prefix (header plus block) and the rest are tokenized separately, so every condition sees identical token ids
 after the prefix; compressed conditions continue at the uncompressed prefix length.
@@ -25,6 +26,7 @@ import torch
 from transformers import AutoTokenizer
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "still_repro"))
+import cache_format
 from still import prefill, streaming_pairs
 
 TOKENIZER = "Qwen/Qwen3-4B-Instruct-2507"
@@ -103,18 +105,20 @@ def decision_inputs(tokenizer, record, header_ids, prefix_ids, block):
 
 def prefix_state(model, condition, prefix, compactor=None, am=None):
     """(pairs, logical_start, bias) for one prefix record. Pairs are per-layer (keys, values) [1, H, t, D]; bias is
-    the official Attention Matching beta per layer [1, H, t] or None."""
+    the official Attention Matching beta per layer [1, H, t] or None. am is a saved compact_am.py cache; heads shorter
+    than the longest are padded with beta=-inf."""
     device = next(model.parameters()).device
     if condition == "none":
         return prefill(model, torch.tensor([prefix["header_ids"]], device=device)), len(prefix["header_ids"]), None
     logical = len(prefix["prefix_ids"])
     if condition == "am":
-        if am["header"] != len(prefix["header_ids"]) or am["keys"].shape[2] != SLOTS:
+        average = am["lengths"].float().mean().item()
+        if am["header"] != len(prefix["header_ids"]) or average > SLOTS:
             raise SystemExit(f"AM_CACHE_SHAPE task={prefix['task_id']} header={am['header']} "
-                             f"physical={am['keys'].shape[2]}")
-        pairs = [(am["keys"][layer][None].to(device), am["values"][layer][None].to(device))
-                 for layer in range(am["keys"].shape[0])]
-        return pairs, logical, [am["beta"][layer][None].to(device) for layer in range(am["beta"].shape[0])]
+                             f"average_per_head={average:.1f} slots={SLOTS}")
+        keys, beta, values = cache_format.unpack(am)
+        pairs = [(keys[layer][None].to(device), values[layer][None].to(device)) for layer in range(keys.shape[0])]
+        return pairs, logical, [beta[layer][None].to(device) for layer in range(beta.shape[0])]
     pairs = prefill(model, torch.tensor([prefix["prefix_ids"]], device=device))
     if condition == "full":
         return pairs, logical, None

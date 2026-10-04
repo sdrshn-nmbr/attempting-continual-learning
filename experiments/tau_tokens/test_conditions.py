@@ -11,6 +11,7 @@ from transformers import AutoTokenizer
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "still_repro"))
 import conditions
+import cache_format
 from still import StillCompactor, continue_from
 from test_still import tiny_model
 
@@ -57,22 +58,31 @@ def test_conditions_share_every_token_after_the_prefix_and_spans_hit_the_value(t
     assert tokenizer.decode(inputs["rest_ids"][span["token_start"]:span["token_end"]]) == value
 
 
+def packed_am(layers, heads, dim, lengths):
+    return {**cache_format.pack([(torch.randn(heads, max(lengths), dim),
+                                  torch.tensor([[0.0] * n + [float("-inf")] * (max(lengths) - n) for n in lengths]),
+                                  torch.randn(heads, max(lengths), dim)) for _ in range(layers)]), "header": 3}
+
+
 def test_prefix_states_have_the_condition_lengths_and_continue_at_the_full_prefix_length():
     model = tiny_model()
     torch.manual_seed(1)
     prefix = {"task_id": "t", "header_ids": [1, 2, 3], "prefix_ids": [1, 2, 3] + torch.randint(4, 97, (297,)).tolist()}
     layers, heads, dim = model.config.num_hidden_layers, model.config.num_key_value_heads, model.config.head_dim
-    am = {"keys": torch.randn(layers, heads, 164, dim), "values": torch.randn(layers, heads, 164, dim),
-          "beta": torch.zeros(layers, heads, 164), "header": 3}
+    am = packed_am(layers, heads, dim, [100, 228])
     compactor = StillCompactor(model.config, slots=conditions.SLOTS)
-    expected = {"none": (3, 3), "full": (300, 300), "streaming": (164, 300), "still": (164, 300), "am": (164, 300)}
+    expected = {"none": (3, 3), "full": (300, 300), "streaming": (164, 300), "still": (164, 300), "am": (228, 300)}
     rest = torch.randint(4, 97, (1, 7))
     for condition, (physical, logical) in expected.items():
         pairs, start, bias = conditions.prefix_state(model, condition, prefix, compactor=compactor, am=am)
         assert (pairs[0][0].shape[-2], start) == (physical, logical), condition
         assert (bias is not None) == (condition == "am")
         assert continue_from(model, pairs, rest, start).logits.shape == (1, 7, 97)
+    _, _, bias = conditions.prefix_state(model, "am", prefix, am=am)
+    assert torch.isinf(bias[0][0, 0, 100:]).all() and torch.isfinite(bias[0][0, 1]).all()
     with pytest.raises(SystemExit, match="AM_CACHE_SHAPE"):
         conditions.prefix_state(model, "am", prefix, am=dict(am, header=4))
+    with pytest.raises(SystemExit, match="AM_CACHE_SHAPE"):
+        conditions.prefix_state(model, "am", prefix, am=packed_am(layers, heads, dim, [200, 228]))
     with pytest.raises(SystemExit, match="STILL_COMPACTOR_SLOTS"):
         conditions.prefix_state(model, "still", prefix, compactor=StillCompactor(model.config, slots=40))

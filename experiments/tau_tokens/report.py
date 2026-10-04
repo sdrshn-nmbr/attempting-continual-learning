@@ -21,7 +21,7 @@ from sanity import BOOTSTRAP, SEED, clustered_mean, interval
 
 EPSILON = 0.01
 SEEDS = ("still-17", "still-23", "still-29")
-ORDER = ("none", "full", "streaming", "am", "still", *SEEDS)
+CONDITIONS = ("none", "full", "streaming", "am", "am-budgets", "still", *SEEDS)
 LABELS = ("documents_only", "copy", "derived")
 SLOTS = 164
 COMPRESSION_BINS = ((0, 5), (5, 15), (15, 30), (30, math.inf))
@@ -78,15 +78,16 @@ def main():
     args = parser.parse_args()
     rng = np.random.default_rng(SEED)
     rows = load(args.scores)
+    order = [c for c in CONDITIONS if c in rows[0]]
     documents = [r for r in rows if r["label"] == "documents_only"]
 
     by_label = {}
     for label in LABELS:
         subset = [r for r in rows if r["label"] == label]
         by_label[label] = {"values": len(subset), "tasks": len({r["task"] for r in subset}),
-                           "exact_match_points": {c: summary(subset, c, 1, rng, 100) for c in ORDER},
-                           "mean_logprob": {c: summary(subset, c, 0, rng) for c in ORDER}}
-    shares = {c: gap_shares(documents, c, rng) for c in ORDER if c not in ("none", "full")}
+                           "exact_match_points": {c: summary(subset, c, 1, rng, 100) for c in order},
+                           "mean_logprob": {c: summary(subset, c, 0, rng) for c in order}}
+    shares = {c: gap_shares(documents, c, rng) for c in order if c not in ("none", "full")}
     seed_spread = {kind: {"mean": round(float(np.mean([shares[s][kind]["share"] for s in SEEDS])), 4),
                           "sd": round(float(np.std([shares[s][kind]["share"] for s in SEEDS], ddof=1)), 4)}
                    for kind in ("exact_match", "trace_log_ratio")}
@@ -98,7 +99,7 @@ def main():
             compression.append({"compression": f"{low}-{high}x", "tasks": len({r["task"] for r in subset}),
                                 "values": len(subset),
                                 "exact_match_points": {c: round(100 * float(np.mean([r[c][1] for r in subset])), 2)
-                                                       for c in ORDER}})
+                                                       for c in order}})
 
     report = {"model": "Qwen/Qwen3-4B-Instruct-2507", "slots": SLOTS, "epsilon": EPSILON, "bootstrap": BOOTSTRAP,
               "seed": SEED, "scores_sha256": hashlib.sha256(args.scores.read_bytes()).hexdigest(),
