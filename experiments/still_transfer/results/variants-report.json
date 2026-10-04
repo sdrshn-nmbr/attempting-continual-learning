@@ -1,0 +1,276 @@
+{
+  "luna": {
+    "full": {
+      "n": 592,
+      "accuracy": 93.9,
+      "ci95": [
+        91.9,
+        95.8
+      ],
+      "retained_gain": 100.0,
+      "unparsed": 0,
+      "by_type": {
+        "connect": 89.7,
+        "detail": 98.3
+      }
+    },
+    "mapped_full": {
+      "n": 592,
+      "accuracy": 85.6,
+      "ci95": [
+        82.8,
+        88.5
+      ],
+      "retained_gain": 88.4,
+      "unparsed": 1,
+      "by_type": {
+        "connect": 78.4,
+        "detail": 93.1
+      }
+    },
+    "ridge_still": {
+      "n": 592,
+      "accuracy": 14.4,
+      "ci95": [
+        11.7,
+        17.2
+      ],
+      "retained_gain": -11.3,
+      "unparsed": 237,
+      "by_type": {
+        "connect": 17.6,
+        "detail": 11.0
+      }
+    },
+    "none": {
+      "n": 592,
+      "accuracy": 22.5,
+      "ci95": [
+        19.1,
+        25.8
+      ],
+      "retained_gain": 0.0,
+      "unparsed": 92,
+      "by_type": {
+        "connect": 25.6,
+        "detail": 19.2
+      }
+    },
+    "streaming": {
+      "n": 592,
+      "accuracy": 34.6,
+      "ci95": [
+        30.7,
+        38.5
+      ],
+      "retained_gain": 16.9,
+      "unparsed": 8,
+      "by_type": {
+        "connect": 39.2,
+        "detail": 29.9
+      }
+    },
+    "v1": {
+      "n": 592,
+      "accuracy": 44.4,
+      "ci95": [
+        40.5,
+        48.5
+      ],
+      "retained_gain": 30.7,
+      "unparsed": 2,
+      "by_type": {
+        "connect": 48.2,
+        "detail": 40.5
+      }
+    },
+    "v2": {
+      "n": 592,
+      "accuracy": 47.3,
+      "ci95": [
+        43.4,
+        51.4
+      ],
+      "retained_gain": 34.7,
+      "unparsed": 2,
+      "by_type": {
+        "connect": 48.8,
+        "detail": 45.7
+      }
+    },
+    "v3": {
+      "n": 592,
+      "accuracy": 51.4,
+      "ci95": [
+        47.3,
+        55.4
+      ],
+      "retained_gain": 40.5,
+      "unparsed": 4,
+      "by_type": {
+        "connect": 54.2,
+        "detail": 48.5
+      }
+    },
+    "v4": {
+      "n": 592,
+      "accuracy": 48.8,
+      "ci95": [
+        44.9,
+        52.9
+      ],
+      "retained_gain": 36.8,
+      "unparsed": 1,
+      "by_type": {
+        "connect": 52.5,
+        "detail": 45.0
+      }
+    },
+    "native": {
+      "n": 592,
+      "accuracy": 59.3,
+      "ci95": [
+        55.2,
+        63.2
+      ],
+      "retained_gain": 51.5,
+      "unparsed": 2,
+      "by_type": {
+        "connect": 62.1,
+        "detail": 56.4
+      }
+    }
+  },
+  "written": {
+    "full": {
+      "n": 584,
+      "accuracy": 94.9,
+      "ci95": [
+        93.2,
+        96.6
+      ],
+      "retained_gain": 100.0,
+      "unparsed": 1,
+      "by_type": {
+        "untyped": 94.9
+      }
+    },
+    "mapped_full": {
+      "n": 584,
+      "accuracy": 87.3,
+      "ci95": [
+        84.6,
+        90.1
+      ],
+      "retained_gain": 88.9,
+      "unparsed": 1,
+      "by_type": {
+        "untyped": 87.3
+      }
+    },
+    "ridge_still": {
+      "n": 584,
+      "accuracy": 15.4,
+      "ci95": [
+        12.5,
+        18.5
+      ],
+      "retained_gain": -16.1,
+      "unparsed": 245,
+      "by_type": {
+        "untyped": 15.4
+      }
+    },
+    "none": {
+      "n": 584,
+      "accuracy": 26.4,
+      "ci95": [
+        22.8,
+        30.0
+      ],
+      "retained_gain": 0.0,
+      "unparsed": 83,
+      "by_type": {
+        "untyped": 26.4
+      }
+    },
+    "streaming": {
+      "n": 584,
+      "accuracy": 34.6,
+      "ci95": [
+        30.7,
+        38.5
+      ],
+      "retained_gain": 12.0,
+      "unparsed": 8,
+      "by_type": {
+        "untyped": 34.6
+      }
+    },
+    "v1": {
+      "n": 584,
+      "accuracy": 40.6,
+      "ci95": [
+        36.5,
+        44.7
+      ],
+      "retained_gain": 20.7,
+      "unparsed": 4,
+      "by_type": {
+        "untyped": 40.6
+      }
+    },
+    "v2": {
+      "n": 584,
+      "accuracy": 43.8,
+      "ci95": [
+        39.9,
+        47.8
+      ],
+      "retained_gain": 25.4,
+      "unparsed": 5,
+      "by_type": {
+        "untyped": 43.8
+      }
+    },
+    "v3": {
+      "n": 584,
+      "accuracy": 52.9,
+      "ci95": [
+        48.8,
+        57.0
+      ],
+      "retained_gain": 38.7,
+      "unparsed": 4,
+      "by_type": {
+        "untyped": 52.9
+      }
+    },
+    "v4": {
+      "n": 584,
+      "accuracy": 49.3,
+      "ci95": [
+        45.2,
+        53.3
+      ],
+      "retained_gain": 33.4,
+      "unparsed": 4,
+      "by_type": {
+        "untyped": 49.3
+      }
+    },
+    "native": {
+      "n": 584,
+      "accuracy": 56.5,
+      "ci95": [
+        52.6,
+        60.6
+      ],
+      "retained_gain": 43.9,
+      "unparsed": 3,
+      "by_type": {
+        "untyped": 56.5
+      }
+    }
+  }
+}
