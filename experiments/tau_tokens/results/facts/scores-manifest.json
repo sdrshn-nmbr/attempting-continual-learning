@@ -1,0 +1,81 @@
+{
+  "code_commit": "be058e1",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "inputs": {
+    "original": {
+      "prefixes_sha256": "1ccaba982d0b29144252a1251fab67ae3a91ec8fec8a377c2d05a0062b6ccce7",
+      "inputs_sha256": "fcc26ef78a624b39d8f5d753ba50e3be90707ae5ea8fc62a825f19e5800b1a09"
+    },
+    "edited": {
+      "prefixes_sha256": "7f43e773348d388bdf65337e220b1397ad172f932785d61a5521b7d8f8a10ddb",
+      "inputs_sha256": "ce986854d4b24b644a85462ea8ffe3bfde950a7299547b491cb8540ee375bfe7"
+    }
+  },
+  "still_checkpoints": {
+    "seed17": {
+      "path": "/mnt/shared/still-repro/runs-luna/seed17/compactor-1500.pt",
+      "sha256": "662d6f2b44d933e4b6eed77aacfbab1aa17aa6a5e530d881344c673760057e65"
+    },
+    "seed23": {
+      "path": "/mnt/shared/still-repro/runs-luna/seed23/compactor-1500.pt",
+      "sha256": "827a95967c76f095682f6f5e8c3e70ca9062ffca9b4b5eb259fc69a20b686af6"
+    },
+    "seed29": {
+      "path": "/mnt/shared/still-repro/runs-luna/seed29/compactor-1500.pt",
+      "sha256": "354c1bef4ec241488221bebcc946b017b309fa1dcbb0bad92549a23f4e05798c"
+    }
+  },
+  "am": {
+    "method": "AM-HighestAttnKeys",
+    "algorithm_config": "default",
+    "query_config": "repeat",
+    "official_commit": "2020f6d",
+    "transformers": "4.57.1",
+    "slots": 164,
+    "header_kept_tokens": 3,
+    "am": "equal per-head budgets",
+    "am-budgets": "head_budget_optimization/head_budgets/Qwen3-4B/optimized_agnostic.json",
+    "compaction": {
+      "am-equal-original": {
+        "tasks": 55,
+        "effective_per_head_max": 164.0,
+        "head_max": 164
+      },
+      "am-equal-edited": {
+        "tasks": 55,
+        "effective_per_head_max": 164.0,
+        "head_max": 164
+      },
+      "am-budgets-original": {
+        "tasks": 55,
+        "effective_per_head_max": 163.4791717529297,
+        "head_max": 1462
+      },
+      "am-budgets-edited": {
+        "tasks": 55,
+        "effective_per_head_max": 163.48611450195312,
+        "head_max": 1462
+      }
+    }
+  },
+  "scoring": {
+    "transformers": "5.16.1",
+    "torch": "2.11.0+rocm7.14.1",
+    "dtype": "bfloat16",
+    "attention": "still_bias_sdpa",
+    "gpus": "8x MI355X (one node, fv-1)"
+  },
+  "records": 9096,
+  "records_by_condition": {
+    "none": 1137,
+    "full": 1137,
+    "streaming": 1137,
+    "am": 1137,
+    "am-budgets": 1137,
+    "still-17": 1137,
+    "still-23": 1137,
+    "still-29": 1137
+  },
+  "scores_sha256": "739638401e3b3694e8a1020e3a6ccfc273a8ce103bdc5eb8871d88b819ede519"
+}
