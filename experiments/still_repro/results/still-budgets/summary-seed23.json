@@ -1,0 +1,39 @@
+{
+  "still": {
+    "n": 592,
+    "accuracy": 0.785472972972973,
+    "ci95": [
+      0.7516891891891891,
+      0.8175675675675675
+    ],
+    "by_domain": {
+      "financial": {
+        "n": 148,
+        "accuracy": 0.8243243243243243
+      },
+      "gutenberg": {
+        "n": 148,
+        "accuracy": 0.7432432432432432
+      },
+      "legal": {
+        "n": 148,
+        "accuracy": 0.8851351351351351
+      },
+      "code": {
+        "n": 148,
+        "accuracy": 0.6891891891891891
+      }
+    },
+    "unparsed": 15,
+    "predicted_letters": {
+      "A": 156,
+      "D": 124,
+      "B": 133,
+      "C": 164,
+      "null": 15
+    }
+  },
+  "checkpoint": "/mnt/shared/still-budgets/runs/seed23/compactor-1500.pt",
+  "budgets": "/mnt/shared/still-budgets/code/f0b86cb/experiments/still_repro/results/head-budgets/optimized-agnostic-164.json",
+  "am_dir": null
+}

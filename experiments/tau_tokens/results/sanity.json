@@ -1,7 +1,7 @@
 {
   "bootstrap": 4000,
   "seed": 0,
-  "scores_sha256": "1b57f500a1701ea6049ec712d412ed82edf1852e1e659dbfe690e5a8261c49c9",
+  "scores_sha256": "44998e852efdad139594bcb3c4b6f4b7733eec0106ec204e4962dab497722fdd",
   "pilot_gold_sha256": "9ae7a3531bdede01d746a9af28c6c1b4a32a8252fa5f0e82207536de9c77cb7b",
   "pilot_none_sha256": "cca37b7ba0ea0531e7391034815456e6d0843337d3642628f5b251dac9ab365c",
   "check1_documents_only_full_beats_none": {
@@ -14,7 +14,10 @@
       "am-budgets": 48.3516,
       "still-17": 3.8462,
       "still-23": 4.3956,
-      "still-29": 3.8462
+      "still-29": 3.8462,
+      "still-budgets-17": 14.8352,
+      "still-budgets-23": 17.033,
+      "still-budgets-29": 19.2308
     },
     "mean_logprob": {
       "none": -3.3017,
@@ -24,7 +27,10 @@
       "am-budgets": -0.6501,
       "still-17": -1.3686,
       "still-23": -1.4061,
-      "still-29": -1.3483
+      "still-29": -1.3483,
+      "still-budgets-17": -0.831,
+      "still-budgets-23": -0.8271,
+      "still-budgets-29": -0.7473
     },
     "gain_logprob": {
       "mean": 2.9171,
@@ -56,7 +62,10 @@
       "am-budgets": 94.9866,
       "still-17": 96.3904,
       "still-23": 96.0561,
-      "still-29": 95.5882
+      "still-29": 95.5882,
+      "still-budgets-17": 96.3904,
+      "still-budgets-23": 92.8476,
+      "still-budgets-29": 95.8556
     },
     "mean_logprob": {
       "none": -0.0802,
@@ -66,7 +75,10 @@
       "am-budgets": -0.0492,
       "still-17": -0.0278,
       "still-23": -0.0332,
-      "still-29": -0.0317
+      "still-29": -0.0317,
+      "still-budgets-17": -0.0321,
+      "still-budgets-23": -0.0345,
+      "still-budgets-29": -0.0311
     },
     "difference_from_full_points": {
       "none": {
@@ -131,14 +143,41 @@
         ],
         "values": 1496,
         "tasks": 62
+      },
+      "still-budgets-17": {
+        "mean": 2.5401,
+        "ci95": [
+          1.1551,
+          4.4613
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "still-budgets-23": {
+        "mean": -1.0027,
+        "ci95": [
+          -1.791,
+          0.0
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "still-budgets-29": {
+        "mean": 2.0053,
+        "ci95": [
+          0.6988,
+          3.8088
+        ],
+        "values": 1496,
+        "tasks": 62
       }
     },
     "difference_from_full_logprob": {
       "none": {
         "mean": -0.0108,
         "ci95": [
-          -0.0406,
-          0.0129
+          -0.0404,
+          0.014
         ],
         "values": 1496,
         "tasks": 62
@@ -146,8 +185,8 @@
       "streaming": {
         "mean": -0.0091,
         "ci95": [
-          -0.0362,
-          0.0132
+          -0.0373,
+          0.0136
         ],
         "values": 1496,
         "tasks": 62
@@ -155,8 +194,8 @@
       "am": {
         "mean": 0.0024,
         "ci95": [
-          -0.0152,
-          0.0183
+          -0.0176,
+          0.0184
         ],
         "values": 1496,
         "tasks": 62
@@ -164,8 +203,8 @@
       "am-budgets": {
         "mean": 0.0202,
         "ci95": [
-          0.0057,
-          0.0399
+          0.0053,
+          0.0387
         ],
         "values": 1496,
         "tasks": 62
@@ -173,8 +212,8 @@
       "still-17": {
         "mean": 0.0417,
         "ci95": [
-          0.028,
-          0.0612
+          0.0275,
+          0.061
         ],
         "values": 1496,
         "tasks": 62
@@ -182,8 +221,8 @@
       "still-23": {
         "mean": 0.0362,
         "ci95": [
-          0.0199,
-          0.0583
+          0.0195,
+          0.0585
         ],
         "values": 1496,
         "tasks": 62
@@ -191,8 +230,35 @@
       "still-29": {
         "mean": 0.0378,
         "ci95": [
-          0.0243,
-          0.0554
+          0.024,
+          0.0557
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "still-budgets-17": {
+        "mean": 0.0373,
+        "ci95": [
+          0.0223,
+          0.0588
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "still-budgets-23": {
+        "mean": 0.0349,
+        "ci95": [
+          0.0188,
+          0.0583
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "still-budgets-29": {
+        "mean": 0.0383,
+        "ci95": [
+          0.0221,
+          0.0602
         ],
         "values": 1496,
         "tasks": 62
@@ -205,7 +271,10 @@
       "am-budgets": true,
       "still-17": true,
       "still-23": true,
-      "still-29": true
+      "still-29": true,
+      "still-budgets-17": true,
+      "still-budgets-23": true,
+      "still-budgets-29": true
     },
     "passed": true
   },
@@ -217,31 +286,31 @@
       "spearman": 0.5059,
       "ci95": [
         0.2665,
-        0.7053
+        0.6989
       ],
       "tasks": 62
     },
     "full_logprob_vs_gold_recall": {
       "spearman": 0.4088,
       "ci95": [
-        0.1675,
-        0.6194
+        0.1532,
+        0.6238
       ],
       "tasks": 62
     },
     "full_exact_vs_gold_pass_rate": {
       "spearman": 0.194,
       "ci95": [
-        0.1798,
-        0.3698
+        0.177,
+        0.3665
       ],
       "tasks": 62
     },
     "token_gain_vs_pilot_recall_gain": {
       "spearman": 0.4021,
       "ci95": [
-        0.1581,
-        0.621
+        0.1472,
+        0.6281
       ],
       "tasks": 60
     },

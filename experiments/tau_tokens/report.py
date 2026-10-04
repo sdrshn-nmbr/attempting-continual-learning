@@ -1,9 +1,9 @@
 """Step 5: the τ-banking token-level results on Qwen3-4B-Instruct-2507. For each value label and condition: greedy
 exact-match rate and mean token log-probability. For documents_only values, the share of the gap between no documents
 and full documents that each condition closes, in exact match and in TRACE's log-ratio form (d = EPSILON - mean token
-log-probability; share = sum log(d_none / d) / sum log(d_none / d_full)). STILL appears per seed and as "still", the
-per-value average of the three seeds. Intervals resample whole tasks. Also: documents_only exact match by compression
-(prefix tokens / 164 slots).
+log-probability; share = sum log(d_none / d) / sum log(d_none / d_full)). Each STILL variant appears per seed and as
+its group name ("still", "still-budgets"), the per-value average of its seeds. Intervals resample whole tasks. Also:
+documents_only exact match by compression (prefix tokens / 164 slots).
 
   uv run --no-project --with numpy --with scipy python report.py --scores results/scores.jsonl --out results/report.json
 """
@@ -20,8 +20,9 @@ import numpy as np
 from sanity import BOOTSTRAP, SEED, clustered_mean, interval
 
 EPSILON = 0.01
-SEEDS = ("still-17", "still-23", "still-29")
-CONDITIONS = ("none", "full", "streaming", "am", "am-budgets", "still", *SEEDS)
+GROUPS = {"still": ("still-17", "still-23", "still-29"),
+          "still-budgets": ("still-budgets-17", "still-budgets-23", "still-budgets-29")}
+CONDITIONS = ("none", "full", "streaming", "am", "am-budgets", *GROUPS, *(s for seeds in GROUPS.values() for s in seeds))
 LABELS = ("documents_only", "copy", "derived")
 SLOTS = 164
 COMPRESSION_BINS = ((0, 5), (5, 15), (15, 30), (30, math.inf))
@@ -41,7 +42,9 @@ def load(path):
                 row.update(task=record["task_id"], label=value["label"], prefix_tokens=record["prefix_tokens"])
                 row[record["condition"]] = (value["mean_logprob"], float(value["greedy_exact"]))
     for row in values.values():
-        row["still"] = tuple(float(np.mean([row[s][i] for s in SEEDS])) for i in range(2))
+        for group, seeds in GROUPS.items():
+            if all(seed in row for seed in seeds):
+                row[group] = tuple(float(np.mean([row[s][i] for s in seeds])) for i in range(2))
     return list(values.values())
 
 
@@ -88,9 +91,10 @@ def main():
                            "exact_match_points": {c: summary(subset, c, 1, rng, 100) for c in order},
                            "mean_logprob": {c: summary(subset, c, 0, rng) for c in order}}
     shares = {c: gap_shares(documents, c, rng) for c in order if c not in ("none", "full")}
-    seed_spread = {kind: {"mean": round(float(np.mean([shares[s][kind]["share"] for s in SEEDS])), 4),
-                          "sd": round(float(np.std([shares[s][kind]["share"] for s in SEEDS], ddof=1)), 4)}
-                   for kind in ("exact_match", "trace_log_ratio")}
+    seed_spread = {group: {kind: {"mean": round(float(np.mean([shares[s][kind]["share"] for s in seeds])), 4),
+                                  "sd": round(float(np.std([shares[s][kind]["share"] for s in seeds], ddof=1)), 4)}
+                           for kind in ("exact_match", "trace_log_ratio")}
+                   for group, seeds in GROUPS.items() if group in order}
 
     compression = []
     for low, high in COMPRESSION_BINS:

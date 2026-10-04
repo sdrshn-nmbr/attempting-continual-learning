@@ -1,0 +1,39 @@
+{
+  "untrained": {
+    "n": 592,
+    "accuracy": 0.43243243243243246,
+    "ci95": [
+      0.3935810810810811,
+      0.47128378378378377
+    ],
+    "by_domain": {
+      "financial": {
+        "n": 148,
+        "accuracy": 0.43243243243243246
+      },
+      "gutenberg": {
+        "n": 148,
+        "accuracy": 0.4594594594594595
+      },
+      "legal": {
+        "n": 148,
+        "accuracy": 0.5
+      },
+      "code": {
+        "n": 148,
+        "accuracy": 0.33783783783783783
+      }
+    },
+    "unparsed": 8,
+    "predicted_letters": {
+      "A": 133,
+      "B": 135,
+      "D": 151,
+      "C": 165,
+      "null": 8
+    }
+  },
+  "checkpoint": null,
+  "budgets": "/mnt/shared/still-budgets/code/f0b86cb/experiments/still_repro/results/head-budgets/optimized-agnostic-164.json",
+  "am_dir": null
+}

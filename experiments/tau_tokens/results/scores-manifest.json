@@ -12,7 +12,10 @@
     "am-budgets",
     "still-17",
     "still-23",
-    "still-29"
+    "still-29",
+    "still-budgets-17",
+    "still-budgets-23",
+    "still-budgets-29"
   ],
   "still_checkpoints": {
     "seed17": {
@@ -48,9 +51,9 @@
     "chunk_tokens": 2048,
     "gpus": "8x MI355X (one node)"
   },
-  "records": 4160,
+  "records": 5720,
   "decisions": 520,
-  "values_scored": 14216,
+  "values_scored": 19547,
   "records_by_condition": {
     "none": 520,
     "full": 520,
@@ -59,9 +62,12 @@
     "am-budgets": 520,
     "still-17": 520,
     "still-23": 520,
-    "still-29": 520
+    "still-29": 520,
+    "still-budgets-17": 520,
+    "still-budgets-23": 520,
+    "still-budgets-29": 520
   },
-  "scores_sha256": "1b57f500a1701ea6049ec712d412ed82edf1852e1e659dbfe690e5a8261c49c9",
+  "scores_sha256": "44998e852efdad139594bcb3c4b6f4b7733eec0106ec204e4962dab497722fdd",
   "am_budgets": {
     "code_commit": "5845178",
     "method": "AM-HighestAttnKeys",
@@ -82,5 +88,25 @@
       1462
     ],
     "seconds_total": 1142.2
+  },
+  "still_budgets": {
+    "code_commit": "f0b86cb",
+    "budgets": "experiments/still_repro/results/head-budgets/optimized-agnostic-164.json",
+    "mean_slots_per_head": 163.53,
+    "width": 1486,
+    "checkpoints": {
+      "seed17": {
+        "path": "/mnt/shared/still-budgets/runs/seed17/compactor-1500.pt",
+        "sha256": "4d9534d7ac1935d5c5722c16c231bd53bcfd1bf85a30d2a723e6dc68a2d577a0"
+      },
+      "seed23": {
+        "path": "/mnt/shared/still-budgets/runs/seed23/compactor-1500.pt",
+        "sha256": "c45675ba8fe3489e67b51935e93bd5a446f157abddb74891aeece5e6ae8f4dbe"
+      },
+      "seed29": {
+        "path": "/mnt/shared/still-budgets/runs/seed29/compactor-1500.pt",
+        "sha256": "2f690f6073fa0f9544169f901b85f9d63af2f99e878ac3ebec1cb5c6b7ac3169"
+      }
+    }
   }
 }
