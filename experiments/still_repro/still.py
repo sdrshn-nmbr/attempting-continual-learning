@@ -1,4 +1,6 @@
+import json
 import math
+from pathlib import Path
 
 import torch
 import torch.nn as nn
@@ -74,19 +76,26 @@ class CompactorBlock(nn.Module):
         return latents + self.self_output(weights @ self.self_value(normalized))
 
 
+def output_projections(head_dim):
+    """Linear maps from a latent [key; value] back to a key and a value, initialized to read each half unchanged."""
+    dimension = 2 * head_dim
+    key_output = nn.Linear(dimension, head_dim, bias=False)
+    value_output = nn.Linear(dimension, head_dim, bias=False)
+    with torch.no_grad():
+        key_output.weight.zero_()
+        value_output.weight.zero_()
+        key_output.weight[:, :head_dim].copy_(torch.eye(head_dim))
+        value_output.weight[:, head_dim:].copy_(torch.eye(head_dim))
+    return key_output, value_output
+
+
 class LayerCompactor(nn.Module):
     def __init__(self, heads, head_dim, slots):
         super().__init__()
         dimension = 2 * head_dim
         self.latents = nn.Parameter(torch.zeros(heads, slots, dimension))
         self.blocks = nn.ModuleList([CompactorBlock(dimension, index == 0) for index in range(2)])
-        self.key_output = nn.Linear(dimension, head_dim, bias=False)
-        self.value_output = nn.Linear(dimension, head_dim, bias=False)
-        with torch.no_grad():
-            self.key_output.weight.zero_()
-            self.value_output.weight.zero_()
-            self.key_output.weight[:, :head_dim].copy_(torch.eye(head_dim))
-            self.value_output.weight[:, head_dim:].copy_(torch.eye(head_dim))
+        self.key_output, self.value_output = output_projections(head_dim)
 
     def forward(self, keys, values, input_positions, latent_positions):
         inputs = torch.cat((keys, values), dim=-1)
@@ -124,6 +133,80 @@ class StillCompactor(nn.Module):
             compact_keys = rotary(compact_keys, outcos.float(), outsin.float())
             output.append((compact_keys.to(keys.dtype), compact_values.to(values.dtype)))
         return output
+
+
+class BudgetedLayerCompactor(nn.Module):
+    """LayerCompactor with its own slot count per KV head. Each head runs the shared blocks on its own latents, so
+    compute follows the budgets rather than the largest head."""
+
+    def __init__(self, head_dim, counts):
+        super().__init__()
+        dimension = 2 * head_dim
+        self.counts = list(counts)
+        self.latents = nn.ParameterList([nn.Parameter(torch.zeros(count, dimension)) for count in self.counts])
+        self.blocks = nn.ModuleList([CompactorBlock(dimension, index == 0) for index in range(2)])
+        self.key_output, self.value_output = output_projections(head_dim)
+
+    def forward(self, keys, values, input_positions, head_positions):
+        inputs = torch.cat((keys, values), dim=-1)
+        heads = []
+        for head, (latents, positions) in enumerate(zip(self.latents, head_positions, strict=True)):
+            state = latents[None, None].expand(keys.shape[0], 1, -1, -1)
+            for block in self.blocks:
+                state = block(state, inputs[:, head:head + 1], input_positions, positions)
+            heads.append((self.key_output(state)[:, 0], self.value_output(state)[:, 0]))
+        return heads
+
+
+class BudgetedStillCompactor(nn.Module):
+    """StillCompactor with per-head slot counts, counts[layer][head] (budget_counts.py). Returns per-layer (keys,
+    values) [B, H, width, D], padded to the largest count in any layer, and per-layer beta [B, H, width] that is 0 on
+    real slots and -inf on padding, for attention_matching's bias attention. With every count equal to S it computes
+    StillCompactor(slots=S)."""
+
+    def __init__(self, model_config, counts):
+        super().__init__()
+        if len(counts) != model_config.num_hidden_layers or \
+                any(len(row) != model_config.num_key_value_heads for row in counts):
+            raise ValueError(f"STILL_BUDGET_SHAPE layers={len(counts)} expected={model_config.num_hidden_layers}x"
+                             f"{model_config.num_key_value_heads}")
+        self.counts = [[int(count) for count in row] for row in counts]
+        self.width = max(max(row) for row in self.counts)
+        self.layers = nn.ModuleList([BudgetedLayerCompactor(model_config.head_dim, row) for row in self.counts])
+
+    def mean_slots(self):
+        return sum(map(sum, self.counts)) / sum(map(len, self.counts))
+
+    def forward(self, model, pairs):
+        if len(pairs) != len(self.layers):
+            raise ValueError(f"STILL_LAYER_COUNT pairs={len(pairs)} layers={len(self.layers)}")
+        length = pairs[0][0].shape[-2]
+        device = pairs[0][0].device
+        positions = torch.arange(length, device=device).unsqueeze(0)
+        dummy = torch.zeros(1, 1, model.config.hidden_size, device=device, dtype=pairs[0][0].dtype)
+        cos, sin = model.model.rotary_emb(dummy, positions)
+        slot_positions = {count: torch.linspace(0.0, float(length - 1), count, device=device).unsqueeze(0)
+                          for count in {c for row in self.counts for c in row}}
+        slot_rotary = {count: model.model.rotary_emb(dummy, where) for count, where in slot_positions.items()}
+        output, betas = [], []
+        for layer, (keys, values) in zip(self.layers, pairs, strict=True):
+            plain = rotary(keys.float(), cos.float(), sin.float(), inverse=True)
+            heads = layer(plain, values.float(), positions, [slot_positions[count] for count in layer.counts])
+            layer_keys, layer_values, layer_beta = [], [], []
+            for (compact_keys, compact_values), count in zip(heads, layer.counts, strict=True):
+                outcos, outsin = slot_rotary[count]
+                pad = self.width - count
+                layer_keys.append(F.pad(rotary(compact_keys, outcos.float(), outsin.float()), (0, 0, 0, pad)))
+                layer_values.append(F.pad(compact_values, (0, 0, 0, pad)))
+                layer_beta.append(F.pad(torch.zeros(keys.shape[0], count, device=device), (0, pad),
+                                        value=float("-inf")))
+            output.append((torch.stack(layer_keys, 1).to(keys.dtype), torch.stack(layer_values, 1).to(values.dtype)))
+            betas.append(torch.stack(layer_beta, 1))
+        return output, betas
+
+
+def budget_counts(path):
+    return json.loads(Path(path).read_text())["counts"]
 
 
 def cache_pairs(cache):

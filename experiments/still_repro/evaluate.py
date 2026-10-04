@@ -15,7 +15,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import attention_matching
 import layout
-from still import StillCompactor, build_cache, prefill, streaming_pairs
+from still import BudgetedStillCompactor, StillCompactor, budget_counts, build_cache, prefill, streaming_pairs
 
 DOMAINS = ["financial", "gutenberg", "legal", "code"]
 
@@ -37,6 +37,9 @@ def prefix_state(model, compactor, tokenizer, mode, windows, items, device, slot
     elif mode in ("still", "untrained"):
         with torch.no_grad():
             pairs = compactor(model, pairs)
+        if isinstance(pairs, tuple):
+            pairs, betas = pairs
+            return pairs, layout.PREFIX_TOKENS, betas
     elif mode != "full":
         raise ValueError(f"EVAL_MODE {mode}")
     return pairs, layout.PREFIX_TOKENS, None
@@ -107,6 +110,7 @@ def main():
     parser.add_argument("--checkpoint", type=Path)
     parser.add_argument("--am-dir", type=Path)
     parser.add_argument("--slots", type=int, default=164)
+    parser.add_argument("--budgets", type=Path, help="per-head slot counts from budget_counts.py; replaces --slots")
     parser.add_argument("--batch", type=int, default=16)
     parser.add_argument("--max-new", type=int, default=320)
     parser.add_argument("--limit", type=int)
@@ -120,8 +124,12 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(args.model)
     model = AutoModelForCausalLM.from_pretrained(args.model, dtype=torch.bfloat16,
                                                  attn_implementation=attention_matching.NAME).to(device).eval()
-    untrained = StillCompactor(model.config, args.slots).to(device).eval()
-    trained = StillCompactor(model.config, args.slots).to(device).eval()
+    def compactor():
+        module = BudgetedStillCompactor(model.config, budget_counts(args.budgets)) if args.budgets \
+            else StillCompactor(model.config, args.slots)
+        return module.to(device).eval()
+
+    untrained, trained = compactor(), compactor()
     if "still" in args.modes:
         if args.checkpoint is None:
             raise ValueError("EVAL_STILL_REQUIRES_CHECKPOINT")
@@ -164,6 +172,7 @@ def main():
                 records.extend(json.loads(line) for line in handle)
         summary = summarize(records)
         summary["checkpoint"] = str(args.checkpoint) if args.checkpoint else None
+        summary["budgets"] = str(args.budgets) if args.budgets else None
         summary["am_dir"] = str(args.am_dir) if args.am_dir else None
         (args.out / "summary.json").write_text(json.dumps(summary, indent=2))
         print(json.dumps({m: {"accuracy": s["accuracy"], "ci95": s["ci95"]} for m, s in summary.items()

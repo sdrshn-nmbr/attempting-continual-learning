@@ -8,7 +8,7 @@ from transformers import AutoTokenizer, Qwen3Config, Qwen3ForCausalLM
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import layout
-from still import StillCompactor, continue_from, prefill, streaming_pairs, support_kl
+from still import BudgetedStillCompactor, StillCompactor, continue_from, prefill, streaming_pairs, support_kl
 
 
 def tiny_model():
@@ -248,3 +248,96 @@ def test_saved_official_caches_batch_with_padding_and_reproduce_full_cache(tmp_p
     assert torch.allclose(loaded, expected, atol=1e-5)
     with pytest.raises(FileNotFoundError, match="AM_CACHE_MISSING"):
         attention_matching.load(tmp_path, "code", 5, "cpu")
+
+
+def budgeted_from(still, counts, config):
+    budgeted = BudgetedStillCompactor(config, counts)
+    state = {}
+    for name, tensor in still.state_dict().items():
+        if name.endswith(".latents"):
+            for head in range(tensor.shape[0]):
+                state[f"{name}.{head}"] = tensor[head]
+        else:
+            state[name] = tensor
+    budgeted.load_state_dict(state)
+    return budgeted
+
+
+def test_still_compactor_keeps_its_parameter_names_and_initialization():
+    model = tiny_model()
+    torch.manual_seed(5)
+    compactor = StillCompactor(model.config, slots=12)
+    names = sorted(compactor.state_dict())
+    assert names[:4] == ["layers.0.blocks.0.key.bias", "layers.0.blocks.0.key.weight", "layers.0.blocks.0.output.weight",
+                         "layers.0.blocks.0.query.bias"]
+    assert "layers.0.key_output.weight" in names and "layers.1.value_output.weight" in names
+    torch.manual_seed(5)
+    again = StillCompactor(model.config, slots=12)
+    assert all(torch.equal(a, b) for a, b in zip(compactor.state_dict().values(), again.state_dict().values()))
+
+
+def test_budgeted_compactor_with_equal_counts_computes_still_compactor():
+    model = tiny_model()
+    torch.manual_seed(3)
+    still = StillCompactor(model.config, slots=12)
+    for parameter in still.parameters():
+        parameter.data.add_(0.01 * torch.randn_like(parameter))
+    counts = [[12] * model.config.num_key_value_heads for _ in range(model.config.num_hidden_layers)]
+    budgeted = budgeted_from(still, counts, model.config)
+    pairs = prefill(model, torch.randint(0, 97, (2, 40)))
+    with torch.no_grad():
+        expected = still(model, pairs)
+        output, betas = budgeted(model, pairs)
+    for (keys, values), (budget_keys, budget_values), beta in zip(expected, output, betas, strict=True):
+        assert torch.allclose(keys, budget_keys, atol=1e-5) and torch.allclose(values, budget_values, atol=1e-5)
+        assert beta.shape == (2, model.config.num_key_value_heads, 12) and (beta == 0).all()
+
+
+def test_budgeted_padding_receives_no_attention_and_every_head_learns():
+    import attention_matching
+    model = tiny_model()
+    model.set_attn_implementation(attention_matching.NAME)
+    torch.manual_seed(4)
+    counts = [[5, 17], [9, 3]]
+    compactor = BudgetedStillCompactor(model.config, counts)
+    assert compactor.width == 17 and compactor.mean_slots() == 8.5
+    ids = torch.randint(0, 97, (2, 46))
+    prefix, continuation = ids[:, :40], ids[:, 40:]
+    output, betas = compactor(model, prefill(model, prefix))
+    for layer, row in enumerate(counts):
+        for head, count in enumerate(row):
+            assert (betas[layer][:, head, :count] == 0).all() and torch.isinf(betas[layer][:, head, count:]).all()
+            assert (output[layer][0][:, head, count:] == 0).all()
+    garbage = [(keys + torch.randn_like(keys) * torch.isinf(beta)[..., None],
+                values + torch.randn_like(values) * torch.isinf(beta)[..., None])
+               for (keys, values), beta in zip(output, betas, strict=True)]
+    attention_matching.STATE.bias = betas
+    try:
+        logits = continue_from(model, output, continuation, 40).logits
+        with torch.no_grad():
+            perturbed = continue_from(model, garbage, continuation, 40).logits
+    finally:
+        attention_matching.STATE.bias = None
+    assert torch.allclose(logits.detach(), perturbed, atol=1e-5)
+    logits.square().mean().backward()
+    for layer in compactor.layers:
+        assert all(latents.grad is not None and latents.grad.abs().sum() > 0 for latents in layer.latents)
+
+
+def test_training_loss_with_equal_budgets_matches_still_and_clears_the_bias():
+    import attention_matching
+    import train
+    model = tiny_model()
+    model.set_attn_implementation(attention_matching.NAME)
+    torch.manual_seed(6)
+    still = StillCompactor(model.config, slots=12)
+    for parameter in still.parameters():
+        parameter.data.add_(0.01 * torch.randn_like(parameter))
+    budgeted = budgeted_from(still, [[12, 12], [12, 12]], model.config)
+    ids = torch.randint(0, 97, (2, 8))
+    batch = (torch.randint(0, 97, (2, 40)), ids, (torch.tensor([0, 0, 1]), torch.tensor([3, 4, 6])),
+             torch.tensor([ids[0, 4].item(), ids[0, 5].item(), ids[1, 7].item()]))
+    expected = train.step_loss(model, still, batch, top_k=5)
+    assert torch.allclose(train.step_loss(model, budgeted, batch, top_k=5), expected, atol=1e-5)
+    uneven = train.step_loss(model, BudgetedStillCompactor(model.config, [[5, 17], [9, 3]]), batch, top_k=5)
+    assert torch.isfinite(uneven) and attention_matching.STATE.bias is None

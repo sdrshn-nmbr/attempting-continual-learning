@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "still_repro"))
 import conditions
 import cache_format
-from still import StillCompactor, continue_from
+from still import BudgetedStillCompactor, StillCompactor, continue_from
 from test_still import tiny_model
 
 GOLD = ("{{component:policy_header}}\n\n## Documents you need to solve the problem\n\nThe following documents contain "
@@ -84,5 +84,11 @@ def test_prefix_states_have_the_condition_lengths_and_continue_at_the_full_prefi
         conditions.prefix_state(model, "am", prefix, am=dict(am, header=4))
     with pytest.raises(SystemExit, match="AM_CACHE_SHAPE"):
         conditions.prefix_state(model, "am", prefix, am=packed_am(layers, heads, dim, [200, 228]))
+    budgeted = BudgetedStillCompactor(model.config, [[100, 228], [164, 164]])
+    pairs, start, bias = conditions.prefix_state(model, "still", prefix, compactor=budgeted)
+    assert (pairs[0][0].shape[-2], start, len(bias)) == (228, 300, layers)
+    assert torch.isinf(bias[0][0, 0, 100:]).all() and continue_from(model, pairs, rest, start).logits.shape == (1, 7, 97)
+    with pytest.raises(SystemExit, match="STILL_COMPACTOR_SLOTS"):
+        conditions.prefix_state(model, "still", prefix, compactor=BudgetedStillCompactor(model.config, [[200, 228]] * 2))
     with pytest.raises(SystemExit, match="STILL_COMPACTOR_SLOTS"):
         conditions.prefix_state(model, "still", prefix, compactor=StillCompactor(model.config, slots=40))

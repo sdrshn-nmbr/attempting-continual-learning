@@ -24,7 +24,7 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent / "still_repro"))
 import attention_matching
 import conditions
-from still import StillCompactor, build_cache
+from still import BudgetedStillCompactor, StillCompactor, budget_counts, build_cache
 
 CHUNK = 2048
 SEED_HASHES = HERE.parent / "still_repro" / "results" / "luna-3seed"
@@ -34,12 +34,14 @@ def log(message):
     print(f"[score {time.strftime('%H:%M:%S')}] {message}", flush=True)
 
 
-def load_compactor(model, seed, path, device):
-    expected = (SEED_HASHES / f"compactor-seed{seed}.sha256").read_text().split()[0]
+def load_compactor(model, seed, path, device, hashes, budgets):
+    expected = (hashes / f"compactor-seed{seed}.sha256").read_text().split()[0]
     actual = hashlib.sha256(path.read_bytes()).hexdigest()
     if actual != expected:
         raise SystemExit(f"CHECKPOINT_HASH_MISMATCH seed={seed} path={path} expected={expected} actual={actual}")
-    compactor = StillCompactor(model.config, slots=conditions.SLOTS).to(device)
+    compactor = BudgetedStillCompactor(model.config, budget_counts(budgets)) if budgets \
+        else StillCompactor(model.config, slots=conditions.SLOTS)
+    compactor = compactor.to(device)
     compactor.load_state_dict(torch.load(path, map_location=device))
     return compactor.eval()
 
@@ -74,10 +76,10 @@ def value_scores(model, pairs, logical, rest_ids, values, chunk=CHUNK):
     return scores
 
 
-def runs(names, compactors, am_label):
+def runs(names, compactors, am_label, still_label):
     for name in names:
         if name == "still":
-            yield from ((f"still-{seed}", "still", compactor) for seed, compactor in sorted(compactors.items()))
+            yield from ((f"{still_label}-{seed}", "still", compactor) for seed, compactor in sorted(compactors.items()))
         elif name == "am":
             yield am_label, "am", None
         else:
@@ -90,6 +92,10 @@ def main():
     parser.add_argument("--model", required=True)
     parser.add_argument("--am-dir", type=Path)
     parser.add_argument("--checkpoint", action="append", default=[], help="seed=path")
+    parser.add_argument("--checkpoint-hashes", type=Path, default=SEED_HASHES,
+                        help="directory with compactor-seed{seed}.sha256 for each checkpoint")
+    parser.add_argument("--budgets", type=Path, help="per-head slot counts the checkpoints were trained with")
+    parser.add_argument("--still-label", default="still")
     parser.add_argument("--conditions", nargs="+", default=list(conditions.CONDITIONS))
     parser.add_argument("--am-label", default="am", help="condition name recorded for the am caches in --am-dir")
     parser.add_argument("--limit-tasks", type=int)
@@ -111,7 +117,8 @@ def main():
     compactors = {}
     for entry in args.checkpoint if "still" in args.conditions else []:
         seed, path = entry.split("=", 1)
-        compactors[int(seed)] = load_compactor(model, int(seed), Path(path), device)
+        compactors[int(seed)] = load_compactor(model, int(seed), Path(path), device, args.checkpoint_hashes,
+                                               args.budgets)
     with (args.inputs / "prefixes.jsonl").open() as handle:
         prefixes = {row["task_id"]: row for row in map(json.loads, handle)}
     decisions = defaultdict(list)
@@ -126,12 +133,12 @@ def main():
     if path.exists():
         with path.open() as handle:
             done = {(r["decision_id"], r["condition"]) for r in map(json.loads, handle)}
-    log(f"rank {rank}: {len(tasks)} tasks, conditions "
-        f"{[name for name, _, _ in runs(args.conditions, compactors, args.am_label)]}, {len(done)} records already written")
+    names = [name for name, _, _ in runs(args.conditions, compactors, args.am_label, args.still_label)]
+    log(f"rank {rank}: {len(tasks)} tasks, conditions {names}, {len(done)} records already written")
     with path.open("a") as out:
         for number, task_id in enumerate(tasks, 1):
             prefix, started = prefixes[task_id], time.time()
-            for name, kind, compactor in runs(args.conditions, compactors, args.am_label):
+            for name, kind, compactor in runs(args.conditions, compactors, args.am_label, args.still_label):
                 pending = [d for d in decisions[task_id] if (d["decision_id"], name) not in done]
                 if not pending:
                     continue

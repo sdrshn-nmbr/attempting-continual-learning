@@ -14,8 +14,9 @@ from torch.nn.parallel import DistributedDataParallel
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import attention_matching
 import layout
-from still import StillCompactor, continue_from, prefill, support_kl
+from still import BudgetedStillCompactor, StillCompactor, budget_counts, continue_from, prefill, support_kl
 
 DOMAINS = ["financial", "gutenberg", "legal", "code"]
 
@@ -58,7 +59,12 @@ def step_loss(model, compactor, batch, top_k):
     with torch.no_grad():
         teacher = continue_from(model, pairs, ids, layout.PREFIX_TOKENS).logits[rows, columns]
     compact = compactor(model, pairs)
-    student = continue_from(model, compact, ids, layout.PREFIX_TOKENS).logits[rows, columns]
+    compact, betas = compact if isinstance(compact, tuple) else (compact, None)
+    attention_matching.STATE.bias = betas
+    try:
+        student = continue_from(model, compact, ids, layout.PREFIX_TOKENS).logits[rows, columns]
+    finally:
+        attention_matching.STATE.bias = None
     return support_kl(teacher, student, gold, top_k).mean()
 
 
@@ -73,6 +79,7 @@ def main():
     parser.add_argument("--items", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--slots", type=int, default=164)
+    parser.add_argument("--budgets", type=Path, help="per-head slot counts from budget_counts.py; replaces --slots")
     parser.add_argument("--steps", type=int, default=1500)
     parser.add_argument("--micro", type=int, default=4)
     parser.add_argument("--lr", type=float, default=4e-5)
@@ -96,11 +103,14 @@ def main():
             print(f"[train {time.strftime('%H:%M:%S')}] {message}", flush=True)
 
     tokenizer = AutoTokenizer.from_pretrained(args.model)
+    attention = attention_matching.NAME if args.budgets else "sdpa"
     model = AutoModelForCausalLM.from_pretrained(args.model, dtype=torch.bfloat16,
-                                                 attn_implementation="sdpa").to(device).eval()
+                                                 attn_implementation=attention).to(device).eval()
     for parameter in model.parameters():
         parameter.requires_grad_(False)
-    compactor = DistributedDataParallel(StillCompactor(model.config, args.slots).to(device), device_ids=[device.index])
+    module = BudgetedStillCompactor(model.config, budget_counts(args.budgets)) if args.budgets \
+        else StillCompactor(model.config, args.slots)
+    compactor = DistributedDataParallel(module.to(device), device_ids=[device.index])
     decay = [p for p in compactor.parameters() if p.ndim >= 2]
     other = [p for p in compactor.parameters() if p.ndim < 2]
     optimizer = torch.optim.AdamW([{"params": decay, "weight_decay": 0.01}, {"params": other, "weight_decay": 0.0}],
@@ -111,8 +121,11 @@ def main():
     validation, training = order[:args.validation], order[args.validation:]
     random.Random(args.seed).shuffle(training)
     global_batch = args.micro * world
+    slots = f"budgets={args.budgets} mean_slots={module.mean_slots():.2f} width={module.width}" if args.budgets \
+        else f"slots={args.slots}"
     log(f"items={len(data)} train={len(training)} validation={len(validation)} world={world} "
-        f"global_batch={global_batch} slots={args.slots} parameters={sum(p.numel() for p in compactor.parameters())}")
+        f"global_batch={global_batch} {slots} attention={attention} "
+        f"parameters={sum(p.numel() for p in compactor.parameters())}")
     if args.steps * global_batch > len(training):
         log(f"WARNING epochs={args.steps * global_batch / len(training):.2f} (training items reused)")
     metrics = (args.out / "metrics.jsonl").open("a") if rank == 0 else None

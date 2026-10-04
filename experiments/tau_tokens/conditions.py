@@ -27,7 +27,7 @@ from transformers import AutoTokenizer
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "still_repro"))
 import cache_format
-from still import prefill, streaming_pairs
+from still import BudgetedStillCompactor, prefill, streaming_pairs
 
 TOKENIZER = "Qwen/Qwen3-4B-Instruct-2507"
 HEADER = "<|im_start|>system\n"
@@ -125,10 +125,12 @@ def prefix_state(model, condition, prefix, compactor=None, am=None):
     if condition == "streaming":
         return streaming_pairs(pairs, SLOTS, sinks=SINKS), logical, None
     if condition == "still":
-        if compactor is None or compactor.slots != SLOTS:
+        budgeted = isinstance(compactor, BudgetedStillCompactor)
+        if compactor is None or (compactor.mean_slots() > SLOTS if budgeted else compactor.slots != SLOTS):
             raise SystemExit(f"STILL_COMPACTOR_SLOTS expected={SLOTS}")
         with torch.no_grad():
-            return compactor(model, pairs), logical, None
+            compact = compactor(model, pairs)
+        return (compact[0], logical, compact[1]) if budgeted else (compact, logical, None)
     raise SystemExit(f"UNKNOWN_CONDITION {condition}")
 
 
