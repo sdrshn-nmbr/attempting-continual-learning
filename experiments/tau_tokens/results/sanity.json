@@ -1,0 +1,235 @@
+{
+  "bootstrap": 4000,
+  "seed": 0,
+  "scores_sha256": "88f4456e73dfe0e6c2ba7e8d2e5dbb2c5e204059930ddeaf999a4eae0c5c51af",
+  "pilot_gold_sha256": "9ae7a3531bdede01d746a9af28c6c1b4a32a8252fa5f0e82207536de9c77cb7b",
+  "pilot_none_sha256": "cca37b7ba0ea0531e7391034815456e6d0843337d3642628f5b251dac9ab365c",
+  "check1_documents_only_full_beats_none": {
+    "criterion": "95% intervals of full-minus-none log-probability and exact-match gains above zero",
+    "exact_rate_points": {
+      "none": 0.5495,
+      "full": 73.6264,
+      "streaming": 2.1978,
+      "am": 6.044,
+      "still-17": 3.8462,
+      "still-23": 4.3956,
+      "still-29": 3.8462
+    },
+    "mean_logprob": {
+      "none": -3.3017,
+      "full": -0.3846,
+      "streaming": -3.1416,
+      "am": -1.5557,
+      "still-17": -1.3686,
+      "still-23": -1.4061,
+      "still-29": -1.3483
+    },
+    "gain_logprob": {
+      "mean": 2.9171,
+      "ci95": [
+        2.6302,
+        3.2147
+      ],
+      "values": 182,
+      "tasks": 46
+    },
+    "gain_exact_points": {
+      "mean": 73.0769,
+      "ci95": [
+        66.9919,
+        79.5042
+      ],
+      "values": 182,
+      "tasks": 46
+    },
+    "passed": true
+  },
+  "check2_copy_values_unchanged": {
+    "criterion": "each condition's exact-match difference from full inside +-5.0 points (95%)",
+    "exact_rate_points": {
+      "none": 94.2513,
+      "full": 93.8503,
+      "streaming": 93.7166,
+      "am": 93.5829,
+      "still-17": 96.3904,
+      "still-23": 96.0561,
+      "still-29": 95.5882
+    },
+    "mean_logprob": {
+      "none": -0.0802,
+      "full": -0.0694,
+      "streaming": -0.0786,
+      "am": -0.0671,
+      "still-17": -0.0278,
+      "still-23": -0.0332,
+      "still-29": -0.0317
+    },
+    "difference_from_full_points": {
+      "none": {
+        "mean": 0.4011,
+        "ci95": [
+          -0.3714,
+          1.1717
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "streaming": {
+        "mean": -0.1337,
+        "ci95": [
+          -1.1214,
+          0.5896
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "am": {
+        "mean": -0.2674,
+        "ci95": [
+          -0.9275,
+          0.2722
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "still-17": {
+        "mean": 2.5401,
+        "ci95": [
+          1.6017,
+          3.8582
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "still-23": {
+        "mean": 2.2059,
+        "ci95": [
+          1.0,
+          3.876
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "still-29": {
+        "mean": 1.738,
+        "ci95": [
+          0.5758,
+          3.2462
+        ],
+        "values": 1496,
+        "tasks": 62
+      }
+    },
+    "difference_from_full_logprob": {
+      "none": {
+        "mean": -0.0108,
+        "ci95": [
+          -0.041,
+          0.0126
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "streaming": {
+        "mean": -0.0091,
+        "ci95": [
+          -0.0378,
+          0.013
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "am": {
+        "mean": 0.0024,
+        "ci95": [
+          -0.0169,
+          0.0193
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "still-17": {
+        "mean": 0.0417,
+        "ci95": [
+          0.0282,
+          0.0609
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "still-23": {
+        "mean": 0.0362,
+        "ci95": [
+          0.02,
+          0.0592
+        ],
+        "values": 1496,
+        "tasks": 62
+      },
+      "still-29": {
+        "mean": 0.0378,
+        "ci95": [
+          0.0244,
+          0.0564
+        ],
+        "values": 1496,
+        "tasks": 62
+      }
+    },
+    "within_tolerance": {
+      "none": true,
+      "streaming": true,
+      "am": true,
+      "still-17": true,
+      "still-23": true,
+      "still-29": true
+    },
+    "passed": true
+  },
+  "check3_agreement_with_pilot": {
+    "criterion": "Spearman(full exact-match rate, pilot gold action recall) 95% interval above zero",
+    "pilot_agent": "hosted_vllm/qwen3-4b-instruct-2507",
+    "pilot_tau2_commit": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+    "full_exact_vs_gold_recall": {
+      "spearman": 0.5059,
+      "ci95": [
+        0.2735,
+        0.6962
+      ],
+      "tasks": 62
+    },
+    "full_logprob_vs_gold_recall": {
+      "spearman": 0.4088,
+      "ci95": [
+        0.1627,
+        0.6195
+      ],
+      "tasks": 62
+    },
+    "full_exact_vs_gold_pass_rate": {
+      "spearman": 0.194,
+      "ci95": [
+        0.1798,
+        0.356
+      ],
+      "tasks": 62
+    },
+    "token_gain_vs_pilot_recall_gain": {
+      "spearman": 0.4021,
+      "ci95": [
+        0.1455,
+        0.6165
+      ],
+      "tasks": 60
+    },
+    "pilot_mean_recall": {
+      "gold": 0.1702,
+      "none": 0.0472
+    },
+    "pilot_tasks_passed_at_least_once": {
+      "gold": 7,
+      "none": 2
+    },
+    "passed": true
+  }
+}
