@@ -1,0 +1,38 @@
+{
+  "am": {
+    "n": 592,
+    "accuracy": 0.7719594594594594,
+    "ci95": [
+      0.7381756756756757,
+      0.8057432432432432
+    ],
+    "by_domain": {
+      "financial": {
+        "n": 148,
+        "accuracy": 0.722972972972973
+      },
+      "gutenberg": {
+        "n": 148,
+        "accuracy": 0.6824324324324325
+      },
+      "legal": {
+        "n": 148,
+        "accuracy": 0.8716216216216216
+      },
+      "code": {
+        "n": 148,
+        "accuracy": 0.8108108108108109
+      }
+    },
+    "unparsed": 17,
+    "predicted_letters": {
+      "C": 149,
+      "D": 146,
+      "B": 146,
+      "A": 134,
+      "null": 17
+    }
+  },
+  "checkpoint": null,
+  "am_dir": "/tmp/am-caches/s164-nonuniform"
+}
