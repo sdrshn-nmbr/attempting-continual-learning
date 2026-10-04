@@ -1,0 +1,178 @@
+{
+  "eval-8b-ridge": {
+    "full": {
+      "n": 592,
+      "accuracy": 93.9,
+      "ci95": [
+        91.9,
+        95.8
+      ],
+      "retained_gain": 100.0,
+      "unparsed": 0,
+      "by_type": {
+        "connect": 89.7,
+        "detail": 98.3
+      }
+    },
+    "mapped_full": {
+      "n": 592,
+      "accuracy": 85.6,
+      "ci95": [
+        82.8,
+        88.5
+      ],
+      "retained_gain": 88.4,
+      "unparsed": 1,
+      "by_type": {
+        "connect": 78.4,
+        "detail": 93.1
+      }
+    },
+    "mapped_still": {
+      "n": 592,
+      "accuracy": 14.4,
+      "ci95": [
+        11.7,
+        17.2
+      ],
+      "retained_gain": -11.3,
+      "unparsed": 237,
+      "by_type": {
+        "connect": 17.6,
+        "detail": 11.0
+      }
+    },
+    "none": {
+      "n": 592,
+      "accuracy": 22.5,
+      "ci95": [
+        19.1,
+        25.8
+      ],
+      "retained_gain": 0.0,
+      "unparsed": 92,
+      "by_type": {
+        "connect": 25.6,
+        "detail": 19.2
+      }
+    },
+    "streaming": {
+      "n": 592,
+      "accuracy": 34.6,
+      "ci95": [
+        30.7,
+        38.5
+      ],
+      "retained_gain": 17.0,
+      "unparsed": 8,
+      "by_type": {
+        "connect": 39.2,
+        "detail": 29.9
+      }
+    }
+  },
+  "eval-8b-refit": {
+    "mapped_still": {
+      "n": 592,
+      "accuracy": 44.4,
+      "ci95": [
+        40.5,
+        48.5
+      ],
+      "retained_gain": null,
+      "unparsed": 2,
+      "by_type": {
+        "connect": 48.2,
+        "detail": 40.5
+      }
+    }
+  },
+  "eval-32b-ridge": {
+    "full": {
+      "n": 592,
+      "accuracy": 97.0,
+      "ci95": [
+        95.4,
+        98.1
+      ],
+      "retained_gain": 100.0,
+      "unparsed": 0,
+      "by_type": {
+        "connect": 94.7,
+        "detail": 99.3
+      }
+    },
+    "mapped_full": {
+      "n": 592,
+      "accuracy": 51.4,
+      "ci95": [
+        47.3,
+        55.6
+      ],
+      "retained_gain": 34.8,
+      "unparsed": 12,
+      "by_type": {
+        "connect": 51.2,
+        "detail": 51.5
+      }
+    },
+    "mapped_still": {
+      "n": 590,
+      "accuracy": 17.3,
+      "ci95": [
+        14.2,
+        20.3
+      ],
+      "retained_gain": -13.9,
+      "unparsed": 266,
+      "by_type": {
+        "connect": 23.0,
+        "detail": 11.4
+      }
+    },
+    "none": {
+      "n": 592,
+      "accuracy": 27.0,
+      "ci95": [
+        23.5,
+        30.7
+      ],
+      "retained_gain": 0.0,
+      "unparsed": 125,
+      "by_type": {
+        "connect": 30.6,
+        "detail": 23.4
+      }
+    },
+    "streaming": {
+      "n": 592,
+      "accuracy": 39.4,
+      "ci95": [
+        35.5,
+        43.4
+      ],
+      "retained_gain": 17.6,
+      "unparsed": 54,
+      "by_type": {
+        "connect": 46.5,
+        "detail": 32.0
+      }
+    }
+  },
+  "eval-32b-refit": {
+    "mapped_still": {
+      "n": 592,
+      "accuracy": 49.2,
+      "ci95": [
+        45.1,
+        53.0
+      ],
+      "retained_gain": null,
+      "unparsed": 1,
+      "by_type": {
+        "connect": 52.5,
+        "detail": 45.7
+      }
+    }
+  }
+}
