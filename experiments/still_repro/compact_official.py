@@ -12,6 +12,7 @@ from pathlib import Path
 
 import numpy as np
 import torch
+import torch.nn.functional as F
 from transformers import AutoTokenizer
 
 import layout
@@ -24,9 +25,12 @@ DOMAINS = ["financial", "gutenberg", "legal", "code"]
 
 
 def stack(compacted):
-    keys = torch.stack([c1[0] for c1, _, _ in compacted])
-    beta = torch.stack([b[0] for _, b, _ in compacted])
-    values = torch.stack([c2[0] for _, _, c2 in compacted])
+    """Stack per-layer (C1, beta, C2) into [L,H,t,D] / [L,H,t]. With per-head budgets each layer is padded to its
+    longest head, so layers differ in length; pad them to the longest layer with zeros and beta=-inf."""
+    length = max(c1.shape[2] for c1, _, _ in compacted)
+    keys = torch.stack([F.pad(c1[0], (0, 0, 0, length - c1.shape[2])) for c1, _, _ in compacted])
+    beta = torch.stack([F.pad(b[0].float(), (0, length - b.shape[2]), value=float("-inf")) for _, b, _ in compacted])
+    values = torch.stack([F.pad(c2[0], (0, 0, 0, length - c2.shape[2])) for _, _, c2 in compacted])
     return keys, beta, values
 
 
